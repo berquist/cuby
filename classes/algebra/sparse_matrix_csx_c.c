@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 #ifdef UMFPACK_FOUND
-#include <suitesparse/umfpack.h>
+#include <umfpack.h>
 #endif
 
 #include "algebra_c.h"
