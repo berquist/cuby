@@ -1,0 +1,3 @@
+# C compilation results
+*.o
+*.so
