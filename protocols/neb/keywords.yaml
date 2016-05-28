@@ -1,0 +1,33 @@
+################################################################################
+# Keywords for protocol NEB
+################################################################################
+
+keywords: 
+  :neb_fconst: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 20.0
+  #: Force constant of the harmonic potential connecting the points on the
+  #: elastic band (kcal/mol/A).
+
+  :neb_optimize_endpoints: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Optimization of the end points of the MEP can be disabled if the provided
+  #: geometries are already optimized.
+
+  :neb_version: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :improved
+    allowed_values:
+      - :improved
+      - :original
+   #: Version of the formulation of the NEB, see the references in the documentation.
+
+  :neb_mep_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "minimum_energy_path.xyz"
+   #: The file to which the minimum energy path is written to. It is updated in each step.

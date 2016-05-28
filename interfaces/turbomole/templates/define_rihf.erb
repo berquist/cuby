@@ -1,0 +1,31 @@
+<%# Blank lines to get to the method setup %>
+
+
+
+
+
+
+
+
+<%# Enter RI setup %>
+ri
+on
+m
+<%= ri_scf_core %>
+<%# RI auxiliary basis setup %>
+<% if @settings.set?(:auxiliary_basis_scf) %>
+jbas
+b all <%= @settings[:auxiliary_basis_scf] %>
+<% @settings.elements_hash(:auxiliary_basis_scf_elements).each_pair{|element, basis| %>
+b "<%= element.to_s.downcase %>" <%= basis %>
+<% } %>
+*
+<% end %>
+
+<%# Enter MARIJ setup %>
+<% if @settings[:turbomole_scf_ri_marij] %>
+marij
+on
+
+<% end %>
+*

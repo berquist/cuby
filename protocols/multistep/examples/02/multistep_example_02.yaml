@@ -1,0 +1,40 @@
+#===============================================================================
+# Multistep protocol example 2 - conditions
+#===============================================================================
+
+# The steps can be executed conditionally, depending on existence of a file.
+
+# The following input simplifies a common task: optimization followed by
+# calculation of vibrational frequencies. When optimized geometry is found,
+# the first step is skipped. Run the example twice to see the difference.
+
+job: multistep
+
+# Here, different syntax is used for the list of steps - YAML array
+steps: 
+  - opt
+  - freq
+
+# Common setup: computational method
+calculation_common:
+  interface: turbomole
+  method: dft
+  functional: b-lyp
+  basisset: SV
+  charge: 0
+  density_fitting: none
+
+# Optimization
+calculation_opt:
+  # Optimization can be skipped if optimized geometry is found:
+  skip_step_if_file_found: optimized.xyz
+  job: optimize
+  opt_quality: 0.1
+  geometry: A24:water # Water molecule
+
+
+# Frequencies
+calculation_freq:
+  job: frequencies
+  geometry: optimized.xyz
+

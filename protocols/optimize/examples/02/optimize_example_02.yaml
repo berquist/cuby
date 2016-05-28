@@ -1,0 +1,22 @@
+#===============================================================================
+# Optimize protocol example 2 - Partial optimization
+#===============================================================================
+
+# Only a part of the system can be optimized, in this case we optimize just
+# some residues in a peptide chain.
+
+job: optimize
+
+geometry: PDB:1AQG # PDB from Cuby's internal database of small peptides
+
+# Optimize only residues no. 5 and 6
+optimize_region: ":5,6"
+# Any selection can be used, use the following to optimize only hydrogens in
+# the peptide:
+#optimize_region: "@H"
+
+# Calculation - MM in Amber, default setup
+interface: amber
+
+# Save the optimized geometry in PDB format
+restart_file: optimized.pdb

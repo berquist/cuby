@@ -1,0 +1,41 @@
+################################################################################
+# Keywords for protocol Test
+################################################################################
+
+keywords: 
+  :test_result_type: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :energy
+    allowed_values:
+      - :energy
+      - :gradient
+      - :dataset
+  #: Type of the result tested:
+  #* energy - energy is compared
+  #* gradient - absolute value of the gradient is compared
+  #* dataset - RMSE over the dataset is compared
+
+  :test_result: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :die
+  #: The result the tested calculation should yield. The value is converted
+  #: to and tested as quantity defined by keyword test_result_type.
+ 
+  :test_threshold: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.0e-4
+  #: The threshold defining a successful test.
+
+  :test_print_results: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Print the original results in addition to the test report
+
+  :test_name: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Name of the test printed in the report

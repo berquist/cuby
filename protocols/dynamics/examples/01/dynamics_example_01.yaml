@@ -1,0 +1,33 @@
+#===============================================================================
+# Molecular dynamics example 1 - setting temperatures
+#===============================================================================
+
+# 1 ps of MD simulation (the default step is 1 fs)
+job: dynamics
+maxcycles: 1000
+
+# Amber calculation of ace-ala-nme tripeptide from database
+interface: amber
+geometry: ace-xxx-nme:ala
+
+# Initial temperature - used only to generate the velocities at the start
+# of the simulation
+
+# Because we start from optimized structure, this temperature is set to
+# twice the desired temperature (100K) - the kinetic energy quickly equalizes
+# with potential energy. If we started from a MD snapshot where we already
+# have the potential energy, this will be set to teh actual temperature
+# we want, it is 100 K.
+init_temp: 200
+
+# Thermostat
+thermostat: berendsen
+thermostat_tc: 0.1 # faster coupling needed for such a short simulation
+
+# This is the temperature maintained by the thermostat
+temperature: 100
+
+# Optionally, the thermostated temperature can vary during the simulation.
+# Uncomment the following keyword to perform a simulation where the system is
+# gradually heated to 300 K over the course of the simulation.
+temperature_target: 300

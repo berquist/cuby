@@ -1,0 +1,20 @@
+################################################################################
+# Keywords for protocol Gaussian driver
+################################################################################
+
+keywords: 
+  :gaussian_driver_exe: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Path to the gaussian executable. It should be a script that sets up the
+  #: environment for gaussian and runs it in foreground. The script should
+  #: produce an output file with suffix .log from an input file (suffix .com)
+  #: passed as an argument.
+
+  :gaussian_driver_job: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Job specification, in the gaussian format (e.g. "opt" for optimization,
+  #: "freq" for frequencies etc.) This is used to construct the input.

@@ -1,0 +1,148 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface cuby</h1>
+<p>
+Cuby's interface to Cuby. It allows building cuby inputs for individual calculations that are part of more complex jobs. For example, it is possible to use it for generation of all the individual calculations in a data set. These calculations can be then run separately (e.g. submitted as individual jobs on a cluster) and the results can be then collected by the dataset protocol. See the example below.
+</p>
+
+<h4>Limitations</h4>
+<p>
+The interface now supports only the basic single point energy calculations. Moreover, only some calculation setup is transferred from this interface to the child calculation - geometry (including ghost atom information), charge and multiplicity. The remaining setup must be provided in a separate block in the input (named "calculation").
+</p>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>proxy</li>
+</ul>
+<h4>All the methods support calculation of following properties:</h4>
+<ul>
+<li>energy</li>
+<li>ghost_atoms</li>
+</ul>
+<h2>Keywords used</h2>
+<p>This interface does not use any specific keywords</p>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#existing_calc_dir">existing_calc_dir</a></li>
+<li><a href="keywords.html#geometry">geometry</a></li>
+<li><a href="keywords.html#job">job</a></li>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+<li><a href="keywords.html#write_results_yaml">write_results_yaml</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/cuby/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Cuby interface example 1 - dataset calculation
+#===============================================================================
+
+# This example shows how to break a dataset calculation into individual jobs
+# and read their results back into cuby. It is achieved in three steps:
+#
+# 1) Prepare the calculations without running them, using the -p option
+#    that sets the keyword prepare_only:
+#    cuby4 -p yes cuby_example_01.yaml
+#
+# 2) Run all the calculations prepared in step 1 in cuby, e.g. (in bash):
+#    for i in *_CUBY; do cd $i; cuby4 cuby_input.yaml; cd ..; done
+#
+# 3) Run this input again to collect and process the results:
+#    cuby4 cuby_example_01.yaml
+
+# Dataset calculation
+job: dataset
+dataset: A24
+
+# When results (in this case calculated externally) are found,
+# read them instead of running the calculation.
+existing_calc_dir: read_results
+job_cleanup: no
+
+# Cuby interface is used as an intermediate layer between
+# the protocol and the calculation itself. This allows us to prepare
+# the child calculations as cuby inputs.
+interface: cuby
+
+# The calculation is defined in a separate block
+calculation:
+  interface: mopac
+  method: pm6
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Cuby interface example 2 - dataset calculation using queue system
+#===============================================================================
+
+# This example is identical to Example 1 but the child jobs are prepared
+# for running in a queue system. When they are run in step 2, they are not
+# executed in series but submitted to the queue system and can run
+# simultaneously on a cluster. The user has to wait for all the jobs to finish
+# before running step 3.
+
+# Dataset calculation
+job: dataset
+dataset: A24
+
+# When results (in this case calculated externally) are found,
+# read them instead of running the calculation.
+existing_calc_dir: read_results
+job_cleanup: no
+
+# Cuby interface is used as an intermediate layer between
+# the protocol and the calculation itself. This allows us to prepare
+# the child calculations as cuby inputs.
+interface: cuby
+
+# The calculation is defined in a separate block
+calculation:
+  interface: mopac
+  method: pm6
+  # Make the child jobs run in SGE queue
+  queue_submit: yes
+  queue_system: sge
+  queue_scratch_dir: /scratch/$USER
+  queue_name: gq*
+  queue_jobname: DatasetItem
+
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

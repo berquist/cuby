@@ -1,0 +1,13 @@
+# Functional -> deMon notation
+"blyp": "BLYP"
+"pw91": "PW91"
+"pbe": "PBE"
+"tpss": "TPSS"
+# Development version:
+"b3lyp": "B3LYP"
+"pbe0": "PBE0"
+"m06": "M06"
+"m062x": "M062X"
+"m06hf": "M06HF"
+# Patched version
+"bhlyp": "BHAHL"

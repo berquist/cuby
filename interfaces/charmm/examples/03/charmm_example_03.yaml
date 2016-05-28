@@ -1,0 +1,26 @@
+#===============================================================================
+# CHARMM example 3: Calculation using an existing PSF file
+#===============================================================================
+
+job: energy
+interface: charmm
+
+geometry: ace-ala-nme.pdb
+# Alanine with acetyl and N-methyl termini, same as in example 2
+
+# To avoid the need for generation of the PSF file, for which additional setup
+# might be needed, it is possible to specify an already prepared PSF file:
+charmm_psf_file: ace-ala-nme.psf 
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# (change the paths to match your installation)
+
+charmm_exe: /Users/honza/bin/CHARMM/c35b3/exec/gnu/charmm
+# Charmm executable
+
+charmm_ff_top: /Users/honza/bin/CHARMM/c35b3/toppar/top_all27_prot_na.rtf
+charmm_ff_par: /Users/honza/bin/CHARMM/c35b3/toppar/par_all27_prot_na.prm
+# Forcefield to be used
+

@@ -1,0 +1,22 @@
+#===============================================================================
+# Water_ff example 1 - geometry optimization of water trimer
+#===============================================================================
+
+job: optimize
+interface: water_ff
+
+# Optimizing the intermolecular interactions requires tighter convergence limit:
+opt_quality: 0.1 
+
+# The interface requires geometry built solely from water molecules,
+# in the order OHHOHH...
+geometry: |
+  O  -0.084889   0.056804    0.05520
+  H   0.710375   0.517729    0.41397
+  H  -0.890958   0.498588    0.41427
+  O   4.422945  -0.026001   -0.00720
+  H   4.446575  -0.955128    0.32095
+  H   4.445532  -0.084110   -0.99196
+  O   2.201771   1.306708    0.96998
+  H   2.989729   0.844404    0.59868
+  H   2.274831   1.268852    1.95294

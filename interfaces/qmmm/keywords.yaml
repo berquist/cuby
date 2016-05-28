@@ -1,0 +1,108 @@
+
+keywords:
+  :qmmm_core: !ruby/object:SettingsKeyword # file: interfaces/qmmm.rb
+    convert_to: :string
+    when_not_present: :die
+  #: Selection of QM core in QM/MM calculation
+  
+  :qmmm_cut_bonds: !ruby/object:SettingsKeyword # file: interfaces/qmmm.rb
+    convert_to: :array
+    when_not_present: :default
+    default_value: []
+  #: List of bonds that are cut and replaced by link atoms
+  
+  :qmmm_rename_residues: !ruby/object:SettingsKeyword # file: interfaces/qmmm.rb
+    convert_to: :array
+    when_not_present: :default
+    default_value: []
+  #: List of residues to be renamed in QM region. Format: YAML array of strings "selection new_name".
+  
+  :qmmm_add_ter: !ruby/object:SettingsKeyword # file: interfaces/qmmm.rb
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Selection of atoms in QM regieon (selection expression) after which PDB TER labels are added.
+
+  :qmmm_qmregion_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "qm_region.pdb"
+  #: Name of the file to which geometry is written to. Set to empty string to prevent writting this file.
+
+  :qmmm_geometry_only: !ruby/object:SettingsKeyword # file: interfaces/qmmm.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: If set, the program is aborted after preparation of the QM region but before
+  #: the calculations are prepared.
+
+  :qmmm_embedding: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :mechanical
+    allowed_values:
+      - :mechanical
+      - :electrostatic_2way
+      - :electrostatic
+  #: The "embedding" used:
+  #* mechanical - all the intraction between the QM region and the rest of the system is treated by MM
+  #* electrostatic_2way - the interaction of the QM region with the point charges modeling the rest of the system is included in the QM Hamiltonian
+  #* electrostatic - the same as above but with inexact gradient (energy is the same)
+
+  :qmmm_remove_charges: !ruby/object:SettingsKeyword # file: interfaces/qmmm.rb
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Selection of MM atoms not to be used as point charges in electrostatic embedding.
+  #: By default, charges are removed from the atoms in the bonds across QM/MM boundary,
+  #: this option can only add to this.
+ 
+  :qmmm_charges_around_links: !ruby/object:SettingsKeyword # file: interfaces/qmmm.rb
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 0
+  #: Removal of embedding charges around link atoms. The value is a number of bonds
+  #: defining the distance. Zero means only the charge on the atom replaced by a
+  #: link atom is removed, value of 1 selects also atoms boud to it etc.
+
+  :atomic_charges_read: !ruby/object:SettingsKeyword # file: interfaces/qmmm.rb
+    convert_to: :string
+    when_not_present: :other
+  #: File with atomic charges for the whole system (used for electrostatic embedding).
+  #: If not provided, cuby attempts to obtain the charges from the MM interface
+  #: (might not be supported by every interface).
+
+  :qmmm_charges_extra_info: !ruby/object:SettingsKeyword # file: interfaces/qmmm.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Store information on the original atom in the point charges. Not needed
+  #: unless a specialized calculation with a QM interface that supports this
+  #: is used.
+
+  #-----------------------------------------------------------------------------
+  # Automated QMMM fragmentation
+  #-----------------------------------------------------------------------------
+
+  :qmmm_auto_fragmentation: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :peptide_backbone
+  #: Automated fragmentation of specific systems. When automated fragmentation is
+  #: used, the only required input is qmmm_core, input for qmmm_cut_bonds,
+  #: qmmm_rename_residues and qmmm_add_ter s generated automatically so that the
+  #: QM region can be described by a forcefield modification available in cuby.
+  #:Following options are available:
+  #* none - normal QM/MM run with user-specified input
+  #* peptide_backbone - Selects whole amino acids and caps the broken backbone, to be used with amber forcefield defined by amber_leprc: "%interface/data/amberff03_pm6.leaprc"
+
+  :qmmm_auto_run: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Run the calculation directly after the automated fragmentation. By default,
+  #: the generated setup is printed and QM region geometry is saved for manual
+  #: inspection.

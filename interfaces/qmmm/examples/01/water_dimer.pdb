@@ -1,0 +1,10 @@
+REMARK
+ATOM      1  O   WAT     1      -1.525  -0.066   0.000
+ATOM      2  H1  WAT     1      -1.847   0.836   0.000
+ATOM      3  H2  WAT     1      -0.565   0.035   0.000
+TER
+ATOM      4  O   WAT     2       1.445   0.060   0.000
+ATOM      5  H1  WAT     2       1.838  -0.382  -0.756
+ATOM      6  H2  WAT     2       1.838  -0.382   0.756
+TER
+END

@@ -1,0 +1,171 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_PA
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "adiabatic proton affinities"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_PA:p2"
+  reference_value: 167.8
+  setup:
+    reaction_formula: "1 g_p2p -> 1 g_p2"
+    reaction_geometries:
+      g_p2: gmtkn_PA:p2
+      g_p2p: gmtkn_PA:p2p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_PA:p4"
+  reference_value: 193.4
+  setup:
+    reaction_formula: "1 g_p4p -> 1 g_p4"
+    reaction_geometries:
+      g_p4: gmtkn_PA:p4
+      g_p4p: gmtkn_PA:p4p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_PA:p6"
+  reference_value: 209.7
+  setup:
+    reaction_formula: "1 g_p6p -> 1 g_p6"
+    reaction_geometries:
+      g_p6: gmtkn_PA:p6
+      g_p6p: gmtkn_PA:p6p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_PA:p8"
+  reference_value: 219.7
+  setup:
+    reaction_formula: "1 g_p8p -> 1 g_p8"
+    reaction_geometries:
+      g_p8: gmtkn_PA:p8
+      g_p8p: gmtkn_PA:p8p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_PA:nh3"
+  reference_value: 211.9
+  setup:
+    reaction_formula: "1 g_nh3p -> 1 g_nh3"
+    reaction_geometries:
+      g_nh3: gmtkn_PA:nh3
+      g_nh3p: gmtkn_PA:nh3p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_PA:h2o"
+  reference_value: 171.6
+  setup:
+    reaction_formula: "1 g_h2op -> 1 g_h2o"
+    reaction_geometries:
+      g_h2o: gmtkn_PA:h2o
+      g_h2op: gmtkn_PA:h2op
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_PA:c2h2"
+  reference_value: 157.4
+  setup:
+    reaction_formula: "1 g_c2h2p -> 1 g_c2h2"
+    reaction_geometries:
+      g_c2h2: gmtkn_PA:c2h2
+      g_c2h2p: gmtkn_PA:c2h2p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_PA:sih4"
+  reference_value: 156.8
+  setup:
+    reaction_formula: "1 g_sih4p -> 1 g_sih4"
+    reaction_geometries:
+      g_sih4: gmtkn_PA:sih4
+      g_sih4p: gmtkn_PA:sih4p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_PA:ph3"
+  reference_value: 192.7
+  setup:
+    reaction_formula: "1 g_ph3p -> 1 g_ph3"
+    reaction_geometries:
+      g_ph3: gmtkn_PA:ph3
+      g_ph3p: gmtkn_PA:ph3p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_PA:h2s"
+  reference_value: 174.2
+  setup:
+    reaction_formula: "1 g_h2sp -> 1 g_h2s"
+    reaction_geometries:
+      g_h2s: gmtkn_PA:h2s
+      g_h2sp: gmtkn_PA:h2sp
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_PA:hcl"
+  reference_value: 137.8
+  setup:
+    reaction_formula: "1 g_hclp -> 1 g_hcl"
+    reaction_geometries:
+      g_hcl: gmtkn_PA:hcl
+      g_hclp: gmtkn_PA:hclp
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "12"
+  shortname: "12"
+  geometry: "gmtkn_PA:h2"
+  reference_value: 106.3
+  setup:
+    reaction_formula: "1 g_h2p -> 1 g_h2"
+    reaction_geometries:
+      g_h2: gmtkn_PA:h2
+      g_h2p: gmtkn_PA:h2p
+  tags: ""
+

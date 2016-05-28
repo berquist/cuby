@@ -1,0 +1,10 @@
+################################################################################
+# KEYWORDS for interface Void
+################################################################################
+
+keywords:
+  :void_delay: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.0
+  #: Time (in seconds) spent in the void "calculation"

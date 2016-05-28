@@ -1,0 +1,42 @@
+#===============================================================================
+# Frequencies protocol example 3  normal mode scan
+#===============================================================================
+
+# This input performs a scan along one normal mode
+
+# This is sone in two steps - generation of the coordinates and energy scan
+job: multistep
+steps: generate, scan
+
+calculation_generate:
+  # Reuse the hessian from Example 1
+  job: frequencies
+  hessian_read: hessian.yaml
+  geometry: |
+    O   -0.000000000   0.000000000  -0.058641239
+    H   -0.000000000   0.797196184   0.542383939
+    H   -0.000000000  -0.797196184   0.542383939
+
+  # Scan setup
+  freq_mode_scan: yes
+  # List of modes to scan - mode no. 1, the asymetric stretch
+  freq_mode_scan_multidimensional:
+    - 1
+  # Grid for the scan (in dimensionless normal coordinates)
+  freq_mode_scan_grids:
+    - "seq(-5, 0.5, 5)" # Generate grid from -5 to 5 with step of 0.5
+  # This produces file multidimensional_scan.xyz
+
+calculation_scan:
+  # Perform a series of energy calculations on the geometries prepared
+  # in previous step
+  job: scan
+  geometry: multidimensional_scan.xyz
+  calculation:
+    job: energy
+    interface: turbomole
+    method: dft
+    functional: b-lyp
+    basisset: SV
+    charge: 0
+    density_fitting: none

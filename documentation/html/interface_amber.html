@@ -1,0 +1,290 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface amber</h1>
+<p>
+Interface to the AMBER molecular dynamics package
+(<a href="http://ambermd.org">http://ambermd.org</a>, commercial software).
+It provides MM calculations using the AMBER family of forcefields.
+</p>
+
+<p>
+Besides performing the MM calculations, the interface also handles the preparation of the calculation from
+a PDB file. The PDB file must be in a format recognized by AMBER and if it contains residues not
+included in the forcefield, additional parameter files have to be provided.
+</p>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>forcefield</li>
+</ul>
+<h4>All the methods support calculation of following properties:</h4>
+<ul>
+<li>energy</li>
+<li>gradient</li>
+<li>atomic_charges</li>
+<li>point_charges</li>
+<li>point_charges_gradient</li>
+</ul>
+<h4>The interface implements following solvent models (keyword 'solvent_model'):</h4>
+<ul>
+<li>gbm</li>
+<li>igb7</li>
+</ul>
+<h4>The interface implements following atomic charge types (keyword 'atomic_charges'):</h4>
+<ul>
+<li>forcefield - Forcefield charges</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#amber_amberhome">amber_amberhome</a></li>
+<li><a href="keywords.html#amber_input_file">amber_input_file</a></li>
+<li><a href="keywords.html#amber_ld_path">amber_ld_path</a></li>
+<li><a href="keywords.html#amber_leaprc">amber_leaprc</a></li>
+<li><a href="keywords.html#amber_sander_exe">amber_sander_exe</a></li>
+<li><a href="keywords.html#amber_top_file">amber_top_file</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#existing_calc_dir">existing_calc_dir</a></li>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#solvent_epsilon">solvent_epsilon</a></li>
+<li><a href="keywords.html#solvent_model">solvent_model</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/amber/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Amber example 1: simplest energy calculation
+#===============================================================================
+
+# Forcefield energy calculation of a small protein
+
+job: energy
+
+interface: amber
+# Note: method does not have to be specified,
+# the interface do not implement more methods
+
+geometry: trpcage.pdb
+# The tryptofan cage miniprotein.
+# The geometry has to be in PDB format
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# The path to amber has to be specified. This should be the base directory
+# of the amber installation (when the amber environment is set up, this path
+# can be found in $AMBERHOME).
+# This configuration is usually done not in the input file, but in a config file
+# ~/cuby4_config.yaml
+
+amber_amberhome: /home/rezac/bin/amber/amber11/arch/amd64-intel_11.0.081/amber11
+# Provide the actual path on your system here
+
+
+#-------------------------------------------------------------------------------
+# Defaults assumed
+#-------------------------------------------------------------------------------
+# The input is so simple because it uses default values for several keywords
+# needed for the calculations. For this interface, these are:
+
+# amber_leaprc: ["$AMBERHOME/dat/leap/cmd/leaprc.ff03.r1", "$AMBERHOME/dat/leap/cmd/leaprc.gaff"]
+# a path(s) to one or more leaprc files, which are used to generate the
+# forcefield parameters and molecule topology (the prmtop file) from the geometry
+# in PDB format. By default, the ff03 and gaff forcefields are loaded
+# from the amber innstallation dir specified by amber_amberhome.
+
+# amber_top_file (not set)
+# when this keyword is not set, cuby generates the prmtop file automatically
+
+# amber_input_file (not set)
+# when this keyword is not set, cuby generates the input for the calculation
+
+# amber_sander_exe: "$AMBERHOME/bin/sander"
+# by default, the sander executable (which runs the actual calculation) from
+# the amber directory (specified by amber_amberhome) is used
+
+# amber_ld_path: ""
+# when the amber binaries depend on libraries that can not be found automatically,
+# specify the path to them here and it is appended to the LD_LIBRARY_PATH
+# environment variable before amber is run
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Amber example 2: Geometry optimization
+#===============================================================================
+
+# Geometry optimization of a peptide using an user-specified forcefield
+
+# This example assumes that the interface is already configured, and uses some
+# default values - see example 1 for reference. 
+
+job: optimize
+interface: amber
+geometry: ace-ala-nme.pdb
+
+amber_leaprc: $AMBERHOME/dat/leap/cmd/leaprc.ff99SB
+# We use another forcefiled available in amber, defined in this file
+# (This one is older than the ff03 forcefield used by default)
+
+# The calculation creates two files:
+# history_amber_example_02.xyz - contains all the geometries along the optimization
+# optimized.xyz - the optimized structure
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Amber example 3: Getting atomic charges
+#===============================================================================
+
+# The interface can be used to extract atomic charges from the forcefield
+# for the calculated system. The input is the same as for a real calculation
+# of the charges by other methods.
+
+job: atomic_charges
+interface: amber
+geometry: ../02/ace-ala-nme.pdb
+
+atomic_charges: forcefield
+# The type of the charges must be provided, in this case "forcefield" is
+# the only option.
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Amber example 4: Solvation
+#===============================================================================
+
+# In this example, solvation energy is calculated as a difference between
+# a calculation using implicit solvent and another gas phase calculation.
+# To get the result from a single cuby job, composite interface mixer is
+# used to run both calculations in parallel and subtract the results.
+
+job: energy
+interface: mixer
+
+geometry: ../02/ace-ala-nme.pdb
+
+print: energy_decomposition
+# print components of the final energy, in this case energies of the two
+# separate calculation (optional)
+
+cuby_threads: 2
+# run the two separate calculation in parallel (optional)
+
+mixer_weight_a:  1.0
+mixer_weight_b: -1.0
+# This defines the weights (wA, wB) of the calculations, the resulting energy
+# is then E = wA * E(A) + wB * E(B)
+
+# The two calculations are defined as separate blocks of the input (the block
+# name comes first, the contents of the block are then indented).
+
+calculation_a: # Calculation in implicit solvent (GBM)
+  interface: amber
+  solvent_model: gbm
+  # here, the solvent model is defined, the possible options are gbm and igb7
+  # dilelectric constant can be specified by keyword solvent_epsilon,
+  # the value of 78.5 (water) is used by default
+
+calculation_b:
+  interface: amber
+  # amber calculation, everything set to default
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Amber example 5: Using a user-modified forcefield
+#===============================================================================
+
+# Geometry optimization of a peptide using an forcefield with a new
+# residue defined by the user
+
+# This example assumes that the interface is already configured, and uses some
+# default values - see example 1 for reference. 
+
+job: energy
+interface: amber
+
+geometry: peptide-fma.pdb
+# The geometry contains a residue not defined in the forcefield - formic acid,
+# residue name 'fma'
+
+amber_leaprc: leaprc.my
+# We use a custom leaprc file that
+# 1) loads the amber forcefield for the peptide part
+# 2) loads the gaff forcefield for general organic molecules
+# 3) adds parameters missing in the gaff forcefileld - the frcmod file
+# 4) loads the template for the 'fma' residue - a mol2 file
+#    this file also contains the atomic charges for this molecule
+
+# AN IMPORTANT FEATURE is used here: every leaprc file is preprocessed
+# by cuby and following patterns are replaced with actual paths:
+# %amberhome (path to amber installation)
+# %home (path to home directory)
+# %cuby (path to cuby inctallation)
+# %pwd (path curernt working directory)
+# This allows easy construction of portable leaprc files combining
+# data from different sources.
+
+# The parameters for an unknown molecule can be generated by the
+# antechamber program packaged with AMBER, see the documentation for more
+# information.
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Amber example 6: Use of external point charges
+#===============================================================================
+
+# Geometry optimization of a water molecule in external electric field created
+# by two point charges along the x axis. In the optimization, the molecule
+# aligns with the field.
+
+job: optimize
+interface: amber
+
+geometry: water.pdb
+
+remove_translation: yes
+remove_rotation: no
+# Allow rotation, by default both translational and rotational components of
+# the gradient are removed.
+
+point_charges: |
+  10.0  0.0 0.0   1.0
+  -10.0 0.0 0.0  -1.0
+# A list of point charges, four numbers (x, y, z, charge) per line.
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

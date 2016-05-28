@@ -1,0 +1,50 @@
+#-------------------------------------------------------------------------------
+# Common part of the script begins here
+#-------------------------------------------------------------------------------
+
+# Extra commands
+<%= @settings[:queue_extra_commands] %>
+# Extra commands end
+
+# Tests
+if [ ! -d <%= scratch_dir %> ]; then
+	echo \"Scratch directory '<%= scratch_dir %>' does not exist.\" > /dev/stderr
+	echo \"Job terminated.\" > /dev/stderr
+	touch $INPUT_WORKDIR/SCRATCH_DOES_NOT_EXIST
+	exit 1
+fi
+
+# Create scratch directory
+if ! mkdir $SCRATCH_DIR; then
+	echo \"Scratch directory '$SCRATCH_DIR' can not be created\" > /dev/stderr
+	echo \"Job terminated.\" > /dev/stderr
+	touch $INPUT_WORKDIR/SCRATCH_DIR_NOT_CREATED
+	exit 1
+fi
+
+# Copy everything to scratch
+cd  $INPUT_WORKDIR
+if ! cp -r * $SCRATCH_DIR; then
+	echo \"Copy to scratch failed.\" > /dev/stderr
+	echo \"Job terminated.\" > /dev/stderr
+	touch $INPUT_WORKDIR/COPY_TO_SCRATCH_FAILED
+	exit 1
+fi
+
+# Add Cuby to path
+export PATH=<%= Cuby::install_dir %>:$PATH
+
+# Run calculation
+cd $SCRATCH_DIR
+cuby4 -q no <%= @arguments.join(' ') %> &> <%= @settings[:queue_output_file] %>
+
+# Copy results back
+cd $INPUT_WORKDIR
+if cp -r $SCRATCH_DIR <%= @settings[:queue_results_dir] %>; then
+	rm -r $SCRATCH_DIR
+else
+	echo \"Copy from scratch failed. Results left in '$SCRATCH_DIR'\" > /dev/stderr
+	echo \"Job terminated.\" > /dev/stderr
+	touch $INPUT_WORKDIR/COPY_FROM_SCRATCH_FAILED
+	exit 1
+fi

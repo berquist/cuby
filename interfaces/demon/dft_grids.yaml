@@ -1,0 +1,5 @@
+# Grid name -> deMon grid name / string
+:coarse: "COARSE"
+:medium: "MEDIUM" # deMon default
+:fine: "FINE" # cuby default
+:ultrafine: "TOL=1.0e-8"

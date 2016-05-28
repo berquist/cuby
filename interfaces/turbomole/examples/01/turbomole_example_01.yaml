@@ -1,0 +1,28 @@
+#===============================================================================
+# Turbomole example 1 - configuration
+#===============================================================================
+
+# Example of a full configuration of the interface. The following examples
+# assume that this configuration is done in the configuration file.
+
+# Configuration of the interface (change the paths to your installation)
+# Version of Turbomole
+turbomole_version: 6.6
+# The base diretory of the Turbomole installation
+turbomole_turbodir: /home/rezac/bin/turbomole/turbomole-6.6/arch/all
+# Path to serial binaries
+turbomole_bin_dir: /home/rezac/bin/turbomole/turbomole-6.6/arch/all/bin/em64t-unknown-linux-gnu
+# Path to all flavours of parallel binaries
+turbomole_bin_dir_smp: /home/rezac/bin/turbomole/turbomole-6.6/arch/all/bin/em64t-unknown-linux-gnu_smp
+turbomole_bin_dir_mpi: /home/rezac/bin/turbomole/turbomole-6.6/arch/all/bin/em64t-unknown-linux-gnu_mpi
+turbomole_bin_dir_mpi: /home/rezac/bin/turbomole/turbomole-6.6/arch/all/bin/em64t-unknown-linux-gnu_ga
+# Path to Turbomole scripts
+turbomole_scripts_dir: /home/rezac/bin/turbomole/turbomole-6.6/arch/all/scripts
+
+# Simple calculation: water dimer at HF/def2-SVP level
+job: energy
+interface: turbomole
+geometry: A24:water
+charge: 0
+basisset: def2-SVP
+method: hf

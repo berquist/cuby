@@ -1,0 +1,30 @@
+# Geometries for the Grimme's S12L data set of supramolecular complexes
+# Geometries taken from ref. DOI: 10.1002/chem.201200497
+
+# By original number
+"2a": 2a_TCNA_tweezer.xyz
+"2b": 2b_DCB_tweezer.xyz
+"3a": 3a_TNF_pincer.xyz
+"3b": 3b_NDB_pincer.xyz
+"4a": 4a_C60_catcher.xyz
+"4b": 4b_C70_catcher.xyz
+"5a": 5a_GLH_mcyle.xyz
+"5b": 5b_BQ_mcyle.xyz
+"6a": 6a_BuNH4_CB6.xyz
+"6b": 6b_PrNH4_CB6.xyz
+"7a": 7a_FECP_CB7.xyz
+"7b": 7b_ADOH_CB7.xyz
+
+# By name
+"tcna_tweezer": 2a_TCNA_tweezer.xyz
+"dcb_tweezer": 2b_DCB_tweezer.xyz
+"tnf_pincer": 3a_TNF_pincer.xyz
+"ndb_pincer": 3b_NDB_pincer.xyz
+"c60_catcher": 4a_C60_catcher.xyz
+"c70_catcher": 4b_C70_catcher.xyz
+"glh_mcyle": 5a_GLH_mcyle.xyz
+"bq_mcyle": 5b_BQ_mcyle.xyz
+"bunh4_cb6": 6a_BuNH4_CB6.xyz
+"prnh4_cb6": 6b_PrNH4_CB6.xyz
+"fecp_cb7": 7a_FECP_CB7.xyz
+"adoh_cb7": 7b_ADOH_CB7.xyz

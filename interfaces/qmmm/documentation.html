@@ -1,0 +1,31 @@
+<p>
+This interface implements a hybrid QM/MM scheme. An subtractive approach similar to ONIOM[1] is used,
+this makes it possible to interface any QM and MM code without modifications.</p>
+<ol>
+	<li>Dapprich S., Komaromi I., Suzie Byun K., Morokuma K., Frisch M.J., J. Mol. Struct. Teochem 1999</li>
+</ol>
+
+<h3>Important note</h3>
+<p>
+Two implementations of the electrostatic <a href="keywords.html#qmmm_embedding">embedding</a> are available: 'electrostatic_2way' and 'electrostatic'.
+</p>
+
+<p>
+The <strong>electrostatic_2way</strong> embedding uses point charges on the MM atoms to polarize the QM part. Reciprocally, the gradient on the
+point charges is calculated in the QM code. <span color="#A00">This is the correct scheme that yields exact gradient of the QM/MM energy. </span>
+However, only some QM codes can produce the gradient on point charges (following interfaces are available in cuby:
+<a href="interface_dftb.html">DFTB+</a>, 
+<a href="interface_demon.html">deMon</a>,
+<a href="interface_turbomole.html">turbomole</a>). 
+<a href="interface_orca.html">orca</a>). 
+</p>
+
+<p>
+The <strong>electrostatic</strong> embedding yields the same energy as electrostatic_2way but the gradient on the MM atoms is only approximate,
+based just on the MM electrostatics. Therefore, this interface is recommended only for single-point claculations, for optimizations and MD,
+electrostatic_2way should be used. This was the only option for electrostatic embedding in cuby3.
+</p>
+
+<p>
+(The mechanical embedding can be used with any code, support for external charges is not needed.)
+</p>

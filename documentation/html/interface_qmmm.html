@@ -1,0 +1,323 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface qmmm</h1>
+<p>
+This interface implements a hybrid QM/MM scheme. An subtractive approach similar to ONIOM[1] is used,
+this makes it possible to interface any QM and MM code without modifications.</p>
+<ol>
+	<li>Dapprich S., Komaromi I., Suzie Byun K., Morokuma K., Frisch M.J., J. Mol. Struct. Teochem 1999</li>
+</ol>
+
+<h3>Important note</h3>
+<p>
+Two implementations of the electrostatic <a href="keywords.html#qmmm_embedding">embedding</a> are available: 'electrostatic_2way' and 'electrostatic'.
+</p>
+
+<p>
+The <strong>electrostatic_2way</strong> embedding uses point charges on the MM atoms to polarize the QM part. Reciprocally, the gradient on the
+point charges is calculated in the QM code. <span color="#A00">This is the correct scheme that yields exact gradient of the QM/MM energy. </span>
+However, only some QM codes can produce the gradient on point charges (following interfaces are available in cuby:
+<a href="interface_dftb.html">DFTB+</a>, 
+<a href="interface_demon.html">deMon</a>,
+<a href="interface_turbomole.html">turbomole</a>). 
+<a href="interface_orca.html">orca</a>). 
+</p>
+
+<p>
+The <strong>electrostatic</strong> embedding yields the same energy as electrostatic_2way but the gradient on the MM atoms is only approximate,
+based just on the MM electrostatics. Therefore, this interface is recommended only for single-point claculations, for optimizations and MD,
+electrostatic_2way should be used. This was the only option for electrostatic embedding in cuby3.
+</p>
+
+<p>
+(The mechanical embedding can be used with any code, support for external charges is not needed.)
+</p>
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Input structure</h2>
+<h4>The interface requires following blocks in the input:</h4>
+<ul>
+<li>calculation_qm - Setup for the QM calculation</li>
+<li>calculation_mm - Setup for the MM calculation</li>
+</ul>
+<h4>Optionally, following blocks can be defined in the input:</h4>
+<ul>
+<li>calculation_qmregion_mm - MM setup applied only to the QM region</li>
+<li>calculation_system_mm - MM setup applied only to the calulation of the whole system</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#atomic_charges_read">atomic_charges_read</a></li>
+<li><a href="keywords.html#qmmm_add_ter">qmmm_add_ter</a></li>
+<li><a href="keywords.html#qmmm_auto_fragmentation">qmmm_auto_fragmentation</a></li>
+<li><a href="keywords.html#qmmm_auto_run">qmmm_auto_run</a></li>
+<li><a href="keywords.html#qmmm_charges_around_links">qmmm_charges_around_links</a></li>
+<li><a href="keywords.html#qmmm_charges_extra_info">qmmm_charges_extra_info</a></li>
+<li><a href="keywords.html#qmmm_core">qmmm_core</a></li>
+<li><a href="keywords.html#qmmm_cut_bonds">qmmm_cut_bonds</a></li>
+<li><a href="keywords.html#qmmm_embedding">qmmm_embedding</a></li>
+<li><a href="keywords.html#qmmm_geometry_only">qmmm_geometry_only</a></li>
+<li><a href="keywords.html#qmmm_qmregion_file">qmmm_qmregion_file</a></li>
+<li><a href="keywords.html#qmmm_remove_charges">qmmm_remove_charges</a></li>
+<li><a href="keywords.html#qmmm_rename_residues">qmmm_rename_residues</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#pdb_extra_columns">pdb_extra_columns</a></li>
+<li><a href="keywords.html#prepare_only">prepare_only</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/qmmm/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# QMMM example 1 - simple QM/MM calculation
+#===============================================================================
+
+# Very little setup is needed when the QM region is a separate molecule. Here,
+# a water dimer is calculated, the first water is QM and the second is MM.
+
+job: optimize
+
+geometry: water_dimer.pdb
+
+interface: qmmm
+
+# Electrostatic embedding:
+qmmm_embedding: electrostatic_2way
+
+# Definition of the QM region - the first residue is QM
+qmmm_core: ":1"
+
+# Setup of the QM calculation
+calculation_qm:
+  interface: dftb
+  method: scc-dftb
+  charge: 0
+
+# Setup for the MM calculation, shared by both the calculation of the whole system
+# and the MM calculation of the QM region
+calculation_mm:
+  interface: amber
+  amber_leaprc: "%amberhome/dat/leap/cmd/leaprc.ff03.r1"
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# QMMM example 2 - QMMM boundary across a covalent bond
+#===============================================================================
+
+# When a covalent bond is cut, it is capped by a hydrogen link atom. In the input,
+# it is necessary to define which bond is cut and what is the position and name
+# of the link atom, it is then built automatically.
+
+# The MM forcefield has to be able to describe the QM region, in this case,
+# it was necessary to crate a new residue for the alanine sidechain.
+
+job: optimize
+optimizer: rfo
+opt_quality: 0.5
+maxcycles: 500
+
+geometry: ace-ala-nme.pdb
+
+interface: qmmm
+
+# Electrostatic embedding:
+qmmm_embedding: electrostatic_2way
+# Remove charges on QM atoms close to the link atom
+qmmm_remove_charges: "16,17"
+# The same can be achieved automatically by removing charges on atoms
+# separated by N bonds (N = 1):
+#qmmm_charges_around_links: 1
+
+# Definition of the QM region
+qmmm_core: 1-14
+# Bonds top cut (selection, distance and PDB name of the link atom created)
+qmmm_cut_bonds:
+  - {bond: 9-15, link_ratio: 0.729, link_type: HL}
+# Rename the QM part of the ALA residue to "ala"
+qmmm_rename_residues:
+  - ":2 ala"
+
+# Setup of the QM calculation
+calculation_qm:
+  interface: turbomole
+  method: dft
+  basisset: SVP
+  functional: b-lyp
+  charge: 0
+
+# Setup for the MM calculation, shared by both the calculation of the whole system
+# and the MM calculation of the QM region
+calculation_mm:
+  interface: amber
+  amber_leaprc: leaprc.ala # Customized forcefield with "ala" residue defined
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# QMMM example 3 - QM/QM calculation
+#===============================================================================
+
+# The interface can be used also for QM/QM calculations, in this case DFT for
+# the inner part and semiempirical QM for the rest of the system.
+
+job: energy
+
+geometry: ace-ala-nme.xyz
+
+interface: qmmm
+
+# Mechanical embedding must be used
+qmmm_embedding: mechanical
+
+# Definition of the QM region
+qmmm_core: 1-14
+# Bonds top cut (selection, distance and PDB name of the link atom created)
+qmmm_cut_bonds:
+  - {bond: 9-15, link_ratio: 0.729, link_type: HL}
+
+# Setup of the QM calculation
+calculation_qm:
+  interface: turbomole
+  method: dft
+  basisset: SVP
+  functional: b-lyp
+  charge: 0
+
+# Setup for the MM calculation, shared by both the calculation of the whole system
+# and the MM calculation of the QM region
+calculation_mm:
+  interface: mopac
+  method: pm6
+  charge: 0
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# QMMM example 4 - Advanced MM settings
+#===============================================================================
+
+# This example is identical to Example 2 but additional setup ui used for
+# the MM calculations
+
+# This is the same as in example 2:
+job: optimize
+optimizer: rfo
+opt_quality: 0.5
+maxcycles: 500
+
+geometry: ace-ala-nme.pdb
+
+interface: qmmm
+
+qmmm_embedding: electrostatic_2way
+qmmm_remove_charges: "16,17"
+
+qmmm_core: 1-14
+qmmm_cut_bonds:
+  - {bond: 9-15, link_ratio: 0.729, link_type: HL}
+qmmm_rename_residues:
+  - ":2 ala"
+
+calculation_qm:
+  interface: turbomole
+  method: dft
+  basisset: SVP
+  functional: b-lyp
+  charge: 0
+
+# Common MM setup used for the calculations of both the QM region and
+# the whole system
+calculation_mm:
+  interface: amber
+  # Here, we use the unmodified ff03 forcefield
+  amber_leaprc: "%amberhome/dat/leap/cmd/leaprc.ff03.r1"
+
+# Setup for the MM calculation of the QM region
+calculation_qmregion_mm:
+  # Here, we load the customized forcefield for the QM region,
+  # it overrides the settings in block 'calculation_mm'
+  amber_leaprc: leaprc.ala
+
+# Setup for the MM calculation of the whole system
+calculation_system_mm:
+  # Use implicit solvent. This is a crude approximation as the
+  # solvent does not affect the QM calculation in other way than mechanically
+  # but it is an useful tool to keep the native structure of larger biomolecules
+  solvent_model: GBM
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# QMMM example 5 - Automated fragmentation
+#===============================================================================
+
+# The QM/MM interface can automatically prepare QMMM calculation of a peptide,
+# adding caps to the broken backbone. The initial selection of the QM region
+# should contain the region of interest which is then enlarged as needed:
+# 1) Complete residues included in the selection are used
+# 2) No other bonds than peptide bonds in the peptide chain can be broken
+# 3) Capping residues are added to terminate the broken peptide bonds
+
+job: energy
+interface: qmmm
+geometry: trpcage.pdb
+
+# Switch on automated fragmentation
+qmmm_auto_fragmentation: peptide_backbone
+
+# Here, we define what we want in the QM region. This selection is then extended
+# automatically so that the peptide backbone is properly capped capped.
+qmmm_core: ':8-10'
+
+calculation_qm:
+  interface: mopac
+  method: pm6
+  mopac_mozyme: yes
+
+calculation_mm:
+  interface: amber
+  # The following leaprc packaged with cuby loads the Amber ff03 with definition
+  # of the cap redidues needed
+  amber_leaprc: "%interface/data/amberff03_pm6.leaprc"
+
+# With this input, cuby will run the calculation immediately. If you want to check
+# the generated setup and QM region geometry, set the following keyword to 'no'.
+qmmm_auto_run: yes
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

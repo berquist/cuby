@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Installation</h1>
+<h2>Prerequisites</h2>
+<p>Interpreter of the <a href="http://ruby-lang.org">Ruby language</a> is
+needed to run cuby. Often, it comes as a part of the system, otherwise,
+it can be <a href="ruby_installation.html">installed</a> easily.</p>
+<p>Ruby version 1.8 is sufficient to run cuby but it is substantially slower
+than version 1.9 which we strongly recommend. Cuby works with Ruby 2.0 as well
+but it has not been fully tested yet.</p>
+
+<h2>Installation</h2>
+<p>The installation can be as simple as just unpacking the archive in a
+directory of your choice. It creates a directory cuby4 which contains the
+Cuby framework. To test the installation, go to the cuby4 directory and type</p>
+<pre><code>./cuby4 --info</code></pre>
+<p>to get some basic information on the current installation. To test whether
+cuby works, you can run a simple calculation with a command</p>
+<pre><code>./cuby4 --test</code></pre>
+<p>To run your own calculation, run cuby on an input file:</p>
+<pre><code>install_path/cuby4 input_file.yaml</code></pre>
+
+<h2>Environment setup</h2>
+<p>To make cuby accessible from anywhere, add the path to the installation
+to the PATH environment variable. In bash, use command:</p>
+<pre><code>export PATH=your_install_path:$PATH</code></pre>
+<p>Add this command to your ~/.bashrc file to make this setup permanent.</p>
+
+<h2>Configuration file</h2>
+<p>The configuration of cuby, most importantly the paths to all the
+extarnal software it uses, can be stored in a config file (It is not necessary
+as every calculation can be configured in the input file).</p>
+<p>The config file is a list of key-value pairs in YAML format; the value overwrites
+the default value of the respective keyword. An example of a config file can be found
+in cuby_directory/config.</p>
+<p>Two config files can be used:</p>
+<ul>
+	<li>A global one named cuby4_config.yaml, located
+	<strong>at the same level as the cuby4 directory</strong> (e.g when the cuby4 exacutable
+	is ~/cuby4/cuby4, the config file is ~/cuby4_config.yaml). This location was chosen
+	so that the config file is preserved when the cuby4 directory is overwritten.
+	This configuration applies to all users.</li>
+	<li>A local one (named ~/.cuby4). Each user can have its own local config file
+	and it overrides the setup from the global config.</li>
+</ul>
+
+<h2>Binary extensions</h2>
+<p>While Cuby is written in pure ruby, it will run faster when the most
+demanding tasks are offloaded to binary extensions. There are two of them,
+one for represetnation of the molecular coordinates and a second one
+implementing matrix and vector algebra.</p>
+<p>To compile the extensions, a C compiler, ruby header files and ruby's mkmf
+tool are needed. In debian-based Linux distributions, the the headers and mkmf
+are found in the ruby1.X-dev package.</p>
+<p>To compile the linear algebra extension, blas and lapack libraries and
+their header files have to be present (packages libblas-dev, liblapack-dev
+on debian-based Linux). Manual installation of the dependencies is <a href="installation_libraries.html">described here</a>.</p>
+<p>Some advanced optimization algorithms require the UMFPACK
+library (part of the <a href="http://faculty.cse.tamu.edu/davis/suitesparse.html">Suitesparse</a> package) but the extension can be compiled and used without it. This is the only functionality of the extensions that does not have a ruby equivalent because it is intended for applications to large systems where ruby code would be too slow.</p>
+<p>Once you have installed all the dependencies, run</p>
+<pre><code>./cuby4 --make</code></pre>
+<p>to compile the extensions. Sometimes, lapack is not identfied automatically even if it
+present. To override the autodetection, compile the extensions with:</p>
+<pre><code>./cuby4 --make-force</code></pre>
+
+<h2>Summary</h2>
+<p>Provided all the dependencies are available, the following series of
+commands (bash shell is assumed) installs cuby so that it is ready to use:</p>
+<pre><code>tar -xf cuby4.tgz
+cd cuby4
+export PATH=`pwd`:$PATH
+echo "export PATH=`pwd`:\$PATH" >> ~/.bashrc
+cp config/keyword_defaults.yaml ../cuby4_config.yaml
+cuby4 --make
+cuby4 --info
+cuby4 --test
+</code></pre>
+		</div>
+		</div>
+	</body>
+</html>

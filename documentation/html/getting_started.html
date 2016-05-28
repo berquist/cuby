@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Getting started</h1>
+<h2>First calculation in Cuby</h2>
+<p>Cuby can do some simple calculations even without any external software. The following
+input will run an optimization of water dimer with a built-in water forcefield. Save
+the following to a file input.yaml:</p>
+<pre><code>job: optimize
+geometry: start.xyz
+interface: water_ff</code></pre>
+<p>The <a href="keywords.html#job">job</a> keyword specifies the 
+<a href="protocols.html">computational protocol</a> used,in this case 
+<a href="protocol_optimize.html">geometry optimization</a>.
+The <a href="keywords.html#geometry">geometry</a> keyword refers to a 
+file (in the standard .xyz format or other format recognized by Cuby)
+with the starting geometry. The <a href="keywords.html#interface">interface keyword</a> 
+invokes the <a href="interfaces.html">interface</a> that will provide
+the potential, in this case it is the <a href="interface_water_ff.html">water_ff forcefield</a>
+which is included in Cuby.</p>
+<p>We will also need a starting geometry, copy the following into a file start.xyz:</p>
+<pre><code>6
+
+  O   -0.702196054  -0.056060256   0.009942262
+  H   -1.022193224   0.846775782  -0.011488714
+  H    0.257521062   0.042121496   0.005218999
+  O    2.220871067   0.026716792   0.000620476
+  H    2.597492682  -0.411663274   0.766744858
+  H    2.593135384  -0.449496183  -0.744782026</code></pre>
+<p>To run the calculation, use a command</p>
+<pre><code>cuby4 input.yaml</code></pre>
+<p>The output listing all the steps of the optimization is printed to the
+standard output. Additionally, two separate files are produced: <em>history_input.xyz</em> 
+containing the evolution of the geometry during the optimization and
+<em>optimized.xyz</em> which contains the final optimized geometry.</p>
+<p>Let us now calculate the interaction energy in the optimized geometry. To do
+so, we do not have to change the input, we can redefine some of the keywords
+from <a href="commandline.html">commandline</a>. Namely, the -j switch modifies the job keyword and -g
+changes the geometry keyword:</p>
+<pre><code>cuby4 -j interaction -g optimized.xyz input.yaml</code></pre>
+<p>Cuby automagically recognizes that there are two molecules in the system
+and calculates the interaction energy between them.</p>
+
+<h2>How to continue</h2>
+<p>The best way to learn Cuby is to use it. Browse the documentation
+of the <a href="interfaces.html">interfaces</a> and
+<a href="protocols.html">protocols</a>, you will find many examples that you
+can try out-of-the-box. These examples are the best starting point for preparing your
+own calculations.</p>
+		</div>
+		</div>
+	</body>
+</html>

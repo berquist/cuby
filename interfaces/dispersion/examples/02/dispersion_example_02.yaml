@@ -1,0 +1,30 @@
+#===============================================================================
+# Dispersion example 2: Manual setup of parameters
+#===============================================================================
+
+# This example yields a result identical to the one of example 1 but the
+# parameters for the dispersion correction are eneterd manually
+
+# Interaction energy calculation
+job: interaction
+
+# Methane dimer from the internal database
+geometry: A24:methane_dimer
+
+# DFT calculation setup
+interface: turbomole
+method: dft
+functional: tpss
+basisset: TZVP
+
+# Adding the dispersion correction as a modifier
+modifiers: dispersion
+
+#-------------------------------------------------------------------------------
+# Dispersion correction setup - in a separate block
+#-------------------------------------------------------------------------------
+modifier_dispersion:
+  s6: 1.0      # Scaling factor of the whole correction
+  sr: 0.98     # Scaling of vdW radii in the damping function
+  alpha: 35.0  # Exponent determining the slope of the damping function
+ 

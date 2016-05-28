@@ -1,0 +1,11 @@
+################################################################################
+# Keywords for protocol Shell_script
+################################################################################
+
+keywords: 
+  :shell_commands: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :die
+  #: Commands to be executed in the default shell (using the system call from
+  #: ruby).
+

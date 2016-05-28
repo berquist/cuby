@@ -1,0 +1,22 @@
+#===============================================================================
+# Amber example 6: Use of external point charges
+#===============================================================================
+
+# Geometry optimization of a water molecule in external electric field created
+# by two point charges along the x axis. In the optimization, the molecule
+# aligns with the field.
+
+job: optimize
+interface: amber
+
+geometry: water.pdb
+
+remove_translation: yes
+remove_rotation: no
+# Allow rotation, by default both translational and rotational components of
+# the gradient are removed.
+
+point_charges: |
+  10.0  0.0 0.0   1.0
+  -10.0 0.0 0.0  -1.0
+# A list of point charges, four numbers (x, y, z, charge) per line.

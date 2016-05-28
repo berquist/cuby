@@ -1,0 +1,18 @@
+#===============================================================================
+# DFTB example 2: Third-order SCC-DFTB
+#===============================================================================
+
+# Third-order SCC-DFTB (also called DFTB3) calculation
+job: energy
+interface: dftb
+method: scc-dftb3
+
+# Parameter set for DFTB3 - the 3OB set. The following keyword selects the
+# parameter set, the slater-koster files should be located in a directory
+# "3ob" under the path specified by the keyword dftb_slko_basepath (assumed)
+# to be set in the config file.
+dftb_slko_set: 3ob
+
+# Water molecule, geometry taken from Cuby's internal database
+geometry: A24:water
+charge: 0

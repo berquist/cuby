@@ -1,0 +1,50 @@
+#===============================================================================
+# Mopac example 5: Corrections for noncovalent interactions
+#===============================================================================
+
+# Calculation of interaction energy in water dimer with PM6 augmented with
+# various versions of corrections for dispersion and hydrogen bonding, and
+# with PM7:
+# * PM6 without modifications
+# * PM6-DH2
+# * PM6-DH+
+# * PM6-D3H4 (the latest version, most recommended)
+# * PM7
+
+# Multiple calculations are executed using the multistep job
+job: multistep
+# These are names of the steps:
+steps: pm6, pm6-dh2, pm6-dh+, pm6-d3h4, pm7
+
+# Setup shared by all the clculations - definition of PM6 interaction
+# energy calculation
+calculation_common:
+  job: interaction
+  geometry: S66:01 # Water dimer
+  interface: mopac
+  method: pm6
+  charge: 0
+  molecule_a:
+    charge: 0
+  molecule_b:
+    charge: 0
+
+# Each step has its own subsection named calculation_stepname
+
+# PM6: Subsection not needed, common setup is used
+
+# PM6-DH2: corrections implemented in MOPAC are used
+calculation_pm6-dh2:
+  mopac_corrections: dh2
+
+# PM6-DH+: corrections implemented in MOPAC are used
+calculation_pm6-dh+:
+  mopac_corrections: dh+
+
+# PM6-D3H4: corrections implemented in cuby are used as modifiers
+calculation_pm6-d3h4:
+  modifiers: dispersion3, h_bonds4
+
+# PM7: Specifying PM7 method overrides the common setup
+calculation_pm6:
+  method: pm7

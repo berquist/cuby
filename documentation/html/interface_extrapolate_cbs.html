@@ -1,0 +1,331 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface extrapolate_cbs</h1>
+<p>
+This interface implements MP2 extrapolation to the complete basis set limit and an optional
+higher-order correction (e.g. CCSDT(T), MP2.5 - see the examples).
+</p>
+
+<p>
+A following scheme is used:
+</p>
+<ul>
+	<li>HF energy is taken from the MP2 calculation in the larger basis set</li>
+	<li>MP2 correlation energy is extrapolated using the formula of Halkier and Helgaker[1]</li>
+	<li>Higher-order correction (the result - MP2 energy) is calculated in a smaller basis set</li>
+</ul>
+<ol>
+	<li>Halkier, A.; Helgaker, T.; Jørgensen, P.; Klopper, W.; Koch, H.; Olsen, J.; Wilson, A. K. Basis-Set Convergence in Correlated Calculations on Ne, N2, and H2O. Chem. Phys. Lett. 1998, 286, 243–252.
+	</li>
+</ol>
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Input structure</h2>
+<h4>The interface requires following blocks in the input:</h4>
+<ul>
+<li>calculation_mp2_small - Input for the MP2 calculation in the smaller basis set</li>
+<li>calculation_mp2_large - Input for the MP2 calculation in the larger basis set</li>
+</ul>
+<h4>Optionally, following blocks can be defined in the input:</h4>
+<ul>
+<li>calculation_corr - Input for the higher-order correction, e.g. CCSD(T)</li>
+<li>calculation_hf_small - For gradient calculations, a separate HF calculation in the smaller basis set is needed</li>
+<li>calculation_hf_large - For gradient calculations, a separate HF calculation in the larger basis set is needed</li>
+<li>calculation_corr_mp2 - For gradient calculations, a separate MP2 calculation in the basis set of the higher-order correction</li>
+<li>calculation_common - Common setup, applied to all the calculations</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#extrapolate_cbs_corr_weight">extrapolate_cbs_corr_weight</a></li>
+<li><a href="keywords.html#extrapolate_cbs_correction">extrapolate_cbs_correction</a></li>
+<li><a href="keywords.html#extrapolate_cbs_grad_mode">extrapolate_cbs_grad_mode</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#basisset_zeta">basisset_zeta</a></li>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/extrapolate_cbs/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Example 1: MP2/CBS extrapolation
+#===============================================================================
+
+job: energy
+geometry: S66:water_dimer
+
+interface: extrapolate_cbs
+
+# Switch off the higher-order correction
+extrapolate_cbs_correction: no
+
+# Common setup for all calculations
+calculation_common:
+  charge: 0
+  scf_convergence: 10
+  density_convergence: 10
+  correlation_convergence: 9
+  
+# MP2 calculation in small basis set
+calculation_mp2_small:
+  interface: turbomole
+  method: mp2
+  basisset: cc-pVDZ
+  # Note that basis set zeta has to be defined to make extrapolation possible:
+  basisset_zeta: 2
+
+# MP2 calculation in large basis set
+calculation_mp2_large:
+  interface: turbomole
+  method: mp2
+  basisset: cc-pVTZ
+  # Note that basis set zeta has to be defined to make extrapolation possible:
+  basisset_zeta: 3
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Example 2: Composite CCSD(T)/CBS calculation
+#===============================================================================
+
+job: energy
+geometry: S66:water_dimer
+
+interface: extrapolate_cbs
+
+# Use higher-order correction
+extrapolate_cbs_correction: yes
+
+# Common setup for all calculations
+calculation_common:
+  charge: 0
+  scf_convergence: 10
+  density_convergence: 10
+  correlation_convergence: 9
+  
+# MP2 calculation in small basis set
+calculation_mp2_small:
+  interface: turbomole
+  method: mp2
+  basisset: cc-pVDZ
+  # Note that basis set zeta has to be defined to make extrapolation possible:
+  basisset_zeta: 2
+
+# MP2 calculation in large basis set
+calculation_mp2_large:
+  interface: turbomole
+  method: mp2
+  basisset: cc-pVTZ
+  # Note that basis set zeta has to be defined to make extrapolation possible:
+  basisset_zeta: 3
+
+# CCSD(T) calculation 
+calculation_corr:
+  interface: cfour
+  method: ccsd(t)
+  basisset: STO-3G
+
+# Run all the calculations in parallel
+cuby_threads: 3
+
+# Print the energy components (SCF energy, MP2/CBS corerlation)
+print: energy_decomposition
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Example 3: Composite MP2.5/CBS calculation
+#===============================================================================
+
+# Scaled MP3 correction is added to a MP2/CBS result
+
+job: interaction
+bsse_correction: yes
+geometry: S66:water_dimer
+
+interface: extrapolate_cbs
+
+# Extrapolation scheme setup:
+extrapolate_cbs_correction: yes # Use higher-order correction
+extrapolate_cbs_corr_weight: 0.5 # Scaling factor for the correction
+
+# Common setup for all calculations
+calculation_common:
+  interface: turbomole
+  charge: 0
+  scf_convergence: 10
+  density_convergence: 10
+  correlation_convergence: 9
+  
+# MP2 calculation in small basis set
+calculation_mp2_small:
+  method: mp2
+  basisset: cc-pVDZ
+  # Note that basis set zeta has to be defined to make extrapolation possible:
+  basisset_zeta: 2
+
+# MP2 calculation in large basis set
+calculation_mp2_large:
+  method: mp2
+  basisset: cc-pVTZ
+  # Note that basis set zeta has to be defined to make extrapolation possible:
+  basisset_zeta: 3
+
+# CCSD(T) calculation 
+calculation_corr:
+  method: mp3
+  basisset: SVP
+
+# Print the energy components (SCF energy, MP2/CBS corerlation)
+print: energy_decomposition
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Example 4 - CSCD(T)/CBS geometry optimization
+#===============================================================================
+
+job: optimize
+geometry: A24:water # Water molecule from A24 data set
+interface: extrapolate_cbs
+
+# To extrapolate gradient and to calculate the gradient of the correction,
+# additional calculations are needed
+extrapolate_cbs_grad_mode: separate_calculations
+
+# Common setup
+calculation_common:
+  charge: 0
+  interface: turbomole
+  scf_convergence: 10
+  density_convergence: 10
+  correlation_convergence: 9
+  mem: 2000
+
+calculation_mp2_small:
+  method: mp2
+  basisset: cc-pVDZ
+  basisset_zeta: 2
+
+calculation_mp2_large:
+  method: mp2
+  basisset: cc-pVTZ
+  basisset_zeta: 3
+
+# In addition to the two MP2 calculation, separate HF calculations in
+# the same basis sets have to be performed:
+calculation_hf_small:
+  method: hf
+  basisset: cc-pVDZ
+
+calculation_hf_large:
+  method: hf
+  basisset: cc-pVTZ
+
+calculation_corr:
+  # In this case, we override the commmon setup to use cfour interface,
+  # cfour is one of the few packages that implement CCSD(T) gradient
+  interface: cfour
+  method: ccsd(t)
+  basisset: 3-21G
+
+# In addition to the CCSD(T) calculation, a MP2 calculation with the
+# same setup is needed to calculate the correction which is defined
+# as CCSD(T) - MP2
+calculation_corr_mp2:
+  # For consistency, this calculation has to use the same interface
+  # as the CCSD(T) one
+  interface: cfour
+  method: mp2
+  basisset: 3-21G
+
+opt_quality: 0.5
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Example 5 - CSCD(T)/CBS geometry optimization with gradient components
+#===============================================================================
+
+# The geometry otimization in Example 4 required additional calculations because
+# the HF and MP2 gradients usually have to be comuted separately. However,
+# some programs (e.g. turbomole used here) allow obtaining these two gradients
+# from a single run. This will save us two calculations.
+
+job: optimize
+geometry: A24:water # Water molecule from A24 data set
+interface: extrapolate_cbs
+
+# Enable the use of gradient components
+extrapolate_cbs_grad_mode: use_mp2_gradient_components
+
+# Common setup
+calculation_common:
+  charge: 0
+  interface: turbomole
+  scf_convergence: 10
+  density_convergence: 10
+  correlation_convergence: 9
+  mem: 2000
+
+# MP2 calculations, separate HF ones are no longer needed
+calculation_mp2_small:
+  method: mp2
+  basisset: cc-pVDZ
+  basisset_zeta: 2
+  turbomole_scf_grad: yes # Use of gradient components has to be enabled
+
+calculation_mp2_large:
+  method: mp2
+  basisset: cc-pVTZ
+  basisset_zeta: 3
+  turbomole_scf_grad: yes # Use of gradient components has to be enabled
+
+# To calculate the CCSD(T) correction, we still need the
+# additional MP2 calculation
+calculation_corr:
+  interface: cfour
+  method: ccsd(t)
+  basisset: 3-21G
+
+calculation_corr_mp2:
+  interface: cfour
+  method: mp2
+  basisset: 3-21G
+
+opt_quality: 0.5
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

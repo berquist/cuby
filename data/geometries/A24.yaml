@@ -1,0 +1,59 @@
+#===============================================================================
+# A24 data set
+# CCSD(T)/CBS, counterpoise-corrected
+# RI-MP2 extrapolated from aug-cc-pV(T,Q)Z
+# dCCSD(T) in aug-cc-pVDZ
+# numerical gradient, opt_quality: 0.01
+#===============================================================================
+
+# By number
+1: 01-water_ammonia_Cs.xyz
+2: 02-water_water_Cs.xyz
+3: 03-HCN_HCN_Cxv.xyz
+4: 04-HF_HF_Cs.xyz
+5: 05-ammonia_ammonia_C2h.xyz
+6: 06-methane_HF_C3v.xyz
+7: 07-ammmonia_methane_C3v.xyz
+8: 08-methane_water_Cs.xyz
+9: 09-formaldehyde_formaldehyde_Cs.xyz
+10: 10-ethene_wat_Cs.xyz
+11: 11-ethene_formaldehyde_Cs.xyz
+12: 12-ethyne_ethyne_C2v.xyz
+13: 13-ethene_ammonia_Cs.xyz
+14: 14-ethene_ethene_C2v.xyz
+15: 15-methane_ethene_Cs.xyz
+16: 16-borane_methane_Cs.xyz
+17: 17-methane_ethane_Cs.xyz
+18: 18-methane_ethane_C3.xyz
+19: 19-methane_methane_D3d.xyz
+20: 20-methane_Ar_C3v.xyz
+21: 21-ethene_Ar_C2v.xyz
+22: 22-ethene_ethyne_C2v.xyz
+23: 23-ethene_ethene_D2h.xyz
+24: 24-ethyne_ethyne_D2h.xyz
+
+# By name - homodimers
+"water_dimer": 02-water_water_Cs.xyz
+"hcn_dimer": 03-HCN_HCN_Cxv.xyz
+"hf_dimer": 04-HF_HF_Cs.xyz
+"formaldehyde_dimer": 09-formaldehyde_formaldehyde_Cs.xyz
+"ethyne_dimer": 12-ethyne_ethyne_C2v.xyz
+"ethene_dimer": 14-ethene_ethene_C2v.xyz
+"methane_dimer": 19-methane_methane_D3d.xyz
+"ethene_dimer": 23-ethene_ethene_D2h.xyz
+"ethyne_dimer": 24-ethyne_ethyne_D2h.xyz
+
+#===============================================================================
+# A24 monomers
+# The same setup (without counterpoise correction)
+#===============================================================================
+"acetylene": monomer_acetylene.xyz
+"ammonia": monomer_ammonia.xyz
+"borane": monomer_borane.xyz
+"ethane": monomer_ethane.xyz
+"ethylene": monomer_ethylene.xyz
+"formaldehyde": monomer_formaldehyde.xyz
+"HCN": monomer_HCN.xyz
+"HF": monomer_HF.xyz
+"methane": monomer_methane.xyz
+"water": monomer_water.xyz

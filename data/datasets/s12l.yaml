@@ -1,0 +1,172 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+
+# Interaction energies derived from experimental binding free energies in
+# solution
+
+# For details, se the paper:
+# S. Grimme, Chem. Eur. J. 2012, 18, 9955 – 9964
+# DOI: 10.1002/chem.201200497
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: S12L
+  references: 
+    "10.1002/chem.201200497": "Grimme, S. Chem. Eur. J. 2012, 18, 9955–9964."
+  text: "Interaction energies in large noncovalent complexes derived from experiment"
+
+  groups:
+    - dispersion
+    - H-bonds
+    - charged
+  global_setup:
+    job: interaction
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+      multiplicity: 1
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+      multiplicity: 1
+
+#===============================================================================
+# Items
+#===============================================================================
+items:
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 2a tetracyanoquinone ... tweezer
+  shortname: 2a_TCNA_tweezer
+  geometry: S12L:2a
+  reference_value: -29.9
+  group: dispersion
+  tags: "neutral dispersion"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 2b dicyanobenzene ... tweezer
+  shortname: 2b_DCB_tweezer
+  geometry: S12L:2b
+  reference_value: -20.5
+  group: dispersion
+  tags: "neutral dispersion"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 3a TNF ... pincer
+  shortname: 3a_TNF_pincer
+  geometry: S12L:3a
+  reference_value: -24.3
+  group: dispersion
+  tags: "neutral dispersion"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 3b NDB ... pincer
+  shortname: 3b_NDB_pincer
+  geometry: S12L:3b
+  reference_value: -20.4
+  group: dispersion
+  tags: "neutral dispersion"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 4a fullerene C60 ... catcher
+  shortname: 4a_C60_catcher
+  geometry: S12L:4a
+  reference_value: -27.5
+  group: dispersion
+  tags: "neutral dispersion"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 4b fullerene C70 ... catcher
+  shortname: 4b_C70_catcher
+  geometry: S12L:4b
+  reference_value: -28.7
+  group: dispersion
+  tags: "neutral dispersion"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 5a glycine anhydride ... macrocyle
+  shortname: 5a_GLH_mcyle
+  geometry: S12L:5a
+  reference_value: -34.8
+  group: H-bonds
+  tags: "neutral H-bond"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 5b benzoquinone ... macrocyle
+  shortname: 5b_BQ_mcyle
+  geometry: S12L:5b
+  reference_value: -21.3
+  group: H-bonds
+  tags: "neutral H-bond"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 6a butylammonium ... cucurbit[6]uril
+  shortname: 6a_BuNH4_CB6
+  geometry: S12L:6a
+  reference_value: -77.4
+  setup: 
+    charge: 1
+    molecule_a:
+      charge: 0
+    molecule_b:
+      charge: 1
+  group: charged
+  tags: "charged +1 cation"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 6b propylammoniaum ... cucurbit[6]uril
+  shortname: 6b_PrNH4_CB6
+  geometry: S12L:6b
+  reference_value: -77
+  setup: 
+    charge: 1
+    molecule_a:
+      charge: 0
+    molecule_b:
+      charge: 1
+  group: charged
+  tags: "charged +1 cation"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 7a ferrocene ... cucurbit[7]uril
+  shortname: 7a_FECP_CB7
+  geometry: S12L:7a
+  reference_value: -131.5
+  setup: 
+    charge: 2
+    molecule_a:
+      charge: 0
+    molecule_b:
+      charge: 2
+  group: charged
+  tags: "charged +2 cation"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 7b hydroxyadamantane ... cucurbit[7]uril
+  shortname: 7b_ADOH_CB7
+  geometry: S12L:7b
+  reference_value: -22.6
+  group: H-bonds
+  tags: "neutral H-bond"
+
+#===============================================================================
+# Alternative data
+#===============================================================================
+
+alternative_reference:
+  # Data from Hesselman, http://dx.doi.org/10.1063/1.4893990
+  # DZ->TZ extrapolation
+  # MP2 results are suspicious!
+  "DFT-SAPT/CBS": [ -28.21, -18.34, -13.97, -12.52, -30.72, -31.56, -30.56, -20.21, -80.15, -77.12, -130.02, -23.76 ]
+  "MP2/CBS": [ -46.47, -31.51, -33.09, -23.33, -78.78, -83.08, -39.45, -28.71, -87.13, -83.21, -150.04, -32.56 ]
+  "MP2C/CBS": [ -29.99, -20.31, -18.14, -14.03, -35.30, -35.76, -34.72, -22.88, -82.93, -79.66, -135.57, -25.21 ]
+  # Data from http://pubs.acs.org/doi/suppl/10.1021/acs.jctc.5b00002
+  # Missing data for systems 4a and 4b replaced with 0s
+  "MP2/CBS_noCP": [ -53.63, -36.97, -47.35, -33.18, 0.0, 0.0, -45.54, -33.83, -91.96, -87.28, -163.12, -39.97 ]
+  "MP2/CBS_CP": [ -48.44, -32.98, -35.29, -24.56, 0.0, 0.0, -41.06, -29.98, -88.45, -84.52, -160.17, -35.28 ]
+  "MP2/CBS_halfCP": [ -51.035, -34.975, -41.32, -28.87, 0.0, 0.0, -43.3, -31.905, -90.205, -85.9, -161.645, -37.625 ]
+

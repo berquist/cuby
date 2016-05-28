@@ -1,0 +1,25 @@
+#===============================================================================
+# Hessian example 1
+#===============================================================================
+
+# This calculates Hessian of a water molecule (the geometry was previously
+# optimized at this level). In addition to printing the Hessian in the output,
+# it is also saved to file 'hessian.yaml' for further use.
+
+job: hessian
+
+interface: turbomole
+
+method: hf
+basisset: 6-31G
+density_fitting: none
+scf_convergence: 7
+charge: 0
+
+geometry: |
+  O    0.000000000  -0.000000000  -0.014048498
+  H    0.000000000   0.785163819   0.520087569
+  H    0.000000000  -0.785163819   0.520087569
+
+# Print also complete gradient (by default, only RMS is printed)
+print: gradient

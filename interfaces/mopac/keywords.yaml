@@ -1,0 +1,93 @@
+################################################################################
+# KEYWORDS for the MOPAC interface
+################################################################################
+
+keywords:
+  :mopac_mozyme: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Use of the linear scaling MOZYME algorithm. MOPAC documentation:
+  #: http://openmopac.net/manual/mozyme.html
+
+  :mopac_precise: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Use tight thresholds, needed for accurate gradient. MOPAC documentation:
+  #: http://openmopac.net/manual/precise.html
+ 
+  :mopac_corrections: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :d2
+      - :h2
+      - :dh2
+      - :"dh+"
+      - :d3
+      - :h4
+      - :d3h4
+      - :d3h4x
+  #: Corrections for noncovalent interactions for PM6 as implemented in MOPAC.
+  
+  :mopac_peptide_bond_fix: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Controls the corerction for peptide bond torsion. It was introduced as an
+  #: addition to the RM1, PM6 and PM7 methods, therefore it is switched off by
+  #: default for backwards compatibility. MOPAC documentation:
+  #: http://openmopac.net/manual/mmok.html
+
+  :mopac_setpi: !ruby/object:SettingsKeyword
+    convert_to: :array
+    when_not_present: :default
+    default_value: []
+  #: Manual specification of double bonds for MOZYME, array of atom pairs
+  #: (defined by the selection expression, e.g. as atom numbers separated by
+  #: comma). Described at http://openmopac.net/manual/setpi.html
+
+  :mopac_setcharge: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :default
+    default_value: {}
+  #: Manual specification atomic charges for MOZYME, hash of charges indexed
+  #: by atom selection. The charge can be '0', '+' or '-'. Described at
+  #: http://openmopac.net/manual/Labels.html
+
+  :mopac_keywords: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Extra keywords (in the MOPAC format) added into the input
+
+  :mopac_exe: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: MOPAC executable
+
+  :mopac_parallel: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: The latest version allows parralelization, but the input can not be
+  #: used with older versions of MOPAC2012. Disable this option when
+  #: older version is used.
+
+#===============================================================================
+# Keywords for enabling MOPAC 7
+#===============================================================================
+
+  :mopac_version: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :mopac2012
+    allowed_values:
+      - :mopac2012
+      - :mopac7
+  #: Version of MOPAC to be used. By default, MOPAC 2012 is used, it is however
+  #: possible to switch to the legacy MOPAC 7 but the functionality is limited.

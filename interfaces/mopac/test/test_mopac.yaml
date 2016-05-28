@@ -1,0 +1,77 @@
+job: multistep
+job_title: MOPAC interface test
+steps: energy, gradient
+
+calculation_energy:
+  job: multistep
+  step_title: Energies in all methods implemented
+
+  steps: mndo, mndo_d, am1, rm1, pm6, pm7
+  
+  calculation_common:
+    job: test
+    test_result_type: energy
+    step_title_decoration: "- "
+    calculation:
+      job: energy
+      interface: mopac
+      geometry: S66:water_dimer
+      charge: 0
+  
+  calculation_mndo:
+    step_title: MNDO energy
+    test_result: -114.5502
+    calculation:
+      method: mndo
+  
+  calculation_mndo_d:
+    step_title: MNDO-D energy
+    test_result: -114.53141
+    calculation:
+      method: mndo-d
+  
+  calculation_am1:
+    step_title: AM1 energy
+    test_result: -121.38916
+    calculation:
+      method: am1
+  
+  calculation_rm1:
+    step_title: RM1 energy
+    test_result: -116.57555
+    calculation:
+      method: rm1
+  
+  calculation_pm6:
+    step_title: PM6 energy
+    test_result: -112.19889
+    calculation:
+      method: pm6
+  
+  calculation_pm7:
+    step_title: PM7 energy
+    test_result: -120.4072
+    calculation:
+      method: pm7
+
+calculation_gradient:
+  job: multistep
+  step_title: Gradients in selected methods
+
+  steps: pm6
+  
+  calculation_common:
+    job: test
+    test_result_type: gradient
+    step_title_decoration: "- "
+    calculation:
+      job: gradient
+      interface: mopac
+      geometry: S66:water_dimer
+      charge: 0
+  
+  calculation_pm6:
+    step_title: PM6 gradient
+    test_result: 14.153122523107532
+    calculation: 
+      method: pm6

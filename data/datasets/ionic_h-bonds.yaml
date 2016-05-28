@@ -1,0 +1,1506 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+
+# Composite CCSD(T)/CBS, CP-corrected, Helgaker extrapolation, frozen core
+# HF      aug-cc-pVQZ
+# MP2     aug-cc-pVTZ -> aug-cc-pVQZ
+# CCSD(T) aug-cc-pVDZ
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: "Ionic_H-bonds"
+  references: 
+    "10.1021/ct200751e": "Řezáč, J.; Hobza, P. J. Chem. Theory Comput. 2012, 8, 141-151."
+  text: "Ionic hydrogen bonds - dissociation curves"
+
+  groups:
+   - equilibrium
+
+  global_setup:
+    job: interaction
+    molecule_a:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+    molecule_b:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+#-------------------------------------------------------------------------------
+# Carboxyl
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 acetate ... methanol 0.90
+  shortname: 01_carboxyl_mOH_0.90
+  geometry: ionic_hbonds:carboxyl_mOH_0.90
+  reference_value: -18.760549
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 acetate ... methanol 0.95
+  shortname: 01_carboxyl_mOH_0.95
+  geometry: ionic_hbonds:carboxyl_mOH_0.95
+  reference_value: -19.580681
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 acetate ... methanol 1.00
+  shortname: 01_carboxyl_mOH_1.00
+  geometry: ionic_hbonds:carboxyl_mOH_1.00
+  group: equilibrium
+  reference_value: -19.753368
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 acetate ... methanol 1.05
+  shortname: 01_carboxyl_mOH_1.05
+  geometry: ionic_hbonds:carboxyl_mOH_1.05
+  reference_value: -19.490676
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 acetate ... methanol 1.10
+  shortname: 01_carboxyl_mOH_1.10
+  geometry: ionic_hbonds:carboxyl_mOH_1.10
+  reference_value: -18.943812
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 acetate ... methanol 1.25
+  shortname: 01_carboxyl_mOH_1.25
+  geometry: ionic_hbonds:carboxyl_mOH_1.25
+  reference_value: -16.521979
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 acetate ... methanol 1.50
+  shortname: 01_carboxyl_mOH_1.50
+  geometry: ionic_hbonds:carboxyl_mOH_1.50
+  reference_value: -12.347184
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 acetate ... methanol 2.00
+  shortname: 01_carboxyl_mOH_2.00
+  geometry: ionic_hbonds:carboxyl_mOH_2.00
+  reference_value: -7.039352
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+  separator: " "
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 acetate ... water 0.90
+  shortname: 02_carboxyl_wat_0.90
+  geometry: ionic_hbonds:carboxyl_wat_0.90
+  reference_value: -20.276548
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 acetate ... water 0.95
+  shortname: 02_carboxyl_wat_0.95
+  geometry: ionic_hbonds:carboxyl_wat_0.95
+  reference_value: -21.034901
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 acetate ... water 1.00
+  shortname: 02_carboxyl_wat_1.00
+  geometry: ionic_hbonds:carboxyl_wat_1.00
+  group: equilibrium
+  reference_value: -21.061531
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 acetate ... water 1.05
+  shortname: 02_carboxyl_wat_1.05
+  geometry: ionic_hbonds:carboxyl_wat_1.05
+  reference_value: -20.621804
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 acetate ... water 1.10
+  shortname: 02_carboxyl_wat_1.10
+  geometry: ionic_hbonds:carboxyl_wat_1.10
+  reference_value: -19.897331
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 acetate ... water 1.25
+  shortname: 02_carboxyl_wat_1.25
+  geometry: ionic_hbonds:carboxyl_wat_1.25
+  reference_value: -17.057744
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 acetate ... water 1.50
+  shortname: 02_carboxyl_wat_1.50
+  geometry: ionic_hbonds:carboxyl_wat_1.50
+  reference_value: -12.598875
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 acetate ... water 2.00
+  shortname: 02_carboxyl_wat_2.00
+  geometry: ionic_hbonds:carboxyl_wat_2.00
+  reference_value: -7.277805
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+  separator: " "
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 acetate ... methylamine 0.90
+  shortname: 03_carboxyl_mNH2_0.90
+  geometry: ionic_hbonds:carboxyl_mNH2_0.90
+  reference_value: -10.886064
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 acetate ... methylamine 0.95
+  shortname: 03_carboxyl_mNH2_0.95
+  geometry: ionic_hbonds:carboxyl_mNH2_0.95
+  reference_value: -11.387299
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 acetate ... methylamine 1.00
+  shortname: 03_carboxyl_mNH2_1.00
+  geometry: ionic_hbonds:carboxyl_mNH2_1.00
+  group: equilibrium
+  reference_value: -11.454596
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 acetate ... methylamine 1.05
+  shortname: 03_carboxyl_mNH2_1.05
+  geometry: ionic_hbonds:carboxyl_mNH2_1.05
+  reference_value: -11.240581
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 acetate ... methylamine 1.10
+  shortname: 03_carboxyl_mNH2_1.10
+  geometry: ionic_hbonds:carboxyl_mNH2_1.10
+  reference_value: -10.851782
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 acetate ... methylamine 1.25
+  shortname: 03_carboxyl_mNH2_1.25
+  geometry: ionic_hbonds:carboxyl_mNH2_1.25
+  reference_value: -9.256441
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 acetate ... methylamine 1.50
+  shortname: 03_carboxyl_mNH2_1.50
+  geometry: ionic_hbonds:carboxyl_mNH2_1.50
+  reference_value: -6.699678
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 acetate ... methylamine 2.00
+  shortname: 03_carboxyl_mNH2_2.00
+  geometry: ionic_hbonds:carboxyl_mNH2_2.00
+  reference_value: -3.662988
+  setup:
+    molecule_a:
+      charge: -1
+    molecule_b:
+      charge: 0
+  tags: H-bond anion
+  separator: "-"
+
+#-------------------------------------------------------------------------------
+# -NH3+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methylammonium ... formaldehyde 0.90
+  shortname: 04_mNH3_fmdh_0.90
+  geometry: ionic_hbonds:mNH3_fmdh_0.90
+  reference_value: -17.928728
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methylammonium ... formaldehyde 0.95
+  shortname: 04_mNH3_fmdh_0.95
+  geometry: ionic_hbonds:mNH3_fmdh_0.95
+  reference_value: -18.84505
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methylammonium ... formaldehyde 1.00
+  shortname: 04_mNH3_fmdh_1.00
+  geometry: ionic_hbonds:mNH3_fmdh_1.00
+  group: equilibrium
+  reference_value: -19.095626
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methylammonium ... formaldehyde 1.05
+  shortname: 04_mNH3_fmdh_1.05
+  geometry: ionic_hbonds:mNH3_fmdh_1.05
+  reference_value: -18.898348
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methylammonium ... formaldehyde 1.10
+  shortname: 04_mNH3_fmdh_1.10
+  geometry: ionic_hbonds:mNH3_fmdh_1.10
+  reference_value: -18.409589
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methylammonium ... formaldehyde 1.25
+  shortname: 04_mNH3_fmdh_1.25
+  geometry: ionic_hbonds:mNH3_fmdh_1.25
+  reference_value: -16.150611
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methylammonium ... formaldehyde 1.50
+  shortname: 04_mNH3_fmdh_1.50
+  geometry: ionic_hbonds:mNH3_fmdh_1.50
+  reference_value: -12.267367
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methylammonium ... formaldehyde 2.00
+  shortname: 04_mNH3_fmdh_2.00
+  geometry: ionic_hbonds:mNH3_fmdh_2.00
+  reference_value: -7.435129
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+  separator: " "
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 methylammonium ... methylamine 0.90
+  shortname: 05_mNH3_mNH2_0.90
+  geometry: ionic_hbonds:mNH3_mNH2_0.90
+  reference_value: -27.05274
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 methylammonium ... methylamine 0.95
+  shortname: 05_mNH3_mNH2_0.95
+  geometry: ionic_hbonds:mNH3_mNH2_0.95
+  reference_value: -28.222944
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 methylammonium ... methylamine 1.00
+  shortname: 05_mNH3_mNH2_1.00
+  geometry: ionic_hbonds:mNH3_mNH2_1.00
+  group: equilibrium
+  reference_value: -28.560472
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 methylammonium ... methylamine 1.05
+  shortname: 05_mNH3_mNH2_1.05
+  geometry: ionic_hbonds:mNH3_mNH2_1.05
+  reference_value: -28.310852
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 methylammonium ... methylamine 1.10
+  shortname: 05_mNH3_mNH2_1.10
+  geometry: ionic_hbonds:mNH3_mNH2_1.10
+  reference_value: -27.655265
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 methylammonium ... methylamine 1.25
+  shortname: 05_mNH3_mNH2_1.25
+  geometry: ionic_hbonds:mNH3_mNH2_1.25
+  reference_value: -24.42889
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 methylammonium ... methylamine 1.50
+  shortname: 05_mNH3_mNH2_1.50
+  geometry: ionic_hbonds:mNH3_mNH2_1.50
+  reference_value: -18.340681
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 methylammonium ... methylamine 2.00
+  shortname: 05_mNH3_mNH2_2.00
+  geometry: ionic_hbonds:mNH3_mNH2_2.00
+  reference_value: -10.099392
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+  separator: " "
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 methylammonium ... methanol 0.90
+  shortname: 06_mNH3_mOH_0.90
+  geometry: ionic_hbonds:mNH3_mOH_0.90
+  reference_value: -19.84586
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 methylammonium ... methanol 0.95
+  shortname: 06_mNH3_mOH_0.95
+  geometry: ionic_hbonds:mNH3_mOH_0.95
+  reference_value: -20.903148
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 methylammonium ... methanol 1.00
+  shortname: 06_mNH3_mOH_1.00
+  geometry: ionic_hbonds:mNH3_mOH_1.00
+  group: equilibrium
+  reference_value: -21.225081
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 methylammonium ... methanol 1.05
+  shortname: 06_mNH3_mOH_1.05
+  geometry: ionic_hbonds:mNH3_mOH_1.05
+  reference_value: -21.04336
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 methylammonium ... methanol 1.10
+  shortname: 06_mNH3_mOH_1.10
+  geometry: ionic_hbonds:mNH3_mOH_1.10
+  reference_value: -20.52637
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 methylammonium ... methanol 1.25
+  shortname: 06_mNH3_mOH_1.25
+  geometry: ionic_hbonds:mNH3_mOH_1.25
+  reference_value: -18.017186
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 methylammonium ... methanol 1.50
+  shortname: 06_mNH3_mOH_1.50
+  geometry: ionic_hbonds:mNH3_mOH_1.50
+  reference_value: -13.54217
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 methylammonium ... methanol 2.00
+  shortname: 06_mNH3_mOH_2.00
+  geometry: ionic_hbonds:mNH3_mOH_2.00
+  reference_value: -7.890552
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+  separator: " "
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 methylammonium ... water 0.90
+  shortname: 07_mNH3_wat_0.90
+  geometry: ionic_hbonds:mNH3_wat_0.90
+  reference_value: -17.289114
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 methylammonium ... water 0.95
+  shortname: 07_mNH3_wat_0.95
+  geometry: ionic_hbonds:mNH3_wat_0.95
+  reference_value: -18.235426
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 methylammonium ... water 1.00
+  shortname: 07_mNH3_wat_1.00
+  geometry: ionic_hbonds:mNH3_wat_1.00
+  group: equilibrium
+  reference_value: -18.513816
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 methylammonium ... water 1.05
+  shortname: 07_mNH3_wat_1.05
+  geometry: ionic_hbonds:mNH3_wat_1.05
+  reference_value: -18.340936
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 methylammonium ... water 1.10
+  shortname: 07_mNH3_wat_1.10
+  geometry: ionic_hbonds:mNH3_wat_1.10
+  reference_value: -17.872627
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 methylammonium ... water 1.25
+  shortname: 07_mNH3_wat_1.25
+  geometry: ionic_hbonds:mNH3_wat_1.25
+  reference_value: -15.654236
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 methylammonium ... water 1.50
+  shortname: 07_mNH3_wat_1.50
+  geometry: ionic_hbonds:mNH3_wat_1.50
+  reference_value: -11.801675
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 methylammonium ... water 2.00
+  shortname: 07_mNH3_wat_2.00
+  geometry: ionic_hbonds:mNH3_wat_2.00
+  reference_value: -7.033708
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+  separator: "-"
+
+#-------------------------------------------------------------------------------
+# Guanidinium
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 guanidinium ... formaldehyde 0.90
+  shortname: 08_gua_fmdh_0.90
+  geometry: ionic_hbonds:gua_fmdh_0.90
+  reference_value: -16.506221
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 guanidinium ... formaldehyde 0.95
+  shortname: 08_gua_fmdh_0.95
+  geometry: ionic_hbonds:gua_fmdh_0.95
+  reference_value: -17.834082
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 guanidinium ... formaldehyde 1.00
+  shortname: 08_gua_fmdh_1.00
+  geometry: ionic_hbonds:gua_fmdh_1.00
+  group: equilibrium
+  reference_value: -18.089758
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 guanidinium ... formaldehyde 1.05
+  shortname: 08_gua_fmdh_1.05
+  geometry: ionic_hbonds:gua_fmdh_1.05
+  reference_value: -17.721194
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 guanidinium ... formaldehyde 1.10
+  shortname: 08_gua_fmdh_1.10
+  geometry: ionic_hbonds:gua_fmdh_1.10
+  reference_value: -17.006616
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 guanidinium ... formaldehyde 1.25
+  shortname: 08_gua_fmdh_1.25
+  geometry: ionic_hbonds:gua_fmdh_1.25
+  reference_value: -14.206195
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 guanidinium ... formaldehyde 1.50
+  shortname: 08_gua_fmdh_1.50
+  geometry: ionic_hbonds:gua_fmdh_1.50
+  reference_value: -10.182521
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 guanidinium ... formaldehyde 2.00
+  shortname: 08_gua_fmdh_2.00
+  geometry: ionic_hbonds:gua_fmdh_2.00
+  reference_value: -5.927685
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+  separator: " "
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 guanidinium ... methylamine 0.90
+  shortname: 09_gua_mNH2_0.90
+  geometry: ionic_hbonds:gua_mNH2_0.90
+  reference_value: -19.054
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 guanidinium ... methylamine 0.95
+  shortname: 09_gua_mNH2_0.95
+  geometry: ionic_hbonds:gua_mNH2_0.95
+  reference_value: -19.955
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 guanidinium ... methylamine 1.00
+  shortname: 09_gua_mNH2_1.00
+  geometry: ionic_hbonds:gua_mNH2_1.00
+  group: equilibrium
+  reference_value: -20.196
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 guanidinium ... methylamine 1.05
+  shortname: 09_gua_mNH2_1.05
+  geometry: ionic_hbonds:gua_mNH2_1.05
+  reference_value: -19.983
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 guanidinium ... methylamine 1.10
+  shortname: 09_gua_mNH2_1.10
+  geometry: ionic_hbonds:gua_mNH2_1.10
+  reference_value: -19.466
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 guanidinium ... methylamine 1.25
+  shortname: 09_gua_mNH2_1.25
+  geometry: ionic_hbonds:gua_mNH2_1.25
+  reference_value: -17.029
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 guanidinium ... methylamine 1.50
+  shortname: 09_gua_mNH2_1.50
+  geometry: ionic_hbonds:gua_mNH2_1.50
+  reference_value: -12.653
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 guanidinium ... methylamine 2.00
+  shortname: 09_gua_mNH2_2.00
+  geometry: ionic_hbonds:gua_mNH2_2.00
+  reference_value: -7.039
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+  separator: " "
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 guanidinium ... methanol 0.90
+  shortname: 10_gua_mOH_0.90
+  geometry: ionic_hbonds:gua_mOH_0.90
+  reference_value: -18.016851
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 guanidinium ... methanol 0.95
+  shortname: 10_gua_mOH_0.95
+  geometry: ionic_hbonds:gua_mOH_0.95
+  reference_value: -19.489757
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 guanidinium ... methanol 1.00
+  shortname: 10_gua_mOH_1.00
+  geometry: ionic_hbonds:gua_mOH_1.00
+  group: equilibrium
+  reference_value: -19.788015
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 guanidinium ... methanol 1.05
+  shortname: 10_gua_mOH_1.05
+  geometry: ionic_hbonds:gua_mOH_1.05
+  reference_value: -19.388182
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 guanidinium ... methanol 1.10
+  shortname: 10_gua_mOH_1.10
+  geometry: ionic_hbonds:gua_mOH_1.10
+  reference_value: -18.591183
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 guanidinium ... methanol 1.25
+  shortname: 10_gua_mOH_1.25
+  geometry: ionic_hbonds:gua_mOH_1.25
+  reference_value: -15.393779
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 guanidinium ... methanol 1.50
+  shortname: 10_gua_mOH_1.50
+  geometry: ionic_hbonds:gua_mOH_1.50
+  reference_value: -10.694298
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 guanidinium ... methanol 2.00
+  shortname: 10_gua_mOH_2.00
+  geometry: ionic_hbonds:gua_mOH_2.00
+  reference_value: -5.77608
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+  separator: " "
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 guanidinium ... water 0.90
+  shortname: 11_gua_wat_0.90
+  geometry: ionic_hbonds:gua_wat_0.90
+  reference_value: -15.989557
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 guanidinium ... water 0.95
+  shortname: 11_gua_wat_0.95
+  geometry: ionic_hbonds:gua_wat_0.95
+  reference_value: -17.244501
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 guanidinium ... water 1.00
+  shortname: 11_gua_wat_1.00
+  geometry: ionic_hbonds:gua_wat_1.00
+  group: equilibrium
+  reference_value: -17.466766
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 guanidinium ... water 1.05
+  shortname: 11_gua_wat_1.05
+  geometry: ionic_hbonds:gua_wat_1.05
+  reference_value: -17.082962
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 guanidinium ... water 1.10
+  shortname: 11_gua_wat_1.10
+  geometry: ionic_hbonds:gua_wat_1.10
+  reference_value: -16.360528
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 guanidinium ... water 1.25
+  shortname: 11_gua_wat_1.25
+  geometry: ionic_hbonds:gua_wat_1.25
+  reference_value: -13.543699
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 guanidinium ... water 1.50
+  shortname: 11_gua_wat_1.50
+  geometry: ionic_hbonds:gua_wat_1.50
+  reference_value: -9.499162
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 guanidinium ... water 2.00
+  shortname: 11_gua_wat_2.00
+  geometry: ionic_hbonds:gua_wat_2.00
+  reference_value: -5.293443
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+  separator: "-"
+
+#-------------------------------------------------------------------------------
+# Histidine cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 imidazolium ... formaldehyde 0.90
+  shortname: 12_hip_fmdh_0.90
+  geometry: ionic_hbonds:hip_fmdh_0.90
+  reference_value: -15.307
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 imidazolium ... formaldehyde 0.95
+  shortname: 12_hip_fmdh_0.95
+  geometry: ionic_hbonds:hip_fmdh_0.95
+  reference_value: -16.168
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 imidazolium ... formaldehyde 1.00
+  shortname: 12_hip_fmdh_1.00
+  geometry: ionic_hbonds:hip_fmdh_1.00
+  group: equilibrium
+  reference_value: -16.41
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 imidazolium ... formaldehyde 1.05
+  shortname: 12_hip_fmdh_1.05
+  geometry: ionic_hbonds:hip_fmdh_1.05
+  reference_value: -16.241
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 imidazolium ... formaldehyde 1.10
+  shortname: 12_hip_fmdh_1.10
+  geometry: ionic_hbonds:hip_fmdh_1.10
+  reference_value: -15.807
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 imidazolium ... formaldehyde 1.25
+  shortname: 12_hip_fmdh_1.25
+  geometry: ionic_hbonds:hip_fmdh_1.25
+  reference_value: -13.8
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 imidazolium ... formaldehyde 1.50
+  shortname: 12_hip_fmdh_1.50
+  geometry: ionic_hbonds:hip_fmdh_1.50
+  reference_value: -10.4
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 imidazolium ... formaldehyde 2.00
+  shortname: 12_hip_fmdh_2.00
+  geometry: ionic_hbonds:hip_fmdh_2.00
+  reference_value: -6.27
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+  separator: " "
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 imidazolium ... methylamine 0.90
+  shortname: 13_hip_mNH2_0.90
+  geometry: ionic_hbonds:hip_mNH2_0.90
+  reference_value: -24.373
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 imidazolium ... methylamine 0.95
+  shortname: 13_hip_mNH2_0.95
+  geometry: ionic_hbonds:hip_mNH2_0.95
+  reference_value: -25.589
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 imidazolium ... methylamine 1.00
+  shortname: 13_hip_mNH2_1.00
+  geometry: ionic_hbonds:hip_mNH2_1.00
+  group: equilibrium
+  reference_value: -25.977
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 imidazolium ... methylamine 1.05
+  shortname: 13_hip_mNH2_1.05
+  geometry: ionic_hbonds:hip_mNH2_1.05
+  reference_value: -25.784
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 imidazolium ... methylamine 1.10
+  shortname: 13_hip_mNH2_1.10
+  geometry: ionic_hbonds:hip_mNH2_1.10
+  reference_value: -25.19
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 imidazolium ... methylamine 1.25
+  shortname: 13_hip_mNH2_1.25
+  geometry: ionic_hbonds:hip_mNH2_1.25
+  reference_value: -22.178
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 imidazolium ... methylamine 1.50
+  shortname: 13_hip_mNH2_1.50
+  geometry: ionic_hbonds:hip_mNH2_1.50
+  reference_value: -16.478
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 imidazolium ... methylamine 2.00
+  shortname: 13_hip_mNH2_2.00
+  geometry: ionic_hbonds:hip_mNH2_2.00
+  reference_value: -8.892
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+  separator: " "
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 imidazolium ... methanol 0.90
+  shortname: 14_hip_mOH_0.90
+  geometry: ionic_hbonds:hip_mOH_0.90
+  reference_value: -17.542
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 imidazolium ... methanol 0.95
+  shortname: 14_hip_mOH_0.95
+  geometry: ionic_hbonds:hip_mOH_0.95
+  reference_value: -18.583
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 imidazolium ... methanol 1.00
+  shortname: 14_hip_mOH_1.00
+  geometry: ionic_hbonds:hip_mOH_1.00
+  group: equilibrium
+  reference_value: -18.914
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 imidazolium ... methanol 1.05
+  shortname: 14_hip_mOH_1.05
+  geometry: ionic_hbonds:hip_mOH_1.05
+  reference_value: -18.762
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 imidazolium ... methanol 1.10
+  shortname: 14_hip_mOH_1.10
+  geometry: ionic_hbonds:hip_mOH_1.10
+  reference_value: -18.29
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 imidazolium ... methanol 1.25
+  shortname: 14_hip_mOH_1.25
+  geometry: ionic_hbonds:hip_mOH_1.25
+  reference_value: -15.974
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 imidazolium ... methanol 1.50
+  shortname: 14_hip_mOH_1.50
+  geometry: ionic_hbonds:hip_mOH_1.50
+  reference_value: -11.871
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 imidazolium ... methanol 2.00
+  shortname: 14_hip_mOH_2.00
+  geometry: ionic_hbonds:hip_mOH_2.00
+  reference_value: -6.805
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+  separator: " "
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 imidazolium ... water 0.90
+  shortname: 15_hip_wat_0.90
+  geometry: ionic_hbonds:hip_wat_0.90
+  reference_value: -15.214
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 imidazolium ... water 0.95
+  shortname: 15_hip_wat_0.95
+  geometry: ionic_hbonds:hip_wat_0.95
+  reference_value: -16.175
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 imidazolium ... water 1.00
+  shortname: 15_hip_wat_1.00
+  geometry: ionic_hbonds:hip_wat_1.00
+  group: equilibrium
+  reference_value: -16.485
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 imidazolium ... water 1.05
+  shortname: 15_hip_wat_1.05
+  geometry: ionic_hbonds:hip_wat_1.05
+  reference_value: -16.356
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 imidazolium ... water 1.10
+  shortname: 15_hip_wat_1.10
+  geometry: ionic_hbonds:hip_wat_1.10
+  reference_value: -15.941
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 imidazolium ... water 1.25
+  shortname: 15_hip_wat_1.25
+  geometry: ionic_hbonds:hip_wat_1.25
+  reference_value: -13.911
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 imidazolium ... water 1.50
+  shortname: 15_hip_wat_1.50
+  geometry: ionic_hbonds:hip_wat_1.50
+  reference_value: -10.383
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 imidazolium ... water 2.00
+  shortname: 15_hip_wat_2.00
+  geometry: ionic_hbonds:hip_wat_2.00
+  reference_value: -6.101
+  setup:
+    molecule_a:
+      charge: 1
+    molecule_b:
+      charge: 0
+  tags: H-bond cation
+
+
+#===============================================================================
+# Plots
+#===============================================================================
+plots:
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "01 acetate ... methanol"
+  filename: 01_carboxyl_mOH
+  first: 0
+  last: 7
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "02 acetate ... water"
+  filename: 02_carboxyl_wat
+  first: 8
+  last: 15
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "03 acetate ... methylamine"
+  filename: 03_carboxyl_mNH2
+  first: 16
+  last: 23
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "04 methylammonium ... formaldehyde"
+  filename: 04_mNH3_fmdh
+  first: 24
+  last: 31
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "05 methylammonium ... methylamine"
+  filename: 05_mNH3_mNH2
+  first: 32
+  last: 39
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "06 methylammonium ... methanol"
+  filename: 06_mNH3_mOH
+  first: 40
+  last: 47
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "07 methylammonium ... water"
+  filename: 07_mNH3_wat
+  first: 48
+  last: 55
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "08 guanidinium ... formaldehyde"
+  filename: 08_gua_fmdh
+  first: 56
+  last: 63
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "09 guanidinium ... methylamine"
+  filename: 09_gua_mNH2
+  first: 64
+  last: 71
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "10 guanidinium ... methanol"
+  filename: 10_gua_mOH
+  first: 72
+  last: 79
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "11 guanidinium ... water"
+  filename: 11_gua_wat
+  first: 80
+  last: 87
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "12 imidazolium ... formaldehyde"
+  filename: 12_hip_fmdh
+  first: 88
+  last: 95
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "13 imidazolium ... methylamine"
+  filename: 13_hip_mNH2
+  first: 96
+  last: 103
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "14 imidazolium ... methanol"
+  filename: 14_hip_mOH
+  first: 104
+  last: 111
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "15 imidazolium ... water"
+  filename: 15_hip_wat
+  first: 112
+  last: 119
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]

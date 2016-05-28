@@ -1,0 +1,89 @@
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	height: 100%; 
+	max-height: 100%; 
+}
+
+#menu{
+	position: absolute;
+	top: 0;
+	bottom: 0; 
+	left: 0;
+	width: 130px; /*Width of frame div*/
+	height: 100%;
+	overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+	/*background: navy;
+	color: white;*/
+	padding: 20px;
+	padding-left: 40px;
+	border: 0 solid black;
+	/*border-right: 2px solid black;*/
+	border-right: 2px dotted #eee;
+
+	background-image: url('cuby150.png');
+	background-repeat: no-repeat;
+	background-position: 20px 20px;
+	padding-top: 190px;
+
+	font-weight: normal;
+}
+
+#contents{
+	position: fixed;
+	top: 0; 
+	left: 192px; /*Set left value to WidthOfFrameDiv*/
+	right: 0;
+	bottom: 0;
+	overflow: auto; 
+	background: #fff;
+	padding: 20px;
+}
+
+#contents-inner {
+	max-width: 800px;
+	margin-right: auto;
+	margin-bottom: 5em;
+}
+
+#menu a{
+	display: block;
+	text-decoration: none;
+	color: #AA0000;
+}
+
+#menu a:hover{
+	text-decoration: underline;
+}
+
+#menu hr{
+	height: 0;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+#menu .menusection{
+	display: block;
+	margin-top: 1em;
+}
+
+.newsbox {
+	border: 2px solid #AA0000;
+	padding: 0px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.newsbox h3 {
+	margin: 0px;
+	padding: 0.25em;
+	background-color: #AA0000;
+	color: white;
+}
+
+.newsbox p {
+	padding: 0.25em;
+}

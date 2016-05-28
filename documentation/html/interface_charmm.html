@@ -1,0 +1,189 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface charmm</h1>
+<p>
+Interface to the CHARMM molecular dynamics package
+(<a href="http://www.charmm.org">www.charmm.org</a>, commercial software).
+The interface was developed for version c35b3, it have not been tested with other versions of CHARMM.
+</p>
+
+<p>
+Besides performing the MM calculations, the interface also handles the preparation of the calculation from
+a PDB file. This functionality is demonstrated in the following examples.
+The PDB file must be in a format recognized by CHARMM and if it contains residues not
+included in the CHARMM forcefield, additional parameter files have to be provided.
+</p>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>forcefield</li>
+</ul>
+<h4>All the methods support calculation of following properties:</h4>
+<ul>
+<li>energy</li>
+<li>gradient</li>
+<li>atomic_charges</li>
+<li>point_charges</li>
+<li>point_charges_gradient</li>
+</ul>
+<h4>The interface implements following atomic charge types (keyword 'atomic_charges'):</h4>
+<ul>
+<li>forcefield - Forcefield charges</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#charmm_exe">charmm_exe</a></li>
+<li><a href="keywords.html#charmm_exe_mpi">charmm_exe_mpi</a></li>
+<li><a href="keywords.html#charmm_extra_stream_files">charmm_extra_stream_files</a></li>
+<li><a href="keywords.html#charmm_extras">charmm_extras</a></li>
+<li><a href="keywords.html#charmm_extras_gen">charmm_extras_gen</a></li>
+<li><a href="keywords.html#charmm_ff_par">charmm_ff_par</a></li>
+<li><a href="keywords.html#charmm_ff_paths">charmm_ff_paths</a></li>
+<li><a href="keywords.html#charmm_ff_top">charmm_ff_top</a></li>
+<li><a href="keywords.html#charmm_psf_file">charmm_psf_file</a></li>
+<li><a href="keywords.html#charmm_segment_end_patches">charmm_segment_end_patches</a></li>
+<li><a href="keywords.html#charmm_stream_files">charmm_stream_files</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#parallel">parallel</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/charmm/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# CHARMM example 1: Geometry optimization of a peptide
+#===============================================================================
+
+job: optimize
+# Optimization, default setup used
+
+interface: charmm
+# Note: method does not have to be specified,
+# the interface do not implement more methods
+
+geometry: ala-ala-zwitterion.pdb
+# The geometry has to be in PDB format and conform to the conventions used
+# in charmm. It is strongly advised that the PDB is build by charmm.
+
+# For simple systems, such as this dipeptide with standard termini, the PSF
+# file needed for the calculation is generated automatically without any
+# user input. See example 2 for handling non-standard termini of a segment and
+# example 3 for calculations with PSF supplied by the user.
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# (change the paths to match your installation)
+
+# Charmm executable
+charmm_exe: /home/rezac/bin/charmm35/c35b3/exec/gnu/charmm
+# Path(s) to parameter files
+charmm_ff_paths:
+  - /home/rezac/bin/charmm35/c35b3/toppar
+
+# Forcefield to be used
+charmm_ff_top: top_all27_prot_na.rtf
+charmm_ff_par: par_all27_prot_na.prm
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# CHARMM example 2: Patches for peptide chain termini
+#===============================================================================
+
+job: energy
+interface: charmm
+
+geometry: ace-ala-nme.pdb
+# Alanine with acetyl and N-methyl termini.
+
+# To generate the PSF file for such a system, it is necessary to instruct charmm
+# how to patch the termini. This is done for each segment of the PDB separately.
+# In this case, there is only one segment named PEP1:
+charmm_segment_end_patches:
+  PEP1: ACED, CT3
+
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# (change the paths to match your installation)
+
+# Charmm executable
+charmm_exe: /home/rezac/bin/charmm35/c35b3/exec/gnu/charmm
+# Path(s) to parameter files
+charmm_ff_paths:
+  - /home/rezac/bin/charmm35/c35b3/toppar
+
+# Forcefield to be used
+charmm_ff_top: top_all27_prot_na.rtf
+charmm_ff_par: par_all27_prot_na.prm
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# CHARMM example 3: Calculation using an existing PSF file
+#===============================================================================
+
+job: energy
+interface: charmm
+
+geometry: ace-ala-nme.pdb
+# Alanine with acetyl and N-methyl termini, same as in example 2
+
+# To avoid the need for generation of the PSF file, for which additional setup
+# might be needed, it is possible to specify an already prepared PSF file:
+charmm_psf_file: ace-ala-nme.psf 
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# (change the paths to match your installation)
+
+charmm_exe: /Users/honza/bin/CHARMM/c35b3/exec/gnu/charmm
+# Charmm executable
+
+charmm_ff_top: /Users/honza/bin/CHARMM/c35b3/toppar/top_all27_prot_na.rtf
+charmm_ff_par: /Users/honza/bin/CHARMM/c35b3/toppar/par_all27_prot_na.prm
+# Forcefield to be used
+
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

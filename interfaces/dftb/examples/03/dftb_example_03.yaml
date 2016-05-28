@@ -1,0 +1,28 @@
+#===============================================================================
+# DFTB example 3: Use of external point charges
+#===============================================================================
+
+# Geometry optimization of a water molecule in external electric field created
+# by two point charges along the x axis. In the optimization, the molecule
+# aligns with the field.
+
+job: optimize
+opt_quality: 0.1
+
+interface: dftb
+method: scc-dftb
+
+geometry: |
+  O    0.247000000   0.390000000   0.000000000
+  H   -0.075000000   1.292000000   0.000000000
+  H    1.207000000   0.490000000   0.000000000
+
+remove_translation: no
+remove_rotation: no
+# Allow rotation, by default both translational and rotational components of
+# the gradient are removed.
+
+point_charges: |
+  10.0  0.0 0.0   1.0
+  -10.0 0.0 0.0  -1.0
+# A list of point charges, four numbers (x, y, z, charge) per line.

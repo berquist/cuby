@@ -1,0 +1,28 @@
+################################################################################
+# KEYWORDS for the CCSD(T)/CBS interface
+################################################################################
+
+keywords:
+  :extrapolate_cbs_correction: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Use higher-order correction (delta CCSD(T)) added to
+  #: MP2/CBS extrapolated correlation.
+
+  :extrapolate_cbs_grad_mode: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :use_mp2_gradient_components
+    allowed_values:
+      - :use_mp2_gradient_components
+      - :separate_calculations
+  #: Mode of gradient calculation:
+  #* use_mp2_gradient_components - uses four calculations, the MP2 calcuations must yield the gradient components
+  #* separate_calculations - Correlation gradients calculated from separate MP2 and HF calculations
+
+  :extrapolate_cbs_corr_weight: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.0
+  #: Weight of the higher-order correction, 1.0 by default.

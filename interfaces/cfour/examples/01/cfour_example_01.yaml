@@ -1,0 +1,50 @@
+#===============================================================================
+# CFOUR example 1: optimization and vibrational analysis at CCSD(T) level
+#===============================================================================
+
+# Optimization and vibrational frequencies calculation of water molecule
+# at CCSD(T) level (small basis set is used to make the example run fast)
+# CFOUR is one of very few codes that calculate the energy derivatives
+# at CCSD(T) level analytically.
+
+# The Multistep protocl is used to run the optimization and frequency
+# calculations in one input file
+job: multistep
+steps: optimization, frequencies
+
+# Optimization step
+calculation_optimization:
+  job: optimize
+  opt_quality: 0.1
+  geometry: |
+    O   -0.702196054  -0.056060256   0.009942262
+    H   -1.022193224   0.846775782  -0.011488714
+    H    0.257521062   0.042121496   0.005218999
+
+# Frequencies calculation
+calculation_frequencies:
+  job: frequencies
+  geometry: optimized.xyz # Read the optimized geometry from the previous step
+
+#-------------------------------------------------------------------------------
+# Common setup
+#-------------------------------------------------------------------------------
+# The method is the same in both steps, CFOUR interface is used
+
+calculation_common: 
+  # The following setup is shared by all the steps
+  interface: cfour
+  method: ccsd(t)
+  basisset: 6-31G
+  charge: 0
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# Minimal setup needed for serial calculations
+
+# Path to CFOUR binaries
+cfour_bin_dir: /home/rezac/bin/cfour/cfour_v1_64bit/bin
+# Path to the GENBAS file containg basis sets
+cfour_genbas_file: /home/rezac/bin/GENBAS
+  

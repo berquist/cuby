@@ -1,0 +1,36 @@
+#===============================================================================
+# Cuby interface example 1 - dataset calculation
+#===============================================================================
+
+# This example shows how to break a dataset calculation into individual jobs
+# and read their results back into cuby. It is achieved in three steps:
+#
+# 1) Prepare the calculations without running them, using the -p option
+#    that sets the keyword prepare_only:
+#    cuby4 -p yes cuby_example_01.yaml
+#
+# 2) Run all the calculations prepared in step 1 in cuby, e.g. (in bash):
+#    for i in *_CUBY; do cd $i; cuby4 cuby_input.yaml; cd ..; done
+#
+# 3) Run this input again to collect and process the results:
+#    cuby4 cuby_example_01.yaml
+
+# Dataset calculation
+job: dataset
+dataset: A24
+
+# When results (in this case calculated externally) are found,
+# read them instead of running the calculation.
+existing_calc_dir: read_results
+job_cleanup: no
+
+# Cuby interface is used as an intermediate layer between
+# the protocol and the calculation itself. This allows us to prepare
+# the child calculations as cuby inputs.
+interface: cuby
+
+# The calculation is defined in a separate block
+calculation:
+  interface: mopac
+  method: pm6
+

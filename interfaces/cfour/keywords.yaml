@@ -1,0 +1,46 @@
+################################################################################
+# KEYWORDS for interface CFOUR
+################################################################################
+
+keywords:
+  :cfour_genbas_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "GENBAS"
+  #: Cfour basis set file. It uses ACES2 format and is usually named GENBAS.
+
+  :cfour_keywords: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Add extra keywords (in the CFOUR input format) to the input file
+
+  :cfour_force_mrcc: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Use MRCC even for CCSD(T)
+
+  :cfour_bin_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  # Path to the directory with serial cfour executables
+
+  :cfour_bin_dir_mpi: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  # Path to the directory with parallel cfour executables
+
+  :cfour_ld_path: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to libraries used by CFOUR, added to LD_LIBRARY_PATH before the
+  #: program is executed.
+  
+  :cfour_mrcc_bin_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  # Path to the directory with mrcc executables

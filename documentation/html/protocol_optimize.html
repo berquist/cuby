@@ -1,0 +1,196 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol optimize</h1>
+<p>
+This protocol implements geometry optimization. There is a lot of options provided but the default setup
+was tuned to provide good results in almost any system.
+</p>
+
+<h2>Default setup</h2>
+<p>
+The default setup is applicable to wide range of systems - the only adjustment needed might
+be setting the convergence thersholds using the <a href="keywords.html#opt_quality">opt_quality</a>
+keyword. The default value of 1.0 is reasonable for common optimization of rigid molecules, for flexible systems
+or non-covalent interactions, tighter convergence criteria are needed for obtaining accurate geometroies. It is recommended to set the <a href="keywords.html#opt_quality">opt_quality</a> to 0.1.
+</p>
+
+<h2>Coordinate systems</h2>
+<p>
+The protocol implements optimization in Cartesian (default), redundant internal and <a href="z-matrix.html">z-matrix</a> coordinates.
+Only the optimization in Cartesian coordinates should be considered stable and robust, the internal coordinates
+are under development and often fail in some cases.
+</p>
+<p>
+Cuby can now build z-matrix automatically from cartesian coordinates but it is not guaranteed that the generated z-matrix will work well for optimization. The use of z-matrices is thus recommended only for cases where user-supplied z-matrix is used. The advantage of z-matrices is that it is easily possible to optimize only <a href="z-matrix.html#partial_opt">specified internal coordinates</a>.
+</p>
+
+<h2>Parallel optimizer P-LBFGS</h2>
+<p>
+Cuby implements the P-LBFGS algorithm[1] that can accelerate the convergence of the optimization by calculating
+multiple points in parallel in each step. For details, refer to teh example below an to the original paper.[1]
+To use the optimizer, it is necessary to complile the linear algebra extension with a support of the UMFPACK
+library, the details are described on the page on <a href="installation.html">installation</a>.
+</p>
+
+<h2>References</h2>
+<ol>
+	<li><a href="http://dx.doi.org/10.1016/j.cplett.2013.08.050">Klemsa, J.; Řezáč, J. Chemical Physics Letters 2013, 584, 10–13.</a></li>
+</ol>
+
+
+<h2>Keywords used</h2>
+<h4>Keywords specific for this protocol:</h4>
+<ul>
+<li><a href="keywords.html#coordinates">coordinates</a></li>
+<li><a href="keywords.html#hessian_estimate">hessian_estimate</a></li>
+<li><a href="keywords.html#history_file">history_file</a></li>
+<li><a href="keywords.html#history_freq">history_freq</a></li>
+<li><a href="keywords.html#history_selection">history_selection</a></li>
+<li><a href="keywords.html#init_hessian_lookup_file">init_hessian_lookup_file</a></li>
+<li><a href="keywords.html#lbfgs_n">lbfgs_n</a></li>
+<li><a href="keywords.html#linesearch">linesearch</a></li>
+<li><a href="keywords.html#maxcycles">maxcycles</a></li>
+<li><a href="keywords.html#opt_auto_restart">opt_auto_restart</a></li>
+<li><a href="keywords.html#opt_convlimit_e">opt_convlimit_e</a></li>
+<li><a href="keywords.html#opt_convlimit_max_g">opt_convlimit_max_g</a></li>
+<li><a href="keywords.html#opt_convlimit_rms_g">opt_convlimit_rms_g</a></li>
+<li><a href="keywords.html#opt_diagonal_h0">opt_diagonal_h0</a></li>
+<li><a href="keywords.html#opt_freeze_cartesian">opt_freeze_cartesian</a></li>
+<li><a href="keywords.html#opt_qn_update_formula">opt_qn_update_formula</a></li>
+<li><a href="keywords.html#opt_quality">opt_quality</a></li>
+<li><a href="keywords.html#opt_refuse_steps">opt_refuse_steps</a></li>
+<li><a href="keywords.html#opt_tr_mode">opt_tr_mode</a></li>
+<li><a href="keywords.html#opt_tr_update">opt_tr_update</a></li>
+<li><a href="keywords.html#opt_tr_update">opt_tr_update</a></li>
+<li><a href="keywords.html#optimize_print">optimize_print</a></li>
+<li><a href="keywords.html#optimize_region">optimize_region</a></li>
+<li><a href="keywords.html#optimizer">optimizer</a></li>
+<li><a href="keywords.html#plbfgs_colors">plbfgs_colors</a></li>
+<li><a href="keywords.html#plbfgs_init_d">plbfgs_init_d</a></li>
+<li><a href="keywords.html#redcoord_all_torsions">redcoord_all_torsions</a></li>
+<li><a href="keywords.html#redcoord_extra_contacts">redcoord_extra_contacts</a></li>
+<li><a href="keywords.html#redcoord_freeze_class">redcoord_freeze_class</a></li>
+<li><a href="keywords.html#remove_rotation">remove_rotation</a></li>
+<li><a href="keywords.html#remove_translation">remove_translation</a></li>
+<li><a href="keywords.html#restart_file">restart_file</a></li>
+<li><a href="keywords.html#restart_file_append">restart_file_append</a></li>
+<li><a href="keywords.html#trust_radius">trust_radius</a></li>
+<li><a href="keywords.html#trust_radius_max">trust_radius_max</a></li>
+<li><a href="keywords.html#trust_radius_min">trust_radius_min</a></li>
+</ul>
+<h4>Other keywords used by this protocol:</h4>
+<ul>
+<li><a href="keywords.html#development">development</a></li>
+<li><a href="keywords.html#hessian_read">hessian_read</a></li>
+<li><a href="keywords.html#pdb_extra_columns">pdb_extra_columns</a></li>
+<li><a href="keywords.html#print">print</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/optimize/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Optimize protocol example 1 - basic input
+#===============================================================================
+
+# Simple geometry optimization of benzene dimer from the S66 data set
+# The calculation produces these additional files:
+# 1) optimized.xyz - the optimized geometry
+# 2) history_optimize_example_01.xyz - record of all the steps
+
+job: optimize
+
+# This keyword scales all the three convergence thresholds. The default value,
+# 1.0, might not yield accurate enough geometry because the potential of
+# the intermolecular interaction in benzene dimer is rather weak and flat.
+opt_quality: 0.1
+
+# Geometry from the database
+geometry: S66:benzene_dimer_stack
+
+# Calculation
+interface: dftb
+method: scc-dftb
+dftb_dispersion: yes
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Optimize protocol example 2 - Partial optimization
+#===============================================================================
+
+# Only a part of the system can be optimized, in this case we optimize just
+# some residues in a peptide chain.
+
+job: optimize
+
+geometry: PDB:1AQG # PDB from Cuby's internal database of small peptides
+
+# Optimize only residues no. 5 and 6
+optimize_region: ":5,6"
+# Any selection can be used, use the following to optimize only hydrogens in
+# the peptide:
+#optimize_region: "@H"
+
+# Calculation - MM in Amber, default setup
+interface: amber
+
+# Save the optimized geometry in PDB format
+restart_file: optimized.pdb
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Optimize protocol example 3 - parallel optimizer P-LBFGS
+#===============================================================================
+
+# This example demonstrates the use of the parallel optimizer P-LBFGS
+
+job: optimize
+opt_quality: 0.1
+
+geometry: ace-ala-nme.pdb # ACE-ALA-NME peptide
+
+# Parallel optimizer setup
+optimizer: plbfgs
+linesearch: cubic # The optimizer was designed to be used with a linesearch
+plbfgs_colors: 1 # One 'color' per step, results into 4 calculations / step
+cuby_threads: 4 # Run those 4 calculations in parallel
+
+# Calculation - MM in Amber, default setup
+interface: amber
+
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

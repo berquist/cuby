@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface numerical_gradient</h1>
+<p>
+Numerical gradient calculation by finite differences - provides gradient for methods for which analytic gradient is not available.
+</p>
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Input structure</h2>
+<h4>The interface requires following blocks in the input:</h4>
+<ul>
+<li>calculation - Setup of the actual calculation</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#numerical_gradient_atomic_charges">numerical_gradient_atomic_charges</a></li>
+<li><a href="keywords.html#numerical_gradient_step">numerical_gradient_step</a></li>
+<li><a href="keywords.html#numerical_gradient_type">numerical_gradient_type</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/numerical_gradient/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Numerical gradient example 1 - optimization with numerical gradient
+#===============================================================================
+
+# Optimize water molecule
+job: optimize
+opt_quality: 0.1
+geometry: A24:water
+
+# Use numerical gradient
+interface: numerical_gradient
+
+# This block is used to evaluate energy of each point needed for the
+# construction of the gradient:
+calculation:
+  interface: mopac
+  method: AM1
+  charge: 0
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Numerical gradient example 2 - comparison of analytical and numerical gradient
+#===============================================================================
+
+# Prints the difference between numerical and analytical gradient.
+
+# Calculate and print gradient
+job: gradient
+
+# Water molecule from A24 database
+geometry: A24:water
+
+# Here, advanced YAML syntax is used to define the calculation setup once
+# and use it at multiple places later
+shared_calc: &calc
+  interface: mopac
+  method: pm6
+  charge: 0
+
+# The Mixer interface is used to calculate the differnce
+interface: mixer
+mixer_weight_a: 1.0
+mixer_weight_b: -1.0
+
+# Numerical gradient calculation
+calculation_a:
+  interface: numerical_gradient
+  calculation:
+    <<: *calc # This loads the named block defined above
+
+# Analytical gradient directly from Mopac
+calculation_b:
+  <<: *calc # This loads the named block defined above
+  mopac_precise: yes # Ask mopac to yield more accurate gradient
+
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

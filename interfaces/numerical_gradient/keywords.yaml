@@ -1,0 +1,28 @@
+################################################################################
+# KEYWORDS for interface Numerical Gradient
+################################################################################
+
+keywords:
+  :numerical_gradient_step: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.0025
+  
+  :numerical_gradient_type: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :central
+    allowed_values:
+      - :single_sided
+      - :central
+      - :tetrahedral
+  #: Number of points per atom used for numerical differentiation:
+  #* single_sided - 3 points, least robust
+  #* central - 6 points, most accurate
+  #* tetrahedral - 4 points
+
+  :numerical_gradient_atomic_charges: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Optional calculation of the derivatives of the atomic charges.

@@ -1,0 +1,35 @@
+#===============================================================================
+# CHARMM example 1: Geometry optimization of a peptide
+#===============================================================================
+
+job: optimize
+# Optimization, default setup used
+
+interface: charmm
+# Note: method does not have to be specified,
+# the interface do not implement more methods
+
+geometry: ala-ala-zwitterion.pdb
+# The geometry has to be in PDB format and conform to the conventions used
+# in charmm. It is strongly advised that the PDB is build by charmm.
+
+# For simple systems, such as this dipeptide with standard termini, the PSF
+# file needed for the calculation is generated automatically without any
+# user input. See example 2 for handling non-standard termini of a segment and
+# example 3 for calculations with PSF supplied by the user.
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# (change the paths to match your installation)
+
+# Charmm executable
+charmm_exe: /home/rezac/bin/charmm35/c35b3/exec/gnu/charmm
+# Path(s) to parameter files
+charmm_ff_paths:
+  - /home/rezac/bin/charmm35/c35b3/toppar
+
+# Forcefield to be used
+charmm_ff_top: top_all27_prot_na.rtf
+charmm_ff_par: par_all27_prot_na.prm
+

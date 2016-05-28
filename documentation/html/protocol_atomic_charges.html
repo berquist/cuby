@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol atomic_charges</h1>
+<p>This protocol implements a calculation of atomic charges (this fucntionality must be supported by the <a href="interfaces.html">interface</a> used)</p>
+
+<p>In addition to the individual charges, their sums over user-defined fragments can be printed if the defintion of the fragments is presented in the input (see the example).</p>
+
+<h2>Input structure</h2>
+<h4>Optionally, following blocks can be defined in the input:</h4>
+<ul>
+<li>fragment_N - Blocks defining fragments, N=(1..X)</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this protocol:</h4>
+<ul>
+<li><a href="keywords.html#atomic_charges_write">atomic_charges_write</a></li>
+<li><a href="keywords.html#atomic_charges_write_pch">atomic_charges_write_pch</a></li>
+</ul>
+<h4>Other keywords used by this protocol:</h4>
+<ul>
+<li><a href="keywords.html#print">print</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/atomic_charges/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Atomic charges protocol example
+#===============================================================================
+
+job: atomic_charges
+
+# System specification
+geometry: S66:water_dimer # Water dimer from the built-in S66 data set
+charge: 0
+
+# Method of calculation - the interface and must support the calculation 
+# of atomic charges.
+interface: turbomole
+method: hf
+basisset: SVP
+
+# Type of charges (some interfaces support multiple options)
+atomic_charges: mulliken
+
+# Optional defintion of the fragments - in this case the individual molecules
+# in the dimer
+fragment_1:
+  selection: "1-3"
+fragment_2:
+  selection: "4-6"
+</code></pre></div>
+<p>Produces output:</p>
+<div class="ex_output"><pre>        _______  
+       /\______\ 
+      / /      / 
+     / / Cuby /   Atomic charges calculation
+     \/______/   
+                 
+Energy: -95338.454957 kcal/mol
+
+Atomic charges (Mulliken charges):
+   O   -0.3880
+   H    0.1645
+   H    0.1815
+   O   -0.3392
+   H    0.1906
+   H    0.1906
+
+Charge on fragments:
+   1   -0.0420
+   2    0.0420
+
+</pre></div>
+		</div>
+		</div>
+	</body>
+</html>

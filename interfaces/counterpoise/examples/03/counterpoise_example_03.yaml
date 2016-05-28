@@ -1,0 +1,23 @@
+#===============================================================================
+# Counterpoise example 3: vibrational frequencies
+#===============================================================================
+
+# Counterpoise-corrected harmonic vibrational frequencies
+job: frequencies
+interface: counterpoise
+
+# Run three calculations in parallel
+cuby_threads: 3
+
+# The calculation method has to be specified in a separate block,
+# note that the keyword "job" is not present
+calculation:
+  interface: turbomole
+  density_fitting: none # Turbomole's RI has to be disabled for hessian calculations
+  method: HF
+  basisset: SVP
+  scf_convergence: 8
+
+# Geometry from previous example
+geometry: optimized.xyz
+charge: 0

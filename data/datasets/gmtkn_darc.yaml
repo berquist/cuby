@@ -1,0 +1,209 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_DARC
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "reaction energies of Diels−Alder reactions"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_DARC:ethene"
+  reference_value: -43.8
+  setup:
+    reaction_formula: "1 g_ethene + 1 g_butadiene -> 1 g_P1"
+    reaction_geometries:
+      g_ethene: gmtkn_DARC:ethene
+      g_butadiene: gmtkn_DARC:butadiene
+      g_P1: gmtkn_DARC:P1
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_DARC:ethine"
+  reference_value: -59.3
+  setup:
+    reaction_formula: "1 g_ethine + 1 g_butadiene -> 1 g_P2"
+    reaction_geometries:
+      g_ethine: gmtkn_DARC:ethine
+      g_butadiene: gmtkn_DARC:butadiene
+      g_P2: gmtkn_DARC:P2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_DARC:ethene"
+  reference_value: -30.0
+  setup:
+    reaction_formula: "1 g_ethene + 1 g_cpdiene -> 1 g_P3"
+    reaction_geometries:
+      g_ethene: gmtkn_DARC:ethene
+      g_cpdiene: gmtkn_DARC:cpdiene
+      g_P3: gmtkn_DARC:P3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_DARC:ethine"
+  reference_value: -33.1
+  setup:
+    reaction_formula: "1 g_ethine + 1 g_cpdiene -> 1 g_P4"
+    reaction_geometries:
+      g_ethine: gmtkn_DARC:ethine
+      g_cpdiene: gmtkn_DARC:cpdiene
+      g_P4: gmtkn_DARC:P4
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_DARC:ethene"
+  reference_value: -36.5
+  setup:
+    reaction_formula: "1 g_ethene + 1 g_chdiene -> 1 g_P5"
+    reaction_geometries:
+      g_ethene: gmtkn_DARC:ethene
+      g_chdiene: gmtkn_DARC:chdiene
+      g_P5: gmtkn_DARC:P5
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_DARC:ethine"
+  reference_value: -48.2
+  setup:
+    reaction_formula: "1 g_ethine + 1 g_chdiene -> 1 g_P6"
+    reaction_geometries:
+      g_ethine: gmtkn_DARC:ethine
+      g_chdiene: gmtkn_DARC:chdiene
+      g_P6: gmtkn_DARC:P6
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_DARC:furane"
+  reference_value: -14.4
+  setup:
+    reaction_formula: "1 g_furane + 1 g_malein -> 1 g_P7"
+    reaction_geometries:
+      g_furane: gmtkn_DARC:furane
+      g_malein: gmtkn_DARC:malein
+      g_P7: gmtkn_DARC:P7
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_DARC:furane"
+  reference_value: -16.2
+  setup:
+    reaction_formula: "1 g_furane + 1 g_malein -> 1 g_P7X"
+    reaction_geometries:
+      g_furane: gmtkn_DARC:furane
+      g_malein: gmtkn_DARC:malein
+      g_P7X: gmtkn_DARC:P7X
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_DARC:furane"
+  reference_value: -17.2
+  setup:
+    reaction_formula: "1 g_furane + 1 g_maleinNH -> 1 g_P8"
+    reaction_geometries:
+      g_furane: gmtkn_DARC:furane
+      g_maleinNH: gmtkn_DARC:maleinNH
+      g_P8: gmtkn_DARC:P8
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_DARC:furane"
+  reference_value: -19.2
+  setup:
+    reaction_formula: "1 g_furane + 1 g_maleinNH -> 1 g_P8X"
+    reaction_geometries:
+      g_furane: gmtkn_DARC:furane
+      g_maleinNH: gmtkn_DARC:maleinNH
+      g_P8X: gmtkn_DARC:P8X
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_DARC:cpdiene"
+  reference_value: -31.6
+  setup:
+    reaction_formula: "1 g_cpdiene + 1 g_malein -> 1 g_P9"
+    reaction_geometries:
+      g_cpdiene: gmtkn_DARC:cpdiene
+      g_malein: gmtkn_DARC:malein
+      g_P9: gmtkn_DARC:P9
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "12"
+  shortname: "12"
+  geometry: "gmtkn_DARC:cpdiene"
+  reference_value: -32.1
+  setup:
+    reaction_formula: "1 g_cpdiene + 1 g_malein -> 1 g_P9X"
+    reaction_geometries:
+      g_cpdiene: gmtkn_DARC:cpdiene
+      g_malein: gmtkn_DARC:malein
+      g_P9X: gmtkn_DARC:P9X
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "13"
+  shortname: "13"
+  geometry: "gmtkn_DARC:cpdiene"
+  reference_value: -34.1
+  setup:
+    reaction_formula: "1 g_cpdiene + 1 g_maleinNH -> 1 g_P10"
+    reaction_geometries:
+      g_cpdiene: gmtkn_DARC:cpdiene
+      g_maleinNH: gmtkn_DARC:maleinNH
+      g_P10: gmtkn_DARC:P10
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "14"
+  shortname: "14"
+  geometry: "gmtkn_DARC:cpdiene"
+  reference_value: -34.4
+  setup:
+    reaction_formula: "1 g_cpdiene + 1 g_maleinNH -> 1 g_P10X"
+    reaction_geometries:
+      g_cpdiene: gmtkn_DARC:cpdiene
+      g_maleinNH: gmtkn_DARC:maleinNH
+      g_P10X: gmtkn_DARC:P10X
+  tags: ""
+

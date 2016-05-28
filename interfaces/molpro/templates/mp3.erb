@@ -1,0 +1,9 @@
+<%# MP3 calculation %>
+<%
+	extras = ";THRESH,THRDEN=1.0d-#{@settings[:correlation_convergence]}"
+	extras << ";CORE,0" if !@settings[:correlation_frozen_core]
+%>
+
+{mp3<%= extras %>}
+ENERGYMP2=EMP2-ENERGYSCF
+ENERGYMP3=EMP3-ENERGYSCF

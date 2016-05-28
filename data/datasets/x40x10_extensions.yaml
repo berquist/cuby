@@ -1,0 +1,145 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Data set description
+#===============================================================================
+
+# Unpublished extensions of X40x10
+# Interaction energies:
+# CCSD(T)/CBS, frozen core, counterpoise-corrected
+# MP2 extrapolation from aug-cc-pVTZ(-PP for Br and I) and aug-cc-pVQZ(-PP)
+# dCCSD(T) in aug-cc-pVDZ(-PP for Br and I)
+# Geometries:
+# MP2/cc-pVTZ(-PP), counterpoise corrected
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: "X40x10_extensions"
+  references: 
+    "N/A": "Unpublished results"
+  text: "Extensions of the X40 data set"
+
+  groups:
+    - dispersion
+    - induction
+    - dipole_dipole
+    - stack
+    - X-bond
+    - X-pi
+    - H-bond
+  global_setup:
+    job: interaction
+    molecule_a:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+    molecule_b:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items:
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 41 CH3Cl ... ben 0.80
+  shortname: 41_CH3Cl-ben_0.80
+  geometry: X40x10_extensions:41_0.80
+  reference_value: 5.493
+  setup: {}
+  group: X-pi
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 41 CH3Cl ... ben 0.85
+  shortname: 41_CH3Cl-ben_0.85
+  geometry: X40x10_extensions:41_0.85
+  reference_value: 1.815
+  setup: {}
+  group: X-pi
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 41 CH3Cl ... ben 0.90
+  shortname: 41_CH3Cl-ben_0.90
+  geometry: X40x10_extensions:41_0.90
+  reference_value: -0.065
+  setup: {}
+  group: X-pi
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 41 CH3Cl ... ben 0.95
+  shortname: 41_CH3Cl-ben_0.95
+  geometry: X40x10_extensions:41_0.95
+  reference_value: -0.916
+  setup: {}
+  group: X-pi
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 41 CH3Cl ... ben 1.00
+  shortname: 41_CH3Cl-ben_1.00
+  geometry: X40x10_extensions:41_1.00
+  reference_value: -1.207
+  setup: {}
+  group: X-pi
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 41 CH3Cl ... ben 1.05
+  shortname: 41_CH3Cl-ben_1.05
+  geometry: X40x10_extensions:41_1.05
+  reference_value: -1.214
+  setup: {}
+  group: X-pi
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 41 CH3Cl ... ben 1.10
+  shortname: 41_CH3Cl-ben_1.10
+  geometry: X40x10_extensions:41_1.10
+  reference_value: -1.091
+  setup: {}
+  group: X-pi
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 41 CH3Cl ... ben 1.25
+  shortname: 41_CH3Cl-ben_1.25
+  geometry: X40x10_extensions:41_1.25
+  reference_value: -0.593
+  setup: {}
+  group: X-pi
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 41 CH3Cl ... ben 1.50
+  shortname: 41_CH3Cl-ben_1.50
+  geometry: X40x10_extensions:41_1.50
+  reference_value: -0.131
+  setup: {}
+  group: X-pi
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 41 CH3Cl ... ben 2.00
+  shortname: 41_CH3Cl-ben_2.00
+  geometry: X40x10_extensions:41_2.00
+  reference_value: 0.039
+  setup: {}
+  group: X-pi
+  tags: "chlorine"
+
+#===============================================================================
+# Plots
+#===============================================================================
+
+plots:
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "41 CH3Cl ... ben"
+  filename: 41_CH3Cl-ben
+  first: 0
+  last: 9
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+

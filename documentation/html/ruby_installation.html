@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Installing Ruby</h1>
+
+<p>
+It is preferred to use the default Ruby interpreter provided with the system. Ruby is in the
+repositories of all common linux distributions and can be installed easily using their package manager.
+When installing Ruby this way, install also the interactive Ruby shell "irb" and the development package for Ruby. On a Debian-based linux distribution, the three packages needed are "ruby", "irb" and "ruby-dev".
+</p>
+
+<p>
+However, on computers where it is not available (or when newer version is
+needed), it is possible to install Ruby in user space.
+</p>
+
+<h2>Usig Ruby Version Manager (RVM)</h2>
+
+<p>The most convenient way to install Ruby is to use the Ruby Version Manager
+(RVM). Here are the commands needed for basic installation that attempts to
+install also the dependencies.
+<p>First, install RVM according to the insructions at the font page at <a href="https://rvm.io/">rvm.io</a></p> 
+<p>Second, to install Ruby 1.9.3 with all the dependencies in the user space, use the following commands:</p>
+
+<pre><code>source ~/.rvm/scripts/rvm
+rvm install --autolibs=rvm_pkg 1.9.3
+rvm --default use 1.9.3</code></pre>
+
+<p>
+To load RVM automatically on login, add the following line to your .bashrc (or do the equivalent in your shell if you are not using Bash):
+</p>
+<pre><code>source ~/.rvm/scripts/rvm</code></pre>
+
+<p>If this fails, refer to the documentation at <a href="https://rvm.io">RVM website</a>. You can also try compiling Ruby yourself from the <a href="https://www.ruby-lang.org/en/downloads/">source code</a>.</p>
+
+		</div>
+		</div>
+	</body>
+</html>

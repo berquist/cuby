@@ -1,0 +1,357 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_BHPERI
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "barrier heights of pericyclic reactions"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_BHPERI:Cyclobutene"
+  reference_value: 35.34
+  setup:
+    reaction_formula: "1 g_Cyclobutene -> 1 g_TS1"
+    reaction_geometries:
+      g_Cyclobutene: gmtkn_BHPERI:Cyclobutene
+      g_TS1: gmtkn_BHPERI:TS1
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_BHPERI:cis-1,3,5-Hexatriene"
+  reference_value: 30.92
+  setup:
+    reaction_formula: "1 g_cis-1,3,5-Hexatriene -> 1 g_TS2"
+    reaction_geometries:
+      g_cis-1,3,5-Hexatriene: gmtkn_BHPERI:cis-1,3,5-Hexatriene
+      g_TS2: gmtkn_BHPERI:TS2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_BHPERI:ortho-xylylene"
+  reference_value: 28.30
+  setup:
+    reaction_formula: "1 g_ortho-xylylene -> 1 g_TS3"
+    reaction_geometries:
+      g_ortho-xylylene: gmtkn_BHPERI:ortho-xylylene
+      g_TS3: gmtkn_BHPERI:TS3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_BHPERI:1,3-Pentadiene"
+  reference_value: 39.56
+  setup:
+    reaction_formula: "1 g_1,3-Pentadiene -> 1 g_TS4"
+    reaction_geometries:
+      g_1,3-Pentadiene: gmtkn_BHPERI:1,3-Pentadiene
+      g_TS4: gmtkn_BHPERI:TS4
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_BHPERI:1,3-Cyclopentadiene"
+  reference_value: 28.18
+  setup:
+    reaction_formula: "1 g_1,3-Cyclopentadiene -> 1 g_TS5"
+    reaction_geometries:
+      g_1,3-Cyclopentadiene: gmtkn_BHPERI:1,3-Cyclopentadiene
+      g_TS5: gmtkn_BHPERI:TS5
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_BHPERI:1,5-Hexadiene"
+  reference_value: 35.64
+  setup:
+    reaction_formula: "1 g_1,5-Hexadiene -> 1 g_TS6"
+    reaction_geometries:
+      g_1,5-Hexadiene: gmtkn_BHPERI:1,5-Hexadiene
+      g_TS6: gmtkn_BHPERI:TS6
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_BHPERI:1,3-Butadiene"
+  reference_value: 22.14
+  setup:
+    reaction_formula: "1 g_1,3-Butadiene + 1 g_Ethylene -> 1 g_TS7"
+    reaction_geometries:
+      g_1,3-Butadiene: gmtkn_BHPERI:1,3-Butadiene
+      g_Ethylene: gmtkn_BHPERI:Ethylene
+      g_TS7: gmtkn_BHPERI:TS7
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_BHPERI:1,3-Cyclopentadiene"
+  reference_value: 18.26
+  setup:
+    reaction_formula: "1 g_1,3-Cyclopentadiene + 1 g_Ethylene -> 1 g_TS8"
+    reaction_geometries:
+      g_1,3-Cyclopentadiene: gmtkn_BHPERI:1,3-Cyclopentadiene
+      g_Ethylene: gmtkn_BHPERI:Ethylene
+      g_TS8: gmtkn_BHPERI:TS8
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_BHPERI:1,3-Cyclopentadiene"
+  reference_value: 9.80
+  setup:
+    reaction_formula: "2 g_1,3-Cyclopentadiene -> 1 g_TS11"
+    reaction_geometries:
+      g_1,3-Cyclopentadiene: gmtkn_BHPERI:1,3-Cyclopentadiene
+      g_TS11: gmtkn_BHPERI:TS11
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_BHPERI:Cis-triscyclopropacyclohexane"
+  reference_value: 23.55
+  setup:
+    reaction_formula: "1 g_Cis-triscyclopropacyclohexane -> 1 g_TS9"
+    reaction_geometries:
+      g_Cis-triscyclopropacyclohexane: gmtkn_BHPERI:Cis-triscyclopropacyclohexane
+      g_TS9: gmtkn_BHPERI:TS9
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_BHPERI:13r_1"
+  reference_value: 26.3
+  setup:
+    reaction_formula: "1 g_13r_1 + 1 g_13_c2h4 -> 1 g_13ts_1a"
+    reaction_geometries:
+      g_13r_1: gmtkn_BHPERI:13r_1
+      g_13_c2h4: gmtkn_BHPERI:13_c2h4
+      g_13ts_1a: gmtkn_BHPERI:13ts_1a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "12"
+  shortname: "12"
+  geometry: "gmtkn_BHPERI:13r_2"
+  reference_value: 18.1
+  setup:
+    reaction_formula: "1 g_13r_2 + 1 g_13_c2h4 -> 1 g_13ts_2a"
+    reaction_geometries:
+      g_13r_2: gmtkn_BHPERI:13r_2
+      g_13_c2h4: gmtkn_BHPERI:13_c2h4
+      g_13ts_2a: gmtkn_BHPERI:13ts_2a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "13"
+  shortname: "13"
+  geometry: "gmtkn_BHPERI:13r_3"
+  reference_value: 12.2
+  setup:
+    reaction_formula: "1 g_13r_3 + 1 g_13_c2h4 -> 1 g_13ts_3a"
+    reaction_geometries:
+      g_13r_3: gmtkn_BHPERI:13r_3
+      g_13_c2h4: gmtkn_BHPERI:13_c2h4
+      g_13ts_3a: gmtkn_BHPERI:13ts_3a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "14"
+  shortname: "14"
+  geometry: "gmtkn_BHPERI:13r_4"
+  reference_value: 11.1
+  setup:
+    reaction_formula: "1 g_13r_4 + 1 g_13_c2h4 -> 1 g_13ts_4a"
+    reaction_geometries:
+      g_13r_4: gmtkn_BHPERI:13r_4
+      g_13_c2h4: gmtkn_BHPERI:13_c2h4
+      g_13ts_4a: gmtkn_BHPERI:13ts_4a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "15"
+  shortname: "15"
+  geometry: "gmtkn_BHPERI:13r_5"
+  reference_value: 5.3
+  setup:
+    reaction_formula: "1 g_13r_5 + 1 g_13_c2h4 -> 1 g_13ts_5a"
+    reaction_geometries:
+      g_13r_5: gmtkn_BHPERI:13r_5
+      g_13_c2h4: gmtkn_BHPERI:13_c2h4
+      g_13ts_5a: gmtkn_BHPERI:13ts_5a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "16"
+  shortname: "16"
+  geometry: "gmtkn_BHPERI:13r_6"
+  reference_value: 4.0
+  setup:
+    reaction_formula: "1 g_13r_6 + 1 g_13_c2h4 -> 1 g_13ts_6a"
+    reaction_geometries:
+      g_13r_6: gmtkn_BHPERI:13r_6
+      g_13_c2h4: gmtkn_BHPERI:13_c2h4
+      g_13ts_6a: gmtkn_BHPERI:13ts_6a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "17"
+  shortname: "17"
+  geometry: "gmtkn_BHPERI:13r_7"
+  reference_value: 11.5
+  setup:
+    reaction_formula: "1 g_13r_7 + 1 g_13_c2h4 -> 1 g_13ts_7a"
+    reaction_geometries:
+      g_13r_7: gmtkn_BHPERI:13r_7
+      g_13_c2h4: gmtkn_BHPERI:13_c2h4
+      g_13ts_7a: gmtkn_BHPERI:13ts_7a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "18"
+  shortname: "18"
+  geometry: "gmtkn_BHPERI:13r_8"
+  reference_value: 4.0
+  setup:
+    reaction_formula: "1 g_13r_8 + 1 g_13_c2h4 -> 1 g_13ts_8a"
+    reaction_geometries:
+      g_13r_8: gmtkn_BHPERI:13r_8
+      g_13_c2h4: gmtkn_BHPERI:13_c2h4
+      g_13ts_8a: gmtkn_BHPERI:13ts_8a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "19"
+  shortname: "19"
+  geometry: "gmtkn_BHPERI:13r_9"
+  reference_value: -1.4
+  setup:
+    reaction_formula: "1 g_13r_9 + 1 g_13_c2h4 -> 1 g_13ts_9a"
+    reaction_geometries:
+      g_13r_9: gmtkn_BHPERI:13r_9
+      g_13_c2h4: gmtkn_BHPERI:13_c2h4
+      g_13ts_9a: gmtkn_BHPERI:13ts_9a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "20"
+  shortname: "20"
+  geometry: "gmtkn_BHPERI:02r"
+  reference_value: 14.98367
+  setup:
+    reaction_formula: "1 g_02r + 1 g_00r -> 1 g_02ts"
+    reaction_geometries:
+      g_02r: gmtkn_BHPERI:02r
+      g_00r: gmtkn_BHPERI:00r
+      g_02ts: gmtkn_BHPERI:02ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "21"
+  shortname: "21"
+  geometry: "gmtkn_BHPERI:03r"
+  reference_value: 13.52973
+  setup:
+    reaction_formula: "1 g_03r + 1 g_00r -> 1 g_03ts"
+    reaction_geometries:
+      g_03r: gmtkn_BHPERI:03r
+      g_00r: gmtkn_BHPERI:00r
+      g_03ts: gmtkn_BHPERI:03ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "22"
+  shortname: "22"
+  geometry: "gmtkn_BHPERI:04r"
+  reference_value: 19.80797
+  setup:
+    reaction_formula: "1 g_04r + 1 g_00r -> 1 g_04ts"
+    reaction_geometries:
+      g_04r: gmtkn_BHPERI:04r
+      g_00r: gmtkn_BHPERI:00r
+      g_04ts: gmtkn_BHPERI:04ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "23"
+  shortname: "23"
+  geometry: "gmtkn_BHPERI:05r"
+  reference_value: 25.35452
+  setup:
+    reaction_formula: "1 g_05r + 1 g_00r -> 1 g_06ts"
+    reaction_geometries:
+      g_05r: gmtkn_BHPERI:05r
+      g_00r: gmtkn_BHPERI:00r
+      g_06ts: gmtkn_BHPERI:06ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "24"
+  shortname: "24"
+  geometry: "gmtkn_BHPERI:07r"
+  reference_value: 18.10114
+  setup:
+    reaction_formula: "1 g_07r + 1 g_00r -> 1 g_07ts"
+    reaction_geometries:
+      g_07r: gmtkn_BHPERI:07r
+      g_00r: gmtkn_BHPERI:00r
+      g_07ts: gmtkn_BHPERI:07ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "25"
+  shortname: "25"
+  geometry: "gmtkn_BHPERI:07r"
+  reference_value: 18.19276
+  setup:
+    reaction_formula: "1 g_07r + 1 g_00r -> 1 g_08ts"
+    reaction_geometries:
+      g_07r: gmtkn_BHPERI:07r
+      g_00r: gmtkn_BHPERI:00r
+      g_08ts: gmtkn_BHPERI:08ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "26"
+  shortname: "26"
+  geometry: "gmtkn_BHPERI:09r"
+  reference_value: 28.07415
+  setup:
+    reaction_formula: "1 g_09r + 1 g_00r -> 1 g_09ts"
+    reaction_geometries:
+      g_09r: gmtkn_BHPERI:09r
+      g_00r: gmtkn_BHPERI:00r
+      g_09ts: gmtkn_BHPERI:09ts
+  tags: ""
+

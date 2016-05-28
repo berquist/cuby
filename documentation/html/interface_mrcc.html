@@ -1,0 +1,142 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface mrcc</h1>
+<p>
+Interface to MRCC program package
+(<a href="http://www.mrcc.hu">www.mrcc.hu</a>, free for academic use) which is focused on coupled clusters calculation and includes a module allowing arbitrary-level CC calculations.
+</p>
+<p>
+When parallel execution is requested, OpenMP is used.
+</p>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>hf - supports calculation of energy</li>
+<li>mp2 - supports calculation of energy</li>
+<li>ccsd - supports calculation of energy</li>
+<li>ccsd(t) - supports calculation of energy</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#mrcc_bin_dir">mrcc_bin_dir</a></li>
+<li><a href="keywords.html#mrcc_lno_domrad">mrcc_lno_domrad</a></li>
+<li><a href="keywords.html#mrcc_lno_eps_o">mrcc_lno_eps_o</a></li>
+<li><a href="keywords.html#mrcc_lno_eps_v">mrcc_lno_eps_v</a></li>
+<li><a href="keywords.html#mrcc_local_cc">mrcc_local_cc</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#basisset">basisset</a></li>
+<li><a href="keywords.html#basisset_zeta">basisset_zeta</a></li>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#correlation_convergence">correlation_convergence</a></li>
+<li><a href="keywords.html#correlation_frozen_core">correlation_frozen_core</a></li>
+<li><a href="keywords.html#delete_large_files">delete_large_files</a></li>
+<li><a href="keywords.html#density_fitting">density_fitting</a></li>
+<li><a href="keywords.html#existing_calc_dir">existing_calc_dir</a></li>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#mem">mem</a></li>
+<li><a href="keywords.html#method">method</a></li>
+<li><a href="keywords.html#parallel">parallel</a></li>
+<li><a href="keywords.html#scf_convergence">scf_convergence</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/mrcc/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# MRCC example 1: Interface configuration and CCSD(T) calculation
+#===============================================================================
+
+# Energy calculation, water molecule from cuby's database
+job: energy
+geometry: A24:water
+charge: 0
+
+# Use MRCC interface
+interface: mrcc
+
+# MRCC interface configuration
+# Single entry needed - path to the binaries
+mrcc_bin_dir: /home/rezac/bin/mrcc_standalone
+
+# Calculation setup
+method: CCSD(T)
+basisset: STO-3G
+
+# Print components of the energy
+print: energy_decomposition
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# MRCC example 2: Local natural orbitals CCSD(T) calculation
+#===============================================================================
+
+# Energy calculation, water molecule from cuby's database
+job: energy
+geometry: A24:water
+charge: 0
+
+# Use MRCC interface
+interface: mrcc
+
+# Calculation setup
+method: CCSD(T)
+basisset: aug-cc-pVDZ
+auxiliary_basis_mp2: aug-cc-pVDZ
+density_fitting: both
+correlation_frozen_core: yes
+scf_convergence: 8
+density_convergence: 8
+correlation_convergence: 8
+
+# Local CC setup
+mrcc_local_cc: lno 
+# The following thresholds affect the accuracy, for details see
+# http://dx.doi.org/10.1063/1.4819401
+mrcc_lno_eps_o: 5
+mrcc_lno_eps_v: 6
+mrcc_lno_domrad: 10
+
+
+# Print components of the energy
+print: energy_decomposition
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

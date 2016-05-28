@@ -1,0 +1,37 @@
+#===============================================================================
+# QMMM example 3 - QM/QM calculation
+#===============================================================================
+
+# The interface can be used also for QM/QM calculations, in this case DFT for
+# the inner part and semiempirical QM for the rest of the system.
+
+job: energy
+
+geometry: ace-ala-nme.xyz
+
+interface: qmmm
+
+# Mechanical embedding must be used
+qmmm_embedding: mechanical
+
+# Definition of the QM region
+qmmm_core: 1-14
+# Bonds top cut (selection, distance and PDB name of the link atom created)
+qmmm_cut_bonds:
+  - {bond: 9-15, link_ratio: 0.729, link_type: HL}
+
+# Setup of the QM calculation
+calculation_qm:
+  interface: turbomole
+  method: dft
+  basisset: SVP
+  functional: b-lyp
+  charge: 0
+
+# Setup for the MM calculation, shared by both the calculation of the whole system
+# and the MM calculation of the QM region
+calculation_mm:
+  interface: mopac
+  method: pm6
+  charge: 0
+

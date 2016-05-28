@@ -1,0 +1,126 @@
+################################################################################
+# Keywords for protocol Dataset
+################################################################################
+
+keywords: 
+  :dataset: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :die
+  #: Name of the dataset definition file
+
+  :dataset_print: !ruby/object:SettingsKeyword
+    convert_to: :symbol_list
+    when_not_present: :default
+    default_value:
+      - :table
+      - :stats
+      - :stats_rel
+      - :stats_groups
+    allowed_values:
+      - :table
+      - :stats
+      - :stats_rel
+      - :stats_groups
+      - :results_array
+  #: List of things to be printed in the output:
+  #* table - table of results for each item in the data set
+  #* stats - statistics, in kcal/mol
+  #* stats_rel - statistics, relative errors in %
+  #* stats_groups - brief statistics for each group of items
+  #* results_array - calculated results as an array for use in dataset file
+
+  :dataset_long_numbers: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Print dataset statistics with more decimals
+
+  :dataset_short_names: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Use short names for dataset items
+
+  :dataset_select_name: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ".*"
+  #: Selection of data set entries by name (regexp pattern)
+
+  :dataset_skip_name: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Negated selection of data set entries by name (regexp pattern). Applied only when the keyword is used.
+  #: The entries are first selected using dataset_select_name, then those matching dataset_skip_name
+  #: are removed.
+
+  :dataset_select_tag: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ".*"
+  #: Selection of data set entries by their tags (regexp pattern)
+
+  :dataset_reference: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "default"
+  #: A set of reference values to be used. Some data sets might provide
+  #: alternative data, which can be selected by their name in the data
+  #: set file.
+  
+  :dataset_processing: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :relative_to_average
+  #: Processing of the results before valuation of the errors
+
+  :dataset_save_plots: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :text
+      - :gnuplot
+      - :gnuplot_tiled
+      - :yaml
+  #: For dataset containg plottable series, the plots can be saved as
+  #: text files (x, y_ref, y_calc) or plotted as image using gnuplot.
+  #: The gnuplot_tiled options composes the plots into one large image
+  #: using imagemagick (named dataset_plots.png).
+  #: Number of colums is defined by keyword dataset_plot_columns.
+
+  :dataset_plots_fn: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "dataset_plots"
+  #: Name of the file containing the plots, in cases all plots are written
+  #: to a single file (gnuplot_tiled and yaml format). Corresponding suffix
+  #: is added automatically.
+
+  :dataset_plot_extra: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :default
+    default_value: { }
+  #: Add extra series to the plots from yaml files. The value should be a hash
+  #: "name": filename.yaml
+ 
+  :dataset_plot_methodname: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "calculation"
+  #: Name of the current method to be used in plots.
+
+  :dataset_plot_columns: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 4
+  # Number of columns of plots for dataset_save_plots = gnuplot_tiled.
+
+  :dataset_add_ref_to_result: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Data from the alternative refernce to be added to the result of calculation.

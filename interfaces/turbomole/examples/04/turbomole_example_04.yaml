@@ -1,0 +1,28 @@
+#===============================================================================
+# Turbomole example 4 - COSMO solvation
+#===============================================================================
+
+# Calculation of a solvation energy using the COSMO model
+
+job: energy
+# Mixer interface is used to get the difference between COSMO and gas-phase energies
+interface: mixer
+
+mixer_weight_a: 1.0
+mixer_weight_b: -1.0
+
+geometry: A24:water
+
+calculation_common:
+  interface: turbomole
+  charge: 0
+  basisset: def2-SVP
+  method: dft
+  functional: b-lyp
+
+calculation_a: # Gas phase
+  charge: 0 # Could be empty, but something bust be here
+
+calculation_b: # COSMO water
+  solvent_model: cosmo
+  solvent_epsilon: 78.5

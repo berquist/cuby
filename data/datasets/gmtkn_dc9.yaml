@@ -1,0 +1,136 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_DC9
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "nine difficult cases for DFT"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_DC9:ISO_E36"
+  reference_value: -1.0
+  setup:
+    reaction_formula: "1 g_ISO_P36 -> 1 g_ISO_E36"
+    reaction_geometries:
+      g_ISO_E36: gmtkn_DC9:ISO_E36
+      g_ISO_P36: gmtkn_DC9:ISO_P36
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_DC9:c20cage"
+  reference_value: -13.3
+  setup:
+    reaction_formula: "1 g_c20cage -> 1 g_c20bowl"
+    reaction_geometries:
+      g_c20cage: gmtkn_DC9:c20cage
+      g_c20bowl: gmtkn_DC9:c20bowl
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_DC9:heptatriyne"
+  reference_value: -14.3
+  setup:
+    reaction_formula: "1 g_heptahexaene -> 1 g_heptatriyne"
+    reaction_geometries:
+      g_heptatriyne: gmtkn_DC9:heptatriyne
+      g_heptahexaene: gmtkn_DC9:heptahexaene
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_DC9:tmethen"
+  reference_value: -19.2
+  setup:
+    reaction_formula: "2 g_tmethen -> 1 g_omcb"
+    reaction_geometries:
+      g_tmethen: gmtkn_DC9:tmethen
+      g_omcb: gmtkn_DC9:omcb
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_DC9:ISO_E35"
+  reference_value: -19.5
+  setup:
+    reaction_formula: "1 g_ISO_P35 -> 1 g_ISO_E35"
+    reaction_geometries:
+      g_ISO_E35: gmtkn_DC9:ISO_E35
+      g_ISO_P35: gmtkn_DC9:ISO_P35
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_DC9:carbooxo2"
+  reference_value: -26.9
+  setup:
+    reaction_formula: "1 g_carbooxo2 -> 1 g_carbooxo1"
+    reaction_geometries:
+      g_carbooxo2: gmtkn_DC9:carbooxo2
+      g_carbooxo1: gmtkn_DC9:carbooxo1
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_DC9:ethen"
+  reference_value: -38.1
+  setup:
+    reaction_formula: "1 g_ethen + 1 g_ch2n2 -> 1 g_13dip"
+    reaction_geometries:
+      g_ethen: gmtkn_DC9:ethen
+      g_ch2n2: gmtkn_DC9:ch2n2
+      g_13dip: gmtkn_DC9:13dip
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_DC9:be4"
+  reference_value: -88.4
+  setup:
+    reaction_formula: "4 g_be -> 1 g_be4"
+    reaction_geometries:
+      g_be4: gmtkn_DC9:be4
+      g_be: gmtkn_DC9:be
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_DC9:s2"
+  reference_value: -101.0
+  setup:
+    reaction_formula: "4 g_s2 -> 1 g_s8"
+    reaction_geometries:
+      g_s2: gmtkn_DC9:s2
+      g_s8: gmtkn_DC9:s8
+  tags: ""
+

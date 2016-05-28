@@ -1,0 +1,319 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol multistep</h1>
+<p>
+This protocol allows chaining more calculations (steps) in one input file. Compared to running a series of calculation from outside of cuby, there are multiple advantages:
+</p>
+<ul>
+	<li>Part of the input can be shared by all the steps (see Example 1)</li>
+	<li>A step can be executed conditionally (see Example 2)</li>
+	<li>The results from the steps can be automatically processed at the end of the calculation (see Examples 3 and 4)</li>
+	<li>Parallel and serial execution of the steps can be mixed arbitrarily (see Example 5)</li>
+</ul>
+
+<h2>Output</h2>
+<p>
+The output of a serial calculation and a parallel one (where steps queued using the keyword <a href="keywords.html#step_queue">step_queue</a>)
+might differ in some cases. When teh steps are executed in series, the step header is printed and all output from this step follows.
+When a step is queued, the step header and final result is printed only after it is finished. However, some of its output (e.g. from the preparation
+of the jobs, or output from its parts taht must be executed serially, e.g. the individual cycles of optimization) are printed earlier.
+</p>
+
+<h2>Input structure</h2>
+<h4>The protocol requires following blocks in the input:</h4>
+<ul>
+<li>calculation_X - Input for step X (X = step name)</li>
+</ul>
+<h4>Optionally, following blocks can be defined in the input:</h4>
+<ul>
+<li>calculation_common - Common settings for all steps</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this protocol:</h4>
+<ul>
+<li><a href="keywords.html#multistep_print">multistep_print</a></li>
+<li><a href="keywords.html#multistep_result_eval">multistep_result_eval</a></li>
+<li><a href="keywords.html#multistep_result_expression">multistep_result_expression</a></li>
+<li><a href="keywords.html#multistep_result_name">multistep_result_name</a></li>
+<li><a href="keywords.html#skip_step_if_file_found">skip_step_if_file_found</a></li>
+<li><a href="keywords.html#skip_step_if_file_not_found">skip_step_if_file_not_found</a></li>
+<li><a href="keywords.html#step_queue">step_queue</a></li>
+<li><a href="keywords.html#step_title">step_title</a></li>
+<li><a href="keywords.html#step_title_decoration">step_title_decoration</a></li>
+<li><a href="keywords.html#steps">steps</a></li>
+</ul>
+<h4>Other keywords used by this protocol:</h4>
+<ul>
+<li><a href="keywords.html#geometry">geometry</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/multistep/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Multistep protocol example 1 - using common setup
+#===============================================================================
+
+# The following multistep calculates interaction energy in water dimer
+# using PM6 with various versions of dispersion and H-bond corrections.
+
+job: multistep
+
+# Step names must be defined first
+steps: pm6, pm6-dh2, pm6-dh+, pm6-d3h4
+
+# Large part of the setup is the same for all the steps. It is put into
+# the common block which is used in each step (any settings here can be
+# overriden in the step block)
+calculation_common:
+  job: interaction
+  geometry: S66:01
+  interface: mopac
+  method: pm6
+  charge: 0
+  molecule_a:
+    charge: 0
+  molecule_b:
+    charge: 0
+
+# Each of the steps has its own block in the input, its name consist of
+# prefix "calculation_" and the name of the step.
+
+# calculation_pm6:
+# Subsection not needed, common setup is used
+
+calculation_pm6-dh2:
+  mopac_corrections: dh2
+
+calculation_pm6-dh+:
+  mopac_corrections: dh+
+
+calculation_pm6-d3h4:
+  # Any step can have a custom title:
+  step_title: "PM6-D3H4 - not in Mopac, using modifiers in Cuby"
+  # Default PM6 calculation from calculation_common is used,
+  # augmented with the following corrections:
+  modifiers: dispersion3, h_bonds4
+  modifier_h_bonds4:
+    h_bonds4_extra_scaling: {}
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Multistep protocol example 2 - conditions
+#===============================================================================
+
+# The steps can be executed conditionally, depending on existence of a file.
+
+# The following input simplifies a common task: optimization followed by
+# calculation of vibrational frequencies. When optimized geometry is found,
+# the first step is skipped. Run the example twice to see the difference.
+
+job: multistep
+
+# Here, different syntax is used for the list of steps - YAML array
+steps: 
+  - opt
+  - freq
+
+# Common setup: computational method
+calculation_common:
+  interface: turbomole
+  method: dft
+  functional: b-lyp
+  basisset: SV
+  charge: 0
+  density_fitting: none
+
+# Optimization
+calculation_opt:
+  # Optimization can be skipped if optimized geometry is found:
+  skip_step_if_file_found: optimized.xyz
+  job: optimize
+  opt_quality: 0.1
+  geometry: A24:water # Water molecule
+
+
+# Frequencies
+calculation_freq:
+  job: frequencies
+  geometry: optimized.xyz
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Multistep protocol example 3 - composite result
+#===============================================================================
+
+# A single result composed from the results of all the steps can be calculated.
+
+# Example: calculate PM6-D3H4 energy difefrence before and after optimization
+# at PM6 level.
+
+job: multistep
+steps: energy1, opt, energy2
+
+# The final result:
+# Expression for calculation of the results in Ruby language
+# The results of the steps are stored in a variable steps, indexed
+# by step name, as instances of the Results class.
+multistep_result_expression: "steps['energy2'].energy - steps['energy1'].energy"
+# Arbitrary name of the result, optional
+multistep_result_name: Energy difference
+
+# Energy before optimization
+calculation_energy1:
+  job: energy
+  method: pm6
+  modifiers: dispersion3, h_bonds4
+  geometry: A24:water # Water molecule
+
+# Optimization
+calculation_opt:
+  job: optimize
+  opt_quality: 0.1
+  method: pm6
+  geometry: A24:water # same as in the first step
+  history_freq: 0 # do not write optimization history
+  
+# Energy after optimization
+calculation_energy2:
+  job: energy
+  method: pm6
+  modifiers: dispersion3, h_bonds4
+  geometry: optimized.xyz
+
+# Common setup
+calculation_common:
+  interface: mopac
+  charge: 0
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Multistep protocol example 4 - custom processing of the results
+#===============================================================================
+
+# Alternatively to example 3, a custom ruby code can be run on the results
+# to perform the final processing
+
+multistep_result_eval: |
+  puts "Greetings, human master! Let me serve the results in a pleasing manner."
+  energy_difefrence = steps['energy2'].energy - steps['energy1'].energy
+  puts "The energy difefrence you seek is #{'%.3f' % energy_difefrence} kcal/mol"
+  `rm optimized.xyz` # Also, delete the optimized geometry
+
+# The rest is the same as in previous example:
+job: multistep
+steps: energy1, opt, energy2
+
+# Energy before optimization
+calculation_energy1:
+  job: energy
+  method: pm6
+  modifiers: dispersion3, h_bonds4
+  geometry: A24:water # Water molecule
+
+# Optimization
+calculation_opt:
+  job: optimize
+  opt_quality: 0.1
+  method: pm6
+  geometry: A24:water # same as in the first step
+  history_freq: 0 # do not write optimization history
+  
+# Energy after optimization
+calculation_energy2:
+  job: energy
+  method: pm6
+  modifiers: dispersion3, h_bonds4
+  geometry: optimized.xyz
+
+# Common setup
+calculation_common:
+  interface: mopac
+  charge: 0
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Multistep protocol example 5 - parallelization
+#===============================================================================
+
+# This is a copy of Example 1 with added paralellization. Only the commented
+# keywords were added.
+
+# Steps that do not depend on each other can be calculated in parallel.
+# The number of parallel processes is set globally:
+cuby_threads: 4
+
+job: multistep
+steps: pm6, pm6-dh2, pm6-dh+, pm6-d3h4
+
+calculation_common:
+  job: interaction
+  geometry: S66:01
+  interface: mopac
+  method: pm6
+  charge: 0
+  molecule_a:
+    charge: 0
+  molecule_b:
+    charge: 0
+
+calculation_pm6:
+# The following keyword (applied also to the following steps) queues this step
+# until 1) all steps are queued, or 2) a step which does not have this flag is 
+# encountered. Then, the queue is executed and results are printed in the
+# original order.
+  step_queue: yes
+
+calculation_pm6-dh2:
+  mopac_corrections: dh2
+  step_queue: yes # queue this step as well
+
+calculation_pm6-dh+:
+  mopac_corrections: dh+
+  step_queue: yes # queue this step as well
+
+calculation_pm6-d3h4:
+  step_title: "PM6-D3H4 - not in Mopac, using modifiers in Cuby"
+# Do not queue this step. When this step is encountered, all the previously
+# queued steps are executed before this step is executed.
+  step_queue: no # (this is the default value)
+  modifiers: dispersion3, h_bonds4
+  modifier_h_bonds4:
+    h_bonds4_extra_scaling: {}
+
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

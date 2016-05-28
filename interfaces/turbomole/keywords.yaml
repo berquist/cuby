@@ -1,0 +1,127 @@
+################################################################################
+# KEYWORDS for interface Turbomole
+################################################################################
+
+keywords:
+  :turbomole_scf_ri_marij: !ruby/object:SettingsKeyword # file
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Multipole-accelerated resolution of identity approximation for HF/DFT calculation.
+  #: Turbomole's default setup is used.
+
+  :turbomole_scf_grad: !ruby/object:SettingsKeyword # file
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Calculate and save a separate SCF gradient before post-HF gradient is
+  #: calculated.
+
+  :turbomole_version: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: "N/A"
+  #: Version of turbomole used
+
+  :turbomole_turbodir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Path to the base of turbomole installation
+
+  :turbomole_bin_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Path to the turbomole bin directory (serial version)
+
+  :turbomole_bin_dir_smp: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Path to the turbomole bin directory (shared memory)
+
+  :turbomole_bin_dir_mpi: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Path to the turbomole bin directory (mpi)
+
+  :turbomole_bin_dir_ga: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Path to the turbomole bin directory (global arrays)
+
+  :turbomole_scripts_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Path to the turbomole scripts directory
+
+  :sos_scaling: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: SOS (scaled oppposite spin) scaling in MP2.
+  #: No further input needed, scaling of 1.3 is used.
+  #: Nn contrast to full SCS, the second component is not
+  #: calculaed at all.
+  #: Ref: J. Chem. Phys. 121, 9793 (2004); http://dx.doi.org/10.1063/1.1809602
+
+  :sos_scaling_laplace: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 0
+  #: When set to nonzero value, accelerated Laplace-transformed SOS-MP2 is used. 
+  #: The value of the keyword specifies the threshold (10^-X a.u.) used 
+  #: (4 or 5 is recommended).
+
+  :mem_core_scf: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :other
+  #: Value in percent. Specifies how much memory is used for the user set
+  #: "core" in RI-SCF calculation. When not set, value of keyword
+  #: 'mem_core' is used instead.
+
+  :mem_core_correlation: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :other
+  #: Value in percent. Specifies how much memory is used for the user set
+  #: "core" in corerlation energy calculation with RI. When not set,
+  #: value of keyword 'mem_core' is used instead.
+
+  :turbomole_keywords: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Extra keywords to be added to the turbomole control file.
+
+  :serial_scf: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Run SCF part of calculation in serial and paralellize only the
+  #: correlation part.
+
+  :explicit_correlation: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :f12
+  #: Explicit correlation method.
+ 
+  :properties: !ruby/object:SettingsKeyword
+    convert_to: :symbol_list
+    when_not_present: :default
+    default_value: []
+    allowed_values:
+      - :static_polarizability
+
+hints:
+  :turbomole_correlation_ri: "Keyword turbomole_correlation_ri removed, use density_fitting instead"
+  :turbomole_scf_ri: "Keyword turbomole_scf_ri removed, use density_fitting instead"
+  :auxiliary_basis_hf: "Keyword auxiliary_basis_hf removed, use auxiliary_basis_scf instead"
+

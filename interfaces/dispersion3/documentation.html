@@ -1,0 +1,74 @@
+<p>
+Advanced empirical dispersion correction for DFT developed by S.Grimme - the DFT-D3 method.[1,2]
+Includes parameterization for semiempirical methods[3] designed for use with the 
+<a href="interface_h_bonds4.html">H4 hydrogen bonding correction</a>.
+</p>
+
+<h3>Parameters</h3>
+<p>
+Cuby contains a database of methods for which D3 parameters are available, and assigns these
+parameters automatically by default. The parameters for DFT were taken from the 
+<a href="http://www.thch.uni-bonn.de/tc/index.php?section=downloads&subsection=DFT-D3&lang=english">website of Stefan Grimme</a>
+and from the source of the dftd3 program available therein.
+</p>
+
+<p>
+The parameters can be divided into following sets:
+</p>
+<table class="doctable">
+	<tr>
+		<th>Method</th>
+		<th>Damping</th>
+		<th>Basis sets</th>
+		<th>Functionals</th>
+	</tr>
+	<tr>
+		<td>DFT</td>
+		<td>zero</td>
+		<td>def2-QZVP</td>
+		<td>b1b95, b2gpplyp, b3lyp, b97d, bhlyp, blyp, bp86, bpbe, mpwlyp, pbe, pbe0, pw6b95, pwb6k, revpbe, tpss, tpss0, tpssh, bop, mpw1b95, mpwb1k, olyp, opbe, otpss, pbe38, pbesol, revssb, ssb, b3pw91, bmk, camb3lyp, lcwpbe, m052x, m05, m062x, m06hf, m06l, m06, hcth120, b2plyp, dsdblyp, ptpss, pwpb95, revpbe0, revpbe38, rpw86pbe, bp, rpbe</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>TZVPP</td>
+		<td>blyp, bp, b97d, revpbe, pbe, tpss, b3lyp, pbe0, pw6b95, tpss0, b2plyp</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>B/J</td>
+		<td>def2-QZVP</td>
+		<td>b1b95, b2gpplyp, b3pw91, bhlyp, bmk, bop, bpbe, camb3lyp, lcwpbe, mpw1b95, mpwb1k, mpwlyp, olyp, opbe, otpss, pbe38, pbesol, ptpss, pwb6k, revssb, ssb, tpssh, hcth120, b2plyp, b3lyp, b97d, blyp, bp86, dsdblyp, pbe0, pbe, pw6b95, pwpb95, revpbe0, revpbe38, revpbe, rpw86pbe, tpss0, tpss</td>
+	</tr>
+	<tr>
+		<td>HF</td>
+		<td>zero, B/J</td>
+		<td>def2-QZVP</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>AM1, PM3, PM6, RM1, OM3</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>SCC-DFTB</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<!--<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>-->
+</table>
+
+<ol>
+	<li><a href="http://dx.doi.org/10.1063/1.3382344">Grimme, S.; Antony, J.; Ehrlich, S.; Krieg, H. J. Chem. Phys. 2010, 132 (15), 154104.</a></li>
+	<li><a href="http://dx.doi.org/10.1002/jcc.21759">Grimme, S.; Ehrlich, S.; Goerigk, L. J. Comput. Chem. 2011, 32 (7), 1456–1465.</a></li>
+	<li><a href="http://pubs.acs.org/doi/abs/10.1021/ct200751e">Řezáč, J.; Hobza, P. J. Chem. Theory Comput. 2012, 8 (1), 141–151.</a></li>
+	<!-- <li><a href=""></a></li> -->
+</ol>

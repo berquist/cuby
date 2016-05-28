@@ -1,0 +1,79 @@
+################################################################################
+# KEYWORDS for interface CHARMM
+################################################################################
+
+keywords:
+  :charmm_exe: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Path to the charmm executable
+
+  :charmm_exe_mpi: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Path to the parallel charmm executable (or a script that sets up the
+  #: MPI environment and then runs charmm)
+
+  :charmm_psf_file: !ruby/object:SettingsKeyword # file: interfaces/charmm.rb
+    convert_to: :string
+    when_not_present: :other
+  #: Path to a charmm PSF file prepared by charmm. The geometry used for the
+  #: calculation must be identical to the one described by the PSF file.
+  #: When this kayword is not set, charmm will attempt to generate the PSF
+  #: file automatically.
+  
+  :charmm_ff_top: !ruby/object:SettingsKeyword # file: interfaces/charmm.rb
+    convert_to: :string
+    when_not_present: :die
+  #: Forcefield definition file: topology
+  
+  :charmm_ff_par: !ruby/object:SettingsKeyword # file: interfaces/charmm.rb
+    convert_to: :string
+    when_not_present: :die
+  #: Forcefield definition file: parameters
+  
+  :charmm_extras: !ruby/object:SettingsKeyword # file: interfaces/charmm.rb
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Extra options for charmm, included directly into the input file before
+  #: the actual calculation.
+
+  :charmm_extra_stream_files: !ruby/object:SettingsKeyword # file: interfaces/charmm.rb
+    convert_to: :array
+    when_not_present: :default
+    default_value: []
+  #: Additional stream files to be applied before the calculation.
+  
+  :charmm_stream_files: !ruby/object:SettingsKeyword # file: interfaces/charmm.rb
+    convert_to: :array
+    when_not_present: :default
+    default_value: []
+  #: Load stream file(s) with parameters. 
+ 
+  # New in cuby4:
+  :charmm_segment_end_patches: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :default
+    default_value: {}
+  #: Pathes applied to terminal residues of each segment. The format is
+  #: a hash with entries "segment_name: start_patch, end_patch". If a segment
+  #: is not found in this keywors, autodetection of peptide chain ends is attempted
+  #: (using NTER and CTER patches), otherwise no patches are applied.
+
+  :charmm_extras_gen: !ruby/object:SettingsKeyword # file: interfaces/charmm.rb
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Extra options for charmm, included directly into the input file. Unlike
+  #: the charmm_extras, this keyword aplies only to the generation of the
+  #: PSF file
+
+  :charmm_ff_paths: !ruby/object:SettingsKeyword
+    convert_to: :array
+    convert_options: :simple_array_of_strings
+    when_not_present: :default
+    default_value: [ "." ]
+  #: Array of paths under which forcefield data (.rtf, .prm, .str) are searched if full path is not provided.

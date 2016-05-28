@@ -1,0 +1,22 @@
+#===============================================================================
+#  Charge transfer complexes
+#
+#  From S. Karthikeyan, Robert Sedlak, and Pavel Hobza,
+#  J. Phys. Chem. A 2011, 115, 9422–9428 (dx.doi.org/10.1021/jp1112476)
+#
+#  MP2/cc-pVTZ, counterpoise corrected
+#
+#===============================================================================
+
+# By number
+1: 01-c2h2_clf.pdb
+2: 02-c2h4_f2.pdb
+3: 03-h2o_clf.pdb
+4: 04-hcn_clf.pdb
+5: 05-nh3_bh3.pdb
+6: 06-nh3_cl2.pdb
+7: 07-nh3_clf.pdb
+8: 08-nh3_f2.pdb
+9: 09-nh3_so2.pdb
+10: 10-nme3_bh3.pdb
+11: 11-nme3_so2.pdb

@@ -1,0 +1,31 @@
+#===============================================================================
+# Dataset example 2: selections and plotting
+#===============================================================================
+
+job: dataset
+
+#-------------------------------------------------------------------------------
+# Dataset selection
+#-------------------------------------------------------------------------------
+dataset: S66x8 # Dissociation curves for the S66 data set
+
+#-------------------------------------------------------------------------------
+# Selection
+#-------------------------------------------------------------------------------
+# select only pi-pi dispersion-bound complexes
+dataset_select_tag: "dispersion p-p"
+
+#-------------------------------------------------------------------------------
+# Plotting
+#-------------------------------------------------------------------------------
+# Plot the dissociation curves using gnuplot and merge the images to one file
+# with four colums. This requires two external tools installed, gnuplot and
+# imagemagick.
+dataset_save_plots: gnuplot_tiled
+dataset_plot_columns: 4
+
+#-------------------------------------------------------------------------------
+# Calculation setup
+#-------------------------------------------------------------------------------
+interface: mopac
+method: pm6

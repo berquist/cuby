@@ -1,0 +1,147 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_PCONF
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "relative energies of phenylalanyl−glycyl−glycine tripeptide conformers"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_PCONF:99"
+  reference_value: 0.14
+  setup:
+    reaction_formula: "1 g_99 -> 1 g_444"
+    reaction_geometries:
+      g_99: gmtkn_PCONF:99
+      g_444: gmtkn_PCONF:444
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_PCONF:99"
+  reference_value: 0.90
+  setup:
+    reaction_formula: "1 g_99 -> 1 g_357"
+    reaction_geometries:
+      g_99: gmtkn_PCONF:99
+      g_357: gmtkn_PCONF:357
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_PCONF:99"
+  reference_value: 1.15
+  setup:
+    reaction_formula: "1 g_99 -> 1 g_366"
+    reaction_geometries:
+      g_99: gmtkn_PCONF:99
+      g_366: gmtkn_PCONF:366
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_PCONF:99"
+  reference_value: 0.79
+  setup:
+    reaction_formula: "1 g_99 -> 1 g_215"
+    reaction_geometries:
+      g_99: gmtkn_PCONF:99
+      g_215: gmtkn_PCONF:215
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_PCONF:99"
+  reference_value: 1.31
+  setup:
+    reaction_formula: "1 g_99 -> 1 g_300"
+    reaction_geometries:
+      g_99: gmtkn_PCONF:99
+      g_300: gmtkn_PCONF:300
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_PCONF:99"
+  reference_value: 1.87
+  setup:
+    reaction_formula: "1 g_99 -> 1 g_114"
+    reaction_geometries:
+      g_99: gmtkn_PCONF:99
+      g_114: gmtkn_PCONF:114
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_PCONF:99"
+  reference_value: 2.37
+  setup:
+    reaction_formula: "1 g_99 -> 1 g_412"
+    reaction_geometries:
+      g_99: gmtkn_PCONF:99
+      g_412: gmtkn_PCONF:412
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_PCONF:99"
+  reference_value: 2.07
+  setup:
+    reaction_formula: "1 g_99 -> 1 g_691"
+    reaction_geometries:
+      g_99: gmtkn_PCONF:99
+      g_691: gmtkn_PCONF:691
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_PCONF:99"
+  reference_value: 2.51
+  setup:
+    reaction_formula: "1 g_99 -> 1 g_470"
+    reaction_geometries:
+      g_99: gmtkn_PCONF:99
+      g_470: gmtkn_PCONF:470
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_PCONF:99"
+  reference_value: 2.04
+  setup:
+    reaction_formula: "1 g_99 -> 1 g_224"
+    reaction_geometries:
+      g_99: gmtkn_PCONF:99
+      g_224: gmtkn_PCONF:224
+  tags: ""
+

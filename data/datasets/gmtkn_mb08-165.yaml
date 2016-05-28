@@ -1,0 +1,2428 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_MB08-165
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "decomposition energies of artificial molecules"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_MB08-165:001"
+  reference_value: 128.981
+  setup:
+    reaction_formula: "2 g_001 -> 2 g_170_c + 1 g_172_o + 2 g_166_h"
+    reaction_geometries:
+      g_001: gmtkn_MB08-165:001
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_MB08-165:002"
+  reference_value: 10.1995
+  setup:
+    reaction_formula: "2 g_002 -> 1 g_171_n + 1 g_172_o + 1 g_178_p + 5 g_166_h"
+    reaction_geometries:
+      g_002: gmtkn_MB08-165:002
+      g_171_n: gmtkn_MB08-165:171_n
+      g_172_o: gmtkn_MB08-165:172_o
+      g_178_p: gmtkn_MB08-165:178_p
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_MB08-165:003"
+  reference_value: -64.5198
+  setup:
+    reaction_formula: "2 g_003 + 8 g_166_h -> 4 g_169_b + 2 g_170_c + 2 g_167_li + 1 g_171_n"
+    reaction_geometries:
+      g_003: gmtkn_MB08-165:003
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_167_li: gmtkn_MB08-165:167_li
+      g_171_n: gmtkn_MB08-165:171_n
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_MB08-165:004"
+  reference_value: 64.2156
+  setup:
+    reaction_formula: "2 g_004 -> 2 g_168_be + 1 g_179_s + 4 g_166_h"
+    reaction_geometries:
+      g_004: gmtkn_MB08-165:004
+      g_168_be: gmtkn_MB08-165:168_be
+      g_179_s: gmtkn_MB08-165:179_s
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_MB08-165:005"
+  reference_value: 103.341
+  setup:
+    reaction_formula: "2 g_005 -> 2 g_168_be + 1 g_180_cl + 1 g_171_n + 3 g_166_h"
+    reaction_geometries:
+      g_005: gmtkn_MB08-165:005
+      g_168_be: gmtkn_MB08-165:168_be
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_MB08-165:006"
+  reference_value: 94.8625
+  setup:
+    reaction_formula: "2 g_006 + 4 g_166_h -> 2 g_176_al + 2 g_169_b + 2 g_168_be + 1 g_171_n"
+    reaction_geometries:
+      g_006: gmtkn_MB08-165:006
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_169_b: gmtkn_MB08-165:169_b
+      g_168_be: gmtkn_MB08-165:168_be
+      g_171_n: gmtkn_MB08-165:171_n
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_MB08-165:007"
+  reference_value: -83.7923
+  setup:
+    reaction_formula: "2 g_007 -> 2 g_177_si + 3 g_166_h"
+    reaction_geometries:
+      g_007: gmtkn_MB08-165:007
+      g_177_si: gmtkn_MB08-165:177_si
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_MB08-165:008"
+  reference_value: -87.8609
+  setup:
+    reaction_formula: "1 g_008 + 2 g_166_h -> 2 g_170_c + 1 g_167_li"
+    reaction_geometries:
+      g_008: gmtkn_MB08-165:008
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_167_li: gmtkn_MB08-165:167_li
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_MB08-165:009"
+  reference_value: 101.855
+  setup:
+    reaction_formula: "2 g_009 + 4 g_166_h -> 2 g_176_al + 2 g_169_b + 2 g_168_be + 1 g_173_f"
+    reaction_geometries:
+      g_009: gmtkn_MB08-165:009
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_169_b: gmtkn_MB08-165:169_b
+      g_168_be: gmtkn_MB08-165:168_be
+      g_173_f: gmtkn_MB08-165:173_f
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_MB08-165:010"
+  reference_value: 73.4314
+  setup:
+    reaction_formula: "1 g_010 -> 1 g_174_na + 1 g_172_o + 2 g_166_h"
+    reaction_geometries:
+      g_010: gmtkn_MB08-165:010
+      g_174_na: gmtkn_MB08-165:174_na
+      g_172_o: gmtkn_MB08-165:172_o
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_MB08-165:011"
+  reference_value: -69.9266
+  setup:
+    reaction_formula: "2 g_011 -> 2 g_168_be + 5 g_166_h"
+    reaction_geometries:
+      g_011: gmtkn_MB08-165:011
+      g_168_be: gmtkn_MB08-165:168_be
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "12"
+  shortname: "12"
+  geometry: "gmtkn_MB08-165:012"
+  reference_value: 6.29251
+  setup:
+    reaction_formula: "1 g_012 -> 1 g_169_b + 2 g_166_h"
+    reaction_geometries:
+      g_012: gmtkn_MB08-165:012
+      g_169_b: gmtkn_MB08-165:169_b
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "13"
+  shortname: "13"
+  geometry: "gmtkn_MB08-165:013"
+  reference_value: -7.72743
+  setup:
+    reaction_formula: "2 g_013 -> 2 g_168_be + 1 g_178_p + 4 g_166_h"
+    reaction_geometries:
+      g_013: gmtkn_MB08-165:013
+      g_168_be: gmtkn_MB08-165:168_be
+      g_178_p: gmtkn_MB08-165:178_p
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "14"
+  shortname: "14"
+  geometry: "gmtkn_MB08-165:014"
+  reference_value: 212.84
+  setup:
+    reaction_formula: "2 g_014 -> 4 g_167_li + 1 g_172_o + 3 g_166_h"
+    reaction_geometries:
+      g_014: gmtkn_MB08-165:014
+      g_167_li: gmtkn_MB08-165:167_li
+      g_172_o: gmtkn_MB08-165:172_o
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "15"
+  shortname: "15"
+  geometry: "gmtkn_MB08-165:015"
+  reference_value: 167.785
+  setup:
+    reaction_formula: "2 g_015 -> 2 g_168_be + 1 g_172_o + 4 g_166_h"
+    reaction_geometries:
+      g_015: gmtkn_MB08-165:015
+      g_168_be: gmtkn_MB08-165:168_be
+      g_172_o: gmtkn_MB08-165:172_o
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "16"
+  shortname: "16"
+  geometry: "gmtkn_MB08-165:016"
+  reference_value: 70.6529
+  setup:
+    reaction_formula: "1 g_016 -> 1 g_169_b + 1 g_167_li + 1 g_166_h"
+    reaction_geometries:
+      g_016: gmtkn_MB08-165:016
+      g_169_b: gmtkn_MB08-165:169_b
+      g_167_li: gmtkn_MB08-165:167_li
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "17"
+  shortname: "17"
+  geometry: "gmtkn_MB08-165:017"
+  reference_value: 93.7936
+  setup:
+    reaction_formula: "2 g_017 -> 2 g_168_be + 1 g_180_cl + 1 g_179_s + 3 g_166_h"
+    reaction_geometries:
+      g_017: gmtkn_MB08-165:017
+      g_168_be: gmtkn_MB08-165:168_be
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_179_s: gmtkn_MB08-165:179_s
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "18"
+  shortname: "18"
+  geometry: "gmtkn_MB08-165:018"
+  reference_value: -2.14101
+  setup:
+    reaction_formula: "1 g_018 -> 1 g_175_mg + 1 g_177_si"
+    reaction_geometries:
+      g_018: gmtkn_MB08-165:018
+      g_175_mg: gmtkn_MB08-165:175_mg
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "19"
+  shortname: "19"
+  geometry: "gmtkn_MB08-165:019"
+  reference_value: 79.8097
+  setup:
+    reaction_formula: "2 g_019 -> 2 g_169_b + 2 g_175_mg + 1 g_178_p"
+    reaction_geometries:
+      g_019: gmtkn_MB08-165:019
+      g_169_b: gmtkn_MB08-165:169_b
+      g_175_mg: gmtkn_MB08-165:175_mg
+      g_178_p: gmtkn_MB08-165:178_p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "20"
+  shortname: "20"
+  geometry: "gmtkn_MB08-165:020"
+  reference_value: 315.129
+  setup:
+    reaction_formula: "2 g_020 -> 2 g_169_b + 1 g_173_f + 2 g_167_li + 1 g_166_h"
+    reaction_geometries:
+      g_020: gmtkn_MB08-165:020
+      g_169_b: gmtkn_MB08-165:169_b
+      g_173_f: gmtkn_MB08-165:173_f
+      g_167_li: gmtkn_MB08-165:167_li
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "21"
+  shortname: "21"
+  geometry: "gmtkn_MB08-165:021"
+  reference_value: 145.384
+  setup:
+    reaction_formula: "2 g_021 + 7 g_166_h -> 2 g_168_be + 4 g_170_c + 1 g_173_f + 1 g_179_s"
+    reaction_geometries:
+      g_021: gmtkn_MB08-165:021
+      g_166_h: gmtkn_MB08-165:166_h
+      g_168_be: gmtkn_MB08-165:168_be
+      g_170_c: gmtkn_MB08-165:170_c
+      g_173_f: gmtkn_MB08-165:173_f
+      g_179_s: gmtkn_MB08-165:179_s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "22"
+  shortname: "22"
+  geometry: "gmtkn_MB08-165:022"
+  reference_value: 82.0241
+  setup:
+    reaction_formula: "2 g_022 -> 1 g_172_o + 1 g_178_p + 6 g_166_h"
+    reaction_geometries:
+      g_022: gmtkn_MB08-165:022
+      g_172_o: gmtkn_MB08-165:172_o
+      g_178_p: gmtkn_MB08-165:178_p
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "23"
+  shortname: "23"
+  geometry: "gmtkn_MB08-165:023"
+  reference_value: 33.4068
+  setup:
+    reaction_formula: "1 g_023 -> 1 g_169_b + 2 g_167_li"
+    reaction_geometries:
+      g_023: gmtkn_MB08-165:023
+      g_169_b: gmtkn_MB08-165:169_b
+      g_167_li: gmtkn_MB08-165:167_li
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "24"
+  shortname: "24"
+  geometry: "gmtkn_MB08-165:024"
+  reference_value: 166.621
+  setup:
+    reaction_formula: "2 g_024 -> 2 g_169_b + 2 g_168_be + 1 g_179_s"
+    reaction_geometries:
+      g_024: gmtkn_MB08-165:024
+      g_169_b: gmtkn_MB08-165:169_b
+      g_168_be: gmtkn_MB08-165:168_be
+      g_179_s: gmtkn_MB08-165:179_s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "25"
+  shortname: "25"
+  geometry: "gmtkn_MB08-165:025"
+  reference_value: -34.7981
+  setup:
+    reaction_formula: "2 g_025 -> 1 g_171_n + 1 g_179_s + 6 g_166_h"
+    reaction_geometries:
+      g_025: gmtkn_MB08-165:025
+      g_171_n: gmtkn_MB08-165:171_n
+      g_179_s: gmtkn_MB08-165:179_s
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "26"
+  shortname: "26"
+  geometry: "gmtkn_MB08-165:026"
+  reference_value: -53.9231
+  setup:
+    reaction_formula: "1 g_026 -> 1 g_169_b + 1 g_171_n + 1 g_166_h"
+    reaction_geometries:
+      g_026: gmtkn_MB08-165:026
+      g_169_b: gmtkn_MB08-165:169_b
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "27"
+  shortname: "27"
+  geometry: "gmtkn_MB08-165:027"
+  reference_value: -64.2575
+  setup:
+    reaction_formula: "1 g_027 + 1 g_166_h -> 1 g_170_c + 1 g_177_si"
+    reaction_geometries:
+      g_027: gmtkn_MB08-165:027
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "28"
+  shortname: "28"
+  geometry: "gmtkn_MB08-165:028"
+  reference_value: 228.294
+  setup:
+    reaction_formula: "2 g_028 -> 2 g_169_b + 1 g_173_f + 1 g_172_o + 2 g_166_h"
+    reaction_geometries:
+      g_028: gmtkn_MB08-165:028
+      g_169_b: gmtkn_MB08-165:169_b
+      g_173_f: gmtkn_MB08-165:173_f
+      g_172_o: gmtkn_MB08-165:172_o
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "29"
+  shortname: "29"
+  geometry: "gmtkn_MB08-165:029"
+  reference_value: 141.522
+  setup:
+    reaction_formula: "2 g_029 + 2 g_166_h -> 2 g_170_c + 1 g_173_f + 2 g_175_mg + 1 g_172_o"
+    reaction_geometries:
+      g_029: gmtkn_MB08-165:029
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_173_f: gmtkn_MB08-165:173_f
+      g_175_mg: gmtkn_MB08-165:175_mg
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "30"
+  shortname: "30"
+  geometry: "gmtkn_MB08-165:030"
+  reference_value: -5.2389
+  setup:
+    reaction_formula: "2 g_030 -> 2 g_168_be + 1 g_171_n + 4 g_166_h"
+    reaction_geometries:
+      g_030: gmtkn_MB08-165:030
+      g_168_be: gmtkn_MB08-165:168_be
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "31"
+  shortname: "31"
+  geometry: "gmtkn_MB08-165:031"
+  reference_value: 199.354
+  setup:
+    reaction_formula: "2 g_031 -> 2 g_169_b + 1 g_173_f + 3 g_166_h"
+    reaction_geometries:
+      g_031: gmtkn_MB08-165:031
+      g_169_b: gmtkn_MB08-165:169_b
+      g_173_f: gmtkn_MB08-165:173_f
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "32"
+  shortname: "32"
+  geometry: "gmtkn_MB08-165:032"
+  reference_value: 346.765
+  setup:
+    reaction_formula: "2 g_032 + 7 g_166_h -> 2 g_176_al + 4 g_167_li + 1 g_171_n + 1 g_172_o + 2 g_177_si"
+    reaction_geometries:
+      g_032: gmtkn_MB08-165:032
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_167_li: gmtkn_MB08-165:167_li
+      g_171_n: gmtkn_MB08-165:171_n
+      g_172_o: gmtkn_MB08-165:172_o
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "33"
+  shortname: "33"
+  geometry: "gmtkn_MB08-165:033"
+  reference_value: 246.838
+  setup:
+    reaction_formula: "2 g_033 -> 2 g_169_b + 1 g_180_cl + 1 g_173_f + 2 g_166_h"
+    reaction_geometries:
+      g_033: gmtkn_MB08-165:033
+      g_169_b: gmtkn_MB08-165:169_b
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_173_f: gmtkn_MB08-165:173_f
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "34"
+  shortname: "34"
+  geometry: "gmtkn_MB08-165:034"
+  reference_value: -9.71568
+  setup:
+    reaction_formula: "2 g_034 -> 2 g_170_c + 1 g_173_f + 2 g_167_li"
+    reaction_geometries:
+      g_034: gmtkn_MB08-165:034
+      g_170_c: gmtkn_MB08-165:170_c
+      g_173_f: gmtkn_MB08-165:173_f
+      g_167_li: gmtkn_MB08-165:167_li
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "35"
+  shortname: "35"
+  geometry: "gmtkn_MB08-165:035"
+  reference_value: -4.9177
+  setup:
+    reaction_formula: "1 g_035 + 3 g_166_h -> 1 g_169_b + 1 g_170_c + 1 g_167_li + 1 g_175_mg"
+    reaction_geometries:
+      g_035: gmtkn_MB08-165:035
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_167_li: gmtkn_MB08-165:167_li
+      g_175_mg: gmtkn_MB08-165:175_mg
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "36"
+  shortname: "36"
+  geometry: "gmtkn_MB08-165:036"
+  reference_value: -34.4301
+  setup:
+    reaction_formula: "2 g_036 + 1 g_166_h -> 2 g_170_c + 2 g_167_li + 2 g_174_na"
+    reaction_geometries:
+      g_036: gmtkn_MB08-165:036
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_167_li: gmtkn_MB08-165:167_li
+      g_174_na: gmtkn_MB08-165:174_na
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "37"
+  shortname: "37"
+  geometry: "gmtkn_MB08-165:037"
+  reference_value: -199.36
+  setup:
+    reaction_formula: "2 g_037 + 5 g_166_h -> 2 g_170_c + 2 g_175_mg + 2 g_177_si"
+    reaction_geometries:
+      g_037: gmtkn_MB08-165:037
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_175_mg: gmtkn_MB08-165:175_mg
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "38"
+  shortname: "38"
+  geometry: "gmtkn_MB08-165:038"
+  reference_value: 41.6549
+  setup:
+    reaction_formula: "2 g_038 + 2 g_166_h -> 2 g_168_be + 2 g_170_c + 1 g_171_n + 1 g_172_o"
+    reaction_geometries:
+      g_038: gmtkn_MB08-165:038
+      g_166_h: gmtkn_MB08-165:166_h
+      g_168_be: gmtkn_MB08-165:168_be
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "39"
+  shortname: "39"
+  geometry: "gmtkn_MB08-165:039"
+  reference_value: 25.5228
+  setup:
+    reaction_formula: "2 g_039 + 3 g_166_h -> 2 g_169_b + 2 g_170_c + 1 g_180_cl + 1 g_178_p"
+    reaction_geometries:
+      g_039: gmtkn_MB08-165:039
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_178_p: gmtkn_MB08-165:178_p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "40"
+  shortname: "40"
+  geometry: "gmtkn_MB08-165:040"
+  reference_value: 144.978
+  setup:
+    reaction_formula: "2 g_040 + 3 g_166_h -> 4 g_168_be + 1 g_180_cl + 2 g_167_li + 2 g_171_n"
+    reaction_geometries:
+      g_040: gmtkn_MB08-165:040
+      g_166_h: gmtkn_MB08-165:166_h
+      g_168_be: gmtkn_MB08-165:168_be
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_167_li: gmtkn_MB08-165:167_li
+      g_171_n: gmtkn_MB08-165:171_n
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "41"
+  shortname: "41"
+  geometry: "gmtkn_MB08-165:041"
+  reference_value: 273.134
+  setup:
+    reaction_formula: "2 g_041 -> 2 g_176_al + 2 g_173_f + 1 g_178_p + 1 g_166_h"
+    reaction_geometries:
+      g_041: gmtkn_MB08-165:041
+      g_176_al: gmtkn_MB08-165:176_al
+      g_173_f: gmtkn_MB08-165:173_f
+      g_178_p: gmtkn_MB08-165:178_p
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "42"
+  shortname: "42"
+  geometry: "gmtkn_MB08-165:042"
+  reference_value: 316.083
+  setup:
+    reaction_formula: "2 g_042 -> 2 g_169_b + 1 g_173_f + 2 g_167_li + 1 g_166_h"
+    reaction_geometries:
+      g_042: gmtkn_MB08-165:042
+      g_169_b: gmtkn_MB08-165:169_b
+      g_173_f: gmtkn_MB08-165:173_f
+      g_167_li: gmtkn_MB08-165:167_li
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "43"
+  shortname: "43"
+  geometry: "gmtkn_MB08-165:043"
+  reference_value: 31.849
+  setup:
+    reaction_formula: "2 g_043 + 3 g_166_h -> 2 g_176_al + 2 g_170_c + 1 g_180_cl + 1 g_179_s"
+    reaction_geometries:
+      g_043: gmtkn_MB08-165:043
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_170_c: gmtkn_MB08-165:170_c
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_179_s: gmtkn_MB08-165:179_s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "44"
+  shortname: "44"
+  geometry: "gmtkn_MB08-165:044"
+  reference_value: 3.75113
+  setup:
+    reaction_formula: "1 g_044 -> 1 g_176_al + 2 g_166_h"
+    reaction_geometries:
+      g_044: gmtkn_MB08-165:044
+      g_176_al: gmtkn_MB08-165:176_al
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "45"
+  shortname: "45"
+  geometry: "gmtkn_MB08-165:045"
+  reference_value: 65.5461
+  setup:
+    reaction_formula: "1 g_045 -> 1 g_169_b + 1 g_174_na + 1 g_166_h"
+    reaction_geometries:
+      g_045: gmtkn_MB08-165:045
+      g_169_b: gmtkn_MB08-165:169_b
+      g_174_na: gmtkn_MB08-165:174_na
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "46"
+  shortname: "46"
+  geometry: "gmtkn_MB08-165:046"
+  reference_value: 36.6235
+  setup:
+    reaction_formula: "1 g_046 + 3 g_166_h -> 1 g_169_b + 1 g_168_be + 1 g_174_na + 1 g_177_si"
+    reaction_geometries:
+      g_046: gmtkn_MB08-165:046
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_168_be: gmtkn_MB08-165:168_be
+      g_174_na: gmtkn_MB08-165:174_na
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "47"
+  shortname: "47"
+  geometry: "gmtkn_MB08-165:047"
+  reference_value: 49.5159
+  setup:
+    reaction_formula: "2 g_047 -> 2 g_167_li + 1 g_178_p + 5 g_166_h"
+    reaction_geometries:
+      g_047: gmtkn_MB08-165:047
+      g_167_li: gmtkn_MB08-165:167_li
+      g_178_p: gmtkn_MB08-165:178_p
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "48"
+  shortname: "48"
+  geometry: "gmtkn_MB08-165:048"
+  reference_value: 96.3261
+  setup:
+    reaction_formula: "2 g_048 + 2 g_166_h -> 2 g_176_al + 2 g_170_c + 1 g_172_o"
+    reaction_geometries:
+      g_048: gmtkn_MB08-165:048
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "49"
+  shortname: "49"
+  geometry: "gmtkn_MB08-165:049"
+  reference_value: 93.5031
+  setup:
+    reaction_formula: "2 g_049 -> 2 g_168_be + 1 g_179_s + 4 g_166_h"
+    reaction_geometries:
+      g_049: gmtkn_MB08-165:049
+      g_168_be: gmtkn_MB08-165:168_be
+      g_179_s: gmtkn_MB08-165:179_s
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "50"
+  shortname: "50"
+  geometry: "gmtkn_MB08-165:050"
+  reference_value: 62.6219
+  setup:
+    reaction_formula: "2 g_050 -> 2 g_176_al + 1 g_180_cl + 3 g_166_h"
+    reaction_geometries:
+      g_050: gmtkn_MB08-165:050
+      g_176_al: gmtkn_MB08-165:176_al
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "51"
+  shortname: "51"
+  geometry: "gmtkn_MB08-165:051"
+  reference_value: 88.2948
+  setup:
+    reaction_formula: "2 g_051 -> 1 g_173_f + 2 g_167_li + 1 g_171_n + 4 g_166_h"
+    reaction_geometries:
+      g_051: gmtkn_MB08-165:051
+      g_173_f: gmtkn_MB08-165:173_f
+      g_167_li: gmtkn_MB08-165:167_li
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "52"
+  shortname: "52"
+  geometry: "gmtkn_MB08-165:052"
+  reference_value: -12.6939
+  setup:
+    reaction_formula: "2 g_052 + 2 g_166_h -> 2 g_169_b + 2 g_170_c + 1 g_179_s"
+    reaction_geometries:
+      g_052: gmtkn_MB08-165:052
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_179_s: gmtkn_MB08-165:179_s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "53"
+  shortname: "53"
+  geometry: "gmtkn_MB08-165:053"
+  reference_value: 47.9831
+  setup:
+    reaction_formula: "2 g_053 + 2 g_166_h -> 2 g_169_b + 2 g_170_c + 1 g_172_o"
+    reaction_geometries:
+      g_053: gmtkn_MB08-165:053
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "54"
+  shortname: "54"
+  geometry: "gmtkn_MB08-165:054"
+  reference_value: 16.9482
+  setup:
+    reaction_formula: "2 g_054 -> 4 g_168_be + 1 g_171_n + 1 g_166_h"
+    reaction_geometries:
+      g_054: gmtkn_MB08-165:054
+      g_168_be: gmtkn_MB08-165:168_be
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "55"
+  shortname: "55"
+  geometry: "gmtkn_MB08-165:055"
+  reference_value: 433.664
+  setup:
+    reaction_formula: "2 g_055 -> 1 g_180_cl + 1 g_173_f + 2 g_175_mg + 1 g_179_s + 2 g_166_h"
+    reaction_geometries:
+      g_055: gmtkn_MB08-165:055
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_173_f: gmtkn_MB08-165:173_f
+      g_175_mg: gmtkn_MB08-165:175_mg
+      g_179_s: gmtkn_MB08-165:179_s
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "56"
+  shortname: "56"
+  geometry: "gmtkn_MB08-165:056"
+  reference_value: 248.457
+  setup:
+    reaction_formula: "2 g_056 -> 1 g_173_f + 2 g_167_li + 5 g_166_h"
+    reaction_geometries:
+      g_056: gmtkn_MB08-165:056
+      g_173_f: gmtkn_MB08-165:173_f
+      g_167_li: gmtkn_MB08-165:167_li
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "57"
+  shortname: "57"
+  geometry: "gmtkn_MB08-165:057"
+  reference_value: 65.2968
+  setup:
+    reaction_formula: "1 g_057 -> 1 g_169_b + 1 g_174_na + 1 g_166_h"
+    reaction_geometries:
+      g_057: gmtkn_MB08-165:057
+      g_169_b: gmtkn_MB08-165:169_b
+      g_174_na: gmtkn_MB08-165:174_na
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "58"
+  shortname: "58"
+  geometry: "gmtkn_MB08-165:058"
+  reference_value: 13.2213
+  setup:
+    reaction_formula: "1 g_058 -> 1 g_167_li + 1 g_171_n + 2 g_166_h"
+    reaction_geometries:
+      g_058: gmtkn_MB08-165:058
+      g_167_li: gmtkn_MB08-165:167_li
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "59"
+  shortname: "59"
+  geometry: "gmtkn_MB08-165:059"
+  reference_value: 49.8152
+  setup:
+    reaction_formula: "2 g_059 -> 1 g_180_cl + 7 g_166_h"
+    reaction_geometries:
+      g_059: gmtkn_MB08-165:059
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "60"
+  shortname: "60"
+  geometry: "gmtkn_MB08-165:060"
+  reference_value: 282.122
+  setup:
+    reaction_formula: "2 g_060 -> 2 g_169_b + 1 g_173_f + 1 g_171_n + 2 g_166_h"
+    reaction_geometries:
+      g_060: gmtkn_MB08-165:060
+      g_169_b: gmtkn_MB08-165:169_b
+      g_173_f: gmtkn_MB08-165:173_f
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "61"
+  shortname: "61"
+  geometry: "gmtkn_MB08-165:061"
+  reference_value: 96.9399
+  setup:
+    reaction_formula: "2 g_061 -> 2 g_168_be + 1 g_179_s + 4 g_166_h"
+    reaction_geometries:
+      g_061: gmtkn_MB08-165:061
+      g_168_be: gmtkn_MB08-165:168_be
+      g_179_s: gmtkn_MB08-165:179_s
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "62"
+  shortname: "62"
+  geometry: "gmtkn_MB08-165:062"
+  reference_value: 2.20915
+  setup:
+    reaction_formula: "1 g_062 -> 1 g_174_na + 3 g_166_h"
+    reaction_geometries:
+      g_062: gmtkn_MB08-165:062
+      g_174_na: gmtkn_MB08-165:174_na
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "63"
+  shortname: "63"
+  geometry: "gmtkn_MB08-165:063"
+  reference_value: 331.099
+  setup:
+    reaction_formula: "2 g_063 + 1 g_166_h -> 2 g_176_al + 1 g_173_f + 2 g_175_mg + 1 g_179_s"
+    reaction_geometries:
+      g_063: gmtkn_MB08-165:063
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_173_f: gmtkn_MB08-165:173_f
+      g_175_mg: gmtkn_MB08-165:175_mg
+      g_179_s: gmtkn_MB08-165:179_s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "64"
+  shortname: "64"
+  geometry: "gmtkn_MB08-165:064"
+  reference_value: -45.3574
+  setup:
+    reaction_formula: "2 g_064 + 3 g_166_h -> 2 g_170_c + 1 g_171_n + 2 g_177_si"
+    reaction_geometries:
+      g_064: gmtkn_MB08-165:064
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "65"
+  shortname: "65"
+  geometry: "gmtkn_MB08-165:065"
+  reference_value: 185.358
+  setup:
+    reaction_formula: "2 g_065 -> 2 g_175_mg + 1 g_172_o + 4 g_166_h"
+    reaction_geometries:
+      g_065: gmtkn_MB08-165:065
+      g_175_mg: gmtkn_MB08-165:175_mg
+      g_172_o: gmtkn_MB08-165:172_o
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "66"
+  shortname: "66"
+  geometry: "gmtkn_MB08-165:066"
+  reference_value: 7.87624
+  setup:
+    reaction_formula: "2 g_066 -> 2 g_176_al + 1 g_171_n + 3 g_166_h"
+    reaction_geometries:
+      g_066: gmtkn_MB08-165:066
+      g_176_al: gmtkn_MB08-165:176_al
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "67"
+  shortname: "67"
+  geometry: "gmtkn_MB08-165:067"
+  reference_value: 133.716
+  setup:
+    reaction_formula: "2 g_067 + 1 g_166_h -> 2 g_176_al + 2 g_169_b + 1 g_171_n"
+    reaction_geometries:
+      g_067: gmtkn_MB08-165:067
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_169_b: gmtkn_MB08-165:169_b
+      g_171_n: gmtkn_MB08-165:171_n
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "68"
+  shortname: "68"
+  geometry: "gmtkn_MB08-165:068"
+  reference_value: 103.749
+  setup:
+    reaction_formula: "2 g_068 -> 2 g_169_b + 1 g_171_n + 3 g_166_h"
+    reaction_geometries:
+      g_068: gmtkn_MB08-165:068
+      g_169_b: gmtkn_MB08-165:169_b
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "69"
+  shortname: "69"
+  geometry: "gmtkn_MB08-165:069"
+  reference_value: 201.248
+  setup:
+    reaction_formula: "2 g_069 -> 1 g_173_f + 1 g_171_n + 6 g_166_h"
+    reaction_geometries:
+      g_069: gmtkn_MB08-165:069
+      g_173_f: gmtkn_MB08-165:173_f
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "70"
+  shortname: "70"
+  geometry: "gmtkn_MB08-165:070"
+  reference_value: 62.5938
+  setup:
+    reaction_formula: "2 g_070 + 1 g_166_h -> 2 g_168_be + 2 g_170_c + 1 g_173_f"
+    reaction_geometries:
+      g_070: gmtkn_MB08-165:070
+      g_166_h: gmtkn_MB08-165:166_h
+      g_168_be: gmtkn_MB08-165:168_be
+      g_170_c: gmtkn_MB08-165:170_c
+      g_173_f: gmtkn_MB08-165:173_f
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "71"
+  shortname: "71"
+  geometry: "gmtkn_MB08-165:071"
+  reference_value: 95.3155
+  setup:
+    reaction_formula: "2 g_071 + 2 g_166_h -> 2 g_176_al + 2 g_170_c + 1 g_172_o"
+    reaction_geometries:
+      g_071: gmtkn_MB08-165:071
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "72"
+  shortname: "72"
+  geometry: "gmtkn_MB08-165:072"
+  reference_value: 148.937
+  setup:
+    reaction_formula: "2 g_072 -> 2 g_174_na + 1 g_172_o + 2 g_177_si"
+    reaction_geometries:
+      g_072: gmtkn_MB08-165:072
+      g_174_na: gmtkn_MB08-165:174_na
+      g_172_o: gmtkn_MB08-165:172_o
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "73"
+  shortname: "73"
+  geometry: "gmtkn_MB08-165:073"
+  reference_value: -37.5031
+  setup:
+    reaction_formula: "1 g_073 + 2 g_166_h -> 1 g_169_b + 1 g_168_be + 1 g_170_c"
+    reaction_geometries:
+      g_073: gmtkn_MB08-165:073
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_168_be: gmtkn_MB08-165:168_be
+      g_170_c: gmtkn_MB08-165:170_c
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "74"
+  shortname: "74"
+  geometry: "gmtkn_MB08-165:074"
+  reference_value: 17.3911
+  setup:
+    reaction_formula: "1 g_074 + 5 g_166_h -> 2 g_169_b + 1 g_168_be + 1 g_167_li + 1 g_177_si"
+    reaction_geometries:
+      g_074: gmtkn_MB08-165:074
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_168_be: gmtkn_MB08-165:168_be
+      g_167_li: gmtkn_MB08-165:167_li
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "75"
+  shortname: "75"
+  geometry: "gmtkn_MB08-165:075"
+  reference_value: 32.5568
+  setup:
+    reaction_formula: "2 g_075 -> 2 g_170_c + 1 g_173_f + 1 g_171_n + 1 g_172_o"
+    reaction_geometries:
+      g_075: gmtkn_MB08-165:075
+      g_170_c: gmtkn_MB08-165:170_c
+      g_173_f: gmtkn_MB08-165:173_f
+      g_171_n: gmtkn_MB08-165:171_n
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "76"
+  shortname: "76"
+  geometry: "gmtkn_MB08-165:076"
+  reference_value: 65.4965
+  setup:
+    reaction_formula: "1 g_076 -> 1 g_169_b + 1 g_167_li + 1 g_166_h"
+    reaction_geometries:
+      g_076: gmtkn_MB08-165:076
+      g_169_b: gmtkn_MB08-165:169_b
+      g_167_li: gmtkn_MB08-165:167_li
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "77"
+  shortname: "77"
+  geometry: "gmtkn_MB08-165:077"
+  reference_value: 91.6377
+  setup:
+    reaction_formula: "2 g_077 -> 2 g_169_b + 1 g_173_f + 2 g_171_n + 1 g_166_h"
+    reaction_geometries:
+      g_077: gmtkn_MB08-165:077
+      g_169_b: gmtkn_MB08-165:169_b
+      g_173_f: gmtkn_MB08-165:173_f
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "78"
+  shortname: "78"
+  geometry: "gmtkn_MB08-165:078"
+  reference_value: 225.237
+  setup:
+    reaction_formula: "2 g_078 -> 2 g_176_al + 2 g_168_be + 1 g_172_o"
+    reaction_geometries:
+      g_078: gmtkn_MB08-165:078
+      g_176_al: gmtkn_MB08-165:176_al
+      g_168_be: gmtkn_MB08-165:168_be
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "79"
+  shortname: "79"
+  geometry: "gmtkn_MB08-165:079"
+  reference_value: 139.537
+  setup:
+    reaction_formula: "2 g_079 -> 1 g_173_f + 7 g_166_h"
+    reaction_geometries:
+      g_079: gmtkn_MB08-165:079
+      g_173_f: gmtkn_MB08-165:173_f
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "80"
+  shortname: "80"
+  geometry: "gmtkn_MB08-165:080"
+  reference_value: 37.22
+  setup:
+    reaction_formula: "1 g_080 + 3 g_166_h -> 1 g_169_b + 1 g_168_be + 1 g_170_c + 1 g_167_li"
+    reaction_geometries:
+      g_080: gmtkn_MB08-165:080
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_168_be: gmtkn_MB08-165:168_be
+      g_170_c: gmtkn_MB08-165:170_c
+      g_167_li: gmtkn_MB08-165:167_li
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "81"
+  shortname: "81"
+  geometry: "gmtkn_MB08-165:081"
+  reference_value: 86.8257
+  setup:
+    reaction_formula: "2 g_081 -> 2 g_167_li + 1 g_178_p + 5 g_166_h"
+    reaction_geometries:
+      g_081: gmtkn_MB08-165:081
+      g_167_li: gmtkn_MB08-165:167_li
+      g_178_p: gmtkn_MB08-165:178_p
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "82"
+  shortname: "82"
+  geometry: "gmtkn_MB08-165:082"
+  reference_value: -120.44
+  setup:
+    reaction_formula: "2 g_082 + 3 g_166_h -> 4 g_170_c + 1 g_171_n"
+    reaction_geometries:
+      g_082: gmtkn_MB08-165:082
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "83"
+  shortname: "83"
+  geometry: "gmtkn_MB08-165:083"
+  reference_value: -169.048
+  setup:
+    reaction_formula: "2 g_083 + 10 g_166_h -> 6 g_170_c + 1 g_173_f + 2 g_167_li"
+    reaction_geometries:
+      g_083: gmtkn_MB08-165:083
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_173_f: gmtkn_MB08-165:173_f
+      g_167_li: gmtkn_MB08-165:167_li
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "84"
+  shortname: "84"
+  geometry: "gmtkn_MB08-165:084"
+  reference_value: -18.3432
+  setup:
+    reaction_formula: "1 g_084 + 1 g_166_h -> 2 g_170_c"
+    reaction_geometries:
+      g_084: gmtkn_MB08-165:084
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "85"
+  shortname: "85"
+  geometry: "gmtkn_MB08-165:085"
+  reference_value: -117.717
+  setup:
+    reaction_formula: "2 g_085 + 3 g_166_h -> 4 g_170_c + 1 g_172_o"
+    reaction_geometries:
+      g_085: gmtkn_MB08-165:085
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "86"
+  shortname: "86"
+  geometry: "gmtkn_MB08-165:086"
+  reference_value: 6.35849
+  setup:
+    reaction_formula: "1 g_086 -> 1 g_169_b + 2 g_166_h"
+    reaction_geometries:
+      g_086: gmtkn_MB08-165:086
+      g_169_b: gmtkn_MB08-165:169_b
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "87"
+  shortname: "87"
+  geometry: "gmtkn_MB08-165:087"
+  reference_value: -54.4616
+  setup:
+    reaction_formula: "1 g_087 + 4 g_166_h -> 1 g_176_al + 1 g_169_b + 1 g_170_c + 1 g_175_mg"
+    reaction_geometries:
+      g_087: gmtkn_MB08-165:087
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_175_mg: gmtkn_MB08-165:175_mg
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "88"
+  shortname: "88"
+  geometry: "gmtkn_MB08-165:088"
+  reference_value: -394.886
+  setup:
+    reaction_formula: "2 g_088 + 9 g_166_h -> 6 g_170_c + 1 g_171_n + 1 g_179_s"
+    reaction_geometries:
+      g_088: gmtkn_MB08-165:088
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+      g_179_s: gmtkn_MB08-165:179_s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "89"
+  shortname: "89"
+  geometry: "gmtkn_MB08-165:089"
+  reference_value: -200.179
+  setup:
+    reaction_formula: "2 g_089 + 7 g_166_h -> 2 g_169_b + 4 g_170_c + 1 g_171_n"
+    reaction_geometries:
+      g_089: gmtkn_MB08-165:089
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "90"
+  shortname: "90"
+  geometry: "gmtkn_MB08-165:090"
+  reference_value: -108.999
+  setup:
+    reaction_formula: "2 g_090 -> 2 g_170_c + 3 g_166_h"
+    reaction_geometries:
+      g_090: gmtkn_MB08-165:090
+      g_170_c: gmtkn_MB08-165:170_c
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "91"
+  shortname: "91"
+  geometry: "gmtkn_MB08-165:091"
+  reference_value: 37.6627
+  setup:
+    reaction_formula: "2 g_091 + 3 g_166_h -> 2 g_169_b + 2 g_170_c + 2 g_172_o"
+    reaction_geometries:
+      g_091: gmtkn_MB08-165:091
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "92"
+  shortname: "92"
+  geometry: "gmtkn_MB08-165:092"
+  reference_value: -7.84241
+  setup:
+    reaction_formula: "1 g_092 -> 1 g_170_c + 1 g_175_mg"
+    reaction_geometries:
+      g_092: gmtkn_MB08-165:092
+      g_170_c: gmtkn_MB08-165:170_c
+      g_175_mg: gmtkn_MB08-165:175_mg
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "93"
+  shortname: "93"
+  geometry: "gmtkn_MB08-165:093"
+  reference_value: 17.4039
+  setup:
+    reaction_formula: "2 g_093 -> 1 g_171_n + 1 g_178_p + 2 g_177_si + 1 g_166_h"
+    reaction_geometries:
+      g_093: gmtkn_MB08-165:093
+      g_171_n: gmtkn_MB08-165:171_n
+      g_178_p: gmtkn_MB08-165:178_p
+      g_177_si: gmtkn_MB08-165:177_si
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "94"
+  shortname: "94"
+  geometry: "gmtkn_MB08-165:094"
+  reference_value: 44.6214
+  setup:
+    reaction_formula: "2 g_094 -> 2 g_170_c + 1 g_172_o + 1 g_179_s + 1 g_166_h"
+    reaction_geometries:
+      g_094: gmtkn_MB08-165:094
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+      g_179_s: gmtkn_MB08-165:179_s
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "95"
+  shortname: "95"
+  geometry: "gmtkn_MB08-165:095"
+  reference_value: -341.816
+  setup:
+    reaction_formula: "2 g_095 + 11 g_166_h -> 6 g_170_c + 2 g_175_mg + 1 g_178_p"
+    reaction_geometries:
+      g_095: gmtkn_MB08-165:095
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_175_mg: gmtkn_MB08-165:175_mg
+      g_178_p: gmtkn_MB08-165:178_p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "96"
+  shortname: "96"
+  geometry: "gmtkn_MB08-165:096"
+  reference_value: -87.749
+  setup:
+    reaction_formula: "2 g_096 + 3 g_166_h -> 4 g_170_c + 1 g_178_p"
+    reaction_geometries:
+      g_096: gmtkn_MB08-165:096
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_178_p: gmtkn_MB08-165:178_p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "97"
+  shortname: "97"
+  geometry: "gmtkn_MB08-165:097"
+  reference_value: -131.461
+  setup:
+    reaction_formula: "2 g_097 + 3 g_166_h -> 4 g_170_c + 1 g_179_s"
+    reaction_geometries:
+      g_097: gmtkn_MB08-165:097
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_179_s: gmtkn_MB08-165:179_s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "98"
+  shortname: "98"
+  geometry: "gmtkn_MB08-165:098"
+  reference_value: 181.605
+  setup:
+    reaction_formula: "2 g_098 -> 1 g_172_o + 1 g_179_s + 6 g_166_h"
+    reaction_geometries:
+      g_098: gmtkn_MB08-165:098
+      g_172_o: gmtkn_MB08-165:172_o
+      g_179_s: gmtkn_MB08-165:179_s
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "99"
+  shortname: "99"
+  geometry: "gmtkn_MB08-165:099"
+  reference_value: 67.8673
+  setup:
+    reaction_formula: "2 g_099 -> 2 g_170_c + 1 g_172_o + 2 g_166_h"
+    reaction_geometries:
+      g_099: gmtkn_MB08-165:099
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "100"
+  shortname: "100"
+  geometry: "gmtkn_MB08-165:100"
+  reference_value: -98.8525
+  setup:
+    reaction_formula: "1 g_100 + 3 g_166_h -> 1 g_169_b + 2 g_170_c"
+    reaction_geometries:
+      g_100: gmtkn_MB08-165:100
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "101"
+  shortname: "101"
+  geometry: "gmtkn_MB08-165:101"
+  reference_value: 20.4527
+  setup:
+    reaction_formula: "2 g_101 -> 1 g_172_o + 7 g_166_h"
+    reaction_geometries:
+      g_101: gmtkn_MB08-165:101
+      g_172_o: gmtkn_MB08-165:172_o
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "102"
+  shortname: "102"
+  geometry: "gmtkn_MB08-165:102"
+  reference_value: -10.5301
+  setup:
+    reaction_formula: "2 g_102 + 1 g_166_h -> 2 g_170_c + 2 g_175_mg + 1 g_172_o"
+    reaction_geometries:
+      g_102: gmtkn_MB08-165:102
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_175_mg: gmtkn_MB08-165:175_mg
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "103"
+  shortname: "103"
+  geometry: "gmtkn_MB08-165:103"
+  reference_value: -171.697
+  setup:
+    reaction_formula: "2 g_103 + 4 g_166_h -> 4 g_170_c + 1 g_171_n + 1 g_172_o"
+    reaction_geometries:
+      g_103: gmtkn_MB08-165:103
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "104"
+  shortname: "104"
+  geometry: "gmtkn_MB08-165:104"
+  reference_value: -207.901
+  setup:
+    reaction_formula: "2 g_104 + 9 g_166_h -> 4 g_170_c + 2 g_167_li + 2 g_177_si"
+    reaction_geometries:
+      g_104: gmtkn_MB08-165:104
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_167_li: gmtkn_MB08-165:167_li
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "105"
+  shortname: "105"
+  geometry: "gmtkn_MB08-165:105"
+  reference_value: -107.287
+  setup:
+    reaction_formula: "2 g_105 + 3 g_166_h -> 4 g_170_c + 1 g_171_n"
+    reaction_geometries:
+      g_105: gmtkn_MB08-165:105
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "106"
+  shortname: "106"
+  geometry: "gmtkn_MB08-165:106"
+  reference_value: -100.917
+  setup:
+    reaction_formula: "2 g_106 + 4 g_166_h -> 4 g_170_c + 1 g_173_f + 1 g_178_p"
+    reaction_geometries:
+      g_106: gmtkn_MB08-165:106
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_173_f: gmtkn_MB08-165:173_f
+      g_178_p: gmtkn_MB08-165:178_p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "107"
+  shortname: "107"
+  geometry: "gmtkn_MB08-165:107"
+  reference_value: -124.796
+  setup:
+    reaction_formula: "2 g_107 -> 2 g_170_c + 2 g_171_n + 1 g_166_h"
+    reaction_geometries:
+      g_107: gmtkn_MB08-165:107
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "108"
+  shortname: "108"
+  geometry: "gmtkn_MB08-165:108"
+  reference_value: -125.96
+  setup:
+    reaction_formula: "2 g_108 -> 2 g_170_c + 1 g_171_n + 1 g_178_p + 1 g_179_s"
+    reaction_geometries:
+      g_108: gmtkn_MB08-165:108
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+      g_178_p: gmtkn_MB08-165:178_p
+      g_179_s: gmtkn_MB08-165:179_s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "109"
+  shortname: "109"
+  geometry: "gmtkn_MB08-165:109"
+  reference_value: -8.47506
+  setup:
+    reaction_formula: "1 g_109 -> 1 g_171_n + 3 g_166_h"
+    reaction_geometries:
+      g_109: gmtkn_MB08-165:109
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "110"
+  shortname: "110"
+  geometry: "gmtkn_MB08-165:110"
+  reference_value: -187.013
+  setup:
+    reaction_formula: "1 g_110 + 5 g_166_h -> 3 g_170_c + 1 g_175_mg"
+    reaction_geometries:
+      g_110: gmtkn_MB08-165:110
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_175_mg: gmtkn_MB08-165:175_mg
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "111"
+  shortname: "111"
+  geometry: "gmtkn_MB08-165:111"
+  reference_value: -362.354
+  setup:
+    reaction_formula: "2 g_111 + 8 g_166_h -> 6 g_170_c + 1 g_171_n"
+    reaction_geometries:
+      g_111: gmtkn_MB08-165:111
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "112"
+  shortname: "112"
+  geometry: "gmtkn_MB08-165:112"
+  reference_value: -359.841
+  setup:
+    reaction_formula: "2 g_112 + 9 g_166_h -> 6 g_170_c + 1 g_172_o + 1 g_178_p"
+    reaction_geometries:
+      g_112: gmtkn_MB08-165:112
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+      g_178_p: gmtkn_MB08-165:178_p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "113"
+  shortname: "113"
+  geometry: "gmtkn_MB08-165:113"
+  reference_value: 45.4665
+  setup:
+    reaction_formula: "2 g_113 + 8 g_166_h -> 4 g_170_c + 2 g_167_li + 2 g_175_mg + 1 g_172_o"
+    reaction_geometries:
+      g_113: gmtkn_MB08-165:113
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_167_li: gmtkn_MB08-165:167_li
+      g_175_mg: gmtkn_MB08-165:175_mg
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "114"
+  shortname: "114"
+  geometry: "gmtkn_MB08-165:114"
+  reference_value: -146.899
+  setup:
+    reaction_formula: "2 g_114 + 2 g_166_h -> 2 g_176_al + 2 g_170_c + 1 g_171_n"
+    reaction_geometries:
+      g_114: gmtkn_MB08-165:114
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "115"
+  shortname: "115"
+  geometry: "gmtkn_MB08-165:115"
+  reference_value: -67.9433
+  setup:
+    reaction_formula: "2 g_115 -> 2 g_170_c + 1 g_171_n + 1 g_172_o + 1 g_166_h"
+    reaction_geometries:
+      g_115: gmtkn_MB08-165:115
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+      g_172_o: gmtkn_MB08-165:172_o
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "116"
+  shortname: "116"
+  geometry: "gmtkn_MB08-165:116"
+  reference_value: 275.154
+  setup:
+    reaction_formula: "2 g_116 -> 2 g_176_al + 1 g_173_f + 1 g_172_o + 1 g_178_p + 1 g_166_h"
+    reaction_geometries:
+      g_116: gmtkn_MB08-165:116
+      g_176_al: gmtkn_MB08-165:176_al
+      g_173_f: gmtkn_MB08-165:173_f
+      g_172_o: gmtkn_MB08-165:172_o
+      g_178_p: gmtkn_MB08-165:178_p
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "117"
+  shortname: "117"
+  geometry: "gmtkn_MB08-165:117"
+  reference_value: -25.4577
+  setup:
+    reaction_formula: "2 g_117 + 3 g_166_h -> 4 g_170_c + 1 g_173_f"
+    reaction_geometries:
+      g_117: gmtkn_MB08-165:117
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_173_f: gmtkn_MB08-165:173_f
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "118"
+  shortname: "118"
+  geometry: "gmtkn_MB08-165:118"
+  reference_value: 52.5672
+  setup:
+    reaction_formula: "1 g_118 -> 1 g_176_al + 1 g_172_o + 1 g_166_h"
+    reaction_geometries:
+      g_118: gmtkn_MB08-165:118
+      g_176_al: gmtkn_MB08-165:176_al
+      g_172_o: gmtkn_MB08-165:172_o
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "119"
+  shortname: "119"
+  geometry: "gmtkn_MB08-165:119"
+  reference_value: 241.368
+  setup:
+    reaction_formula: "2 g_119 -> 1 g_173_f + 1 g_172_o + 1 g_178_p + 5 g_166_h"
+    reaction_geometries:
+      g_119: gmtkn_MB08-165:119
+      g_173_f: gmtkn_MB08-165:173_f
+      g_172_o: gmtkn_MB08-165:172_o
+      g_178_p: gmtkn_MB08-165:178_p
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "120"
+  shortname: "120"
+  geometry: "gmtkn_MB08-165:120"
+  reference_value: 45.1749
+  setup:
+    reaction_formula: "2 g_120 -> 2 g_167_li + 1 g_179_s + 5 g_166_h"
+    reaction_geometries:
+      g_120: gmtkn_MB08-165:120
+      g_167_li: gmtkn_MB08-165:167_li
+      g_179_s: gmtkn_MB08-165:179_s
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "121"
+  shortname: "121"
+  geometry: "gmtkn_MB08-165:121"
+  reference_value: -59.449
+  setup:
+    reaction_formula: "1 g_121 + 3 g_166_h -> 1 g_176_al + 2 g_170_c"
+    reaction_geometries:
+      g_121: gmtkn_MB08-165:121
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_170_c: gmtkn_MB08-165:170_c
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "122"
+  shortname: "122"
+  geometry: "gmtkn_MB08-165:122"
+  reference_value: 192.865
+  setup:
+    reaction_formula: "2 g_122 + 5 g_166_h -> 2 g_170_c + 2 g_172_o + 1 g_178_p + 2 g_177_si"
+    reaction_geometries:
+      g_122: gmtkn_MB08-165:122
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+      g_178_p: gmtkn_MB08-165:178_p
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "123"
+  shortname: "123"
+  geometry: "gmtkn_MB08-165:123"
+  reference_value: -125.57
+  setup:
+    reaction_formula: "2 g_123 -> 2 g_170_c + 1 g_171_n + 2 g_166_h"
+    reaction_geometries:
+      g_123: gmtkn_MB08-165:123
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "124"
+  shortname: "124"
+  geometry: "gmtkn_MB08-165:124"
+  reference_value: -311.385
+  setup:
+    reaction_formula: "2 g_124 + 8 g_166_h -> 4 g_170_c + 1 g_178_p + 2 g_177_si"
+    reaction_geometries:
+      g_124: gmtkn_MB08-165:124
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_178_p: gmtkn_MB08-165:178_p
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "125"
+  shortname: "125"
+  geometry: "gmtkn_MB08-165:125"
+  reference_value: 62.623
+  setup:
+    reaction_formula: "2 g_125 + 1 g_166_h -> 2 g_170_c + 1 g_180_cl + 2 g_167_li + 1 g_179_s"
+    reaction_geometries:
+      g_125: gmtkn_MB08-165:125
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_167_li: gmtkn_MB08-165:167_li
+      g_179_s: gmtkn_MB08-165:179_s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "126"
+  shortname: "126"
+  geometry: "gmtkn_MB08-165:126"
+  reference_value: 60.0493
+  setup:
+    reaction_formula: "2 g_126 + 2 g_166_h -> 2 g_169_b + 2 g_170_c + 1 g_172_o"
+    reaction_geometries:
+      g_126: gmtkn_MB08-165:126
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "127"
+  shortname: "127"
+  geometry: "gmtkn_MB08-165:127"
+  reference_value: -64.1
+  setup:
+    reaction_formula: "1 g_127 + 1 g_166_h -> 1 g_170_c + 1 g_177_si"
+    reaction_geometries:
+      g_127: gmtkn_MB08-165:127
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "128"
+  shortname: "128"
+  geometry: "gmtkn_MB08-165:128"
+  reference_value: -62.1802
+  setup:
+    reaction_formula: "2 g_128 + 1 g_166_h -> 2 g_170_c + 2 g_175_mg + 1 g_178_p"
+    reaction_geometries:
+      g_128: gmtkn_MB08-165:128
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_175_mg: gmtkn_MB08-165:175_mg
+      g_178_p: gmtkn_MB08-165:178_p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "129"
+  shortname: "129"
+  geometry: "gmtkn_MB08-165:129"
+  reference_value: -570.616
+  setup:
+    reaction_formula: "2 g_129 + 18 g_166_h -> 10 g_170_c + 1 g_172_o"
+    reaction_geometries:
+      g_129: gmtkn_MB08-165:129
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "130"
+  shortname: "130"
+  geometry: "gmtkn_MB08-165:130"
+  reference_value: -192.107
+  setup:
+    reaction_formula: "2 g_130 + 8 g_166_h -> 4 g_170_c + 1 g_179_s + 2 g_177_si"
+    reaction_geometries:
+      g_130: gmtkn_MB08-165:130
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_179_s: gmtkn_MB08-165:179_s
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "131"
+  shortname: "131"
+  geometry: "gmtkn_MB08-165:131"
+  reference_value: -95.9995
+  setup:
+    reaction_formula: "2 g_131 + 3 g_166_h -> 4 g_170_c + 1 g_178_p"
+    reaction_geometries:
+      g_131: gmtkn_MB08-165:131
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_178_p: gmtkn_MB08-165:178_p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "132"
+  shortname: "132"
+  geometry: "gmtkn_MB08-165:132"
+  reference_value: -37.9086
+  setup:
+    reaction_formula: "2 g_132 + 7 g_166_h -> 2 g_169_b + 4 g_170_c + 1 g_173_f"
+    reaction_geometries:
+      g_132: gmtkn_MB08-165:132
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_173_f: gmtkn_MB08-165:173_f
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "133"
+  shortname: "133"
+  geometry: "gmtkn_MB08-165:133"
+  reference_value: 107.648
+  setup:
+    reaction_formula: "2 g_133 -> 1 g_173_f + 1 g_178_p + 6 g_166_h"
+    reaction_geometries:
+      g_133: gmtkn_MB08-165:133
+      g_173_f: gmtkn_MB08-165:173_f
+      g_178_p: gmtkn_MB08-165:178_p
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "134"
+  shortname: "134"
+  geometry: "gmtkn_MB08-165:134"
+  reference_value: -81.9379
+  setup:
+    reaction_formula: "1 g_134 + 2 g_166_h -> 1 g_170_c + 1 g_171_n + 1 g_177_si"
+    reaction_geometries:
+      g_134: gmtkn_MB08-165:134
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "135"
+  shortname: "135"
+  geometry: "gmtkn_MB08-165:135"
+  reference_value: 39.5101
+  setup:
+    reaction_formula: "2 g_135 -> 1 g_180_cl + 2 g_171_n + 1 g_178_p + 4 g_166_h"
+    reaction_geometries:
+      g_135: gmtkn_MB08-165:135
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_171_n: gmtkn_MB08-165:171_n
+      g_178_p: gmtkn_MB08-165:178_p
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "136"
+  shortname: "136"
+  geometry: "gmtkn_MB08-165:136"
+  reference_value: 49.1758
+  setup:
+    reaction_formula: "2 g_136 + 2 g_166_h -> 2 g_169_b + 2 g_170_c + 1 g_172_o"
+    reaction_geometries:
+      g_136: gmtkn_MB08-165:136
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "137"
+  shortname: "137"
+  geometry: "gmtkn_MB08-165:137"
+  reference_value: -6.34873
+  setup:
+    reaction_formula: "1 g_137 + 1 g_166_h -> 1 g_170_c + 1 g_177_si"
+    reaction_geometries:
+      g_137: gmtkn_MB08-165:137
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "138"
+  shortname: "138"
+  geometry: "gmtkn_MB08-165:138"
+  reference_value: 47.4697
+  setup:
+    reaction_formula: "2 g_138 -> 1 g_171_n + 2 g_174_na + 5 g_166_h"
+    reaction_geometries:
+      g_138: gmtkn_MB08-165:138
+      g_171_n: gmtkn_MB08-165:171_n
+      g_174_na: gmtkn_MB08-165:174_na
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "139"
+  shortname: "139"
+  geometry: "gmtkn_MB08-165:139"
+  reference_value: -266.696
+  setup:
+    reaction_formula: "2 g_139 + 3 g_166_h -> 4 g_170_c + 1 g_171_n"
+    reaction_geometries:
+      g_139: gmtkn_MB08-165:139
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "140"
+  shortname: "140"
+  geometry: "gmtkn_MB08-165:140"
+  reference_value: 25.3882
+  setup:
+    reaction_formula: "2 g_140 + 2 g_166_h -> 2 g_169_b + 2 g_170_c + 1 g_172_o"
+    reaction_geometries:
+      g_140: gmtkn_MB08-165:140
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "141"
+  shortname: "141"
+  geometry: "gmtkn_MB08-165:141"
+  reference_value: -114.797
+  setup:
+    reaction_formula: "2 g_141 -> 2 g_170_c + 1 g_179_s + 2 g_166_h"
+    reaction_geometries:
+      g_141: gmtkn_MB08-165:141
+      g_170_c: gmtkn_MB08-165:170_c
+      g_179_s: gmtkn_MB08-165:179_s
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "142"
+  shortname: "142"
+  geometry: "gmtkn_MB08-165:142"
+  reference_value: -86.2672
+  setup:
+    reaction_formula: "2 g_142 + 4 g_166_h -> 4 g_170_c + 1 g_172_o + 1 g_179_s"
+    reaction_geometries:
+      g_142: gmtkn_MB08-165:142
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+      g_179_s: gmtkn_MB08-165:179_s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "143"
+  shortname: "143"
+  geometry: "gmtkn_MB08-165:143"
+  reference_value: -192.415
+  setup:
+    reaction_formula: "2 g_143 + 3 g_166_h -> 4 g_170_c + 1 g_171_n"
+    reaction_geometries:
+      g_143: gmtkn_MB08-165:143
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "144"
+  shortname: "144"
+  geometry: "gmtkn_MB08-165:144"
+  reference_value: 179.059
+  setup:
+    reaction_formula: "2 g_144 -> 2 g_176_al + 1 g_180_cl + 1 g_178_p + 2 g_166_h"
+    reaction_geometries:
+      g_144: gmtkn_MB08-165:144
+      g_176_al: gmtkn_MB08-165:176_al
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_178_p: gmtkn_MB08-165:178_p
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "145"
+  shortname: "145"
+  geometry: "gmtkn_MB08-165:145"
+  reference_value: -173.89
+  setup:
+    reaction_formula: "2 g_145 + 11 g_166_h -> 4 g_169_b + 4 g_170_c + 1 g_178_p"
+    reaction_geometries:
+      g_145: gmtkn_MB08-165:145
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_178_p: gmtkn_MB08-165:178_p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "146"
+  shortname: "146"
+  geometry: "gmtkn_MB08-165:146"
+  reference_value: -55.0056
+  setup:
+    reaction_formula: "1 g_146 + 4 g_166_h -> 1 g_176_al + 2 g_170_c + 1 g_174_na"
+    reaction_geometries:
+      g_146: gmtkn_MB08-165:146
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_170_c: gmtkn_MB08-165:170_c
+      g_174_na: gmtkn_MB08-165:174_na
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "147"
+  shortname: "147"
+  geometry: "gmtkn_MB08-165:147"
+  reference_value: -68.0568
+  setup:
+    reaction_formula: "2 g_147 + 3 g_166_h -> 2 g_170_c + 1 g_173_f + 2 g_177_si"
+    reaction_geometries:
+      g_147: gmtkn_MB08-165:147
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_173_f: gmtkn_MB08-165:173_f
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "148"
+  shortname: "148"
+  geometry: "gmtkn_MB08-165:148"
+  reference_value: -259.774
+  setup:
+    reaction_formula: "2 g_148 + 12 g_166_h -> 2 g_169_b + 4 g_170_c + 1 g_179_s + 2 g_177_si"
+    reaction_geometries:
+      g_148: gmtkn_MB08-165:148
+      g_166_h: gmtkn_MB08-165:166_h
+      g_169_b: gmtkn_MB08-165:169_b
+      g_170_c: gmtkn_MB08-165:170_c
+      g_179_s: gmtkn_MB08-165:179_s
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "149"
+  shortname: "149"
+  geometry: "gmtkn_MB08-165:149"
+  reference_value: -116.996
+  setup:
+    reaction_formula: "2 g_149 -> 2 g_170_c + 1 g_171_n + 1 g_179_s + 1 g_166_h"
+    reaction_geometries:
+      g_149: gmtkn_MB08-165:149
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+      g_179_s: gmtkn_MB08-165:179_s
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "150"
+  shortname: "150"
+  geometry: "gmtkn_MB08-165:150"
+  reference_value: -119.366
+  setup:
+    reaction_formula: "2 g_150 + 7 g_166_h -> 2 g_176_al + 4 g_170_c + 1 g_171_n"
+    reaction_geometries:
+      g_150: gmtkn_MB08-165:150
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "151"
+  shortname: "151"
+  geometry: "gmtkn_MB08-165:151"
+  reference_value: -225.208
+  setup:
+    reaction_formula: "2 g_151 + 3 g_166_h -> 4 g_170_c + 1 g_171_n"
+    reaction_geometries:
+      g_151: gmtkn_MB08-165:151
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "152"
+  shortname: "152"
+  geometry: "gmtkn_MB08-165:152"
+  reference_value: 59.1866
+  setup:
+    reaction_formula: "2 g_152 -> 2 g_170_c + 1 g_171_n + 1 g_172_o + 1 g_166_h"
+    reaction_geometries:
+      g_152: gmtkn_MB08-165:152
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+      g_172_o: gmtkn_MB08-165:172_o
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "153"
+  shortname: "153"
+  geometry: "gmtkn_MB08-165:153"
+  reference_value: 301.652
+  setup:
+    reaction_formula: "2 g_153 -> 2 g_180_cl + 1 g_172_o + 2 g_177_si"
+    reaction_geometries:
+      g_153: gmtkn_MB08-165:153
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_172_o: gmtkn_MB08-165:172_o
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "154"
+  shortname: "154"
+  geometry: "gmtkn_MB08-165:154"
+  reference_value: -312.657
+  setup:
+    reaction_formula: "2 g_154 + 13 g_166_h -> 6 g_170_c + 1 g_173_f + 2 g_177_si"
+    reaction_geometries:
+      g_154: gmtkn_MB08-165:154
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_173_f: gmtkn_MB08-165:173_f
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "155"
+  shortname: "155"
+  geometry: "gmtkn_MB08-165:155"
+  reference_value: -72.233
+  setup:
+    reaction_formula: "1 g_155 + 6 g_166_h -> 2 g_176_al + 2 g_170_c + 1 g_167_li"
+    reaction_geometries:
+      g_155: gmtkn_MB08-165:155
+      g_166_h: gmtkn_MB08-165:166_h
+      g_176_al: gmtkn_MB08-165:176_al
+      g_170_c: gmtkn_MB08-165:170_c
+      g_167_li: gmtkn_MB08-165:167_li
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "156"
+  shortname: "156"
+  geometry: "gmtkn_MB08-165:156"
+  reference_value: -77.7889
+  setup:
+    reaction_formula: "2 g_156 + 3 g_166_h -> 1 g_180_cl + 4 g_177_si"
+    reaction_geometries:
+      g_156: gmtkn_MB08-165:156
+      g_166_h: gmtkn_MB08-165:166_h
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "157"
+  shortname: "157"
+  geometry: "gmtkn_MB08-165:157"
+  reference_value: -240.681
+  setup:
+    reaction_formula: "1 g_157 + 6 g_166_h -> 4 g_170_c"
+    reaction_geometries:
+      g_157: gmtkn_MB08-165:157
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "158"
+  shortname: "158"
+  geometry: "gmtkn_MB08-165:158"
+  reference_value: -164.123
+  setup:
+    reaction_formula: "2 g_158 + 8 g_166_h -> 4 g_170_c + 1 g_172_o + 2 g_177_si"
+    reaction_geometries:
+      g_158: gmtkn_MB08-165:158
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "159"
+  shortname: "159"
+  geometry: "gmtkn_MB08-165:159"
+  reference_value: 180.391
+  setup:
+    reaction_formula: "2 g_159 -> 2 g_175_mg + 1 g_172_o + 1 g_178_p + 3 g_166_h"
+    reaction_geometries:
+      g_159: gmtkn_MB08-165:159
+      g_175_mg: gmtkn_MB08-165:175_mg
+      g_172_o: gmtkn_MB08-165:172_o
+      g_178_p: gmtkn_MB08-165:178_p
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "160"
+  shortname: "160"
+  geometry: "gmtkn_MB08-165:160"
+  reference_value: 127.82
+  setup:
+    reaction_formula: "2 g_160 -> 2 g_180_cl + 1 g_178_p + 5 g_166_h"
+    reaction_geometries:
+      g_160: gmtkn_MB08-165:160
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_178_p: gmtkn_MB08-165:178_p
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "161"
+  shortname: "161"
+  geometry: "gmtkn_MB08-165:161"
+  reference_value: -79.3552
+  setup:
+    reaction_formula: "2 g_161 -> 1 g_180_cl + 2 g_171_n + 5 g_166_h"
+    reaction_geometries:
+      g_161: gmtkn_MB08-165:161
+      g_180_cl: gmtkn_MB08-165:180_cl
+      g_171_n: gmtkn_MB08-165:171_n
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "162"
+  shortname: "162"
+  geometry: "gmtkn_MB08-165:162"
+  reference_value: -64.248
+  setup:
+    reaction_formula: "1 g_162 + 1 g_166_h -> 1 g_170_c + 1 g_177_si"
+    reaction_geometries:
+      g_162: gmtkn_MB08-165:162
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_177_si: gmtkn_MB08-165:177_si
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "163"
+  shortname: "163"
+  geometry: "gmtkn_MB08-165:163"
+  reference_value: -42.483
+  setup:
+    reaction_formula: "2 g_163 + 4 g_166_h -> 4 g_170_c + 1 g_172_o + 1 g_179_s"
+    reaction_geometries:
+      g_163: gmtkn_MB08-165:163
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_172_o: gmtkn_MB08-165:172_o
+      g_179_s: gmtkn_MB08-165:179_s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "164"
+  shortname: "164"
+  geometry: "gmtkn_MB08-165:164"
+  reference_value: 52.2871
+  setup:
+    reaction_formula: "2 g_164 -> 2 g_170_c + 1 g_171_n + 1 g_172_o + 1 g_166_h"
+    reaction_geometries:
+      g_164: gmtkn_MB08-165:164
+      g_170_c: gmtkn_MB08-165:170_c
+      g_171_n: gmtkn_MB08-165:171_n
+      g_172_o: gmtkn_MB08-165:172_o
+      g_166_h: gmtkn_MB08-165:166_h
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "165"
+  shortname: "165"
+  geometry: "gmtkn_MB08-165:165"
+  reference_value: -136.63
+  setup:
+    reaction_formula: "2 g_165 + 10 g_166_h -> 6 g_170_c + 2 g_167_li + 1 g_172_o"
+    reaction_geometries:
+      g_165: gmtkn_MB08-165:165
+      g_166_h: gmtkn_MB08-165:166_h
+      g_170_c: gmtkn_MB08-165:170_c
+      g_167_li: gmtkn_MB08-165:167_li
+      g_172_o: gmtkn_MB08-165:172_o
+  tags: ""
+

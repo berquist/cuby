@@ -1,0 +1,38 @@
+#===============================================================================
+# Chalcogen and pnicogen bonds  in complexes of heteroboranes
+#
+# from:
+# Pecina, A.; Lepšík, M.; Hnyk, D.; Hobza, P.; Fanfrlík, J. J. Phys. Chem. A 2015, 119 (8), 1388–1395.
+# dx.doi.org/10.1021/jp511101n
+#===============================================================================
+
+"as2b10-acetone_140": "As2B10-Acetone_140.xyz"
+"as2b10-ben_160": "As2B10-ben_160.xyz"
+"as2b10-form_150": "As2B10-form_150.xyz"
+"as2b10-n_trimet_145": "As2B10-N_trimet_145.xyz"
+"as2b10-o_dimet_145": "As2B10-O_dimet_145.xyz"
+"brc2b10-acetone": "BrC2B10-acetone.xyz"
+"brc2b10-form": "BrC2B10-form.xyz"
+"brc2b10-n_trimet": "BrC2B10-N_trimet.xyz"
+"brc2b10-o_dimet": "BrC2B10-O_dimet.xyz"
+"p2b10-acetone": "P2B10-acetone.xyz"
+"p2b10-ben": "P2B10-ben.xyz"
+"p2b10-form": "P2B10-form.xyz"
+"p2b10-n_trimet": "P2B10-N_trimet.xyz"
+"p2b10-o_dimet": "P2B10-O_dimet.xyz"
+"sb11-acetone_135": "SB11-acetone_135.xyz"
+"sb11-acetone": "SB11-acetone.xyz"
+"sb11-ben_165": "SB11-ben_165.xyz"
+"sb11-form_130": "SB11-form_130.xyz"
+"sb11-form": "SB11-form.xyz"
+"sb11h11-benzene": "SB11H11-benzene.xyz"
+"sb11h11-o_dimethyl": "SB11H11-O_dimethyl.xyz"
+"sb11-n_trimet_135": "SB11-N_trimet_135.xyz"
+"sb11-n_trimet": "SB11-N_trimet.xyz"
+"sb11-o_dimet_140": "SB11-O_dimet_140.xyz"
+"sb11-o_dimet": "SB11-O_dimet.xyz"
+"seb11-acetone": "SeB11-acetone.xyz"
+"seb11-benzene": "SeB11-benzene.xyz"
+"seb11-form": "SeB11-form.xyz"
+"seb11-n_trimet": "SeB11-N_trimet.xyz"
+"seb11-o_dimet": "SeB11-O_dimet.xyz"

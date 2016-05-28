@@ -1,0 +1,2729 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+
+# Composite CCSD(T)/CBS, CP-corrected, Helgaker extrapolation, frozen core
+# HF      aug-cc-pVQZ
+# MP2     aug-cc-pVTZ -> aug-cc-pVQZ
+# CCSD(T) aug-cc-pVDZ
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: "3B69_dimers"
+  references: 
+    "10.1021/acs.jctc.5b00281": "Řezáč, J.; Huang, Y.; Hobza, P.; Beran, G. J. O. J. Chem. Theory Comput. 2015."
+  text: "All dimers from the 3B69 set of trimers"
+
+  groups:
+    - L
+    - M
+    - H
+  global_setup:
+    job: interaction
+    interaction_check_size: no
+    molecule_a:
+      charge: 0
+      multiplicity: 1
+    molecule_b:
+      charge: 0
+      multiplicity: 1
+
+#===============================================================================
+# Items XY
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 1a water xy
+  shortname: 01a_water_xy
+  geometry: 3b69:01a
+  reference_value: -0.994
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 1a water yz
+  shortname: 01a_water_yz
+  geometry: 3b69:01a
+  reference_value: -4.283
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 1a water zx
+  shortname: 01a_water_zx
+  geometry: 3b69:01a
+  reference_value: 4.436
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 1b water xy
+  shortname: 01b_water_xy
+  geometry: 3b69:01b
+  reference_value: -4.012
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 1b water yz
+  shortname: 01b_water_yz
+  geometry: 3b69:01b
+  reference_value: 0.977
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 1b water zx
+  shortname: 01b_water_zx
+  geometry: 3b69:01b
+  reference_value: -3.952
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 1c water xy
+  shortname: 01c_water_xy
+  geometry: 3b69:01c
+  reference_value: -4.797
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 1c water yz
+  shortname: 01c_water_yz
+  geometry: 3b69:01c
+  reference_value: -4.595
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 1c water zx
+  shortname: 01c_water_zx
+  geometry: 3b69:01c
+  reference_value: -4.287
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 2a formaldehyde xy
+  shortname: 02a_formaldehyde_xy
+  geometry: 3b69:02a
+  reference_value: -2.09
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 2a formaldehyde yz
+  shortname: 02a_formaldehyde_yz
+  geometry: 3b69:02a
+  reference_value: -2.09
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 2a formaldehyde zx
+  shortname: 02a_formaldehyde_zx
+  geometry: 3b69:02a
+  reference_value: -0.214
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 2b formaldehyde xy
+  shortname: 02b_formaldehyde_xy
+  geometry: 3b69:02b
+  reference_value: -2.09
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 2b formaldehyde yz
+  shortname: 02b_formaldehyde_yz
+  geometry: 3b69:02b
+  reference_value: -0.549
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 2b formaldehyde zx
+  shortname: 02b_formaldehyde_zx
+  geometry: 3b69:02b
+  reference_value: -0.549
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 2c formaldehyde xy
+  shortname: 02c_formaldehyde_xy
+  geometry: 3b69:02c
+  reference_value: -2.09
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 2c formaldehyde yz
+  shortname: 02c_formaldehyde_yz
+  geometry: 3b69:02c
+  reference_value: -4.336
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 2c formaldehyde zx
+  shortname: 02c_formaldehyde_zx
+  geometry: 3b69:02c
+  reference_value: 0.189
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 3a methanol-ethyne xy
+  shortname: 03a_methanol-ethyne_xy
+  geometry: 3b69:03a
+  reference_value: -4.602
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 3a methanol-ethyne yz
+  shortname: 03a_methanol-ethyne_yz
+  geometry: 3b69:03a
+  reference_value: -1.17
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 3a methanol-ethyne zx
+  shortname: 03a_methanol-ethyne_zx
+  geometry: 3b69:03a
+  reference_value: -4.602
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 3b methanol-ethyne xy
+  shortname: 03b_methanol-ethyne_xy
+  geometry: 3b69:03b
+  reference_value: -1.17
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 3b methanol-ethyne yz
+  shortname: 03b_methanol-ethyne_yz
+  geometry: 3b69:03b
+  reference_value: -1.087
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 3b methanol-ethyne zx
+  shortname: 03b_methanol-ethyne_zx
+  geometry: 3b69:03b
+  reference_value: -0.629
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 3c methanol-ethyne xy
+  shortname: 03c_methanol-ethyne_xy
+  geometry: 3b69:03c
+  reference_value: -4.602
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 3c methanol-ethyne yz
+  shortname: 03c_methanol-ethyne_yz
+  geometry: 3b69:03c
+  reference_value: 0.012
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 3c methanol-ethyne zx
+  shortname: 03c_methanol-ethyne_zx
+  geometry: 3b69:03c
+  reference_value: -1.087
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 4a acetonitrile xy
+  shortname: 04a_acetonitrile_xy
+  geometry: 3b69:04a
+  reference_value: -2.806
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 4a acetonitrile yz
+  shortname: 04a_acetonitrile_yz
+  geometry: 3b69:04a
+  reference_value: 0.007
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 4a acetonitrile zx
+  shortname: 04a_acetonitrile_zx
+  geometry: 3b69:04a
+  reference_value: -5.304
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 4b acetonitrile xy
+  shortname: 04b_acetonitrile_xy
+  geometry: 3b69:04b
+  reference_value: -3.128
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 4b acetonitrile yz
+  shortname: 04b_acetonitrile_yz
+  geometry: 3b69:04b
+  reference_value: 0.007
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 4b acetonitrile zx
+  shortname: 04b_acetonitrile_zx
+  geometry: 3b69:04b
+  reference_value: -1.341
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 4c acetonitrile xy
+  shortname: 04c_acetonitrile_xy
+  geometry: 3b69:04c
+  reference_value: -1.531
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 4c acetonitrile yz
+  shortname: 04c_acetonitrile_yz
+  geometry: 3b69:04c
+  reference_value: -0.502
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 4c acetonitrile zx
+  shortname: 04c_acetonitrile_zx
+  geometry: 3b69:04c
+  reference_value: -2.527
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 5a nitromethane xy
+  shortname: 05a_nitromethane_xy
+  geometry: 3b69:05a
+  reference_value: -1.946
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 5a nitromethane yz
+  shortname: 05a_nitromethane_yz
+  geometry: 3b69:05a
+  reference_value: -4.058
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 5a nitromethane zx
+  shortname: 05a_nitromethane_zx
+  geometry: 3b69:05a
+  reference_value: -1.307
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 5b nitromethane xy
+  shortname: 05b_nitromethane_xy
+  geometry: 3b69:05b
+  reference_value: -4.058
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 5b nitromethane yz
+  shortname: 05b_nitromethane_yz
+  geometry: 3b69:05b
+  reference_value: -1.946
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 5b nitromethane zx
+  shortname: 05b_nitromethane_zx
+  geometry: 3b69:05b
+  reference_value: -3.048
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 5c nitromethane xy
+  shortname: 05c_nitromethane_xy
+  geometry: 3b69:05c
+  reference_value: -3.048
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 5c nitromethane yz
+  shortname: 05c_nitromethane_yz
+  geometry: 3b69:05c
+  reference_value: -1.946
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 5c nitromethane zx
+  shortname: 05c_nitromethane_zx
+  geometry: 3b69:05c
+  reference_value: 0.358
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 6a acetic acid xy
+  shortname: 06a_acetic_acid_xy
+  geometry: 3b69:06a
+  reference_value: -0.261
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 6a acetic acid yz
+  shortname: 06a_acetic_acid_yz
+  geometry: 3b69:06a
+  reference_value: -2.393
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 6a acetic acid zx
+  shortname: 06a_acetic_acid_zx
+  geometry: 3b69:06a
+  reference_value: -10.685
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 6b acetic acid xy
+  shortname: 06b_acetic_acid_xy
+  geometry: 3b69:06b
+  reference_value: -0.112
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 6b acetic acid yz
+  shortname: 06b_acetic_acid_yz
+  geometry: 3b69:06b
+  reference_value: -10.5
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 6b acetic acid zx
+  shortname: 06b_acetic_acid_zx
+  geometry: 3b69:06b
+  reference_value: -10.5
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 6c acetic acid xy
+  shortname: 06c_acetic_acid_xy
+  geometry: 3b69:06c
+  reference_value: -10.5
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 6c acetic acid yz
+  shortname: 06c_acetic_acid_yz
+  geometry: 3b69:06c
+  reference_value: -1.453
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 6c acetic acid zx
+  shortname: 06c_acetic_acid_zx
+  geometry: 3b69:06c
+  reference_value: -2.529
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 7a oxalic acid xy
+  shortname: 07a_oxalic_acid_xy
+  geometry: 3b69:07a
+  reference_value: -3.452
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 7a oxalic acid yz
+  shortname: 07a_oxalic_acid_yz
+  geometry: 3b69:07a
+  reference_value: -0.542
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 7a oxalic acid zx
+  shortname: 07a_oxalic_acid_zx
+  geometry: 3b69:07a
+  reference_value: -3.452
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 7b oxalic acid xy
+  shortname: 07b_oxalic_acid_xy
+  geometry: 3b69:07b
+  reference_value: -0.949
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 7b oxalic acid yz
+  shortname: 07b_oxalic_acid_yz
+  geometry: 3b69:07b
+  reference_value: -8.48
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 7b oxalic acid zx
+  shortname: 07b_oxalic_acid_zx
+  geometry: 3b69:07b
+  reference_value: -8.48
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 7c oxalic acid xy
+  shortname: 07c_oxalic_acid_xy
+  geometry: 3b69:07c
+  reference_value: -8.48
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 7c oxalic acid yz
+  shortname: 07c_oxalic_acid_yz
+  geometry: 3b69:07c
+  reference_value: -0.824
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 7c oxalic acid zx
+  shortname: 07c_oxalic_acid_zx
+  geometry: 3b69:07c
+  reference_value: -8.48
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 8a vinylene_carbonate xy
+  shortname: 08a_vinylene_carbonate_xy
+  geometry: 3b69:08a
+  reference_value: -4.499
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 8a vinylene_carbonate yz
+  shortname: 08a_vinylene_carbonate_yz
+  geometry: 3b69:08a
+  reference_value: -0.482
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 8a vinylene_carbonate zx
+  shortname: 08a_vinylene_carbonate_zx
+  geometry: 3b69:08a
+  reference_value: -4.499
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 8b vinylene_carbonate xy
+  shortname: 08b_vinylene_carbonate_xy
+  geometry: 3b69:08b
+  reference_value: -4.499
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 8b vinylene_carbonate yz
+  shortname: 08b_vinylene_carbonate_yz
+  geometry: 3b69:08b
+  reference_value: -1.099
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 8b vinylene_carbonate zx
+  shortname: 08b_vinylene_carbonate_zx
+  geometry: 3b69:08b
+  reference_value: -4.102
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 8c vinylene_carbonate xy
+  shortname: 08c_vinylene_carbonate_xy
+  geometry: 3b69:08c
+  reference_value: -4.499
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 8c vinylene_carbonate yz
+  shortname: 08c_vinylene_carbonate_yz
+  geometry: 3b69:08c
+  reference_value: -4.238
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 8c vinylene_carbonate zx
+  shortname: 08c_vinylene_carbonate_zx
+  geometry: 3b69:08c
+  reference_value: -4.446
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 9a acetamide xy
+  shortname: 09a_acetamide_xy
+  geometry: 3b69:09a
+  reference_value: -2.238
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 9a acetamide yz
+  shortname: 09a_acetamide_yz
+  geometry: 3b69:09a
+  reference_value: -9.367
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 9a acetamide zx
+  shortname: 09a_acetamide_zx
+  geometry: 3b69:09a
+  reference_value: -7.92
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 9b acetamide xy
+  shortname: 09b_acetamide_xy
+  geometry: 3b69:09b
+  reference_value: -7.92
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 9b acetamide yz
+  shortname: 09b_acetamide_yz
+  geometry: 3b69:09b
+  reference_value: 0.796
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 9b acetamide zx
+  shortname: 09b_acetamide_zx
+  geometry: 3b69:09b
+  reference_value: -9.367
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 9c acetamide xy
+  shortname: 09c_acetamide_xy
+  geometry: 3b69:09c
+  reference_value: -0.626
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 9c acetamide yz
+  shortname: 09c_acetamide_yz
+  geometry: 3b69:09c
+  reference_value: -7.92
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 9c acetamide zx
+  shortname: 09c_acetamide_zx
+  geometry: 3b69:09c
+  reference_value: -7.92
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10a imidazole xy
+  shortname: 10a_imidazole_xy
+  geometry: 3b69:10a
+  reference_value: -1.983
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10a imidazole yz
+  shortname: 10a_imidazole_yz
+  geometry: 3b69:10a
+  reference_value: -3.885
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10a imidazole zx
+  shortname: 10a_imidazole_zx
+  geometry: 3b69:10a
+  reference_value: -9.799
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10b imidazole xy
+  shortname: 10b_imidazole_xy
+  geometry: 3b69:10b
+  reference_value: -0.907
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10b imidazole yz
+  shortname: 10b_imidazole_yz
+  geometry: 3b69:10b
+  reference_value: -0.317
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10b imidazole zx
+  shortname: 10b_imidazole_zx
+  geometry: 3b69:10b
+  reference_value: -4.944
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10c imidazole xy
+  shortname: 10c_imidazole_xy
+  geometry: 3b69:10c
+  reference_value: -0.585
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10c imidazole yz
+  shortname: 10c_imidazole_yz
+  geometry: 3b69:10c
+  reference_value: -9.799
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10c imidazole zx
+  shortname: 10c_imidazole_zx
+  geometry: 3b69:10c
+  reference_value: -9.799
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11a isoxazole xy
+  shortname: 11a_isoxazole_xy
+  geometry: 3b69:11a
+  reference_value: -3.786
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11a isoxazole yz
+  shortname: 11a_isoxazole_yz
+  geometry: 3b69:11a
+  reference_value: -1.071
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11a isoxazole zx
+  shortname: 11a_isoxazole_zx
+  geometry: 3b69:11a
+  reference_value: -20.889
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11b isoxazole xy
+  shortname: 11b_isoxazole_xy
+  geometry: 3b69:11b
+  reference_value: -2.422
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11b isoxazole yz
+  shortname: 11b_isoxazole_yz
+  geometry: 3b69:11b
+  reference_value: -20.889
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11b isoxazole zx
+  shortname: 11b_isoxazole_zx
+  geometry: 3b69:11b
+  reference_value: -0.328
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11c isoxazole xy
+  shortname: 11c_isoxazole_xy
+  geometry: 3b69:11c
+  reference_value: -0.16
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11c isoxazole yz
+  shortname: 11c_isoxazole_yz
+  geometry: 3b69:11c
+  reference_value: -2.473
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11c isoxazole zx
+  shortname: 11c_isoxazole_zx
+  geometry: 3b69:11c
+  reference_value: -20.889
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12a pyrazole xy
+  shortname: 12a_pyrazole_xy
+  geometry: 3b69:12a
+  reference_value: -7.261
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12a pyrazole yz
+  shortname: 12a_pyrazole_yz
+  geometry: 3b69:12a
+  reference_value: -2.489
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12a pyrazole zx
+  shortname: 12a_pyrazole_zx
+  geometry: 3b69:12a
+  reference_value: -8.447
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12b pyrazole xy
+  shortname: 12b_pyrazole_xy
+  geometry: 3b69:12b
+  reference_value: -1.488
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12b pyrazole yz
+  shortname: 12b_pyrazole_yz
+  geometry: 3b69:12b
+  reference_value: -2.489
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12b pyrazole zx
+  shortname: 12b_pyrazole_zx
+  geometry: 3b69:12b
+  reference_value: -0.917
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12c pyrazole xy
+  shortname: 12c_pyrazole_xy
+  geometry: 3b69:12c
+  reference_value: -4.226
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12c pyrazole yz
+  shortname: 12c_pyrazole_yz
+  geometry: 3b69:12c
+  reference_value: 0.232
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12c pyrazole zx
+  shortname: 12c_pyrazole_zx
+  geometry: 3b69:12c
+  reference_value: -8.447
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13a triazine xy
+  shortname: 13a_triazine_xy
+  geometry: 3b69:13a
+  reference_value: -3.723
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13a triazine yz
+  shortname: 13a_triazine_yz
+  geometry: 3b69:13a
+  reference_value: -0.05
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13a triazine zx
+  shortname: 13a_triazine_zx
+  geometry: 3b69:13a
+  reference_value: -3.723
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13b triazine xy
+  shortname: 13b_triazine_xy
+  geometry: 3b69:13b
+  reference_value: -0.177
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13b triazine yz
+  shortname: 13b_triazine_yz
+  geometry: 3b69:13b
+  reference_value: -3.426
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13b triazine zx
+  shortname: 13b_triazine_zx
+  geometry: 3b69:13b
+  reference_value: -3.426
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13c triazine xy
+  shortname: 13c_triazine_xy
+  geometry: 3b69:13c
+  reference_value: -3.723
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13c triazine yz
+  shortname: 13c_triazine_yz
+  geometry: 3b69:13c
+  reference_value: -0.177
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13c triazine zx
+  shortname: 13c_triazine_zx
+  geometry: 3b69:13c
+  reference_value: -3.426
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14a cyanoacetamide xy
+  shortname: 14a_cyanoacetamide_xy
+  geometry: 3b69:14a
+  reference_value: -0.741
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14a cyanoacetamide yz
+  shortname: 14a_cyanoacetamide_yz
+  geometry: 3b69:14a
+  reference_value: -9.898
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14a cyanoacetamide zx
+  shortname: 14a_cyanoacetamide_zx
+  geometry: 3b69:14a
+  reference_value: -1.941
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14b cyanoacetamide xy
+  shortname: 14b_cyanoacetamide_xy
+  geometry: 3b69:14b
+  reference_value: -0.741
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14b cyanoacetamide yz
+  shortname: 14b_cyanoacetamide_yz
+  geometry: 3b69:14b
+  reference_value: -16.971
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14b cyanoacetamide zx
+  shortname: 14b_cyanoacetamide_zx
+  geometry: 3b69:14b
+  reference_value: -6.883
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14c cyanoacetamide xy
+  shortname: 14c_cyanoacetamide_xy
+  geometry: 3b69:14c
+  reference_value: -1.085
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14c cyanoacetamide yz
+  shortname: 14c_cyanoacetamide_yz
+  geometry: 3b69:14c
+  reference_value: -9.898
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14c cyanoacetamide zx
+  shortname: 14c_cyanoacetamide_zx
+  geometry: 3b69:14c
+  reference_value: -9.904
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15a cyanoguanidine xy
+  shortname: 15a_cyanoguanidine_xy
+  geometry: 3b69:15a
+  reference_value: -1.324
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15a cyanoguanidine yz
+  shortname: 15a_cyanoguanidine_yz
+  geometry: 3b69:15a
+  reference_value: -19.825
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15a cyanoguanidine zx
+  shortname: 15a_cyanoguanidine_zx
+  geometry: 3b69:15a
+  reference_value: -13.705
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15b cyanoguanidine xy
+  shortname: 15b_cyanoguanidine_xy
+  geometry: 3b69:15b
+  reference_value: -19.825
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15b cyanoguanidine yz
+  shortname: 15b_cyanoguanidine_yz
+  geometry: 3b69:15b
+  reference_value: 2.862
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15b cyanoguanidine zx
+  shortname: 15b_cyanoguanidine_zx
+  geometry: 3b69:15b
+  reference_value: -6.978
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15c cyanoguanidine xy
+  shortname: 15c_cyanoguanidine_xy
+  geometry: 3b69:15c
+  reference_value: -1.324
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15c cyanoguanidine yz
+  shortname: 15c_cyanoguanidine_yz
+  geometry: 3b69:15c
+  reference_value: -6.978
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15c cyanoguanidine zx
+  shortname: 15c_cyanoguanidine_zx
+  geometry: 3b69:15c
+  reference_value: -2.642
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16a triazolidinedione xy
+  shortname: 16a_triazolidinedione_xy
+  geometry: 3b69:16a
+  reference_value: -2.207
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16a triazolidinedione yz
+  shortname: 16a_triazolidinedione_yz
+  geometry: 3b69:16a
+  reference_value: -2.207
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16a triazolidinedione zx
+  shortname: 16a_triazolidinedione_zx
+  geometry: 3b69:16a
+  reference_value: 0.056
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16b triazolidinedione xy
+  shortname: 16b_triazolidinedione_xy
+  geometry: 3b69:16b
+  reference_value: -5.705
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16b triazolidinedione yz
+  shortname: 16b_triazolidinedione_yz
+  geometry: 3b69:16b
+  reference_value: -6.758
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16b triazolidinedione zx
+  shortname: 16b_triazolidinedione_zx
+  geometry: 3b69:16b
+  reference_value: -16.524
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16c triazolidinedione xy
+  shortname: 16c_triazolidinedione_xy
+  geometry: 3b69:16c
+  reference_value: -2.207
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16c triazolidinedione yz
+  shortname: 16c_triazolidinedione_yz
+  geometry: 3b69:16c
+  reference_value: 0.59
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16c triazolidinedione zx
+  shortname: 16c_triazolidinedione_zx
+  geometry: 3b69:16c
+  reference_value: -5.705
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17a oxazolidinone xy
+  shortname: 17a_oxazolidinone_xy
+  geometry: 3b69:17a
+  reference_value: -5.071
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17a oxazolidinone yz
+  shortname: 17a_oxazolidinone_yz
+  geometry: 3b69:17a
+  reference_value: -4.911
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17a oxazolidinone zx
+  shortname: 17a_oxazolidinone_zx
+  geometry: 3b69:17a
+  reference_value: -5.071
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17b oxazolidinone xy
+  shortname: 17b_oxazolidinone_xy
+  geometry: 3b69:17b
+  reference_value: -5.071
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17b oxazolidinone yz
+  shortname: 17b_oxazolidinone_yz
+  geometry: 3b69:17b
+  reference_value: -9.609
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17b oxazolidinone zx
+  shortname: 17b_oxazolidinone_zx
+  geometry: 3b69:17b
+  reference_value: -2.246
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17c oxazolidinone xy
+  shortname: 17c_oxazolidinone_xy
+  geometry: 3b69:17c
+  reference_value: -1.146
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17c oxazolidinone yz
+  shortname: 17c_oxazolidinone_yz
+  geometry: 3b69:17c
+  reference_value: -0.809
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17c oxazolidinone zx
+  shortname: 17c_oxazolidinone_zx
+  geometry: 3b69:17c
+  reference_value: -9.609
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18a succinic_anhydride xy
+  shortname: 18a_succinic_anhydride_xy
+  geometry: 3b69:18a
+  reference_value: -3.602
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18a succinic_anhydride yz
+  shortname: 18a_succinic_anhydride_yz
+  geometry: 3b69:18a
+  reference_value: -4.34
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18a succinic_anhydride zx
+  shortname: 18a_succinic_anhydride_zx
+  geometry: 3b69:18a
+  reference_value: -5.687
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18b succinic_anhydride xy
+  shortname: 18b_succinic_anhydride_xy
+  geometry: 3b69:18b
+  reference_value: -4.34
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18b succinic_anhydride yz
+  shortname: 18b_succinic_anhydride_yz
+  geometry: 3b69:18b
+  reference_value: 0.214
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18b succinic_anhydride zx
+  shortname: 18b_succinic_anhydride_zx
+  geometry: 3b69:18b
+  reference_value: -4.34
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18c succinic_anhydride xy
+  shortname: 18c_succinic_anhydride_xy
+  geometry: 3b69:18c
+  reference_value: -0.05
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18c succinic_anhydride yz
+  shortname: 18c_succinic_anhydride_yz
+  geometry: 3b69:18c
+  reference_value: -5.687
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18c succinic_anhydride zx
+  shortname: 18c_succinic_anhydride_zx
+  geometry: 3b69:18c
+  reference_value: -5.687
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19a benzene xy
+  shortname: 19a_benzene_xy
+  geometry: 3b69:19a
+  reference_value: -1.448
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19a benzene yz
+  shortname: 19a_benzene_yz
+  geometry: 3b69:19a
+  reference_value: -1.739
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19a benzene zx
+  shortname: 19a_benzene_zx
+  geometry: 3b69:19a
+  reference_value: -2.7
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19b benzene xy
+  shortname: 19b_benzene_xy
+  geometry: 3b69:19b
+  reference_value: -2.7
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19b benzene yz
+  shortname: 19b_benzene_yz
+  geometry: 3b69:19b
+  reference_value: -1.448
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19b benzene zx
+  shortname: 19b_benzene_zx
+  geometry: 3b69:19b
+  reference_value: -1.739
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19c benzene xy
+  shortname: 19c_benzene_xy
+  geometry: 3b69:19c
+  reference_value: -0.556
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19c benzene yz
+  shortname: 19c_benzene_yz
+  geometry: 3b69:19c
+  reference_value: -2.7
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19c benzene zx
+  shortname: 19c_benzene_zx
+  geometry: 3b69:19c
+  reference_value: -2.7
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20a maleic_acid xy
+  shortname: 20a_maleic_acid_xy
+  geometry: 3b69:20a
+  reference_value: -5.185
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20a maleic_acid yz
+  shortname: 20a_maleic_acid_yz
+  geometry: 3b69:20a
+  reference_value: -11.318
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20a maleic_acid zx
+  shortname: 20a_maleic_acid_zx
+  geometry: 3b69:20a
+  reference_value: -2.675
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20b maleic_acid xy
+  shortname: 20b_maleic_acid_xy
+  geometry: 3b69:20b
+  reference_value: -11.318
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20b maleic_acid yz
+  shortname: 20b_maleic_acid_yz
+  geometry: 3b69:20b
+  reference_value: -11.318
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20b maleic_acid zx
+  shortname: 20b_maleic_acid_zx
+  geometry: 3b69:20b
+  reference_value: -0.327
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: L
+  tags: L
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20c maleic_acid xy
+  shortname: 20c_maleic_acid_xy
+  geometry: 3b69:20c
+  reference_value: -1.123
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20c maleic_acid yz
+  shortname: 20c_maleic_acid_yz
+  geometry: 3b69:20c
+  reference_value: -1.123
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20c maleic_acid zx
+  shortname: 20c_maleic_acid_zx
+  geometry: 3b69:20c
+  reference_value: 0.636
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21a p-benzoquinone xy
+  shortname: 21a_p-benzoquinone_xy
+  geometry: 3b69:21a
+  reference_value: -3.58
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21a p-benzoquinone yz
+  shortname: 21a_p-benzoquinone_yz
+  geometry: 3b69:21a
+  reference_value: -5.125
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21a p-benzoquinone zx
+  shortname: 21a_p-benzoquinone_zx
+  geometry: 3b69:21a
+  reference_value: -3.58
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21b p-benzoquinone xy
+  shortname: 21b_p-benzoquinone_xy
+  geometry: 3b69:21b
+  reference_value: -5.125
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21b p-benzoquinone yz
+  shortname: 21b_p-benzoquinone_yz
+  geometry: 3b69:21b
+  reference_value: -2.289
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21b p-benzoquinone zx
+  shortname: 21b_p-benzoquinone_zx
+  geometry: 3b69:21b
+  reference_value: -2.289
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21c p-benzoquinone xy
+  shortname: 21c_p-benzoquinone_xy
+  geometry: 3b69:21c
+  reference_value: -1.924
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21c p-benzoquinone yz
+  shortname: 21c_p-benzoquinone_yz
+  geometry: 3b69:21c
+  reference_value: -2.289
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21c p-benzoquinone zx
+  shortname: 21c_p-benzoquinone_zx
+  geometry: 3b69:21c
+  reference_value: -3.58
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22a uracil xy
+  shortname: 22a_uracil_xy
+  geometry: 3b69:22a
+  reference_value: -11.078
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22a uracil yz
+  shortname: 22a_uracil_yz
+  geometry: 3b69:22a
+  reference_value: -9.349
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22a uracil zx
+  shortname: 22a_uracil_zx
+  geometry: 3b69:22a
+  reference_value: -3.496
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22b uracil xy
+  shortname: 22b_uracil_xy
+  geometry: 3b69:22b
+  reference_value: -1.37
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22b uracil yz
+  shortname: 22b_uracil_yz
+  geometry: 3b69:22b
+  reference_value: -1.37
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22b uracil zx
+  shortname: 22b_uracil_zx
+  geometry: 3b69:22b
+  reference_value: 0.336
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22c uracil xy
+  shortname: 22c_uracil_xy
+  geometry: 3b69:22c
+  reference_value: -0.409
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22c uracil yz
+  shortname: 22c_uracil_yz
+  geometry: 3b69:22c
+  reference_value: -1.37
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22c uracil zx
+  shortname: 22c_uracil_zx
+  geometry: 3b69:22c
+  reference_value: -3.496
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: M
+  tags: M
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23a cyclobutylfuran xy
+  shortname: 23a_cyclobutylfuran_xy
+  geometry: 3b69:23a
+  reference_value: -2.22
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23a cyclobutylfuran yz
+  shortname: 23a_cyclobutylfuran_yz
+  geometry: 3b69:23a
+  reference_value: -3.093
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23a cyclobutylfuran zx
+  shortname: 23a_cyclobutylfuran_zx
+  geometry: 3b69:23a
+  reference_value: -3.093
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23b cyclobutylfuran xy
+  shortname: 23b_cyclobutylfuran_xy
+  geometry: 3b69:23b
+  reference_value: -1.418
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23b cyclobutylfuran yz
+  shortname: 23b_cyclobutylfuran_yz
+  geometry: 3b69:23b
+  reference_value: -2.103
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23b cyclobutylfuran zx
+  shortname: 23b_cyclobutylfuran_zx
+  geometry: 3b69:23b
+  reference_value: -2.88
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23c cyclobutylfuran xy
+  shortname: 23c_cyclobutylfuran_xy
+  geometry: 3b69:23c
+  reference_value: -3.461
+  setup:
+    molecule_a:
+      selection: '%molecule(1)'
+    molecule_b:
+      selection: '%molecule(2)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23c cyclobutylfuran yz
+  shortname: 23c_cyclobutylfuran_yz
+  geometry: 3b69:23c
+  reference_value: -2.712
+  setup:
+    molecule_a:
+      selection: '%molecule(2)'
+    molecule_b:
+      selection: '%molecule(3)'
+  group: H
+  tags: H
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23c cyclobutylfuran zx
+  shortname: 23c_cyclobutylfuran_zx
+  geometry: 3b69:23c
+  reference_value: -1.418
+  setup:
+    molecule_a:
+      selection: '%molecule(3)'
+    molecule_b:
+      selection: '%molecule(1)'
+  group: H
+  tags: H

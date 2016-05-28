@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface template</h1>
+<p>
+This simple interface serves as a template for development of interfaces to new external programs. As a demonstration, it provides very simple access to the MOPAC2012 program (which is covered by a separate <a href="interface_mopac.html">full-featured interface</a>).
+</p>
+
+<p>
+Details are provided as comments in the source code which can be found in the cuby4 direcory in the file interfaces/template/template.rb.
+</p>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>am1</li>
+<li>pm6</li>
+</ul>
+<h4>All the methods support calculation of following properties:</h4>
+<ul>
+<li>energy</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#template_mopac_exe">template_mopac_exe</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#existing_calc_dir">existing_calc_dir</a></li>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#method">method</a></li>
+<li><a href="keywords.html#start_from_previous">start_from_previous</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/template/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Template interface example
+#===============================================================================
+
+# The template interface is a simplified version of the Mopac interface
+# Here, a single-point  AM1 calculation of water molecule is shown
+
+# Calculation specification
+job: energy
+interface: template
+method: am1
+
+# Interface setup - path to MOPAC2012
+template_mopac_exe: /home/rezac/bin/MOPAC2012/MOPAC2012.exe
+
+# System calculated
+geometry: A24:water
+charge: 0
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

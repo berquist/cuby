@@ -1,0 +1,33 @@
+#===============================================================================
+# Geometry protocol example 2 - actions available in this protocol
+#===============================================================================
+
+# This is example of a multi-step job that does the following:
+# 1) extracts one molecule from a dimer
+# 2) optimizes the extracted molecule
+# 3) loads the optimized monomer coordinates back into the dimer
+
+job: multistep
+steps: extract, optimize, update
+
+calculation_extract: # Extract the monomer
+  job: geometry
+  geometry: water_dimer.pdb
+  selection: ":1" # First residue
+  geometry_write: water1.pdb
+
+calculation_optimize: #  optimization
+  job: optimize
+  interface: mopac
+  method: am1
+  charge: 0
+  geometry: water1.pdb
+  restart_file: optimized.pdb
+  optimize_print: [final_energy] # Do not print each step of optimization
+
+calculation_update: # Update the dimer
+  job: geometry
+  geometry: water_dimer.pdb # Original dimer geometry
+  geometry2: optimized.pdb # New geometry of the monomer
+  geometry_action: partial_pdb_update
+  geometry_write: updated_dimer.pdb

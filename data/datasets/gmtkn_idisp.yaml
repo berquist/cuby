@@ -1,0 +1,100 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_IDISP
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "intramolecular dispersion interactions"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_IDISP:antdimer"
+  reference_value: -9.0
+  setup:
+    reaction_formula: "2 g_ant -> 1 g_antdimer"
+    reaction_geometries:
+      g_antdimer: gmtkn_IDISP:antdimer
+      g_ant: gmtkn_IDISP:ant
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_IDISP:pxylene"
+  reference_value: -58.5
+  setup:
+    reaction_formula: "1 g_pc22 + 2 g_h2 -> 2 g_pxylene"
+    reaction_geometries:
+      g_pxylene: gmtkn_IDISP:pxylene
+      g_pc22: gmtkn_IDISP:pc22
+      g_h2: gmtkn_IDISP:h2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_IDISP:octane1"
+  reference_value: -1.9
+  setup:
+    reaction_formula: "1 g_octane2 -> 1 g_octane1"
+    reaction_geometries:
+      g_octane1: gmtkn_IDISP:octane1
+      g_octane2: gmtkn_IDISP:octane2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_IDISP:undecan1"
+  reference_value: 8.2
+  setup:
+    reaction_formula: "1 g_undecan2 -> 1 g_undecan1"
+    reaction_geometries:
+      g_undecan1: gmtkn_IDISP:undecan1
+      g_undecan2: gmtkn_IDISP:undecan2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_IDISP:F14f"
+  reference_value: -3.1
+  setup:
+    reaction_formula: "1 g_F14f -> 1 g_F14l"
+    reaction_geometries:
+      g_F14f: gmtkn_IDISP:F14f
+      g_F14l: gmtkn_IDISP:F14l
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_IDISP:F22f"
+  reference_value: 0.4
+  setup:
+    reaction_formula: "1 g_F22f -> 1 g_F22l"
+    reaction_geometries:
+      g_F22f: gmtkn_IDISP:F22f
+      g_F22l: gmtkn_IDISP:F22l
+  tags: ""
+

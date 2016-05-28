@@ -1,0 +1,143 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Data set description
+#===============================================================================
+
+# Energies: CCSD(T)/CBS, frozen core
+#    MP2 extrapolation from aug-cc-pVTZ, aug-cc-pVQZ
+#    dCCSD(T) in 6-31G*(0.25)
+# Geometries: MP2/aug-cc-pVTZ
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: Peptide_FGG
+  references: 
+    "10.1039/b719294k": "Valdes, H.; Pluháčková, K.; Pitonák, M.; Řezáč, J.; Hobza, P. Phys. Chem. Chem. Phys. 2008, 10, 2747."
+  text: "CSCD(T)/CBS conformation energies of FGG tripeptide"
+
+  global_setup:
+    job: energy
+  dataset_setup:
+    dataset_processing: relative_to_average
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 FGG_114
+  shortname: 01_FGG_114
+  geometry: peptide_conformers:FGG_114
+  reference_value: -0.02
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 FGG_215
+  shortname: 02_FGG_215
+  geometry: peptide_conformers:FGG_215
+  reference_value: -0.76
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 FGG_224
+  shortname: 03_FGG_224
+  geometry: peptide_conformers:FGG_224
+  reference_value: 0.38
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 FGG_252
+  shortname: 04_FGG_252
+  geometry: peptide_conformers:FGG_252
+  reference_value: 0.68
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 FGG_300
+  shortname: 05_FGG_300
+  geometry: peptide_conformers:FGG_300
+  reference_value: 1.07
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 FGG_357
+  shortname: 06_FGG_357
+  geometry: peptide_conformers:FGG_357
+  reference_value: -0.87
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 FGG_366
+  shortname: 07_FGG_366
+  geometry: peptide_conformers:FGG_366
+  reference_value: -0.53
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 FGG_380
+  shortname: 08_FGG_380
+  geometry: peptide_conformers:FGG_380
+  reference_value: 0.72
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 FGG_412
+  shortname: 09_FGG_412
+  geometry: peptide_conformers:FGG_412
+  reference_value: 0.31
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 FGG_444
+  shortname: 10_FGG_444
+  geometry: peptide_conformers:FGG_444
+  reference_value: -1.36
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 FGG_470
+  shortname: 11_FGG_470
+  geometry: peptide_conformers:FGG_470
+  reference_value: 0.47
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 FGG_55
+  shortname: 12_FGG_55
+  geometry: peptide_conformers:FGG_55
+  reference_value: 0.99
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 FGG_691
+  shortname: 13_FGG_691
+  geometry: peptide_conformers:FGG_691
+  reference_value: 0.31
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 FGG_80
+  shortname: 14_FGG_80
+  geometry: peptide_conformers:FGG_80
+  reference_value: 0.66
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 FGG_99
+  shortname: 15_FGG_99
+  geometry: peptide_conformers:FGG_99
+  reference_value: -2.05
+  tags: ""
+
+#===============================================================================
+# Alternative data
+#===============================================================================
+
+alternative_reference:
+  # Data from the original paper, as downloaded from BEGDB.com
+  # MP2 extrapolated from TZ,QZ
+  # Higher-order correction in 6-31G*(0.25)
+  "CCSD(T)/CBS": [ -0.02, -0.76, 0.38, 0.68, 1.07, -0.87, -0.53, 0.72, 0.31, -1.36, 0.47, 0.99, 0.31, 0.66, -2.05 ]
+  "MP2/CBS": [ -0.75, -0.77, 0.33, 0.92, 1.93, -1.57, 0.15, 0.74, 0.04, -1.22, 0.49, 1.07, 0.81, 0.16, -2.32 ]
+  "MP3/CBS": [ 0.07, -0.59, 0.72, 0.64, 0.53, -0.82, -1.15, 0.84, 0.64, -1.29, 0.1, 1.28, -0.08, 0.67, -1.56 ]
+  "MP2.5/CBS": [ -0.34, -0.68, 0.525, 0.78, 1.23, -1.195, -0.5, 0.79, 0.34, -1.255, 0.295, 1.175, 0.365, 0.415, -1.94 ]

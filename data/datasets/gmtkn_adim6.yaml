@@ -1,0 +1,99 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_ADIM6
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "interaction energies of n-alkane dimers"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_ADIM6:AM2"
+  reference_value: 1.30
+  setup:
+    reaction_formula: "1 g_AD2 -> 2 g_AM2"
+    reaction_geometries:
+      g_AM2: gmtkn_ADIM6:AM2
+      g_AD2: gmtkn_ADIM6:AD2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_ADIM6:AM3"
+  reference_value: 1.97
+  setup:
+    reaction_formula: "1 g_AD3 -> 2 g_AM3"
+    reaction_geometries:
+      g_AM3: gmtkn_ADIM6:AM3
+      g_AD3: gmtkn_ADIM6:AD3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_ADIM6:AM4"
+  reference_value: 2.79
+  setup:
+    reaction_formula: "1 g_AD4 -> 2 g_AM4"
+    reaction_geometries:
+      g_AM4: gmtkn_ADIM6:AM4
+      g_AD4: gmtkn_ADIM6:AD4
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_ADIM6:AM5"
+  reference_value: 3.68
+  setup:
+    reaction_formula: "1 g_AD5 -> 2 g_AM5"
+    reaction_geometries:
+      g_AM5: gmtkn_ADIM6:AM5
+      g_AD5: gmtkn_ADIM6:AD5
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_ADIM6:AM6"
+  reference_value: 4.61
+  setup:
+    reaction_formula: "1 g_AD6 -> 2 g_AM6"
+    reaction_geometries:
+      g_AM6: gmtkn_ADIM6:AM6
+      g_AD6: gmtkn_ADIM6:AD6
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_ADIM6:AM7"
+  reference_value: 5.60
+  setup:
+    reaction_formula: "1 g_AD7 -> 2 g_AM7"
+    reaction_geometries:
+      g_AM7: gmtkn_ADIM6:AM7
+      g_AD7: gmtkn_ADIM6:AD7
+  tags: ""
+

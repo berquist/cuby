@@ -1,0 +1,8 @@
+# Custom leaprc file
+
+# Load the forcefields
+source %amberhome/dat/leap/cmd/leaprc.ff03.r1
+source %amberhome/dat/leap/cmd/leaprc.gaff
+
+loadamberparams %pwd/frcmod.fma
+fma = loadmol2 %pwd/fma.mol2

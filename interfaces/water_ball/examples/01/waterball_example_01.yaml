@@ -1,0 +1,25 @@
+#===============================================================================
+# Waterball modifier example
+#===============================================================================
+
+# 1000 steps of molecular dynamics using the default AMBER forcefield
+# This input assumes that AMBER interface is already configured
+
+job: dynamics
+init_temp: 300
+maxcycles: 1000
+interface: amber
+
+# Geometry: ace-ala-nme solvated with 124 water molecules
+geometry: ace_ala_nme_waterball.pdb
+
+# Apply the water_ball modifier
+modifiers: water_ball
+
+# Setup for the modifier
+modifier_water_ball:
+  # The droplet is centered on the solute
+  waterball_center: solute
+  # The solute is defined as the first three residues in the PDB file
+  waterball_solute: :1-3
+

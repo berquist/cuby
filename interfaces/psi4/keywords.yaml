@@ -1,0 +1,61 @@
+################################################################################
+# KEYWORDS for the PSI4 interface
+################################################################################
+
+keywords:
+  :psi4_df_guess: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Use density fitting calculation as a guess for a regular SCF.
+
+  :psi4_bin_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the directory containing the psi4 binaries
+
+  :psi4_data_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the psi4 data directory
+
+  :psi4_geometry_fragments: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Separate fragments in DFT geometry. Two fragments should be defined
+  #: in blocks molecule_a and molecule_b. Keywords charge, multiplicity and
+  #: selection are needed.
+
+  :psi4_sapt_level: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :warning
+    default_value: :"sapt0"
+    allowed_values:
+      - :"sapt0"
+      - :"sapt2"
+      - :"sapt2+"
+      - :"sapt2+(3)"
+      - :"sapt2+3"
+
+  :psi4_sapt_ct: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Switch on additional SAPT calculations to separating charge transfer
+  #: energy as a difference between SAPT polarization in monomer and dimer basis.
+
+  :psi4_fno: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Frozen Natural Orbitals approximation in MP3, CCSD and CCSD(T) calculations.
+
+  :fno_occ_tolerance: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.0e-6
+  #: Occupancy threshold for selcction of FNO orbitals. The default value is identical
+  #: to the default in Psi4.

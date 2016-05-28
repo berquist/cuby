@@ -1,0 +1,24 @@
+<%# Blank lines to get to the method setup %>
+
+
+
+
+
+
+
+
+<%# Enter RICC2 setup %>
+cc
+<%# Auxiliary basis, must be present in the library %>
+cbas
+<%# It might not be known for the current basis, skip for each element %>
+<% @geometry.elements_in_system.each {|i| %>
+
+<% } %>
+b all <%= @settings[:auxiliary_basis_mp2] %>
+<% @settings.elements_hash(:auxiliary_basis_mp2_elements).each_pair{|element, basis| %>
+b "<%= element.to_s.downcase %>" <%= basis %>
+<% } %>
+*
+*
+*

@@ -1,0 +1,127 @@
+################################################################################
+# Keywords for protocol Frequencies
+################################################################################
+
+keywords: 
+  :freq_print: !ruby/object:SettingsKeyword
+    convert_to: :symbol_list
+    when_not_present: :default
+    default_value: []
+    allowed_values:
+      - :mode_zpve
+      - :reduced_mass
+      - :force_constants
+      - :transformation
+  #: List of extra features to be printed:
+  #* mode_zpve - Print ZPVE (in kcal/mol) for each mode
+  #* reduced_mass - Print the reduced mass of each mode
+  #* force constants - Print the force constant of each mode
+  #* transformation - Transformation matrix from normal to cartesian coordinates
+ 
+  :hessian_read: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: File name of the Hessian to be read (yaml format). If not specified or
+  #: empty (default value), the Hessian is calculated.
+
+  :hessian_write: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "hessian.yaml"
+  #: File to write the calculated Hessian to. If the string is empty, Hessian is not written.
+
+  :freq_molden_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "vibrations.molden"
+  #: Write file for visulatiozation of the vibrations in molden.
+
+  :thermo_temperature: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 298.15
+  #: Temperature for the thermodynamics calculations, in K.
+
+  :thermo_pressure: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 101325.0
+  #: Pressure for the thermodynamics calculations, in Pa.
+  #: The default is 1 atm.
+
+  :thermo_symmetry_number: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.0
+  #: Symmetry number for the thermodynamics calculations.
+
+  :thermo_low_mode_fix: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :as_rotations
+      - :as_rotations_including_negative
+  #: Special treatment of low frequency modes in thermodynamics calculations:
+  #* none - no fix applied
+  #* as_rotations - Low mode entropy correction by Grimme[DOI: 10.1002/chem.201200497]
+  #* as_rotations_including_negative - same as above, including negative frequencies
+
+  :freq_mode_scan: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Save scans (in .xyz format) along all normal modes.
+
+  :freq_mode_scan_n: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 21
+  #: Number of points per mode.
+
+  :freq_mode_scan_e: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 10.0
+  #: The range scanned is specified by energy (by default, in multiples of the
+  #: fundamental vibration frequency, this can be changed by keyword
+  #: freq_mode_scan_e_unit).
+  
+  :freq_mode_scan_e_unit: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :fundamental_frequency
+    allowed_values:
+      - :fundamental_frequency
+      - :cm
+      - :kcal
+  #: Energy unit for keyword req_mode_scan_e. The options are:
+  #* fundamental_frequency - difefrent range for each mode, in multiples of v0
+  #* cm - same range for all modes, in cm^-1
+  #* kcal - same range for all modes, in kcal/mol
+
+  :freq_mode_scan_multidimensional: !ruby/object:SettingsKeyword
+    convert_to: :array
+    when_not_present: :default
+    default_value: []
+  #: Multi-dimensional scan in selected modes. If the list of modes is empty,
+  #: 1D scans for each mode are done instead.
+
+  :freq_mode_scan_grids: !ruby/object:SettingsKeyword
+    convert_to: :array
+    when_not_present: :default
+    default_value: []
+  #: Grid specification (in dimensionless normal coordinates) 
+  #: for each mode in a multidimensional scan (optional, if not set,
+  #: the energy-based displacement is used). Two possible formats are available:
+  #* "seq(start, step, end)" - generates a equally-spaced grid
+  #* yaml array - an arbitrary list of numbers
+
+  :freq_mode_scan_batchsize: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 1000
+  #: Large multidimensional scans can be split to multiple files, this number
+  #: specifies number of geometries per file.

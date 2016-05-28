@@ -1,0 +1,288 @@
+#!/usr/bin/env ruby
+$:.unshift(File.dirname(__FILE__)+"/..").uniq! # Magic line to add path to the executable to $RUBYLIB
+require "classes/cuby.rb" # Load Cuby classes and libraries
+
+require "documentation/text_html_printer.rb"
+
+module KeywordInfo
+	@@interfaces_dir = ''
+	@@protocols_dir = ''
+
+	DATA_TYPES = {
+		 :boolean		=> "boolean (syntax: yes, no, true, false)",
+		 :integer		=> "integer number (syntax: a number)",
+		 :float			=> "real number (syntax: a number)",
+		 :string		=> "string (syntax: a string, in YAML syntax)",
+		 :symbol		=> "item from the list of allowed values",
+		 :symbol_list		=> "list of items from the list (comma-separated) of allowed values",
+		 :hash			=> "hash - a list of name: value pairs (in YAML syntax)",
+		 :hash_symbol_symbol	=> "hash - a list of name: value pairs (in YAML syntax)",
+		 :array			=> "array (in YAML syntax, e.g. [item1, item2, ...])",
+	}
+
+	DATA_TYPES_SHORT = {
+		 :boolean		=> "",
+		 :integer		=> "",
+		 :float			=> "",
+		 :string		=> "",
+		 :symbol		=> "",
+		 :symbol_list		=> "",
+		 :hash			=> "<a class=\"link_type\" href=\"input_types.html#hash\">hash - a list of name: value pairs</a>",
+		 :hash_symbol_symbol	=> "<a class=\"link_type\" href=\"input_types.html#hash\">hash - a list of name: value pairs</a>",
+		 :array			=> "<a class=\"link_type\" href=\"input_types.html#array\">array</a>",
+	}
+
+	def KeywordInfo.interface_dir=(val)
+		@@interfaces_dir = val
+	end
+
+	def KeywordInfo.protocols_dir=(val)
+		@@protocols_dir = val
+	end
+
+	def KeywordInfo.print_description(keyname, keyword, printer)
+		file = Cuby.install_dir + "/classes/keywords.yaml"
+		if keyword.interface
+			file = @@interfaces_dir + "/#{keyword.interface[0]}/keywords.yaml"
+		end
+		if keyword.protocol
+			file = @@protocols_dir + "/#{keyword.protocol}/keywords.yaml"
+		end
+
+		f = File.open(file)
+		read = false
+		found = false
+		strings = []
+		list = []
+		while line = f.gets
+			read = true if line =~ /:#{keyname}: *!ruby\/object:SettingsKeyword/
+			break if line =~ /^\s*$/ && read
+			if read
+				if line =~ /#: *(.*)/
+					strings << $1
+					found = true
+				end
+				if line =~ /#\* *(.*)/
+					list << $1
+					found = true
+				end
+			end
+		end
+
+		strings = strings.join("\n")
+
+		printer.paragraph(strings)
+		if list.size > 0
+			printer.list(nil, list)
+		end
+
+		f.close
+		return found
+	end
+
+	def KeywordInfo.print(keyname, keyword, printer)
+		unless KeywordInfo.print_description(keyname, keyword, printer)
+			printer.paragraph "THIS KEYWORD IS NOT DESCRIBED YET"
+		end
+
+		if keyword.interface
+			printer.paragraph "This keyword is defined locally by the interface '#{keyword.interface}'"
+		end
+
+		if keyword.protocol
+			printer.paragraph "This keyword is defined locally by the protocol '#{keyword.protocol}'"
+		end
+
+		if keyword.commandline
+			printer.paragraph "This keyword can be called from commandline using switch '#{keyword.commandline} value'"
+		end
+		
+		printer.paragraph "Data type: #{DATA_TYPES[keyword.convert_to]}"
+
+	       	if keyword.allowed_values
+			printer.list("Allowed values:", keyword.allowed_values.map{|x| x.to_s})
+		end
+
+		action = "Action when the keyword is not set: "
+
+		case keyword.when_not_present
+		when :die
+			action += "Program is terminated"
+		when :warning
+			action += "Default value '#{keyword.default_value}' is used and warning is printed"
+		when :default
+			action += "Default value '#{keyword.default_value}' is used silently"
+		when :other
+			action += "Other action, as described"
+		end
+		printer.paragraph(action)
+
+	end
+
+end
+
+def keyword_documentation(kw, printer)
+	keyname = kw.downcase.strip.gsub(":","").to_sym
+	printer.heading("Keyword #{keyname}")
+
+	if keyword = Settings.keyword(keyname)
+		KeywordInfo.print(keyname, keyword, printer)
+	else
+		printer.paragraph("Keyword '#{keyname}' is not defined in cuby") 
+	end
+	printer.footer
+	exit
+end
+
+def keyword_documentation2(kw, printer)
+	keyword = Settings.keyword(kw)
+	puts "<div class=\"keywordblock\">"
+	puts "<a name=\"#{kw.to_s}\"></a>"
+	puts "<h3>"
+	puts "<span class=\"kwname\">#{kw.to_s}:</span>"
+	case keyword.convert_to
+	when :boolean           
+		if keyword.default_value.nil?
+			puts " <span class=\"kwallowed\">yes | no</span>"
+		else
+			if keyword.default_value
+				puts " <span class=\"kwallowed\"><span class=\"defvalue\">yes</span> | no</span>"
+			else
+				puts " <span class=\"kwallowed\">yes | <span class=\"defvalue\">no</span></span>"
+			end
+		end
+	when :integer           
+		if keyword.default_value.nil?
+			puts " <span class=\"kwtype\"><a class=\"link_type\" href=\"input_types.html#integer\">integer</a></span>"
+		else
+			puts " <span class=\"defvalue\">#{keyword.default_value}</span>"
+		end
+	when :float             
+		if keyword.default_value.nil?
+			puts " <span class=\"kwtype\"><a class=\"link_type\" href=\"input_types.html#float\">float</a></span>"
+		else
+			puts " <span class=\"defvalue\">#{keyword.default_value}</span>"
+		end
+	when :string            
+		if keyword.default_value.nil?
+			puts " <span class=\"kwtype\"><a class=\"link_type\" href=\"input_types.html#string\">string</a></span>"
+		else
+			puts " <span class=\"defvalue\">\"#{keyword.default_value}\"</span>"
+		end
+	when :symbol            
+		if keyword.allowed_values
+			puts " <span class=\"kwallowed\">"
+			puts keyword.allowed_values.map{|x|
+				str = x.to_s
+				if x == keyword.default_value
+					str = "<span class=\"defvalue\">#{str}</span>"
+				end
+				str
+			}.join(" | ")
+			puts "</span>"
+		else
+			puts " <span class=\"kwtype\"><a class=\"link_type\" href=\"input_types.html#symbol\">symbol</a></span>"
+		end
+	when :symbol_list       
+		if keyword.allowed_values
+			puts " <span class=\"kwallowed\">"
+			puts keyword.allowed_values.map{|x|
+				str = x.to_s
+				if keyword.default_value.include?(x)
+					str = "<span class=\"defvalue\">#{str}</span>"
+				end
+				str
+			}.join(" | ")
+			puts "</span>"
+			puts " <span class=\"kwtype\"><a class=\"link_type\" href=\"input_types.html#symbol_list\">(list, more items can be selected)</a></span>"
+		else
+			puts " <span class=\"kwtype\"><a class=\"link_type\" href=\"input_types.html#symbol_list\">list of symbols</a></span>"
+		end
+	when :hash              
+	when :hash_symbol_symbol
+	when :array             
+	end
+
+	puts "<span class=\"kwtype\">#{KeywordInfo::DATA_TYPES_SHORT[keyword.convert_to]}</span>"
+	puts "</h3>"
+	KeywordInfo.print_description(kw.to_s, keyword, printer)
+	#--------------------------------------------------
+	# puts "<ul class=\"kwdetails\">"
+	# puts "<li>sdjgh sdfjgh sdfjgh sdfjgh dfj </li>"
+	# puts "<li>sdjgh sdfjgh sdfjgh sdfjgh dfj </li>"
+	# puts "<li>sdjgh sdfjgh sdfjgh sdfjgh dfj </li>"
+	# puts "</ul>"
+	#-------------------------------------------------- 
+	puts "</div>"
+end
+
+def keyword_list(printer)
+	printer.heading("List of all keywords")
+	
+	items = []
+	Settings.all_keywords.each_pair{|name, data|
+		str = "#{name.to_s}"
+		#str += "   (interface #{data.interface.to_s})" if data.interface
+		#str += "   (protocol #{data.protocol.to_s})" if data.protocol
+		items << str unless data.devel
+	}
+	items.sort!
+	items.map!{|s| "<a href=\"keyword_#{s}.html\">#{s}</a>"} if printer.html
+	printer.list(nil, items)
+	printer.footer
+	exit
+end
+
+def keyword_list_details(printer)
+	keywords = Settings.all_keywords
+	printer.heading("List of all keywords")
+	keywords.keys.sort.each{|name|
+		keyword_documentation2(name, printer) unless keywords[name].devel
+	}
+	printer.footer
+	exit
+end
+
+def keyword_list_commandline(printer)
+	printer.heading("List of keywords accessible from the command line")
+	
+	items = []
+	Settings.all_keywords.each_pair{|name, data|
+		if data.commandline
+			case data.convert_to
+			when :boolean
+				values = "yes|no"
+			when :string
+				values = "string"
+			when :symbol
+				if data.allowed_values
+					values = data.allowed_values.map{|x| x.to_s}.join("|") 
+				else
+					values = "string"
+				end
+			end
+
+			str = "#{data.commandline}\t#{name.to_s} (#{values})"
+			items << str
+		end
+	}
+	items.sort!
+	printer.list(nil, items)
+	printer.footer
+	exit
+end
+
+Cuby.application {
+	# Load Cuby classes and libraries
+	Cuby.load_framework(:skip_global_config => true, :skip_user_config => true)
+	KeywordInfo.interface_dir = Cuby::install_dir + "/interfaces"
+	KeywordInfo.protocols_dir = Cuby::install_dir + "/protocols"
+
+	printer = TextHtmlPrinter.new($stdout, (ARGV.include? "html") ? :html : :text)
+	printer.header
+
+	keyword_list(printer) if ARGV.size == 0 || ARGV[0] == "html"
+	keyword_list_details(printer) if ARGV[0] == "html_details"
+	keyword_list_commandline(printer) if ARGV[0] == "commandline"
+	keyword_documentation(ARGV[0], printer)
+}

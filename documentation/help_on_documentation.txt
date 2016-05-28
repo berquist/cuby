@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+  Interactive documentation
+-------------------------------------------------------------------------------
+  
+  Documentation can be accessed from commandline as follows:
+  'cuby4 kw'                       list all keywords
+  'cuby4 kw commandline'           list of keywords accessible from commandline
+  'cuby4 kw keyword_name'          detailed information on specific keyword
+  'cuby4 interface'                list of interfaces
+  'cuby4 inteface interface_name'  information on the selected interface
+  'cuby4 protocol'                 list of protocols
+  'cuby4 protocol protocol_name'   information on a protocol (job type)
+  'cuby4 method'                   list of available methods
+  'cuby4 method method_name'       information on a computational method
+
+-------------------------------------------------------------------------------
+  Interactive shell
+-------------------------------------------------------------------------------
+
+  The command 'cuby4 shell' starts interactive shell based on ruby's irb,
+  with the complete cuby framework loaded.
+
+-------------------------------------------------------------------------------
+  Other options
+-------------------------------------------------------------------------------
+
+  Cuby accepts also following commandline arguments:
+  --info        prints information about the installation
+  --make        compile the binary extensions
+  --test        run a simple test calculation
+  --drb-server  start a server accepting remote calculation requests
+  

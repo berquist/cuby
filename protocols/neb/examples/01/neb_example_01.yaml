@@ -1,0 +1,27 @@
+#===============================================================================
+# Nudged Elatic Band protocol example 1
+#===============================================================================
+
+# Minimum energy path optimization for rotation of bond in propane molecule
+
+job: neb
+
+# The initial series of geometries was built by interpolating z-matrices of
+# an initial and rotated state
+geometry: propane_scan.xyz
+
+# Force constant connecting the images - it controls the spacing of the points
+# along the MEP but the calculation is not very sensitive to it
+neb_fconst: 10.0
+
+# Optimize also the initial and final state - can be disabled if the geometries
+# had been optimized already
+neb_optimize_endpoints: yes
+
+# Calculate four images in parallel
+cuby_threads: 4
+
+calculation:
+  interface: mopac
+  method: pm6
+  charge: 0

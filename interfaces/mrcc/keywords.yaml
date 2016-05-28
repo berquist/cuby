@@ -1,0 +1,39 @@
+################################################################################
+# KEYWORDS for interface MRCC
+################################################################################
+
+keywords:
+  :mrcc_bin_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the directory with mrcc executables
+
+  :mrcc_local_cc: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :lno
+  #: Switches on local coupled cluster method:
+  #* lno: Local natural orbitals, http://dx.doi.org/10.1063/1.4819401
+  # cim: Cluster-in-molecule, http://dx.doi.org/10.1063/1.3632085
+
+  :mrcc_lno_eps_o: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 5
+  #: Threshold for LNO-CC calculations, as 10^X, the default value is rather tight. See the original paper for details.
+
+  :mrcc_lno_eps_v: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 6
+  #: Threshold for LNO-CC calculations, as 10^X, the default value is rather tight. See the original paper for details.
+
+  :mrcc_lno_domrad: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 10
+  #: Domain radius for LNO-CC calculations. See the original paper for details.

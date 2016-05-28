@@ -1,0 +1,46 @@
+#===============================================================================
+# Multistep protocol example 3 - composite result
+#===============================================================================
+
+# A single result composed from the results of all the steps can be calculated.
+
+# Example: calculate PM6-D3H4 energy difefrence before and after optimization
+# at PM6 level.
+
+job: multistep
+steps: energy1, opt, energy2
+
+# The final result:
+# Expression for calculation of the results in Ruby language
+# The results of the steps are stored in a variable steps, indexed
+# by step name, as instances of the Results class.
+multistep_result_expression: "steps['energy2'].energy - steps['energy1'].energy"
+# Arbitrary name of the result, optional
+multistep_result_name: Energy difference
+
+# Energy before optimization
+calculation_energy1:
+  job: energy
+  method: pm6
+  modifiers: dispersion3, h_bonds4
+  geometry: A24:water # Water molecule
+
+# Optimization
+calculation_opt:
+  job: optimize
+  opt_quality: 0.1
+  method: pm6
+  geometry: A24:water # same as in the first step
+  history_freq: 0 # do not write optimization history
+  
+# Energy after optimization
+calculation_energy2:
+  job: energy
+  method: pm6
+  modifiers: dispersion3, h_bonds4
+  geometry: optimized.xyz
+
+# Common setup
+calculation_common:
+  interface: mopac
+  charge: 0

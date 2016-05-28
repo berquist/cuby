@@ -1,0 +1,16 @@
+################################################################################
+# KEYWORDS for interface Mixer
+################################################################################
+
+keywords:
+  :mixer_weight_a: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: Weight for calculation a. The calculation should be defined in a block
+  #: calculation_a. 
+
+  :mixer_weight_b: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: Weight for calculation a. The calculation should be defined in a block
+  #: calculation_a. 

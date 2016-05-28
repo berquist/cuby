@@ -1,0 +1,8 @@
+$title
+cuby calculation
+$operating system unix
+$symmetry c1
+$coord    file=coord
+$user-defined bonds    file=coord
+$basis    file=basis
+$end

@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Cuby - ruby framework for computational chemistry</h1>
+
+<p>
+Cuby is a computational chemistry framework written in 
+<a href="https://www.ruby-lang.org">ruby</a>. 
+For users, it provides an unified access to various computational methods
+available in difefrent software packages. For developers, Cuby is much more
+- it is a complex framework that provides object-oriented access to the
+data enetering the calculations and to their results, making it easy to
+create new computational protocols by combining existing blocks of the
+framework.
+</p>
+
+<p>
+Although Cuby is used for calculations, it does very little of them itself. 
+It calls external software to do the calculations and works with their results. 
+Cuby provides an unified way how to run calculations in many popular 
+computational chemistry programs and it can combine the results into more 
+advanced protocols. Software already supported in Cuby is listed on page 
+<a href=interfaces.html>Interfaces</a>; new interfaces can be developed easily.
+There is a good reason to divide the work this way - the specialized programs
+efficiently do what they are made for while Cuby provides the high-level
+interface and the possibility to work with the results in new ways. Cuby
+implements many of the common computational <a href="protocols.html">protocols</a>
+which can be combined into more complex workflows.
+</p>
+
+<div class="newsbox">
+<h3>Paper on cuby available!</h3>
+<p>
+Finally, a paper on Cuby is there! It overviews the purpose, design and applications of Cuby. It has been published in Journal of Computational Chemistry &ndash; available <a href="http://dx.doi.org//10.1002/jcc.24312">here</a>. More information on how to cite Cuby is provided on the <a href="authors.html">Authors page</a>.
+</p>
+</div>
+
+<h3>An example</h3>
+<p>
+The capabilities of Cuby can be demonstrated on a QM/MM calculation. Cuby contains
+its own implementation of the QM/MM scheme which calls the separate QM and MM calculations
+via Cuby's interfaces. This means that any interfaced programs can be used even if they
+do not support QM/MM calculations themselves. The resulting QM/MM potential
+can be combined with any protocol, such as geometry optimization or molecular dynamics,
+which are implemented in Cuby. Moreover, this calculation can be just one step in
+an complex workflow which is defined by the means of a structured input file.
+</p>
+
+<h3>Cuby 4</h3>
+<p>
+Version 4 is a major step forward in the development of Cuby. The architecture
+of the framework has changed. Large parts of the code, inculding most interfaces,
+were rewritten from scratch. The code is now fully modular what makes it possible
+to develop new interfaces and protocols easier than before.
+</p>
+<p>
+A major improvement is a transparent implementation of paralellization at the very
+basis of the framework. Any calculations that can be performed simultaneosusly
+can run <a href="parallelization.html">in parallel</a>, all what is needed is to specify the available resources
+in the input.
+</p>
+
+<h3>Migration from Cuby 3</h3>
+<p>
+While the philosophy is the same, the new developments led to some changes in
+the input. It is still based on the easy to use YAML format but it is now
+more structured. Also, some keywords had been renamed or changed. More details
+are provided on a <a href="migration_3_4.html">dedicated page</a>.
+</p>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+################################################################################
+# KEYWORDS for interface Waterball
+################################################################################
+
+keywords:
+  :waterball_center: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :die
+    allowed_values:
+      - :solute
+      - :origin
+      - :fixed_solute
+  #: Center of the waterball:
+  #* solute - waterball defined relative to the solute center of mass
+  #* origin - 0,0,0 coordinate
+  #* fixed_solute - 0,0,0 coordinate for waterball, the solute center of mass is connected to it by a harmonic restraint
+
+  :waterball_solute: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :die
+  #: Selection defining the solute or the center of solvation in it. Required when
+  #: waterball_center is set to solute or fixed_solute
+
+  :waterball_solute_k: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 5.0
+  #: Force constant of the restraint holding the solute close to the origin
+  #: of the coordinate system, applies only to waterball_center = fixed_solute 

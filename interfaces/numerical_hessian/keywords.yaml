@@ -1,0 +1,32 @@
+################################################################################
+# KEYWORDS for interface Numerical Hessian
+################################################################################
+
+keywords:
+  :numerical_hessian_step: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.001
+  #: The size of the displacemeni (in Angstrom) used in the numerical
+  #: differentiation.
+  
+  :numerical_hessian_type: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :central
+    allowed_values:
+      - :single_sided
+      - :central
+      - :tetrahedral
+      - :energy_only
+  #: Number of points per atom used for numerical differentiation:
+  #* single_sided - 3 points, least robust
+  #* central - 6 points, most accurate
+  #* tetrahedral - 4 points
+  #* energy_only - parabolic fit from energies (the other methods use gradient)
+
+  :numerical_hessian_e_order: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 2
+  #: Hessian from energy: Order of the formula (2 or 4)

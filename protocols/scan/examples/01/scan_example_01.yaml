@@ -1,0 +1,21 @@
+#===============================================================================
+# Scan protocol example 1: simple energy scan
+#===============================================================================
+
+job: scan
+
+# The geometry is an .xyz file containing a series of geometries, in this case
+# a scan of a stretching vibrational mode
+# The file contains the identifier "scan:" and the value of the scanned coordinate
+# which is then printed in the output (this is optional).
+geometry: water_stretch_scan.xyz
+
+# Scan mode - serial/parallel
+scan_mode: serial
+
+# The calculation performed on each geometry
+calculation:
+  job: energy
+  interface: mopac
+  method: pm6
+  charge: 0

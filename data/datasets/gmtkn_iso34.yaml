@@ -1,0 +1,435 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_ISO34
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "isomerization energies of small and medium-sized organic molecules"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_ISO34:E1"
+  reference_value: 1.62
+  setup:
+    reaction_formula: "1 g_E1 -> 1 g_P1"
+    reaction_geometries:
+      g_E1: gmtkn_ISO34:E1
+      g_P1: gmtkn_ISO34:P1
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_ISO34:E1"
+  reference_value: 21.88
+  setup:
+    reaction_formula: "1 g_E1 -> 1 g_P2"
+    reaction_geometries:
+      g_E1: gmtkn_ISO34:E1
+      g_P2: gmtkn_ISO34:P2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_ISO34:E3"
+  reference_value: 7.20
+  setup:
+    reaction_formula: "1 g_E3 -> 1 g_P3"
+    reaction_geometries:
+      g_E3: gmtkn_ISO34:E3
+      g_P3: gmtkn_ISO34:P3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_ISO34:E4"
+  reference_value: 0.99
+  setup:
+    reaction_formula: "1 g_E4 -> 1 g_P4"
+    reaction_geometries:
+      g_E4: gmtkn_ISO34:E4
+      g_P4: gmtkn_ISO34:P4
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_ISO34:E5"
+  reference_value: 0.93
+  setup:
+    reaction_formula: "1 g_E5 -> 1 g_E4"
+    reaction_geometries:
+      g_E5: gmtkn_ISO34:E5
+      g_E4: gmtkn_ISO34:E4
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_ISO34:E4"
+  reference_value: 2.62
+  setup:
+    reaction_formula: "1 g_E4 -> 1 g_P6"
+    reaction_geometries:
+      g_E4: gmtkn_ISO34:E4
+      g_P6: gmtkn_ISO34:P6
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_ISO34:E7"
+  reference_value: 11.15
+  setup:
+    reaction_formula: "1 g_E7 -> 1 g_P7"
+    reaction_geometries:
+      g_E7: gmtkn_ISO34:E7
+      g_P7: gmtkn_ISO34:P7
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_ISO34:E8"
+  reference_value: 22.9
+  setup:
+    reaction_formula: "1 g_E8 -> 1 g_P8"
+    reaction_geometries:
+      g_E8: gmtkn_ISO34:E8
+      g_P8: gmtkn_ISO34:P8
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_ISO34:E9"
+  reference_value: 6.94
+  setup:
+    reaction_formula: "1 g_E9 -> 1 g_P9"
+    reaction_geometries:
+      g_E9: gmtkn_ISO34:E9
+      g_P9: gmtkn_ISO34:P9
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_ISO34:E10"
+  reference_value: 3.58
+  setup:
+    reaction_formula: "1 g_E10 -> 1 g_P10"
+    reaction_geometries:
+      g_E10: gmtkn_ISO34:E10
+      g_P10: gmtkn_ISO34:P10
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_ISO34:E11"
+  reference_value: 1.91
+  setup:
+    reaction_formula: "1 g_E11 -> 1 g_P11"
+    reaction_geometries:
+      g_E11: gmtkn_ISO34:E11
+      g_P11: gmtkn_ISO34:P11
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "12"
+  shortname: "12"
+  geometry: "gmtkn_ISO34:E12"
+  reference_value: 46.95
+  setup:
+    reaction_formula: "1 g_E12 -> 1 g_P12"
+    reaction_geometries:
+      g_E12: gmtkn_ISO34:E12
+      g_P12: gmtkn_ISO34:P12
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "13"
+  shortname: "13"
+  geometry: "gmtkn_ISO34:E13"
+  reference_value: 36.04
+  setup:
+    reaction_formula: "1 g_E13 -> 1 g_P13"
+    reaction_geometries:
+      g_E13: gmtkn_ISO34:E13
+      g_P13: gmtkn_ISO34:P13
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "14"
+  shortname: "14"
+  geometry: "gmtkn_ISO34:E14"
+  reference_value: 24.2
+  setup:
+    reaction_formula: "1 g_E14 -> 1 g_P14"
+    reaction_geometries:
+      g_E14: gmtkn_ISO34:E14
+      g_P14: gmtkn_ISO34:P14
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "15"
+  shortname: "15"
+  geometry: "gmtkn_ISO34:E15"
+  reference_value: 7.26
+  setup:
+    reaction_formula: "1 g_E15 -> 1 g_P15"
+    reaction_geometries:
+      g_E15: gmtkn_ISO34:E15
+      g_P15: gmtkn_ISO34:P15
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "16"
+  shortname: "16"
+  geometry: "gmtkn_ISO34:E16"
+  reference_value: 10.81
+  setup:
+    reaction_formula: "1 g_E16 -> 1 g_P16"
+    reaction_geometries:
+      g_E16: gmtkn_ISO34:E16
+      g_P16: gmtkn_ISO34:P16
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "17"
+  shortname: "17"
+  geometry: "gmtkn_ISO34:E17"
+  reference_value: 26.98
+  setup:
+    reaction_formula: "1 g_E17 -> 1 g_P17"
+    reaction_geometries:
+      g_E17: gmtkn_ISO34:E17
+      g_P17: gmtkn_ISO34:P17
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "18"
+  shortname: "18"
+  geometry: "gmtkn_ISO34:E18"
+  reference_value: 11.16
+  setup:
+    reaction_formula: "1 g_E18 -> 1 g_P18"
+    reaction_geometries:
+      g_E18: gmtkn_ISO34:E18
+      g_P18: gmtkn_ISO34:P18
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "19"
+  shortname: "19"
+  geometry: "gmtkn_ISO34:E19"
+  reference_value: 4.6
+  setup:
+    reaction_formula: "1 g_E19 -> 1 g_E20"
+    reaction_geometries:
+      g_E19: gmtkn_ISO34:E19
+      g_E20: gmtkn_ISO34:E20
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "20"
+  shortname: "20"
+  geometry: "gmtkn_ISO34:E20"
+  reference_value: 20.23
+  setup:
+    reaction_formula: "1 g_E20 -> 1 g_P20"
+    reaction_geometries:
+      g_E20: gmtkn_ISO34:E20
+      g_P20: gmtkn_ISO34:P20
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "21"
+  shortname: "21"
+  geometry: "gmtkn_ISO34:E21"
+  reference_value: 0.94
+  setup:
+    reaction_formula: "1 g_E21 -> 1 g_P21"
+    reaction_geometries:
+      g_E21: gmtkn_ISO34:E21
+      g_P21: gmtkn_ISO34:P21
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "22"
+  shortname: "22"
+  geometry: "gmtkn_ISO34:E22"
+  reference_value: 3.23
+  setup:
+    reaction_formula: "1 g_E22 -> 1 g_E21"
+    reaction_geometries:
+      g_E22: gmtkn_ISO34:E22
+      g_E21: gmtkn_ISO34:E21
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "23"
+  shortname: "23"
+  geometry: "gmtkn_ISO34:E23"
+  reference_value: 5.26
+  setup:
+    reaction_formula: "1 g_E23 -> 1 g_P23"
+    reaction_geometries:
+      g_E23: gmtkn_ISO34:E23
+      g_P23: gmtkn_ISO34:P23
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "24"
+  shortname: "24"
+  geometry: "gmtkn_ISO34:E24"
+  reference_value: 12.52
+  setup:
+    reaction_formula: "1 g_E24 -> 1 g_P24"
+    reaction_geometries:
+      g_E24: gmtkn_ISO34:E24
+      g_P24: gmtkn_ISO34:P24
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "25"
+  shortname: "25"
+  geometry: "gmtkn_ISO34:E25"
+  reference_value: 26.49
+  setup:
+    reaction_formula: "1 g_E25 -> 1 g_P25"
+    reaction_geometries:
+      g_E25: gmtkn_ISO34:E25
+      g_P25: gmtkn_ISO34:P25
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "26"
+  shortname: "26"
+  geometry: "gmtkn_ISO34:E26"
+  reference_value: 18.16
+  setup:
+    reaction_formula: "1 g_E26 -> 1 g_P26"
+    reaction_geometries:
+      g_E26: gmtkn_ISO34:E26
+      g_P26: gmtkn_ISO34:P26
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "27"
+  shortname: "27"
+  geometry: "gmtkn_ISO34:E27"
+  reference_value: 64.17
+  setup:
+    reaction_formula: "1 g_E27 -> 1 g_P27"
+    reaction_geometries:
+      g_E27: gmtkn_ISO34:E27
+      g_P27: gmtkn_ISO34:P27
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "28"
+  shortname: "28"
+  geometry: "gmtkn_ISO34:E28"
+  reference_value: 31.22
+  setup:
+    reaction_formula: "1 g_E28 -> 1 g_P28"
+    reaction_geometries:
+      g_E28: gmtkn_ISO34:E28
+      g_P28: gmtkn_ISO34:P28
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "29"
+  shortname: "29"
+  geometry: "gmtkn_ISO34:E29"
+  reference_value: 11.90
+  setup:
+    reaction_formula: "1 g_E29 -> 1 g_P29"
+    reaction_geometries:
+      g_E29: gmtkn_ISO34:E29
+      g_P29: gmtkn_ISO34:P29
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "30"
+  shortname: "30"
+  geometry: "gmtkn_ISO34:E30"
+  reference_value: 9.5
+  setup:
+    reaction_formula: "1 g_E30 -> 1 g_P30"
+    reaction_geometries:
+      g_E30: gmtkn_ISO34:E30
+      g_P30: gmtkn_ISO34:P30
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "31"
+  shortname: "31"
+  geometry: "gmtkn_ISO34:E31"
+  reference_value: 14.05
+  setup:
+    reaction_formula: "1 g_E31 -> 1 g_P31"
+    reaction_geometries:
+      g_E31: gmtkn_ISO34:E31
+      g_P31: gmtkn_ISO34:P31
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "32"
+  shortname: "32"
+  geometry: "gmtkn_ISO34:E32"
+  reference_value: 7.1
+  setup:
+    reaction_formula: "1 g_E32 -> 1 g_P32"
+    reaction_geometries:
+      g_E32: gmtkn_ISO34:E32
+      g_P32: gmtkn_ISO34:P32
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "33"
+  shortname: "33"
+  geometry: "gmtkn_ISO34:E33"
+  reference_value: 5.62
+  setup:
+    reaction_formula: "1 g_E33 -> 1 g_P33"
+    reaction_geometries:
+      g_E33: gmtkn_ISO34:E33
+      g_P33: gmtkn_ISO34:P33
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "34"
+  shortname: "34"
+  geometry: "gmtkn_ISO34:E34"
+  reference_value: 7.26
+  setup:
+    reaction_formula: "1 g_E34 -> 1 g_P34"
+    reaction_geometries:
+      g_E34: gmtkn_ISO34:E34
+      g_P34: gmtkn_ISO34:P34
+  tags: ""
+

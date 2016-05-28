@@ -1,0 +1,144 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Data set description
+#===============================================================================
+
+# Energies: CCSD(T)/CBS, frozen core
+#    MP2 extrapolation from aug-cc-pVTZ, aug-cc-pVQZ
+#    dCCSD(T) in 6-31G*(0.25)
+# Geometries: MP2/aug-cc-pVTZ
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: Peptide_WG
+  references: 
+    "10.1039/b719294k": "Valdes, H.; Pluháčková, K.; Pitonák, M.; Řezáč, J.; Hobza, P. Phys. Chem. Chem. Phys. 2008, 10, 2747."
+  text: "CSCD(T)/CBS conformation energies of WG dipeptide"
+
+  global_setup:
+    job: energy
+  dataset_setup:
+    dataset_processing: relative_to_average
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 WG_01
+  shortname: 01_WG_01
+  geometry: peptide_conformers:WG_01
+  reference_value: -1.53
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 WG_02
+  shortname: 02_WG_02
+  geometry: peptide_conformers:WG_02
+  reference_value: -1.13
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 WG_03
+  shortname: 03_WG_03
+  geometry: peptide_conformers:WG_03
+  reference_value: -0.63
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 WG_04
+  shortname: 04_WG_04
+  geometry: peptide_conformers:WG_04
+  reference_value: -0.27
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 WG_05
+  shortname: 05_WG_05
+  geometry: peptide_conformers:WG_05
+  reference_value: -0.27
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 WG_06
+  shortname: 06_WG_06
+  geometry: peptide_conformers:WG_06
+  reference_value: -0.21
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 WG_07
+  shortname: 07_WG_07
+  geometry: peptide_conformers:WG_07
+  reference_value: -0.01
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 WG_08
+  shortname: 08_WG_08
+  geometry: peptide_conformers:WG_08
+  reference_value: 0.53
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 WG_09
+  shortname: 09_WG_09
+  geometry: peptide_conformers:WG_09
+  reference_value: 0.07
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 WG_10
+  shortname: 10_WG_10
+  geometry: peptide_conformers:WG_10
+  reference_value: -0.01
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 WG_11
+  shortname: 11_WG_11
+  geometry: peptide_conformers:WG_11
+  reference_value: 0.49
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 WG_12
+  shortname: 12_WG_12
+  geometry: peptide_conformers:WG_12
+  reference_value: 0.92
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 WG_13
+  shortname: 13_WG_13
+  geometry: peptide_conformers:WG_13
+  reference_value: 0.5
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 WG_14
+  shortname: 14_WG_14
+  geometry: peptide_conformers:WG_14
+  reference_value: 0.68
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 WG_15
+  shortname: 15_WG_15
+  geometry: peptide_conformers:WG_15
+  reference_value: 0.88
+  tags: ""
+
+#===============================================================================
+# Alternative data
+#===============================================================================
+
+alternative_reference:
+  # Data from the original paper, as downloaded from BEGDB.com
+  # MP2 extrapolated from TZ,QZ
+  # Higher-order correction in 6-31G*(0.25)
+  "CCSD(T)/CBS": [ -1.53, -1.13, -0.63, -0.27, -0.27, -0.21, -0.01, 0.53, 0.07, -0.01, 0.49, 0.92, 0.5, 0.68, 0.88 ]
+  "MP2/CBS": [ -1.03, -1.06, -0.64, 0.15, 0.53, -0.12, -0.45, 0.67, 0.02, -0.36, 0.28, 0.88, 0.05, 0.55, 0.53 ]
+  "MP3/CBS": [ -1.92, -0.75, -0.13, -0.73, -0.98, 0.17, -0.06, 0.49, -0.1, 0.06, 0.43, 1.23, 0.44, 0.53, 1.32 ]
+  "MP2.5/CBS": [ -1.475, -0.905, -0.385, -0.29, -0.225, 0.025, -0.255, 0.58, -0.04, -0.15, 0.355, 1.055, 0.245, 0.54, 0.925 ]
+

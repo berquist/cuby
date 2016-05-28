@@ -1,0 +1,8 @@
+<p>
+Cuby's interface to Cuby. It allows building cuby inputs for individual calculations that are part of more complex jobs. For example, it is possible to use it for generation of all the individual calculations in a data set. These calculations can be then run separately (e.g. submitted as individual jobs on a cluster) and the results can be then collected by the dataset protocol. See the example below.
+</p>
+
+<h4>Limitations</h4>
+<p>
+The interface now supports only the basic single point energy calculations. Moreover, only some calculation setup is transferred from this interface to the child calculation - geometry (including ghost atom information), charge and multiplicity. The remaining setup must be provided in a separate block in the input (named "calculation").
+</p>

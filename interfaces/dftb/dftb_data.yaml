@@ -1,0 +1,157 @@
+--- !ruby/object:InterfaceDftb::DFTBData
+
+#===============================================================================
+# Max. angular momentum - element basis set size
+#===============================================================================
+
+max_momentum:
+  :H:  "s"
+  :B:  "p"
+  :N:  "p"
+  :C:  "p"
+  :O:  "p"
+  :F:  "p"
+  :P:  "d"
+  :S:  "d"
+  :Cl: "d"
+  :Br: "d"
+  :I:  "d"
+  :Mg: "d"
+  :Zn: "d"
+  :Sc: "d"
+  :Ti: "d"
+  :Fe: "d"
+  :Co: "d"
+  :Ni: "d"
+
+#===============================================================================
+# Dispersion parameters
+#===============================================================================
+
+dispersion_para:
+  # From DFTB+ manual
+  :H: !ruby/object:InterfaceDftb::DispersionData
+    radius: 0.4 # Angstrom
+    polarisations: "0.386 0.386 0.0 0.0 0.0 0.0 3.5 3.5 3.5 3.5 3.5 3.5 0.8" # Angstrom^3, Angstrom
+    polarisations_old_inp: "0.386 0.386 0.386 0.386 3.5 3.5 3.5 3.5 0.80"
+
+  :C: !ruby/object:InterfaceDftb::DispersionData
+    radius: 0.8
+    polarisations: "1.382 1.382 1.382 1.064 1.064 1.064 3.8 3.8 3.8 3.8 3.8 3.8 2.5"
+    polarisations_old_inp: "1.382 1.382 1.382 1.064 3.8 3.8 3.8 3.8 2.50"
+
+  :N: !ruby/object:InterfaceDftb::DispersionData
+    radius: 0.8
+    polarisations: "1.03 1.03 1.09 1.09 1.09 1.09 3.8 3.8 3.8 3.8 3.8 3.8 2.82"
+    polarisations_old_inp: "1.030 1.030 1.090 1.090 3.8 3.8 3.8 3.8 2.82"
+
+  :O: !ruby/object:InterfaceDftb::DispersionData
+    radius: 0.8
+    polarisations: "0.56 0.56 0.0 0.0 0.0 0.0 3.8 3.8 3.8 3.8 3.8 3.8 3.15"
+    polarisations_old_inp: "0.560 0.560 0.560 0.560 3.8 3.8 3.8 3.8 3.15"
+
+  :P: !ruby/object:InterfaceDftb::DispersionData
+    radius: 1.0
+    polarisations: "1.6 1.6 1.6 1.6 1.6 1.6 4.7 4.7 4.7 4.7 4.7 4.7 4.5"
+    polarisations_old_inp: "1.600 1.600 1.600 1.600 4.7 4.7 4.7 4.7 4.50"
+
+  :S: !ruby/object:InterfaceDftb::DispersionData
+    radius: 1.0
+    polarisations: "3.0 3.0 3.0 3.0 3.0 3.0 4.7 4.7 4.7 4.7 4.7 4.7 4.8"
+    polarisations_old_inp: "3.000 3.000 3.000 3.000 4.7 4.7 4.7 4.7 4.80"
+
+  :X: !ruby/object:InterfaceDftb::DispersionData
+    radius: 1.0
+    polarisations: "0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0"
+
+#===============================================================================
+# Atomic spin constants
+#===============================================================================
+
+spin_constants: # in Hartree
+  :H: !ruby/object:InterfaceDftb::SpinConstants 
+    # From DFTB+ manual
+    wss: -0.072
+
+  :C: !ruby/object:InterfaceDftb::SpinConstants 
+    # From DFTB+ manual
+    wss: -0.031
+    wsp: -0.025
+    wpp: -0.023
+
+  :N: !ruby/object:InterfaceDftb::SpinConstants 
+    # From DFTB+ manual
+    wss: -0.033
+    wsp: -0.027
+    wpp: -0.026
+
+  :O: !ruby/object:InterfaceDftb::SpinConstants 
+    # From DFTB+ manual
+    wss: -0.035
+    wsp: -0.030
+    wpp: -0.028
+
+  :Si: !ruby/object:InterfaceDftb::SpinConstants 
+    # From DFTB+ manual
+    wss: -0.020
+    wsp: -0.015
+    wsd:  0.0
+    wpp: -0.014
+    wpd:  0.0
+    wdd: -0.032
+
+  :S: !ruby/object:InterfaceDftb::SpinConstants 
+    # From DFTB+ manual
+    wss: -0.021
+    wsp: -0.017
+    wsd:  0.0
+    wpp: -0.014
+    wpd:  0.0
+    wdd: -0.080
+
+  :Sc: !ruby/object:InterfaceDftb::SpinConstants 
+    # From G. Zheng et al., J. Chem. Theory. Comput. 3, 2007
+    wss: -0.013
+    wsp: -0.011
+    wsd: -0.005
+    wpp: -0.014
+    wpd: -0.002
+    wdd: -0.013
+
+  :Ti: !ruby/object:InterfaceDftb::SpinConstants 
+    # From G. Zheng et al., J. Chem. Theory. Comput. 3, 2007
+    wss: -0.014
+    wsp: -0.012
+    wsd: -0.004
+    wpp: -0.014
+    wpd: -0.001
+    wdd: -0.014
+
+  :Fe: !ruby/object:InterfaceDftb::SpinConstants 
+    # From G. Zheng et al., J. Chem. Theory. Comput. 3, 2007
+    wss: -0.016
+    wsp: -0.012
+    wsd: -0.003
+    wpp: -0.029
+    wpd: -0.001
+    wdd: -0.015
+
+  :Co: !ruby/object:InterfaceDftb::SpinConstants 
+    # From G. Zheng et al., J. Chem. Theory. Comput. 3, 2007
+    wss: -0.016
+    wsp: -0.012
+    wsd: -0.003
+    wpp: -0.033
+    wpd: -0.001
+    wdd: -0.016
+
+  :Ni: !ruby/object:InterfaceDftb::SpinConstants 
+    # From G. Zheng et al., J. Chem. Theory. Comput. 3, 2007
+    wss: -0.016
+    wsp: -0.012
+    wsd: -0.003
+    wpp: -0.022
+    wpd: -0.001
+    wdd: -0.018
+
+    

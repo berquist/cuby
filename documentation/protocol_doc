@@ -1,0 +1,170 @@
+#!/usr/bin/env ruby
+$:.unshift(File.dirname(__FILE__)+"/..").uniq! # Magic line to add path to the executable to $RUBYLIB
+require "classes/cuby.rb" # Load Cuby classes and libraries
+
+require "documentation/text_html_printer.rb"
+require "documentation/module_info.rb"
+
+module ProtocolInfo
+
+	@@protocols_dir = ''
+
+	def ProtocolInfo.protocol_dir=(val)
+		@@protocols_dir = val
+	end
+
+	def ProtocolInfo.protocol_exist?(protocol)
+		Job.available_protocols.each_pair{|name, dir|
+			return true if File.basename(dir) == protocol
+		}
+		return false
+	end
+
+	def ProtocolInfo.print_keywords_list(protocol, printer)
+		# Protocol-specific keywords
+		protocol_keywords = ModuleInfo.local_keywords(@@protocols_dir + "/" + protocol).sort
+		# Global keywords
+		global_keywords = (ModuleInfo.all_keywords(@@protocols_dir + "/" + protocol) - protocol_keywords).sort
+
+		printer.caption "Keywords used"
+		if printer.html
+			protocol_keywords.map!{|s| "<a href=\"keywords.html##{s}\">#{s}</a>"}
+			global_keywords.map!{|s| "<a href=\"keywords.html##{s}\">#{s}</a>"}
+		end
+
+		if protocol_keywords.size == 0
+			printer.paragraph("This protocol does not use any specific keywords")
+		else
+			printer.list("Keywords specific for this protocol:", protocol_keywords)
+		end
+		unless global_keywords.size == 0
+			printer.list("Other keywords used by this protocol:", global_keywords)
+		end
+	end
+
+	def ProtocolInfo.print_blocks(protocol, printer)
+		Job.available_protocols.each_pair{|name, dir|
+			next unless File.basename(dir) == protocol
+			require dir + "/" + name.to_s + ".rb"
+			# Get the interface module from name, 
+			mod = eval("Protocol" + name.to_s.split("_").map{|s| s.capitalize}.join(''))
+
+			# Input structure
+			begin
+				required = []
+				optional = []
+				mod::INPUT_BLOCKS.each{|b|
+					required << "#{b.name.to_s} - #{b.description}" if b.status == :required
+					optional << "#{b.name.to_s} - #{b.description}" if b.status == :optional
+				}
+				unless required.empty? && optional.empty?
+					printer.caption "Input structure"
+				end
+
+				unless required.empty?
+					printer.list("The protocol requires following blocks in the input:", required)
+				end
+				unless optional.empty?
+					printer.list("Optionally, following blocks can be defined in the input:", optional)
+				end
+
+			rescue
+			end
+
+		}
+	end
+
+	def ProtocolInfo.all_protocols(printer, list_private)
+		printer.heading("List of protocols")
+		items = []
+		Job.available_protocols.each_pair{|name,dir| 
+			next if FileTest.exist?(dir + "/PRIVATE") && !list_private
+			items << name.to_s}
+		items.sort!
+		items.map!{|s| "<a href=\"protocol_#{s}.html\">#{s}</a>"} if printer.html
+		printer.list("Available protocols (values of the 'job' keyword):", items)
+		printer.footer
+		exit
+	end
+
+	def ProtocolInfo.all_protocols2(printer, list_private)
+		protocol_types = {
+			:elementary_calculation => "Calculation of elementary quantities:",
+			:composite_calculation => "Calculation of composite quantities:",
+			:driver => "Drivers:",
+			:batch => "Batch calculations:",
+			:tools => "Tools:",
+			:workflow => "Workflow integration protocols:"
+		}
+		printer.heading("List of protocols")
+		printer.paragraph("Following computational protocols (entered as a value of the 'job' keyword in the input) are available:")
+		all_items = []
+		descriptions = {}
+		Job.available_protocols.each_pair{|name,dir| 
+			next if FileTest.exist?(dir + "/PRIVATE") && !list_private
+			# Get the interface module from name, 
+			require dir + "/" + name.to_s + ".rb"
+			mod = eval("Protocol" + name.to_s.split("_").map{|s| s.capitalize}.join(''))
+			name = name.to_s
+			type = mod::PROTOCOL_TYPE
+
+			all_items << [type, name]
+			begin
+				descriptions[name] = mod::PROTOCOL_DESCRIPTION
+			rescue
+			end
+		}
+
+		protocol_types.each_pair{|type, title|
+			# Select the protocols
+			items = []
+			all_items.each{|type_name|
+				if type_name[0] == type
+					items << type_name[1]
+				end
+			}
+
+			items.sort!
+			items.map!{|s| 
+				if printer.html
+					line = "<a href=\"protocol_#{s}.html\">#{s}</a>"
+				else
+					line = s
+				end
+				if descriptions[s]
+					line += ' - ' + descriptions[s]
+				end
+				line
+			} 
+			
+			printer.list(title, items)
+		}
+		printer.footer
+		exit
+	end
+end
+
+Cuby.application {
+	# Load Cuby classes and libraries
+	Cuby.load_framework(:skip_global_config => true, :skip_user_config => true)
+	ProtocolInfo.protocol_dir = Cuby::install_dir + "/protocols"
+
+	printer = TextHtmlPrinter.new($stdout, (ARGV.include? "html") ? :html : :text)
+	printer.header
+
+	list_private = ARGV.delete("--private")
+
+	if ARGV.size == 0 || ARGV[0] == "html"
+		ProtocolInfo.all_protocols2(printer, list_private)
+	end
+
+	protocol = ARGV[0].downcase
+	Cuby::error("Protocol '#{protocol}' does not exist") unless ProtocolInfo.protocol_exist?(protocol)
+
+	printer.heading("Protocol #{protocol}")
+
+	ProtocolInfo.print_blocks(protocol, printer)
+	ProtocolInfo.print_keywords_list(protocol, printer)
+
+	printer.footer
+}

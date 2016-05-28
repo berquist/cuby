@@ -1,0 +1,36 @@
+<p>
+This protocol implements geometry optimization. There is a lot of options provided but the default setup
+was tuned to provide good results in almost any system.
+</p>
+
+<h2>Default setup</h2>
+<p>
+The default setup is applicable to wide range of systems - the only adjustment needed might
+be setting the convergence thersholds using the <a href="keywords.html#opt_quality">opt_quality</a>
+keyword. The default value of 1.0 is reasonable for common optimization of rigid molecules, for flexible systems
+or non-covalent interactions, tighter convergence criteria are needed for obtaining accurate geometroies. It is recommended to set the <a href="keywords.html#opt_quality">opt_quality</a> to 0.1.
+</p>
+
+<h2>Coordinate systems</h2>
+<p>
+The protocol implements optimization in Cartesian (default), redundant internal and <a href="z-matrix.html">z-matrix</a> coordinates.
+Only the optimization in Cartesian coordinates should be considered stable and robust, the internal coordinates
+are under development and often fail in some cases.
+</p>
+<p>
+Cuby can now build z-matrix automatically from cartesian coordinates but it is not guaranteed that the generated z-matrix will work well for optimization. The use of z-matrices is thus recommended only for cases where user-supplied z-matrix is used. The advantage of z-matrices is that it is easily possible to optimize only <a href="z-matrix.html#partial_opt">specified internal coordinates</a>.
+</p>
+
+<h2>Parallel optimizer P-LBFGS</h2>
+<p>
+Cuby implements the P-LBFGS algorithm[1] that can accelerate the convergence of the optimization by calculating
+multiple points in parallel in each step. For details, refer to teh example below an to the original paper.[1]
+To use the optimizer, it is necessary to complile the linear algebra extension with a support of the UMFPACK
+library, the details are described on the page on <a href="installation.html">installation</a>.
+</p>
+
+<h2>References</h2>
+<ol>
+	<li><a href="http://dx.doi.org/10.1016/j.cplett.2013.08.050">Klemsa, J.; Řezáč, J. Chemical Physics Letters 2013, 584, 10–13.</a></li>
+</ol>
+

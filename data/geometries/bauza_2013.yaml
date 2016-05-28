@@ -1,0 +1,39 @@
+#===============================================================================
+# Halogen, chalcogen and pnicogen bond complexes
+# CCSD(T)/aug-cc-pVTZ geometries
+#
+# from:
+# Bauza, A.; Alkorta, I.; Frontera, A.; Elguero, J. J. Chem. Theory Comput. 2013, 9, 5201–5210.
+# dx.doi.org/10.1021/ct400818v
+#===============================================================================
+
+1: 01_Br-_AsF3.xyz
+2: 02_Br-_BrF.xyz
+3: 03_Br-_ClF.xyz
+4: 04_Br-_PF3.xyz
+5: 05_Br-_SCF2.xyz
+6: 06_Br-_SPF3.xyz
+7: 07_Br-_SF2.xyz
+8: 08_Br-_SeCF2.xyz
+9: 09_Br-_SePF3.xyz
+10: 10_Br-_SeF2.xyz
+11: 11_Cl-_AsF3.xyz
+12: 12_Cl-_BrF.xyz
+13: 13_Cl-_ClF.xyz
+14: 14_Cl-_PF3.xyz
+15: 15_Cl-_SCF2.xyz
+16: 16_Cl-_SPF3.xyz
+17: 17_Cl-_SF2.xyz
+18: 18_Cl-_SeCF2.xyz
+19: 19_Cl-_SePF3.xyz
+20: 20_Cl-_SeF2.xyz
+21: 21_NH3_AsF3.xyz
+22: 22_NH3_BrF.xyz
+23: 23_NH3_ClF.xyz
+24: 24_NH3_PF3.xyz
+25: 25_NH3_SCF2.xyz
+26: 26_NH3_SPF3.xyz
+27: 27_NH3_SF2.xyz
+28: 28_NH3_SeCF2.xyz
+29: 29_NH3_SePF3.xyz
+30: 30_NH3_SeF2.xyz

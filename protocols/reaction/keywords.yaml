@@ -1,0 +1,32 @@
+################################################################################
+# Keywords for protocol Reaction
+################################################################################
+
+keywords: 
+  :reaction_formula: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :die
+  #: Reaction formula, in format e.g "2A + B -> C + 2D"
+
+  :reaction_smiles: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Generate the geometries of the molecules using SMILES notation from the
+  #: formula itself
+
+  :reaction_geometries: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :die
+  #: List of geometries of all molecules, in the order they are presented in the
+  #: formula 
+ 
+  :reaction_print: !ruby/object:SettingsKeyword
+    convert_to: :symbol_list
+    when_not_present: :default
+    default_value: 
+      - :formula
+    allowed_values:
+      - :formula
+  #: Controls the output of the protocol. Allowed options are:
+  #* formula - print the reaction formula (on by default)

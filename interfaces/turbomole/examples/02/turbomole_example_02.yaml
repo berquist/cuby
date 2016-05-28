@@ -1,0 +1,54 @@
+#===============================================================================
+# Turbomole example 2 - Methods
+#===============================================================================
+
+# This example run a calculation of water molecule with all  methods available
+# in this interface
+
+job: multistep
+steps: hf, rihf, rimp2, rimp2rihf, rimp3, ccsd, ccsdt, dft
+
+# Common setup for all steps
+calculation_common:
+  job: energy
+  interface: turbomole
+  geometry: A24:water
+  charge: 0
+  basisset: def2-SVP
+
+# HF
+calculation_hf:
+  method: hf
+  density_fitting: none # Disable the RI approximation
+
+# RI-HF
+calculation_rihf:
+  method: hf
+  # RI is on by default
+
+# RI-MP2, full HF
+calculation_rimp2:
+  method: mp2
+  density_fitting: correlation
+
+# RI-MP2 on RI-HF
+calculation_rimp2rihf:
+  method: mp2
+  density_fitting: both # (this is the default)
+
+# RI-MP3
+calculation_rimp3:
+  method: mp3
+
+# CCSD
+calculation_ccsd:
+  method: ccsd
+
+# CCSD(T)
+calculation_ccsdt:
+  method: ccsd(t)
+
+# DFT
+calculation_dft:
+  method: dft
+  functional: b3-lyp

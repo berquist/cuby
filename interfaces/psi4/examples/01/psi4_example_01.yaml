@@ -1,0 +1,21 @@
+#===============================================================================
+# Psi4 interface example 1 - interface configuration
+#===============================================================================
+
+# The following keyword is needed to configure the interface -
+# path to the directory containing Psi4 binaries:
+psi4_bin_dir: /home/rezac/bin/psi4/install/bin
+
+# The following examples assume that this keyword is set in the global
+# configuation file.
+
+# Let's try some calculation - MP2 with desity fitting
+job: energy
+interface: psi4
+
+geometry: A24:water
+charge: 0
+
+method: mp2
+density_fitting: both # DF-HF + DF-MP2
+basisset: "6-31G"

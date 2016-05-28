@@ -1,0 +1,25 @@
+#===============================================================================
+# Dummy filter example 1
+#===============================================================================
+
+# Geometry optimization model geometry with dummy atoms
+job: optimize
+
+# The dummy atoms have to be named "X"
+geometry: |
+  O    0.000000000   0.000000000  -0.000000000
+  H   -0.991859594  -0.050734173   0.116792934
+  H    0.329900831  -0.845847733  -0.419174252
+  X    0.434954299   0.121552446   0.892210603
+  X    0.226998698   0.774964818  -0.589831435
+
+# The filter is used as an interface
+interface: dummy_filter
+
+# And it passes the geometry without dummy atoms to the calculation defined
+# in a separate block:
+calculation:
+  # PM6 in Mopac as an example
+  interface: mopac
+  method: PM6
+  charge: 0

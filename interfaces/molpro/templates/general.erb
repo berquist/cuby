@@ -1,0 +1,47 @@
+***, Molpro calculation
+<%# Memory %>
+memory,<%= @settings[:mem].to_i/8 %>,M
+
+<%# Symmetry %>
+<% if !@settings[:use_symmetry] || @geometry.ghost_atoms? %>
+ORIENT,NOORIENT
+SYMMETRY,NOSYM
+<% end %>
+
+<%# Geometry %>
+GEOMTYP=xyz
+GEOMETRY=geo.xyz
+
+<%# Molecule properties %>
+CHARGE=<%= @settings[:charge] %>
+SPIN=<%= @settings[:multiplicity] - 1 %>
+
+<%# Thresholds %>
+GTHRESH,ENERGY=1.0d-<%= @settings[:scf_convergence]%>
+
+<%# COSMO solvent %>
+<% if @settings[:solvent_model] == :cosmo %>
+COSMO,EPSILON=<%= @settings[:solvent_epsilon] %>
+<% end %>
+
+<%# Basis set %>
+BASIS
+DEFAULT=<%= @settings[:basisset] %>
+END
+
+<%# Point charges %>
+<% if @point_charges %>
+LATTICE,INFILE=extcharges.txt
+<% end %>
+
+<%# Ghost atoms %>
+<% ghost_atoms = ""
+@geometry.each_index { |i|
+	if @geometry[i].properties[:ghost]
+		ghost_atoms << ",#{i+1}"
+	end
+}
+if ghost_atoms != ""
+%>
+DUMMY<%= ghost_atoms %>
+<% end %>

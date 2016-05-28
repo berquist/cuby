@@ -1,0 +1,28 @@
+================================================================================
+Cuby - computational chemistry framework, version 4
+================================================================================
+Copyright (C) 2015 Jan Řezáč (rezac@uochb.cas.cz) and coworkers
+Licensed under GNU General public license v.3 - see the LICENSE file for details
+
+--------------------------------------------------------------------------------
+Documentation
+--------------------------------------------------------------------------------
+The documentation is available online at http://cuby4.molecular.cz
+
+--------------------------------------------------------------------------------
+Installation
+--------------------------------------------------------------------------------
+CUBY should run wherever ruby is available. However, additional steps may be
+taken to make it run faster - see http://cuby4.molecular.cz/installation.html
+
+--------------------------------------------------------------------------------
+Citing Cuby
+--------------------------------------------------------------------------------
+When publishing scientific results obtained using Cuby, please cite Cuby as
+
+J. Řezáč, Cuby - computational chemistry framework, version 4,
+http://cuby4.molecular.cz
+
+as well as the publications on the individual features used (see the 
+documentation for details).
+

@@ -1,0 +1,89 @@
+################################################################################
+# KEYWORDS for interface Dispersion
+################################################################################
+
+keywords:
+  :s6: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.0
+  #: Scaling of the dispersion energy
+
+  :sr: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: Radii scaling for damping function
+  
+  :alpha: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: Exponent in the damping function
+
+  :dispersion_mix: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :jurecka
+    allowed_values:
+      - :jurecka
+      - :jurecka_safe
+      - :grimme
+  #: Mixing of vdW eadii and C6 cooefficient in dispersion calculation. The default parameters
+  #: must be used with Jurecka's mixing. The safe version uses simpler mixing for elements
+  #: for which the effective number of valence electrons is not known (i.e. is zero).
+  
+  :dispersion_hyb: !ruby/object:SettingsKeyword
+    when_not_present: :default
+    default_value: no
+    convert_to: :boolean
+  #: Use hybridization-dependent parameters
+    
+  :dispersion_elements_r: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :default
+    default_value: {}
+  #: Override element radii from the database with custom values (in Angstrom)
+  
+  :dispersion_elements_c: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :default
+    default_value: {}
+  #: Override c6 coefficients (unit: same as in the data file, J/nm)
+  
+  :dispersion_pm7_cutoff: !ruby/object:SettingsKeyword
+    when_not_present: :default
+    default_value: no
+    convert_to: :boolean
+  #: Use a damping and cutoff for long-range contributions as used in PM7.
+  #: Enable this (along with setting the appropriate parameters) to emulate the
+  #: dispersion corerction that is built into PM7.
+
+  ##############################################################################
+  # Development only:
+  ##############################################################################
+ 
+  :dispersion_pm7_dd: !ruby/object:SettingsKeyword
+    when_not_present: :default
+    default_value: no
+    convert_to: :boolean
+    devel: true
+  #: Development version: distance_dependent s6
+  
+  :dispersion_pm7_r1: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+    devel: true
+
+  :dispersion_pm7_r2: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+    devel: true
+
+  :dispersion_pm7_w: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+    devel: true
+
+  :dispersion_pm7_s6d: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+    devel: true

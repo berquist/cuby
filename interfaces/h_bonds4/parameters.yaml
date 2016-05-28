@@ -1,0 +1,98 @@
+#-------------------------------------------------------------------------------
+# Parameters by method
+#-------------------------------------------------------------------------------
+
+keyword_parent: :method
+values:
+  :pm6:
+    h_bonds4_parameters:
+      oh_o: 2.32
+      oh_n: 3.10
+      nh_o: 1.07
+      nh_n: 2.01
+      multiplier_coo: 1.41
+      multiplier_nh4: 3.61
+      multiplier_wh_o: 0.42
+    h_bonds4_extra_scaling:
+      "@N&:hip": 2.29
+      "@N&:gua": 1.26
+  
+  :"scc-dftb":
+    h_bonds4_parameters:
+      oh_o: 1.11
+      oh_n: 2.58
+      nh_o: 0.80
+      nh_n: 2.01
+      multiplier_wh_o: 1.32
+      multiplier_coo: 1.22
+      multiplier_nh4: 2.33
+    h_bonds4_extra_scaling:
+      "@N&:hip": 3.444
+      "@N&:gua": 2.42
+  
+  #  Without NH-mod:
+  #--------------------------------------------------
+  #   h_bonds4_parameters:
+  #     oh_o: 1.08
+  #     oh_n: 3.47
+  #     nh_o: 0.71
+  #     nh_n: 2.26
+  #     multiplier_coo: 1.22
+  #     multiplier_nh4: 4.46
+  #     multiplier_wh_o: 1.36
+  #   h_bonds4_extra_scaling:
+  #     "@N&:hip": 3.93
+  #     "@N&:gua": 2.96
+  #-------------------------------------------------- 
+  
+  :am1:
+    h_bonds4_parameters:
+      oh_o: 4.89
+      oh_n: 6.23
+      nh_o: 2.54
+      nh_n: 4.56
+      multiplier_wh_o: 0.49
+      multiplier_coo: 1.0815791686586
+      multiplier_nh4: 2.78033398584304
+    h_bonds4_extra_scaling:
+      "@N&:hip": 2.10758224502696
+      "@N&:gua": 0.857834247487075
+  
+  :pm3:
+    h_bonds4_parameters:
+      oh_o: 2.71
+      oh_n: 4.37
+      nh_o: 2.29
+      nh_n: 3.86
+      multiplier_wh_o: 0.91
+      multiplier_coo: 0.88610264413703
+      multiplier_nh4: 2.5390633931627
+    h_bonds4_extra_scaling:
+      "@N&:hip": 1.83600722083875
+      "@N&:gua": 1.54191624424768
+  
+  :rm1:
+    h_bonds4_parameters:
+      oh_o: 3.76
+      oh_n: 3.90
+      nh_o: 3.14
+      nh_n: 2.95
+      multiplier_wh_o: 0.94
+      multiplier_coo: 1.10
+      multiplier_nh4: 1.21
+    h_bonds4_extra_scaling:
+      "@N&:hip": 1.10
+      "@N&:gua": 1.18
+  
+  :om3:
+    h_bonds4_parameters:
+      oh_o: 1.95
+      oh_n: 1.64
+      nh_o: 0.93
+      nh_n: 1.35
+      multiplier_wh_o: 0.50
+      multiplier_coo: 1.63
+      multiplier_nh4: 0.69
+    h_bonds4_extra_scaling:
+      "@N&:hip": 1.18
+      "@N&:gua": 1.37

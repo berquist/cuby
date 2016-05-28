@@ -1,0 +1,43 @@
+#===============================================================================
+# Multistep protocol example 4 - custom processing of the results
+#===============================================================================
+
+# Alternatively to example 3, a custom ruby code can be run on the results
+# to perform the final processing
+
+multistep_result_eval: |
+  puts "Greetings, human master! Let me serve the results in a pleasing manner."
+  energy_difefrence = steps['energy2'].energy - steps['energy1'].energy
+  puts "The energy difefrence you seek is #{'%.3f' % energy_difefrence} kcal/mol"
+  `rm optimized.xyz` # Also, delete the optimized geometry
+
+# The rest is the same as in previous example:
+job: multistep
+steps: energy1, opt, energy2
+
+# Energy before optimization
+calculation_energy1:
+  job: energy
+  method: pm6
+  modifiers: dispersion3, h_bonds4
+  geometry: A24:water # Water molecule
+
+# Optimization
+calculation_opt:
+  job: optimize
+  opt_quality: 0.1
+  method: pm6
+  geometry: A24:water # same as in the first step
+  history_freq: 0 # do not write optimization history
+  
+# Energy after optimization
+calculation_energy2:
+  job: energy
+  method: pm6
+  modifiers: dispersion3, h_bonds4
+  geometry: optimized.xyz
+
+# Common setup
+calculation_common:
+  interface: mopac
+  charge: 0

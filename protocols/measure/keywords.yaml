@@ -1,0 +1,10 @@
+################################################################################
+# Keywords for protocol Measure
+################################################################################
+
+keywords: 
+  :measurements: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :die
+  #: A list of measuremens to be done, as a name: expression hash. For available
+  #: measuremet expressions, see the documentation of the protocol 'measure'.

@@ -1,0 +1,105 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_O3ADD6
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "reaction energies, barrier heights, association energies for addition of O3 to C2H4 and C2H2"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_O3ADD6:o3"
+  reference_value: -1.90
+  setup:
+    reaction_formula: "1 g_o3 + 1 g_c2h2 -> 1 g_o3_c2h2_vdw"
+    reaction_geometries:
+      g_o3: gmtkn_O3ADD6:o3
+      g_c2h2: gmtkn_O3ADD6:c2h2
+      g_o3_c2h2_vdw: gmtkn_O3ADD6:o3_c2h2_vdw
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_O3ADD6:o3"
+  reference_value: 7.74
+  setup:
+    reaction_formula: "1 g_o3 + 1 g_c2h2 -> 1 g_o3_c2h2_ts"
+    reaction_geometries:
+      g_o3: gmtkn_O3ADD6:o3
+      g_c2h2: gmtkn_O3ADD6:c2h2
+      g_o3_c2h2_ts: gmtkn_O3ADD6:o3_c2h2_ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_O3ADD6:o3"
+  reference_value: -63.80
+  setup:
+    reaction_formula: "1 g_o3 + 1 g_c2h2 -> 1 g_o3_c2h2_add"
+    reaction_geometries:
+      g_o3: gmtkn_O3ADD6:o3
+      g_c2h2: gmtkn_O3ADD6:c2h2
+      g_o3_c2h2_add: gmtkn_O3ADD6:o3_c2h2_add
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_O3ADD6:o3"
+  reference_value: -1.94
+  setup:
+    reaction_formula: "1 g_o3 + 1 g_c2h4 -> 1 g_o3_c2h4_vdw"
+    reaction_geometries:
+      g_o3: gmtkn_O3ADD6:o3
+      g_c2h4: gmtkn_O3ADD6:c2h4
+      g_o3_c2h4_vdw: gmtkn_O3ADD6:o3_c2h4_vdw
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_O3ADD6:o3"
+  reference_value: 3.37
+  setup:
+    reaction_formula: "1 g_o3 + 1 g_c2h4 -> 1 g_o3_c2h4_ts"
+    reaction_geometries:
+      g_o3: gmtkn_O3ADD6:o3
+      g_c2h4: gmtkn_O3ADD6:c2h4
+      g_o3_c2h4_ts: gmtkn_O3ADD6:o3_c2h4_ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_O3ADD6:o3"
+  reference_value: -57.15
+  setup:
+    reaction_formula: "1 g_o3 + 1 g_c2h4 -> 1 g_o3_c2h4_add"
+    reaction_geometries:
+      g_o3: gmtkn_O3ADD6:o3
+      g_c2h4: gmtkn_O3ADD6:c2h4
+      g_o3_c2h4_add: gmtkn_O3ADD6:o3_c2h4_add
+  tags: ""
+

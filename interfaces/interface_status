@@ -1,0 +1,50 @@
+#!/usr/bin/ruby1.9
+$:.unshift(File.dirname(__FILE__)+"/..").uniq! # Magic line to add path to the executable to $RUBYLIB
+require "classes/cuby.rb" # Load Cuby classes and libraries
+
+#===============================================================================
+#
+# This utility lists the available interfaces and their status.
+#
+# It may be extended to query more details on interface capabilities and
+# possibly generating the table for documentation.
+#
+#===============================================================================
+
+Cuby.application {
+	# Load Cuby classes and libraries
+	Cuby.load_framework
+
+	# Print header
+	puts "=" * 200
+	puts "Available interfaces:"
+	puts "=" * 200
+	printf("%-25s%-55s%-30s%-10s%s\n",
+	       "name",
+	       "path",
+	       "module",
+	       "flag",
+	       "status"
+	      )
+	puts "-" * 200
+
+	# Iterate over the interfaces found in the interfaces directory
+	Calculation.available_interfaces.each_pair{|name, dir|
+		# Load the source file
+		require dir + "/" + name.to_s + ".rb"
+		# Get the interface module from name
+		mod = eval("Interface" + name.to_s.split("_").map{|s| s.capitalize}.join(''))
+		# Print information
+		printf("%-25s%-55s%-30s%-10s%s\n",
+		       name,
+		       dir,
+		       mod.to_s, 
+		       mod::DEVELOPMENT_FLAG.to_s,
+		       mod::DEVELOPMENT_STATUS
+		      )
+	}
+
+	# print footer
+	puts "=" * 200
+	puts
+}

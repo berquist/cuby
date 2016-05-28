@@ -1,0 +1,124 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol test</h1>
+<p>
+Protocol for automatic testing of calculations. The result is compared to reference value provided in the input and a report is printed.
+</p>
+
+<h2>Input structure</h2>
+<h4>The protocol requires following blocks in the input:</h4>
+<ul>
+<li>calculation - Setup for the calculation</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this protocol:</h4>
+<ul>
+<li><a href="keywords.html#test_name">test_name</a></li>
+<li><a href="keywords.html#test_print_results">test_print_results</a></li>
+<li><a href="keywords.html#test_result">test_result</a></li>
+<li><a href="keywords.html#test_result_type">test_result_type</a></li>
+<li><a href="keywords.html#test_threshold">test_threshold</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/test/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Test example 1 - test multiple methods
+#===============================================================================
+
+# This example combines the Test and Multistep protocols, checking whether
+# HF/6-31G results from different interfaces are the same.
+
+job: multistep
+steps: turbomole, psi4, orca, cfour, gaussian
+
+verbosity: brief # Do not print decorations for each step
+
+# This is the test setup - reference value, tolerance threshold and
+# calculation block containing the tested calculation
+calculation_common:
+  job: test
+  test_result: -47680.807444
+  test_result_type: energy
+  test_threshold: 0.00001 # very tight thershold, to see some differences
+  calculation: 
+    job: energy
+    geometry: A24:water
+    method: hf
+    density_fitting: none
+    basisset: 6-31G
+    charge: 0
+
+# For each step, we set up the test name and interface to be used for 
+# the calculation
+calculation_turbomole:
+  test_name: Turbomole HF/6-31G energy
+  calculation:
+    interface: turbomole
+
+calculation_psi4:
+  test_name: Psi4 HF/6-31G energy
+  calculation:
+    interface: psi4
+
+calculation_orca:
+  test_name: Orca HF/6-31G energy
+  calculation:
+    interface: orca
+
+calculation_cfour:
+  test_name: Cfour HF/6-31G energy
+  calculation:
+    interface: cfour
+
+calculation_gaussian:
+  test_name: Gaussian HF/6-31G energy
+  calculation:
+    interface: gaussian
+
+</code></pre></div>
+<p>Produces output:</p>
+<div class="ex_output"><pre>Turbomole HF/6-31G energy                                   [   OK    ]
+Psi4 HF/6-31G energy                                        [   OK    ]
+Orca HF/6-31G energy                                        [   OK    ]
+Cfour HF/6-31G energy                                       [   OK    ]
+Gaussian HF/6-31G energy                                    [ DIFFERS ]   The energy differs by 3.134905273327604e-05 kcal/mol (6.574773879426177e-08 %)
+</pre></div>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+#===============================================================================
+# Protocol measure example 1
+#===============================================================================
+
+# Measurements on a benzene-ethylene complex
+
+job: measure
+geometry: scan.xyz # The file contains five geometries
+
+# The list of measurements as name: expression pairs
+# The name is printed in the output
+# In the expressions, semicolons separate the arguments (atom selections)
+measurements: 
+  # Distance between two atoms
+  dist_3_16: distance(3; 16) 
+  # Distance between the centers of molecules
+  dist_cc: distance(1-12; 13-18) 
+  # Closest distance between molecules
+  closest: closest_distance(%molecule(1); %molecule(2)) 
+  # Angle between two atoms and a center of group atoms
+  angle: angle(9; 3; 16,17,18)
+  # Torsion angle
+  torsion: torsion(9; 3; 16; 18)
+  # Point - plane distance between the benzene ring and the other molecule
+  # First argument is the point (center of molecule), remaining three define the plane
+  point_plane: point_plane(13-18; 1; 5; 9)
+  # Point-normal vector distance, takes arguments P,A,B,C
+  # Calculates distance of P from a vector originating in A and perpendicular to AB and AC
+  # Here, we calculate the displacement of the ethylene from the benzene ring center
+  pp: point_normal(%molecule(2); %molecule(1); 1; 5)

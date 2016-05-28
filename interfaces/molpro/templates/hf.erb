@@ -1,0 +1,12 @@
+<%# Hartree-fock calculation, also used in post-HF jobs%>
+<%
+	extra = ""
+	extra << ";accu,#{@settings[:density_convergence]}"
+	extra << ";MAXIT,#{@settings[:scf_cycles]}"
+%>
+{<%= [:scf, :both].include?(@settings[:density_fitting]) ? "df-" : "" %><%= openshell %>hf<%= extra %>}
+ENERGYSCF=energy
+
+<% if @what.include?(:gradient) %>
+force
+<% end %>

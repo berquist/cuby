@@ -1,0 +1,31 @@
+#===============================================================================
+# Gaussian driver example 1: Using gaussian as a driver
+#===============================================================================
+
+# If there are no problems, running this job would produce an gaussian output
+# file named "job_gaussian_input.log" with a record of a gaussian calculation
+# on a potential provided by a child cuby calculation.
+
+job: gaussian_driver
+
+# Gaussian job definition, in gaussian format
+# Here, it is "opt" for optimization with the default setup
+gaussian_driver_job: "opt"
+
+# Path to a script executing gaussian
+# This script should do the following:
+# 1) set up the environment for gaussian
+# 2) run gaussian (in foreground) on input file passed as an argument
+# 3) produce output file something.log (when the input was something.com)
+gaussian_driver_exe: ~/bin/gaussian/G09
+
+# Calculation to be called by gaussian - here, a simple SCC-DFTB calculation
+# No job has to be specified, what calculation is requested is controlled
+# by the driver
+calculation:
+  interface: dftb
+  method: scc-dftb
+
+# Geometry: Water dimer from the S66 data set
+geometry: S66:water_dimer
+

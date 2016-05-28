@@ -1,0 +1,29 @@
+# Atomic heats of formation
+# from http://www.gaussian.com/g_whitepap/thermo.htm
+# in kcal/mol
+
+:H: !ruby/object:AtomThermochemistry
+  h0: 51.63
+  h298_corr: 1.01
+  s0_298: 27.418
+
+:B: !ruby/object:AtomThermochemistry
+  h0: 136.2
+  h298_corr: 0.29
+  s0_298: 36.672
+
+:C: !ruby/object:AtomThermochemistry
+  h0: 169.98
+  h298_corr: 0.25
+  s0_298: 37.787
+
+:N: !ruby/object:AtomThermochemistry
+  h0: 112.53
+  h298_corr: 1.04
+  s0_298: 36.640
+
+:O: !ruby/object:AtomThermochemistry
+  h0: 58.99
+  h298_corr: 1.04
+  s0_298: 38.494
+

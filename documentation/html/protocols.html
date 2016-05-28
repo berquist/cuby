@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>List of protocols</h1>
+<p>Following computational protocols (entered as a value of the 'job' keyword in the input) are available:</p>
+<h4>Calculation of elementary quantities:</h4>
+<ul>
+<li><a href="protocol_atomic_charges.html">atomic_charges</a></li>
+<li><a href="protocol_energy.html">energy</a></li>
+<li><a href="protocol_frequencies.html">frequencies</a></li>
+<li><a href="protocol_gradient.html">gradient</a></li>
+<li><a href="protocol_hessian.html">hessian</a></li>
+</ul>
+<h4>Calculation of composite quantities:</h4>
+<ul>
+<li><a href="protocol_charge_transfer.html">charge_transfer</a> - Charge transfer energy in non-covalent dimers</li>
+<li><a href="protocol_heat_of_formation.html">heat_of_formation</a> - Calculation of heat of formation of a molecule</li>
+<li><a href="protocol_interaction.html">interaction</a> - Interaction energy in non-covalent complexes</li>
+<li><a href="protocol_reaction.html">reaction</a> - Reaction energy calculations</li>
+<li><a href="protocol_threebody.html">threebody</a> - Calculation of threebody energy in non-covalent trimers</li>
+</ul>
+<h4>Drivers:</h4>
+<ul>
+<li><a href="protocol_dynamics.html">dynamics</a> - Molecular dynamics engine</li>
+<li><a href="protocol_gaussian_driver.html">gaussian_driver</a> - Uses Gaussian as extrenal driver</li>
+<li><a href="protocol_neb.html">neb</a> - Nudged elastic band method for minimum energy path optimization</li>
+<li><a href="protocol_optimize.html">optimize</a> - Geometry optimization</li>
+</ul>
+<h4>Batch calculations:</h4>
+<ul>
+<li><a href="protocol_dataset.html">dataset</a> - Calculation over a predefined data set and processing of the results</li>
+<li><a href="protocol_scan.html">scan</a> - Scan over a series of geometries</li>
+</ul>
+<h4>Tools:</h4>
+<ul>
+<li><a href="protocol_geometry.html">geometry</a> - Geometry manipulations</li>
+<li><a href="protocol_measure.html">measure</a> - Performs measurements on the molecular geometry</li>
+<li><a href="protocol_shell_script.html">shell_script</a> - Shell commands execution</li>
+<li><a href="protocol_test.html">test</a> - Test calculation against a known result</li>
+</ul>
+<h4>Workflow integration protocols:</h4>
+<ul>
+<li><a href="protocol_multistep.html">multistep</a> - Chaining of multiple calculations</li>
+</ul>
+		</div>
+		</div>
+	</body>
+</html>

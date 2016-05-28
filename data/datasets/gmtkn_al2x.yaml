@@ -1,0 +1,112 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_AL2X
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "dimerization energies of AlX3 compounds"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_AL2X:al2h6"
+  reference_value: 35.8
+  setup:
+    reaction_formula: "1 g_al2h6 -> 2 g_alh3"
+    reaction_geometries:
+      g_al2h6: gmtkn_AL2X:al2h6
+      g_alh3: gmtkn_AL2X:alh3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_AL2X:al2f6"
+  reference_value: 52.6
+  setup:
+    reaction_formula: "1 g_al2f6 -> 2 g_alf3"
+    reaction_geometries:
+      g_al2f6: gmtkn_AL2X:al2f6
+      g_alf3: gmtkn_AL2X:alf3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_AL2X:al2cl6"
+  reference_value: 31.4
+  setup:
+    reaction_formula: "1 g_al2cl6 -> 2 g_alcl3"
+    reaction_geometries:
+      g_al2cl6: gmtkn_AL2X:al2cl6
+      g_alcl3: gmtkn_AL2X:alcl3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_AL2X:al2br6"
+  reference_value: 28.4
+  setup:
+    reaction_formula: "1 g_al2br6 -> 2 g_albr3"
+    reaction_geometries:
+      g_al2br6: gmtkn_AL2X:al2br6
+      g_albr3: gmtkn_AL2X:albr3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_AL2X:al2me4"
+  reference_value: 37.8
+  setup:
+    reaction_formula: "1 g_al2me4 -> 2 g_alme2"
+    reaction_geometries:
+      g_al2me4: gmtkn_AL2X:al2me4
+      g_alme2: gmtkn_AL2X:alme2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_AL2X:al2me5"
+  reference_value: 30.0
+  setup:
+    reaction_formula: "1 g_al2me5 -> 1 g_alme2 + 1 g_alme3"
+    reaction_geometries:
+      g_al2me5: gmtkn_AL2X:al2me5
+      g_alme2: gmtkn_AL2X:alme2
+      g_alme3: gmtkn_AL2X:alme3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_AL2X:al2me6"
+  reference_value: 21.4
+  setup:
+    reaction_formula: "1 g_al2me6 -> 2 g_alme3"
+    reaction_geometries:
+      g_al2me6: gmtkn_AL2X:al2me6
+      g_alme3: gmtkn_AL2X:alme3
+  tags: ""
+

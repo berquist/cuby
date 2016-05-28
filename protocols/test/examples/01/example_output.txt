@@ -1,0 +1,5 @@
+Turbomole HF/6-31G energy                                   [   OK    ]
+Psi4 HF/6-31G energy                                        [   OK    ]
+Orca HF/6-31G energy                                        [   OK    ]
+Cfour HF/6-31G energy                                       [   OK    ]
+Gaussian HF/6-31G energy                                    [ DIFFERS ]   The energy differs by 3.134905273327604e-05 kcal/mol (6.574773879426177e-08 %)

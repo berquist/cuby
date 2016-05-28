@@ -1,0 +1,3888 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Data set description
+#===============================================================================
+
+# X40x10 data set
+# Interaction energies:
+# CCSD(T)/CBS, frozen core, counterpoise-corrected
+# MP2 extrapolation from aug-cc-pVTZ(-PP for Br and I) and aug-cc-pVQZ(-PP)
+# dCCSD(T) in aug-cc-pVDZ(-PP for Br and I)
+# Geometries:
+# MP2/cc-pVTZ(-PP), counterpoise corrected
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: X40x10
+  references: 
+    "10.1021/ct300647k": "Řezáč, J.; Riley, K. E.; Hobza, P. J. Chem. Theory Comput. 2012, 8, 4285–4292."
+  text: "CSCD(T)/CBS interaction energies of halogenated molecules - dissociation curves"
+
+  groups:
+    - dispersion
+    - induction
+    - dipole_dipole
+    - stack
+    - X-bond
+    - X-pi
+    - H-bond
+  global_setup:
+    job: interaction
+    molecule_a:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+    molecule_b:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items:
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 methane ... F2 0.80
+  shortname: 01_methane-F2_0.80
+  geometry: X40x10:01_0.80
+  reference_value: 0.306
+  setup: {}
+  group: dispersion
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 methane ... F2 0.85
+  shortname: 01_methane-F2_0.85
+  geometry: X40x10:01_0.85
+  reference_value: -0.237
+  setup: {}
+  group: dispersion
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 methane ... F2 0.90
+  shortname: 01_methane-F2_0.90
+  geometry: X40x10:01_0.90
+  reference_value: -0.444
+  setup: {}
+  group: dispersion
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 methane ... F2 0.95
+  shortname: 01_methane-F2_0.95
+  geometry: X40x10:01_0.95
+  reference_value: -0.487
+  setup: {}
+  group: dispersion
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 methane ... F2 1.00
+  shortname: 01_methane-F2_1.00
+  geometry: X40x10:01_1.00
+  reference_value: -0.458
+  setup: {}
+  group: dispersion
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 methane ... F2 1.05
+  shortname: 01_methane-F2_1.05
+  geometry: X40x10:01_1.05
+  reference_value: -0.4
+  setup: {}
+  group: dispersion
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 methane ... F2 1.10
+  shortname: 01_methane-F2_1.10
+  geometry: X40x10:01_1.10
+  reference_value: -0.338
+  setup: {}
+  group: dispersion
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 methane ... F2 1.25
+  shortname: 01_methane-F2_1.25
+  geometry: X40x10:01_1.25
+  reference_value: -0.187
+  setup: {}
+  group: dispersion
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 methane ... F2 1.50
+  shortname: 01_methane-F2_1.50
+  geometry: X40x10:01_1.50
+  reference_value: -0.07
+  setup: {}
+  group: dispersion
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 methane ... F2 2.00
+  shortname: 01_methane-F2_2.00
+  geometry: X40x10:01_2.00
+  reference_value: -0.014
+  setup: {}
+  group: dispersion
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 methane ... Cl2 0.80
+  shortname: 02_methane-Cl2_0.80
+  geometry: X40x10:02_0.80
+  reference_value: 1.804
+  setup: {}
+  group: dispersion
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 methane ... Cl2 0.85
+  shortname: 02_methane-Cl2_0.85
+  geometry: X40x10:02_0.85
+  reference_value: -0.066
+  setup: {}
+  group: dispersion
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 methane ... Cl2 0.90
+  shortname: 02_methane-Cl2_0.90
+  geometry: X40x10:02_0.90
+  reference_value: -0.841
+  setup: {}
+  group: dispersion
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 methane ... Cl2 0.95
+  shortname: 02_methane-Cl2_0.95
+  geometry: X40x10:02_0.95
+  reference_value: -1.073
+  setup: {}
+  group: dispersion
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 methane ... Cl2 1.00
+  shortname: 02_methane-Cl2_1.00
+  geometry: X40x10:02_1.00
+  reference_value: -1.055
+  setup: {}
+  group: dispersion
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 methane ... Cl2 1.05
+  shortname: 02_methane-Cl2_1.05
+  geometry: X40x10:02_1.05
+  reference_value: -0.937
+  setup: {}
+  group: dispersion
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 methane ... Cl2 1.10
+  shortname: 02_methane-Cl2_1.10
+  geometry: X40x10:02_1.10
+  reference_value: -0.792
+  setup: {}
+  group: dispersion
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 methane ... Cl2 1.25
+  shortname: 02_methane-Cl2_1.25
+  geometry: X40x10:02_1.25
+  reference_value: -0.427
+  setup: {}
+  group: dispersion
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 methane ... Cl2 1.50
+  shortname: 02_methane-Cl2_1.50
+  geometry: X40x10:02_1.50
+  reference_value: -0.151
+  setup: {}
+  group: dispersion
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 methane ... Cl2 2.00
+  shortname: 02_methane-Cl2_2.00
+  geometry: X40x10:02_2.00
+  reference_value: -0.029
+  setup: {}
+  group: dispersion
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 methane ... Br2 0.80
+  shortname: 03_methane-Br2_0.80
+  geometry: X40x10:03_0.80
+  reference_value: 2.441
+  setup: {}
+  group: dispersion
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 methane ... Br2 0.85
+  shortname: 03_methane-Br2_0.85
+  geometry: X40x10:03_0.85
+  reference_value: 0.087
+  setup: {}
+  group: dispersion
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 methane ... Br2 0.90
+  shortname: 03_methane-Br2_0.90
+  geometry: X40x10:03_0.90
+  reference_value: -0.927
+  setup: {}
+  group: dispersion
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 methane ... Br2 0.95
+  shortname: 03_methane-Br2_0.95
+  geometry: X40x10:03_0.95
+  reference_value: -1.263
+  setup: {}
+  group: dispersion
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 methane ... Br2 1.00
+  shortname: 03_methane-Br2_1.00
+  geometry: X40x10:03_1.00
+  reference_value: -1.276
+  setup: {}
+  group: dispersion
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 methane ... Br2 1.05
+  shortname: 03_methane-Br2_1.05
+  geometry: X40x10:03_1.05
+  reference_value: -1.152
+  setup: {}
+  group: dispersion
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 methane ... Br2 1.10
+  shortname: 03_methane-Br2_1.10
+  geometry: X40x10:03_1.10
+  reference_value: -0.984
+  setup: {}
+  group: dispersion
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 methane ... Br2 1.25
+  shortname: 03_methane-Br2_1.25
+  geometry: X40x10:03_1.25
+  reference_value: -0.541
+  setup: {}
+  group: dispersion
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 methane ... Br2 1.50
+  shortname: 03_methane-Br2_1.50
+  geometry: X40x10:03_1.50
+  reference_value: -0.193
+  setup: {}
+  group: dispersion
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 methane ... Br2 2.00
+  shortname: 03_methane-Br2_2.00
+  geometry: X40x10:03_2.00
+  reference_value: -0.037
+  setup: {}
+  group: dispersion
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methane ... I2 0.80
+  shortname: 04_methane-I2_0.80
+  geometry: X40x10:04_0.80
+  reference_value: 2.807
+  setup: {}
+  group: dispersion
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methane ... I2 0.85
+  shortname: 04_methane-I2_0.85
+  geometry: X40x10:04_0.85
+  reference_value: 0.222
+  setup: {}
+  group: dispersion
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methane ... I2 0.90
+  shortname: 04_methane-I2_0.90
+  geometry: X40x10:04_0.90
+  reference_value: -0.908
+  setup: {}
+  group: dispersion
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methane ... I2 0.95
+  shortname: 04_methane-I2_0.95
+  geometry: X40x10:04_0.95
+  reference_value: -1.295
+  setup: {}
+  group: dispersion
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methane ... I2 1.00
+  shortname: 04_methane-I2_1.00
+  geometry: X40x10:04_1.00
+  reference_value: -1.324
+  setup: {}
+  group: dispersion
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methane ... I2 1.05
+  shortname: 04_methane-I2_1.05
+  geometry: X40x10:04_1.05
+  reference_value: -1.201
+  setup: {}
+  group: dispersion
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methane ... I2 1.10
+  shortname: 04_methane-I2_1.10
+  geometry: X40x10:04_1.10
+  reference_value: -1.028
+  setup: {}
+  group: dispersion
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methane ... I2 1.25
+  shortname: 04_methane-I2_1.25
+  geometry: X40x10:04_1.25
+  reference_value: -0.563
+  setup: {}
+  group: dispersion
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methane ... I2 1.50
+  shortname: 04_methane-I2_1.50
+  geometry: X40x10:04_1.50
+  reference_value: -0.199
+  setup: {}
+  group: dispersion
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methane ... I2 2.00
+  shortname: 04_methane-I2_2.00
+  geometry: X40x10:04_2.00
+  reference_value: -0.037
+  setup: {}
+  group: dispersion
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 fluoromethane ... methane 0.80
+  shortname: 05_fluoromethane-methane_0.80
+  geometry: X40x10:05_0.80
+  reference_value: 0.759
+  setup: {}
+  group: induction
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 fluoromethane ... methane 0.85
+  shortname: 05_fluoromethane-methane_0.85
+  geometry: X40x10:05_0.85
+  reference_value: -0.287
+  setup: {}
+  group: induction
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 fluoromethane ... methane 0.90
+  shortname: 05_fluoromethane-methane_0.90
+  geometry: X40x10:05_0.90
+  reference_value: -0.671
+  setup: {}
+  group: induction
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 fluoromethane ... methane 0.95
+  shortname: 05_fluoromethane-methane_0.95
+  geometry: X40x10:05_0.95
+  reference_value: -0.755
+  setup: {}
+  group: induction
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 fluoromethane ... methane 1.00
+  shortname: 05_fluoromethane-methane_1.00
+  geometry: X40x10:05_1.00
+  reference_value: -0.713
+  setup: {}
+  group: induction
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 fluoromethane ... methane 1.05
+  shortname: 05_fluoromethane-methane_1.05
+  geometry: X40x10:05_1.05
+  reference_value: -0.625
+  setup: {}
+  group: induction
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 fluoromethane ... methane 1.10
+  shortname: 05_fluoromethane-methane_1.10
+  geometry: X40x10:05_1.10
+  reference_value: -0.527
+  setup: {}
+  group: induction
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 fluoromethane ... methane 1.25
+  shortname: 05_fluoromethane-methane_1.25
+  geometry: X40x10:05_1.25
+  reference_value: -0.293
+  setup: {}
+  group: induction
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 fluoromethane ... methane 1.50
+  shortname: 05_fluoromethane-methane_1.50
+  geometry: X40x10:05_1.50
+  reference_value: -0.111
+  setup: {}
+  group: induction
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 fluoromethane ... methane 2.00
+  shortname: 05_fluoromethane-methane_2.00
+  geometry: X40x10:05_2.00
+  reference_value: -0.023
+  setup: {}
+  group: induction
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 chloromethane ... methane 0.80
+  shortname: 06_chloromethane-methane_0.80
+  geometry: X40x10:06_0.80
+  reference_value: 1.698
+  setup: {}
+  group: induction
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 chloromethane ... methane 0.85
+  shortname: 06_chloromethane-methane_0.85
+  geometry: X40x10:06_0.85
+  reference_value: -0.131
+  setup: {}
+  group: induction
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 chloromethane ... methane 0.90
+  shortname: 06_chloromethane-methane_0.90
+  geometry: X40x10:06_0.90
+  reference_value: -0.809
+  setup: {}
+  group: induction
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 chloromethane ... methane 0.95
+  shortname: 06_chloromethane-methane_0.95
+  geometry: X40x10:06_0.95
+  reference_value: -0.988
+  setup: {}
+  group: induction
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 chloromethane ... methane 1.00
+  shortname: 06_chloromethane-methane_1.00
+  geometry: X40x10:06_1.00
+  reference_value: -0.959
+  setup: {}
+  group: induction
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 chloromethane ... methane 1.05
+  shortname: 06_chloromethane-methane_1.05
+  geometry: X40x10:06_1.05
+  reference_value: -0.852
+  setup: {}
+  group: induction
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 chloromethane ... methane 1.10
+  shortname: 06_chloromethane-methane_1.10
+  geometry: X40x10:06_1.10
+  reference_value: -0.726
+  setup: {}
+  group: induction
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 chloromethane ... methane 1.25
+  shortname: 06_chloromethane-methane_1.25
+  geometry: X40x10:06_1.25
+  reference_value: -0.411
+  setup: {}
+  group: induction
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 chloromethane ... methane 1.50
+  shortname: 06_chloromethane-methane_1.50
+  geometry: X40x10:06_1.50
+  reference_value: -0.16
+  setup: {}
+  group: induction
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 chloromethane ... methane 2.00
+  shortname: 06_chloromethane-methane_2.00
+  geometry: X40x10:06_2.00
+  reference_value: -0.035
+  setup: {}
+  group: induction
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 trifluoromethane ... methane 0.80
+  shortname: 07_trifluoromethane-methane_0.80
+  geometry: X40x10:07_0.80
+  reference_value: 0.33
+  setup: {}
+  group: induction
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 trifluoromethane ... methane 0.85
+  shortname: 07_trifluoromethane-methane_0.85
+  geometry: X40x10:07_0.85
+  reference_value: -0.413
+  setup: {}
+  group: induction
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 trifluoromethane ... methane 0.90
+  shortname: 07_trifluoromethane-methane_0.90
+  geometry: X40x10:07_0.90
+  reference_value: -0.657
+  setup: {}
+  group: induction
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 trifluoromethane ... methane 0.95
+  shortname: 07_trifluoromethane-methane_0.95
+  geometry: X40x10:07_0.95
+  reference_value: -0.677
+  setup: {}
+  group: induction
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 trifluoromethane ... methane 1.00
+  shortname: 07_trifluoromethane-methane_1.00
+  geometry: X40x10:07_1.00
+  reference_value: -0.608
+  setup: {}
+  group: induction
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 trifluoromethane ... methane 1.05
+  shortname: 07_trifluoromethane-methane_1.05
+  geometry: X40x10:07_1.05
+  reference_value: -0.512
+  setup: {}
+  group: induction
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 trifluoromethane ... methane 1.10
+  shortname: 07_trifluoromethane-methane_1.10
+  geometry: X40x10:07_1.10
+  reference_value: -0.418
+  setup: {}
+  group: induction
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 trifluoromethane ... methane 1.25
+  shortname: 07_trifluoromethane-methane_1.25
+  geometry: X40x10:07_1.25
+  reference_value: -0.213
+  setup: {}
+  group: induction
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 trifluoromethane ... methane 1.50
+  shortname: 07_trifluoromethane-methane_1.50
+  geometry: X40x10:07_1.50
+  reference_value: -0.071
+  setup: {}
+  group: induction
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 trifluoromethane ... methane 2.00
+  shortname: 07_trifluoromethane-methane_2.00
+  geometry: X40x10:07_2.00
+  reference_value: -0.012
+  setup: {}
+  group: induction
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 trichloromethane ... methane 0.80
+  shortname: 08_trichloromethane-methane_0.80
+  geometry: X40x10:08_0.80
+  reference_value: 1.629
+  setup: {}
+  group: induction
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 trichloromethane ... methane 0.85
+  shortname: 08_trichloromethane-methane_0.85
+  geometry: X40x10:08_0.85
+  reference_value: -0.207
+  setup: {}
+  group: induction
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 trichloromethane ... methane 0.90
+  shortname: 08_trichloromethane-methane_0.90
+  geometry: X40x10:08_0.90
+  reference_value: -0.949
+  setup: {}
+  group: induction
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 trichloromethane ... methane 0.95
+  shortname: 08_trichloromethane-methane_0.95
+  geometry: X40x10:08_0.95
+  reference_value: -1.156
+  setup: {}
+  group: induction
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 trichloromethane ... methane 1.00
+  shortname: 08_trichloromethane-methane_1.00
+  geometry: X40x10:08_1.00
+  reference_value: -1.117
+  setup: {}
+  group: induction
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 trichloromethane ... methane 1.05
+  shortname: 08_trichloromethane-methane_1.05
+  geometry: X40x10:08_1.05
+  reference_value: -0.983
+  setup: {}
+  group: induction
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 trichloromethane ... methane 1.10
+  shortname: 08_trichloromethane-methane_1.10
+  geometry: X40x10:08_1.10
+  reference_value: -0.824
+  setup: {}
+  group: induction
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 trichloromethane ... methane 1.25
+  shortname: 08_trichloromethane-methane_1.25
+  geometry: X40x10:08_1.25
+  reference_value: -0.436
+  setup: {}
+  group: induction
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 trichloromethane ... methane 1.50
+  shortname: 08_trichloromethane-methane_1.50
+  geometry: X40x10:08_1.50
+  reference_value: -0.149
+  setup: {}
+  group: induction
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 trichloromethane ... methane 2.00
+  shortname: 08_trichloromethane-methane_2.00
+  geometry: X40x10:08_2.00
+  reference_value: -0.025
+  setup: {}
+  group: induction
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 fluoromethane  dimer 0.80
+  shortname: 09_fluoromethane-fluoromethane_0.80
+  geometry: X40x10:09_0.80
+  reference_value: 0.675
+  setup: {}
+  group: dipole_dipole
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 fluoromethane  dimer 0.85
+  shortname: 09_fluoromethane-fluoromethane_0.85
+  geometry: X40x10:09_0.85
+  reference_value: -0.849
+  setup: {}
+  group: dipole_dipole
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 fluoromethane  dimer 0.90
+  shortname: 09_fluoromethane-fluoromethane_0.90
+  geometry: X40x10:09_0.90
+  reference_value: -1.461
+  setup: {}
+  group: dipole_dipole
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 fluoromethane  dimer 0.95
+  shortname: 09_fluoromethane-fluoromethane_0.95
+  geometry: X40x10:09_0.95
+  reference_value: -1.628
+  setup: {}
+  group: dipole_dipole
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 fluoromethane  dimer 1.00
+  shortname: 09_fluoromethane-fluoromethane_1.00
+  geometry: X40x10:09_1.00
+  reference_value: -1.59
+  setup: {}
+  group: dipole_dipole
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 fluoromethane  dimer 1.05
+  shortname: 09_fluoromethane-fluoromethane_1.05
+  geometry: X40x10:09_1.05
+  reference_value: -1.469
+  setup: {}
+  group: dipole_dipole
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 fluoromethane  dimer 1.10
+  shortname: 09_fluoromethane-fluoromethane_1.10
+  geometry: X40x10:09_1.10
+  reference_value: -1.322
+  setup: {}
+  group: dipole_dipole
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 fluoromethane  dimer 1.25
+  shortname: 09_fluoromethane-fluoromethane_1.25
+  geometry: X40x10:09_1.25
+  reference_value: -0.93
+  setup: {}
+  group: dipole_dipole
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 fluoromethane  dimer 1.50
+  shortname: 09_fluoromethane-fluoromethane_1.50
+  geometry: X40x10:09_1.50
+  reference_value: -0.55
+  setup: {}
+  group: dipole_dipole
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 fluoromethane  dimer 2.00
+  shortname: 09_fluoromethane-fluoromethane_2.00
+  geometry: X40x10:09_2.00
+  reference_value: -0.256
+  setup: {}
+  group: dipole_dipole
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 chloromethane  dimer 0.80
+  shortname: 10_chloromethane-chloromethane_0.80
+  geometry: X40x10:10_0.80
+  reference_value: 1.215
+  setup: {}
+  group: dipole_dipole
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 chloromethane  dimer 0.85
+  shortname: 10_chloromethane-chloromethane_0.85
+  geometry: X40x10:10_0.85
+  reference_value: -0.445
+  setup: {}
+  group: dipole_dipole
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 chloromethane  dimer 0.90
+  shortname: 10_chloromethane-chloromethane_0.90
+  geometry: X40x10:10_0.90
+  reference_value: -1.13
+  setup: {}
+  group: dipole_dipole
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 chloromethane  dimer 0.95
+  shortname: 10_chloromethane-chloromethane_0.95
+  geometry: X40x10:10_0.95
+  reference_value: -1.332
+  setup: {}
+  group: dipole_dipole
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 chloromethane  dimer 1.00
+  shortname: 10_chloromethane-chloromethane_1.00
+  geometry: X40x10:10_1.00
+  reference_value: -1.31
+  setup: {}
+  group: dipole_dipole
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 chloromethane  dimer 1.05
+  shortname: 10_chloromethane-chloromethane_1.05
+  geometry: X40x10:10_1.05
+  reference_value: -1.196
+  setup: {}
+  group: dipole_dipole
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 chloromethane  dimer 1.10
+  shortname: 10_chloromethane-chloromethane_1.10
+  geometry: X40x10:10_1.10
+  reference_value: -1.056
+  setup: {}
+  group: dipole_dipole
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 chloromethane  dimer 1.25
+  shortname: 10_chloromethane-chloromethane_1.25
+  geometry: X40x10:10_1.25
+  reference_value: -0.69
+  setup: {}
+  group: dipole_dipole
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 chloromethane  dimer 1.50
+  shortname: 10_chloromethane-chloromethane_1.50
+  geometry: X40x10:10_1.50
+  reference_value: -0.374
+  setup: {}
+  group: dipole_dipole
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 chloromethane  dimer 2.00
+  shortname: 10_chloromethane-chloromethane_2.00
+  geometry: X40x10:10_2.00
+  reference_value: -0.166
+  setup: {}
+  group: dipole_dipole
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 F3ben ... ben 0.80
+  shortname: 11_benF3-ben_0.80
+  geometry: X40x10:11_0.80
+  reference_value: 8.633
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 F3ben ... ben 0.85
+  shortname: 11_benF3-ben_0.85
+  geometry: X40x10:11_0.85
+  reference_value: 1.517
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 F3ben ... ben 0.90
+  shortname: 11_benF3-ben_0.90
+  geometry: X40x10:11_0.90
+  reference_value: -2.199
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 F3ben ... ben 0.95
+  shortname: 11_benF3-ben_0.95
+  geometry: X40x10:11_0.95
+  reference_value: -3.905
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 F3ben ... ben 1.00
+  shortname: 11_benF3-ben_1.00
+  geometry: X40x10:11_1.00
+  reference_value: -4.47
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 F3ben ... ben 1.05
+  shortname: 11_benF3-ben_1.05
+  geometry: X40x10:11_1.05
+  reference_value: -4.419
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 F3ben ... ben 1.10
+  shortname: 11_benF3-ben_1.10
+  geometry: X40x10:11_1.10
+  reference_value: -4.066
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 F3ben ... ben 1.25
+  shortname: 11_benF3-ben_1.25
+  geometry: X40x10:11_1.25
+  reference_value: -2.624
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 F3ben ... ben 1.50
+  shortname: 11_benF3-ben_1.50
+  geometry: X40x10:11_1.50
+  reference_value: -1.08
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 F3ben ... ben 2.00
+  shortname: 11_benF3-ben_2.00
+  geometry: X40x10:11_2.00
+  reference_value: -0.221
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 F6ben ... ben 0.80
+  shortname: 12_benF6-ben_0.80
+  geometry: X40x10:12_0.80
+  reference_value: 11.949
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 F6ben ... ben 0.85
+  shortname: 12_benF6-ben_0.85
+  geometry: X40x10:12_0.85
+  reference_value: 1.711
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 F6ben ... ben 0.90
+  shortname: 12_benF6-ben_0.90
+  geometry: X40x10:12_0.90
+  reference_value: -3.399
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 F6ben ... ben 0.95
+  shortname: 12_benF6-ben_0.95
+  geometry: X40x10:12_0.95
+  reference_value: -5.605
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 F6ben ... ben 1.00
+  shortname: 12_benF6-ben_1.00
+  geometry: X40x10:12_1.00
+  reference_value: -6.234
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 F6ben ... ben 1.05
+  shortname: 12_benF6-ben_1.05
+  geometry: X40x10:12_1.05
+  reference_value: -6.056
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 F6ben ... ben 1.10
+  shortname: 12_benF6-ben_1.10
+  geometry: X40x10:12_1.10
+  reference_value: -5.51
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 F6ben ... ben 1.25
+  shortname: 12_benF6-ben_1.25
+  geometry: X40x10:12_1.25
+  reference_value: -3.529
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 F6ben ... ben 1.50
+  shortname: 12_benF6-ben_1.50
+  geometry: X40x10:12_1.50
+  reference_value: -1.518
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 F6ben ... ben 2.00
+  shortname: 12_benF6-ben_2.00
+  geometry: X40x10:12_2.00
+  reference_value: -0.37
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 chloromethane ... fmdh 0.80
+  shortname: 13_chloromethane-formaldehyde_0.80
+  geometry: X40x10:13_0.80
+  reference_value: 3.054
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 chloromethane ... fmdh 0.85
+  shortname: 13_chloromethane-formaldehyde_0.85
+  geometry: X40x10:13_0.85
+  reference_value: 0.171
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 chloromethane ... fmdh 0.90
+  shortname: 13_chloromethane-formaldehyde_0.90
+  geometry: X40x10:13_0.90
+  reference_value: -0.88
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 chloromethane ... fmdh 0.95
+  shortname: 13_chloromethane-formaldehyde_0.95
+  geometry: X40x10:13_0.95
+  reference_value: -1.162
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 chloromethane ... fmdh 1.00
+  shortname: 13_chloromethane-formaldehyde_1.00
+  geometry: X40x10:13_1.00
+  reference_value: -1.132
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 chloromethane ... fmdh 1.05
+  shortname: 13_chloromethane-formaldehyde_1.05
+  geometry: X40x10:13_1.05
+  reference_value: -0.991
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 chloromethane ... fmdh 1.10
+  shortname: 13_chloromethane-formaldehyde_1.10
+  geometry: X40x10:13_1.10
+  reference_value: -0.823
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 chloromethane ... fmdh 1.25
+  shortname: 13_chloromethane-formaldehyde_1.25
+  geometry: X40x10:13_1.25
+  reference_value: -0.419
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 chloromethane ... fmdh 1.50
+  shortname: 13_chloromethane-formaldehyde_1.50
+  geometry: X40x10:13_1.50
+  reference_value: -0.125
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 chloromethane ... fmdh 2.00
+  shortname: 13_chloromethane-formaldehyde_2.00
+  geometry: X40x10:13_2.00
+  reference_value: -0.006
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 bromomethane ... fmdh 0.80
+  shortname: 14_bromomethane-formaldehyde_0.80
+  geometry: X40x10:14_0.80
+  reference_value: 3.464
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 bromomethane ... fmdh 0.85
+  shortname: 14_bromomethane-formaldehyde_0.85
+  geometry: X40x10:14_0.85
+  reference_value: 0.465
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 bromomethane ... fmdh 0.90
+  shortname: 14_bromomethane-formaldehyde_0.90
+  geometry: X40x10:14_0.90
+  reference_value: -0.991
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 bromomethane ... fmdh 0.95
+  shortname: 14_bromomethane-formaldehyde_0.95
+  geometry: X40x10:14_0.95
+  reference_value: -1.642
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 bromomethane ... fmdh 1.00
+  shortname: 14_bromomethane-formaldehyde_1.00
+  geometry: X40x10:14_1.00
+  reference_value: -1.695
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 bromomethane ... fmdh 1.05
+  shortname: 14_bromomethane-formaldehyde_1.05
+  geometry: X40x10:14_1.05
+  reference_value: -1.499
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 bromomethane ... fmdh 1.10
+  shortname: 14_bromomethane-formaldehyde_1.10
+  geometry: X40x10:14_1.10
+  reference_value: -1.24
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 bromomethane ... fmdh 1.25
+  shortname: 14_bromomethane-formaldehyde_1.25
+  geometry: X40x10:14_1.25
+  reference_value: -0.608
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 bromomethane ... fmdh 1.50
+  shortname: 14_bromomethane-formaldehyde_1.50
+  geometry: X40x10:14_1.50
+  reference_value: -0.165
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 bromomethane ... fmdh 2.00
+  shortname: 14_bromomethane-formaldehyde_2.00
+  geometry: X40x10:14_2.00
+  reference_value: 0
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 iodomethane ... fmdh 0.80
+  shortname: 15_iodomethane-formaldehyde_0.80
+  geometry: X40x10:15_0.80
+  reference_value: 2.526
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 iodomethane ... fmdh 0.85
+  shortname: 15_iodomethane-formaldehyde_0.85
+  geometry: X40x10:15_0.85
+  reference_value: -0.441
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 iodomethane ... fmdh 0.90
+  shortname: 15_iodomethane-formaldehyde_0.90
+  geometry: X40x10:15_0.90
+  reference_value: -1.817
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 iodomethane ... fmdh 0.95
+  shortname: 15_iodomethane-formaldehyde_0.95
+  geometry: X40x10:15_0.95
+  reference_value: -2.311
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 iodomethane ... fmdh 1.00
+  shortname: 15_iodomethane-formaldehyde_1.00
+  geometry: X40x10:15_1.00
+  reference_value: -2.342
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 iodomethane ... fmdh 1.05
+  shortname: 15_iodomethane-formaldehyde_1.05
+  geometry: X40x10:15_1.05
+  reference_value: -2.151
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 iodomethane ... fmdh 1.10
+  shortname: 15_iodomethane-formaldehyde_1.10
+  geometry: X40x10:15_1.10
+  reference_value: -1.875
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 iodomethane ... fmdh 1.25
+  shortname: 15_iodomethane-formaldehyde_1.25
+  geometry: X40x10:15_1.25
+  reference_value: -1.073
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 iodomethane ... fmdh 1.50
+  shortname: 15_iodomethane-formaldehyde_1.50
+  geometry: X40x10:15_1.50
+  reference_value: -0.328
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 iodomethane ... fmdh 2.00
+  shortname: 15_iodomethane-formaldehyde_2.00
+  geometry: X40x10:15_2.00
+  reference_value: -0.029
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 F3chloromethane ... fmdh 0.80
+  shortname: 16_F3chloromethane-formaldehyde_0.80
+  geometry: X40x10:16_0.80
+  reference_value: 1.19
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 F3chloromethane ... fmdh 0.85
+  shortname: 16_F3chloromethane-formaldehyde_0.85
+  geometry: X40x10:16_0.85
+  reference_value: -0.979
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 F3chloromethane ... fmdh 0.90
+  shortname: 16_F3chloromethane-formaldehyde_0.90
+  geometry: X40x10:16_0.90
+  reference_value: -1.938
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 F3chloromethane ... fmdh 0.95
+  shortname: 16_F3chloromethane-formaldehyde_0.95
+  geometry: X40x10:16_0.95
+  reference_value: -2.238
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 F3chloromethane ... fmdh 1.00
+  shortname: 16_F3chloromethane-formaldehyde_1.00
+  geometry: X40x10:16_1.00
+  reference_value: -2.2
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 F3chloromethane ... fmdh 1.05
+  shortname: 16_F3chloromethane-formaldehyde_1.05
+  geometry: X40x10:16_1.05
+  reference_value: -2.009
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 F3chloromethane ... fmdh 1.10
+  shortname: 16_F3chloromethane-formaldehyde_1.10
+  geometry: X40x10:16_1.10
+  reference_value: -1.763
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 F3chloromethane ... fmdh 1.25
+  shortname: 16_F3chloromethane-formaldehyde_1.25
+  geometry: X40x10:16_1.25
+  reference_value: -1.083
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 F3chloromethane ... fmdh 1.50
+  shortname: 16_F3chloromethane-formaldehyde_1.50
+  geometry: X40x10:16_1.50
+  reference_value: -0.447
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 F3chloromethane ... fmdh 2.00
+  shortname: 16_F3chloromethane-formaldehyde_2.00
+  geometry: X40x10:16_2.00
+  reference_value: -0.116
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 F3bromomethane ... fmdh 0.80
+  shortname: 17_F3bromomethane-formaldehyde_0.80
+  geometry: X40x10:17_0.80
+  reference_value: 1.44
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 F3bromomethane ... fmdh 0.85
+  shortname: 17_F3bromomethane-formaldehyde_0.85
+  geometry: X40x10:17_0.85
+  reference_value: -1.357
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 F3bromomethane ... fmdh 0.90
+  shortname: 17_F3bromomethane-formaldehyde_0.90
+  geometry: X40x10:17_0.90
+  reference_value: -2.636
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 F3bromomethane ... fmdh 0.95
+  shortname: 17_F3bromomethane-formaldehyde_0.95
+  geometry: X40x10:17_0.95
+  reference_value: -3.065
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 F3bromomethane ... fmdh 1.00
+  shortname: 17_F3bromomethane-formaldehyde_1.00
+  geometry: X40x10:17_1.00
+  reference_value: -3.046
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 F3bromomethane ... fmdh 1.05
+  shortname: 17_F3bromomethane-formaldehyde_1.05
+  geometry: X40x10:17_1.05
+  reference_value: -2.812
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 F3bromomethane ... fmdh 1.10
+  shortname: 17_F3bromomethane-formaldehyde_1.10
+  geometry: X40x10:17_1.10
+  reference_value: -2.495
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 F3bromomethane ... fmdh 1.25
+  shortname: 17_F3bromomethane-formaldehyde_1.25
+  geometry: X40x10:17_1.25
+  reference_value: -1.576
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 F3bromomethane ... fmdh 1.50
+  shortname: 17_F3bromomethane-formaldehyde_1.50
+  geometry: X40x10:17_1.50
+  reference_value: -0.71
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 F3bromomethane ... fmdh 2.00
+  shortname: 17_F3bromomethane-formaldehyde_2.00
+  geometry: X40x10:17_2.00
+  reference_value: -0.203
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 F3iodomethane ... fmdh 0.80
+  shortname: 18_F3iodomethane-formaldehyde_0.80
+  geometry: X40x10:18_0.80
+  reference_value: 1.433
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 F3iodomethane ... fmdh 0.85
+  shortname: 18_F3iodomethane-formaldehyde_0.85
+  geometry: X40x10:18_0.85
+  reference_value: -1.932
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 F3iodomethane ... fmdh 0.90
+  shortname: 18_F3iodomethane-formaldehyde_0.90
+  geometry: X40x10:18_0.90
+  reference_value: -3.484
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 F3iodomethane ... fmdh 0.95
+  shortname: 18_F3iodomethane-formaldehyde_0.95
+  geometry: X40x10:18_0.95
+  reference_value: -4.011
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 F3iodomethane ... fmdh 1.00
+  shortname: 18_F3iodomethane-formaldehyde_1.00
+  geometry: X40x10:18_1.00
+  reference_value: -3.988
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 F3iodomethane ... fmdh 1.05
+  shortname: 18_F3iodomethane-formaldehyde_1.05
+  geometry: X40x10:18_1.05
+  reference_value: -3.694
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 F3iodomethane ... fmdh 1.10
+  shortname: 18_F3iodomethane-formaldehyde_1.10
+  geometry: X40x10:18_1.10
+  reference_value: -3.292
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 F3iodomethane ... fmdh 1.25
+  shortname: 18_F3iodomethane-formaldehyde_1.25
+  geometry: X40x10:18_1.25
+  reference_value: -2.107
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 F3iodomethane ... fmdh 1.50
+  shortname: 18_F3iodomethane-formaldehyde_1.50
+  geometry: X40x10:18_1.50
+  reference_value: -0.967
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 F3iodomethane ... fmdh 2.00
+  shortname: 18_F3iodomethane-formaldehyde_2.00
+  geometry: X40x10:18_2.00
+  reference_value: -0.285
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 benCl ... acetone 0.80
+  shortname: 19_benCl-acetone_0.80
+  geometry: X40x10:19_0.80
+  reference_value: 0.902
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 benCl ... acetone 0.85
+  shortname: 19_benCl-acetone_0.85
+  geometry: X40x10:19_0.85
+  reference_value: -0.625
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 benCl ... acetone 0.90
+  shortname: 19_benCl-acetone_0.90
+  geometry: X40x10:19_0.90
+  reference_value: -1.29
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 benCl ... acetone 0.95
+  shortname: 19_benCl-acetone_0.95
+  geometry: X40x10:19_0.95
+  reference_value: -1.487
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 benCl ... acetone 1.00
+  shortname: 19_benCl-acetone_1.00
+  geometry: X40x10:19_1.00
+  reference_value: -1.448
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 benCl ... acetone 1.05
+  shortname: 19_benCl-acetone_1.05
+  geometry: X40x10:19_1.05
+  reference_value: -1.301
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 benCl ... acetone 1.10
+  shortname: 19_benCl-acetone_1.10
+  geometry: X40x10:19_1.10
+  reference_value: -1.115
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 benCl ... acetone 1.25
+  shortname: 19_benCl-acetone_1.25
+  geometry: X40x10:19_1.25
+  reference_value: -0.576
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 benCl ... acetone 1.50
+  shortname: 19_benCl-acetone_1.50
+  geometry: X40x10:19_1.50
+  reference_value: -0.113
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 benCl ... acetone 2.00
+  shortname: 19_benCl-acetone_2.00
+  geometry: X40x10:19_2.00
+  reference_value: 0.032
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 benBr ... acetone 0.80
+  shortname: 20_benBr-acetone_0.80
+  geometry: X40x10:20_0.80
+  reference_value: 1.7
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 benBr ... acetone 0.85
+  shortname: 20_benBr-acetone_0.85
+  geometry: X40x10:20_0.85
+  reference_value: -0.779
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 benBr ... acetone 0.90
+  shortname: 20_benBr-acetone_0.90
+  geometry: X40x10:20_0.90
+  reference_value: -1.948
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 benBr ... acetone 0.95
+  shortname: 20_benBr-acetone_0.95
+  geometry: X40x10:20_0.95
+  reference_value: -2.374
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 benBr ... acetone 1.00
+  shortname: 20_benBr-acetone_1.00
+  geometry: X40x10:20_1.00
+  reference_value: -2.399
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 benBr ... acetone 1.05
+  shortname: 20_benBr-acetone_1.05
+  geometry: X40x10:20_1.05
+  reference_value: -2.225
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 benBr ... acetone 1.10
+  shortname: 20_benBr-acetone_1.10
+  geometry: X40x10:20_1.10
+  reference_value: -1.967
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 benBr ... acetone 1.25
+  shortname: 20_benBr-acetone_1.25
+  geometry: X40x10:20_1.25
+  reference_value: -1.183
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 benBr ... acetone 1.50
+  shortname: 20_benBr-acetone_1.50
+  geometry: X40x10:20_1.50
+  reference_value: -0.41
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 benBr ... acetone 2.00
+  shortname: 20_benBr-acetone_2.00
+  geometry: X40x10:20_2.00
+  reference_value: -0.018
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 benI ... acetone 0.80
+  shortname: 21_benI-acetone_0.80
+  geometry: X40x10:21_0.80
+  reference_value: 1.578
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 benI ... acetone 0.85
+  shortname: 21_benI-acetone_0.85
+  geometry: X40x10:21_0.85
+  reference_value: -1.444
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 benI ... acetone 0.90
+  shortname: 21_benI-acetone_0.90
+  geometry: X40x10:21_0.90
+  reference_value: -2.872
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 benI ... acetone 0.95
+  shortname: 21_benI-acetone_0.95
+  geometry: X40x10:21_0.95
+  reference_value: -3.381
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 benI ... acetone 1.00
+  shortname: 21_benI-acetone_1.00
+  geometry: X40x10:21_1.00
+  reference_value: -3.387
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 benI ... acetone 1.05
+  shortname: 21_benI-acetone_1.05
+  geometry: X40x10:21_1.05
+  reference_value: -3.139
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 benI ... acetone 1.10
+  shortname: 21_benI-acetone_1.10
+  geometry: X40x10:21_1.10
+  reference_value: -2.786
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 benI ... acetone 1.25
+  shortname: 21_benI-acetone_1.25
+  geometry: X40x10:21_1.25
+  reference_value: -1.716
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 benI ... acetone 1.50
+  shortname: 21_benI-acetone_1.50
+  geometry: X40x10:21_1.50
+  reference_value: -0.676
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 benI ... acetone 2.00
+  shortname: 21_benI-acetone_2.00
+  geometry: X40x10:21_2.00
+  reference_value: -0.104
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 benCl ... Nm3 0.80
+  shortname: 22_benCl-Nm3_0.80
+  geometry: X40x10:22_0.80
+  reference_value: 1.671
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 benCl ... Nm3 0.85
+  shortname: 22_benCl-Nm3_0.85
+  geometry: X40x10:22_0.85
+  reference_value: -0.604
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 benCl ... Nm3 0.90
+  shortname: 22_benCl-Nm3_0.90
+  geometry: X40x10:22_0.90
+  reference_value: -1.682
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 benCl ... Nm3 0.95
+  shortname: 22_benCl-Nm3_0.95
+  geometry: X40x10:22_0.95
+  reference_value: -2.073
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 benCl ... Nm3 1.00
+  shortname: 22_benCl-Nm3_1.00
+  geometry: X40x10:22_1.00
+  reference_value: -2.092
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 benCl ... Nm3 1.05
+  shortname: 22_benCl-Nm3_1.05
+  geometry: X40x10:22_1.05
+  reference_value: -1.927
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 benCl ... Nm3 1.10
+  shortname: 22_benCl-Nm3_1.10
+  geometry: X40x10:22_1.10
+  reference_value: -1.686
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 benCl ... Nm3 1.25
+  shortname: 22_benCl-Nm3_1.25
+  geometry: X40x10:22_1.25
+  reference_value: -0.97
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 benCl ... Nm3 1.50
+  shortname: 22_benCl-Nm3_1.50
+  geometry: X40x10:22_1.50
+  reference_value: -0.312
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 benCl ... Nm3 2.00
+  shortname: 22_benCl-Nm3_2.00
+  geometry: X40x10:22_2.00
+  reference_value: -0.005
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 benBr ... Nm3 0.80
+  shortname: 23_benBr-Nm3_0.80
+  geometry: X40x10:23_0.80
+  reference_value: 2.786
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 benBr ... Nm3 0.85
+  shortname: 23_benBr-Nm3_0.85
+  geometry: X40x10:23_0.85
+  reference_value: -0.958
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 benBr ... Nm3 0.90
+  shortname: 23_benBr-Nm3_0.90
+  geometry: X40x10:23_0.90
+  reference_value: -2.84
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 benBr ... Nm3 0.95
+  shortname: 23_benBr-Nm3_0.95
+  geometry: X40x10:23_0.95
+  reference_value: -3.61
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 benBr ... Nm3 1.00
+  shortname: 23_benBr-Nm3_1.00
+  geometry: X40x10:23_1.00
+  reference_value: -3.748
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 benBr ... Nm3 1.05
+  shortname: 23_benBr-Nm3_1.05
+  geometry: X40x10:23_1.05
+  reference_value: -3.549
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 benBr ... Nm3 1.10
+  shortname: 23_benBr-Nm3_1.10
+  geometry: X40x10:23_1.10
+  reference_value: -3.194
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 benBr ... Nm3 1.25
+  shortname: 23_benBr-Nm3_1.25
+  geometry: X40x10:23_1.25
+  reference_value: -2.005
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 benBr ... Nm3 1.50
+  shortname: 23_benBr-Nm3_1.50
+  geometry: X40x10:23_1.50
+  reference_value: -0.782
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 benBr ... Nm3 2.00
+  shortname: 23_benBr-Nm3_2.00
+  geometry: X40x10:23_2.00
+  reference_value: -0.112
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 benI ... Nm3 0.80
+  shortname: 24_benI-Nm3_0.80
+  geometry: X40x10:24_0.80
+  reference_value: 3.632
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 benI ... Nm3 0.85
+  shortname: 24_benI-Nm3_0.85
+  geometry: X40x10:24_0.85
+  reference_value: -1.702
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 benI ... Nm3 0.90
+  shortname: 24_benI-Nm3_0.90
+  geometry: X40x10:24_0.90
+  reference_value: -4.394
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 benI ... Nm3 0.95
+  shortname: 24_benI-Nm3_0.95
+  geometry: X40x10:24_0.95
+  reference_value: -5.515
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 benI ... Nm3 1.00
+  shortname: 24_benI-Nm3_1.00
+  geometry: X40x10:24_1.00
+  reference_value: -5.732
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 benI ... Nm3 1.05
+  shortname: 24_benI-Nm3_1.05
+  geometry: X40x10:24_1.05
+  reference_value: -5.461
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 benI ... Nm3 1.10
+  shortname: 24_benI-Nm3_1.10
+  geometry: X40x10:24_1.10
+  reference_value: -4.955
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 benI ... Nm3 1.25
+  shortname: 24_benI-Nm3_1.25
+  geometry: X40x10:24_1.25
+  reference_value: -3.205
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 benI ... Nm3 1.50
+  shortname: 24_benI-Nm3_1.50
+  geometry: X40x10:24_1.50
+  reference_value: -1.329
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 benI ... Nm3 2.00
+  shortname: 24_benI-Nm3_2.00
+  geometry: X40x10:24_2.00
+  reference_value: -0.242
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 25 benBr ... mSH 0.80
+  shortname: 25_benBr-mSH_0.80
+  geometry: X40x10:25_0.80
+  reference_value: 9.335
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 25 benBr ... mSH 0.85
+  shortname: 25_benBr-mSH_0.85
+  geometry: X40x10:25_0.85
+  reference_value: 1.378
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 25 benBr ... mSH 0.90
+  shortname: 25_benBr-mSH_0.90
+  geometry: X40x10:25_0.90
+  reference_value: -1.435
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 25 benBr ... mSH 0.95
+  shortname: 25_benBr-mSH_0.95
+  geometry: X40x10:25_0.95
+  reference_value: -2.254
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 25 benBr ... mSH 1.00
+  shortname: 25_benBr-mSH_1.00
+  geometry: X40x10:25_1.00
+  reference_value: -2.292
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 25 benBr ... mSH 1.05
+  shortname: 25_benBr-mSH_1.05
+  geometry: X40x10:25_1.05
+  reference_value: -2.048
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 25 benBr ... mSH 1.10
+  shortname: 25_benBr-mSH_1.10
+  geometry: X40x10:25_1.10
+  reference_value: -1.731
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 25 benBr ... mSH 1.25
+  shortname: 25_benBr-mSH_1.25
+  geometry: X40x10:25_1.25
+  reference_value: -0.933
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 25 benBr ... mSH 1.50
+  shortname: 25_benBr-mSH_1.50
+  geometry: X40x10:25_1.50
+  reference_value: -0.333
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 25 benBr ... mSH 2.00
+  shortname: 25_benBr-mSH_2.00
+  geometry: X40x10:25_2.00
+  reference_value: -0.063
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 26 benI ... mSH 0.80
+  shortname: 26_benI-mSH_0.80
+  geometry: X40x10:26_0.80
+  reference_value: 11.716
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 26 benI ... mSH 0.85
+  shortname: 26_benI-mSH_0.85
+  geometry: X40x10:26_0.85
+  reference_value: 3.641
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 26 benI ... mSH 0.90
+  shortname: 26_benI-mSH_0.90
+  geometry: X40x10:26_0.90
+  reference_value: -1.296
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 26 benI ... mSH 0.95
+  shortname: 26_benI-mSH_0.95
+  geometry: X40x10:26_0.95
+  reference_value: -2.85
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 26 benI ... mSH 1.00
+  shortname: 26_benI-mSH_1.00
+  geometry: X40x10:26_1.00
+  reference_value: -3.062
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 26 benI ... mSH 1.05
+  shortname: 26_benI-mSH_1.05
+  geometry: X40x10:26_1.05
+  reference_value: -2.777
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 26 benI ... mSH 1.10
+  shortname: 26_benI-mSH_1.10
+  geometry: X40x10:26_1.10
+  reference_value: -2.35
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 26 benI ... mSH 1.25
+  shortname: 26_benI-mSH_1.25
+  geometry: X40x10:26_1.25
+  reference_value: -1.241
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 26 benI ... mSH 1.50
+  shortname: 26_benI-mSH_1.50
+  geometry: X40x10:26_1.50
+  reference_value: -0.422
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 26 benI ... mSH 2.00
+  shortname: 26_benI-mSH_2.00
+  geometry: X40x10:26_2.00
+  reference_value: -0.074
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 27 CH3Br ... ben 0.80
+  shortname: 27_CH3Br-ben_0.80
+  geometry: X40x10:27_0.80
+  reference_value: 4.271
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 27 CH3Br ... ben 0.85
+  shortname: 27_CH3Br-ben_0.85
+  geometry: X40x10:27_0.85
+  reference_value: 0.716
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 27 CH3Br ... ben 0.90
+  shortname: 27_CH3Br-ben_0.90
+  geometry: X40x10:27_0.90
+  reference_value: -1.007
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 27 CH3Br ... ben 0.95
+  shortname: 27_CH3Br-ben_0.95
+  geometry: X40x10:27_0.95
+  reference_value: -1.704
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 27 CH3Br ... ben 1.00
+  shortname: 27_CH3Br-ben_1.00
+  geometry: X40x10:27_1.00
+  reference_value: -1.858
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 27 CH3Br ... ben 1.05
+  shortname: 27_CH3Br-ben_1.05
+  geometry: X40x10:27_1.05
+  reference_value: -1.749
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 27 CH3Br ... ben 1.10
+  shortname: 27_CH3Br-ben_1.10
+  geometry: X40x10:27_1.10
+  reference_value: -1.531
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 27 CH3Br ... ben 1.25
+  shortname: 27_CH3Br-ben_1.25
+  geometry: X40x10:27_1.25
+  reference_value: -0.849
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 27 CH3Br ... ben 1.50
+  shortname: 27_CH3Br-ben_1.50
+  geometry: X40x10:27_1.50
+  reference_value: -0.254
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 27 CH3Br ... ben 2.00
+  shortname: 27_CH3Br-ben_2.00
+  geometry: X40x10:27_2.00
+  reference_value: -0.002
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 28 CH3I ... ben 0.80
+  shortname: 28_CH3I-ben_0.80
+  geometry: X40x10:28_0.80
+  reference_value: 6.817
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 28 CH3I ... ben 0.85
+  shortname: 28_CH3I-ben_0.85
+  geometry: X40x10:28_0.85
+  reference_value: 1.637
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 28 CH3I ... ben 0.90
+  shortname: 28_CH3I-ben_0.90
+  geometry: X40x10:28_0.90
+  reference_value: -0.999
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 28 CH3I ... ben 0.95
+  shortname: 28_CH3I-ben_0.95
+  geometry: X40x10:28_0.95
+  reference_value: -2.163
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 28 CH3I ... ben 1.00
+  shortname: 28_CH3I-ben_1.00
+  geometry: X40x10:28_1.00
+  reference_value: -2.518
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 28 CH3I ... ben 1.05
+  shortname: 28_CH3I-ben_1.05
+  geometry: X40x10:28_1.05
+  reference_value: -2.46
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 28 CH3I ... ben 1.10
+  shortname: 28_CH3I-ben_1.10
+  geometry: X40x10:28_1.10
+  reference_value: -2.216
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 28 CH3I ... ben 1.25
+  shortname: 28_CH3I-ben_1.25
+  geometry: X40x10:28_1.25
+  reference_value: -1.319
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 28 CH3I ... ben 1.50
+  shortname: 28_CH3I-ben_1.50
+  geometry: X40x10:28_1.50
+  reference_value: -0.463
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 28 CH3I ... ben 2.00
+  shortname: 28_CH3I-ben_2.00
+  geometry: X40x10:28_2.00
+  reference_value: -0.056
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 29 CF3Br ... ben 0.80
+  shortname: 29_CF3Br-ben_0.80
+  geometry: X40x10:29_0.80
+  reference_value: 3.942
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 29 CF3Br ... ben 0.85
+  shortname: 29_CF3Br-ben_0.85
+  geometry: X40x10:29_0.85
+  reference_value: -0.206
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 29 CF3Br ... ben 0.90
+  shortname: 29_CF3Br-ben_0.90
+  geometry: X40x10:29_0.90
+  reference_value: -2.22
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 29 CF3Br ... ben 0.95
+  shortname: 29_CF3Br-ben_0.95
+  geometry: X40x10:29_0.95
+  reference_value: -3.018
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 29 CF3Br ... ben 1.00
+  shortname: 29_CF3Br-ben_1.00
+  geometry: X40x10:29_1.00
+  reference_value: -3.163
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 29 CF3Br ... ben 1.05
+  shortname: 29_CF3Br-ben_1.05
+  geometry: X40x10:29_1.05
+  reference_value: -2.984
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 29 CF3Br ... ben 1.10
+  shortname: 29_CF3Br-ben_1.10
+  geometry: X40x10:29_1.10
+  reference_value: -2.669
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 29 CF3Br ... ben 1.25
+  shortname: 29_CF3Br-ben_1.25
+  geometry: X40x10:29_1.25
+  reference_value: -1.677
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 29 CF3Br ... ben 1.50
+  shortname: 29_CF3Br-ben_1.50
+  geometry: X40x10:29_1.50
+  reference_value: -0.73
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 29 CF3Br ... ben 2.00
+  shortname: 29_CF3Br-ben_2.00
+  geometry: X40x10:29_2.00
+  reference_value: -0.188
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 30 CF3I ... ben 0.80
+  shortname: 30_CF3I-ben_0.80
+  geometry: X40x10:30_0.80
+  reference_value: 6.544
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 30 CF3I ... ben 0.85
+  shortname: 30_CF3I-ben_0.85
+  geometry: X40x10:30_0.85
+  reference_value: 0.683
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 30 CF3I ... ben 0.90
+  shortname: 30_CF3I-ben_0.90
+  geometry: X40x10:30_0.90
+  reference_value: -2.305
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 30 CF3I ... ben 0.95
+  shortname: 30_CF3I-ben_0.95
+  geometry: X40x10:30_0.95
+  reference_value: -3.607
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 30 CF3I ... ben 1.00
+  shortname: 30_CF3I-ben_1.00
+  geometry: X40x10:30_1.00
+  reference_value: -3.97
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 30 CF3I ... ben 1.05
+  shortname: 30_CF3I-ben_1.05
+  geometry: X40x10:30_1.05
+  reference_value: -3.844
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 30 CF3I ... ben 1.10
+  shortname: 30_CF3I-ben_1.10
+  geometry: X40x10:30_1.10
+  reference_value: -3.494
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 30 CF3I ... ben 1.25
+  shortname: 30_CF3I-ben_1.25
+  geometry: X40x10:30_1.25
+  reference_value: -2.246
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 30 CF3I ... ben 1.50
+  shortname: 30_CF3I-ben_1.50
+  geometry: X40x10:30_1.50
+  reference_value: -0.984
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 30 CF3I ... ben 2.00
+  shortname: 30_CF3I-ben_2.00
+  geometry: X40x10:30_2.00
+  reference_value: -0.254
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 31 trifluorometOH ... wat 0.80
+  shortname: 31_trifluorometOH-wat_0.80
+  geometry: X40x10:31_0.80
+  reference_value: -4.935
+  setup: {}
+  group: H-bond
+  tags: "(O-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 31 trifluorometOH ... wat 0.85
+  shortname: 31_trifluorometOH-wat_0.85
+  geometry: X40x10:31_0.85
+  reference_value: -7.456
+  setup: {}
+  group: H-bond
+  tags: "(O-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 31 trifluorometOH ... wat 0.90
+  shortname: 31_trifluorometOH-wat_0.90
+  geometry: X40x10:31_0.90
+  reference_value: -8.849
+  setup: {}
+  group: H-bond
+  tags: "(O-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 31 trifluorometOH ... wat 0.95
+  shortname: 31_trifluorometOH-wat_0.95
+  geometry: X40x10:31_0.95
+  reference_value: -9.477
+  setup: {}
+  group: H-bond
+  tags: "(O-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 31 trifluorometOH ... wat 1.00
+  shortname: 31_trifluorometOH-wat_1.00
+  geometry: X40x10:31_1.00
+  reference_value: -9.598
+  setup: {}
+  group: H-bond
+  tags: "(O-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 31 trifluorometOH ... wat 1.05
+  shortname: 31_trifluorometOH-wat_1.05
+  geometry: X40x10:31_1.05
+  reference_value: -9.392
+  setup: {}
+  group: H-bond
+  tags: "(O-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 31 trifluorometOH ... wat 1.10
+  shortname: 31_trifluorometOH-wat_1.10
+  geometry: X40x10:31_1.10
+  reference_value: -8.986
+  setup: {}
+  group: H-bond
+  tags: "(O-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 31 trifluorometOH ... wat 1.25
+  shortname: 31_trifluorometOH-wat_1.25
+  geometry: X40x10:31_1.25
+  reference_value: -7.3
+  setup: {}
+  group: H-bond
+  tags: "(O-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 31 trifluorometOH ... wat 1.50
+  shortname: 31_trifluorometOH-wat_1.50
+  geometry: X40x10:31_1.50
+  reference_value: -4.708
+  setup: {}
+  group: H-bond
+  tags: "(O-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 31 trifluorometOH ... wat 2.00
+  shortname: 31_trifluorometOH-wat_2.00
+  geometry: X40x10:31_2.00
+  reference_value: -2.031
+  setup: {}
+  group: H-bond
+  tags: "(O-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 32 trichlorometOH ... wat 0.80
+  shortname: 32_trichlorometOH-wat_0.80
+  geometry: X40x10:32_0.80
+  reference_value: -5.404
+  setup: {}
+  group: H-bond
+  tags: "(O-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 32 trichlorometOH ... wat 0.85
+  shortname: 32_trichlorometOH-wat_0.85
+  geometry: X40x10:32_0.85
+  reference_value: -8.056
+  setup: {}
+  group: H-bond
+  tags: "(O-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 32 trichlorometOH ... wat 0.90
+  shortname: 32_trichlorometOH-wat_0.90
+  geometry: X40x10:32_0.90
+  reference_value: -9.531
+  setup: {}
+  group: H-bond
+  tags: "(O-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 32 trichlorometOH ... wat 0.95
+  shortname: 32_trichlorometOH-wat_0.95
+  geometry: X40x10:32_0.95
+  reference_value: -10.207
+  setup: {}
+  group: H-bond
+  tags: "(O-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 32 trichlorometOH ... wat 1.00
+  shortname: 32_trichlorometOH-wat_1.00
+  geometry: X40x10:32_1.00
+  reference_value: -10.346
+  setup: {}
+  group: H-bond
+  tags: "(O-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 32 trichlorometOH ... wat 1.05
+  shortname: 32_trichlorometOH-wat_1.05
+  geometry: X40x10:32_1.05
+  reference_value: -10.137
+  setup: {}
+  group: H-bond
+  tags: "(O-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 32 trichlorometOH ... wat 1.10
+  shortname: 32_trichlorometOH-wat_1.10
+  geometry: X40x10:32_1.10
+  reference_value: -8.429
+  setup: {}
+  group: H-bond
+  tags: "(O-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 32 trichlorometOH ... wat 1.25
+  shortname: 32_trichlorometOH-wat_1.25
+  geometry: X40x10:32_1.25
+  reference_value: -7.896
+  setup: {}
+  group: H-bond
+  tags: "(O-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 32 trichlorometOH ... wat 1.50
+  shortname: 32_trichlorometOH-wat_1.50
+  geometry: X40x10:32_1.50
+  reference_value: -5.047
+  setup: {}
+  group: H-bond
+  tags: "(O-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 32 trichlorometOH ... wat 2.00
+  shortname: 32_trichlorometOH-wat_2.00
+  geometry: X40x10:32_2.00
+  reference_value: -2.062
+  setup: {}
+  group: H-bond
+  tags: "(O-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 33 HF ... methanol 0.80
+  shortname: 33_HF-mOH_0.80
+  geometry: X40x10:33_0.80
+  reference_value: -5.241
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 33 HF ... methanol 0.85
+  shortname: 33_HF-mOH_0.85
+  geometry: X40x10:33_0.85
+  reference_value: -7.644
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 33 HF ... methanol 0.90
+  shortname: 33_HF-mOH_0.90
+  geometry: X40x10:33_0.90
+  reference_value: -8.922
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 33 HF ... methanol 0.95
+  shortname: 33_HF-mOH_0.95
+  geometry: X40x10:33_0.95
+  reference_value: -9.453
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 33 HF ... methanol 1.00
+  shortname: 33_HF-mOH_1.00
+  geometry: X40x10:33_1.00
+  reference_value: -9.498
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 33 HF ... methanol 1.05
+  shortname: 33_HF-mOH_1.05
+  geometry: X40x10:33_1.05
+  reference_value: -9.237
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 33 HF ... methanol 1.10
+  shortname: 33_HF-mOH_1.10
+  geometry: X40x10:33_1.10
+  reference_value: -8.794
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 33 HF ... methanol 1.25
+  shortname: 33_HF-mOH_1.25
+  geometry: X40x10:33_1.25
+  reference_value: -7.072
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 33 HF ... methanol 1.50
+  shortname: 33_HF-mOH_1.50
+  geometry: X40x10:33_1.50
+  reference_value: -4.535
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 33 HF ... methanol 2.00
+  shortname: 33_HF-mOH_2.00
+  geometry: X40x10:33_2.00
+  reference_value: -1.971
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 37 HF ... methylamine 0.80
+  shortname: 37_HF-mNH2_0.80
+  geometry: X40x10:34_0.80
+  reference_value: -9.096
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 37 HF ... methylamine 0.85
+  shortname: 37_HF-mNH2_0.85
+  geometry: X40x10:34_0.85
+  reference_value: -11.969
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 37 HF ... methylamine 0.90
+  shortname: 37_HF-mNH2_0.90
+  geometry: X40x10:34_0.90
+  reference_value: -13.501
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 37 HF ... methylamine 0.95
+  shortname: 37_HF-mNH2_0.95
+  geometry: X40x10:34_0.95
+  reference_value: -14.123
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 37 HF ... methylamine 1.00
+  shortname: 37_HF-mNH2_1.00
+  geometry: X40x10:34_1.00
+  reference_value: -14.138
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 37 HF ... methylamine 1.05
+  shortname: 37_HF-mNH2_1.05
+  geometry: X40x10:34_1.05
+  reference_value: -13.756
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 37 HF ... methylamine 1.10
+  shortname: 37_HF-mNH2_1.10
+  geometry: X40x10:34_1.10
+  reference_value: -13.128
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 37 HF ... methylamine 1.25
+  shortname: 37_HF-mNH2_1.25
+  geometry: X40x10:34_1.25
+  reference_value: -10.657
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 37 HF ... methylamine 1.50
+  shortname: 37_HF-mNH2_1.50
+  geometry: X40x10:34_1.50
+  reference_value: -6.843
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 37 HF ... methylamine 2.00
+  shortname: 37_HF-mNH2_2.00
+  geometry: X40x10:34_2.00
+  reference_value: -2.805
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 38 HCl ... methylamine 0.80
+  shortname: 38_HCl-mNH2_0.80
+  geometry: X40x10:35_0.80
+  reference_value: -6.674
+  setup: {}
+  group: H-bond
+  tags: "(X-O),bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 38 HCl ... methylamine 0.85
+  shortname: 38_HCl-mNH2_0.85
+  geometry: X40x10:35_0.85
+  reference_value: -9.078
+  setup: {}
+  group: H-bond
+  tags: "(X-O),bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 38 HCl ... methylamine 0.90
+  shortname: 38_HCl-mNH2_0.90
+  geometry: X40x10:35_0.90
+  reference_value: -10.458
+  setup: {}
+  group: H-bond
+  tags: "(X-O),bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 38 HCl ... methylamine 0.95
+  shortname: 38_HCl-mNH2_0.95
+  geometry: X40x10:35_0.95
+  reference_value: -11.13
+  setup: {}
+  group: H-bond
+  tags: "(X-O),bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 38 HCl ... methylamine 1.00
+  shortname: 38_HCl-mNH2_1.00
+  geometry: X40x10:35_1.00
+  reference_value: -11.313
+  setup: {}
+  group: H-bond
+  tags: "(X-O),bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 38 HCl ... methylamine 1.05
+  shortname: 38_HCl-mNH2_1.05
+  geometry: X40x10:35_1.05
+  reference_value: -11.162
+  setup: {}
+  group: H-bond
+  tags: "(X-O),bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 38 HCl ... methylamine 1.10
+  shortname: 38_HCl-mNH2_1.10
+  geometry: X40x10:35_1.10
+  reference_value: -10.789
+  setup: {}
+  group: H-bond
+  tags: "(X-O),bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 38 HCl ... methylamine 1.25
+  shortname: 38_HCl-mNH2_1.25
+  geometry: X40x10:35_1.25
+  reference_value: -9.043
+  setup: {}
+  group: H-bond
+  tags: "(X-O),bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 38 HCl ... methylamine 1.50
+  shortname: 38_HCl-mNH2_1.50
+  geometry: X40x10:35_1.50
+  reference_value: -6.001
+  setup: {}
+  group: H-bond
+  tags: "(X-O),bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 38 HCl ... methylamine 2.00
+  shortname: 38_HCl-mNH2_2.00
+  geometry: X40x10:35_2.00
+  reference_value: -2.47
+  setup: {}
+  group: H-bond
+  tags: "(X-O),bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 34 HCl ... methanol 0.80
+  shortname: 34_HCl-mOH_0.80
+  geometry: X40x10:36_0.80
+  reference_value: -2.784
+  setup: {}
+  group: H-bond
+  tags: "(X-O),iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 34 HCl ... methanol 0.85
+  shortname: 34_HCl-mOH_0.85
+  geometry: X40x10:36_0.85
+  reference_value: -4.598
+  setup: {}
+  group: H-bond
+  tags: "(X-O),iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 34 HCl ... methanol 0.90
+  shortname: 34_HCl-mOH_0.90
+  geometry: X40x10:36_0.90
+  reference_value: -5.63
+  setup: {}
+  group: H-bond
+  tags: "(X-O),iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 34 HCl ... methanol 0.95
+  shortname: 34_HCl-mOH_0.95
+  geometry: X40x10:36_0.95
+  reference_value: -6.125
+  setup: {}
+  group: H-bond
+  tags: "(X-O),iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 34 HCl ... methanol 1.00
+  shortname: 34_HCl-mOH_1.00
+  geometry: X40x10:36_1.00
+  reference_value: -6.259
+  setup: {}
+  group: H-bond
+  tags: "(X-O),iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 34 HCl ... methanol 1.05
+  shortname: 34_HCl-mOH_1.05
+  geometry: X40x10:36_1.05
+  reference_value: -6.157
+  setup: {}
+  group: H-bond
+  tags: "(X-O),iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 34 HCl ... methanol 1.10
+  shortname: 34_HCl-mOH_1.10
+  geometry: X40x10:36_1.10
+  reference_value: -5.906
+  setup: {}
+  group: H-bond
+  tags: "(X-O),iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 34 HCl ... methanol 1.25
+  shortname: 34_HCl-mOH_1.25
+  geometry: X40x10:36_1.25
+  reference_value: -4.793
+  setup: {}
+  group: H-bond
+  tags: "(X-O),iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 34 HCl ... methanol 1.50
+  shortname: 34_HCl-mOH_1.50
+  geometry: X40x10:36_1.50
+  reference_value: -3.048
+  setup: {}
+  group: H-bond
+  tags: "(X-O),iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 34 HCl ... methanol 2.00
+  shortname: 34_HCl-mOH_2.00
+  geometry: X40x10:36_2.00
+  reference_value: -1.271
+  setup: {}
+  group: H-bond
+  tags: "(X-O),iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 35 HBr ... methanol 0.80
+  shortname: 35_HBr-mOH_0.80
+  geometry: X40x10:37_0.80
+  reference_value: -2.213
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 35 HBr ... methanol 0.85
+  shortname: 35_HBr-mOH_0.85
+  geometry: X40x10:37_0.85
+  reference_value: -3.782
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 35 HBr ... methanol 0.90
+  shortname: 35_HBr-mOH_0.90
+  geometry: X40x10:37_0.90
+  reference_value: -4.695
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 35 HBr ... methanol 0.95
+  shortname: 35_HBr-mOH_0.95
+  geometry: X40x10:37_0.95
+  reference_value: -5.151
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 35 HBr ... methanol 1.00
+  shortname: 35_HBr-mOH_1.00
+  geometry: X40x10:37_1.00
+  reference_value: -5.294
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 35 HBr ... methanol 1.05
+  shortname: 35_HBr-mOH_1.05
+  geometry: X40x10:37_1.05
+  reference_value: -5.228
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 35 HBr ... methanol 1.10
+  shortname: 35_HBr-mOH_1.10
+  geometry: X40x10:37_1.10
+  reference_value: -5.029
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 35 HBr ... methanol 1.25
+  shortname: 35_HBr-mOH_1.25
+  geometry: X40x10:37_1.25
+  reference_value: -4.095
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 35 HBr ... methanol 1.50
+  shortname: 35_HBr-mOH_1.50
+  geometry: X40x10:37_1.50
+  reference_value: -2.59
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 35 HBr ... methanol 2.00
+  shortname: 35_HBr-mOH_2.00
+  geometry: X40x10:37_2.00
+  reference_value: -1.054
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 36 HI ... methanol 0.80
+  shortname: 36_HI-mOH_0.80
+  geometry: X40x10:38_0.80
+  reference_value: -1.234
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 36 HI ... methanol 0.85
+  shortname: 36_HI-mOH_0.85
+  geometry: X40x10:38_0.85
+  reference_value: -2.563
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 36 HI ... methanol 0.90
+  shortname: 36_HI-mOH_0.90
+  geometry: X40x10:38_0.90
+  reference_value: -3.356
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 36 HI ... methanol 0.95
+  shortname: 36_HI-mOH_0.95
+  geometry: X40x10:38_0.95
+  reference_value: -3.77
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 36 HI ... methanol 1.00
+  shortname: 36_HI-mOH_1.00
+  geometry: X40x10:38_1.00
+  reference_value: -3.921
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 36 HI ... methanol 1.05
+  shortname: 36_HI-mOH_1.05
+  geometry: X40x10:38_1.05
+  reference_value: -3.895
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 36 HI ... methanol 1.10
+  shortname: 36_HI-mOH_1.10
+  geometry: X40x10:38_1.10
+  reference_value: -3.755
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 36 HI ... methanol 1.25
+  shortname: 36_HI-mOH_1.25
+  geometry: X40x10:38_1.25
+  reference_value: -3.043
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 36 HI ... methanol 1.50
+  shortname: 36_HI-mOH_1.50
+  geometry: X40x10:38_1.50
+  reference_value: -1.884
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 36 HI ... methanol 2.00
+  shortname: 36_HI-mOH_2.00
+  geometry: X40x10:38_2.00
+  reference_value: -0.734
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 39 methanol ... fluoromethane 0.80
+  shortname: 39_methanol-fluoromethane_0.80
+  geometry: X40x10:39_0.80
+  reference_value: -1.617
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 39 methanol ... fluoromethane 0.85
+  shortname: 39_methanol-fluoromethane_0.85
+  geometry: X40x10:39_0.85
+  reference_value: -2.95
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 39 methanol ... fluoromethane 0.90
+  shortname: 39_methanol-fluoromethane_0.90
+  geometry: X40x10:39_0.90
+  reference_value: -3.608
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 39 methanol ... fluoromethane 0.95
+  shortname: 39_methanol-fluoromethane_0.95
+  geometry: X40x10:39_0.95
+  reference_value: -3.846
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 39 methanol ... fluoromethane 1.00
+  shortname: 39_methanol-fluoromethane_1.00
+  geometry: X40x10:39_1.00
+  reference_value: -3.828
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 39 methanol ... fluoromethane 1.05
+  shortname: 39_methanol-fluoromethane_1.05
+  geometry: X40x10:39_1.05
+  reference_value: -3.663
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 39 methanol ... fluoromethane 1.10
+  shortname: 39_methanol-fluoromethane_1.10
+  geometry: X40x10:39_1.10
+  reference_value: -3.421
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 39 methanol ... fluoromethane 1.25
+  shortname: 39_methanol-fluoromethane_1.25
+  geometry: X40x10:39_1.25
+  reference_value: -2.592
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 39 methanol ... fluoromethane 1.50
+  shortname: 39_methanol-fluoromethane_1.50
+  geometry: X40x10:39_1.50
+  reference_value: -1.54
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 39 methanol ... fluoromethane 2.00
+  shortname: 39_methanol-fluoromethane_2.00
+  geometry: X40x10:39_2.00
+  reference_value: -0.623
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 40 methanol ... chloromethane 0.80
+  shortname: 40_methanol-chloromethane_0.80
+  geometry: X40x10:40_0.80
+  reference_value: -0.142
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 40 methanol ... chloromethane 0.85
+  shortname: 40_methanol-chloromethane_0.85
+  geometry: X40x10:40_0.85
+  reference_value: -2.242
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 40 methanol ... chloromethane 0.90
+  shortname: 40_methanol-chloromethane_0.90
+  geometry: X40x10:40_0.90
+  reference_value: -3.301
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 40 methanol ... chloromethane 0.95
+  shortname: 40_methanol-chloromethane_0.95
+  geometry: X40x10:40_0.95
+  reference_value: -3.72
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 40 methanol ... chloromethane 1.00
+  shortname: 40_methanol-chloromethane_1.00
+  geometry: X40x10:40_1.00
+  reference_value: -3.761
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 40 methanol ... chloromethane 1.05
+  shortname: 40_methanol-chloromethane_1.05
+  geometry: X40x10:40_1.05
+  reference_value: -3.592
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 40 methanol ... chloromethane 1.10
+  shortname: 40_methanol-chloromethane_1.10
+  geometry: X40x10:40_1.10
+  reference_value: -3.319
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 40 methanol ... chloromethane 1.25
+  shortname: 40_methanol-chloromethane_1.25
+  geometry: X40x10:40_1.25
+  reference_value: -2.379
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 40 methanol ... chloromethane 1.50
+  shortname: 40_methanol-chloromethane_1.50
+  geometry: X40x10:40_1.50
+  reference_value: -1.086
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 40 methanol ... chloromethane 2.00
+  shortname: 40_methanol-chloromethane_2.00
+  geometry: X40x10:40_2.00
+  reference_value: -0.349
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),chlorine"
+
+#===============================================================================
+# Plots
+#===============================================================================
+
+plots:
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "01 methane ... F2"
+  filename: 01_methane-F2
+  first: 0
+  last: 9
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "02 methane ... Cl2"
+  filename: 02_methane-Cl2
+  first: 10
+  last: 19
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "03 methane ... Br2"
+  filename: 03_methane-Br2
+  first: 20
+  last: 29
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "04 methane ... I2"
+  filename: 04_methane-I2
+  first: 30
+  last: 39
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "05 fluoromethane ... methane"
+  filename: 05_fluoromethane-methane
+  first: 40
+  last: 49
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "06 chloromethane ... methane"
+  filename: 06_chloromethane-methane
+  first: 50
+  last: 59
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "07 trifluoromethane ... methane"
+  filename: 07_trifluoromethane-methane
+  first: 60
+  last: 69
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "08 trichloromethane ... methane"
+  filename: 08_trichloromethane-methane
+  first: 70
+  last: 79
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "09 fluoromethane  dimer"
+  filename: 09_fluoromethane dimer
+  first: 80
+  last: 89
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "10 chloromethane  dimer"
+  filename: 10_chloromethane dimer
+  first: 90
+  last: 99
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "11 F3ben ... ben"
+  filename: 11_F3ben-ben
+  first: 100
+  last: 109
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "12 F6ben ... ben"
+  filename: 12_F6ben-ben
+  first: 110
+  last: 119
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "13 chloromethane ... fmdh"
+  filename: 13_chloromethane-fmdh
+  first: 120
+  last: 129
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "14 bromomethane ... fmdh"
+  filename: 14_bromomethane-fmdh
+  first: 130
+  last: 139
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "15 iodomethane ... fmdh"
+  filename: 15_iodomethane-fmdh
+  first: 140
+  last: 149
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "16 F3chloromethane ... fmdh"
+  filename: 16_F3chloromethane-fmdh
+  first: 150
+  last: 159
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "17 F3bromomethane ... fmdh"
+  filename: 17_F3bromomethane-fmdh
+  first: 160
+  last: 169
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "18 F3iodomethane ... fmdh"
+  filename: 18_F3iodomethane-fmdh
+  first: 170
+  last: 179
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "19 benCl ... acetone"
+  filename: 19_benCl-acetone
+  first: 180
+  last: 189
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "20 benBr ... acetone"
+  filename: 20_benBr-acetone
+  first: 190
+  last: 199
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "21 benI ... acetone"
+  filename: 21_benI-acetone
+  first: 200
+  last: 209
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "22 benCl ... Nm3"
+  filename: 22_benCl-Nm3
+  first: 210
+  last: 219
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "23 benBr ... Nm3"
+  filename: 23_benBr-Nm3
+  first: 220
+  last: 229
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "24 benI ... Nm3"
+  filename: 24_benI-Nm3
+  first: 230
+  last: 239
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "25 benBr ... mSH"
+  filename: 25_benBr-mSH
+  first: 240
+  last: 249
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "26 benI ... mSH"
+  filename: 26_benI-mSH
+  first: 250
+  last: 259
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "27 CH3Br ... ben"
+  filename: 27_CH3Br-ben
+  first: 260
+  last: 269
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "28 CH3I ... ben"
+  filename: 28_CH3I-ben
+  first: 270
+  last: 279
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "29 CF3Br ... ben"
+  filename: 29_CF3Br-ben
+  first: 280
+  last: 289
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "30 CF3I ... ben"
+  filename: 30_CF3I-ben
+  first: 290
+  last: 299
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "31 trifluorometOH ... wat"
+  filename: 31_trifluorometOH-wat
+  first: 300
+  last: 309
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "32 trichlorometOH ... wat"
+  filename: 32_trichlorometOH-wat
+  first: 310
+  last: 319
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "33 HF ... methanol"
+  filename: 33_HF-methanol
+  first: 320
+  last: 329
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "37 HF ... methylamine"
+  filename: 37_HF-methylamine
+  first: 330
+  last: 339
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "38 HCl ... methylamine"
+  filename: 38_HCl-methylamine
+  first: 340
+  last: 349
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "34 HCl ... methanol"
+  filename: 34_HCl-methanol
+  first: 350
+  last: 359
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "35 HBr ... methanol"
+  filename: 35_HBr-methanol
+  first: 360
+  last: 369
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "36 HI ... methanol"
+  filename: 36_HI-methanol
+  first: 370
+  last: 379
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "39 methanol ... fluoromethane"
+  filename: 39_methanol-fluoromethane
+  first: 380
+  last: 389
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "40 methanol ... chloromethane"
+  filename: 40_methanol-chloromethane
+  first: 390
+  last: 399
+  x_values: [0.8, 0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]

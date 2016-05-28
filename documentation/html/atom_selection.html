@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Atom selection expressions </h1>
+
+<p>Some keywords in cuby input work with selections of atoms. Syntax of the selection expressions is discussed here. There are two modes of selections, automatically recognized by the program.</p>
+
+<!--<p>The selections are used to specify part of the system at various keywords, and can be also used to get part of system from geometry file by the script <a href="script_geometry.html">geometry</a>.</p>-->
+
+<h2><a name="The_simple_way"></a>The simple way</h2>
+<p>The first possibility is to select atoms by their index (first atom in the geometry has index 1). Multiple atoms can be selected as a list:</p>
+<p><pre><code>1, 2, 5, 6, 7, 8</code></pre></p>
+<p><em>note: when the spaces are not included in this example, YAML parser would read this as one number, 125678. To avoid this, either use spaces as indicated here, or put the expression into quotes.</em></p>
+<p>as a range:</p>
+<p><pre><code>5-10</code></pre></p>
+<p>or combination of both:</p>
+<p><pre><code>1-5, 10-12</code></pre></p>
+
+<p>Note that all whitespace in the expressions is ignored.</p>
+
+<h2><a name="The_powerful_way"></a>The powerful way</h2>
+<p>Sometimes it is easier to make the selection based on some other criteria. In the advanced selection expressions, we can work with both the atoms and residues, when the information exist in the geometry (it means it was read from a file containing it, such as PDB).</p>
+
+<p>It is possible to join more selections with logical operators OR, written as "|", and AND ("&amp;"). Operator | has higher priority than &amp;, and it is possible to use parenthesis to override this priority and group the expressions in an arbitrary way. Expression</p>
+<p><pre><code>selection1 | selection2</code></pre></p>
+<p>will select all atoms that match any of the two selections, while</p>
+<p><pre><code>selection1 &amp; selection2</code></pre></p>
+<p>will select only atoms that match both conditions. Expression</p>
+<p><pre><code>selection1 | selection2 &amp; selection3</code></pre></p>
+<p>is equivalent to </p>
+<p><pre><code>(selection1 | selection2) &amp; selection3</code></pre></p>
+<p>because of the operator priorities, while</p>
+<p><pre><code>selection1 | (selection2 &amp; selection3)</code></pre></p>
+<p>will yield different result.</p>
+
+<p>The elementary selection in these expression can have three forms:</p>
+<ol><li><strong>Simple list of atom indexes</strong>, as described above</li><li><strong>Advanced selection of atoms and residues</strong></li><li><strong>Special selectors</strong></li></ol>
+
+<h2><a name="Advanced_selection_of_atoms_and_residues"></a>Advanced selection of atoms and residues</h2>
+<p>Each of these expressions can contain two parts, one for selecting residues and second for selecting atoms, or only one of them. The residue selection start with ":", the atom selection start with "@".</p>
+
+<p>In residue selection, it is possible to use either residue numbers (starting with 1), or residue names. The expression:</p>
+<p><pre><code>:1,2,5-7,A</code></pre></p>
+<p>selects residue 1, 2, 5, 6, 7 and all other residues named A.</p>
+
+<p>In atom selection, it is possible to use atom indexes and element names. The expression:</p>
+<p><pre><code>@1-10,H</code></pre></p>
+<p>selects first ten atoms in the geometry and all hydrogens.</p>
+
+<p>It is possible to negate the selection by adding character "~".</p>
+<p><pre><code>@~H,O</code></pre></p>
+<p>selects all atoms but hydrogens and oxygens. The negation operator negates the whole selection, so</p>
+<p><pre><code>@H,~O</code></pre> is equivalent to the previous selection.</p>
+
+<p>Finally, when both residue and atom selection are present, only atoms that match both are selected. The example</p>
+<p><pre><code>:~WAT@H</code></pre></p>
+<p>selects all hydrogens that do not belong to residues named WAT.</p>
+
+<p>To summarize it, the example:</p>
+<p><pre><code>:1-5 | :6-10@~H | :5-10 | @Na</code></pre></p>
+<p>selects all atoms in residues 1-5, all non-hydrogen atoms in residues 6-10 and all sodium atoms.</p>
+
+<h2><a name="Special_selectors"></a>Special selectors</h2>
+<p>These functions allow selection of atoms based on additional criteria. The selectors have a common format <em>%name(arguments)</em>. Available selectors are:</p>
+<ul>
+<li> <strong>%atomname(name)</strong> for selection by PDB atom name. Selection <pre><code>%atomname(C)</code></pre> will select all atoms named "C", but not atoms "CA", "CB", "C1"... List of names separated by "," can be also used.</li><li> <strong>%pdb_no(selection)</strong> selects atoms by their PDB atom number, the selection is comma separated list of numbers or ranges (using '-')</li>
+<li> <strong>%pdb_chain(character)</strong> selects atoms from PDB by their chain identifier (single letter)</li>
+<li> <strong>%pdb_segid(string)</strong> selects atoms from PDB by their segment identifier (up to three letters)</li>
+<li> <strong>%coord(x|y|z >|&lt;|= <em>number</em>)</strong> selects atoms by their cartesian coordinates</li>
+<li> <strong>%same_residue(<em>selection</em>)</strong> selects whole residues containing the atoms in the selection</li>
+<li> <strong>%within(<em>distance</em>;<em>selection</em>)</strong> selects atom within specified distance from any atoms in the selection</li>
+<li> <strong>%all()</strong> select all atoms</li>
+<li> <strong>%molecule(<em>molecule_num</em>)</strong> selects a separate molecule with index <em>molecule_num</em> (starting with 1), as determined from connectivity</li>
+<li> <strong>%not(<em>selection</em>)</strong> inversion of complex selection</li>
+</ul>
+
+<h3> <a name="Nesting_special_selectors"></a> Nesting special selectors</h3> <p>Some of the special selectors take a selection as their parameter. Nesting of functions is possible.</p>
+		</div>
+		</div>
+	</body>
+</html>

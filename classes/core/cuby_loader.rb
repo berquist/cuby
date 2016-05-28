@@ -1,0 +1,9 @@
+require "classes/compatibility/ruby_backports.rb"
+require "classes/core/settings.rb"
+require "classes/core/constants.rb"
+require "classes/coordinate/coordinate.rb"
+require "classes/algebra/algebra.rb"
+include Algebra
+require "classes/geometry/geometry.rb"
+require "classes/calculation/calculation.rb"
+require "classes/calculation/job.rb"

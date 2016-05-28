@@ -1,0 +1,20 @@
+#===============================================================================
+# Psi4 interface example 2 - FNO-CCSD(T)
+#===============================================================================
+
+# The Frozen Natural Orbitals approximation can be used to accelerate
+# CCSD and CCSD(T) calculations.
+
+job: energy
+interface: psi4
+
+geometry: A24:water
+charge: 0
+
+method: ccsd(t)
+basisset: cc-pVDZ
+
+# Use density fitting where possible, switch on the FNO approximation:
+density_fitting: both
+psi4_fno: yes
+

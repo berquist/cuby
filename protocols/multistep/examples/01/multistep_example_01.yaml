@@ -1,0 +1,47 @@
+#===============================================================================
+# Multistep protocol example 1 - using common setup
+#===============================================================================
+
+# The following multistep calculates interaction energy in water dimer
+# using PM6 with various versions of dispersion and H-bond corrections.
+
+job: multistep
+
+# Step names must be defined first
+steps: pm6, pm6-dh2, pm6-dh+, pm6-d3h4
+
+# Large part of the setup is the same for all the steps. It is put into
+# the common block which is used in each step (any settings here can be
+# overriden in the step block)
+calculation_common:
+  job: interaction
+  geometry: S66:01
+  interface: mopac
+  method: pm6
+  charge: 0
+  molecule_a:
+    charge: 0
+  molecule_b:
+    charge: 0
+
+# Each of the steps has its own block in the input, its name consist of
+# prefix "calculation_" and the name of the step.
+
+# calculation_pm6:
+# Subsection not needed, common setup is used
+
+calculation_pm6-dh2:
+  mopac_corrections: dh2
+
+calculation_pm6-dh+:
+  mopac_corrections: dh+
+
+calculation_pm6-d3h4:
+  # Any step can have a custom title:
+  step_title: "PM6-D3H4 - not in Mopac, using modifiers in Cuby"
+  # Default PM6 calculation from calculation_common is used,
+  # augmented with the following corrections:
+  modifiers: dispersion3, h_bonds4
+  modifier_h_bonds4:
+    h_bonds4_extra_scaling: {}
+

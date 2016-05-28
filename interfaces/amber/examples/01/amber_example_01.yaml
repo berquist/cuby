@@ -1,0 +1,55 @@
+#===============================================================================
+# Amber example 1: simplest energy calculation
+#===============================================================================
+
+# Forcefield energy calculation of a small protein
+
+job: energy
+
+interface: amber
+# Note: method does not have to be specified,
+# the interface do not implement more methods
+
+geometry: trpcage.pdb
+# The tryptofan cage miniprotein.
+# The geometry has to be in PDB format
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# The path to amber has to be specified. This should be the base directory
+# of the amber installation (when the amber environment is set up, this path
+# can be found in $AMBERHOME).
+# This configuration is usually done not in the input file, but in a config file
+# ~/cuby4_config.yaml
+
+amber_amberhome: /home/rezac/bin/amber/amber11/arch/amd64-intel_11.0.081/amber11
+# Provide the actual path on your system here
+
+
+#-------------------------------------------------------------------------------
+# Defaults assumed
+#-------------------------------------------------------------------------------
+# The input is so simple because it uses default values for several keywords
+# needed for the calculations. For this interface, these are:
+
+# amber_leaprc: ["$AMBERHOME/dat/leap/cmd/leaprc.ff03.r1", "$AMBERHOME/dat/leap/cmd/leaprc.gaff"]
+# a path(s) to one or more leaprc files, which are used to generate the
+# forcefield parameters and molecule topology (the prmtop file) from the geometry
+# in PDB format. By default, the ff03 and gaff forcefields are loaded
+# from the amber innstallation dir specified by amber_amberhome.
+
+# amber_top_file (not set)
+# when this keyword is not set, cuby generates the prmtop file automatically
+
+# amber_input_file (not set)
+# when this keyword is not set, cuby generates the input for the calculation
+
+# amber_sander_exe: "$AMBERHOME/bin/sander"
+# by default, the sander executable (which runs the actual calculation) from
+# the amber directory (specified by amber_amberhome) is used
+
+# amber_ld_path: ""
+# when the amber binaries depend on libraries that can not be found automatically,
+# specify the path to them here and it is appended to the LD_LIBRARY_PATH
+# environment variable before amber is run

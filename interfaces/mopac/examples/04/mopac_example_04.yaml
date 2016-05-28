@@ -1,0 +1,17 @@
+#===============================================================================
+# Mopac example 4: Atomic charges
+#===============================================================================
+
+# Calculation of Mulliken atomic charges
+
+# PM6 calculation in MOPAC
+job: atomic_charges
+interface: mopac
+method: pm6
+
+# Atomic charges method (mopac interface provides only this one)
+atomic_charges: mulliken
+
+# Geometry: water dimer from the database
+Geometry: A24:water_dimer
+

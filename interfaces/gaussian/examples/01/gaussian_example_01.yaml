@@ -1,0 +1,23 @@
+#===============================================================================
+# Gaussian interafce example 1 - configuration, DFT calculation
+#===============================================================================
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+gaussian_bin_dir: /home/rezac/bin/gaussian/gaussian09/a02/arch/amd64-pgi70-acml/g09
+# The version name should correspond to the name of the program binary
+gaussian_version: g09 
+
+#-------------------------------------------------------------------------------
+# Calculation
+#-------------------------------------------------------------------------------
+job: energy
+interface: gaussian
+geometry: A24:water # Water molecule from the A254 data set
+
+# DFT setup
+method: dft
+# Cuby translates the functional name to the format used by gaussian:
+functional: PBE
+basisset: 6-31G

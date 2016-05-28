@@ -1,0 +1,151 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Data set description
+#===============================================================================
+
+# Energies: CCSD(T)/CBS, frozen core
+#    MP2 extrapolation from aug-cc-pVTZ, aug-cc-pVQZ
+#    dCCSD(T) in 6-31G*(0.25)
+# Geometries: MP2/aug-cc-pVTZ
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: Peptide_GFA
+  references: 
+    "10.1039/b719294k": "Valdes, H.; Pluháčková, K.; Pitonák, M.; Řezáč, J.; Hobza, P. Phys. Chem. Chem. Phys. 2008, 10, 2747."
+  text: "CSCD(T)/CBS conformation energies of GFA tripeptide"
+
+  global_setup:
+    job: energy
+  dataset_setup:
+    dataset_processing: relative_to_average
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 GFA_01
+  shortname: 01_GFA_01
+  geometry: peptide_conformers:GFA_01
+  reference_value: 0.69
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 GFA_02
+  shortname: 02_GFA_02
+  geometry: peptide_conformers:GFA_02
+  reference_value: 0.26
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 GFA_03
+  shortname: 03_GFA_03
+  geometry: peptide_conformers:GFA_03
+  reference_value: 0.56
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 GFA_04
+  shortname: 04_GFA_04
+  geometry: peptide_conformers:GFA_04
+  reference_value: 0.31
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 GFA_05
+  shortname: 05_GFA_05
+  geometry: peptide_conformers:GFA_05
+  reference_value: 0.38
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 GFA_06
+  shortname: 06_GFA_06
+  geometry: peptide_conformers:GFA_06
+  reference_value: -0.02
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 GFA_07
+  shortname: 07_GFA_07
+  geometry: peptide_conformers:GFA_07
+  reference_value: -0.57
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 GFA_08
+  shortname: 08_GFA_08
+  geometry: peptide_conformers:GFA_08
+  reference_value: 0.02
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 GFA_09
+  shortname: 09_GFA_09
+  geometry: peptide_conformers:GFA_09
+  reference_value: -0.53
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 GFA_10
+  shortname: 10_GFA_10
+  geometry: peptide_conformers:GFA_10
+  reference_value: -0.62
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 GFA_11
+  shortname: 11_GFA_11
+  geometry: peptide_conformers:GFA_11
+  reference_value: -0.06
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 GFA_12
+  shortname: 12_GFA_12
+  geometry: peptide_conformers:GFA_12
+  reference_value: -0.31
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 GFA_13
+  shortname: 13_GFA_13
+  geometry: peptide_conformers:GFA_13
+  reference_value: 0.09
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 GFA_14
+  shortname: 14_GFA_14
+  geometry: peptide_conformers:GFA_14
+  reference_value: -0.02
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 GFA_15
+  shortname: 15_GFA_15
+  geometry: peptide_conformers:GFA_15
+  reference_value: -0.87
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 GFA_16
+  shortname: 16_GFA_16
+  geometry: peptide_conformers:GFA_16
+  reference_value: 0.69
+  tags: ""
+
+#===============================================================================
+# Alternative data
+#===============================================================================
+
+alternative_reference:
+  # Data from the original paper, as downloaded from BEGDB.com
+  # MP2 extrapolated from TZ,QZ
+  # Higher-order correction in 6-31G*(0.25)
+  "CCSD(T)/CBS": [ 0.69, 0.26, 0.56, 0.31, 0.38, -0.02, -0.57, 0.02, -0.53, -0.62, -0.06, -0.31, 0.09, -0.02, -0.87, 0.69 ]
+  "MP2/CBS": [ 0.12, -0.06, 0, 0.35, 0.44, 0.5, -0.19, 0.31, -0.98, -1.08, 0.2, -0.12, 0.58, 0.72, -1.1, 0.31 ]
+  "MP3/CBS": [ 0.36, 0.13, 0.24, -0.26, -0.19, -0.18, -0.63, 0.19, -0.38, -0.47, 0.11, -0.22, 0.3, 0.23, -0.42, 1.18 ]
+  "MP2.5/CBS": [ 0.24, 0.035, 0.12, 0.045, 0.125, 0.16, -0.41, 0.25, -0.68, -0.775, 0.155, -0.17, 0.44, 0.475, -0.76, 0.745 ]
+

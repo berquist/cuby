@@ -1,0 +1,149 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface molpro</h1>
+<p>
+Interface to the <a href="http://www.molpro.net/">Molpro</a> package (commercial software). Tested with version 2010.
+</p>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>hf - supports calculation of energy, gradient, point_charges</li>
+<li>mp2 - supports calculation of energy, gradient, point_charges</li>
+<li>ccsd - supports calculation of energy</li>
+<li>ccsd(t) - supports calculation of energy</li>
+<li>mp3 - supports calculation of energy</li>
+</ul>
+<h4>The interface implements following solvent models (keyword 'solvent_model'):</h4>
+<ul>
+<li>cosmo</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#molpro_exe">molpro_exe</a></li>
+<li><a href="keywords.html#molpro_lib_dir">molpro_lib_dir</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#basisset">basisset</a></li>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#correlation_convergence">correlation_convergence</a></li>
+<li><a href="keywords.html#correlation_frozen_core">correlation_frozen_core</a></li>
+<li><a href="keywords.html#density_convergence">density_convergence</a></li>
+<li><a href="keywords.html#density_fitting">density_fitting</a></li>
+<li><a href="keywords.html#existing_calc_dir">existing_calc_dir</a></li>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#mem">mem</a></li>
+<li><a href="keywords.html#method">method</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+<li><a href="keywords.html#parallel">parallel</a></li>
+<li><a href="keywords.html#scf_convergence">scf_convergence</a></li>
+<li><a href="keywords.html#scf_cycles">scf_cycles</a></li>
+<li><a href="keywords.html#solvent_epsilon">solvent_epsilon</a></li>
+<li><a href="keywords.html#solvent_model">solvent_model</a></li>
+<li><a href="keywords.html#spin_restricted">spin_restricted</a></li>
+<li><a href="keywords.html#use_symmetry">use_symmetry</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/molpro/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Molpro example 1: setup, HF calculation
+#===============================================================================
+
+# Simple input for HF calculation, all other options use default values.
+
+job: energy
+
+#-------------------------------------------------------------------------------
+# Calculation
+#-------------------------------------------------------------------------------
+interface: molpro
+method: hf
+basisset: cc-pVDZ
+
+#-------------------------------------------------------------------------------
+# Geometry
+#-------------------------------------------------------------------------------
+# Water molecule from the internal database. You can use a name of a geometry
+# file instead, it should be located in the same directory as the input
+geometry: A24:water 
+charge: 0
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# Molpro executable
+molpro_exe: /usr/local/molpro2010.1/arch/amd64-intel_11/bin/molpro
+# Path to Molpro's libraries
+molpro_lib_dir: /usr/local/molpro2010.1/arch/amd64-intel_11/lib/molpros_2010_1_Linux_x86_64_i8
+
+# The following examples assume that the interface is set up in the config file.
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Molpro example 2: MP2 optimization
+#===============================================================================
+
+# MP2 optimization
+
+job: optimize
+
+#-------------------------------------------------------------------------------
+# Calculation
+#-------------------------------------------------------------------------------
+interface: molpro
+method: mp2
+basisset: cc-pVDZ
+
+# By default, density fitting is used in all calculations where it is applicable
+# However, Molpro can not calculate MP2 gradient with density fitting so that
+# it has to be switched off
+density_fitting: none
+
+#-------------------------------------------------------------------------------
+# Geometry
+#-------------------------------------------------------------------------------
+# Water molecule from the internal database
+geometry: A24:water 
+charge: 0
+
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

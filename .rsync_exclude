@@ -1,0 +1,5 @@
+classes/*/*.so
+classes/*/_version
+classes/*/Makefile
+*~
+*.swp

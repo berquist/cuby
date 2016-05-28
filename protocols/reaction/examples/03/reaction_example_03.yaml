@@ -1,0 +1,35 @@
+#===============================================================================
+# Reaction protocol example 3: SMILES notation
+#===============================================================================
+
+# This example demonstrates the use SMILES notation in the reaction formula
+
+job: reaction
+
+# The SMILES mode has to be switched on
+reaction_smiles: yes
+# Instead of just labels, the items are SMILES formulas directly
+reaction_formula: 2 C=C -> C1CCC1
+# Then, coordinates are generated from SMILES, no specification of geometries
+# is needed
+
+calculation:
+  job: multistep
+  multistep_print: no
+  steps: opt, energy
+
+  calculation_opt:
+    job: optimize
+    optimize_print: ""
+    interface: dftb
+    method: scc-dftb
+    charge: 0
+    geometry: parent_block
+
+  calculation_energy:
+    job: energy
+    interface: dftb
+    method: scc-dftb
+    charge: 0
+    geometry: previous_step
+

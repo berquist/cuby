@@ -1,0 +1,363 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_WATER27
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "binding energies of water, H+(H2O)n and OH−(H2O)n clusters"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_WATER27:H2O2"
+  reference_value: 5.01
+  setup:
+    reaction_formula: "1 g_H2O2 -> 2 g_H2O"
+    reaction_geometries:
+      g_H2O2: gmtkn_WATER27:H2O2
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_WATER27:H2O3"
+  reference_value: 15.8
+  setup:
+    reaction_formula: "1 g_H2O3 -> 3 g_H2O"
+    reaction_geometries:
+      g_H2O3: gmtkn_WATER27:H2O3
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_WATER27:H2O4"
+  reference_value: 27.4
+  setup:
+    reaction_formula: "1 g_H2O4 -> 4 g_H2O"
+    reaction_geometries:
+      g_H2O4: gmtkn_WATER27:H2O4
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_WATER27:H2O5"
+  reference_value: 35.9
+  setup:
+    reaction_formula: "1 g_H2O5 -> 5 g_H2O"
+    reaction_geometries:
+      g_H2O5: gmtkn_WATER27:H2O5
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_WATER27:H2O6"
+  reference_value: 46.0
+  setup:
+    reaction_formula: "1 g_H2O6 -> 6 g_H2O"
+    reaction_geometries:
+      g_H2O6: gmtkn_WATER27:H2O6
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_WATER27:H2O6c"
+  reference_value: 45.8
+  setup:
+    reaction_formula: "1 g_H2O6c -> 6 g_H2O"
+    reaction_geometries:
+      g_H2O6c: gmtkn_WATER27:H2O6c
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_WATER27:H2O6b"
+  reference_value: 45.3
+  setup:
+    reaction_formula: "1 g_H2O6b -> 6 g_H2O"
+    reaction_geometries:
+      g_H2O6b: gmtkn_WATER27:H2O6b
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_WATER27:H2O6c2"
+  reference_value: 44.3
+  setup:
+    reaction_formula: "1 g_H2O6c2 -> 6 g_H2O"
+    reaction_geometries:
+      g_H2O6c2: gmtkn_WATER27:H2O6c2
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_WATER27:H2O8d2d"
+  reference_value: 72.6
+  setup:
+    reaction_formula: "1 g_H2O8d2d -> 8 g_H2O"
+    reaction_geometries:
+      g_H2O8d2d: gmtkn_WATER27:H2O8d2d
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_WATER27:H2O8s4"
+  reference_value: 72.6
+  setup:
+    reaction_formula: "1 g_H2O8s4 -> 8 g_H2O"
+    reaction_geometries:
+      g_H2O8s4: gmtkn_WATER27:H2O8s4
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_WATER27:H2O20"
+  reference_value: 200.1
+  setup:
+    reaction_formula: "1 g_H2O20 -> 20 g_H2O"
+    reaction_geometries:
+      g_H2O20: gmtkn_WATER27:H2O20
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "12"
+  shortname: "12"
+  geometry: "gmtkn_WATER27:H2O20fc"
+  reference_value: 212.6
+  setup:
+    reaction_formula: "1 g_H2O20fc -> 20 g_H2O"
+    reaction_geometries:
+      g_H2O20fc: gmtkn_WATER27:H2O20fc
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "13"
+  shortname: "13"
+  geometry: "gmtkn_WATER27:H2O20fs"
+  reference_value: 215.0
+  setup:
+    reaction_formula: "1 g_H2O20fs -> 20 g_H2O"
+    reaction_geometries:
+      g_H2O20fs: gmtkn_WATER27:H2O20fs
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "14"
+  shortname: "14"
+  geometry: "gmtkn_WATER27:H2O20es"
+  reference_value: 217.9
+  setup:
+    reaction_formula: "1 g_H2O20es -> 20 g_H2O"
+    reaction_geometries:
+      g_H2O20es: gmtkn_WATER27:H2O20es
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "15"
+  shortname: "15"
+  geometry: "gmtkn_WATER27:H3OpH2O"
+  reference_value: 33.5
+  setup:
+    reaction_formula: "1 g_H3OpH2O -> 1 g_H3Op + 1 g_H2O"
+    reaction_geometries:
+      g_H3OpH2O: gmtkn_WATER27:H3OpH2O
+      g_H3Op: gmtkn_WATER27:H3Op
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "16"
+  shortname: "16"
+  geometry: "gmtkn_WATER27:H3OpH2O2"
+  reference_value: 56.9
+  setup:
+    reaction_formula: "1 g_H3OpH2O2 -> 1 g_H3Op + 2 g_H2O"
+    reaction_geometries:
+      g_H3OpH2O2: gmtkn_WATER27:H3OpH2O2
+      g_H3Op: gmtkn_WATER27:H3Op
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "17"
+  shortname: "17"
+  geometry: "gmtkn_WATER27:H3OpH2O3"
+  reference_value: 76.5
+  setup:
+    reaction_formula: "1 g_H3OpH2O3 -> 1 g_H3Op + 3 g_H2O"
+    reaction_geometries:
+      g_H3OpH2O3: gmtkn_WATER27:H3OpH2O3
+      g_H3Op: gmtkn_WATER27:H3Op
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "18"
+  shortname: "18"
+  geometry: "gmtkn_WATER27:H3OpH2O63d"
+  reference_value: 117.8
+  setup:
+    reaction_formula: "1 g_H3OpH2O63d -> 1 g_H3Op + 6 g_H2O"
+    reaction_geometries:
+      g_H3OpH2O63d: gmtkn_WATER27:H3OpH2O63d
+      g_H3Op: gmtkn_WATER27:H3Op
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "19"
+  shortname: "19"
+  geometry: "gmtkn_WATER27:H3OpH2O62d"
+  reference_value: 114.9
+  setup:
+    reaction_formula: "1 g_H3OpH2O62d -> 1 g_H3Op + 6 g_H2O"
+    reaction_geometries:
+      g_H3OpH2O62d: gmtkn_WATER27:H3OpH2O62d
+      g_H3Op: gmtkn_WATER27:H3Op
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "20"
+  shortname: "20"
+  geometry: "gmtkn_WATER27:OHmH2O"
+  reference_value: 26.6
+  setup:
+    reaction_formula: "1 g_OHmH2O -> 1 g_OHm + 1 g_H2O"
+    reaction_geometries:
+      g_OHmH2O: gmtkn_WATER27:OHmH2O
+      g_OHm: gmtkn_WATER27:OHm
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "21"
+  shortname: "21"
+  geometry: "gmtkn_WATER27:OHmH2O2"
+  reference_value: 48.4
+  setup:
+    reaction_formula: "1 g_OHmH2O2 -> 1 g_OHm + 2 g_H2O"
+    reaction_geometries:
+      g_OHmH2O2: gmtkn_WATER27:OHmH2O2
+      g_OHm: gmtkn_WATER27:OHm
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "22"
+  shortname: "22"
+  geometry: "gmtkn_WATER27:OHmH2O3"
+  reference_value: 67.6
+  setup:
+    reaction_formula: "1 g_OHmH2O3 -> 1 g_OHm + 3 g_H2O"
+    reaction_geometries:
+      g_OHmH2O3: gmtkn_WATER27:OHmH2O3
+      g_OHm: gmtkn_WATER27:OHm
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "23"
+  shortname: "23"
+  geometry: "gmtkn_WATER27:OHmH2O4c4"
+  reference_value: 84.8
+  setup:
+    reaction_formula: "1 g_OHmH2O4c4 -> 1 g_OHm + 4 g_H2O"
+    reaction_geometries:
+      g_OHmH2O4c4: gmtkn_WATER27:OHmH2O4c4
+      g_OHm: gmtkn_WATER27:OHm
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "24"
+  shortname: "24"
+  geometry: "gmtkn_WATER27:OHmH2O4cs"
+  reference_value: 84.8
+  setup:
+    reaction_formula: "1 g_OHmH2O4cs -> 1 g_OHm + 4 g_H2O"
+    reaction_geometries:
+      g_OHmH2O4cs: gmtkn_WATER27:OHmH2O4cs
+      g_OHm: gmtkn_WATER27:OHm
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "25"
+  shortname: "25"
+  geometry: "gmtkn_WATER27:OHmH2O5"
+  reference_value: 100.7
+  setup:
+    reaction_formula: "1 g_OHmH2O5 -> 1 g_OHm + 5 g_H2O"
+    reaction_geometries:
+      g_OHmH2O5: gmtkn_WATER27:OHmH2O5
+      g_OHm: gmtkn_WATER27:OHm
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "26"
+  shortname: "26"
+  geometry: "gmtkn_WATER27:OHmH2O6"
+  reference_value: 115.7
+  setup:
+    reaction_formula: "1 g_OHmH2O6 -> 1 g_OHm + 6 g_H2O"
+    reaction_geometries:
+      g_OHmH2O6: gmtkn_WATER27:OHmH2O6
+      g_OHm: gmtkn_WATER27:OHm
+      g_H2O: gmtkn_WATER27:H2O
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "27"
+  shortname: "27"
+  geometry: "gmtkn_WATER27:H3OpH2O6OHm"
+  reference_value: 28.5
+  setup:
+    reaction_formula: "1 g_H2O8s4 -> 1 g_H3OpH2O6OHm"
+    reaction_geometries:
+      g_H3OpH2O6OHm: gmtkn_WATER27:H3OpH2O6OHm
+      g_H2O8s4: gmtkn_WATER27:H2O8s4
+  tags: ""
+

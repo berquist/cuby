@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface water_restraint</h1>
+<p>
+Modifier for QM/MM MD simulations, prevents mixing of QM waters around the defined
+solute with MM bulk waters. At the beginning of the simulations, specified number
+of water molecules cosest to the solute is tagged as QM waters. If this QM water
+moves farther than the closest bulk water, a harmonic restraint is applied to pull
+the QM water back towards the solute.
+</p>
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#qmmm_wat_center">qmmm_wat_center</a></li>
+<li><a href="keywords.html#qmmm_wat_k">qmmm_wat_k</a></li>
+<li><a href="keywords.html#qmmm_wat_num">qmmm_wat_num</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/water_restraint/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Water restraint example 1: Amber MD with water restraint
+#===============================================================================
+
+# Simple demonstration of the water restraint modifier. It is intended for
+# QM/MM calculations but here it is used for simple MM dynamics to make the
+# example run faster.
+
+job: dynamics
+init_temp: 300
+
+# Ace-ala-nme dipeptide solvated with 18 water molecules
+geometry: ace_ala_nme_waterball_18.pdb
+
+# Use Amber interface with default forcefield
+# (The interface must be configured properly)
+interface: amber
+
+# Add the water restraint modifier
+modifiers: water_restraint
+
+# Setup for the modifier
+modifier_water_restraint:
+  qmmm_wat_center: ":2" # Selection defining the center of the QM region, here it is residue 2
+  qmmm_wat_num: 8 # Number of QM waters
+  qmmm_wat_k: 10.0 # Force constant of the restraining potential (kcal/mol/A)
+
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,161 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Input file syntax</h1>
+<p>
+The input uses the <a href="http://yaml.org">YAML</a> format, an user-friendly structured
+data format. In addition, Cuby checks the <a href="input_types.html">type</a> of the data
+entered.
+</p>
+
+<h2>Simple input</h2>
+<p>
+In the simplest form, the input is just a list of keywords and their values:
+</p>
+<pre><code>job: energy
+interface: turbomole
+method: hf
+basisset: cc-pVDZ
+charge: 0</code></pre>
+<p>
+<in YAML terms, the whole input is a Mapping that reads as a Hash in ruby.>
+In addition to the requirements of a valid YAML format, Cuby adds some more
+checks. Firstly, only keywords defined in Cuby are allowed, use of an unknown
+key will produce an error (the keywords are not case-sensitive).
+Secondly, Cuby checks the type of the value. It is
+easy to write entries of the most common types, such as numbers or strings,
+but Cuby also uses more advanced types such as arrays and lists. Details on
+how to write them are provided <a href="input_types.html">here</a>.
+</p>
+
+<h2>Default values</h2>
+<p>
+When a keyword used by the claculation is missing in the input, cuby might either stop
+with an error message, or continue using a default value (optionally with a warning printed).
+This behavior, as well as the respective default value, is defined separately for each
+keyword.
+</p>
+
+<h2>Comments</h2>
+<p>
+YAML uses the character '#' to start a comment, either at the beginning or within a line.
+</p>
+<pre><code># HF energy calculation
+job: energy
+method: hf # the method is set here!
+</code></pre>
+
+<h2>Input blocks</h2>
+<p>More complex computational protocols consist of multiple calculations, input for
+them is provided in separate <em>blocks</em> of the input. Each block has its name
+and the contents of the block are indented. The block ends when the indentation returns
+to the original level. The blocks can be nested arbitrarily. What blocks are required
+or accepted by different interfaces and protocols is listed in their description.
+</p>
+<pre><code>interface: mixer # Mixes two calculations
+calculation_a: # Name of the block defining the first calculation
+  method: HF # contents of the block is indented
+  modifiers: restraints
+  modifier_restraint: # A nested block
+    restraints_setup: yes # Contents of the nested block
+  charge: 0 # This belongs to the block calculation_a, as defined by the indentation
+calculation_b: # A second block at the root level
+  method: MP2
+</code></pre>
+<p>
+There is an important difference between Cuby 3 and Cuby 4: In Cuby 3, most of the information
+was read at the root level of the input and only some setup was read from the respective block
+(e.g a charge of the molecule was listed only once at the root level and it was used in all
+the child calculations).
+In Cuby 4, each calculation has to be completely defined in its own block, Cuby does not look
+elsewhere (e.g. in a job with multiple caclulations, the charge has to be entered in each block
+defining a calculations). This requires some more typing but it makes it possible to create
+very complex inputs systematically.
+</p>
+
+<h2>Multiple occurences of a keyword</h2>
+<p>
+YAML language specification does not allow the use of duplicate keys, but the ruby parser does not complain when it encounters this problems and just overwrites the value. Therefore, input
+</p>
+<pre><code>key: "ABC"
+key: "xyz"
+</code></pre>
+<p>
+sets the value of the key to "xyz". Unfortunately, this is the behavior of the YAML parser itself, so it is not possible to warn the user when such duplicity is encountered.
+</p>
+
+<h2>Reusing parts of the imput</h2>
+<p>
+In more complex inputs, parts of the setup can be reused in multiple calculations. Some
+protocols support a block 'calculation_common' that applies to all the calculations. The same can be achieved
+at the level of the YAML language where some parts of the input can be named and then reused.
+</p>
+<pre><code># Definition of the shared settings
+# In YAML, the name of the block can be arbitrary, but in cuby input, we use
+# a convention that it should start with prefix 'shared_'. Then, a label starting
+# with '&' is used to name the block for further use.
+shared_mopac: &mopac_setup
+  interface: mopac
+  method: pm6
+  charge: 0
+
+# Another block of shared settings, these can be mixed as needed
+shared_job: &job_setup
+  job: interaction
+
+
+# The job itself
+job: multistep
+steps: methanol, methylamine
+
+calculation_methanol:
+  <<: *mopac_setup # This merges in the shared settings defined above
+  <<: *job_setup   # This merges in the shared settings defined above
+  geometry: S66:02 # Water ... MeOH
+
+calculation_methylamine:
+  job: interaction
+  <<: *mopac_setup
+  geometry: S66:03 # Water ... MeNH2</code></pre>
+<p>
+While it is not required in YAML, Cuby expects all the blocks of shared settings to be named 'shared_...'
+in order to distinguish them from other input blocks.
+</p>
+		</div>
+		</div>
+	</body>
+</html>

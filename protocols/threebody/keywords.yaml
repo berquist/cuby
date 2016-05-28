@@ -1,0 +1,15 @@
+################################################################################
+# Keywords for protocol Interaction
+################################################################################
+
+keywords: 
+  :bsse_correction_3b: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :full
+    allowed_values:
+      - :none
+      - :full
+  #: Counterpoise correction:
+  #* none - no correction
+  #* full - all calculations in trimer basis

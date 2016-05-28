@@ -1,0 +1,17 @@
+<p>
+This protocol allows chaining more calculations (steps) in one input file. Compared to running a series of calculation from outside of cuby, there are multiple advantages:
+</p>
+<ul>
+	<li>Part of the input can be shared by all the steps (see Example 1)</li>
+	<li>A step can be executed conditionally (see Example 2)</li>
+	<li>The results from the steps can be automatically processed at the end of the calculation (see Examples 3 and 4)</li>
+	<li>Parallel and serial execution of the steps can be mixed arbitrarily (see Example 5)</li>
+</ul>
+
+<h2>Output</h2>
+<p>
+The output of a serial calculation and a parallel one (where steps queued using the keyword <a href="keywords.html#step_queue">step_queue</a>)
+might differ in some cases. When teh steps are executed in series, the step header is printed and all output from this step follows.
+When a step is queued, the step header and final result is printed only after it is finished. However, some of its output (e.g. from the preparation
+of the jobs, or output from its parts taht must be executed serially, e.g. the individual cycles of optimization) are printed earlier.
+</p>

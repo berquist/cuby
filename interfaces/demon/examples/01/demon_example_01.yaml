@@ -1,0 +1,40 @@
+#===============================================================================
+# deMOn interface example 1: configuration and simple calculation
+#===============================================================================
+
+# Energy of water molecule
+job: energy
+geometry: A24:water
+charge: 0
+
+interface: demon
+method: dft
+
+# DFT setup
+basisset: DZVP
+functional: b-lyp # the name of the functional is translated to deMon's format
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# The following keywords configure the interface. These values have to be
+# adjusted for a particular installation of deMon. To reuse the configuration,
+# put it into the config file.
+
+# Path to deMon exacutable
+demon_exe: /home/rezac/bin/demon/2.5.4/demon_cdft_200613/deMon.2.5.4.opt
+# Path for loading libraries (optional, added to LD_LIBRARY_PATH)
+demon_lib_dir: /home/rezac/bin/demon/4.2.4_master_bin/libs
+
+# Version - needed for generation of correct input for given version
+demon_version: "2.5.4"
+
+# A development version of deMon has an option enabling additional data
+# being passed to Cuby
+demon_with_cuby_interface: yes
+
+# Paths to deMon's data files 
+demon_basis_file: /home/rezac/bin/demon/2.5.4/deMon/BASIS
+demon_auxis_file: /home/rezac/bin/demon/2.5.4/deMon/AUXIS
+demon_ecps_file: /home/rezac/bin/demon/2.5.4/deMon/ECPS
+demon_mcps_file: /home/rezac/bin/demon/2.5.4/deMon/MCPS

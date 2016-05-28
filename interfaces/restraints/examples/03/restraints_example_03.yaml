@@ -1,0 +1,34 @@
+#===============================================================================
+# Restraints example 3: Flat-bottom distance restraint
+#===============================================================================
+
+# Molecular dynamics of water dimer, the dimer is prevented from dissociating
+# by applying a restraint that has a flat bottom but adds a harmotic potential
+# above a thershold distance.
+
+job: dynamics
+# NVT at 1000K, at this temperature the dimer will dissociate quickly
+# when the restraint is not applied
+thermostat: berendsen
+temperature: 1000 # target temperature for the thermostat, K
+init_temp: 1000 # initialization temperature, K
+maxcycles: 10000
+trajectory_freq: 50
+
+interface: water_ff # Simple forcefield for water, built in in Cuby
+
+geometry: S66:01 # Optimized water dimer from the S66 database
+
+modifiers: restraints # This adds a modifier to the calculation specified above
+
+# Each modifier has its own block (subsection) in the input, named
+# modifier_[modifier_name]. The contents of a block are indented to distinguish
+# it from the remainder of the input.
+
+modifier_restraints:
+  # The setup of the modifier comes here - a restraint is defined
+  # The third number (8.0) is the additional parameter, below this distance
+  # no restraint is applied.
+  restraints:
+    - distance_f; 5.0; 20.0; 8.0; 1-3; 4-6
+

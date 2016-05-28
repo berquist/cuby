@@ -1,0 +1,23 @@
+#===============================================================================
+# Mopac example 1: energy calculation, configuration
+#===============================================================================
+
+# AM1 calculation of energy
+job: energy
+interface: mopac
+method: am1
+
+# Water molecule, geometry taken from Cuby's internal database
+geometry: A24:water
+charge: 0
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# Path to the MOPAC executable should be provided. Cuby assumes that the licence
+# key for mopac is located in the same directory.
+# This configuration is usually done not in the input file, but in a config file
+# ~/cuby4_config.yaml
+
+mopac_exe: /home/rezac/bin/MOPAC2012/MOPAC2012.exe
+# Provide the actual path on your system here

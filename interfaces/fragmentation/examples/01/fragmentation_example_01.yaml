@@ -1,0 +1,31 @@
+#===============================================================================
+# Fragmentation example 1
+#===============================================================================
+
+# Calculation of butane molecule which is built from three fragments -
+# CH4, C2H6 and CH4.
+
+# The PM6 calculation of this system yields energy 14.413 kcal/mol
+# This fragmented calculation yields               14.436 kcal/mol
+
+job: energy
+interface: fragmentation
+
+geometry: butane.xyz
+
+# The bonds to be cut (two atom selections) and a ratio determining the length of
+# the bond to the link atom (C-H) from the length of the original C-C bond.
+fragmentation_cut_bonds: 
+  - "11; 12; 0.7211"
+  - "13; 14; 0.7211"
+
+# If the following lines are uncommented, the fragments and their dimers are built
+# and saved but no calculation is run on them:
+#prepare_only: yes
+#fragmentation_geometry_only: yes
+
+# Method of calculation applied to the fragments is specified in a separate
+# block:
+calculation:
+  method: pm6
+  charge: 0

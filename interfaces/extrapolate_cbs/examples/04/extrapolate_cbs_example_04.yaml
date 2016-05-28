@@ -1,0 +1,59 @@
+#===============================================================================
+# Example 4 - CSCD(T)/CBS geometry optimization
+#===============================================================================
+
+job: optimize
+geometry: A24:water # Water molecule from A24 data set
+interface: extrapolate_cbs
+
+# To extrapolate gradient and to calculate the gradient of the correction,
+# additional calculations are needed
+extrapolate_cbs_grad_mode: separate_calculations
+
+# Common setup
+calculation_common:
+  charge: 0
+  interface: turbomole
+  scf_convergence: 10
+  density_convergence: 10
+  correlation_convergence: 9
+  mem: 2000
+
+calculation_mp2_small:
+  method: mp2
+  basisset: cc-pVDZ
+  basisset_zeta: 2
+
+calculation_mp2_large:
+  method: mp2
+  basisset: cc-pVTZ
+  basisset_zeta: 3
+
+# In addition to the two MP2 calculation, separate HF calculations in
+# the same basis sets have to be performed:
+calculation_hf_small:
+  method: hf
+  basisset: cc-pVDZ
+
+calculation_hf_large:
+  method: hf
+  basisset: cc-pVTZ
+
+calculation_corr:
+  # In this case, we override the commmon setup to use cfour interface,
+  # cfour is one of the few packages that implement CCSD(T) gradient
+  interface: cfour
+  method: ccsd(t)
+  basisset: 3-21G
+
+# In addition to the CCSD(T) calculation, a MP2 calculation with the
+# same setup is needed to calculate the correction which is defined
+# as CCSD(T) - MP2
+calculation_corr_mp2:
+  # For consistency, this calculation has to use the same interface
+  # as the CCSD(T) one
+  interface: cfour
+  method: mp2
+  basisset: 3-21G
+
+opt_quality: 0.5

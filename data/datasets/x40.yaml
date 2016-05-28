@@ -1,0 +1,418 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Data set description
+#===============================================================================
+
+# X40 data set
+# Interaction energies:
+# CCSD(T)/CBS, frozen core, counterpoise-corrected
+# MP2 extrapolation from aug-cc-pVTZ(-PP for Br and I) and aug-cc-pVQZ(-PP)
+# dCCSD(T) in heavy-aug-cc-pVTZ(-PP for Br and I)
+# Geometries:
+# MP2/cc-pVTZ(-PP), counterpoise corrected
+# Distance interpolated from CCSD(T)/CBS scan
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: X40
+  references: 
+    "10.1021/ct300647k": "Řezáč, J.; Riley, K. E.; Hobza, P. J. Chem. Theory Comput. 2012, 8, 4285–4292."
+  text: "CSCD(T)/CBS interaction energies of halogenated molecules"
+
+  groups:
+    - dispersion
+    - induction
+    - dipole_dipole
+    - stack
+    - X-bond
+    - X-pi
+    - H-bond
+  global_setup:
+    job: interaction
+    molecule_a:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+    molecule_b:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 methane ... F2
+  shortname: 01_methane-F2
+  geometry: X40:01
+  reference_value: -0.491
+  setup: {}
+  group: dispersion
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 methane ... Cl2
+  shortname: 02_methane-Cl2
+  geometry: X40:02
+  reference_value: -1.079
+  setup: {}
+  group: dispersion
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 methane ... Br2
+  shortname: 03_methane-Br2
+  geometry: X40:03
+  reference_value: -1.3
+  setup: {}
+  group: dispersion
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 methane ... I2
+  shortname: 04_methane-I2
+  geometry: X40:04
+  reference_value: -1.346
+  setup: {}
+  group: dispersion
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 fluoromethane ... methane
+  shortname: 05_fluoromethane-methane
+  geometry: X40:05
+  reference_value: -0.751
+  setup: {}
+  group: induction
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 chloromethane ... methane
+  shortname: 06_chloromethane-methane
+  geometry: X40:06
+  reference_value: -0.98
+  setup: {}
+  group: induction
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 trifluoromethane ... methane
+  shortname: 07_trifluoromethane-methane
+  geometry: X40:07
+  reference_value: -0.691
+  setup: {}
+  group: induction
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 trichloromethane ... methane
+  shortname: 08_trichloromethane-methane
+  geometry: X40:08
+  reference_value: -1.146
+  setup: {}
+  group: induction
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 fluoromethane dimer
+  shortname: 09_fluoromethane-fluoromethane
+  geometry: X40:09
+  reference_value: -1.648
+  setup: {}
+  group: dipole_dipole
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 chloromethane dimer
+  shortname: 10_chloromethane-chloromethane
+  geometry: X40:10
+  reference_value: -1.338
+  setup: {}
+  group: dipole_dipole
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 trifluorobenzene ... benzene
+  shortname: 11_benF3-ben
+  geometry: X40:11
+  reference_value: -4.405
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 hexafuorobenzene ... benzene
+  shortname: 12_benF6-ben
+  geometry: X40:12
+  reference_value: -6.121
+  setup: {}
+  group: stack
+  tags: "fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 chloromethane ... formaldehyde
+  shortname: 13_chloromethane-formaldehyde
+  geometry: X40:13
+  reference_value: -1.17
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 bromomethane ... formaldehyde
+  shortname: 14_bromomethane-formaldehyde
+  geometry: X40:14
+  reference_value: -1.722
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 iodomethane ... formaldehyde
+  shortname: 15_iodomethane-formaldehyde
+  geometry: X40:15
+  reference_value: -2.382
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 trifluorochloromethane ... formaldehyde
+  shortname: 16_F3chloromethane-formaldehyde
+  geometry: X40:16
+  reference_value: -2.246
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 trifluorobromomethane ... formaldehyde
+  shortname: 17_F3bromomethane-formaldehyde
+  geometry: X40:17
+  reference_value: -3.103
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 trifluoroiodomethane ... formaldehyde
+  shortname: 18_F3iodomethane-formaldehyde
+  geometry: X40:18
+  reference_value: -4.08
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 chlorobenzene ... acetone
+  shortname: 19_benCl-acetone
+  geometry: X40:19
+  reference_value: -1.489
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 bromobenzene ... acetone
+  shortname: 20_benBr-acetone
+  geometry: X40:20
+  reference_value: -2.426
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 iodobenzene ... acetone
+  shortname: 21_benI-acetone
+  geometry: X40:21
+  reference_value: -3.46
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 chlorobenzene ... trimethylamine
+  shortname: 22_benCl-Nm3
+  geometry: X40:22
+  reference_value: -2.113
+  setup: {}
+  group: X-bond
+  tags: "chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 bromobenzene ... trimethylamine
+  shortname: 23_benBr-Nm3
+  geometry: X40:23
+  reference_value: -3.778
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 iodobenzene ... trimethylamine
+  shortname: 24_benI-Nm3
+  geometry: X40:24
+  reference_value: -5.807
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 25 bromobenzene ... methanethiol
+  shortname: 25_benBr-mSH
+  geometry: X40:25
+  reference_value: -2.316
+  setup: {}
+  group: X-bond
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 26 iodobenzene ... methanethiol
+  shortname: 26_benI-mSH
+  geometry: X40:26
+  reference_value: -3.078
+  setup: {}
+  group: X-bond
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 27 bromomethane ... benzene
+  shortname: 27_CH3Br-ben
+  geometry: X40:27
+  reference_value: -1.814
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 28 iodomethane ... benzene
+  shortname: 28_CH3I-ben
+  geometry: X40:28
+  reference_value: -2.483
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 29 trifluorobromomethane ... benzene
+  shortname: 29_CF3Br-ben
+  geometry: X40:29
+  reference_value: -3.11
+  setup: {}
+  group: X-pi
+  tags: "bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 30 trifluoroiodomethane ... benzene
+  shortname: 30_CF3I-ben
+  geometry: X40:30
+  reference_value: -3.915
+  setup: {}
+  group: X-pi
+  tags: "iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 31 trifluoromethanol ... water
+  shortname: 31_trifluorometOH-wat
+  geometry: X40:31
+  reference_value: -9.669
+  setup: {}
+  group: H-bond
+  tags: "(O-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 32 trichloromethanol ... water
+  shortname: 32_trichlorometOH-wat
+  geometry: X40:32
+  reference_value: -10.405
+  setup: {}
+  group: H-bond
+  tags: "(O-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 33 HF ... methanol
+  shortname: 33_HF-mOH
+  geometry: X40:33
+  reference_value: -9.593
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 34 HCl ... methanol
+  shortname: 34_HCl-mOH
+  geometry: X40:34
+  reference_value: -6.3
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 35 HBr ... methanol
+  shortname: 35_HBr-mOH
+  geometry: X40:35
+  reference_value: -5.356
+  setup: {}
+  group: H-bond
+  tags: "(X-O),bromine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 36 HI ... methanol
+  shortname: 36_HI-mOH
+  geometry: X40:36
+  reference_value: -3.971
+  setup: {}
+  group: H-bond
+  tags: "(X-O),iodine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 37 HF ... methylamine
+  shortname: 37_HF-mNH2
+  geometry: X40:37
+  reference_value: -14.318
+  setup: {}
+  group: H-bond
+  tags: "(X-O),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 38 HCl ... methylamine
+  shortname: 38_HCl-mNH2
+  geometry: X40:38
+  reference_value: -11.419
+  setup: {}
+  group: H-bond
+  tags: "(X-O),chlorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 39 methanol ... fluoromethane
+  shortname: 39_methanol-fluoromethane
+  geometry: X40:39
+  reference_value: -3.893
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),fluorine"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 40 methanol ... chloromethane
+  shortname: 40_methanol-chloromethane
+  geometry: X40:40
+  reference_value: -3.778
+  setup: {}
+  group: H-bond
+  tags: "(O-XC),chlorine"
+
+#===============================================================================
+# Alternative data
+#===============================================================================
+
+alternative_reference:
+  # Helgaker extrapolation aTZ, aQZ
+  "MP2/CBS": [ -0.543, -1.252, -1.518, -1.561, -0.697, -1.012, -0.605, -1.284, -1.552, -1.439, -6.624, -8.593, -1.241, -1.871, -2.610, -2.304, -3.203, -4.228, -1.598, -2.594, -3.669, -2.381, -4.268, -6.584, -2.705, -3.596, -2.698, -3.551, -4.056, -5.039, -9.700, -10.608, -9.640, -6.857, -5.961, -4.519, -14.513, -12.803, -3.809, -3.889 ]
+  # The deltaCCSD(T) correction separately
+  "dCCSD(T)/haDZ": [ 0.070, 0.194, 0.249, 0.253, -0.021, 0.061, -0.050, 0.168, -0.058, 0.122, 2.152, 2.385, 0.092, 0.175, 0.272, 0.071, 0.128, 0.204, 0.123, 0.197, 0.271, 0.287, 0.546, 0.893, 0.403, 0.553, 0.850, 1.031, 0.899, 1.079, 0.155, 0.362, 0.178, 0.677, 0.724, 0.642, 0.390, 1.620, 0.006, 0.186 ]
+  "dCCSD(T)/haTZ": [ 0.052, 0.173, 0.218, 0.215, -0.054, 0.032, -0.085, 0.139, -0.096, 0.101, 2.219, 2.471, 0.071, 0.148, 0.228, 0.059, 0.100, 0.148, 0.108, 0.169, 0.209, 0.268, 0.490, 0.777, 0.389, 0.518, 0.884, 1.068, 0.945, 1.124, 0.031, 0.203, 0.048, 0.557, 0.605, 0.548, 0.195, 1.384, -0.084, 0.111 ]
+  # MP2.5, constructed as MP2/CBS + correction in aDZ
+  "MP2.5/CBS(aDZ)": [ -0.485, -1.112, -1.345, -1.391, -0.686, -0.947, -0.587, -1.120, -1.561, -1.337, -4.842, -6.573, -1.124, -1.691, -2.380, -2.181, -3.040, -4.030, -1.405, -2.347, -3.395, -2.002, -3.662, -5.734, -2.351, -3.166, -2.037, -2.771, -3.346, -4.210, -9.632, -10.342, -9.591, -6.525, -5.575, -4.153, -14.294, -12.011, -3.779, -3.729 ]
+
+

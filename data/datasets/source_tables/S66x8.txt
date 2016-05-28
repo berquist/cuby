@@ -1,0 +1,528 @@
+01	Water ... Water 0.90	Water-Water_0.90	C1	-4.573	H-bonds	1 H-bond
+01	Water ... Water 0.95	Water-Water_0.95	C1	-4.884	H-bonds	1 H-bond
+01	Water ... Water 1.00	Water-Water_1.00	C1	-4.894	H-bonds	1 H-bond
+01	Water ... Water 1.05	Water-Water_1.05	C1	-4.723	H-bonds	1 H-bond
+01	Water ... Water 1.10	Water-Water_1.10	C1	-4.451	H-bonds	1 H-bond
+01	Water ... Water 1.25	Water-Water_1.25	C1	-3.457	H-bonds	1 H-bond
+01	Water ... Water 1.50	Water-Water_1.50	C1	-2.108	H-bonds	1 H-bond
+01	Water ... Water 2.00	Water-Water_2.00	C1	-0.871	H-bonds	1 H-bond
+02	Water ... MeOH 0.90	Water-MeOH_0.90	C1	-5.194	H-bonds	1 H-bond
+02	Water ... MeOH 0.95	Water-MeOH_0.95	C1	-5.550	H-bonds	1 H-bond
+02	Water ... MeOH 1.00	Water-MeOH_1.00	C1	-5.569	H-bonds	1 H-bond
+02	Water ... MeOH 1.05	Water-MeOH_1.05	C1	-5.381	H-bonds	1 H-bond
+02	Water ... MeOH 1.10	Water-MeOH_1.10	C1	-5.076	H-bonds	1 H-bond
+02	Water ... MeOH 1.25	Water-MeOH_1.25	C1	-3.944	H-bonds	1 H-bond
+02	Water ... MeOH 1.50	Water-MeOH_1.50	C1	-2.385	H-bonds	1 H-bond
+02	Water ... MeOH 2.00	Water-MeOH_2.00	C1	-0.951	H-bonds	1 H-bond
+03	Water ... MeNH2 0.90	Water-MeNH2_0.90	C1	-6.493	H-bonds	1 H-bond
+03	Water ... MeNH2 0.95	Water-MeNH2_0.95	C1	-6.870	H-bonds	1 H-bond
+03	Water ... MeNH2 1.00	Water-MeNH2_1.00	C1	-6.875	H-bonds	1 H-bond
+03	Water ... MeNH2 1.05	Water-MeNH2_1.05	C1	-6.648	H-bonds	1 H-bond
+03	Water ... MeNH2 1.10	Water-MeNH2_1.10	C1	-6.284	H-bonds	1 H-bond
+03	Water ... MeNH2 1.25	Water-MeNH2_1.25	C1	-4.919	H-bonds	1 H-bond
+03	Water ... MeNH2 1.50	Water-MeNH2_1.50	C1	-2.977	H-bonds	1 H-bond
+03	Water ... MeNH2 2.00	Water-MeNH2_2.00	C1	-1.140	H-bonds	1 H-bond
+04	Water ... Peptide 0.90	Water-Peptide_0.90	C1	-7.634	H-bonds	1 H-bond
+04	Water ... Peptide 0.95	Water-Peptide_0.95	C1	-8.055	H-bonds	1 H-bond
+04	Water ... Peptide 1.00	Water-Peptide_1.00	C1	-8.075	H-bonds	1 H-bond
+04	Water ... Peptide 1.05	Water-Peptide_1.05	C1	-7.843	H-bonds	1 H-bond
+04	Water ... Peptide 1.10	Water-Peptide_1.10	C1	-7.462	H-bonds	1 H-bond
+04	Water ... Peptide 1.25	Water-Peptide_1.25	C1	-5.994	H-bonds	1 H-bond
+04	Water ... Peptide 1.50	Water-Peptide_1.50	C1	-3.832	H-bonds	1 H-bond
+04	Water ... Peptide 2.00	Water-Peptide_2.00	C1	-1.436	H-bonds	1 H-bond
+05	MeOH ... MeOH 0.90	MeOH-MeOH_0.90	C1	-5.279	H-bonds	1 H-bond
+05	MeOH ... MeOH 0.95	MeOH-MeOH_0.95	C1	-5.691	H-bonds	1 H-bond
+05	MeOH ... MeOH 1.00	MeOH-MeOH_1.00	C1	-5.745	H-bonds	1 H-bond
+05	MeOH ... MeOH 1.05	MeOH-MeOH_1.05	C1	-5.578	H-bonds	1 H-bond
+05	MeOH ... MeOH 1.10	MeOH-MeOH_1.10	C1	-5.283	H-bonds	1 H-bond
+05	MeOH ... MeOH 1.25	MeOH-MeOH_1.25	C1	-4.141	H-bonds	1 H-bond
+05	MeOH ... MeOH 1.50	MeOH-MeOH_1.50	C1	-2.524	H-bonds	1 H-bond
+05	MeOH ... MeOH 2.00	MeOH-MeOH_2.00	C1	-1.009	H-bonds	1 H-bond
+06	MeOH ... MeNH2 0.90	MeOH-MeNH2_0.90	C1	-6.972	H-bonds	1 H-bond
+06	MeOH ... MeNH2 0.95	MeOH-MeNH2_0.95	C1	-7.472	H-bonds	1 H-bond
+06	MeOH ... MeNH2 1.00	MeOH-MeNH2_1.00	C1	-7.540	H-bonds	1 H-bond
+06	MeOH ... MeNH2 1.05	MeOH-MeNH2_1.05	C1	-7.335	H-bonds	1 H-bond
+06	MeOH ... MeNH2 1.10	MeOH-MeNH2_1.10	C1	-6.967	H-bonds	1 H-bond
+06	MeOH ... MeNH2 1.25	MeOH-MeNH2_1.25	C1	-5.503	H-bonds	1 H-bond
+06	MeOH ... MeNH2 1.50	MeOH-MeNH2_1.50	C1	-3.349	H-bonds	1 H-bond
+06	MeOH ... MeNH2 2.00	MeOH-MeNH2_2.00	C1	-1.274	H-bonds	1 H-bond
+07	MeOH ... Peptide 0.90	MeOH-Peptide_0.90	C1	-7.629	H-bonds	1 H-bond
+07	MeOH ... Peptide 0.95	MeOH-Peptide_0.95	C1	-8.140	H-bonds	1 H-bond
+07	MeOH ... Peptide 1.00	MeOH-Peptide_1.00	C1	-8.220	H-bonds	1 H-bond
+07	MeOH ... Peptide 1.05	MeOH-Peptide_1.05	C1	-8.024	H-bonds	1 H-bond
+07	MeOH ... Peptide 1.10	MeOH-Peptide_1.10	C1	-7.660	H-bonds	1 H-bond
+07	MeOH ... Peptide 1.25	MeOH-Peptide_1.25	C1	-6.182	H-bonds	1 H-bond
+07	MeOH ... Peptide 1.50	MeOH-Peptide_1.50	C1	-3.648	H-bonds	1 H-bond
+07	MeOH ... Peptide 2.00	MeOH-Peptide_2.00	C1	-1.096	H-bonds	1 H-bond
+08	MeOH ... Water 0.90	MeOH-Water_0.90	C1	-4.587	H-bonds	1 H-bond
+08	MeOH ... Water 0.95	MeOH-Water_0.95	C1	-4.952	H-bonds	1 H-bond
+08	MeOH ... Water 1.00	MeOH-Water_1.00	C1	-4.997	H-bonds	1 H-bond
+08	MeOH ... Water 1.05	MeOH-Water_1.05	C1	-4.847	H-bonds	1 H-bond
+08	MeOH ... Water 1.10	MeOH-Water_1.10	C1	-4.586	H-bonds	1 H-bond
+08	MeOH ... Water 1.25	MeOH-Water_1.25	C1	-3.589	H-bonds	1 H-bond
+08	MeOH ... Water 1.50	MeOH-Water_1.50	C1	-2.199	H-bonds	1 H-bond
+08	MeOH ... Water 2.00	MeOH-Water_2.00	C1	-0.907	H-bonds	1 H-bond
+09	MeNH2 ... MeOH 0.90	MeNH2-MeOH_0.90	C1	-2.814	H-bonds	1 H-bond
+09	MeNH2 ... MeOH 0.95	MeNH2-MeOH_0.95	C1	-3.041	H-bonds	1 H-bond
+09	MeNH2 ... MeOH 1.00	MeNH2-MeOH_1.00	C1	-3.035	H-bonds	1 H-bond
+09	MeNH2 ... MeOH 1.05	MeNH2-MeOH_1.05	C1	-2.896	H-bonds	1 H-bond
+09	MeNH2 ... MeOH 1.10	MeNH2-MeOH_1.10	C1	-2.687	H-bonds	1 H-bond
+09	MeNH2 ... MeOH 1.25	MeNH2-MeOH_1.25	C1	-1.976	H-bonds	1 H-bond
+09	MeNH2 ... MeOH 1.50	MeNH2-MeOH_1.50	C1	-1.100	H-bonds	1 H-bond
+09	MeNH2 ... MeOH 2.00	MeNH2-MeOH_2.00	C1	-0.393	H-bonds	1 H-bond
+10	MeNH2 ... MeNH2 0.90	MeNH2-MeNH2_0.90	C1	-3.696	H-bonds	1 H-bond
+10	MeNH2 ... MeNH2 0.95	MeNH2-MeNH2_0.95	C1	-4.093	H-bonds	1 H-bond
+10	MeNH2 ... MeNH2 1.00	MeNH2-MeNH2_1.00	C1	-4.152	H-bonds	1 H-bond
+10	MeNH2 ... MeNH2 1.05	MeNH2-MeNH2_1.05	C1	-4.008	H-bonds	1 H-bond
+10	MeNH2 ... MeNH2 1.10	MeNH2-MeNH2_1.10	C1	-3.752	H-bonds	1 H-bond
+10	MeNH2 ... MeNH2 1.25	MeNH2-MeNH2_1.25	C1	-2.793	H-bonds	1 H-bond
+10	MeNH2 ... MeNH2 1.50	MeNH2-MeNH2_1.50	C1	-1.307	H-bonds	1 H-bond
+10	MeNH2 ... MeNH2 2.00	MeNH2-MeNH2_2.00	C1	-0.387	H-bonds	1 H-bond
+11	MeNH2 ... Peptide 0.90	MeNH2-Peptide_0.90	C1	-4.949	H-bonds	1 H-bond
+11	MeNH2 ... Peptide 0.95	MeNH2-Peptide_0.95	C1	-5.356	H-bonds	1 H-bond
+11	MeNH2 ... Peptide 1.00	MeNH2-Peptide_1.00	C1	-5.406	H-bonds	1 H-bond
+11	MeNH2 ... Peptide 1.05	MeNH2-Peptide_1.05	C1	-5.236	H-bonds	1 H-bond
+11	MeNH2 ... Peptide 1.10	MeNH2-Peptide_1.10	C1	-4.939	H-bonds	1 H-bond
+11	MeNH2 ... Peptide 1.25	MeNH2-Peptide_1.25	C1	-3.209	H-bonds	1 H-bond
+11	MeNH2 ... Peptide 1.50	MeNH2-Peptide_1.50	C1	-1.401	H-bonds	1 H-bond
+11	MeNH2 ... Peptide 2.00	MeNH2-Peptide_2.00	C1	-0.455	H-bonds	1 H-bond
+12	MeNH2 ... Water 0.90	MeNH2-Water_0.90	C1	-6.747	H-bonds	1 H-bond
+12	MeNH2 ... Water 0.95	MeNH2-Water_0.95	C1	-7.203	H-bonds	1 H-bond
+12	MeNH2 ... Water 1.00	MeNH2-Water_1.00	C1	-7.245	H-bonds	1 H-bond
+12	MeNH2 ... Water 1.05	MeNH2-Water_1.05	C1	-7.029	H-bonds	1 H-bond
+12	MeNH2 ... Water 1.10	MeNH2-Water_1.10	C1	-6.657	H-bonds	1 H-bond
+12	MeNH2 ... Water 1.25	MeNH2-Water_1.25	C1	-5.222	H-bonds	1 H-bond
+12	MeNH2 ... Water 1.50	MeNH2-Water_1.50	C1	-3.153	H-bonds	1 H-bond
+12	MeNH2 ... Water 2.00	MeNH2-Water_2.00	C1	-1.195	H-bonds	1 H-bond
+13	Peptide ... MeOH 0.90	Peptide-MeOH_0.90	C1	-5.673	H-bonds	1 H-bond
+13	Peptide ... MeOH 0.95	Peptide-MeOH_0.95	C1	-6.107	H-bonds	1 H-bond
+13	Peptide ... MeOH 1.00	Peptide-MeOH_1.00	C1	-6.180	H-bonds	1 H-bond
+13	Peptide ... MeOH 1.05	Peptide-MeOH_1.05	C1	-6.027	H-bonds	1 H-bond
+13	Peptide ... MeOH 1.10	Peptide-MeOH_1.10	C1	-5.741	H-bonds	1 H-bond
+13	Peptide ... MeOH 1.25	Peptide-MeOH_1.25	C1	-4.604	H-bonds	1 H-bond
+13	Peptide ... MeOH 1.50	Peptide-MeOH_1.50	C1	-2.946	H-bonds	1 H-bond
+13	Peptide ... MeOH 2.00	Peptide-MeOH_2.00	C1	-1.303	H-bonds	1 H-bond
+14	Peptide ... MeNH2 0.90	Peptide-MeNH2_0.90	C1	-6.812	H-bonds	1 H-bond
+14	Peptide ... MeNH2 0.95	Peptide-MeNH2_0.95	C1	-7.341	H-bonds	1 H-bond
+14	Peptide ... MeNH2 1.00	Peptide-MeNH2_1.00	C1	-7.451	H-bonds	1 H-bond
+14	Peptide ... MeNH2 1.05	Peptide-MeNH2_1.05	C1	-7.291	H-bonds	1 H-bond
+14	Peptide ... MeNH2 1.10	Peptide-MeNH2_1.10	C1	-6.966	H-bonds	1 H-bond
+14	Peptide ... MeNH2 1.25	Peptide-MeNH2_1.25	C1	-5.611	H-bonds	1 H-bond
+14	Peptide ... MeNH2 1.50	Peptide-MeNH2_1.50	C1	-3.553	H-bonds	1 H-bond
+14	Peptide ... MeNH2 2.00	Peptide-MeNH2_2.00	C1	-1.489	H-bonds	1 H-bond
+15	Peptide ... Peptide 0.90	Peptide-Peptide_0.90	C1	-8.015	H-bonds	1 H-bond
+15	Peptide ... Peptide 0.95	Peptide-Peptide_0.95	C1	-8.531	H-bonds	1 H-bond
+15	Peptide ... Peptide 1.00	Peptide-Peptide_1.00	C1	-8.624	H-bonds	1 H-bond
+15	Peptide ... Peptide 1.05	Peptide-Peptide_1.05	C1	-8.445	H-bonds	1 H-bond
+15	Peptide ... Peptide 1.10	Peptide-Peptide_1.10	C1	-8.098	H-bonds	1 H-bond
+15	Peptide ... Peptide 1.25	Peptide-Peptide_1.25	C1	-6.657	H-bonds	1 H-bond
+15	Peptide ... Peptide 1.50	Peptide-Peptide_1.50	C1	-4.415	H-bonds	1 H-bond
+15	Peptide ... Peptide 2.00	Peptide-Peptide_2.00	C1	-1.774	H-bonds	1 H-bond
+16	Peptide ... Water 0.90	Peptide-Water_0.90	C1	-4.695	H-bonds	1 H-bond
+16	Peptide ... Water 0.95	Peptide-Water_0.95	C1	-5.061	H-bonds	1 H-bond
+16	Peptide ... Water 1.00	Peptide-Water_1.00	C1	-5.118	H-bonds	1 H-bond
+16	Peptide ... Water 1.05	Peptide-Water_1.05	C1	-4.983	H-bonds	1 H-bond
+16	Peptide ... Water 1.10	Peptide-Water_1.10	C1	-4.740	H-bonds	1 H-bond
+16	Peptide ... Water 1.25	Peptide-Water_1.25	C1	-3.793	H-bonds	1 H-bond
+16	Peptide ... Water 1.50	Peptide-Water_1.50	C1	-2.449	H-bonds	1 H-bond
+16	Peptide ... Water 2.00	Peptide-Water_2.00	C1	-1.133	H-bonds	1 H-bond
+17	Uracil ... Uracil (BP) 0.90	Uracil-Uracil_BP_0.90	C1	-15.700	H-bonds	2 H-bond
+17	Uracil ... Uracil (BP) 0.95	Uracil-Uracil_BP_0.95	C1	-16.898	H-bonds	2 H-bond
+17	Uracil ... Uracil (BP) 1.00	Uracil-Uracil_BP_1.00	C1	-17.182	H-bonds	2 H-bond
+17	Uracil ... Uracil (BP) 1.05	Uracil-Uracil_BP_1.05	C1	-16.864	H-bonds	2 H-bond
+17	Uracil ... Uracil (BP) 1.10	Uracil-Uracil_BP_1.10	C1	-16.169	H-bonds	2 H-bond
+17	Uracil ... Uracil (BP) 1.25	Uracil-Uracil_BP_1.25	C1	-13.150	H-bonds	2 H-bond
+17	Uracil ... Uracil (BP) 1.50	Uracil-Uracil_BP_1.50	C1	-8.354	H-bonds	2 H-bond
+17	Uracil ... Uracil (BP) 2.00	Uracil-Uracil_BP_2.00	C1	-3.333	H-bonds	2 H-bond
+18	Water ... Pyridine 0.90	Water-Pyridine_0.90	C1	-6.392	H-bonds	2 H-bond
+18	Water ... Pyridine 0.95	Water-Pyridine_0.95	C1	-6.804	H-bonds	2 H-bond
+18	Water ... Pyridine 1.00	Water-Pyridine_1.00	C1	-6.834	H-bonds	2 H-bond
+18	Water ... Pyridine 1.05	Water-Pyridine_1.05	C1	-6.624	H-bonds	2 H-bond
+18	Water ... Pyridine 1.10	Water-Pyridine_1.10	C1	-6.273	H-bonds	2 H-bond
+18	Water ... Pyridine 1.25	Water-Pyridine_1.25	C1	-4.931	H-bonds	2 H-bond
+18	Water ... Pyridine 1.50	Water-Pyridine_1.50	C1	-3.011	H-bonds	2 H-bond
+18	Water ... Pyridine 2.00	Water-Pyridine_2.00	C1	-1.186	H-bonds	2 H-bond
+19	MeOH ... Pyridine 0.90	MeOH-Pyridine_0.90	C1	-6.783	H-bonds	2 H-bond
+19	MeOH ... Pyridine 0.95	MeOH-Pyridine_0.95	C1	-7.307	H-bonds	2 H-bond
+19	MeOH ... Pyridine 1.00	MeOH-Pyridine_1.00	C1	-7.404	H-bonds	2 H-bond
+19	MeOH ... Pyridine 1.05	MeOH-Pyridine_1.05	C1	-7.226	H-bonds	2 H-bond
+19	MeOH ... Pyridine 1.10	MeOH-Pyridine_1.10	C1	-6.882	H-bonds	2 H-bond
+19	MeOH ... Pyridine 1.25	MeOH-Pyridine_1.25	C1	-5.479	H-bonds	2 H-bond
+19	MeOH ... Pyridine 1.50	MeOH-Pyridine_1.50	C1	-3.381	H-bonds	2 H-bond
+19	MeOH ... Pyridine 2.00	MeOH-Pyridine_2.00	C1	-1.331	H-bonds	2 H-bond
+20	AcOH ... AcOH 0.90	AcOH-AcOH_0.90	C1	-17.449	H-bonds	2 H-bond
+20	AcOH ... AcOH 0.95	AcOH-AcOH_0.95	C1	-18.787	H-bonds	2 H-bond
+20	AcOH ... AcOH 1.00	AcOH-AcOH_1.00	C1	-19.090	H-bonds	2 H-bond
+20	AcOH ... AcOH 1.05	AcOH-AcOH_1.05	C1	-18.724	H-bonds	2 H-bond
+20	AcOH ... AcOH 1.10	AcOH-AcOH_1.10	C1	-17.938	H-bonds	2 H-bond
+20	AcOH ... AcOH 1.25	AcOH-AcOH_1.25	C1	-14.558	H-bonds	2 H-bond
+20	AcOH ... AcOH 1.50	AcOH-AcOH_1.50	C1	-9.207	H-bonds	2 H-bond
+20	AcOH ... AcOH 2.00	AcOH-AcOH_2.00	C1	-3.592	H-bonds	2 H-bond
+21	AcNH2 ... AcNH2 0.90	AcNH2-AcNH2_0.90	C1	-14.926	H-bonds	2 H-bond
+21	AcNH2 ... AcNH2 0.95	AcNH2-AcNH2_0.95	C1	-16.026	H-bonds	2 H-bond
+21	AcNH2 ... AcNH2 1.00	AcNH2-AcNH2_1.00	C1	-16.260	H-bonds	2 H-bond
+21	AcNH2 ... AcNH2 1.05	AcNH2-AcNH2_1.05	C1	-15.935	H-bonds	2 H-bond
+21	AcNH2 ... AcNH2 1.10	AcNH2-AcNH2_1.10	C1	-15.262	H-bonds	2 H-bond
+21	AcNH2 ... AcNH2 1.25	AcNH2-AcNH2_1.25	C1	-12.418	H-bonds	2 H-bond
+21	AcNH2 ... AcNH2 1.50	AcNH2-AcNH2_1.50	C1	-7.997	H-bonds	2 H-bond
+21	AcNH2 ... AcNH2 2.00	AcNH2-AcNH2_2.00	C1	-2.999	H-bonds	2 H-bond
+22	AcOH ... Uracil 0.90	AcOH-Uracil_0.90	C1	-17.902	H-bonds	2 H-bond
+22	AcOH ... Uracil 0.95	AcOH-Uracil_0.95	C1	-19.185	H-bonds	2 H-bond
+22	AcOH ... Uracil 1.00	AcOH-Uracil_1.00	C1	-19.491	H-bonds	2 H-bond
+22	AcOH ... Uracil 1.05	AcOH-Uracil_1.05	C1	-19.152	H-bonds	2 H-bond
+22	AcOH ... Uracil 1.10	AcOH-Uracil_1.10	C1	-18.406	H-bonds	2 H-bond
+22	AcOH ... Uracil 1.25	AcOH-Uracil_1.25	C1	-15.137	H-bonds	2 H-bond
+22	AcOH ... Uracil 1.50	AcOH-Uracil_1.50	C1	-9.859	H-bonds	2 H-bond
+22	AcOH ... Uracil 2.00	AcOH-Uracil_2.00	C1	-4.146	H-bonds	2 H-bond
+23	AcNH2 ... Uracil 0.90	AcNH2-Uracil_0.90	C1	-17.697	H-bonds	2 H-bond
+23	AcNH2 ... Uracil 0.95	AcNH2-Uracil_0.95	C1	-18.889	H-bonds	2 H-bond
+23	AcNH2 ... Uracil 1.00	AcNH2-Uracil_1.00	C1	-19.190	H-bonds	2 H-bond
+23	AcNH2 ... Uracil 1.05	AcNH2-Uracil_1.05	C1	-18.898	H-bonds	2 H-bond
+23	AcNH2 ... Uracil 1.10	AcNH2-Uracil_1.10	C1	-18.224	H-bonds	2 H-bond
+23	AcNH2 ... Uracil 1.25	AcNH2-Uracil_1.25	C1	-15.208	H-bonds	2 H-bond
+23	AcNH2 ... Uracil 1.50	AcNH2-Uracil_1.50	C1	-10.229	H-bonds	2 H-bond
+23	AcNH2 ... Uracil 2.00	AcNH2-Uracil_2.00	C1	-4.653	H-bonds	2 H-bond
+24	Benzene ... Benzene (pi-pi) 0.90	Benzene-Benzene_pi-pi_0.90	C1	-0.225	dispersion	dispersion p-p
+24	Benzene ... Benzene (pi-pi) 0.95	Benzene-Benzene_pi-pi_0.95	C1	-2.069	dispersion	dispersion p-p
+24	Benzene ... Benzene (pi-pi) 1.00	Benzene-Benzene_pi-pi_1.00	C1	-2.736	dispersion	dispersion p-p
+24	Benzene ... Benzene (pi-pi) 1.05	Benzene-Benzene_pi-pi_1.05	C1	-2.799	dispersion	dispersion p-p
+24	Benzene ... Benzene (pi-pi) 1.10	Benzene-Benzene_pi-pi_1.10	C1	-2.578	dispersion	dispersion p-p
+24	Benzene ... Benzene (pi-pi) 1.25	Benzene-Benzene_pi-pi_1.25	C1	-1.538	dispersion	dispersion p-p
+24	Benzene ... Benzene (pi-pi) 1.50	Benzene-Benzene_pi-pi_1.50	C1	-0.487	dispersion	dispersion p-p
+24	Benzene ... Benzene (pi-pi) 2.00	Benzene-Benzene_pi-pi_2.00	C1	-0.063	dispersion	dispersion p-p
+25	Pyridine ... Pyridine (pi-pi) 0.90	Pyridine-Pyridine_pi-pi_0.90	C1	-1.321	dispersion	dispersion p-p
+25	Pyridine ... Pyridine (pi-pi) 0.95	Pyridine-Pyridine_pi-pi_0.95	C1	-3.168	dispersion	dispersion p-p
+25	Pyridine ... Pyridine (pi-pi) 1.00	Pyridine-Pyridine_pi-pi_1.00	C1	-3.825	dispersion	dispersion p-p
+25	Pyridine ... Pyridine (pi-pi) 1.05	Pyridine-Pyridine_pi-pi_1.05	C1	-3.855	dispersion	dispersion p-p
+25	Pyridine ... Pyridine (pi-pi) 1.10	Pyridine-Pyridine_pi-pi_1.10	C1	-3.580	dispersion	dispersion p-p
+25	Pyridine ... Pyridine (pi-pi) 1.25	Pyridine-Pyridine_pi-pi_1.25	C1	-2.356	dispersion	dispersion p-p
+25	Pyridine ... Pyridine (pi-pi) 1.50	Pyridine-Pyridine_pi-pi_1.50	C1	-0.960	dispersion	dispersion p-p
+25	Pyridine ... Pyridine (pi-pi) 2.00	Pyridine-Pyridine_pi-pi_2.00	C1	-0.236	dispersion	dispersion p-p
+26	Uracil ... Uracil (pi-pi) 0.90	Uracil-Uracil_pi-pi_0.90	C1	-7.855	dispersion	dispersion p-p
+26	Uracil ... Uracil (pi-pi) 0.95	Uracil-Uracil_pi-pi_0.95	C1	-9.498	dispersion	dispersion p-p
+26	Uracil ... Uracil (pi-pi) 1.00	Uracil-Uracil_pi-pi_1.00	C1	-9.821	dispersion	dispersion p-p
+26	Uracil ... Uracil (pi-pi) 1.05	Uracil-Uracil_pi-pi_1.05	C1	-9.429	dispersion	dispersion p-p
+26	Uracil ... Uracil (pi-pi) 1.10	Uracil-Uracil_pi-pi_1.10	C1	-8.685	dispersion	dispersion p-p
+26	Uracil ... Uracil (pi-pi) 1.25	Uracil-Uracil_pi-pi_1.25	C1	-6.072	dispersion	dispersion p-p
+26	Uracil ... Uracil (pi-pi) 1.50	Uracil-Uracil_pi-pi_1.50	C1	-3.096	dispersion	dispersion p-p
+26	Uracil ... Uracil (pi-pi) 2.00	Uracil-Uracil_pi-pi_2.00	C1	-0.992	dispersion	dispersion p-p
+27	Benzene ... Pyridine (pi-pi) 0.90	Benzene-Pyridine_pi-pi_0.90	C1	-0.725	dispersion	dispersion p-p
+27	Benzene ... Pyridine (pi-pi) 0.95	Benzene-Pyridine_pi-pi_0.95	C1	-2.690	dispersion	dispersion p-p
+27	Benzene ... Pyridine (pi-pi) 1.00	Benzene-Pyridine_pi-pi_1.00	C1	-3.369	dispersion	dispersion p-p
+27	Benzene ... Pyridine (pi-pi) 1.05	Benzene-Pyridine_pi-pi_1.05	C1	-3.398	dispersion	dispersion p-p
+27	Benzene ... Pyridine (pi-pi) 1.10	Benzene-Pyridine_pi-pi_1.10	C1	-3.128	dispersion	dispersion p-p
+27	Benzene ... Pyridine (pi-pi) 1.25	Benzene-Pyridine_pi-pi_1.25	C1	-1.970	dispersion	dispersion p-p
+27	Benzene ... Pyridine (pi-pi) 1.50	Benzene-Pyridine_pi-pi_1.50	C1	-0.721	dispersion	dispersion p-p
+27	Benzene ... Pyridine (pi-pi) 2.00	Benzene-Pyridine_pi-pi_2.00	C1	-0.145	dispersion	dispersion p-p
+28	Benzene ... Uracil (pi-pi) 0.90	Benzene-Uracil_pi-pi_0.90	C1	-3.531	dispersion	dispersion p-p
+28	Benzene ... Uracil (pi-pi) 0.95	Benzene-Uracil_pi-pi_0.95	C1	-5.216	dispersion	dispersion p-p
+28	Benzene ... Uracil (pi-pi) 1.00	Benzene-Uracil_pi-pi_1.00	C1	-5.705	dispersion	dispersion p-p
+28	Benzene ... Uracil (pi-pi) 1.05	Benzene-Uracil_pi-pi_1.05	C1	-5.549	dispersion	dispersion p-p
+28	Benzene ... Uracil (pi-pi) 1.10	Benzene-Uracil_pi-pi_1.10	C1	-5.077	dispersion	dispersion p-p
+28	Benzene ... Uracil (pi-pi) 1.25	Benzene-Uracil_pi-pi_1.25	C1	-3.292	dispersion	dispersion p-p
+28	Benzene ... Uracil (pi-pi) 1.50	Benzene-Uracil_pi-pi_1.50	C1	-1.364	dispersion	dispersion p-p
+28	Benzene ... Uracil (pi-pi) 2.00	Benzene-Uracil_pi-pi_2.00	C1	-0.251	dispersion	dispersion p-p
+29	Pyridine ... Uracil (pi-pi) 0.90	Pyridine-Uracil_pi-pi_0.90	C1	-3.740	dispersion	dispersion p-p
+29	Pyridine ... Uracil (pi-pi) 0.95	Pyridine-Uracil_pi-pi_0.95	C1	-6.173	dispersion	dispersion p-p
+29	Pyridine ... Uracil (pi-pi) 1.00	Pyridine-Uracil_pi-pi_1.00	C1	-6.814	dispersion	dispersion p-p
+29	Pyridine ... Uracil (pi-pi) 1.05	Pyridine-Uracil_pi-pi_1.05	C1	-6.581	dispersion	dispersion p-p
+29	Pyridine ... Uracil (pi-pi) 1.10	Pyridine-Uracil_pi-pi_1.10	C1	-5.971	dispersion	dispersion p-p
+29	Pyridine ... Uracil (pi-pi) 1.25	Pyridine-Uracil_pi-pi_1.25	C1	-3.866	dispersion	dispersion p-p
+29	Pyridine ... Uracil (pi-pi) 1.50	Pyridine-Uracil_pi-pi_1.50	C1	-1.776	dispersion	dispersion p-p
+29	Pyridine ... Uracil (pi-pi) 2.00	Pyridine-Uracil_pi-pi_2.00	C1	-0.532	dispersion	dispersion p-p
+30	Benzene ... Ethene 0.90	Benzene-Ethene_0.90	C1	-0.259	dispersion	dispersion p-p
+30	Benzene ... Ethene 0.95	Benzene-Ethene_0.95	C1	-1.125	dispersion	dispersion p-p
+30	Benzene ... Ethene 1.00	Benzene-Ethene_1.00	C1	-1.412	dispersion	dispersion p-p
+30	Benzene ... Ethene 1.05	Benzene-Ethene_1.05	C1	-1.401	dispersion	dispersion p-p
+30	Benzene ... Ethene 1.10	Benzene-Ethene_1.10	C1	-1.256	dispersion	dispersion p-p
+30	Benzene ... Ethene 1.25	Benzene-Ethene_1.25	C1	-0.689	dispersion	dispersion p-p
+30	Benzene ... Ethene 1.50	Benzene-Ethene_1.50	C1	-0.174	dispersion	dispersion p-p
+30	Benzene ... Ethene 2.00	Benzene-Ethene_2.00	C1	0.009	dispersion	dispersion p-p
+31	Uracil ... Ethene 0.90	Uracil-Ethene_0.90	C1	-2.567	dispersion	dispersion p-p
+31	Uracil ... Ethene 0.95	Uracil-Ethene_0.95	C1	-3.237	dispersion	dispersion p-p
+31	Uracil ... Ethene 1.00	Uracil-Ethene_1.00	C1	-3.378	dispersion	dispersion p-p
+31	Uracil ... Ethene 1.05	Uracil-Ethene_1.05	C1	-3.237	dispersion	dispersion p-p
+31	Uracil ... Ethene 1.10	Uracil-Ethene_1.10	C1	-2.959	dispersion	dispersion p-p
+31	Uracil ... Ethene 1.25	Uracil-Ethene_1.25	C1	-1.990	dispersion	dispersion p-p
+31	Uracil ... Ethene 1.50	Uracil-Ethene_1.50	C1	-0.932	dispersion	dispersion p-p
+31	Uracil ... Ethene 2.00	Uracil-Ethene_2.00	C1	-0.254	dispersion	dispersion p-p
+32	Uracil ... Ethyne 0.90	Uracil-Ethyne_0.90	C1	-2.793	dispersion	dispersion p-p
+32	Uracil ... Ethyne 0.95	Uracil-Ethyne_0.95	C1	-3.563	dispersion	dispersion p-p
+32	Uracil ... Ethyne 1.00	Uracil-Ethyne_1.00	C1	-3.737	dispersion	dispersion p-p
+32	Uracil ... Ethyne 1.05	Uracil-Ethyne_1.05	C1	-3.591	dispersion	dispersion p-p
+32	Uracil ... Ethyne 1.10	Uracil-Ethyne_1.10	C1	-3.291	dispersion	dispersion p-p
+32	Uracil ... Ethyne 1.25	Uracil-Ethyne_1.25	C1	-2.225	dispersion	dispersion p-p
+32	Uracil ... Ethyne 1.50	Uracil-Ethyne_1.50	C1	-1.042	dispersion	dispersion p-p
+32	Uracil ... Ethyne 2.00	Uracil-Ethyne_2.00	C1	-0.273	dispersion	dispersion p-p
+33	Pyridine ... Ethene 0.90	Pyridine-Ethene_0.90	C1	-0.885	dispersion	dispersion p-p
+33	Pyridine ... Ethene 0.95	Pyridine-Ethene_0.95	C1	-1.622	dispersion	dispersion p-p
+33	Pyridine ... Ethene 1.00	Pyridine-Ethene_1.00	C1	-1.861	dispersion	dispersion p-p
+33	Pyridine ... Ethene 1.05	Pyridine-Ethene_1.05	C1	-1.830	dispersion	dispersion p-p
+33	Pyridine ... Ethene 1.10	Pyridine-Ethene_1.10	C1	-1.668	dispersion	dispersion p-p
+33	Pyridine ... Ethene 1.25	Pyridine-Ethene_1.25	C1	-1.027	dispersion	dispersion p-p
+33	Pyridine ... Ethene 1.50	Pyridine-Ethene_1.50	C1	-0.366	dispersion	dispersion p-p
+33	Pyridine ... Ethene 2.00	Pyridine-Ethene_2.00	C1	-0.046	dispersion	dispersion p-p
+34	Pentane ... Pentane 0.90	Pentane-Pentane_0.90	C1	-2.856	dispersion	dispersion a-a
+34	Pentane ... Pentane 0.95	Pentane-Pentane_0.95	C1	-3.620	dispersion	dispersion a-a
+34	Pentane ... Pentane 1.00	Pentane-Pentane_1.00	C1	-3.774	dispersion	dispersion a-a
+34	Pentane ... Pentane 1.05	Pentane-Pentane_1.05	C1	-3.613	dispersion	dispersion a-a
+34	Pentane ... Pentane 1.10	Pentane-Pentane_1.10	C1	-3.304	dispersion	dispersion a-a
+34	Pentane ... Pentane 1.25	Pentane-Pentane_1.25	C1	-2.235	dispersion	dispersion a-a
+34	Pentane ... Pentane 1.50	Pentane-Pentane_1.50	C1	-1.050	dispersion	dispersion a-a
+34	Pentane ... Pentane 2.00	Pentane-Pentane_2.00	C1	-0.270	dispersion	dispersion a-a
+35	Neopentane ... Pentane 0.90	Neopentane-Pentane_0.90	C1	-1.852	dispersion	dispersion a-a
+35	Neopentane ... Pentane 0.95	Neopentane-Pentane_0.95	C1	-2.492	dispersion	dispersion a-a
+35	Neopentane ... Pentane 1.00	Neopentane-Pentane_1.00	C1	-2.611	dispersion	dispersion a-a
+35	Neopentane ... Pentane 1.05	Neopentane-Pentane_1.05	C1	-2.484	dispersion	dispersion a-a
+35	Neopentane ... Pentane 1.10	Neopentane-Pentane_1.10	C1	-2.254	dispersion	dispersion a-a
+35	Neopentane ... Pentane 1.25	Neopentane-Pentane_1.25	C1	-1.496	dispersion	dispersion a-a
+35	Neopentane ... Pentane 1.50	Neopentane-Pentane_1.50	C1	-0.698	dispersion	dispersion a-a
+35	Neopentane ... Pentane 2.00	Neopentane-Pentane_2.00	C1	-0.184	dispersion	dispersion a-a
+36	Neopentane ... Neopentane 0.90	Neopentane-Neopentane_0.90	C1	-1.454	dispersion	dispersion a-a
+36	Neopentane ... Neopentane 0.95	Neopentane-Neopentane_0.95	C1	-1.735	dispersion	dispersion a-a
+36	Neopentane ... Neopentane 1.00	Neopentane-Neopentane_1.00	C1	-1.772	dispersion	dispersion a-a
+36	Neopentane ... Neopentane 1.05	Neopentane-Neopentane_1.05	C1	-1.684	dispersion	dispersion a-a
+36	Neopentane ... Neopentane 1.10	Neopentane-Neopentane_1.10	C1	-1.537	dispersion	dispersion a-a
+36	Neopentane ... Neopentane 1.25	Neopentane-Neopentane_1.25	C1	-1.048	dispersion	dispersion a-a
+36	Neopentane ... Neopentane 1.50	Neopentane-Neopentane_1.50	C1	-0.504	dispersion	dispersion a-a
+36	Neopentane ... Neopentane 2.00	Neopentane-Neopentane_2.00	C1	-0.135	dispersion	dispersion a-a
+37	Cyclopentane ... Neopentane 0.90	Cyclopentane-Neopentane_0.90	C1	-1.607	dispersion	dispersion a-a
+37	Cyclopentane ... Neopentane 0.95	Cyclopentane-Neopentane_0.95	C1	-2.250	dispersion	dispersion a-a
+37	Cyclopentane ... Neopentane 1.00	Cyclopentane-Neopentane_1.00	C1	-2.405	dispersion	dispersion a-a
+37	Cyclopentane ... Neopentane 1.05	Cyclopentane-Neopentane_1.05	C1	-2.325	dispersion	dispersion a-a
+37	Cyclopentane ... Neopentane 1.10	Cyclopentane-Neopentane_1.10	C1	-2.138	dispersion	dispersion a-a
+37	Cyclopentane ... Neopentane 1.25	Cyclopentane-Neopentane_1.25	C1	-1.467	dispersion	dispersion a-a
+37	Cyclopentane ... Neopentane 1.50	Cyclopentane-Neopentane_1.50	C1	-0.706	dispersion	dispersion a-a
+37	Cyclopentane ... Neopentane 2.00	Cyclopentane-Neopentane_2.00	C1	-0.188	dispersion	dispersion a-a
+38	Cyclopentane ... Cyclopentane 0.90	Cyclopentane-Cyclopentane_0.90	C1	-2.237	dispersion	dispersion a-a
+38	Cyclopentane ... Cyclopentane 0.95	Cyclopentane-Cyclopentane_0.95	C1	-2.842	dispersion	dispersion a-a
+38	Cyclopentane ... Cyclopentane 1.00	Cyclopentane-Cyclopentane_1.00	C1	-2.997	dispersion	dispersion a-a
+38	Cyclopentane ... Cyclopentane 1.05	Cyclopentane-Cyclopentane_1.05	C1	-2.860	dispersion	dispersion a-a
+38	Cyclopentane ... Cyclopentane 1.10	Cyclopentane-Cyclopentane_1.10	C1	-2.595	dispersion	dispersion a-a
+38	Cyclopentane ... Cyclopentane 1.25	Cyclopentane-Cyclopentane_1.25	C1	-1.713	dispersion	dispersion a-a
+38	Cyclopentane ... Cyclopentane 1.50	Cyclopentane-Cyclopentane_1.50	C1	-0.791	dispersion	dispersion a-a
+38	Cyclopentane ... Cyclopentane 2.00	Cyclopentane-Cyclopentane_2.00	C1	-0.204	dispersion	dispersion a-a
+39	Benzene ... Cyclopentane 0.90	Benzene-Cyclopentane_0.90	C1	-2.156	dispersion	dispersion p-a
+39	Benzene ... Cyclopentane 0.95	Benzene-Cyclopentane_0.95	C1	-3.239	dispersion	dispersion p-a
+39	Benzene ... Cyclopentane 1.00	Benzene-Cyclopentane_1.00	C1	-3.569	dispersion	dispersion p-a
+39	Benzene ... Cyclopentane 1.05	Benzene-Cyclopentane_1.05	C1	-3.470	dispersion	dispersion p-a
+39	Benzene ... Cyclopentane 1.10	Benzene-Cyclopentane_1.10	C1	-3.167	dispersion	dispersion p-a
+39	Benzene ... Cyclopentane 1.25	Benzene-Cyclopentane_1.25	C1	-2.065	dispersion	dispersion p-a
+39	Benzene ... Cyclopentane 1.50	Benzene-Cyclopentane_1.50	C1	-0.895	dispersion	dispersion p-a
+39	Benzene ... Cyclopentane 2.00	Benzene-Cyclopentane_2.00	C1	-0.189	dispersion	dispersion p-a
+40	Benzene ... Neopentane 0.90	Benzene-Neopentane_0.90	C1	-1.863	dispersion	dispersion p-a
+40	Benzene ... Neopentane 0.95	Benzene-Neopentane_0.95	C1	-2.675	dispersion	dispersion p-a
+40	Benzene ... Neopentane 1.00	Benzene-Neopentane_1.00	C1	-2.894	dispersion	dispersion p-a
+40	Benzene ... Neopentane 1.05	Benzene-Neopentane_1.05	C1	-2.804	dispersion	dispersion p-a
+40	Benzene ... Neopentane 1.10	Benzene-Neopentane_1.10	C1	-2.568	dispersion	dispersion p-a
+40	Benzene ... Neopentane 1.25	Benzene-Neopentane_1.25	C1	-1.703	dispersion	dispersion p-a
+40	Benzene ... Neopentane 1.50	Benzene-Neopentane_1.50	C1	-0.765	dispersion	dispersion p-a
+40	Benzene ... Neopentane 2.00	Benzene-Neopentane_2.00	C1	-0.187	dispersion	dispersion p-a
+41	Uracil ... Pentane 0.90	Uracil-Pentane_0.90	C1	-3.827	dispersion	dispersion p-a
+41	Uracil ... Pentane 0.95	Uracil-Pentane_0.95	C1	-4.692	dispersion	dispersion p-a
+41	Uracil ... Pentane 1.00	Uracil-Pentane_1.00	C1	-4.839	dispersion	dispersion p-a
+41	Uracil ... Pentane 1.05	Uracil-Pentane_1.05	C1	-4.600	dispersion	dispersion p-a
+41	Uracil ... Pentane 1.10	Uracil-Pentane_1.10	C1	-4.079	dispersion	dispersion p-a
+41	Uracil ... Pentane 1.25	Uracil-Pentane_1.25	C1	-2.443	dispersion	dispersion p-a
+41	Uracil ... Pentane 1.50	Uracil-Pentane_1.50	C1	-0.976	dispersion	dispersion p-a
+41	Uracil ... Pentane 2.00	Uracil-Pentane_2.00	C1	-0.213	dispersion	dispersion p-a
+42	Uracil ... Cyclopentane 0.90	Uracil-Cyclopentane_0.90	C1	-3.049	dispersion	dispersion p-a
+42	Uracil ... Cyclopentane 0.95	Uracil-Cyclopentane_0.95	C1	-3.968	dispersion	dispersion p-a
+42	Uracil ... Cyclopentane 1.00	Uracil-Cyclopentane_1.00	C1	-4.132	dispersion	dispersion p-a
+42	Uracil ... Cyclopentane 1.05	Uracil-Cyclopentane_1.05	C1	-3.919	dispersion	dispersion p-a
+42	Uracil ... Cyclopentane 1.10	Uracil-Cyclopentane_1.10	C1	-3.539	dispersion	dispersion p-a
+42	Uracil ... Cyclopentane 1.25	Uracil-Cyclopentane_1.25	C1	-2.294	dispersion	dispersion p-a
+42	Uracil ... Cyclopentane 1.50	Uracil-Cyclopentane_1.50	C1	-1.017	dispersion	dispersion p-a
+42	Uracil ... Cyclopentane 2.00	Uracil-Cyclopentane_2.00	C1	-0.247	dispersion	dispersion p-a
+43	Uracil ... Neopentane 0.90	Uracil-Neopentane_0.90	C1	-2.868	dispersion	dispersion p-a
+43	Uracil ... Neopentane 0.95	Uracil-Neopentane_0.95	C1	-3.599	dispersion	dispersion p-a
+43	Uracil ... Neopentane 1.00	Uracil-Neopentane_1.00	C1	-3.700	dispersion	dispersion p-a
+43	Uracil ... Neopentane 1.05	Uracil-Neopentane_1.05	C1	-3.489	dispersion	dispersion p-a
+43	Uracil ... Neopentane 1.10	Uracil-Neopentane_1.10	C1	-3.145	dispersion	dispersion p-a
+43	Uracil ... Neopentane 1.25	Uracil-Neopentane_1.25	C1	-2.045	dispersion	dispersion p-a
+43	Uracil ... Neopentane 1.50	Uracil-Neopentane_1.50	C1	-0.920	dispersion	dispersion p-a
+43	Uracil ... Neopentane 2.00	Uracil-Neopentane_2.00	C1	-0.229	dispersion	dispersion p-a
+44	Ethene ... Pentane 0.90	Ethene-Pentane_0.90	C1	-1.656	dispersion	dispersion p-a
+44	Ethene ... Pentane 0.95	Ethene-Pentane_0.95	C1	-1.971	dispersion	dispersion p-a
+44	Ethene ... Pentane 1.00	Ethene-Pentane_1.00	C1	-1.989	dispersion	dispersion p-a
+44	Ethene ... Pentane 1.05	Ethene-Pentane_1.05	C1	-1.862	dispersion	dispersion p-a
+44	Ethene ... Pentane 1.10	Ethene-Pentane_1.10	C1	-1.674	dispersion	dispersion p-a
+44	Ethene ... Pentane 1.25	Ethene-Pentane_1.25	C1	-1.090	dispersion	dispersion p-a
+44	Ethene ... Pentane 1.50	Ethene-Pentane_1.50	C1	-0.492	dispersion	dispersion p-a
+44	Ethene ... Pentane 2.00	Ethene-Pentane_2.00	C1	-0.120	dispersion	dispersion p-a
+45	Ethyne ... Pentane 0.90	Ethyne-Pentane_0.90	C1	-1.134	dispersion	dispersion p-a
+45	Ethyne ... Pentane 0.95	Ethyne-Pentane_0.95	C1	-1.631	dispersion	dispersion p-a
+45	Ethyne ... Pentane 1.00	Ethyne-Pentane_1.00	C1	-1.749	dispersion	dispersion p-a
+45	Ethyne ... Pentane 1.05	Ethyne-Pentane_1.05	C1	-1.676	dispersion	dispersion p-a
+45	Ethyne ... Pentane 1.10	Ethyne-Pentane_1.10	C1	-1.519	dispersion	dispersion p-a
+45	Ethyne ... Pentane 1.25	Ethyne-Pentane_1.25	C1	-0.977	dispersion	dispersion p-a
+45	Ethyne ... Pentane 1.50	Ethyne-Pentane_1.50	C1	-0.421	dispersion	dispersion p-a
+45	Ethyne ... Pentane 2.00	Ethyne-Pentane_2.00	C1	-0.097	dispersion	dispersion p-a
+46	Peptide ... Pentane 0.90	Peptide-Pentane_0.90	C1	-3.751	dispersion	dispersion p-a
+46	Peptide ... Pentane 0.95	Peptide-Pentane_0.95	C1	-4.205	dispersion	dispersion p-a
+46	Peptide ... Pentane 1.00	Peptide-Pentane_1.00	C1	-4.244	dispersion	dispersion p-a
+46	Peptide ... Pentane 1.05	Peptide-Pentane_1.05	C1	-4.048	dispersion	dispersion p-a
+46	Peptide ... Pentane 1.10	Peptide-Pentane_1.10	C1	-3.730	dispersion	dispersion p-a
+46	Peptide ... Pentane 1.25	Peptide-Pentane_1.25	C1	-2.628	dispersion	dispersion p-a
+46	Peptide ... Pentane 1.50	Peptide-Pentane_1.50	C1	-1.188	dispersion	dispersion p-a
+46	Peptide ... Pentane 2.00	Peptide-Pentane_2.00	C1	-0.286	dispersion	dispersion p-a
+47	Benzene ... Benzene (TS) 0.90	Benzene-Benzene_TS_0.90	C1	-1.643	others	other
+47	Benzene ... Benzene (TS) 0.95	Benzene-Benzene_TS_0.95	C1	-2.578	others	other
+47	Benzene ... Benzene (TS) 1.00	Benzene-Benzene_TS_1.00	C1	-2.866	others	other
+47	Benzene ... Benzene (TS) 1.05	Benzene-Benzene_TS_1.05	C1	-2.816	others	other
+47	Benzene ... Benzene (TS) 1.10	Benzene-Benzene_TS_1.10	C1	-2.604	others	other
+47	Benzene ... Benzene (TS) 1.25	Benzene-Benzene_TS_1.25	C1	-1.767	others	other
+47	Benzene ... Benzene (TS) 1.50	Benzene-Benzene_TS_1.50	C1	-0.828	others	other
+47	Benzene ... Benzene (TS) 2.00	Benzene-Benzene_TS_2.00	C1	-0.224	others	other
+48	Pyridine ... Pyridine (TS) 0.90	Pyridine-Pyridine_TS_0.90	C1	-2.526	others	other
+48	Pyridine ... Pyridine (TS) 0.95	Pyridine-Pyridine_TS_0.95	C1	-3.307	others	other
+48	Pyridine ... Pyridine (TS) 1.00	Pyridine-Pyridine_TS_1.00	C1	-3.533	others	other
+48	Pyridine ... Pyridine (TS) 1.05	Pyridine-Pyridine_TS_1.05	C1	-3.453	others	other
+48	Pyridine ... Pyridine (TS) 1.10	Pyridine-Pyridine_TS_1.10	C1	-3.218	others	other
+48	Pyridine ... Pyridine (TS) 1.25	Pyridine-Pyridine_TS_1.25	C1	-2.292	others	other
+48	Pyridine ... Pyridine (TS) 1.50	Pyridine-Pyridine_TS_1.50	C1	-1.178	others	other
+48	Pyridine ... Pyridine (TS) 2.00	Pyridine-Pyridine_TS_2.00	C1	-0.371	others	other
+49	Benzene ... Pyridine (TS) 0.90	Benzene-Pyridine_TS_0.90	C1	-2.087	others	other
+49	Benzene ... Pyridine (TS) 0.95	Benzene-Pyridine_TS_0.95	C1	-3.041	others	other
+49	Benzene ... Pyridine (TS) 1.00	Benzene-Pyridine_TS_1.00	C1	-3.324	others	other
+49	Benzene ... Pyridine (TS) 1.05	Benzene-Pyridine_TS_1.05	C1	-3.257	others	other
+49	Benzene ... Pyridine (TS) 1.10	Benzene-Pyridine_TS_1.10	C1	-3.020	others	other
+49	Benzene ... Pyridine (TS) 1.25	Benzene-Pyridine_TS_1.25	C1	-2.098	others	other
+49	Benzene ... Pyridine (TS) 1.50	Benzene-Pyridine_TS_1.50	C1	-1.049	others	other
+49	Benzene ... Pyridine (TS) 2.00	Benzene-Pyridine_TS_2.00	C1	-0.333	others	other
+50	Benzene ... Ethyne (CH-pi) 0.90	Benzene-Ethyne_CH-pi_0.90	C1	-1.869	others	other
+50	Benzene ... Ethyne (CH-pi) 0.95	Benzene-Ethyne_CH-pi_0.95	C1	-2.646	others	other
+50	Benzene ... Ethyne (CH-pi) 1.00	Benzene-Ethyne_CH-pi_1.00	C1	-2.864	others	other
+50	Benzene ... Ethyne (CH-pi) 1.05	Benzene-Ethyne_CH-pi_1.05	C1	-2.791	others	other
+50	Benzene ... Ethyne (CH-pi) 1.10	Benzene-Ethyne_CH-pi_1.10	C1	-2.580	others	other
+50	Benzene ... Ethyne (CH-pi) 1.25	Benzene-Ethyne_CH-pi_1.25	C1	-1.785	others	other
+50	Benzene ... Ethyne (CH-pi) 1.50	Benzene-Ethyne_CH-pi_1.50	C1	-0.889	others	other
+50	Benzene ... Ethyne (CH-pi) 2.00	Benzene-Ethyne_CH-pi_2.00	C1	-0.271	others	other
+51	Ethyne ... Ethyne (TS) 0.90	Ethyne-Ethyne_TS_0.90	C1	-1.207	others	other
+51	Ethyne ... Ethyne (TS) 0.95	Ethyne-Ethyne_TS_0.95	C1	-1.470	others	other
+51	Ethyne ... Ethyne (TS) 1.00	Ethyne-Ethyne_TS_1.00	C1	-1.523	others	other
+51	Ethyne ... Ethyne (TS) 1.05	Ethyne-Ethyne_TS_1.05	C1	-1.462	others	other
+51	Ethyne ... Ethyne (TS) 1.10	Ethyne-Ethyne_TS_1.10	C1	-1.346	others	other
+51	Ethyne ... Ethyne (TS) 1.25	Ethyne-Ethyne_TS_1.25	C1	-0.933	others	other
+51	Ethyne ... Ethyne (TS) 1.50	Ethyne-Ethyne_TS_1.50	C1	-0.461	others	other
+51	Ethyne ... Ethyne (TS) 2.00	Ethyne-Ethyne_TS_2.00	C1	-0.135	others	other
+52	Benzene ... AcOH (OH-pi) 0.90	Benzene-AcOH_OH-pi_0.90	C1	-3.968	others	other
+52	Benzene ... AcOH (OH-pi) 0.95	Benzene-AcOH_OH-pi_0.95	C1	-4.580	others	other
+52	Benzene ... AcOH (OH-pi) 1.00	Benzene-AcOH_OH-pi_1.00	C1	-4.704	others	other
+52	Benzene ... AcOH (OH-pi) 1.05	Benzene-AcOH_OH-pi_1.05	C1	-4.550	others	other
+52	Benzene ... AcOH (OH-pi) 1.10	Benzene-AcOH_OH-pi_1.10	C1	-4.250	others	other
+52	Benzene ... AcOH (OH-pi) 1.25	Benzene-AcOH_OH-pi_1.25	C1	-3.126	others	other
+52	Benzene ... AcOH (OH-pi) 1.50	Benzene-AcOH_OH-pi_1.50	C1	-1.699	others	other
+52	Benzene ... AcOH (OH-pi) 2.00	Benzene-AcOH_OH-pi_2.00	C1	-0.554	others	other
+53	Benzene ... AcNH2 (NH-pi) 0.90	Benzene-AcNH2_NH-pi_0.90	C1	-3.787	others	other
+53	Benzene ... AcNH2 (NH-pi) 0.95	Benzene-AcNH2_NH-pi_0.95	C1	-4.265	others	other
+53	Benzene ... AcNH2 (NH-pi) 1.00	Benzene-AcNH2_NH-pi_1.00	C1	-4.358	others	other
+53	Benzene ... AcNH2 (NH-pi) 1.05	Benzene-AcNH2_NH-pi_1.05	C1	-4.225	others	other
+53	Benzene ... AcNH2 (NH-pi) 1.10	Benzene-AcNH2_NH-pi_1.10	C1	-3.967	others	other
+53	Benzene ... AcNH2 (NH-pi) 1.25	Benzene-AcNH2_NH-pi_1.25	C1	-2.973	others	other
+53	Benzene ... AcNH2 (NH-pi) 1.50	Benzene-AcNH2_NH-pi_1.50	C1	-1.645	others	other
+53	Benzene ... AcNH2 (NH-pi) 2.00	Benzene-AcNH2_NH-pi_2.00	C1	-0.481	others	other
+54	Benzene ... Water (OH-pi) 0.90	Benzene-Water_OH-pi_0.90	C1	-2.804	others	other
+54	Benzene ... Water (OH-pi) 0.95	Benzene-Water_OH-pi_0.95	C1	-3.213	others	other
+54	Benzene ... Water (OH-pi) 1.00	Benzene-Water_OH-pi_1.00	C1	-3.268	others	other
+54	Benzene ... Water (OH-pi) 1.05	Benzene-Water_OH-pi_1.05	C1	-3.132	others	other
+54	Benzene ... Water (OH-pi) 1.10	Benzene-Water_OH-pi_1.10	C1	-2.901	others	other
+54	Benzene ... Water (OH-pi) 1.25	Benzene-Water_OH-pi_1.25	C1	-2.102	others	other
+54	Benzene ... Water (OH-pi) 1.50	Benzene-Water_OH-pi_1.50	C1	-1.156	others	other
+54	Benzene ... Water (OH-pi) 2.00	Benzene-Water_OH-pi_2.00	C1	-0.416	others	other
+55	Benzene ... MeOH (OH-pi) 0.90	Benzene-MeOH_OH-pi_0.90	C1	-3.453	others	other
+55	Benzene ... MeOH (OH-pi) 0.95	Benzene-MeOH_OH-pi_0.95	C1	-4.047	others	other
+55	Benzene ... MeOH (OH-pi) 1.00	Benzene-MeOH_OH-pi_1.00	C1	-4.187	others	other
+55	Benzene ... MeOH (OH-pi) 1.05	Benzene-MeOH_OH-pi_1.05	C1	-4.065	others	other
+55	Benzene ... MeOH (OH-pi) 1.10	Benzene-MeOH_OH-pi_1.10	C1	-3.804	others	other
+55	Benzene ... MeOH (OH-pi) 1.25	Benzene-MeOH_OH-pi_1.25	C1	-2.800	others	other
+55	Benzene ... MeOH (OH-pi) 1.50	Benzene-MeOH_OH-pi_1.50	C1	-1.528	others	other
+55	Benzene ... MeOH (OH-pi) 2.00	Benzene-MeOH_OH-pi_2.00	C1	-0.517	others	other
+56	Benzene ... MeNH2 (NH-pi) 0.90	Benzene-MeNH2_NH-pi_0.90	C1	-2.512	others	other
+56	Benzene ... MeNH2 (NH-pi) 0.95	Benzene-MeNH2_NH-pi_0.95	C1	-3.087	others	other
+56	Benzene ... MeNH2 (NH-pi) 1.00	Benzene-MeNH2_NH-pi_1.00	C1	-3.231	others	other
+56	Benzene ... MeNH2 (NH-pi) 1.05	Benzene-MeNH2_NH-pi_1.05	C1	-3.119	others	other
+56	Benzene ... MeNH2 (NH-pi) 1.10	Benzene-MeNH2_NH-pi_1.10	C1	-2.863	others	other
+56	Benzene ... MeNH2 (NH-pi) 1.25	Benzene-MeNH2_NH-pi_1.25	C1	-1.950	others	other
+56	Benzene ... MeNH2 (NH-pi) 1.50	Benzene-MeNH2_NH-pi_1.50	C1	-0.940	others	other
+56	Benzene ... MeNH2 (NH-pi) 2.00	Benzene-MeNH2_NH-pi_2.00	C1	-0.261	others	other
+57	Benzene ... Peptide (NH-pi) 0.90	Benzene-Peptide_NH-pi_0.90	C1	-3.746	others	other
+57	Benzene ... Peptide (NH-pi) 0.95	Benzene-Peptide_NH-pi_0.95	C1	-4.955	others	other
+57	Benzene ... Peptide (NH-pi) 1.00	Benzene-Peptide_NH-pi_1.00	C1	-5.280	others	other
+57	Benzene ... Peptide (NH-pi) 1.05	Benzene-Peptide_NH-pi_1.05	C1	-5.144	others	other
+57	Benzene ... Peptide (NH-pi) 1.10	Benzene-Peptide_NH-pi_1.10	C1	-4.782	others	other
+57	Benzene ... Peptide (NH-pi) 1.25	Benzene-Peptide_NH-pi_1.25	C1	-3.414	others	other
+57	Benzene ... Peptide (NH-pi) 1.50	Benzene-Peptide_NH-pi_1.50	C1	-1.803	others	other
+57	Benzene ... Peptide (NH-pi) 2.00	Benzene-Peptide_NH-pi_2.00	C1	-0.618	others	other
+58	Pyridine ... Pyridine (CH-N) 0.90	Pyridine-Pyridine_CH-N_0.90	C1	-2.804	others	other
+58	Pyridine ... Pyridine (CH-N) 0.95	Pyridine-Pyridine_CH-N_0.95	C1	-3.819	others	other
+58	Pyridine ... Pyridine (CH-N) 1.00	Pyridine-Pyridine_CH-N_1.00	C1	-4.146	others	other
+58	Pyridine ... Pyridine (CH-N) 1.05	Pyridine-Pyridine_CH-N_1.05	C1	-3.885	others	other
+58	Pyridine ... Pyridine (CH-N) 1.10	Pyridine-Pyridine_CH-N_1.10	C1	-3.446	others	other
+58	Pyridine ... Pyridine (CH-N) 1.25	Pyridine-Pyridine_CH-N_1.25	C1	-2.181	others	other
+58	Pyridine ... Pyridine (CH-N) 1.50	Pyridine-Pyridine_CH-N_1.50	C1	-1.010	others	other
+58	Pyridine ... Pyridine (CH-N) 2.00	Pyridine-Pyridine_CH-N_2.00	C1	-0.275	others	other
+59	Ethyne ... Water (CH-O) 0.90	Ethyne-Water_CH-O_0.90	C1	-2.515	others	other
+59	Ethyne ... Water (CH-O) 0.95	Ethyne-Water_CH-O_0.95	C1	-2.797	others	other
+59	Ethyne ... Water (CH-O) 1.00	Ethyne-Water_CH-O_1.00	C1	-2.847	others	other
+59	Ethyne ... Water (CH-O) 1.05	Ethyne-Water_CH-O_1.05	C1	-2.759	others	other
+59	Ethyne ... Water (CH-O) 1.10	Ethyne-Water_CH-O_1.10	C1	-2.596	others	other
+59	Ethyne ... Water (CH-O) 1.25	Ethyne-Water_CH-O_1.25	C1	-1.981	others	other
+59	Ethyne ... Water (CH-O) 1.50	Ethyne-Water_CH-O_1.50	C1	-1.169	others	other
+59	Ethyne ... Water (CH-O) 2.00	Ethyne-Water_CH-O_2.00	C1	-0.458	others	other
+60	Ethyne ... AcOH (OH-pi) 0.90	Ethyne-AcOH_OH-pi_0.90	C1	-4.284	others	other
+60	Ethyne ... AcOH (OH-pi) 0.95	Ethyne-AcOH_OH-pi_0.95	C1	-4.781	others	other
+60	Ethyne ... AcOH (OH-pi) 1.00	Ethyne-AcOH_OH-pi_1.00	C1	-4.860	others	other
+60	Ethyne ... AcOH (OH-pi) 1.05	Ethyne-AcOH_OH-pi_1.05	C1	-4.693	others	other
+60	Ethyne ... AcOH (OH-pi) 1.10	Ethyne-AcOH_OH-pi_1.10	C1	-4.390	others	other
+60	Ethyne ... AcOH (OH-pi) 1.25	Ethyne-AcOH_OH-pi_1.25	C1	-3.255	others	other
+60	Ethyne ... AcOH (OH-pi) 1.50	Ethyne-AcOH_OH-pi_1.50	C1	-1.772	others	other
+60	Ethyne ... AcOH (OH-pi) 2.00	Ethyne-AcOH_OH-pi_2.00	C1	-0.557	others	other
+61	Pentane ... AcOH 0.90	Pentane-AcOH_0.90	C1	-2.700	others	other
+61	Pentane ... AcOH 0.95	Pentane-AcOH_0.95	C1	-2.901	others	other
+61	Pentane ... AcOH 1.00	Pentane-AcOH_1.00	C1	-2.879	others	other
+61	Pentane ... AcOH 1.05	Pentane-AcOH_1.05	C1	-2.730	others	other
+61	Pentane ... AcOH 1.10	Pentane-AcOH_1.10	C1	-2.515	others	other
+61	Pentane ... AcOH 1.25	Pentane-AcOH_1.25	C1	-1.788	others	other
+61	Pentane ... AcOH 1.50	Pentane-AcOH_1.50	C1	-0.784	others	other
+61	Pentane ... AcOH 2.00	Pentane-AcOH_2.00	C1	-0.168	others	other
+62	Pentane ... AcNH2 0.90	Pentane-AcNH2_0.90	C1	-3.152	others	other
+62	Pentane ... AcNH2 0.95	Pentane-AcNH2_0.95	C1	-3.501	others	other
+62	Pentane ... AcNH2 1.00	Pentane-AcNH2_1.00	C1	-3.505	others	other
+62	Pentane ... AcNH2 1.05	Pentane-AcNH2_1.05	C1	-3.321	others	other
+62	Pentane ... AcNH2 1.10	Pentane-AcNH2_1.10	C1	-3.043	others	other
+62	Pentane ... AcNH2 1.25	Pentane-AcNH2_1.25	C1	-2.116	others	other
+62	Pentane ... AcNH2 1.50	Pentane-AcNH2_1.50	C1	-1.043	others	other
+62	Pentane ... AcNH2 2.00	Pentane-AcNH2_2.00	C1	-0.273	others	other
+63	Benzene ... AcOH 0.90	Benzene-AcOH_0.90	C1	-2.734	others	other
+63	Benzene ... AcOH 0.95	Benzene-AcOH_0.95	C1	-3.600	others	other
+63	Benzene ... AcOH 1.00	Benzene-AcOH_1.00	C1	-3.801	others	other
+63	Benzene ... AcOH 1.05	Benzene-AcOH_1.05	C1	-3.652	others	other
+63	Benzene ... AcOH 1.10	Benzene-AcOH_1.10	C1	-3.338	others	other
+63	Benzene ... AcOH 1.25	Benzene-AcOH_1.25	C1	-2.236	others	other
+63	Benzene ... AcOH 1.50	Benzene-AcOH_1.50	C1	-1.020	others	other
+63	Benzene ... AcOH 2.00	Benzene-AcOH_2.00	C1	-0.262	others	other
+64	Peptide ... Ethene 0.90	Peptide-Ethene_0.90	C1	-2.600	others	other
+64	Peptide ... Ethene 0.95	Peptide-Ethene_0.95	C1	-2.949	others	other
+64	Peptide ... Ethene 1.00	Peptide-Ethene_1.00	C1	-2.988	others	other
+64	Peptide ... Ethene 1.05	Peptide-Ethene_1.05	C1	-2.854	others	other
+64	Peptide ... Ethene 1.10	Peptide-Ethene_1.10	C1	-2.631	others	other
+64	Peptide ... Ethene 1.25	Peptide-Ethene_1.25	C1	-1.856	others	other
+64	Peptide ... Ethene 1.50	Peptide-Ethene_1.50	C1	-0.877	others	other
+64	Peptide ... Ethene 2.00	Peptide-Ethene_2.00	C1	-0.189	others	other
+65	Pyridine ... Ethyne 0.90	Pyridine-Ethyne_0.90	C1	-3.535	others	other
+65	Pyridine ... Ethyne 0.95	Pyridine-Ethyne_0.95	C1	-3.910	others	other
+65	Pyridine ... Ethyne 1.00	Pyridine-Ethyne_1.00	C1	-3.990	others	other
+65	Pyridine ... Ethyne 1.05	Pyridine-Ethyne_1.05	C1	-3.887	others	other
+65	Pyridine ... Ethyne 1.10	Pyridine-Ethyne_1.10	C1	-3.679	others	other
+65	Pyridine ... Ethyne 1.25	Pyridine-Ethyne_1.25	C1	-2.843	others	other
+65	Pyridine ... Ethyne 1.50	Pyridine-Ethyne_1.50	C1	-1.670	others	other
+65	Pyridine ... Ethyne 2.00	Pyridine-Ethyne_2.00	C1	-0.616	others	other
+66	MeNH2 ... Pyridine 0.90	MeNH2-Pyridine_0.90	C1	-3.445	others	other
+66	MeNH2 ... Pyridine 0.95	MeNH2-Pyridine_0.95	C1	-3.875	others	other
+66	MeNH2 ... Pyridine 1.00	MeNH2-Pyridine_1.00	C1	-3.966	others	other
+66	MeNH2 ... Pyridine 1.05	MeNH2-Pyridine_1.05	C1	-3.850	others	other
+66	MeNH2 ... Pyridine 1.10	MeNH2-Pyridine_1.10	C1	-3.618	others	other
+66	MeNH2 ... Pyridine 1.25	MeNH2-Pyridine_1.25	C1	-2.713	others	other
+66	MeNH2 ... Pyridine 1.50	MeNH2-Pyridine_1.50	C1	-1.503	others	other
+66	MeNH2 ... Pyridine 2.00	MeNH2-Pyridine_2.00	C1	-0.494	others	other

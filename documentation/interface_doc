@@ -1,0 +1,205 @@
+#!/usr/bin/env ruby
+$:.unshift(File.dirname(__FILE__)+"/..").uniq! # Magic line to add path to the executable to $RUBYLIB
+require "classes/cuby.rb" # Load Cuby classes and libraries
+
+require "documentation/text_html_printer.rb"
+require "documentation/module_info.rb"
+
+module InterfaceInfo
+
+	@@interfaces_dir = ''
+
+	def InterfaceInfo.interface_dir=(val)
+		@@interfaces_dir = val
+	end
+
+	def InterfaceInfo.interface_exist?(interface)
+		Calculation.available_interfaces.each_pair{|name, dir|
+			return true if File.basename(dir) == interface
+		}
+		return false
+	end
+
+	def InterfaceInfo.print_keywords_list(interface, printer)
+		# Interface-specific keywords
+		interface_keywords = ModuleInfo.local_keywords(@@interfaces_dir + "/" + interface).sort
+		# Global keywords
+		global_keywords = (ModuleInfo.all_keywords(@@interfaces_dir + "/" + interface) - interface_keywords).sort
+
+		printer.caption "Keywords used"
+		if printer.html
+			interface_keywords.map!{|s| "<a href=\"keywords.html##{s}\">#{s}</a>"}
+			global_keywords.map!{|s| "<a href=\"keywords.html##{s}\">#{s}</a>"}
+		end
+
+		if interface_keywords.size == 0
+			printer.paragraph("This interface does not use any specific keywords")
+		else
+			printer.list("Keywords specific for this interface:", interface_keywords)
+		end
+		unless global_keywords.size == 0
+			printer.list("Other keywords used by this interface:", global_keywords)
+		end
+	end
+
+	def InterfaceInfo.print_capabilities(interface, printer)
+		Calculation.available_interfaces.each_pair{|name, dir|
+			next unless File.basename(dir) == interface
+			require dir + "/" + name.to_s + ".rb"
+			# Get the interface module from name, 
+			mod = eval("Interface" + name.to_s.split("_").map{|s| s.capitalize}.join(''))
+
+			# Methods
+			printer.caption "Methods and capabilities"
+			begin
+				methods = mod::METHODS
+			rescue
+			end
+
+			if methods
+				all_the_same = true
+				methods.each_pair{|key, value|
+					all_the_same = false unless value == mod::CAPABILITIES
+				}
+				if all_the_same
+					printer.list("The interface implements following methods (specified by keyword 'method'):", methods.keys)
+					printer.list("All the methods support calculation of following properties:",  mod::CAPABILITIES)
+				else
+					items = []
+					methods.each_pair{|key, value|
+						items << key.to_s + " - supports calculation of #{value.join(', ')}"
+					}
+					printer.list("The interface implements following methods (specified by keyword 'method'):", items)
+				end
+			else
+				printer.paragraph "The interface implements a single unnamed method; 'method' keyword not necessary"
+			end
+
+			# Solvents
+			begin
+				solvents = mod::SOLVENTS
+				if solvents
+					printer.list("The interface implements following solvent models (keyword 'solvent_model'):", solvents)
+				end
+			rescue
+			end
+
+			# Atomic charges
+			begin
+				charge_models = mod::ATOMIC_CHARGES
+				if charge_models
+					charge_models.map!{|sym|
+						"#{sym.to_s} - #{AtomicCharges::CHARGE_TYPES[sym]}"
+					}
+					printer.list("The interface implements following atomic charge types (keyword 'atomic_charges'):", charge_models)
+				end
+			rescue
+			end
+
+			# Input structure
+			begin
+				required = []
+				optional = []
+				mod::INPUT_BLOCKS.each{|b|
+					required << "#{b.name.to_s} - #{b.description}" if b.status == :required
+					optional << "#{b.name.to_s} - #{b.description}" if b.status == :optional
+				}
+				unless required.empty? && optional.empty?
+					printer.caption "Input structure"
+				end
+
+				unless required.empty?
+					printer.list("The interface requires following blocks in the input:", required)
+				end
+				unless optional.empty?
+					printer.list("Optionally, following blocks can be defined in the input:", optional)
+				end
+
+			rescue
+			end
+
+		}
+	end
+
+	def InterfaceInfo.all_interfaces(printer)
+		printer.heading("List of interfaces")
+		items = Calculation.available_interfaces.keys.map{|x| x.to_s}.sort
+		items.map!{|s| "<a href=\"interface_#{s}.html\">#{s}</a>"} if printer.html
+
+		printer.list("Available interfaces (values of the 'interface' keyword):", items)
+		printer.footer
+		exit
+	end
+
+	def InterfaceInfo.all_interfaces2(printer)
+		printer.heading("List of interfaces")
+
+		items_calculation = []
+		items_composite = []
+		items_modifier = []
+		Calculation.available_interfaces.each_pair{|name, dir|
+			next if FileTest.exist?(dir + "/PRIVATE")
+			require dir + "/" + name.to_s + ".rb"
+			# Get the interface module from name, 
+			mod = eval("Interface" + name.to_s.split("_").map{|s| s.capitalize}.join(''))
+
+			s = name.to_s
+			s = "<a href=\"interface_#{s}.html\">#{s}</a>" if printer.html
+
+			modifier = false
+			begin
+				modifier =  mod::MODIFIER
+			rescue
+			end
+
+			if modifier
+				# Modifier
+				s += " (uses external software)"if mod::INTERFACE == :calculation_external
+				items_modifier << s
+			else
+				case mod::INTERFACE
+				when :calculation
+					items_calculation << s
+				when :calculation_external
+					items_calculation << s + " (uses external software)"
+				when :composite
+					items_composite << s
+				else
+					raise
+				end
+				
+			end
+		}
+
+ 
+		printer.list("Interfaces implementing a calculation", items_calculation)
+		printer.list("Composite interfaces (combining child calculations)", items_composite)
+		printer.list("Modifier interfaces (potential added to the underlying calculation)", items_modifier)
+		printer.footer
+		exit
+	end
+
+end
+
+Cuby.application {
+	# Load Cuby classes and libraries
+	Cuby.load_framework(:skip_global_config => true, :skip_user_config => true)
+	InterfaceInfo.interface_dir = Cuby::install_dir + "/interfaces"
+
+	printer = TextHtmlPrinter.new($stdout, (ARGV.include? "html") ? :html : :text)
+	printer.header
+
+	if ARGV.size == 0 || ARGV[0] == "html"
+		InterfaceInfo.all_interfaces2(printer)
+	end
+
+	interface = ARGV[0].downcase
+	Cuby::error("Interface '#{interface}' does not exist") unless InterfaceInfo.interface_exist?(interface)
+
+	printer.heading("Interface #{interface}")
+
+	InterfaceInfo.print_capabilities(interface, printer)
+	InterfaceInfo.print_keywords_list(interface, printer)
+
+	printer.footer
+}

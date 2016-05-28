@@ -1,0 +1,17 @@
+<p>
+This interface implements MP2 extrapolation to the complete basis set limit and an optional
+higher-order correction (e.g. CCSDT(T), MP2.5 - see the examples).
+</p>
+
+<p>
+A following scheme is used:
+</p>
+<ul>
+	<li>HF energy is taken from the MP2 calculation in the larger basis set</li>
+	<li>MP2 correlation energy is extrapolated using the formula of Halkier and Helgaker[1]</li>
+	<li>Higher-order correction (the result - MP2 energy) is calculated in a smaller basis set</li>
+</ul>
+<ol>
+	<li>Halkier, A.; Helgaker, T.; Jørgensen, P.; Klopper, W.; Koch, H.; Olsen, J.; Wilson, A. K. Basis-Set Convergence in Correlated Calculations on Ne, N2, and H2O. Chem. Phys. Lett. 1998, 286, 243–252.
+	</li>
+</ol>

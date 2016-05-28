@@ -1,0 +1,102 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_ALK6
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "fragmentation and dissociation reactions of alkaline and alkaline−cation−benzene complexes"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_ALK6:li+"
+  reference_value: 38.4
+  setup:
+    reaction_formula: "1 g_bz_liplus -> 1 g_liplus + 1 g_bz"
+    reaction_geometries:
+      g_liplus: gmtkn_ALK6:li+
+      g_bz: gmtkn_ALK6:bz
+      g_bz_liplus: gmtkn_ALK6:bz_li+
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_ALK6:na+"
+  reference_value: 25.0
+  setup:
+    reaction_formula: "1 g_bz_naplus -> 1 g_naplus + 1 g_bz"
+    reaction_geometries:
+      g_naplus: gmtkn_ALK6:na+
+      g_bz: gmtkn_ALK6:bz
+      g_bz_naplus: gmtkn_ALK6:bz_na+
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_ALK6:k+"
+  reference_value: 19.2
+  setup:
+    reaction_formula: "1 g_bz_kplus -> 1 g_kplus + 1 g_bz"
+    reaction_geometries:
+      g_kplus: gmtkn_ALK6:k+
+      g_bz: gmtkn_ALK6:bz
+      g_bz_kplus: gmtkn_ALK6:bz_k+
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_ALK6:li2"
+  reference_value: 83.2
+  setup:
+    reaction_formula: "1 g_li8 -> 4 g_li2"
+    reaction_geometries:
+      g_li2: gmtkn_ALK6:li2
+      g_li8: gmtkn_ALK6:li8
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_ALK6:na2"
+  reference_value: 54.6
+  setup:
+    reaction_formula: "1 g_na8 -> 4 g_na2"
+    reaction_geometries:
+      g_na2: gmtkn_ALK6:na2
+      g_na8: gmtkn_ALK6:na8
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_ALK6:k2"
+  reference_value: 47.1
+  setup:
+    reaction_formula: "1 g_k8 -> 4 g_k2"
+    reaction_geometries:
+      g_k2: gmtkn_ALK6:k2
+      g_k8: gmtkn_ALK6:k8
+  tags: ""
+

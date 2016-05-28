@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface dummy_filter</h1>
+<p>
+This interface serves as a filter for geometries containing dummy atoms (element = "X"),
+passing a geometry with dummy atoms removed for the actual calculation.
+In the other direction, the dummy atoms are added back to the results, with zero
+gradient on them.
+</p>
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Input structure</h2>
+<h4>The interface requires following blocks in the input:</h4>
+<ul>
+<li>calculation - Setup for the calculation</li>
+</ul>
+<h2>Keywords used</h2>
+<p>This interface does not use any specific keywords</p>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/dummy_filter/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Dummy filter example 1
+#===============================================================================
+
+# Geometry optimization model geometry with dummy atoms
+job: optimize
+
+# The dummy atoms have to be named "X"
+geometry: |
+  O    0.000000000   0.000000000  -0.000000000
+  H   -0.991859594  -0.050734173   0.116792934
+  H    0.329900831  -0.845847733  -0.419174252
+  X    0.434954299   0.121552446   0.892210603
+  X    0.226998698   0.774964818  -0.589831435
+
+# The filter is used as an interface
+interface: dummy_filter
+
+# And it passes the geometry without dummy atoms to the calculation defined
+# in a separate block:
+calculation:
+  # PM6 in Mopac as an example
+  interface: mopac
+  method: PM6
+  charge: 0
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

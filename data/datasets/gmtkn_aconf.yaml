@@ -1,0 +1,207 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_ACONF
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "relative energies of alkane conformers"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_ACONF:B_T"
+  reference_value: 0.598
+  setup:
+    reaction_formula: "1 g_B_T -> 1 g_B_G"
+    reaction_geometries:
+      g_B_T: gmtkn_ACONF:B_T
+      g_B_G: gmtkn_ACONF:B_G
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_ACONF:P_TT"
+  reference_value: 0.614
+  setup:
+    reaction_formula: "1 g_P_TT -> 1 g_P_TG"
+    reaction_geometries:
+      g_P_TT: gmtkn_ACONF:P_TT
+      g_P_TG: gmtkn_ACONF:P_TG
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_ACONF:P_TT"
+  reference_value: 0.961
+  setup:
+    reaction_formula: "1 g_P_TT -> 1 g_P_GG"
+    reaction_geometries:
+      g_P_TT: gmtkn_ACONF:P_TT
+      g_P_GG: gmtkn_ACONF:P_GG
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_ACONF:P_TT"
+  reference_value: 2.813
+  setup:
+    reaction_formula: "1 g_P_TT -> 1 g_P_GX"
+    reaction_geometries:
+      g_P_TT: gmtkn_ACONF:P_TT
+      g_P_GX: gmtkn_ACONF:P_GX
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_ACONF:H_ttt"
+  reference_value: 0.595
+  setup:
+    reaction_formula: "1 g_H_ttt -> 1 g_H_gtt"
+    reaction_geometries:
+      g_H_ttt: gmtkn_ACONF:H_ttt
+      g_H_gtt: gmtkn_ACONF:H_gtt
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_ACONF:H_ttt"
+  reference_value: 0.604
+  setup:
+    reaction_formula: "1 g_H_ttt -> 1 g_H_tgt"
+    reaction_geometries:
+      g_H_ttt: gmtkn_ACONF:H_ttt
+      g_H_tgt: gmtkn_ACONF:H_tgt
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_ACONF:H_ttt"
+  reference_value: 0.934
+  setup:
+    reaction_formula: "1 g_H_ttt -> 1 g_H_tgg"
+    reaction_geometries:
+      g_H_ttt: gmtkn_ACONF:H_ttt
+      g_H_tgg: gmtkn_ACONF:H_tgg
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_ACONF:H_ttt"
+  reference_value: 1.178
+  setup:
+    reaction_formula: "1 g_H_ttt -> 1 g_H_gtg"
+    reaction_geometries:
+      g_H_ttt: gmtkn_ACONF:H_ttt
+      g_H_gtg: gmtkn_ACONF:H_gtg
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_ACONF:H_ttt"
+  reference_value: 1.302
+  setup:
+    reaction_formula: "1 g_H_ttt -> 1 g_H_gplustplusg-"
+    reaction_geometries:
+      g_H_ttt: gmtkn_ACONF:H_ttt
+      g_H_gplustplusg-: gmtkn_ACONF:H_g+t+g-
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_ACONF:H_ttt"
+  reference_value: 1.250
+  setup:
+    reaction_formula: "1 g_H_ttt -> 1 g_H_ggg"
+    reaction_geometries:
+      g_H_ttt: gmtkn_ACONF:H_ttt
+      g_H_ggg: gmtkn_ACONF:H_ggg
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_ACONF:H_ttt"
+  reference_value: 2.632
+  setup:
+    reaction_formula: "1 g_H_ttt -> 1 g_H_gplusx-tplus"
+    reaction_geometries:
+      g_H_ttt: gmtkn_ACONF:H_ttt
+      g_H_gplusx-tplus: gmtkn_ACONF:H_g+x-t+
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "12"
+  shortname: "12"
+  geometry: "gmtkn_ACONF:H_ttt"
+  reference_value: 2.740
+  setup:
+    reaction_formula: "1 g_H_ttt -> 1 g_H_tplusgplusx-"
+    reaction_geometries:
+      g_H_ttt: gmtkn_ACONF:H_ttt
+      g_H_tplusgplusx-: gmtkn_ACONF:H_t+g+x-
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "13"
+  shortname: "13"
+  geometry: "gmtkn_ACONF:H_ttt"
+  reference_value: 3.283
+  setup:
+    reaction_formula: "1 g_H_ttt -> 1 g_H_gplusx-g-"
+    reaction_geometries:
+      g_H_ttt: gmtkn_ACONF:H_ttt
+      g_H_gplusx-g-: gmtkn_ACONF:H_g+x-g-
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "14"
+  shortname: "14"
+  geometry: "gmtkn_ACONF:H_ttt"
+  reference_value: 3.083
+  setup:
+    reaction_formula: "1 g_H_ttt -> 1 g_H_xplusg-g-"
+    reaction_geometries:
+      g_H_ttt: gmtkn_ACONF:H_ttt
+      g_H_xplusg-g-: gmtkn_ACONF:H_x+g-g-
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "15"
+  shortname: "15"
+  geometry: "gmtkn_ACONF:H_ttt"
+  reference_value: 4.925
+  setup:
+    reaction_formula: "1 g_H_ttt -> 1 g_H_xplusg-xplus"
+    reaction_geometries:
+      g_H_ttt: gmtkn_ACONF:H_ttt
+      g_H_xplusg-xplus: gmtkn_ACONF:H_x+g-x+
+  tags: ""
+

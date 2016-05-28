@@ -1,0 +1,387 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_HEAVY28
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "noncovalent interaction energies between heavy element hydrides"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_HEAVY28:bih3_2"
+  reference_value: 1.29
+  setup:
+    reaction_formula: "1 g_bih3_2 -> 2 g_bih3"
+    reaction_geometries:
+      g_bih3_2: gmtkn_HEAVY28:bih3_2
+      g_bih3: gmtkn_HEAVY28:bih3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_HEAVY28:bih3_h2o"
+  reference_value: 2.42
+  setup:
+    reaction_formula: "1 g_bih3_h2o -> 1 g_bih3 + 1 g_h2o"
+    reaction_geometries:
+      g_bih3_h2o: gmtkn_HEAVY28:bih3_h2o
+      g_bih3: gmtkn_HEAVY28:bih3
+      g_h2o: gmtkn_HEAVY28:h2o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_HEAVY28:bih3_h2s"
+  reference_value: 1.40
+  setup:
+    reaction_formula: "1 g_bih3_h2s -> 1 g_bih3 + 1 g_h2s"
+    reaction_geometries:
+      g_bih3_h2s: gmtkn_HEAVY28:bih3_h2s
+      g_bih3: gmtkn_HEAVY28:bih3
+      g_h2s: gmtkn_HEAVY28:h2s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_HEAVY28:bih3_hcl"
+  reference_value: 0.85
+  setup:
+    reaction_formula: "1 g_bih3_hcl -> 1 g_bih3 + 1 g_hcl"
+    reaction_geometries:
+      g_bih3_hcl: gmtkn_HEAVY28:bih3_hcl
+      g_bih3: gmtkn_HEAVY28:bih3
+      g_hcl: gmtkn_HEAVY28:hcl
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_HEAVY28:bih3_hbr"
+  reference_value: 1.16
+  setup:
+    reaction_formula: "1 g_bih3_hbr -> 1 g_bih3 + 1 g_hbr"
+    reaction_geometries:
+      g_bih3_hbr: gmtkn_HEAVY28:bih3_hbr
+      g_bih3: gmtkn_HEAVY28:bih3
+      g_hbr: gmtkn_HEAVY28:hbr
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_HEAVY28:bih3_hi"
+  reference_value: 1.42
+  setup:
+    reaction_formula: "1 g_bih3_hi -> 1 g_bih3 + 1 g_hi"
+    reaction_geometries:
+      g_bih3_hi: gmtkn_HEAVY28:bih3_hi
+      g_bih3: gmtkn_HEAVY28:bih3
+      g_hi: gmtkn_HEAVY28:hi
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_HEAVY28:bih3_nh3"
+  reference_value: 0.69
+  setup:
+    reaction_formula: "1 g_bih3_nh3 -> 1 g_bih3 + 1 g_nh3"
+    reaction_geometries:
+      g_bih3_nh3: gmtkn_HEAVY28:bih3_nh3
+      g_bih3: gmtkn_HEAVY28:bih3
+      g_nh3: gmtkn_HEAVY28:nh3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_HEAVY28:pbh4_2"
+  reference_value: 1.32
+  setup:
+    reaction_formula: "1 g_pbh4_2 -> 2 g_pbh4"
+    reaction_geometries:
+      g_pbh4_2: gmtkn_HEAVY28:pbh4_2
+      g_pbh4: gmtkn_HEAVY28:pbh4
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_HEAVY28:pbh4_bih3"
+  reference_value: 0.68
+  setup:
+    reaction_formula: "1 g_pbh4_bih3 -> 1 g_pbh4 + 1 g_bih3"
+    reaction_geometries:
+      g_pbh4_bih3: gmtkn_HEAVY28:pbh4_bih3
+      g_pbh4: gmtkn_HEAVY28:pbh4
+      g_bih3: gmtkn_HEAVY28:bih3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_HEAVY28:pbh4_h2o"
+  reference_value: 0.44
+  setup:
+    reaction_formula: "1 g_pbh4_h2o -> 1 g_pbh4 + 1 g_h2o"
+    reaction_geometries:
+      g_pbh4_h2o: gmtkn_HEAVY28:pbh4_h2o
+      g_pbh4: gmtkn_HEAVY28:pbh4
+      g_h2o: gmtkn_HEAVY28:h2o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_HEAVY28:pbh4_hcl"
+  reference_value: 0.80
+  setup:
+    reaction_formula: "1 g_pbh4_hcl -> 1 g_pbh4 + 1 g_hcl"
+    reaction_geometries:
+      g_pbh4_hcl: gmtkn_HEAVY28:pbh4_hcl
+      g_pbh4: gmtkn_HEAVY28:pbh4
+      g_hcl: gmtkn_HEAVY28:hcl
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "12"
+  shortname: "12"
+  geometry: "gmtkn_HEAVY28:pbh4_hbr"
+  reference_value: 1.04
+  setup:
+    reaction_formula: "1 g_pbh4_hbr -> 1 g_pbh4 + 1 g_hbr"
+    reaction_geometries:
+      g_pbh4_hbr: gmtkn_HEAVY28:pbh4_hbr
+      g_pbh4: gmtkn_HEAVY28:pbh4
+      g_hbr: gmtkn_HEAVY28:hbr
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "13"
+  shortname: "13"
+  geometry: "gmtkn_HEAVY28:pbh4_hi"
+  reference_value: 1.29
+  setup:
+    reaction_formula: "1 g_pbh4_hi -> 1 g_pbh4 + 1 g_hi"
+    reaction_geometries:
+      g_pbh4_hi: gmtkn_HEAVY28:pbh4_hi
+      g_pbh4: gmtkn_HEAVY28:pbh4
+      g_hi: gmtkn_HEAVY28:hi
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "14"
+  shortname: "14"
+  geometry: "gmtkn_HEAVY28:pbh4_teh2"
+  reference_value: 0.70
+  setup:
+    reaction_formula: "1 g_pbh4_teh2 -> 1 g_pbh4 + 1 g_teh2"
+    reaction_geometries:
+      g_pbh4_teh2: gmtkn_HEAVY28:pbh4_teh2
+      g_pbh4: gmtkn_HEAVY28:pbh4
+      g_teh2: gmtkn_HEAVY28:teh2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "15"
+  shortname: "15"
+  geometry: "gmtkn_HEAVY28:sbh3_2"
+  reference_value: 1.30
+  setup:
+    reaction_formula: "1 g_sbh3_2 -> 2 g_sbh3"
+    reaction_geometries:
+      g_sbh3_2: gmtkn_HEAVY28:sbh3_2
+      g_sbh3: gmtkn_HEAVY28:sbh3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "16"
+  shortname: "16"
+  geometry: "gmtkn_HEAVY28:sbh3_h2o"
+  reference_value: 1.70
+  setup:
+    reaction_formula: "1 g_sbh3_h2o -> 1 g_sbh3 + 1 g_h2o"
+    reaction_geometries:
+      g_sbh3_h2o: gmtkn_HEAVY28:sbh3_h2o
+      g_sbh3: gmtkn_HEAVY28:sbh3
+      g_h2o: gmtkn_HEAVY28:h2o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "17"
+  shortname: "17"
+  geometry: "gmtkn_HEAVY28:sbh3_h2s"
+  reference_value: 1.14
+  setup:
+    reaction_formula: "1 g_sbh3_h2s -> 1 g_sbh3 + 1 g_h2s"
+    reaction_geometries:
+      g_sbh3_h2s: gmtkn_HEAVY28:sbh3_h2s
+      g_sbh3: gmtkn_HEAVY28:sbh3
+      g_h2s: gmtkn_HEAVY28:h2s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "18"
+  shortname: "18"
+  geometry: "gmtkn_HEAVY28:sbh3_hcl"
+  reference_value: 2.20
+  setup:
+    reaction_formula: "1 g_sbh3_hcl -> 1 g_sbh3 + 1 g_hcl"
+    reaction_geometries:
+      g_sbh3_hcl: gmtkn_HEAVY28:sbh3_hcl
+      g_sbh3: gmtkn_HEAVY28:sbh3
+      g_hcl: gmtkn_HEAVY28:hcl
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "19"
+  shortname: "19"
+  geometry: "gmtkn_HEAVY28:sbh3_hbr"
+  reference_value: 2.07
+  setup:
+    reaction_formula: "1 g_sbh3_hbr -> 1 g_sbh3 + 1 g_hbr"
+    reaction_geometries:
+      g_sbh3_hbr: gmtkn_HEAVY28:sbh3_hbr
+      g_sbh3: gmtkn_HEAVY28:sbh3
+      g_hbr: gmtkn_HEAVY28:hbr
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "20"
+  shortname: "20"
+  geometry: "gmtkn_HEAVY28:sbh3_hi"
+  reference_value: 1.64
+  setup:
+    reaction_formula: "1 g_sbh3_hi -> 1 g_sbh3 + 1 g_hi"
+    reaction_geometries:
+      g_sbh3_hi: gmtkn_HEAVY28:sbh3_hi
+      g_sbh3: gmtkn_HEAVY28:sbh3
+      g_hi: gmtkn_HEAVY28:hi
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "21"
+  shortname: "21"
+  geometry: "gmtkn_HEAVY28:sbh3_nh3"
+  reference_value: 2.80
+  setup:
+    reaction_formula: "1 g_sbh3_nh3 -> 1 g_sbh3 + 1 g_nh3"
+    reaction_geometries:
+      g_sbh3_nh3: gmtkn_HEAVY28:sbh3_nh3
+      g_sbh3: gmtkn_HEAVY28:sbh3
+      g_nh3: gmtkn_HEAVY28:nh3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "22"
+  shortname: "22"
+  geometry: "gmtkn_HEAVY28:teh2_2"
+  reference_value: 0.58
+  setup:
+    reaction_formula: "1 g_teh2_2 -> 2 g_teh2"
+    reaction_geometries:
+      g_teh2_2: gmtkn_HEAVY28:teh2_2
+      g_teh2: gmtkn_HEAVY28:teh2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "23"
+  shortname: "23"
+  geometry: "gmtkn_HEAVY28:teh2_h2o"
+  reference_value: 0.68
+  setup:
+    reaction_formula: "1 g_teh2_h2o -> 1 g_teh2 + 1 g_h2o"
+    reaction_geometries:
+      g_teh2_h2o: gmtkn_HEAVY28:teh2_h2o
+      g_teh2: gmtkn_HEAVY28:teh2
+      g_h2o: gmtkn_HEAVY28:h2o
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "24"
+  shortname: "24"
+  geometry: "gmtkn_HEAVY28:teh2_h2s"
+  reference_value: 0.50
+  setup:
+    reaction_formula: "1 g_teh2_h2s -> 1 g_teh2 + 1 g_h2s"
+    reaction_geometries:
+      g_teh2_h2s: gmtkn_HEAVY28:teh2_h2s
+      g_teh2: gmtkn_HEAVY28:teh2
+      g_h2s: gmtkn_HEAVY28:h2s
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "25"
+  shortname: "25"
+  geometry: "gmtkn_HEAVY28:teh2_hcl"
+  reference_value: 1.24
+  setup:
+    reaction_formula: "1 g_teh2_hcl -> 1 g_teh2 + 1 g_hcl"
+    reaction_geometries:
+      g_teh2_hcl: gmtkn_HEAVY28:teh2_hcl
+      g_teh2: gmtkn_HEAVY28:teh2
+      g_hcl: gmtkn_HEAVY28:hcl
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "26"
+  shortname: "26"
+  geometry: "gmtkn_HEAVY28:teh2_hbr"
+  reference_value: 1.24
+  setup:
+    reaction_formula: "1 g_teh2_hbr -> 1 g_teh2 + 1 g_hbr"
+    reaction_geometries:
+      g_teh2_hbr: gmtkn_HEAVY28:teh2_hbr
+      g_teh2: gmtkn_HEAVY28:teh2
+      g_hbr: gmtkn_HEAVY28:hbr
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "27"
+  shortname: "27"
+  geometry: "gmtkn_HEAVY28:teh2_hi"
+  reference_value: 0.84
+  setup:
+    reaction_formula: "1 g_teh2_hi -> 1 g_teh2 + 1 g_hi"
+    reaction_geometries:
+      g_teh2_hi: gmtkn_HEAVY28:teh2_hi
+      g_teh2: gmtkn_HEAVY28:teh2
+      g_hi: gmtkn_HEAVY28:hi
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "28"
+  shortname: "28"
+  geometry: "gmtkn_HEAVY28:teh2_nh3"
+  reference_value: 3.29
+  setup:
+    reaction_formula: "1 g_teh2_nh3 -> 1 g_teh2 + 1 g_nh3"
+    reaction_geometries:
+      g_teh2_nh3: gmtkn_HEAVY28:teh2_nh3
+      g_teh2: gmtkn_HEAVY28:teh2
+      g_nh3: gmtkn_HEAVY28:nh3
+  tags: ""
+

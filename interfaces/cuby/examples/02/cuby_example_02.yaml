@@ -1,0 +1,35 @@
+#===============================================================================
+# Cuby interface example 2 - dataset calculation using queue system
+#===============================================================================
+
+# This example is identical to Example 1 but the child jobs are prepared
+# for running in a queue system. When they are run in step 2, they are not
+# executed in series but submitted to the queue system and can run
+# simultaneously on a cluster. The user has to wait for all the jobs to finish
+# before running step 3.
+
+# Dataset calculation
+job: dataset
+dataset: A24
+
+# When results (in this case calculated externally) are found,
+# read them instead of running the calculation.
+existing_calc_dir: read_results
+job_cleanup: no
+
+# Cuby interface is used as an intermediate layer between
+# the protocol and the calculation itself. This allows us to prepare
+# the child calculations as cuby inputs.
+interface: cuby
+
+# The calculation is defined in a separate block
+calculation:
+  interface: mopac
+  method: pm6
+  # Make the child jobs run in SGE queue
+  queue_submit: yes
+  queue_system: sge
+  queue_scratch_dir: /scratch/$USER
+  queue_name: gq*
+  queue_jobname: DatasetItem
+

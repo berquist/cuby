@@ -1,0 +1,112 @@
+1	CH3OH ... CH3SCH3 0.90	ch3oh_ch3sch3_cs_0.90	cs	-4.97	H-bond	OH-S	sulfur_x8:ch3oh_ch3sch3_cs_0.90
+1	CH3OH ... CH3SCH3 0.95	ch3oh_ch3sch3_cs_0.95	cs	-5.59	H-bond	OH-S	sulfur_x8:ch3oh_ch3sch3_cs_0.95
+1	CH3OH ... CH3SCH3 1.00	ch3oh_ch3sch3_cs_1.00	cs	-5.69	H-bond	OH-S	sulfur_x8:ch3oh_ch3sch3_cs_1.00
+1	CH3OH ... CH3SCH3 1.05	ch3oh_ch3sch3_cs_1.05	cs	-5.49	H-bond	OH-S	sulfur_x8:ch3oh_ch3sch3_cs_1.05
+1	CH3OH ... CH3SCH3 1.10	ch3oh_ch3sch3_cs_1.10	cs	-5.12	H-bond	OH-S	sulfur_x8:ch3oh_ch3sch3_cs_1.10
+1	CH3OH ... CH3SCH3 1.25	ch3oh_ch3sch3_cs_1.25	cs	-3.74	H-bond	OH-S	sulfur_x8:ch3oh_ch3sch3_cs_1.25
+1	CH3OH ... CH3SCH3 1.50	ch3oh_ch3sch3_cs_1.50	cs	-1.98	H-bond	OH-S	sulfur_x8:ch3oh_ch3sch3_cs_1.50
+1	CH3OH ... CH3SCH3 2.00	ch3oh_ch3sch3_cs_2.00	cs	-0.63	H-bond	OH-S	sulfur_x8:ch3oh_ch3sch3_cs_2.00
+2	CH3SCH3 ... benzene 0.90	ch3sch3_benzene_c2v_0.90	c2v	-0.23	Dispersion	S-pi	sulfur_x8:ch3sch3_benzene_c2v_0.90
+2	CH3SCH3 ... benzene 0.95	ch3sch3_benzene_c2v_0.95	c2v	-0.9	Dispersion	S-pi	sulfur_x8:ch3sch3_benzene_c2v_0.95
+2	CH3SCH3 ... benzene 1.00	ch3sch3_benzene_c2v_1.00	c2v	-1.12	Dispersion	S-pi	sulfur_x8:ch3sch3_benzene_c2v_1.00
+2	CH3SCH3 ... benzene 1.05	ch3sch3_benzene_c2v_1.05	c2v	-1.09	Dispersion	S-pi	sulfur_x8:ch3sch3_benzene_c2v_1.05
+2	CH3SCH3 ... benzene 1.10	ch3sch3_benzene_c2v_1.10	c2v	-0.95	Dispersion	S-pi	sulfur_x8:ch3sch3_benzene_c2v_1.10
+2	CH3SCH3 ... benzene 1.25	ch3sch3_benzene_c2v_1.25	c2v	-0.46	Dispersion	S-pi	sulfur_x8:ch3sch3_benzene_c2v_1.25
+2	CH3SCH3 ... benzene 1.50	ch3sch3_benzene_c2v_1.50	c2v	-0.04	Dispersion	S-pi	sulfur_x8:ch3sch3_benzene_c2v_1.50
+2	CH3SCH3 ... benzene 2.00	ch3sch3_benzene_c2v_2.00	c2v	0.08	Dispersion	S-pi	sulfur_x8:ch3sch3_benzene_c2v_2.00
+3	CH3SH ... benzene 0.90	ch3sh_benzene_cs_0.90	cs	-2.8	Dispersion	SH-pi	sulfur_x8:ch3sh_benzene_cs_0.90
+3	CH3SH ... benzene 0.95	ch3sh_benzene_cs_0.95	cs	-3.32	Dispersion	SH-pi	sulfur_x8:ch3sh_benzene_cs_0.95
+3	CH3SH ... benzene 1.00	ch3sh_benzene_cs_1.00	cs	-3.5	Dispersion	SH-pi	sulfur_x8:ch3sh_benzene_cs_1.00
+3	CH3SH ... benzene 1.05	ch3sh_benzene_cs_1.05	cs	-3.46	Dispersion	SH-pi	sulfur_x8:ch3sh_benzene_cs_1.05
+3	CH3SH ... benzene 1.10	ch3sh_benzene_cs_1.10	cs	-3.29	Dispersion	SH-pi	sulfur_x8:ch3sh_benzene_cs_1.10
+3	CH3SH ... benzene 1.25	ch3sh_benzene_cs_1.25	cs	-2.51	Dispersion	SH-pi	sulfur_x8:ch3sh_benzene_cs_1.25
+3	CH3SH ... benzene 1.50	ch3sh_benzene_cs_1.50	cs	-1.39	Dispersion	SH-pi	sulfur_x8:ch3sh_benzene_cs_1.50
+3	CH3SH ... benzene 2.00	ch3sh_benzene_cs_2.00	cs	-0.45	Dispersion	SH-pi	sulfur_x8:ch3sh_benzene_cs_2.00
+4	CH3SH dimer 0.90	ch3sh_dimer_0.90	c1	-2.62	H-bond	SH-S	sulfur_x8:ch3sh_dimer_0.90
+4	CH3SH dimer 0.95	ch3sh_dimer_0.95	c1	-3.09	H-bond	SH-S	sulfur_x8:ch3sh_dimer_0.95
+4	CH3SH dimer 1.00	ch3sh_dimer_1.00	c1	-3.15	H-bond	SH-S	sulfur_x8:ch3sh_dimer_1.00
+4	CH3SH dimer 1.05	ch3sh_dimer_1.05	c1	-2.99	H-bond	SH-S	sulfur_x8:ch3sh_dimer_1.05
+4	CH3SH dimer 1.10	ch3sh_dimer_1.10	c1	-2.72	H-bond	SH-S	sulfur_x8:ch3sh_dimer_1.10
+4	CH3SH dimer 1.25	ch3sh_dimer_1.25	c1	-1.82	H-bond	SH-S	sulfur_x8:ch3sh_dimer_1.25
+4	CH3SH dimer 1.50	ch3sh_dimer_1.50	c1	-0.84	H-bond	SH-S	sulfur_x8:ch3sh_dimer_1.50
+4	CH3SH dimer 2.00	ch3sh_dimer_2.00	c1	-0.23	H-bond	SH-S	sulfur_x8:ch3sh_dimer_2.00
+5	CH3SH ... H2CO 0.90	ch3sh_h2co_0.90	c1	-2.84	H-bond	SH-O	sulfur_x8:ch3sh_h2co_0.90
+5	CH3SH ... H2CO 0.95	ch3sh_h2co_0.95	c1	-3.1	H-bond	SH-O	sulfur_x8:ch3sh_h2co_0.95
+5	CH3SH ... H2CO 1.00	ch3sh_h2co_1.00	c1	-3.11	H-bond	SH-O	sulfur_x8:ch3sh_h2co_1.00
+5	CH3SH ... H2CO 1.05	ch3sh_h2co_1.05	c1	-2.97	H-bond	SH-O	sulfur_x8:ch3sh_h2co_1.05
+5	CH3SH ... H2CO 1.10	ch3sh_h2co_1.10	c1	-2.76	H-bond	SH-O	sulfur_x8:ch3sh_h2co_1.10
+5	CH3SH ... H2CO 1.25	ch3sh_h2co_1.25	c1	-2.01	H-bond	SH-O	sulfur_x8:ch3sh_h2co_1.25
+5	CH3SH ... H2CO 1.50	ch3sh_h2co_1.50	c1	-1.09	H-bond	SH-O	sulfur_x8:ch3sh_h2co_1.50
+5	CH3SH ... H2CO 2.00	ch3sh_h2co_2.00	c1	-0.37	H-bond	SH-O	sulfur_x8:ch3sh_h2co_2.00
+6	CH3SH ... H2O 0.90	ch3sh_h2o_cs_0.90	cs	-2.11	H-bond	SH-O	sulfur_x8:ch3sh_h2o_cs_0.90
+6	CH3SH ... H2O 0.95	ch3sh_h2o_cs_0.95	cs	-2.33	H-bond	SH-O	sulfur_x8:ch3sh_h2o_cs_0.95
+6	CH3SH ... H2O 1.00	ch3sh_h2o_cs_1.00	cs	-2.36	H-bond	SH-O	sulfur_x8:ch3sh_h2o_cs_1.00
+6	CH3SH ... H2O 1.05	ch3sh_h2o_cs_1.05	cs	-2.28	H-bond	SH-O	sulfur_x8:ch3sh_h2o_cs_1.05
+6	CH3SH ... H2O 1.10	ch3sh_h2o_cs_1.10	cs	-2.14	H-bond	SH-O	sulfur_x8:ch3sh_h2o_cs_1.10
+6	CH3SH ... H2O 1.25	ch3sh_h2o_cs_1.25	cs	-1.62	H-bond	SH-O	sulfur_x8:ch3sh_h2o_cs_1.25
+6	CH3SH ... H2O 1.50	ch3sh_h2o_cs_1.50	cs	-0.96	H-bond	SH-O	sulfur_x8:ch3sh_h2o_cs_1.50
+6	CH3SH ... H2O 2.00	ch3sh_h2o_cs_2.00	cs	-0.39	H-bond	SH-O	sulfur_x8:ch3sh_h2o_cs_2.00
+7	CH3SH ... NH3 0.90	ch3sh_nh3_cs_0.90	cs	-2.65	H-bond	SH-N	sulfur_x8:ch3sh_nh3_cs_0.90
+7	CH3SH ... NH3 0.95	ch3sh_nh3_cs_0.95	cs	-2.91	H-bond	SH-N	sulfur_x8:ch3sh_nh3_cs_0.95
+7	CH3SH ... NH3 1.00	ch3sh_nh3_cs_1.00	cs	-2.95	H-bond	SH-N	sulfur_x8:ch3sh_nh3_cs_1.00
+7	CH3SH ... NH3 1.05	ch3sh_nh3_cs_1.05	cs	-2.86	H-bond	SH-N	sulfur_x8:ch3sh_nh3_cs_1.05
+7	CH3SH ... NH3 1.10	ch3sh_nh3_cs_1.10	cs	-2.7	H-bond	SH-N	sulfur_x8:ch3sh_nh3_cs_1.10
+7	CH3SH ... NH3 1.25	ch3sh_nh3_cs_1.25	cs	-2.06	H-bond	SH-N	sulfur_x8:ch3sh_nh3_cs_1.25
+7	CH3SH ... NH3 1.50	ch3sh_nh3_cs_1.50	cs	-1.18	H-bond	SH-N	sulfur_x8:ch3sh_nh3_cs_1.50
+7	CH3SH ... NH3 2.00	ch3sh_nh3_cs_2.00	cs	-0.43	H-bond	SH-N	sulfur_x8:ch3sh_nh3_cs_2.00
+8	formamide ... CH3SH 0.90	formamide_ch3sh_0.90	c1	-5.61	H-bond	NH-s	sulfur_x8:formamide_ch3sh_0.90
+8	formamide ... CH3SH 0.95	formamide_ch3sh_0.95	c1	-6.24	H-bond	NH-s	sulfur_x8:formamide_ch3sh_0.95
+8	formamide ... CH3SH 1.00	formamide_ch3sh_1.00	c1	-6.33	H-bond	NH-s	sulfur_x8:formamide_ch3sh_1.00
+8	formamide ... CH3SH 1.05	formamide_ch3sh_1.05	c1	-6.1	H-bond	NH-s	sulfur_x8:formamide_ch3sh_1.05
+8	formamide ... CH3SH 1.10	formamide_ch3sh_1.10	c1	-5.7	H-bond	NH-s	sulfur_x8:formamide_ch3sh_1.10
+8	formamide ... CH3SH 1.25	formamide_ch3sh_1.25	c1	-4.21	H-bond	NH-s	sulfur_x8:formamide_ch3sh_1.25
+8	formamide ... CH3SH 1.50	formamide_ch3sh_1.50	c1	-2.32	H-bond	NH-s	sulfur_x8:formamide_ch3sh_1.50
+8	formamide ... CH3SH 2.00	formamide_ch3sh_2.00	c1	-0.8	H-bond	NH-s	sulfur_x8:formamide_ch3sh_2.00
+9	H2O ... CH3SCH3 0.90	h2o_ch3sch3_cs_0.90	cs	-4.73	H-bond	OH-S	sulfur_x8:h2o_ch3sch3_cs_0.90
+9	H2O ... CH3SCH3 0.95	h2o_ch3sch3_cs_0.95	cs	-5.29	H-bond	OH-S	sulfur_x8:h2o_ch3sch3_cs_0.95
+9	H2O ... CH3SCH3 1.00	h2o_ch3sch3_cs_1.00	cs	-5.35	H-bond	OH-S	sulfur_x8:h2o_ch3sch3_cs_1.00
+9	H2O ... CH3SCH3 1.05	h2o_ch3sch3_cs_1.05	cs	-5.14	H-bond	OH-S	sulfur_x8:h2o_ch3sch3_cs_1.05
+9	H2O ... CH3SCH3 1.10	h2o_ch3sch3_cs_1.10	cs	-4.77	H-bond	OH-S	sulfur_x8:h2o_ch3sch3_cs_1.10
+9	H2O ... CH3SCH3 1.25	h2o_ch3sch3_cs_1.25	cs	-3.44	H-bond	OH-S	sulfur_x8:h2o_ch3sch3_cs_1.25
+9	H2O ... CH3SCH3 1.50	h2o_ch3sch3_cs_1.50	cs	-1.81	H-bond	OH-S	sulfur_x8:h2o_ch3sch3_cs_1.50
+9	H2O ... CH3SCH3 2.00	h2o_ch3sch3_cs_2.00	cs	-0.58	H-bond	OH-S	sulfur_x8:h2o_ch3sch3_cs_2.00
+10	H2O dimer 0.90	h2o_dimer_cs_0.90	cs	-4.66	H-bond	OH-O	sulfur_x8:h2o_dimer_cs_0.90
+10	H2O dimer 0.95	h2o_dimer_cs_0.95	cs	-4.96	H-bond	OH-O	sulfur_x8:h2o_dimer_cs_0.95
+10	H2O dimer 1.00	h2o_dimer_cs_1.00	cs	-4.96	H-bond	OH-O	sulfur_x8:h2o_dimer_cs_1.00
+10	H2O dimer 1.05	h2o_dimer_cs_1.05	cs	-4.78	H-bond	OH-O	sulfur_x8:h2o_dimer_cs_1.05
+10	H2O dimer 1.10	h2o_dimer_cs_1.10	cs	-4.5	H-bond	OH-O	sulfur_x8:h2o_dimer_cs_1.10
+10	H2O dimer 1.25	h2o_dimer_cs_1.25	cs	-3.49	H-bond	OH-O	sulfur_x8:h2o_dimer_cs_1.25
+10	H2O dimer 1.50	h2o_dimer_cs_1.50	cs	-2.13	H-bond	OH-O	sulfur_x8:h2o_dimer_cs_1.50
+10	H2O dimer 2.00	h2o_dimer_cs_2.00	cs	-0.88	H-bond	OH-O	sulfur_x8:h2o_dimer_cs_2.00
+11	H2O ... H2S 0.90	h2o_h2s_cs_0.90	cs	-2.63	H-bond	OH-S	sulfur_x8:h2o_h2s_cs_0.90
+11	H2O ... H2S 0.95	h2o_h2s_cs_0.95	cs	-2.9	H-bond	OH-S	sulfur_x8:h2o_h2s_cs_0.95
+11	H2O ... H2S 1.00	h2o_h2s_cs_1.00	cs	-2.9	H-bond	OH-S	sulfur_x8:h2o_h2s_cs_1.00
+11	H2O ... H2S 1.05	h2o_h2s_cs_1.05	cs	-2.75	H-bond	OH-S	sulfur_x8:h2o_h2s_cs_1.05
+11	H2O ... H2S 1.10	h2o_h2s_cs_1.10	cs	-2.53	H-bond	OH-S	sulfur_x8:h2o_h2s_cs_1.10
+11	H2O ... H2S 1.25	h2o_h2s_cs_1.25	cs	-1.79	H-bond	OH-S	sulfur_x8:h2o_h2s_cs_1.25
+11	H2O ... H2S 1.50	h2o_h2s_cs_1.50	cs	-0.93	H-bond	OH-S	sulfur_x8:h2o_h2s_cs_1.50
+11	H2O ... H2S 2.00	h2o_h2s_cs_2.00	cs	-0.31	H-bond	OH-S	sulfur_x8:h2o_h2s_cs_2.00
+12	H2S ... CH4 0.90	h2s_ch4_0.90	c1	-0.75	Dispersion	S-alkane	sulfur_x8:h2s_ch4_0.90
+12	H2S ... CH4 0.95	h2s_ch4_0.95	c1	-0.87	Dispersion	S-alkane	sulfur_x8:h2s_ch4_0.95
+12	H2S ... CH4 1.00	h2s_ch4_1.00	c1	-0.85	Dispersion	S-alkane	sulfur_x8:h2s_ch4_1.00
+12	H2S ... CH4 1.05	h2s_ch4_1.05	c1	-0.77	Dispersion	S-alkane	sulfur_x8:h2s_ch4_1.05
+12	H2S ... CH4 1.10	h2s_ch4_1.10	c1	-0.66	Dispersion	S-alkane	sulfur_x8:h2s_ch4_1.10
+12	H2S ... CH4 1.25	h2s_ch4_1.25	c1	-0.38	Dispersion	S-alkane	sulfur_x8:h2s_ch4_1.25
+12	H2S ... CH4 1.50	h2s_ch4_1.50	c1	-0.14	Dispersion	S-alkane	sulfur_x8:h2s_ch4_1.50
+12	H2S ... CH4 2.00	h2s_ch4_2.00	c1	-0.03	Dispersion	S-alkane	sulfur_x8:h2s_ch4_2.00
+13	H2S dimer 0.90	h2s_dimer_cs_0.90	cs	-1.43	H-bond	SH-S	sulfur_x8:h2s_dimer_cs_0.90
+13	H2S dimer 0.95	h2s_dimer_cs_0.95	cs	-1.64	H-bond	SH-S	sulfur_x8:h2s_dimer_cs_0.95
+13	H2S dimer 1.00	h2s_dimer_cs_1.00	cs	-1.67	H-bond	SH-S	sulfur_x8:h2s_dimer_cs_1.00
+13	H2S dimer 1.05	h2s_dimer_cs_1.05	cs	-1.59	H-bond	SH-S	sulfur_x8:h2s_dimer_cs_1.05
+13	H2S dimer 1.10	h2s_dimer_cs_1.10	cs	-1.46	H-bond	SH-S	sulfur_x8:h2s_dimer_cs_1.10
+13	H2S dimer 1.25	h2s_dimer_cs_1.25	cs	-1.01	H-bond	SH-S	sulfur_x8:h2s_dimer_cs_1.25
+13	H2S dimer 1.50	h2s_dimer_cs_1.50	cs	-0.5	H-bond	SH-S	sulfur_x8:h2s_dimer_cs_1.50
+13	H2S dimer 2.00	h2s_dimer_cs_2.00	cs	-0.15	H-bond	SH-S	sulfur_x8:h2s_dimer_cs_2.00
+14	H2S ... H2O 0.90	h2s_h2o_cs_0.90	cs	-2.39	H-bond	SH-O	sulfur_x8:h2s_h2o_cs_0.90
+14	H2S ... H2O 0.95	h2s_h2o_cs_0.95	cs	-2.63	H-bond	SH-O	sulfur_x8:h2s_h2o_cs_0.95
+14	H2S ... H2O 1.00	h2s_h2o_cs_1.00	cs	-2.66	H-bond	SH-O	sulfur_x8:h2s_h2o_cs_1.00
+14	H2S ... H2O 1.05	h2s_h2o_cs_1.05	cs	-2.58	H-bond	SH-O	sulfur_x8:h2s_h2o_cs_1.05
+14	H2S ... H2O 1.10	h2s_h2o_cs_1.10	cs	-2.43	H-bond	SH-O	sulfur_x8:h2s_h2o_cs_1.10
+14	H2S ... H2O 1.25	h2s_h2o_cs_1.25	cs	-1.86	H-bond	SH-O	sulfur_x8:h2s_h2o_cs_1.25
+14	H2S ... H2O 1.50	h2s_h2o_cs_1.50	cs	-1.1	H-bond	SH-O	sulfur_x8:h2s_h2o_cs_1.50
+14	H2S ... H2O 2.00	h2s_h2o_cs_2.00	cs	-0.44	H-bond	SH-O	sulfur_x8:h2s_h2o_cs_2.00

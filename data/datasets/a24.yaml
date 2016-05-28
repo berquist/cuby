@@ -1,0 +1,257 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Data set description
+#===============================================================================
+
+# A24 data set
+# Interaction energies:
+# CCSD(T)/CBS, frozen core, counterpoise-corrected
+# 3-point extrapolation from aug-cc-pVTZ, aug-cc-pVQZ and aug-cc-pV5Z
+# Geometries:
+# CCSD(T)/CBS, frozen core, counterpoise-corrected
+# MP2 extrapolated from aug-cc-pVTZ and aug-cc-pVQZ
+# dCCSD(T) in aug-cc-pVDZ
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: A24
+  references: 
+    "10.1021/ct400057w": "Řezáč, J.; Hobza, P. J. Chem. Theory Comput. 2013, 9, 2151–2155."
+  text: "Accurate CCSD(T)/CBS interaction energies in small noncovalent complexes"
+  
+  groups:
+    - H-bond
+    - dispersion
+    - other
+    - stack
+  global_setup:
+    job: interaction
+    molecule_a:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+    molecule_b:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 water ... ammonia
+  shortname: 01_water_ammonia
+  geometry: A24:01
+  reference_value: -6.493378
+  setup: {}
+  group: H-bond
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 water dimer
+  shortname: 02_water_dimer
+  geometry: A24:02
+  reference_value: -5.005935
+  setup: {}
+  group: H-bond
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 HCN dimer
+  shortname: 03_HCN_dimer
+  geometry: A24:03
+  reference_value: -4.744718
+  setup: {}
+  group: H-bond
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 HF dimer
+  shortname: 04_HF_dimer
+  geometry: A24:04
+  reference_value: -4.581237
+  setup: {}
+  group: H-bond
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 ammonia dimer
+  shortname: 05_ammonia_dimer
+  geometry: A24:05
+  reference_value: -3.136516
+  setup: {}
+  group: H-bond
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 HF ... methane
+  shortname: 06_HF_methane
+  geometry: A24:06
+  reference_value: -1.654476
+  setup: {}
+  group: other
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 ammonia ... methane
+  shortname: 07_ammonia_methane
+  geometry: A24:07
+  reference_value: -0.764673
+  setup: {}
+  group: other
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 water ... methane
+  shortname: 08_water_methane
+  geometry: A24:08
+  reference_value: -0.663422
+  setup: {}
+  group: other
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 formaldehyde dimer
+  shortname: 09_formaldehyde_dimer
+  geometry: A24:09
+  reference_value: -4.554256
+  setup: {}
+  group: other
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 water ... ethene
+  shortname: 10_water_ethene
+  geometry: A24:10
+  reference_value: -2.556773
+  setup: {}
+  group: other
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 formaldehyde ... ethene
+  shortname: 11_formaldehyde_ethene
+  geometry: A24:11
+  reference_value: -1.621070
+  setup: {}
+  group: other
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 ethyne dimer
+  shortname: 12_ethyne_dimer
+  geometry: A24:12
+  reference_value: -1.524047
+  setup: {}
+  group: other
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 ammonia ... ethene
+  shortname: 13_ammonia_ethene
+  geometry: A24:13
+  reference_value: -1.373594
+  setup: {}
+  group: other
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 ethene dimer
+  shortname: 14_ethene_dimer
+  geometry: A24:14
+  reference_value: -1.090361
+  setup: {}
+  group: other
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 methane ... ethene
+  shortname: 15_methane_ethene
+  geometry: A24:15
+  reference_value: -0.502478
+  setup: {}
+  group: dispersion
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 borane ... methane
+  shortname: 16_borane_methane
+  geometry: A24:16
+  reference_value: -1.484653
+  setup: {}
+  group: dispersion
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 methane ... ethane
+  shortname: 17_methane_ethane
+  geometry: A24:17
+  reference_value: -0.827355
+  setup: {}
+  group: dispersion
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 methane ... ethane
+  shortname: 18_methane_ethane
+  geometry: A24:18
+  reference_value: -0.607119
+  setup: {}
+  group: dispersion
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 methane dimer
+  shortname: 19_methane_dimer
+  geometry: A24:19
+  reference_value: -0.532617
+  setup: {}
+  group: dispersion
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 Ar ... methane
+  shortname: 20_Ar_methane
+  geometry: A24:20
+  reference_value: -0.404545
+  setup: {}
+  group: dispersion
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 Ar ... ethene
+  shortname: 21_Ar_ethene
+  geometry: A24:21
+  reference_value: -0.364342
+  setup: {}
+  group: dispersion
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 ethene ... ethyne
+  shortname: 22_ethene_ethyne
+  geometry: A24:22
+  reference_value: 0.821219
+  setup: {}
+  group: stack
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 ethene dimer
+  shortname: 23_ethene_dimer
+  geometry: A24:23
+  reference_value: 0.933912
+  setup: {}
+  group: stack
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 ethyne dimer
+  shortname: 24_ethyne_dimer
+  geometry: A24:24
+  reference_value: 1.115355
+  setup: {}
+  group: stack
+  tags: ""
+

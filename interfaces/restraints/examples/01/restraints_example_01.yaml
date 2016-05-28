@@ -1,0 +1,37 @@
+#===============================================================================
+# Restraints example 1: restraints syntax
+#===============================================================================
+
+# Here, the restraints are used as a standalone iterface, although the most
+# common application of this interface is to use it as a modifier added to
+# some other calculation. The purpose of this example is to demonstrate the
+# syntax used to define all types of the restraints.
+
+# Using the retsraints, we define a simple harmonic forcefield for a hydrogen
+# peroxide, and optimize a very bad starting geometry using this forfecield.
+
+job: optimize
+interface: restraints
+
+# Geometry - practically random guess
+geometry: |
+  H  1.0 0.0 0.0
+  O  0.0 1.0 0.0
+  O  0.0 0.0 5.0
+  H  1.0 0.0 8.0
+
+# The list of the restraints is an array in the YAML syntax (indented lines
+# starting with "-"). Each line contain multiple entries, separated by
+# semicolons:
+# 1)       type of the internal coordinate (distance, angle, torsion)
+# 2)       equilibrium value (in Angstroms/degrees)
+# 3)       force constant (kcal/mol/Angstrom, kcal/mol/rad)
+# 4,5,...) list of atoms (in Cuby selection syntax) defining the center the 
+#          restraint is applied to (2 for distance, 3 for angle, 4 for torsion)
+restraints:
+  - distance; 0.95; 10; 1; 2
+  - distance; 1.47; 10; 2; 3
+  - distance; 0.95; 10; 3; 4
+  - angle; 94.8; 10; 1; 2; 3
+  - angle; 94.8; 10; 2; 3; 4
+  - torsion; 111.5; 10; 1; 2; 3; 4

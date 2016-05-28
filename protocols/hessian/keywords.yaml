@@ -1,0 +1,12 @@
+################################################################################
+# Keywords for protocol Hessian
+################################################################################
+
+keywords: 
+  :hessian_projected: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Project out translation and rotation from the Hessian. Nothe that this
+  #: procedure is automatically carried out by some of the interfaces and
+  #: external programs used to calculate the hessian.

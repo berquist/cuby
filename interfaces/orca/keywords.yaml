@@ -1,0 +1,51 @@
+################################################################################
+# KEYWORDS for the ORCA interface
+################################################################################
+
+keywords:
+  :orca_ecp: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :auto
+  #: Pseudopotentials. When set to 'auto', ORCA assigns pseudopotentials
+  #: automatically fot the selected basis sets.
+
+  :orca_dlpno: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Enable the Domain-localized pair natural orbitals approximation in
+  #: CCSD and CCSD(T) calculation. 
+
+  :orca_keywords: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Additional keywords passed to ORCA, in the simple format (a line beginning with !)
+
+  :orca_extra_input: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  # Additional input for orca, inserted into he input. It has to be a valid block(s)
+  # following the orca input format.
+
+  #: Additional keywords passed to ORCA, in the simple format (a line beginning with !)
+  :orca_bin_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the directory containing the orca binaries
+
+  :orca_mpi_setup: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: A shell command(s) for loading the MPI environment (parallel-calculations only)
+
+hints:
+  :orca_dft_ri: "Keyword orca_dft_ri removed, use density_fitting instead."
+  :orca_correlation_ri: "Keyword orca_correlation_ri removed, use density_fitting instead."

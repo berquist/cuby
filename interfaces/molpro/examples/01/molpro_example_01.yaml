@@ -1,0 +1,32 @@
+#===============================================================================
+# Molpro example 1: setup, HF calculation
+#===============================================================================
+
+# Simple input for HF calculation, all other options use default values.
+
+job: energy
+
+#-------------------------------------------------------------------------------
+# Calculation
+#-------------------------------------------------------------------------------
+interface: molpro
+method: hf
+basisset: cc-pVDZ
+
+#-------------------------------------------------------------------------------
+# Geometry
+#-------------------------------------------------------------------------------
+# Water molecule from the internal database. You can use a name of a geometry
+# file instead, it should be located in the same directory as the input
+geometry: A24:water 
+charge: 0
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# Molpro executable
+molpro_exe: /usr/local/molpro2010.1/arch/amd64-intel_11/bin/molpro
+# Path to Molpro's libraries
+molpro_lib_dir: /usr/local/molpro2010.1/arch/amd64-intel_11/lib/molpros_2010_1_Linux_x86_64_i8
+
+# The following examples assume that the interface is set up in the config file.

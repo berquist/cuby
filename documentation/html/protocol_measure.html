@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol measure</h1>
+<p>
+This protocol performs measurements on a series of geometries. The geometry should be in .xyz format, possibly with multiple
+entries.
+</p>
+
+<p>
+The quantities that can be measured are demonstrated in the example.
+</p>
+
+<h2>Keywords used</h2>
+<h4>Keywords specific for this protocol:</h4>
+<ul>
+<li><a href="keywords.html#measurements">measurements</a></li>
+</ul>
+<h4>Other keywords used by this protocol:</h4>
+<ul>
+<li><a href="keywords.html#geometry">geometry</a></li>
+<li><a href="keywords.html#geometry_template">geometry_template</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/measure/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Protocol measure example 1
+#===============================================================================
+
+# Measurements on a benzene-ethylene complex
+
+job: measure
+geometry: scan.xyz # The file contains five geometries
+
+# The list of measurements as name: expression pairs
+# The name is printed in the output
+# In the expressions, semicolons separate the arguments (atom selections)
+measurements: 
+  # Distance between two atoms
+  dist_3_16: distance(3; 16) 
+  # Distance between the centers of molecules
+  dist_cc: distance(1-12; 13-18) 
+  # Closest distance between molecules
+  closest: closest_distance(%molecule(1); %molecule(2)) 
+  # Angle between two atoms and a center of group atoms
+  angle: angle(9; 3; 16,17,18)
+  # Torsion angle
+  torsion: torsion(9; 3; 16; 18)
+  # Point - plane distance between the benzene ring and the other molecule
+  # First argument is the point (center of molecule), remaining three define the plane
+  point_plane: point_plane(13-18; 1; 5; 9)
+  # Point-normal vector distance, takes arguments P,A,B,C
+  # Calculates distance of P from a vector originating in A and perpendicular to AB and AC
+  # Here, we calculate the displacement of the ethylene from the benzene ring center
+  pp: point_normal(%molecule(2); %molecule(1); 1; 5)
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

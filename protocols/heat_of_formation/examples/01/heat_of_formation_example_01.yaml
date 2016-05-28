@@ -1,0 +1,54 @@
+#===============================================================================
+# Heat of formation calculation example
+#===============================================================================
+
+# A complete calculation o heat of formation of a methane
+# Fast DFT calculatiosn are used for demonstration
+
+# Multistep protocol is used to optimize the moleculle before the
+# thermochemistry calculation (which includes vibrational analysis)
+job: multistep
+steps: opt, thermo
+
+# The same method is used for optimization end frequencies,
+# here it is defined only one
+shared_method: &method_setup
+  interface: turbomole
+  method: dft
+  functional: b3-lyp
+  basisset: def2-SVP
+  charge: 0
+
+# Geometry optimization step
+calculation_opt:
+  # Methane is built using SMILES
+  geometry: smiles:C
+  job: optimize
+  opt_quality: 0.1
+  <<: *method_setup
+
+
+# Heat of formation calculation
+calculation_thermo:
+  job: heat_of_formation
+  print: energy_decomposition
+  
+  geometry: optimized.xyz
+
+  # Setup for the vibrational analysis
+  calculation_vib:
+    <<: *method_setup
+    # Analytic vibrations not available with RI:
+    density_fitting: none
+
+  # The energy itself can be calculated separately at better level
+  calculation_ene:
+    <<: *method_setup
+    # The energy is calculated in larger basis:
+    basisset: def2-TZVPP
+
+  # This is applied only to isolated atom calculations of energy,
+  # in addition to the common 'calculation_ene' setup
+  calculation_ene_element:
+    # The isolated atoms may be open-shell:
+    spin_restricted: no 

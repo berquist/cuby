@@ -1,0 +1,32 @@
+<%# Blank lines to get to the method setup %>
+
+
+
+
+
+
+
+
+<%# Enter RICC2 setup %>
+cc
+<%# Frozen core %>
+freeze
+<% unless @settings[:correlation_frozen_core]%>
+core 0
+<% end %>
+*
+<%# Auxiliary basis, must be present in the library %>
+cbas
+*
+<%# Setup %>
+memory
+<%= ri_corr_core %>
+denconv
+1.0e-<%= @settings[:density_convergence] %>
+<%# Enter method setup %>
+ricc2
+mp3
+conv <%= @settings[:correlation_convergence] %>
+*
+*
+*

@@ -1,0 +1,286 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface turbomole</h1>
+<p>
+Interface to the Turbomole computational chemistry package
+(<a href="http://www.turbomole-gmbh.com">www.turbomole-gmbh.com</a>, commercial software).
+Turbomole provides very fast implementation of DFT and wavefunction methods.
+</p>
+
+<h4>Warning</h4>
+<p>
+Construction of the inputs for turbomole is difficult and problems may appear
+when moving to different version of turbomole. Moreover, some problems may
+get unnoticed as the calculation can run successfully, ignoring some part
+of the input. It is recommended to check the turbomole outputs manually
+for each type of calculation before production calculations.
+</p>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>hf - supports calculation of energy, gradient, hessian, atomic_charges, point_charges, point_charges_gradient, mos</li>
+<li>mp2 - supports calculation of energy, gradient</li>
+<li>mp3 - supports calculation of energy</li>
+<li>dft - supports calculation of energy, gradient, hessian, atomic_charges, point_charges, point_charges_gradient, mos</li>
+<li>ccsd - supports calculation of energy</li>
+<li>ccsd(t) - supports calculation of energy</li>
+</ul>
+<h4>The interface implements following solvent models (keyword 'solvent_model'):</h4>
+<ul>
+<li>cosmo</li>
+</ul>
+<h4>The interface implements following atomic charge types (keyword 'atomic_charges'):</h4>
+<ul>
+<li>nbo - Natural bond orbital (NBO) charges</li>
+<li>mulliken - Mulliken charges</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#explicit_correlation">explicit_correlation</a></li>
+<li><a href="keywords.html#mem_core_correlation">mem_core_correlation</a></li>
+<li><a href="keywords.html#mem_core_scf">mem_core_scf</a></li>
+<li><a href="keywords.html#properties">properties</a></li>
+<li><a href="keywords.html#serial_scf">serial_scf</a></li>
+<li><a href="keywords.html#sos_scaling">sos_scaling</a></li>
+<li><a href="keywords.html#sos_scaling_laplace">sos_scaling_laplace</a></li>
+<li><a href="keywords.html#turbomole_bin_dir">turbomole_bin_dir</a></li>
+<li><a href="keywords.html#turbomole_bin_dir_ga">turbomole_bin_dir_ga</a></li>
+<li><a href="keywords.html#turbomole_bin_dir_mpi">turbomole_bin_dir_mpi</a></li>
+<li><a href="keywords.html#turbomole_bin_dir_smp">turbomole_bin_dir_smp</a></li>
+<li><a href="keywords.html#turbomole_keywords">turbomole_keywords</a></li>
+<li><a href="keywords.html#turbomole_scf_grad">turbomole_scf_grad</a></li>
+<li><a href="keywords.html#turbomole_scf_ri_marij">turbomole_scf_ri_marij</a></li>
+<li><a href="keywords.html#turbomole_scripts_dir">turbomole_scripts_dir</a></li>
+<li><a href="keywords.html#turbomole_turbodir">turbomole_turbodir</a></li>
+<li><a href="keywords.html#turbomole_version">turbomole_version</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#atomic_charges">atomic_charges</a></li>
+<li><a href="keywords.html#auxiliary_basis_mp2">auxiliary_basis_mp2</a></li>
+<li><a href="keywords.html#auxiliary_basis_mp2_elements">auxiliary_basis_mp2_elements</a></li>
+<li><a href="keywords.html#auxiliary_basis_scf">auxiliary_basis_scf</a></li>
+<li><a href="keywords.html#auxiliary_basis_scf_elements">auxiliary_basis_scf_elements</a></li>
+<li><a href="keywords.html#basisset">basisset</a></li>
+<li><a href="keywords.html#basisset_elements">basisset_elements</a></li>
+<li><a href="keywords.html#basisset_file">basisset_file</a></li>
+<li><a href="keywords.html#basisset_zeta">basisset_zeta</a></li>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#correlation_convergence">correlation_convergence</a></li>
+<li><a href="keywords.html#correlation_frozen_core">correlation_frozen_core</a></li>
+<li><a href="keywords.html#delete_large_files">delete_large_files</a></li>
+<li><a href="keywords.html#density_convergence">density_convergence</a></li>
+<li><a href="keywords.html#density_fitting">density_fitting</a></li>
+<li><a href="keywords.html#dft_grid">dft_grid</a></li>
+<li><a href="keywords.html#dft_grid_custom">dft_grid_custom</a></li>
+<li><a href="keywords.html#electric_field">electric_field</a></li>
+<li><a href="keywords.html#existing_calc_dir">existing_calc_dir</a></li>
+<li><a href="keywords.html#functional">functional</a></li>
+<li><a href="keywords.html#functional_custom">functional_custom</a></li>
+<li><a href="keywords.html#functional_custom_type">functional_custom_type</a></li>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#mem">mem</a></li>
+<li><a href="keywords.html#mem_core">mem_core</a></li>
+<li><a href="keywords.html#method">method</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+<li><a href="keywords.html#parallel">parallel</a></li>
+<li><a href="keywords.html#parallel_mode">parallel_mode</a></li>
+<li><a href="keywords.html#scf_convergence">scf_convergence</a></li>
+<li><a href="keywords.html#scf_cycles">scf_cycles</a></li>
+<li><a href="keywords.html#scf_levelshift">scf_levelshift</a></li>
+<li><a href="keywords.html#scs_os">scs_os</a></li>
+<li><a href="keywords.html#scs_ss">scs_ss</a></li>
+<li><a href="keywords.html#solvent_epsilon">solvent_epsilon</a></li>
+<li><a href="keywords.html#solvent_model">solvent_model</a></li>
+<li><a href="keywords.html#spin_component_scaling">spin_component_scaling</a></li>
+<li><a href="keywords.html#spin_restricted">spin_restricted</a></li>
+<li><a href="keywords.html#use_symmetry">use_symmetry</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/turbomole/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Turbomole example 1 - configuration
+#===============================================================================
+
+# Example of a full configuration of the interface. The following examples
+# assume that this configuration is done in the configuration file.
+
+# Configuration of the interface (change the paths to your installation)
+# Version of Turbomole
+turbomole_version: 6.6
+# The base diretory of the Turbomole installation
+turbomole_turbodir: /home/rezac/bin/turbomole/turbomole-6.6/arch/all
+# Path to serial binaries
+turbomole_bin_dir: /home/rezac/bin/turbomole/turbomole-6.6/arch/all/bin/em64t-unknown-linux-gnu
+# Path to all flavours of parallel binaries
+turbomole_bin_dir_smp: /home/rezac/bin/turbomole/turbomole-6.6/arch/all/bin/em64t-unknown-linux-gnu_smp
+turbomole_bin_dir_mpi: /home/rezac/bin/turbomole/turbomole-6.6/arch/all/bin/em64t-unknown-linux-gnu_mpi
+turbomole_bin_dir_mpi: /home/rezac/bin/turbomole/turbomole-6.6/arch/all/bin/em64t-unknown-linux-gnu_ga
+# Path to Turbomole scripts
+turbomole_scripts_dir: /home/rezac/bin/turbomole/turbomole-6.6/arch/all/scripts
+
+# Simple calculation: water dimer at HF/def2-SVP level
+job: energy
+interface: turbomole
+geometry: A24:water
+charge: 0
+basisset: def2-SVP
+method: hf
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Turbomole example 2 - Methods
+#===============================================================================
+
+# This example run a calculation of water molecule with all  methods available
+# in this interface
+
+job: multistep
+steps: hf, rihf, rimp2, rimp2rihf, rimp3, ccsd, ccsdt, dft
+
+# Common setup for all steps
+calculation_common:
+  job: energy
+  interface: turbomole
+  geometry: A24:water
+  charge: 0
+  basisset: def2-SVP
+
+# HF
+calculation_hf:
+  method: hf
+  density_fitting: none # Disable the RI approximation
+
+# RI-HF
+calculation_rihf:
+  method: hf
+  # RI is on by default
+
+# RI-MP2, full HF
+calculation_rimp2:
+  method: mp2
+  density_fitting: correlation
+
+# RI-MP2 on RI-HF
+calculation_rimp2rihf:
+  method: mp2
+  density_fitting: both # (this is the default)
+
+# RI-MP3
+calculation_rimp3:
+  method: mp3
+
+# CCSD
+calculation_ccsd:
+  method: ccsd
+
+# CCSD(T)
+calculation_ccsdt:
+  method: ccsd(t)
+
+# DFT
+calculation_dft:
+  method: dft
+  functional: b3-lyp
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Turbomole example 3 - mixing basis sets
+#===============================================================================
+
+# Calculation with custom basis set and auxiliary basis sets. This particular
+# setup makes no sense but demonstrates all the options.
+
+# Calculation setup
+job: energy
+interface: turbomole
+geometry: A24:water
+charge: 0
+method: mp2
+density_fitting: both # RI for both HF and MP2 steps
+
+# Default AO basis:
+basisset: def2-SVP
+
+# Auxiliary basis for RI-HF
+auxiliary_basis_scf: def2-TZVP
+
+# Auxiliary basis for RI-MP2
+auxiliary_basis_mp2: aug-cc-pVDZ
+
+# Change basis sets for some elements
+basisset_elements:
+  H: def2-TZVP
+auxiliary_basis_scf_elements: 
+  O: aug-cc-pVDZ
+auxiliary_basis_mp2_elements:
+  H: aug-cc-pVTZ
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Turbomole example 4 - COSMO solvation
+#===============================================================================
+
+# Calculation of a solvation energy using the COSMO model
+
+job: energy
+# Mixer interface is used to get the difference between COSMO and gas-phase energies
+interface: mixer
+
+mixer_weight_a: 1.0
+mixer_weight_b: -1.0
+
+geometry: A24:water
+
+calculation_common:
+  interface: turbomole
+  charge: 0
+  basisset: def2-SVP
+  method: dft
+  functional: b-lyp
+
+calculation_a: # Gas phase
+  charge: 0 # Could be empty, but something bust be here
+
+calculation_b: # COSMO water
+  solvent_model: cosmo
+  solvent_epsilon: 78.5
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

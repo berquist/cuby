@@ -1,0 +1,177 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface demon</h1>
+<p>
+Interface to the DFT program <a href="http://www.demon-software.com/public_html/program.html">deMon</a> (academic license free of charge). DeMon uses advanced density fitting techniques enabling very efficient calculations. 
+</p>
+
+<p>
+The interface supports also the development version of deMon implementing constrained DFT (cDFT) methodology.
+</p>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>dft - supports calculation of energy, atomic_charges, gradient, point_charges, point_charges_gradient</li>
+</ul>
+<h4>The interface implements following atomic charge types (keyword 'atomic_charges'):</h4>
+<ul>
+<li>spatial - Spatial population charges</li>
+<li>mulliken - Mulliken charges</li>
+<li>loewdin - Loewdin charges</li>
+<li>hirshfeld_fragment - </li>
+<li>becke - Becke charges</li>
+<li>hirshfeld - Hirshfeld charges</li>
+</ul>
+<h2>Input structure</h2>
+<h4>Optionally, following blocks can be defined in the input:</h4>
+<ul>
+<li>fragment_N - N = 1...demon_fragment_count, blocks defining fragments (charge, multiplicity, selction)</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#cdft_constraints">cdft_constraints</a></li>
+<li><a href="keywords.html#cdft_hda">cdft_hda</a></li>
+<li><a href="keywords.html#demon_auxis_file">demon_auxis_file</a></li>
+<li><a href="keywords.html#demon_basis_file">demon_basis_file</a></li>
+<li><a href="keywords.html#demon_call_mpi">demon_call_mpi</a></li>
+<li><a href="keywords.html#demon_cdft_deformation_density">demon_cdft_deformation_density</a></li>
+<li><a href="keywords.html#demon_cdft_force_convergence">demon_cdft_force_convergence</a></li>
+<li><a href="keywords.html#demon_cdft_phase">demon_cdft_phase</a></li>
+<li><a href="keywords.html#demon_cdft_start">demon_cdft_start</a></li>
+<li><a href="keywords.html#demon_cdft_tolerance">demon_cdft_tolerance</a></li>
+<li><a href="keywords.html#demon_charges_pol">demon_charges_pol</a></li>
+<li><a href="keywords.html#demon_constrained_dft">demon_constrained_dft</a></li>
+<li><a href="keywords.html#demon_cuby_options">demon_cuby_options</a></li>
+<li><a href="keywords.html#demon_ecps_file">demon_ecps_file</a></li>
+<li><a href="keywords.html#demon_exe">demon_exe</a></li>
+<li><a href="keywords.html#demon_exe_mpi">demon_exe_mpi</a></li>
+<li><a href="keywords.html#demon_ffds_file">demon_ffds_file</a></li>
+<li><a href="keywords.html#demon_fragment_count">demon_fragment_count</a></li>
+<li><a href="keywords.html#demon_fragment_guess">demon_fragment_guess</a></li>
+<li><a href="keywords.html#demon_keywords">demon_keywords</a></li>
+<li><a href="keywords.html#demon_lib_dir">demon_lib_dir</a></li>
+<li><a href="keywords.html#demon_maxl_auxis">demon_maxl_auxis</a></li>
+<li><a href="keywords.html#demon_mcps_file">demon_mcps_file</a></li>
+<li><a href="keywords.html#demon_no_scf">demon_no_scf</a></li>
+<li><a href="keywords.html#demon_orbitals">demon_orbitals</a></li>
+<li><a href="keywords.html#demon_plane_axis_a">demon_plane_axis_a</a></li>
+<li><a href="keywords.html#demon_plane_axis_b">demon_plane_axis_b</a></li>
+<li><a href="keywords.html#demon_plane_ratio">demon_plane_ratio</a></li>
+<li><a href="keywords.html#demon_spatial_population">demon_spatial_population</a></li>
+<li><a href="keywords.html#demon_version">demon_version</a></li>
+<li><a href="keywords.html#demon_with_cuby_interface">demon_with_cuby_interface</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#atomic_charges">atomic_charges</a></li>
+<li><a href="keywords.html#auxiliary_basis_scf">auxiliary_basis_scf</a></li>
+<li><a href="keywords.html#auxiliary_basis_scf_elements">auxiliary_basis_scf_elements</a></li>
+<li><a href="keywords.html#basisset">basisset</a></li>
+<li><a href="keywords.html#basisset_elements">basisset_elements</a></li>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#delete_large_files">delete_large_files</a></li>
+<li><a href="keywords.html#density_convergence">density_convergence</a></li>
+<li><a href="keywords.html#density_fitting">density_fitting</a></li>
+<li><a href="keywords.html#dft_grid">dft_grid</a></li>
+<li><a href="keywords.html#dft_grid_custom">dft_grid_custom</a></li>
+<li><a href="keywords.html#existing_calc_dir">existing_calc_dir</a></li>
+<li><a href="keywords.html#functional">functional</a></li>
+<li><a href="keywords.html#functional_custom">functional_custom</a></li>
+<li><a href="keywords.html#functional_custom_type">functional_custom_type</a></li>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+<li><a href="keywords.html#parallel">parallel</a></li>
+<li><a href="keywords.html#pseudopotentials">pseudopotentials</a></li>
+<li><a href="keywords.html#pseudopotentials_elements">pseudopotentials_elements</a></li>
+<li><a href="keywords.html#scf_convergence">scf_convergence</a></li>
+<li><a href="keywords.html#scf_cycles">scf_cycles</a></li>
+<li><a href="keywords.html#scf_integral_storage">scf_integral_storage</a></li>
+<li><a href="keywords.html#scf_levelshift">scf_levelshift</a></li>
+<li><a href="keywords.html#scf_multipole_expansion">scf_multipole_expansion</a></li>
+<li><a href="keywords.html#spin_restricted">spin_restricted</a></li>
+<li><a href="keywords.html#start_from_previous">start_from_previous</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/demon/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# deMOn interface example 1: configuration and simple calculation
+#===============================================================================
+
+# Energy of water molecule
+job: energy
+geometry: A24:water
+charge: 0
+
+interface: demon
+method: dft
+
+# DFT setup
+basisset: DZVP
+functional: b-lyp # the name of the functional is translated to deMon's format
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# The following keywords configure the interface. These values have to be
+# adjusted for a particular installation of deMon. To reuse the configuration,
+# put it into the config file.
+
+# Path to deMon exacutable
+demon_exe: /home/rezac/bin/demon/2.5.4/demon_cdft_200613/deMon.2.5.4.opt
+# Path for loading libraries (optional, added to LD_LIBRARY_PATH)
+demon_lib_dir: /home/rezac/bin/demon/4.2.4_master_bin/libs
+
+# Version - needed for generation of correct input for given version
+demon_version: "2.5.4"
+
+# A development version of deMon has an option enabling additional data
+# being passed to Cuby
+demon_with_cuby_interface: yes
+
+# Paths to deMon's data files 
+demon_basis_file: /home/rezac/bin/demon/2.5.4/deMon/BASIS
+demon_auxis_file: /home/rezac/bin/demon/2.5.4/deMon/AUXIS
+demon_ecps_file: /home/rezac/bin/demon/2.5.4/deMon/ECPS
+demon_mcps_file: /home/rezac/bin/demon/2.5.4/deMon/MCPS
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

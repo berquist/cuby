@@ -1,0 +1,34 @@
+#===============================================================================
+# Numerical hessian example 1 - vibrational analyis
+#===============================================================================
+
+# Harmonic vibrational analysis using SCC-DFTB method which does not yield
+# analytical Hessian
+
+# Input consists of two steps, geometry optimization and vibrational analysis
+job: multistep
+steps: opt, freq # Names of the steps
+
+#-------------------------------------------------------------------------------
+# Geometry optimization
+calculation_opt: 
+  job: optimize
+  interface: dftb
+  method: scc-dftb
+  opt_quality: 0.1
+  history_freq: 0 # Do not save optimization history
+  
+  geometry: S66:01 # Water dimer from S66 database
+  charge: 0
+
+#-------------------------------------------------------------------------------
+# Vibrational analysis
+calculation_freq:
+  job: frequencies
+  interface: numerical_hessian
+  geometry: optimized.xyz # Created in teh first step
+
+  calculation: # Calculation of gradients used to construct Hessian
+    interface: dftb
+    method: scc-dftb
+    charge: 0

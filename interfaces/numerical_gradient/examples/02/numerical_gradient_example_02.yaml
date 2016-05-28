@@ -1,0 +1,35 @@
+#===============================================================================
+# Numerical gradient example 2 - comparison of analytical and numerical gradient
+#===============================================================================
+
+# Prints the difference between numerical and analytical gradient.
+
+# Calculate and print gradient
+job: gradient
+
+# Water molecule from A24 database
+geometry: A24:water
+
+# Here, advanced YAML syntax is used to define the calculation setup once
+# and use it at multiple places later
+shared_calc: &calc
+  interface: mopac
+  method: pm6
+  charge: 0
+
+# The Mixer interface is used to calculate the differnce
+interface: mixer
+mixer_weight_a: 1.0
+mixer_weight_b: -1.0
+
+# Numerical gradient calculation
+calculation_a:
+  interface: numerical_gradient
+  calculation:
+    <<: *calc # This loads the named block defined above
+
+# Analytical gradient directly from Mopac
+calculation_b:
+  <<: *calc # This loads the named block defined above
+  mopac_precise: yes # Ask mopac to yield more accurate gradient
+

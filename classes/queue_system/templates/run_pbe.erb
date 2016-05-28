@@ -1,0 +1,12 @@
+#!<%= @shell %>
+#PBS -q <%= queue_name %>
+#PBS -l select=1:ncpus=<%= no_of_cpus %>
+#PBS -l walltime=<%= @settings[:queue_walltime_hrs] %>:00:00 
+#PBS -o _pbs_out.out 
+#PBS -e _pbs_out.err
+#PBS -N <%= job_name %>
+
+# Set up directories for common part of the template
+INPUT_WORKDIR=$PBS_O_WORKDIR
+SCRATCH_DIR=<%= scratch_dir %>/job_$PBS_JOBID
+

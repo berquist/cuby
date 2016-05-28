@@ -1,0 +1,147 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Data set description
+#===============================================================================
+
+# Charge transfer data set
+# Interaction energies:
+# CCSD(T)/CBS, frozen core, counterpoise-corrected
+# RI-MP2 extrapolated from aug-cc-pVTZ and aug-cc-pVQZ
+# dCCSD(T) in heavy-aug-cc-pVTZ (the same as best S66 data)
+
+# Recalculation on structures from
+# [1] S. Karthikeyan, Robert Sedlak, and Pavel Hobza,
+# J. Phys. Chem. A 2011, 115, 9422–9428 (dx.doi.org/10.1021/jp1112476)
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: Charge_transfer
+  references: 
+    "10.1021/jp1112476": "Karthikeyan, S.; Sedlak, R.; Hobza, P. J. Phys. Chem. A 2011, 115, 9422–9428."
+    "10.1021/ct501115m": "Rezac, J.; de la Lande, A. J. Chem. Theory Comput. 2015, 11, 528–537."
+  text: "CCSD(T)/CBS interaction energies in charge-transfer complexes"
+
+  groups:
+    - weaker
+    - stronger
+  global_setup:
+    job: interaction
+    molecule_a:
+      selection: ":1"
+      charge: 0
+      multiplicity: 1
+    molecule_b:
+      selection: ":2"
+      charge: 0
+      multiplicity: 1
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 CH2 ... ClF
+  shortname: 01_c2h2_clf
+  geometry: charge_transfer:01
+  reference_value: -3.908
+  setup: {}
+  group: weaker
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 C2H4 ... F2
+  shortname: 02_c2h4_f2
+  geometry: charge_transfer:02
+  reference_value: -1.023
+  setup: {}
+  group: weaker
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 H2O ... ClF
+  shortname: 03_h2o_clf
+  geometry: charge_transfer:03
+  reference_value: -5.200
+  setup: {}
+  group: weaker
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 HCN ... ClF
+  shortname: 04_hcn_clf
+  geometry: charge_transfer:04
+  reference_value: -4.771
+  setup: {}
+  group: weaker
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 NH3 ... BH3
+  shortname: 05_nh3_bh3
+  geometry: charge_transfer:05
+  reference_value: -44.272
+  setup: {}
+  group: stronger
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 NH3 ... Cl2
+  shortname: 06_nh3_cl2
+  geometry: charge_transfer:06
+  reference_value: -4.909
+  setup: {}
+  group: weaker
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 NH3 ... ClF
+  shortname: 07_nh3_clf
+  geometry: charge_transfer:07
+  reference_value: -11.163
+  setup: {}
+  group: stronger
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 NH3 ... F2
+  shortname: 08_nh3_f2
+  geometry: charge_transfer:08
+  reference_value: -1.711
+  setup: {}
+  group: weaker
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 NH3 ... SO2
+  shortname: 09_nh3_so2
+  geometry: charge_transfer:09
+  reference_value: -5.718
+  setup: {}
+  group: weaker
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 trimethylamine ... BH3
+  shortname: 10_nme3_bh3
+  geometry: charge_transfer:10
+  reference_value: -55.330
+  setup: {}
+  group: stronger
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 trimethylamine ... SO2
+  shortname: 11_nme3_so2
+  geometry: charge_transfer:11
+  reference_value: -14.831
+  setup: {}
+  group: stronger
+  tags: ""
+
+#===============================================================================
+# Alternative data
+#===============================================================================
+
+alternative_reference:
+  # DFT-SAPT, PBE0/cc-pVTZ, E2disp + E2disp-exch, from ref. [1] above
+  "DFT-SAPT dispersion": [ -4.03, -1.39, -3.32, -3.35, -17.83, -4.34, -7.53, -1.53, -3.61, -23.64, -14.58 ]

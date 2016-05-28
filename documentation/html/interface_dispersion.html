@@ -1,0 +1,156 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface dispersion</h1>
+<p>
+Empirical dispersion correction for DFT.[1]
+</p>
+
+<p>Parameters are available (and automatically assigned) for following methods:</p>
+<table class="doctable">
+	<tr>
+		<th>Method</th>
+		<th>Functional</th>
+		<th>Basis sets</th>
+	</tr>
+	<tr>
+		<td>DFT</td>
+		<td>TPSS</td>
+		<td>SVP, TZVP, 6-311++g(3df,3pd), def2-QZVP[2]</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>PBE</td>
+		<td>TZVP, 6-311++g(3df,3pd)</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>B-LYP</td>
+		<td>SVP, TZVP, 6-311++g(3df,3pd), def2-QZVP[2]</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>B3-LYP</td>
+		<td>TZVP, 6-311++g(3df,3pd)</td>
+	</tr>
+	<tr>
+		<td>PM6[3]</td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+<ol>
+	<li>Jurečka, P.; Černý, J.; Hobza, P.; Salahub, D. J. Comput. Chem. 2007, 28, 555–569.</li>
+	<li>Unpublished parameters by Jan Řezáč, fit to S22x5 data set</li>
+	<li>Korth, M.; Pitoňák, M.; Řezáč, J.; Hobza, P. J. Chem. Theory Comput. 2010, 6, 344–352.</li>
+</ol>
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#alpha">alpha</a></li>
+<li><a href="keywords.html#dispersion_elements_c">dispersion_elements_c</a></li>
+<li><a href="keywords.html#dispersion_elements_r">dispersion_elements_r</a></li>
+<li><a href="keywords.html#dispersion_hyb">dispersion_hyb</a></li>
+<li><a href="keywords.html#dispersion_mix">dispersion_mix</a></li>
+<li><a href="keywords.html#dispersion_pm7_cutoff">dispersion_pm7_cutoff</a></li>
+<li><a href="keywords.html#s6">s6</a></li>
+<li><a href="keywords.html#sr">sr</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/dispersion/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Dispersion example 1: DFT-D with automatic setup
+#===============================================================================
+
+# The dispersion interafce identifies the basis set and functional used
+# by the parent calculation and if this combination is found in its parameter
+# database, the appropriate parameters are used automatically.
+
+# Interaction energy calculation
+job: interaction
+
+# Methane dimer from the internal database
+geometry: A24:methane_dimer
+
+# DFT calculation setup
+interface: turbomole
+method: dft
+functional: tpss
+basisset: TZVP
+
+# Adding the dispersion correction as a modifier (no further setup needed)
+modifiers: dispersion
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Dispersion example 2: Manual setup of parameters
+#===============================================================================
+
+# This example yields a result identical to the one of example 1 but the
+# parameters for the dispersion correction are eneterd manually
+
+# Interaction energy calculation
+job: interaction
+
+# Methane dimer from the internal database
+geometry: A24:methane_dimer
+
+# DFT calculation setup
+interface: turbomole
+method: dft
+functional: tpss
+basisset: TZVP
+
+# Adding the dispersion correction as a modifier
+modifiers: dispersion
+
+#-------------------------------------------------------------------------------
+# Dispersion correction setup - in a separate block
+#-------------------------------------------------------------------------------
+modifier_dispersion:
+  s6: 1.0      # Scaling factor of the whole correction
+  sr: 0.98     # Scaling of vdW radii in the damping function
+  alpha: 35.0  # Exponent determining the slope of the damping function
+ 
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

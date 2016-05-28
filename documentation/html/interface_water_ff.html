@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface water_ff</h1>
+<p>
+This interface provides a MM calculation of water, using the
+flexible SPC/Fw model[1]. It is intended for testing and demonstration purposes.
+</p>
+
+<ol>
+	<li>Journal of Chemical Physics 124, 024503 (2006)</li>
+</ol>
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Keywords used</h2>
+<p>This interface does not use any specific keywords</p>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/water_ff/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Water_ff example 1 - geometry optimization of water trimer
+#===============================================================================
+
+job: optimize
+interface: water_ff
+
+# Optimizing the intermolecular interactions requires tighter convergence limit:
+opt_quality: 0.1 
+
+# The interface requires geometry built solely from water molecules,
+# in the order OHHOHH...
+geometry: |
+  O  -0.084889   0.056804    0.05520
+  H   0.710375   0.517729    0.41397
+  H  -0.890958   0.498588    0.41427
+  O   4.422945  -0.026001   -0.00720
+  H   4.446575  -0.955128    0.32095
+  H   4.445532  -0.084110   -0.99196
+  O   2.201771   1.306708    0.96998
+  H   2.989729   0.844404    0.59868
+  H   2.274831   1.268852    1.95294
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

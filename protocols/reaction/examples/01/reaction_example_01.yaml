@@ -1,0 +1,25 @@
+#===============================================================================
+# Reaction protocol example 1: simple reaction
+#===============================================================================
+
+# Automated calculation of reaction energetics
+
+job: reaction
+
+# The reaction is specified by a formula with defined stoichiometry and
+# arbitrary names of the compounds
+reaction_formula: 2 H2 + O2 -> 2 H2O
+
+# For each compound, a geometry is provided
+reaction_geometries:
+  H2: h2.xyz
+  O2: o2.xyz
+  H2O: h2o.xyz
+
+# Calculation is defined only once
+calculation:
+  job: energy
+  interface: dftb
+  method: scc-dftb
+  charge: 0
+

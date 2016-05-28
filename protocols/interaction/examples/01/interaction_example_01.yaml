@@ -1,0 +1,21 @@
+#===============================================================================
+# Interaction energy calculation example 1 - automatic setup
+#===============================================================================
+
+# The minimal setup for an interaction energy calculation.
+# See Example 2 for manual setup of all options
+
+job: interaction
+bsse_correction: yes # Enable counterpoise correction of BSSE
+geometry: S66:water_dimer # Water dimer from the S66 data set
+charge: 0
+
+# Defaults assumed:
+# 1) Automated selection of monomers - separte molecules detected from connectivity
+# 2) Charge of monomers is set 0
+# 3) Multiplicity of monomers is set to 1
+
+# Calculation
+interface: psi4
+method: MP2
+basisset: cc-pVTZ

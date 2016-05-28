@@ -1,0 +1,31 @@
+#===============================================================================
+# CHARMM example 2: Patches for peptide chain termini
+#===============================================================================
+
+job: energy
+interface: charmm
+
+geometry: ace-ala-nme.pdb
+# Alanine with acetyl and N-methyl termini.
+
+# To generate the PSF file for such a system, it is necessary to instruct charmm
+# how to patch the termini. This is done for each segment of the PDB separately.
+# In this case, there is only one segment named PEP1:
+charmm_segment_end_patches:
+  PEP1: ACED, CT3
+
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# (change the paths to match your installation)
+
+# Charmm executable
+charmm_exe: /home/rezac/bin/charmm35/c35b3/exec/gnu/charmm
+# Path(s) to parameter files
+charmm_ff_paths:
+  - /home/rezac/bin/charmm35/c35b3/toppar
+
+# Forcefield to be used
+charmm_ff_top: top_all27_prot_na.rtf
+charmm_ff_par: par_all27_prot_na.prm

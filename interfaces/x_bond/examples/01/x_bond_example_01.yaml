@@ -1,0 +1,24 @@
+#=======================================================================
+# X-bond correction example 1
+#=======================================================================
+
+# Geometry optimization of a halogen-bonded complex of bromobenzene with
+# acetone using the PM6-D3H4X method (PM6 with empirical corrections
+# for dispersion, hydrogen bonds and halogen bonds)
+
+
+# Optimization setup
+job: optimize
+opt_quality: 0.1
+optimizer: rfo
+
+# PM6 in mopac
+method: pm6
+interface: mopac
+mopac_precise: yes # For such optimization, accurate gradients are needed
+
+# The corrections: D3, H4 and X
+modifiers: dispersion3, h_bonds4, x_bond
+
+# The geometry is taken from the X40 dataset, entry #20
+geometry: X40:20

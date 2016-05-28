@@ -1,0 +1,154 @@
+<%#---------------------------------------------------------------------------%>
+<%# ERB template for DFTB+ input                                              %>
+<%#---------------------------------------------------------------------------%>
+Geometry = GenFormat {
+  <<< in.gen
+}
+Hamiltonian = DFTB {
+<%# SCC setup %>
+<% if @settings[:dftb_do_scc] %>
+  SCC = Yes
+  MaxSCCIterations = 300
+  SCCTolerance = <%= @settings[:dftb_scc_convergence] %>
+<%   if read_previous_charges %>
+  ReadInitialCharges = Yes
+<%   end %>
+<%   if @settings[:multiplicity] %>
+  SpinPolarisation = {}
+<%   else %>
+  SpinPolarisation = Colinear {
+    UnpairedElectrons = <%= @settings[:multiplicity] - 1 %>
+  }
+  SpinConstants = {
+<% elements.each{|e| %>
+<% 	Cuby::error("Spin polarizatiopn constants not defined (in cuby code) for element #{e}", self) unless @dftb_data.spin_constants[e] %>
+    <%= e.to_s.upcase %> = { <%= @dftb_data.spin_constants[e].to_s %> }
+<% } %>
+  }
+<%   end %>
+  Mixer = Broyden {
+    MixingParameter = 0.2
+  }
+<%# End of SCC setup %>
+<% else %>
+<%# non-SCC setup %>
+  SCC = No
+<% end %>
+<% if @settings[:dftb_safe] %>
+  Eigensolver = Standard{}
+<% end %>
+  Charge = <%= @settings[:charge] %>
+  SlaterKosterFiles = Type2FileNames {
+  Prefix = <%= @slko_files.path %>/
+<% if @slko_files.separator == "" %>
+    Separator = ""
+<% else %>
+    Separator = <%= @slko_files.separator %>
+<% end %>
+    Suffix = <%= @slko_files.suffix %>
+    LowerCaseTypeName = <%= @slko_files.downcase ? "Yes" : "No" %>
+  }
+  MaxAngularMomentum =  {
+<% elements.each{|e| %>
+    <%= e.to_s.upcase %> = <%= @dftb_data.max_momentum[e] %>
+<% } %>
+  }
+  Filling = Fermi {
+    Temperature [Kelvin] = <%= @settings[:dftb_e_temp] %>
+  }
+<% if @settings[:dftb_xh_damping] %>
+  DampXH = Yes
+  DampXHExponent = <%= @settings[:dftb_xh_damping_exp] %>
+<% end %>
+<% if @settings[:method] == :"scc-dftb3" %>
+<% if @settings[:dftb_3rd_order_full] %>
+  ThirdOrderFull = Yes
+<% else %>
+  ThirdOrder = Yes
+<% end %>
+  HubbardDerivs {
+<% elements.each{|e| %>
+    <%= e.to_s.upcase %> = <%= @hubbard_derivs[e] %>
+<% } %>
+  }
+<% end %>
+<% if @point_charges %>
+  ElectricField =  {
+    PointCharges =  {
+      CoordsAndCharges [Angstrom] = {
+        <<< extcharges.xyzc
+      }
+<% if @settings[:dftb_blur_charges] > 0.0 %> 
+      GaussianBlurWidth [Angstrom] = <%= @settings[:dftb_blur_charges] %>
+<% end %>
+    }
+  }
+<% end %>
+<% if @settings[:dftb_dispersion] %>
+  Dispersion = SlaterKirkwood {
+    PolarRadiusCharge = HybridDependentPol {
+<% elements.each{|e| %>
+<% Cuby::error("DFTB dispersion parameters missing for element #{e}", self) unless @dftb_data.dispersion_para[e] %>
+      <%= e.to_s.upcase %> = {
+        CovalentRadius [Angstrom] = <%= @dftb_data.dispersion_para[e].radius %>
+	HybridPolarisations [Angstrom^3,Angstrom,] = { <%= @dftb_data.dispersion_para[e].polarisations %> }
+      }
+<% } %>
+    }
+  }
+<% end %>
+<% if @settings[:development][:dftb_dp]%>
+  DeltaPauli = {
+    xi = <%= @dp_exp %>
+    Alpha = {
+<% elements.each{|e| %>
+      <%= e.to_s.upcase %> = <%= @dp_alpha[e] %>
+<% } %>
+    }
+    Cutoffs = {
+<% elements.each_index{|i| (i+1).times{|j| %>
+      <%= elements[i].to_s.upcase + "-" + elements[j].to_s.upcase %> = <%= @dp_cutoffs[elements[i]][elements[j]] || @dp_cutoffs[elements[j]][elements[i]]%>
+<% }} %>
+    }
+  }
+<% end %>
+<% if @settings[:development][:dftb_dp2]%>
+  DeltaPauli = {
+    xi = <%= @dp_xi %>
+    zeta = <%= @dp_zeta %>
+    delta1 = 5.0
+    delta2 = 5.0
+    Alpha = {
+<% elements.each{|e| %>
+      <%= e.to_s.upcase %> = <%= @dp_alpha[e] %>
+<% } %>
+    }
+    Cutoffs = {
+<% elements.each_index{|i| (i+1).times{|j| %>
+      <%= elements[i].to_s.upcase + "-" + elements[j].to_s.upcase %> = <%= @dp_cutoffs[elements[i]][elements[j]] || @dp_cutoffs[elements[j]][elements[i]]%>
+<% }} %>
+    }
+  }
+<% end %>
+<% if @settings[:dftb_cpe] != :none %>
+  Polarization = CPE  {
+    Parameters {
+<% elements.each{|e| %>
+<%= @cpe_data[e].to_hsd(e,6) %>
+<% } %>
+    }
+  }
+<% end%>
+<% if @settings[:dftb_extra_input_hamiltonian] != "" %>
+<%= @settings[:dftb_extra_input_hamiltonian].each_line.map{|x| "  #{x}"}.join("") %>
+<% end%>
+}
+<%# End of Hamiltonian block %>
+Options =  {
+<% if @what.include?(:gradient) %>
+  CalculateForces = Yes
+<% end %>
+}
+ParserOptions =  {
+  ParserVersion = 3
+}

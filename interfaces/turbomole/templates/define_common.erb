@@ -1,0 +1,38 @@
+control_template
+cuby calculation
+y
+del all
+y
+a coord
+<% if @settings[:use_symmetry] %>
+desy
+<% end %>
+*
+no
+b all <%= @settings[:basisset] %>
+<% @settings.elements_hash(:basisset_elements).each_pair{|element, basis| %>
+b "<%= element.to_s.downcase %>" <%= basis %>
+<% } %>
+<%# Ghost atoms %>
+<% @geometry.each_index{|i| if @geometry[i].properties[:ghost]%>
+c <%= i+1%> 0.0
+<% end } %>
+*
+eht
+y
+<%= @settings[:charge] %>
+<% if @settings[:spin_restricted] %>y
+<% else %>n
+u <%= @settings[:multiplicity] - 1 %>
+*<% end %>
+n
+
+
+scf
+conv
+<%= @settings[:scf_convergence] %>
+iter
+<%= @settings[:scf_cycles] %>
+
+
+*

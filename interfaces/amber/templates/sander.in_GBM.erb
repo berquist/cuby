@@ -1,0 +1,21 @@
+GBM
+&cntrl
+ imin = 1,
+ cut = 999.,
+ ntx = 1,
+ ntxo = 1,
+ ntpr = 1,
+ ntwr = 1,
+ ntb = 0,
+ ipol=0,
+ maxcyc = 0,
+ drms = 1.e-4,
+ igb = <%= gbmtype%>,
+ intdiel=1.0,
+ extdiel=<%= @settings[:solvent_epsilon]%>,
+ saltcon=0.0,
+&end
+&debugf
+ do_debugf = 1,
+ dumpfrc = 1
+&end

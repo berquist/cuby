@@ -1,0 +1,13 @@
+#===============================================================================
+# Void interface example 1
+#===============================================================================
+
+# Let's see all what can the void interface do...
+
+job: hessian
+geometry: A24:water # Water molecule from a database
+interface: void
+print: gradient # Print also the gradient (optional)
+hessian_write: "" # Do not save the hessian to file
+
+

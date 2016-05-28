@@ -1,0 +1,27 @@
+#===============================================================================
+# Molpro example 2: MP2 optimization
+#===============================================================================
+
+# MP2 optimization
+
+job: optimize
+
+#-------------------------------------------------------------------------------
+# Calculation
+#-------------------------------------------------------------------------------
+interface: molpro
+method: mp2
+basisset: cc-pVDZ
+
+# By default, density fitting is used in all calculations where it is applicable
+# However, Molpro can not calculate MP2 gradient with density fitting so that
+# it has to be switched off
+density_fitting: none
+
+#-------------------------------------------------------------------------------
+# Geometry
+#-------------------------------------------------------------------------------
+# Water molecule from the internal database
+geometry: A24:water 
+charge: 0
+

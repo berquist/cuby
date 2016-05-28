@@ -1,0 +1,32 @@
+#===============================================================================
+# Interaction energy calculation example 2 - manual setup, parallelization
+#===============================================================================
+
+# The same calculation as in Example 1, this time with manual specification
+# of all necessary input
+
+job: interaction
+bsse_correction: yes # Enable counterpoise correction of BSSE
+geometry: S66:water_dimer # Water dimer from the S66 data set
+
+# Definition of the monomers
+# In this case it is optional, it is necessary in following cases:
+# 1) Autodetection of monomers fails, e.g. when they are too close
+# 2) Charges of the monomers are not 0
+# 3) Multiplicities of the monomers are not 1
+molecule_a:
+  selection: "1-3"
+  charge: 0
+  multiplicity: 1
+molecule_b:
+  selection: "4-6"
+  charge: 0
+  multiplicity: 1
+
+# Calculation
+interface: psi4
+method: MP2
+basisset: cc-pVTZ
+
+# Parallelization - the three calculations can be ran simultaneously
+cuby_threads: 3

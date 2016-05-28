@@ -1,0 +1,10 @@
+# Functional -> gaussian
+"blyp": "BLYP"
+"pw91": "PW91PW91"
+"pbe": "PBEPBE"
+"tpss": "TPSSTPSS"
+"b3lyp": "B3LYP"
+"pbe0": "PBE1PBE"
+"m06": "M06"
+"m062x": "M062X"
+"m06hf": "M06HF"

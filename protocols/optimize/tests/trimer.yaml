@@ -1,0 +1,71 @@
+job: multistep
+steps: lbfgs_cartesian, lbfgs_redundant, qn_cartesian, qn_redundant, rfo_cartesian, rfo_redundant, trim_cartesian, trim_redundant, plbfgs_cartesian
+
+calculation_common:
+  job: optimize
+  linesearch: cubic
+  opt_quality: 0.1
+  interface: water_ff
+  optimize_region: 1-6
+#--------------------------------------------------
+#   interface: mtb2
+#   method: mtb2
+#   charge: 0
+#   geometry: SMILES:CCCC
+#-------------------------------------------------- 
+  geometry: |
+    O  -0.084889   0.056804    0.05520
+    H   0.710375   0.517729    0.41397
+    H  -0.890958   0.498588    0.41427
+    O  -0.017366  -2.585019    0.91927
+    H  -0.039968  -1.654902    0.59534
+    H   0.035574  -2.525985    1.90257
+    O  -0.002242   0.021748   -2.68865
+    H  -0.085097   0.077817   -1.70660
+    H  -0.801156   0.454510   -3.07441
+
+calculation_lbfgs_cartesian:
+  history_file: history_lbfgs_cartesian.xyz
+  optimizer: lbfgs
+  coordinates: cartesian
+
+calculation_lbfgs_redundant:
+  history_file: history_lbfgs_redundant.xyz
+  optimizer: lbfgs
+  coordinates: redundant
+
+calculation_qn_cartesian:
+  history_file: history_qn_cartesian.xyz
+  optimizer: quasi_newton
+  coordinates: cartesian
+
+calculation_qn_redundant:
+  history_file: history_qn_redundant.xyz
+  optimizer: quasi_newton
+  coordinates: redundant
+
+calculation_rfo_cartesian:
+  history_file: history_rfo_cartesian.xyz
+  optimizer: rfo
+  coordinates: cartesian
+
+calculation_rfo_redundant:
+  history_file: history_rfo_redundant.xyz
+  optimizer: rfo
+  coordinates: redundant
+
+calculation_trim_cartesian:
+  history_file: history_trim_cartesian.xyz
+  optimizer: trim
+  coordinates: cartesian
+
+calculation_trim_redundant:
+  history_file: history_trim_redundant.xyz
+  optimizer: trim
+  coordinates: redundant
+
+calculation_plbfgs_cartesian:
+  history_file: history_plbfgs_cartesian.xyz
+  optimizer: plbfgs
+  coordinates: cartesian
+

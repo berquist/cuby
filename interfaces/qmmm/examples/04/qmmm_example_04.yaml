@@ -1,0 +1,53 @@
+#===============================================================================
+# QMMM example 4 - Advanced MM settings
+#===============================================================================
+
+# This example is identical to Example 2 but additional setup ui used for
+# the MM calculations
+
+# This is the same as in example 2:
+job: optimize
+optimizer: rfo
+opt_quality: 0.5
+maxcycles: 500
+
+geometry: ace-ala-nme.pdb
+
+interface: qmmm
+
+qmmm_embedding: electrostatic_2way
+qmmm_remove_charges: "16,17"
+
+qmmm_core: 1-14
+qmmm_cut_bonds:
+  - {bond: 9-15, link_ratio: 0.729, link_type: HL}
+qmmm_rename_residues:
+  - ":2 ala"
+
+calculation_qm:
+  interface: turbomole
+  method: dft
+  basisset: SVP
+  functional: b-lyp
+  charge: 0
+
+# Common MM setup used for the calculations of both the QM region and
+# the whole system
+calculation_mm:
+  interface: amber
+  # Here, we use the unmodified ff03 forcefield
+  amber_leaprc: "%amberhome/dat/leap/cmd/leaprc.ff03.r1"
+
+# Setup for the MM calculation of the QM region
+calculation_qmregion_mm:
+  # Here, we load the customized forcefield for the QM region,
+  # it overrides the settings in block 'calculation_mm'
+  amber_leaprc: leaprc.ala
+
+# Setup for the MM calculation of the whole system
+calculation_system_mm:
+  # Use implicit solvent. This is a crude approximation as the
+  # solvent does not affect the QM calculation in other way than mechanically
+  # but it is an useful tool to keep the native structure of larger biomolecules
+  solvent_model: GBM
+

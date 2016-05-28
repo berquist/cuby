@@ -1,0 +1,284 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol dataset</h1>
+<p>This protocol automates a repeated calculation performed on a predefined data set of systems and calculates the statistics over the set.
+The data set is described by a YAML file containing the definition of the systems, general setup of the calculations to be performed 
+(most importantly the protocol to be applied to each item) and reference values. 
+Some data sets are provided with Cuby, user-defined data sets can be specified by providing a valid
+path to a yaml file instead of the name of the predefined data set.
+</p>
+<p> The entries in the data sets can be divided into groups and individually tagged. Only part of the dataset can be calulated, the selection is
+defined by keywords <em>dataset_select_...</em> and <em>dataset_skip_...</em>.
+</p>
+<p>
+The individual calculations can be executed <a href="parallelization.html">in parallel</a> to reduce the overall time.
+</p>
+
+<h2>Data sets available</h2>
+<p> By default, Cuby contains following data sets:</p>
+<table class="doctable">
+<tr><td><strong>3B69</strong></td><td>CCSD(T)/CBS three-body energies in 23x3 trimers<a href="http://dx.doi.org/10.1021/acs.jctc.5b00281" title="Řezáč, J.; Huang, Y.; Hobza, P.; Beran, G. J. O. J. Chem. Theory Comput. 2015.">[1]</a></td>
+<tr><td><strong>3B69_dimers</strong></td><td>All dimers from the 3B69 set of trimers<a href="http://dx.doi.org/10.1021/acs.jctc.5b00281" title="Řezáč, J.; Huang, Y.; Hobza, P.; Beran, G. J. O. J. Chem. Theory Comput. 2015.">[2]</a></td>
+<tr><td><strong>A24</strong></td><td>Accurate CCSD(T)/CBS interaction energies in small noncovalent complexes<a href="http://dx.doi.org/10.1021/ct400057w" title="Řezáč, J.; Hobza, P. J. Chem. Theory Comput. 2013, 9, 2151–2155.">[3]</a></td>
+<tr><td><strong>Bauza_2013</strong></td><td>Halogen, chalcogen and pnicogen bonds<a href="http://dx.doi.org/10.1021/ct400818v" title="Bauza, A.; Alkorta, I.; Frontera, A.; Elguero, J. J. Chem. Theory Comput. 2013, 9, 5201–5210.">[4]</a></td>
+<tr><td><strong>Charge_transfer</strong></td><td>CCSD(T)/CBS interaction energies in charge-transfer complexes<a href="http://dx.doi.org/10.1021/jp1112476" title="Karthikeyan, S.; Sedlak, R.; Hobza, P. J. Phys. Chem. A 2011, 115, 9422–9428.">[5]</a><a href="http://dx.doi.org/10.1021/ct501115m" title="Rezac, J.; de la Lande, A. J. Chem. Theory Comput. 2015, 11, 528–537.">[6]</a></td>
+<tr><td><strong>Ionic_H-bonds</strong></td><td>Ionic hydrogen bonds - dissociation curves<a href="http://dx.doi.org/10.1021/ct200751e" title="Řezáč, J.; Hobza, P. J. Chem. Theory Comput. 2012, 8, 141-151.">[37]</a></td>
+<tr><td><strong>L7</strong></td><td>CCSD(T) or QCISD(T) interaction energies in large noncovalent complexes<a href="http://dx.doi.org/10.1021/ct400036b" title="Sedlak, R.; Janowski, T.; Pitoňák, M.; Řezáč, J.; Pulay, P.; Hobza, P. J. Chem. Theory Comput. 2013, 9, 3364–3374.">[38]</a></td>
+<tr><td><strong>Pecina_2015</strong></td><td>Chalcogen and pnicogen bonds of heteroboranes<a href="http://dx.doi.org/10.1021/jp511101n" title="Pecina, A.; Lepšík, M.; Hnyk, D.; Hobza, P.; Fanfrlík, J. J. Phys. Chem. A 2015, 119 (8), 1388–1395.">[39]</a></td>
+<tr><td><strong>Peptide_FGG</strong></td><td>CSCD(T)/CBS conformation energies of FGG tripeptide<a href="http://dx.doi.org/10.1039/b719294k" title="Valdes, H.; Pluháčková, K.; Pitonák, M.; Řezáč, J.; Hobza, P. Phys. Chem. Chem. Phys. 2008, 10, 2747.">[40]</a></td>
+<tr><td><strong>Peptide_GFA</strong></td><td>CSCD(T)/CBS conformation energies of GFA tripeptide<a href="http://dx.doi.org/10.1039/b719294k" title="Valdes, H.; Pluháčková, K.; Pitonák, M.; Řezáč, J.; Hobza, P. Phys. Chem. Chem. Phys. 2008, 10, 2747.">[41]</a></td>
+<tr><td><strong>Peptide_GGF</strong></td><td>CSCD(T)/CBS conformation energies of GGF tripeptide<a href="http://dx.doi.org/10.1039/b719294k" title="Valdes, H.; Pluháčková, K.; Pitonák, M.; Řezáč, J.; Hobza, P. Phys. Chem. Chem. Phys. 2008, 10, 2747.">[42]</a></td>
+<tr><td><strong>Peptide_WG</strong></td><td>CSCD(T)/CBS conformation energies of WG dipeptide<a href="http://dx.doi.org/10.1039/b719294k" title="Valdes, H.; Pluháčková, K.; Pitonák, M.; Řezáč, J.; Hobza, P. Phys. Chem. Chem. Phys. 2008, 10, 2747.">[43]</a></td>
+<tr><td><strong>Peptide_WGG</strong></td><td>CSCD(T)/CBS conformation energies of WGG tripeptide<a href="http://dx.doi.org/10.1039/b719294k" title="Valdes, H.; Pluháčková, K.; Pitonák, M.; Řezáč, J.; Hobza, P. Phys. Chem. Chem. Phys. 2008, 10, 2747.">[44]</a></td>
+<tr><td><strong>S12L</strong></td><td>Interaction energies in large noncovalent complexes derived from experiment<a href="http://dx.doi.org/10.1002/chem.201200497" title="Grimme, S. Chem. Eur. J. 2012, 18, 9955–9964.">[45]</a></td>
+<tr><td><strong>S66</strong></td><td>CCSD(T)/CBS interaction energies in organic noncovalent complexes<a href="http://dx.doi.org/10.1021/ct2002946" title="Řezáč, J.; Riley, K. E.; Hobza, P. J. Chem. Theory Comput. 2011, 7, 2427–2438.">[46]</a><a href="http://dx.doi.org/10.1021/ct200523a" title="Řezáč, J.; Riley, K. E.; Hobza, P. J. Chem. Theory Comput. 2011, 7, 3466–3470.">[47]</a></td>
+<tr><td><strong>S66x8</strong></td><td>CCSD(T)/CBS interaction energies in organic noncovalent complexes - dissociation curves<a href="http://dx.doi.org/10.1021/ct2002946" title="Řezáč, J.; Riley, K. E.; Hobza, P. J. Chem. Theory Comput. 2011, 7, 2427–2438.">[48]</a></td>
+<tr><td><strong>Sulfur_x8</strong></td><td>CCSD(T)/CBS interaction energies in complexes featuring sulfur<a href="http://dx.doi.org/10.1021/jp209536e" title="B. J. Mintz and J. M. Parks; J. Phys. Chem. A, 2012, 116 (3), pp 1086–1092">[49]</a></td>
+<tr><td><strong>X40</strong></td><td>CSCD(T)/CBS interaction energies of halogenated molecules<a href="http://dx.doi.org/10.1021/ct300647k" title="Řezáč, J.; Riley, K. E.; Hobza, P. J. Chem. Theory Comput. 2012, 8, 4285–4292.">[50]</a></td>
+<tr><td><strong>X40x10</strong></td><td>CSCD(T)/CBS interaction energies of halogenated molecules - dissociation curves<a href="http://dx.doi.org/10.1021/ct300647k" title="Řezáč, J.; Riley, K. E.; Hobza, P. J. Chem. Theory Comput. 2012, 8, 4285–4292.">[51]</a></td>
+<tr><td><strong>X40x10_extensions</strong></td><td>Extensions of the X40 data set<a href="http://dx.doi.org/N/A" title="Unpublished results">[52]</a></td>
+
+</table>
+
+<h3>GMTKN30 data sets</h3>
+<p> The <a href="http://www.thch.uni-bonn.de/tc/index.php?section=downloads&subsection=GMTKN30&lang=english">GMTKN30 collection</a> of data sets by S. Grimme is available in Cuby. The original data were converted automatically to the format Cuby uses; as a result the data sets miss some fancy features such as nice names of the systems. 
+</p>
+<p>
+We have validated the GMTKN datasets against the original DFT results by Grimme (with exception of G21EA and WATER27 for which the published data were calculated in a modified basis set). Only in the SIE11 data set, there is one point (the last entry) where our result does not agree with Grimme's DFT data (but is closer to the reference).
+</p>
+<table class="doctable">
+<tr><td><strong>GMTKN_ACONF</strong></td><td>relative energies of alkane conformers<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[7]</a></td>
+<tr><td><strong>GMTKN_ADIM6</strong></td><td>interaction energies of n-alkane dimers<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[8]</a></td>
+<tr><td><strong>GMTKN_AL2X</strong></td><td>dimerization energies of AlX3 compounds<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[9]</a></td>
+<tr><td><strong>GMTKN_ALK6</strong></td><td>fragmentation and dissociation reactions of alkaline and alkaline−cation−benzene complexes<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[10]</a></td>
+<tr><td><strong>GMTKN_BH76</strong></td><td>barrier heights of hydrogen transfer, heavy atom transfer, nucleophilic substitution, unimolecular, and association reactions<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[11]</a></td>
+<tr><td><strong>GMTKN_BH76RC</strong></td><td>reaction energies of the BH76 set<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[12]</a></td>
+<tr><td><strong>GMTKN_BHPERI</strong></td><td>barrier heights of pericyclic reactions<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[13]</a></td>
+<tr><td><strong>GMTKN_BSR36</strong></td><td>bond separation reactions of saturated hydrocarbons<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[14]</a></td>
+<tr><td><strong>GMTKN_CYCONF</strong></td><td>relative energies of cysteine conformers<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[15]</a></td>
+<tr><td><strong>GMTKN_DARC</strong></td><td>reaction energies of Diels−Alder reactions<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[16]</a></td>
+<tr><td><strong>GMTKN_DC9</strong></td><td>nine difficult cases for DFT<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[17]</a></td>
+<tr><td><strong>GMTKN_G21EA</strong></td><td>adiabatic electron affinities<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[18]</a></td>
+<tr><td><strong>GMTKN_G21IP</strong></td><td>adiabatic ionization potentials<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[19]</a></td>
+<tr><td><strong>GMTKN_G2RC</strong></td><td>reaction energies of selected G2-97 systems<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[20]</a></td>
+<tr><td><strong>GMTKN_HEAVY28</strong></td><td>noncovalent interaction energies between heavy element hydrides<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[21]</a></td>
+<tr><td><strong>GMTKN_IDISP</strong></td><td>intramolecular dispersion interactions<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[22]</a></td>
+<tr><td><strong>GMTKN_ISO34</strong></td><td>isomerization energies of small and medium-sized organic molecules<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[23]</a></td>
+<tr><td><strong>GMTKN_ISOL22</strong></td><td>isomerization energies of large organic molecules<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[24]</a></td>
+<tr><td><strong>GMTKN_MB08-165</strong></td><td>decomposition energies of artificial molecules<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[25]</a></td>
+<tr><td><strong>GMTKN_NBPRC</strong></td><td>oligomerizations and H2 fragmentations of NH3-BH3 systems; H2 activation reactions with PH3-BH3 systems<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[26]</a></td>
+<tr><td><strong>GMTKN_O3ADD6</strong></td><td>reaction energies, barrier heights, association energies for addition of O3 to C2H4 and C2H2<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[27]</a></td>
+<tr><td><strong>GMTKN_PA</strong></td><td>adiabatic proton affinities<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[28]</a></td>
+<tr><td><strong>GMTKN_PCONF</strong></td><td>relative energies of phenylalanyl−glycyl−glycine tripeptide conformers<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[29]</a></td>
+<tr><td><strong>GMTKN_RG6</strong></td><td>interaction energies of rare gas dimers<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[30]</a></td>
+<tr><td><strong>GMTKN_RSE43</strong></td><td>radical stabilization energies<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[31]</a></td>
+<tr><td><strong>GMTKN_S22</strong></td><td>binding energies of noncovalently bound dimers<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[32]</a></td>
+<tr><td><strong>GMTKN_SCONF</strong></td><td>relative energies of sugar conformers<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[33]</a></td>
+<tr><td><strong>GMTKN_SIE11</strong></td><td>self-interaction error related problems<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[34]</a></td>
+<tr><td><strong>GMTKN_W4-08</strong></td><td>atomization energies of small molecules<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[35]</a></td>
+<tr><td><strong>GMTKN_WATER27</strong></td><td>binding energies of water, H+(H2O)n and OH−(H2O)n clusters<a href="http://dx.doi.org/10.1021/ct100466k" title="Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309.">[36]</a></td>
+
+</table>
+<p>
+<strong>Calculation setup:</strong> All the entries in the GMTKN data sets are calculated using the <a href="protocol_reaction.html">reaction</a> protocol. Because of this, the calculation setup must be provided in a separate block in the input named 'calculation' rather than at root level. Here is an example:
+</p>
+<pre><code>job: dataset
+dataset: GMTKN_PCONF
+
+calculation:
+  job: energy
+  interface: mopac
+  method: pm6</code></pre>
+
+<h2>Custom data sets</h2>
+<p>
+Use an existing data set file (located in cuby4/data/datasets) as a template. The file can be located anywhere, just provide a valid path to it in the
+<a href="keywords.html#dataset">dataset</a> keyword. The default data sets use geometries from cuby's library but files can be used as well, the record 'geometry'
+in the data set file is treated the same as the <a href="keywords.html#geometry">geometry</a> keyword.
+</p>
+
+<h2>Input structure</h2>
+<h4>Optionally, following blocks can be defined in the input:</h4>
+<ul>
+<li>calculation_overwrite - Calculation setup that does not fit at the root level</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this protocol:</h4>
+<ul>
+<li><a href="keywords.html#dataset">dataset</a></li>
+<li><a href="keywords.html#dataset_add_ref_to_result">dataset_add_ref_to_result</a></li>
+<li><a href="keywords.html#dataset_long_numbers">dataset_long_numbers</a></li>
+<li><a href="keywords.html#dataset_plot_columns">dataset_plot_columns</a></li>
+<li><a href="keywords.html#dataset_plot_extra">dataset_plot_extra</a></li>
+<li><a href="keywords.html#dataset_plot_methodname">dataset_plot_methodname</a></li>
+<li><a href="keywords.html#dataset_plots_fn">dataset_plots_fn</a></li>
+<li><a href="keywords.html#dataset_print">dataset_print</a></li>
+<li><a href="keywords.html#dataset_processing">dataset_processing</a></li>
+<li><a href="keywords.html#dataset_reference">dataset_reference</a></li>
+<li><a href="keywords.html#dataset_save_plots">dataset_save_plots</a></li>
+<li><a href="keywords.html#dataset_select_name">dataset_select_name</a></li>
+<li><a href="keywords.html#dataset_select_tag">dataset_select_tag</a></li>
+<li><a href="keywords.html#dataset_short_names">dataset_short_names</a></li>
+<li><a href="keywords.html#dataset_skip_name">dataset_skip_name</a></li>
+</ul>
+<h4>Other keywords used by this protocol:</h4>
+<ul>
+<li><a href="keywords.html#geometry">geometry</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/dataset/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Dataset example 1: Calculation on a predefined data set
+#===============================================================================
+
+job: dataset
+
+#-------------------------------------------------------------------------------
+# Dataset selection
+#-------------------------------------------------------------------------------
+# Predefined data set is used, only the name of the set has to be provided
+dataset: A24
+
+#-------------------------------------------------------------------------------
+# Calculation setup
+#-------------------------------------------------------------------------------
+# Interface and method of the calculation is specified, appropriate protocol
+# (in this case interaction energy calculation) is chosed for each dataset
+# automatically
+
+interface: mopac
+method: pm6
+
+</code></pre></div>
+<p>Produces output:</p>
+<div class="ex_output"><pre>        _______  
+       /\______\ 
+      / /      / 
+     / / Cuby /   Dataset calculation
+     \/______/   
+                 
+==========================================================================================
+name                                             E      Eref     error  error(%)
+------------------------------------------------------------------------------------------
+01 water ... ammonia                        -3.904    -6.493     2.590    39.879
+02 water dimer                              -3.922    -5.006     1.084    21.653
+03 HCN dimer                                -2.537    -4.745     2.208    46.535
+04 HF dimer                                  3.515    -4.581     8.096   176.722
+05 ammonia dimer                            -2.333    -3.137     0.804    25.624
+06 HF ... methane                           -0.336    -1.654     1.318    79.664
+07 ammonia ... methane                      -0.544    -0.765     0.221    28.895
+08 water ... methane                        -0.505    -0.663     0.158    23.836
+09 formaldehyde dimer                       -3.788    -4.554     0.766    16.826
+10 water ... ethene                         -1.272    -2.557     1.285    50.269
+11 formaldehyde ... ethene                  -0.614    -1.621     1.007    62.145
+12 ethyne dimer                             -0.463    -1.524     1.061    69.609
+13 ammonia ... ethene                       -0.756    -1.374     0.618    44.996
+14 ethene dimer                             -0.307    -1.090     0.784    71.884
+15 methane ... ethene                       -0.176    -0.502     0.326    64.944
+16 borane ... methane                       -1.124    -1.485     0.360    24.280
+17 methane ... ethane                       -0.154    -0.827     0.673    81.353
+18 methane ... ethane                       -0.129    -0.607     0.478    78.711
+19 methane dimer                            -0.070    -0.533     0.463    86.895
+20 Ar ... methane                            0.758    -0.405     1.162   287.292
+21 Ar ... ethene                             0.511    -0.364     0.876   240.349
+22 ethene ... ethyne                         0.128     0.821    -0.693   -84.379
+23 ethene dimer                              0.149     0.934    -0.785   -84.047
+24 ethyne dimer                              0.202     1.115    -0.913   -81.868
+==========================================================================================
+RMSE                1.951   kcal/mol
+MUE                 1.197   kcal/mol
+------------------------------------------------------------------------------------------
+MSE                 0.998   kcal/mol
+min                -0.913   kcal/mol
+max                 8.096   kcal/mol
+range               9.009   kcal/mol
+min abs             0.158   kcal/mol
+max abs             8.096   kcal/mol
+==========================================================================================
+RMSE              101.844   %
+MUE                78.027   %
+MSE                57.169   %
+min               -84.379   %
+max               287.292   %
+range             371.671   %
+min abs            16.826   %
+max abs           287.292   %
+==========================================================================================
+H-bond         (5)  RMSE      3.974   MSE       2.956   kcal/mol
+dispersion     (7)  RMSE      0.681   MSE       0.620   kcal/mol
+other          (9)  RMSE      0.894   MSE       0.802   kcal/mol
+stack          (3)  RMSE      0.802   MSE      -0.797   kcal/mol
+==========================================================================================
+
+</pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Dataset example 2: selections and plotting
+#===============================================================================
+
+job: dataset
+
+#-------------------------------------------------------------------------------
+# Dataset selection
+#-------------------------------------------------------------------------------
+dataset: S66x8 # Dissociation curves for the S66 data set
+
+#-------------------------------------------------------------------------------
+# Selection
+#-------------------------------------------------------------------------------
+# select only pi-pi dispersion-bound complexes
+dataset_select_tag: "dispersion p-p"
+
+#-------------------------------------------------------------------------------
+# Plotting
+#-------------------------------------------------------------------------------
+# Plot the dissociation curves using gnuplot and merge the images to one file
+# with four colums. This requires two external tools installed, gnuplot and
+# imagemagick.
+dataset_save_plots: gnuplot_tiled
+dataset_plot_columns: 4
+
+#-------------------------------------------------------------------------------
+# Calculation setup
+#-------------------------------------------------------------------------------
+interface: mopac
+method: pm6
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

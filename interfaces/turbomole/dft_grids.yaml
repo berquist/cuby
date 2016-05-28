@@ -1,0 +1,5 @@
+# Grid name -> turbomole notation
+:coarse: "1"
+:medium: "m3"
+:fine: "m5"
+:ultrafine: "7"

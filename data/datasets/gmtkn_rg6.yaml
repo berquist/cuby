@@ -1,0 +1,100 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_RG6
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "interaction energies of rare gas dimers"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_RG6:ne_2"
+  reference_value: 0.08
+  setup:
+    reaction_formula: "1 g_ne_2 -> 2 g_ne"
+    reaction_geometries:
+      g_ne_2: gmtkn_RG6:ne_2
+      g_ne: gmtkn_RG6:ne
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_RG6:ar_2"
+  reference_value: 0.28
+  setup:
+    reaction_formula: "1 g_ar_2 -> 2 g_ar"
+    reaction_geometries:
+      g_ar_2: gmtkn_RG6:ar_2
+      g_ar: gmtkn_RG6:ar
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_RG6:kr_2"
+  reference_value: 0.40
+  setup:
+    reaction_formula: "1 g_kr_2 -> 2 g_kr"
+    reaction_geometries:
+      g_kr_2: gmtkn_RG6:kr_2
+      g_kr: gmtkn_RG6:kr
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_RG6:xe_2"
+  reference_value: 0.56
+  setup:
+    reaction_formula: "1 g_xe_2 -> 2 g_xe"
+    reaction_geometries:
+      g_xe_2: gmtkn_RG6:xe_2
+      g_xe: gmtkn_RG6:xe
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_RG6:rnxe"
+  reference_value: 0.65
+  setup:
+    reaction_formula: "1 g_rnxe -> 1 g_rn + 1 g_xe"
+    reaction_geometries:
+      g_rnxe: gmtkn_RG6:rnxe
+      g_rn: gmtkn_RG6:rn
+      g_xe: gmtkn_RG6:xe
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_RG6:rn_2"
+  reference_value: 0.79
+  setup:
+    reaction_formula: "1 g_rn_2 -> 2 g_rn"
+    reaction_geometries:
+      g_rn_2: gmtkn_RG6:rn_2
+      g_rn: gmtkn_RG6:rn
+  tags: ""
+

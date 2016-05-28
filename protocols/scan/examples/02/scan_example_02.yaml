@@ -1,0 +1,26 @@
+#===============================================================================
+# Scan protocol example 2: Use of template geometry
+#===============================================================================
+
+# Forcefield calculation of rotation profile of a C-C bond in a model peptide
+
+job: scan
+
+# The forcefield calculation requires a geometry in PDB format. However, the
+# scan protocol works with .xyz format which can contain multiple frames more
+# easily. The solution is to provide a template PDB into which the actual
+# coordinates from .xyz scan are loaded
+geometry_template: ace-ala-nme.pdb
+
+# The coordinates from the following file are loaded into the template
+geometry: scan.xyz
+
+# Scan mode - serial/parallel
+scan_mode: parallel
+cuby_threads: 4 # four calculations run simultaneously
+
+# The calculation performed on each geometry
+calculation:
+  job: energy
+  interface: amber
+  charge: 0

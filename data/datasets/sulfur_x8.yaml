@@ -1,0 +1,1145 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+
+# Composite CCSD(T)/CBS, CP-corrected, Helgaker extrapolation, frozen core
+# HF      aug-cc-pVQZ
+# MP2     aug-cc-pVTZ -> aug-cc-pVQZ
+# CCSD(T) aug-cc-pVTZ
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: Sulfur_x8
+  references: 
+    "10.1021/jp209536e": "B. J. Mintz and J. M. Parks; J. Phys. Chem. A, 2012, 116 (3), pp 1086–1092"
+  text: "CCSD(T)/CBS interaction energies in complexes featuring sulfur"
+
+  groups:
+    - H-bonds
+    - dispersion
+  global_setup:
+    job: interaction
+    molecule_a:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+    molecule_b:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 CH3OH ... CH3SCH3 0.90
+  shortname: 01_ch3oh_ch3sch3_cs_0.90
+  geometry: sulfur_x8:ch3oh_ch3sch3_cs_0.90
+  reference_value: -4.97
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 CH3OH ... CH3SCH3 0.95
+  shortname: 01_ch3oh_ch3sch3_cs_0.95
+  geometry: sulfur_x8:ch3oh_ch3sch3_cs_0.95
+  reference_value: -5.59
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 CH3OH ... CH3SCH3 1.00
+  shortname: 01_ch3oh_ch3sch3_cs_1.00
+  geometry: sulfur_x8:ch3oh_ch3sch3_cs_1.00
+  reference_value: -5.69
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 CH3OH ... CH3SCH3 1.05
+  shortname: 01_ch3oh_ch3sch3_cs_1.05
+  geometry: sulfur_x8:ch3oh_ch3sch3_cs_1.05
+  reference_value: -5.49
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 CH3OH ... CH3SCH3 1.10
+  shortname: 01_ch3oh_ch3sch3_cs_1.10
+  geometry: sulfur_x8:ch3oh_ch3sch3_cs_1.10
+  reference_value: -5.12
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 CH3OH ... CH3SCH3 1.25
+  shortname: 01_ch3oh_ch3sch3_cs_1.25
+  geometry: sulfur_x8:ch3oh_ch3sch3_cs_1.25
+  reference_value: -3.74
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 CH3OH ... CH3SCH3 1.50
+  shortname: 01_ch3oh_ch3sch3_cs_1.50
+  geometry: sulfur_x8:ch3oh_ch3sch3_cs_1.50
+  reference_value: -1.98
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 CH3OH ... CH3SCH3 2.00
+  shortname: 01_ch3oh_ch3sch3_cs_2.00
+  geometry: sulfur_x8:ch3oh_ch3sch3_cs_2.00
+  reference_value: -0.63
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 CH3SCH3 ... benzene 0.90
+  shortname: 02_ch3sch3_benzene_c2v_0.90
+  geometry: sulfur_x8:ch3sch3_benzene_c2v_0.90
+  reference_value: -0.23
+  setup: { }
+  group: dispersion
+  tags: "S-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 CH3SCH3 ... benzene 0.95
+  shortname: 02_ch3sch3_benzene_c2v_0.95
+  geometry: sulfur_x8:ch3sch3_benzene_c2v_0.95
+  reference_value: -0.9
+  setup: { }
+  group: dispersion
+  tags: "S-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 CH3SCH3 ... benzene 1.00
+  shortname: 02_ch3sch3_benzene_c2v_1.00
+  geometry: sulfur_x8:ch3sch3_benzene_c2v_1.00
+  reference_value: -1.12
+  setup: { }
+  group: dispersion
+  tags: "S-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 CH3SCH3 ... benzene 1.05
+  shortname: 02_ch3sch3_benzene_c2v_1.05
+  geometry: sulfur_x8:ch3sch3_benzene_c2v_1.05
+  reference_value: -1.09
+  setup: { }
+  group: dispersion
+  tags: "S-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 CH3SCH3 ... benzene 1.10
+  shortname: 02_ch3sch3_benzene_c2v_1.10
+  geometry: sulfur_x8:ch3sch3_benzene_c2v_1.10
+  reference_value: -0.95
+  setup: { }
+  group: dispersion
+  tags: "S-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 CH3SCH3 ... benzene 1.25
+  shortname: 02_ch3sch3_benzene_c2v_1.25
+  geometry: sulfur_x8:ch3sch3_benzene_c2v_1.25
+  reference_value: -0.46
+  setup: { }
+  group: dispersion
+  tags: "S-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 CH3SCH3 ... benzene 1.50
+  shortname: 02_ch3sch3_benzene_c2v_1.50
+  geometry: sulfur_x8:ch3sch3_benzene_c2v_1.50
+  reference_value: -0.04
+  setup: { }
+  group: dispersion
+  tags: "S-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 CH3SCH3 ... benzene 2.00
+  shortname: 02_ch3sch3_benzene_c2v_2.00
+  geometry: sulfur_x8:ch3sch3_benzene_c2v_2.00
+  reference_value: 0.08
+  setup: { }
+  group: dispersion
+  tags: "S-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 CH3SH ... benzene 0.90
+  shortname: 03_ch3sh_benzene_cs_0.90
+  geometry: sulfur_x8:ch3sh_benzene_cs_0.90
+  reference_value: -2.8
+  setup: { }
+  group: dispersion
+  tags: "SH-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 CH3SH ... benzene 0.95
+  shortname: 03_ch3sh_benzene_cs_0.95
+  geometry: sulfur_x8:ch3sh_benzene_cs_0.95
+  reference_value: -3.32
+  setup: { }
+  group: dispersion
+  tags: "SH-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 CH3SH ... benzene 1.00
+  shortname: 03_ch3sh_benzene_cs_1.00
+  geometry: sulfur_x8:ch3sh_benzene_cs_1.00
+  reference_value: -3.5
+  setup: { }
+  group: dispersion
+  tags: "SH-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 CH3SH ... benzene 1.05
+  shortname: 03_ch3sh_benzene_cs_1.05
+  geometry: sulfur_x8:ch3sh_benzene_cs_1.05
+  reference_value: -3.46
+  setup: { }
+  group: dispersion
+  tags: "SH-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 CH3SH ... benzene 1.10
+  shortname: 03_ch3sh_benzene_cs_1.10
+  geometry: sulfur_x8:ch3sh_benzene_cs_1.10
+  reference_value: -3.29
+  setup: { }
+  group: dispersion
+  tags: "SH-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 CH3SH ... benzene 1.25
+  shortname: 03_ch3sh_benzene_cs_1.25
+  geometry: sulfur_x8:ch3sh_benzene_cs_1.25
+  reference_value: -2.51
+  setup: { }
+  group: dispersion
+  tags: "SH-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 CH3SH ... benzene 1.50
+  shortname: 03_ch3sh_benzene_cs_1.50
+  geometry: sulfur_x8:ch3sh_benzene_cs_1.50
+  reference_value: -1.39
+  setup: { }
+  group: dispersion
+  tags: "SH-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 CH3SH ... benzene 2.00
+  shortname: 03_ch3sh_benzene_cs_2.00
+  geometry: sulfur_x8:ch3sh_benzene_cs_2.00
+  reference_value: -0.45
+  setup: { }
+  group: dispersion
+  tags: "SH-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 CH3SH dimer 0.90
+  shortname: 04_ch3sh_dimer_0.90
+  geometry: sulfur_x8:ch3sh_dimer_0.90
+  reference_value: -2.62
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 CH3SH dimer 0.95
+  shortname: 04_ch3sh_dimer_0.95
+  geometry: sulfur_x8:ch3sh_dimer_0.95
+  reference_value: -3.09
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 CH3SH dimer 1.00
+  shortname: 04_ch3sh_dimer_1.00
+  geometry: sulfur_x8:ch3sh_dimer_1.00
+  reference_value: -3.15
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 CH3SH dimer 1.05
+  shortname: 04_ch3sh_dimer_1.05
+  geometry: sulfur_x8:ch3sh_dimer_1.05
+  reference_value: -2.99
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 CH3SH dimer 1.10
+  shortname: 04_ch3sh_dimer_1.10
+  geometry: sulfur_x8:ch3sh_dimer_1.10
+  reference_value: -2.72
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 CH3SH dimer 1.25
+  shortname: 04_ch3sh_dimer_1.25
+  geometry: sulfur_x8:ch3sh_dimer_1.25
+  reference_value: -1.82
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 CH3SH dimer 1.50
+  shortname: 04_ch3sh_dimer_1.50
+  geometry: sulfur_x8:ch3sh_dimer_1.50
+  reference_value: -0.84
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 CH3SH dimer 2.00
+  shortname: 04_ch3sh_dimer_2.00
+  geometry: sulfur_x8:ch3sh_dimer_2.00
+  reference_value: -0.23
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 CH3SH ... H2CO 0.90
+  shortname: 05_ch3sh_h2co_0.90
+  geometry: sulfur_x8:ch3sh_h2co_0.90
+  reference_value: -2.84
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 CH3SH ... H2CO 0.95
+  shortname: 05_ch3sh_h2co_0.95
+  geometry: sulfur_x8:ch3sh_h2co_0.95
+  reference_value: -3.1
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 CH3SH ... H2CO 1.00
+  shortname: 05_ch3sh_h2co_1.00
+  geometry: sulfur_x8:ch3sh_h2co_1.00
+  reference_value: -3.11
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 CH3SH ... H2CO 1.05
+  shortname: 05_ch3sh_h2co_1.05
+  geometry: sulfur_x8:ch3sh_h2co_1.05
+  reference_value: -2.97
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 CH3SH ... H2CO 1.10
+  shortname: 05_ch3sh_h2co_1.10
+  geometry: sulfur_x8:ch3sh_h2co_1.10
+  reference_value: -2.76
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 CH3SH ... H2CO 1.25
+  shortname: 05_ch3sh_h2co_1.25
+  geometry: sulfur_x8:ch3sh_h2co_1.25
+  reference_value: -2.01
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 CH3SH ... H2CO 1.50
+  shortname: 05_ch3sh_h2co_1.50
+  geometry: sulfur_x8:ch3sh_h2co_1.50
+  reference_value: -1.09
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 CH3SH ... H2CO 2.00
+  shortname: 05_ch3sh_h2co_2.00
+  geometry: sulfur_x8:ch3sh_h2co_2.00
+  reference_value: -0.37
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 CH3SH ... H2O 0.90
+  shortname: 06_ch3sh_h2o_cs_0.90
+  geometry: sulfur_x8:ch3sh_h2o_cs_0.90
+  reference_value: -2.11
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 CH3SH ... H2O 0.95
+  shortname: 06_ch3sh_h2o_cs_0.95
+  geometry: sulfur_x8:ch3sh_h2o_cs_0.95
+  reference_value: -2.33
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 CH3SH ... H2O 1.00
+  shortname: 06_ch3sh_h2o_cs_1.00
+  geometry: sulfur_x8:ch3sh_h2o_cs_1.00
+  reference_value: -2.36
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 CH3SH ... H2O 1.05
+  shortname: 06_ch3sh_h2o_cs_1.05
+  geometry: sulfur_x8:ch3sh_h2o_cs_1.05
+  reference_value: -2.28
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 CH3SH ... H2O 1.10
+  shortname: 06_ch3sh_h2o_cs_1.10
+  geometry: sulfur_x8:ch3sh_h2o_cs_1.10
+  reference_value: -2.14
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 CH3SH ... H2O 1.25
+  shortname: 06_ch3sh_h2o_cs_1.25
+  geometry: sulfur_x8:ch3sh_h2o_cs_1.25
+  reference_value: -1.62
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 CH3SH ... H2O 1.50
+  shortname: 06_ch3sh_h2o_cs_1.50
+  geometry: sulfur_x8:ch3sh_h2o_cs_1.50
+  reference_value: -0.96
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 CH3SH ... H2O 2.00
+  shortname: 06_ch3sh_h2o_cs_2.00
+  geometry: sulfur_x8:ch3sh_h2o_cs_2.00
+  reference_value: -0.39
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 CH3SH ... NH3 0.90
+  shortname: 07_ch3sh_nh3_cs_0.90
+  geometry: sulfur_x8:ch3sh_nh3_cs_0.90
+  reference_value: -2.65
+  setup: { }
+  group: H-bonds
+  tags: "SH-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 CH3SH ... NH3 0.95
+  shortname: 07_ch3sh_nh3_cs_0.95
+  geometry: sulfur_x8:ch3sh_nh3_cs_0.95
+  reference_value: -2.91
+  setup: { }
+  group: H-bonds
+  tags: "SH-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 CH3SH ... NH3 1.00
+  shortname: 07_ch3sh_nh3_cs_1.00
+  geometry: sulfur_x8:ch3sh_nh3_cs_1.00
+  reference_value: -2.95
+  setup: { }
+  group: H-bonds
+  tags: "SH-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 CH3SH ... NH3 1.05
+  shortname: 07_ch3sh_nh3_cs_1.05
+  geometry: sulfur_x8:ch3sh_nh3_cs_1.05
+  reference_value: -2.86
+  setup: { }
+  group: H-bonds
+  tags: "SH-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 CH3SH ... NH3 1.10
+  shortname: 07_ch3sh_nh3_cs_1.10
+  geometry: sulfur_x8:ch3sh_nh3_cs_1.10
+  reference_value: -2.7
+  setup: { }
+  group: H-bonds
+  tags: "SH-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 CH3SH ... NH3 1.25
+  shortname: 07_ch3sh_nh3_cs_1.25
+  geometry: sulfur_x8:ch3sh_nh3_cs_1.25
+  reference_value: -2.06
+  setup: { }
+  group: H-bonds
+  tags: "SH-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 CH3SH ... NH3 1.50
+  shortname: 07_ch3sh_nh3_cs_1.50
+  geometry: sulfur_x8:ch3sh_nh3_cs_1.50
+  reference_value: -1.18
+  setup: { }
+  group: H-bonds
+  tags: "SH-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 CH3SH ... NH3 2.00
+  shortname: 07_ch3sh_nh3_cs_2.00
+  geometry: sulfur_x8:ch3sh_nh3_cs_2.00
+  reference_value: -0.43
+  setup: { }
+  group: H-bonds
+  tags: "SH-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 formamide ... CH3SH 0.90
+  shortname: 08_formamide_ch3sh_0.90
+  geometry: sulfur_x8:formamide_ch3sh_0.90
+  reference_value: -5.61
+  setup: { }
+  group: H-bonds
+  tags: "NH-s"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 formamide ... CH3SH 0.95
+  shortname: 08_formamide_ch3sh_0.95
+  geometry: sulfur_x8:formamide_ch3sh_0.95
+  reference_value: -6.24
+  setup: { }
+  group: H-bonds
+  tags: "NH-s"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 formamide ... CH3SH 1.00
+  shortname: 08_formamide_ch3sh_1.00
+  geometry: sulfur_x8:formamide_ch3sh_1.00
+  reference_value: -6.33
+  setup: { }
+  group: H-bonds
+  tags: "NH-s"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 formamide ... CH3SH 1.05
+  shortname: 08_formamide_ch3sh_1.05
+  geometry: sulfur_x8:formamide_ch3sh_1.05
+  reference_value: -6.1
+  setup: { }
+  group: H-bonds
+  tags: "NH-s"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 formamide ... CH3SH 1.10
+  shortname: 08_formamide_ch3sh_1.10
+  geometry: sulfur_x8:formamide_ch3sh_1.10
+  reference_value: -5.7
+  setup: { }
+  group: H-bonds
+  tags: "NH-s"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 formamide ... CH3SH 1.25
+  shortname: 08_formamide_ch3sh_1.25
+  geometry: sulfur_x8:formamide_ch3sh_1.25
+  reference_value: -4.21
+  setup: { }
+  group: H-bonds
+  tags: "NH-s"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 formamide ... CH3SH 1.50
+  shortname: 08_formamide_ch3sh_1.50
+  geometry: sulfur_x8:formamide_ch3sh_1.50
+  reference_value: -2.32
+  setup: { }
+  group: H-bonds
+  tags: "NH-s"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 formamide ... CH3SH 2.00
+  shortname: 08_formamide_ch3sh_2.00
+  geometry: sulfur_x8:formamide_ch3sh_2.00
+  reference_value: -0.8
+  setup: { }
+  group: H-bonds
+  tags: "NH-s"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 H2O ... CH3SCH3 0.90
+  shortname: 09_h2o_ch3sch3_cs_0.90
+  geometry: sulfur_x8:h2o_ch3sch3_cs_0.90
+  reference_value: -4.73
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 H2O ... CH3SCH3 0.95
+  shortname: 09_h2o_ch3sch3_cs_0.95
+  geometry: sulfur_x8:h2o_ch3sch3_cs_0.95
+  reference_value: -5.29
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 H2O ... CH3SCH3 1.00
+  shortname: 09_h2o_ch3sch3_cs_1.00
+  geometry: sulfur_x8:h2o_ch3sch3_cs_1.00
+  reference_value: -5.35
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 H2O ... CH3SCH3 1.05
+  shortname: 09_h2o_ch3sch3_cs_1.05
+  geometry: sulfur_x8:h2o_ch3sch3_cs_1.05
+  reference_value: -5.14
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 H2O ... CH3SCH3 1.10
+  shortname: 09_h2o_ch3sch3_cs_1.10
+  geometry: sulfur_x8:h2o_ch3sch3_cs_1.10
+  reference_value: -4.77
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 H2O ... CH3SCH3 1.25
+  shortname: 09_h2o_ch3sch3_cs_1.25
+  geometry: sulfur_x8:h2o_ch3sch3_cs_1.25
+  reference_value: -3.44
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 H2O ... CH3SCH3 1.50
+  shortname: 09_h2o_ch3sch3_cs_1.50
+  geometry: sulfur_x8:h2o_ch3sch3_cs_1.50
+  reference_value: -1.81
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 H2O ... CH3SCH3 2.00
+  shortname: 09_h2o_ch3sch3_cs_2.00
+  geometry: sulfur_x8:h2o_ch3sch3_cs_2.00
+  reference_value: -0.58
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 H2O dimer 0.90
+  shortname: 10_h2o_dimer_cs_0.90
+  geometry: sulfur_x8:h2o_dimer_cs_0.90
+  reference_value: -4.66
+  setup: { }
+  group: H-bonds
+  tags: "OH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 H2O dimer 0.95
+  shortname: 10_h2o_dimer_cs_0.95
+  geometry: sulfur_x8:h2o_dimer_cs_0.95
+  reference_value: -4.96
+  setup: { }
+  group: H-bonds
+  tags: "OH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 H2O dimer 1.00
+  shortname: 10_h2o_dimer_cs_1.00
+  geometry: sulfur_x8:h2o_dimer_cs_1.00
+  reference_value: -4.96
+  setup: { }
+  group: H-bonds
+  tags: "OH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 H2O dimer 1.05
+  shortname: 10_h2o_dimer_cs_1.05
+  geometry: sulfur_x8:h2o_dimer_cs_1.05
+  reference_value: -4.78
+  setup: { }
+  group: H-bonds
+  tags: "OH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 H2O dimer 1.10
+  shortname: 10_h2o_dimer_cs_1.10
+  geometry: sulfur_x8:h2o_dimer_cs_1.10
+  reference_value: -4.5
+  setup: { }
+  group: H-bonds
+  tags: "OH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 H2O dimer 1.25
+  shortname: 10_h2o_dimer_cs_1.25
+  geometry: sulfur_x8:h2o_dimer_cs_1.25
+  reference_value: -3.49
+  setup: { }
+  group: H-bonds
+  tags: "OH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 H2O dimer 1.50
+  shortname: 10_h2o_dimer_cs_1.50
+  geometry: sulfur_x8:h2o_dimer_cs_1.50
+  reference_value: -2.13
+  setup: { }
+  group: H-bonds
+  tags: "OH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 H2O dimer 2.00
+  shortname: 10_h2o_dimer_cs_2.00
+  geometry: sulfur_x8:h2o_dimer_cs_2.00
+  reference_value: -0.88
+  setup: { }
+  group: H-bonds
+  tags: "OH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 H2O ... H2S 0.90
+  shortname: 11_h2o_h2s_cs_0.90
+  geometry: sulfur_x8:h2o_h2s_cs_0.90
+  reference_value: -2.63
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 H2O ... H2S 0.95
+  shortname: 11_h2o_h2s_cs_0.95
+  geometry: sulfur_x8:h2o_h2s_cs_0.95
+  reference_value: -2.9
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 H2O ... H2S 1.00
+  shortname: 11_h2o_h2s_cs_1.00
+  geometry: sulfur_x8:h2o_h2s_cs_1.00
+  reference_value: -2.9
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 H2O ... H2S 1.05
+  shortname: 11_h2o_h2s_cs_1.05
+  geometry: sulfur_x8:h2o_h2s_cs_1.05
+  reference_value: -2.75
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 H2O ... H2S 1.10
+  shortname: 11_h2o_h2s_cs_1.10
+  geometry: sulfur_x8:h2o_h2s_cs_1.10
+  reference_value: -2.53
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 H2O ... H2S 1.25
+  shortname: 11_h2o_h2s_cs_1.25
+  geometry: sulfur_x8:h2o_h2s_cs_1.25
+  reference_value: -1.79
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 H2O ... H2S 1.50
+  shortname: 11_h2o_h2s_cs_1.50
+  geometry: sulfur_x8:h2o_h2s_cs_1.50
+  reference_value: -0.93
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 H2O ... H2S 2.00
+  shortname: 11_h2o_h2s_cs_2.00
+  geometry: sulfur_x8:h2o_h2s_cs_2.00
+  reference_value: -0.31
+  setup: { }
+  group: H-bonds
+  tags: "OH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 H2S ... CH4 0.90
+  shortname: 12_h2s_ch4_0.90
+  geometry: sulfur_x8:h2s_ch4_0.90
+  reference_value: -0.75
+  setup: { }
+  group: dispersion
+  tags: "S-alkane"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 H2S ... CH4 0.95
+  shortname: 12_h2s_ch4_0.95
+  geometry: sulfur_x8:h2s_ch4_0.95
+  reference_value: -0.87
+  setup: { }
+  group: dispersion
+  tags: "S-alkane"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 H2S ... CH4 1.00
+  shortname: 12_h2s_ch4_1.00
+  geometry: sulfur_x8:h2s_ch4_1.00
+  reference_value: -0.85
+  setup: { }
+  group: dispersion
+  tags: "S-alkane"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 H2S ... CH4 1.05
+  shortname: 12_h2s_ch4_1.05
+  geometry: sulfur_x8:h2s_ch4_1.05
+  reference_value: -0.77
+  setup: { }
+  group: dispersion
+  tags: "S-alkane"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 H2S ... CH4 1.10
+  shortname: 12_h2s_ch4_1.10
+  geometry: sulfur_x8:h2s_ch4_1.10
+  reference_value: -0.66
+  setup: { }
+  group: dispersion
+  tags: "S-alkane"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 H2S ... CH4 1.25
+  shortname: 12_h2s_ch4_1.25
+  geometry: sulfur_x8:h2s_ch4_1.25
+  reference_value: -0.38
+  setup: { }
+  group: dispersion
+  tags: "S-alkane"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 H2S ... CH4 1.50
+  shortname: 12_h2s_ch4_1.50
+  geometry: sulfur_x8:h2s_ch4_1.50
+  reference_value: -0.14
+  setup: { }
+  group: dispersion
+  tags: "S-alkane"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 H2S ... CH4 2.00
+  shortname: 12_h2s_ch4_2.00
+  geometry: sulfur_x8:h2s_ch4_2.00
+  reference_value: -0.03
+  setup: { }
+  group: dispersion
+  tags: "S-alkane"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 H2S dimer 0.90
+  shortname: 13_h2s_dimer_cs_0.90
+  geometry: sulfur_x8:h2s_dimer_cs_0.90
+  reference_value: -1.43
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 H2S dimer 0.95
+  shortname: 13_h2s_dimer_cs_0.95
+  geometry: sulfur_x8:h2s_dimer_cs_0.95
+  reference_value: -1.64
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 H2S dimer 1.00
+  shortname: 13_h2s_dimer_cs_1.00
+  geometry: sulfur_x8:h2s_dimer_cs_1.00
+  reference_value: -1.67
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 H2S dimer 1.05
+  shortname: 13_h2s_dimer_cs_1.05
+  geometry: sulfur_x8:h2s_dimer_cs_1.05
+  reference_value: -1.59
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 H2S dimer 1.10
+  shortname: 13_h2s_dimer_cs_1.10
+  geometry: sulfur_x8:h2s_dimer_cs_1.10
+  reference_value: -1.46
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 H2S dimer 1.25
+  shortname: 13_h2s_dimer_cs_1.25
+  geometry: sulfur_x8:h2s_dimer_cs_1.25
+  reference_value: -1.01
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 H2S dimer 1.50
+  shortname: 13_h2s_dimer_cs_1.50
+  geometry: sulfur_x8:h2s_dimer_cs_1.50
+  reference_value: -0.5
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 H2S dimer 2.00
+  shortname: 13_h2s_dimer_cs_2.00
+  geometry: sulfur_x8:h2s_dimer_cs_2.00
+  reference_value: -0.15
+  setup: { }
+  group: H-bonds
+  tags: "SH-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 H2S ... H2O 0.90
+  shortname: 14_h2s_h2o_cs_0.90
+  geometry: sulfur_x8:h2s_h2o_cs_0.90
+  reference_value: -2.39
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 H2S ... H2O 0.95
+  shortname: 14_h2s_h2o_cs_0.95
+  geometry: sulfur_x8:h2s_h2o_cs_0.95
+  reference_value: -2.63
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 H2S ... H2O 1.00
+  shortname: 14_h2s_h2o_cs_1.00
+  geometry: sulfur_x8:h2s_h2o_cs_1.00
+  reference_value: -2.66
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 H2S ... H2O 1.05
+  shortname: 14_h2s_h2o_cs_1.05
+  geometry: sulfur_x8:h2s_h2o_cs_1.05
+  reference_value: -2.58
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 H2S ... H2O 1.10
+  shortname: 14_h2s_h2o_cs_1.10
+  geometry: sulfur_x8:h2s_h2o_cs_1.10
+  reference_value: -2.43
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 H2S ... H2O 1.25
+  shortname: 14_h2s_h2o_cs_1.25
+  geometry: sulfur_x8:h2s_h2o_cs_1.25
+  reference_value: -1.86
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 H2S ... H2O 1.50
+  shortname: 14_h2s_h2o_cs_1.50
+  geometry: sulfur_x8:h2s_h2o_cs_1.50
+  reference_value: -1.1
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 H2S ... H2O 2.00
+  shortname: 14_h2s_h2o_cs_2.00
+  geometry: sulfur_x8:h2s_h2o_cs_2.00
+  reference_value: -0.44
+  setup: { }
+  group: H-bonds
+  tags: "SH-O"
+
+#===============================================================================
+# Plots
+#===============================================================================
+
+plots:
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "01 CH3OH ... CH3SCH3 2.00"
+  filename: 01_ch3oh_ch3sch3_cs_2.00
+  first: 0
+  last: 7
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "02 CH3SCH3 ... benzene 2.00"
+  filename: 02_ch3sch3_benzene_c2v_2.00
+  first: 8
+  last: 15
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "03 CH3SH ... benzene 2.00"
+  filename: 03_ch3sh_benzene_cs_2.00
+  first: 16
+  last: 23
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "04 CH3SH dimer 2.00"
+  filename: 04_ch3sh_dimer_2.00
+  first: 24
+  last: 31
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "05 CH3SH ... H2CO 2.00"
+  filename: 05_ch3sh_h2co_2.00
+  first: 32
+  last: 39
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "06 CH3SH ... H2O 2.00"
+  filename: 06_ch3sh_h2o_cs_2.00
+  first: 40
+  last: 47
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "07 CH3SH ... NH3 2.00"
+  filename: 07_ch3sh_nh3_cs_2.00
+  first: 48
+  last: 55
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "08 formamide ... CH3SH 2.00"
+  filename: 08_formamide_ch3sh_2.00
+  first: 56
+  last: 63
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "09 H2O ... CH3SCH3 2.00"
+  filename: 09_h2o_ch3sch3_cs_2.00
+  first: 64
+  last: 71
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "10 H2O dimer 2.00"
+  filename: 10_h2o_dimer_cs_2.00
+  first: 72
+  last: 79
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "11 H2O ... H2S 2.00"
+  filename: 11_h2o_h2s_cs_2.00
+  first: 80
+  last: 87
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "12 H2S ... CH4 2.00"
+  filename: 12_h2s_ch4_2.00
+  first: 88
+  last: 95
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "13 H2S dimer 2.00"
+  filename: 13_h2s_dimer_cs_2.00
+  first: 96
+  last: 103
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "14 H2S ... H2O 2.00"
+  filename: 14_h2s_h2o_cs_2.00
+  first: 104
+  last: 111
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]
+
+#===============================================================================
+# Alternative data
+#===============================================================================
+
+alternative_reference:
+  # Helgaker extrapolation aTZ -> aQZ:
+  "MP2/CBS": [ -5.385, -5.897, -5.920, -5.660, -5.248, -3.802, -2.014, -0.645, -1.721, -2.051, -2.001, -1.778, -1.495, -0.738, -0.143, 0.053, -4.363, -4.621, -4.584, -4.370, -4.058, -2.981, -1.616, -0.518, -3.233, -3.563, -3.520, -3.280, -2.953, -1.946, -0.898, -0.243, -3.110, -3.300, -3.256, -3.081, -2.840, -2.052, -1.115, -0.386, -2.307, -2.468, -2.461, -2.356, -2.199, -1.661, -0.983, -0.400, -2.983, -3.152, -3.130, -2.995, -2.798, -2.110, -1.216, -0.447, -5.899, -6.433, -6.459, -6.187, -5.756, -4.236, -2.332, -0.813, -5.062, -5.534, -5.540, -5.278, -4.877, -3.500, -1.835, -0.589, -4.649, -4.923, -4.908, -4.723, -4.443, -3.448, -2.117, -0.886, -2.793, -3.018, -2.989, -2.820, -2.584, -1.821, -0.951, -0.315, -0.825, -0.924, -0.890, -0.799, -0.689, -0.399, -0.153, -0.030, -1.766, -1.906, -1.875, -1.753, -1.590, -1.084, -0.538, -0.166, -2.620, -2.797, -2.791, -2.676, -2.504, -1.902, -1.129, -0.452 ]
+

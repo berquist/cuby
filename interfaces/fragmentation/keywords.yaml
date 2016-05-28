@@ -1,0 +1,44 @@
+################################################################################
+# KEYWORDS for interface Fragmentation
+################################################################################
+
+keywords:
+  :fragmentation_mode: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :cut_bonds
+    allowed_values:
+      - :cut_bonds
+  #: Mode of fragmentation:
+  #* cut_bonds - build the fragments by cuting user-defined bonds and all non-covalent contacts.
+ 
+ 
+  :fragmentation_cut_bonds: !ruby/object:SettingsKeyword
+    convert_to: :array
+    when_not_present: :default
+    default_value: [ ]
+  #: Bonds to be cut. Array of entries in the format 
+  #: "atom_selection; atom_selection; d_ratio",
+  #: d_ratio being the ratio between length of the bond to a hydogen cap atom
+  #: and the original bond length. The gradient is very sensitive to this,
+  #: ratio of distances optimized with the method used are needed.
+
+  :fragmentation_geometry_only: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: If set, the program is aborted after preparation of the fragments but before
+  #: the calculations are prepared. This is useful for generating the geometries of the fragments
+  #: for the use in other calculations.
+  
+  :fragmentation_monomer_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "fragments.pdb"
+
+  #: File to which the geometries of fragments are saved. If set to empty string, no file is generated.
+  :fragmentation_dimer_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "dimers.pdb"
+  #: File to which the geometries of fragment dimers are saved. If set to empty string, no file is generated.

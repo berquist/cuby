@@ -1,0 +1,487 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+
+# CCSD(T)/aug-cc-pVTZ
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: "Bauza_2013"
+  references: 
+    "10.1021/ct400818v": "Bauza, A.; Alkorta, I.; Frontera, A.; Elguero, J. J. Chem. Theory Comput. 2013, 9, 5201–5210."
+  text: "Halogen, chalcogen and pnicogen bonds"
+
+  groups:
+    - Pn-bond
+    - E-bond
+    - X-Bond
+  global_setup:
+    job: interaction
+    molecule_a:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+    molecule_b:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 Br- ... AsF3
+  shortname: 01_Br-_AsF3
+  geometry: bauza_2013:1
+  reference_value: -22.01
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-5
+      charge: 0
+  group: Pn-bond
+  tags: "Br-As"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 Br- ... BrF
+  shortname: 02_Br-_BrF
+  geometry: bauza_2013:2
+  reference_value: -33.76
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-3
+      charge: 0
+  group: X-bond
+  tags: "Br-Br"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 Br- ... ClF
+  shortname: 03_Br-_ClF
+  geometry: bauza_2013:3
+  reference_value: -27.94
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-3
+      charge: 0
+  group: X-bond
+  tags: "Br-Cl"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 Br- ... PF3
+  shortname: 04_Br-_PF3
+  geometry: bauza_2013:4
+  reference_value: -12.72
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-5
+      charge: 0
+  group: Pn-bond
+  tags: "Br-P"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 Br- ... S=CF2
+  shortname: 05_Br-_S=CF2
+  geometry: bauza_2013:5
+  reference_value: -6.49
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-5
+      charge: 0
+  group: E-bond
+  tags: "Br-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 Br- ... S=PF3
+  shortname: 06_Br-_S=PF3
+  geometry: bauza_2013:6
+  reference_value: -5.62
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-6
+      charge: 0
+  group: Pn-bond
+  tags: "Br-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 Br- ... SF2
+  shortname: 07_Br-_SF2
+  geometry: bauza_2013:7
+  reference_value: -18.55
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-4
+      charge: 0
+  group: E-bond
+  tags: "Br-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 Br- ... Se=CF2
+  shortname: 08_Br-_Se=CF2
+  geometry: bauza_2013:8
+  reference_value: -9.47
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-5
+      charge: 0
+  group: E-bond
+  tags: "Br-Se"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 Br- ... Se=PF3
+  shortname: 09_Br-_Se=PF3
+  geometry: bauza_2013:9
+  reference_value: -10.57
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-6
+      charge: 0
+  group: E-bond
+  tags: "Br-Se"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 Br- ... SeF2
+  shortname: 10_Br-_SeF2
+  geometry: bauza_2013:10
+  reference_value: -27.71
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-4
+      charge: 0
+  group: E-bond
+  tags: "Br-Se"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 Cl- ... AsF3
+  shortname: 11_Cl-_AsF3
+  geometry: bauza_2013:11
+  reference_value: -26.98
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-5
+      charge: 0
+  group: Pn-bond
+  tags: "Cl-As"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 Cl- ... BrF
+  shortname: 12_Cl-_BrF
+  geometry: bauza_2013:12
+  reference_value: -36.65
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-3
+      charge: 0
+  group: X-bond
+  tags: "Cl-Br"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 Cl- ... ClF
+  shortname: 13_Cl-_ClF
+  geometry: bauza_2013:13
+  reference_value: -30.07
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-3
+      charge: 0
+  group: X-bond
+  tags: "Cl-Cl"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 Cl- ... PF3
+  shortname: 14_Cl-_PF3
+  geometry: bauza_2013:14
+  reference_value: -16.25
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-5
+      charge: 0
+  group: Pn-bond
+  tags: "Cl-P"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 Cl- ... S=CF2
+  shortname: 15_Cl-_S=CF2
+  geometry: bauza_2013:15
+  reference_value: -7.83
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-5
+      charge: 0
+  group: E-bond
+  tags: "Cl-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 Cl- ... S=PF3
+  shortname: 16_Cl-_S=PF3
+  geometry: bauza_2013:16
+  reference_value: -6.94
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-6
+      charge: 0
+  group: E-bond
+  tags: "Cl-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 Cl- ... SF2
+  shortname: 17_Cl-_SF2
+  geometry: bauza_2013:17
+  reference_value: -22.29
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-4
+      charge: 0
+  group: E-bond
+  tags: "Cl-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 Cl- ... Se=CF2
+  shortname: 18_Cl-_Se=CF2
+  geometry: bauza_2013:18
+  reference_value: -11.33
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-5
+      charge: 0
+  group: E-bond
+  tags: "Cl-Se"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 Cl- ... Se=PF3
+  shortname: 19_Cl-_Se=PF3
+  geometry: bauza_2013:19
+  reference_value: -12.79
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-6
+      charge: 0
+  group: E-bond
+  tags: "Cl-Se"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 Cl- ... SeF2
+  shortname: 20_Cl-_SeF2
+  geometry: bauza_2013:20
+  reference_value: -32.08
+  setup: 
+    molecule_a:
+      selection: 1
+      charge: -1
+    molecule_b:
+      selection: 2-4
+      charge: 0
+  group: E-bond
+  tags: "Cl-Se"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 NH3 ... AsF3
+  shortname: 21_NH3_AsF3
+  geometry: bauza_2013:21
+  reference_value: -8.55
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: Pn-bond
+  tags: "N-As"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 NH3 ... BrF
+  shortname: 22_NH3_BrF
+  geometry: bauza_2013:22
+  reference_value: -14.21
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: X-bond
+  tags: "N-Br"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 NH3 ... ClF
+  shortname: 23_NH3_ClF
+  geometry: bauza_2013:23
+  reference_value: -10.13
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: X-bond
+  tags: "N-Cl"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 NH3 ... PF3
+  shortname: 24_NH3_PF3
+  geometry: bauza_2013:24
+  reference_value: -4.94
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: Pn-bond
+  tags: "N-P"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 25 NH3 ... S=CF2
+  shortname: 25_NH3_S=CF2
+  geometry: bauza_2013:25
+  reference_value: -1.77
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "N-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 26 NH3 ... S=PF3
+  shortname: 26_NH3_S=PF3
+  geometry: bauza_2013:26
+  reference_value: -1.57
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "N-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 27 NH3 ... SF2
+  shortname: 27_NH3_SF2
+  geometry: bauza_2013:27
+  reference_value: -7.12
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "N-S"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 28 NH3 ... Se=CF2
+  shortname: 28_NH3_Se=CF2
+  geometry: bauza_2013:28
+  reference_value: -2.66
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "N-Se"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 29 NH3 ... Se=PF3
+  shortname: 29_NH3_Se=PF3
+  geometry: bauza_2013:29
+  reference_value: -2.79
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "N-Se"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 30 NH3 ... SeF2
+  shortname: 30_NH3_SeF2
+  geometry: bauza_2013:30
+  reference_value: -11.53
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "N-Se"
+

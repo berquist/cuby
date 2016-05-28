@@ -1,0 +1,33 @@
+#===============================================================================
+# MRCC example 2: Local natural orbitals CCSD(T) calculation
+#===============================================================================
+
+# Energy calculation, water molecule from cuby's database
+job: energy
+geometry: A24:water
+charge: 0
+
+# Use MRCC interface
+interface: mrcc
+
+# Calculation setup
+method: CCSD(T)
+basisset: aug-cc-pVDZ
+auxiliary_basis_mp2: aug-cc-pVDZ
+density_fitting: both
+correlation_frozen_core: yes
+scf_convergence: 8
+density_convergence: 8
+correlation_convergence: 8
+
+# Local CC setup
+mrcc_local_cc: lno 
+# The following thresholds affect the accuracy, for details see
+# http://dx.doi.org/10.1063/1.4819401
+mrcc_lno_eps_o: 5
+mrcc_lno_eps_v: 6
+mrcc_lno_domrad: 10
+
+
+# Print components of the energy
+print: energy_decomposition

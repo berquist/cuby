@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Z-matrices</h1>
+<p>
+Cuby can read geometry as z-matrix in a format similar to the one used in Gaussian. The values of the coordinates can be supplied either inline or using named variables. Here is an example (ethane molecule) using inline values
+</p>
+<pre><code>C
+C   1 1.650
+H   1 1.089    2 109.471
+H   1 1.089    2 109.471    3 125.0
+H   1 1.089    2 109.471    3 241.0
+H   2 1.089    1 109.471    3 183.0
+H   2 1.089    1 109.471    3 310.0
+H   2 1.089    1 109.471    3  62.0</code></pre>
+<p>and using named variables (note that multiple coordinates are now represented by a single variable)</p>
+<pre><code>C
+C   1 cc
+H   1 hc        2 hcc
+H   1 hc        2 hcc         3 dih4
+H   1 hc        2 hcc         3 dih5
+H   2 hc        1 hcc         3 dih6
+H   2 hc        1 hcc         3 dih7
+H   2 hc        1 hcc         3 dih8
+
+cc         1.650000
+hc         1.089000
+hcc        109.471
+dih4        125.000
+dih5        241.000
+dih6        183.000
+dih7        310.000
+dih8         62.000</code></pre>
+<a name="partial_opt"></a>
+<h2>Freezing/thawing coordinates for optimization</h2>
+<p>
+When the z-matrix is used for optimization, it is possible to optimize only some coordinates and freeze the others. There are two labeling schemes that can be used (but not both at the same time):
+</p>
+<ul>
+	<li>If there are variables with '!' in their name, they will not be optimized.</li>
+	<li>If there are variables with '*' in their name, only these coordinates are optimized.</li>
+</ul>
+		</div>
+		</div>
+	</body>
+</html>

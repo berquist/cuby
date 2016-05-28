@@ -1,0 +1,36 @@
+#===============================================================================
+# QMMM example 5 - Automated fragmentation
+#===============================================================================
+
+# The QM/MM interface can automatically prepare QMMM calculation of a peptide,
+# adding caps to the broken backbone. The initial selection of the QM region
+# should contain the region of interest which is then enlarged as needed:
+# 1) Complete residues included in the selection are used
+# 2) No other bonds than peptide bonds in the peptide chain can be broken
+# 3) Capping residues are added to terminate the broken peptide bonds
+
+job: energy
+interface: qmmm
+geometry: trpcage.pdb
+
+# Switch on automated fragmentation
+qmmm_auto_fragmentation: peptide_backbone
+
+# Here, we define what we want in the QM region. This selection is then extended
+# automatically so that the peptide backbone is properly capped capped.
+qmmm_core: ':8-10'
+
+calculation_qm:
+  interface: mopac
+  method: pm6
+  mopac_mozyme: yes
+
+calculation_mm:
+  interface: amber
+  # The following leaprc packaged with cuby loads the Amber ff03 with definition
+  # of the cap redidues needed
+  amber_leaprc: "%interface/data/amberff03_pm6.leaprc"
+
+# With this input, cuby will run the calculation immediately. If you want to check
+# the generated setup and QM region geometry, set the following keyword to 'no'.
+qmmm_auto_run: yes

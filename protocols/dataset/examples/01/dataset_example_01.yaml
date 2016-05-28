@@ -1,0 +1,22 @@
+#===============================================================================
+# Dataset example 1: Calculation on a predefined data set
+#===============================================================================
+
+job: dataset
+
+#-------------------------------------------------------------------------------
+# Dataset selection
+#-------------------------------------------------------------------------------
+# Predefined data set is used, only the name of the set has to be provided
+dataset: A24
+
+#-------------------------------------------------------------------------------
+# Calculation setup
+#-------------------------------------------------------------------------------
+# Interface and method of the calculation is specified, appropriate protocol
+# (in this case interaction energy calculation) is chosed for each dataset
+# automatically
+
+interface: mopac
+method: pm6
+

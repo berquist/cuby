@@ -1,0 +1,16 @@
+#===============================================================================
+# Gradient example 1
+#===============================================================================
+
+# There's not much to show here...
+
+job: gradient
+
+# Water molecule from A24 data set - CCSD(T) geometry
+geometry: A24:water
+charge: 0
+
+# Calculate gradient at HF/6-31G level in Turbomole
+interface: turbomole
+method: hf
+basisset: 6-31G

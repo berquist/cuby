@@ -1,0 +1,25 @@
+#===============================================================================
+# Mixer example 1
+#===============================================================================
+
+# The mixer interface is used here to get the differnce between two different
+# semiempirical calculations of interaction energy in water dimer.
+
+job: interaction
+geometry: A24:water_dimer
+
+interface: mixer
+# Set the weights to get
+# E = E(A) - E(B)
+mixer_weight_a: 1.0
+mixer_weight_b: -1.0
+
+calculation_common:
+  interface: mopac # Assuming mopac interface is configured
+  charge: 0
+
+calculation_a: # yields E(A)
+  method: AM1
+
+calculation_b: # yields E(B)
+  method: PM3

@@ -1,0 +1,18 @@
+################################################################################
+# KEYWORDS for interface X_bond
+################################################################################
+
+keywords:
+  :xbond_parameters: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :other
+  #: Two-level hash, indexed by 1) halogen element and 2) acceptor element, the
+  #: value should be array of the k and e parameters. The parameters defined here
+  #: are merged with the default parameters for D3H4X correction.
+
+  :xbond_only_noncovalent: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: When set, covalent bonds and 1-3 and 1-4 covament neigbors are excluded
+  #: from the corrected pairs.

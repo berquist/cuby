@@ -1,0 +1,34 @@
+#===============================================================================
+# Example 1: MP2/CBS extrapolation
+#===============================================================================
+
+job: energy
+geometry: S66:water_dimer
+
+interface: extrapolate_cbs
+
+# Switch off the higher-order correction
+extrapolate_cbs_correction: no
+
+# Common setup for all calculations
+calculation_common:
+  charge: 0
+  scf_convergence: 10
+  density_convergence: 10
+  correlation_convergence: 9
+  
+# MP2 calculation in small basis set
+calculation_mp2_small:
+  interface: turbomole
+  method: mp2
+  basisset: cc-pVDZ
+  # Note that basis set zeta has to be defined to make extrapolation possible:
+  basisset_zeta: 2
+
+# MP2 calculation in large basis set
+calculation_mp2_large:
+  interface: turbomole
+  method: mp2
+  basisset: cc-pVTZ
+  # Note that basis set zeta has to be defined to make extrapolation possible:
+  basisset_zeta: 3

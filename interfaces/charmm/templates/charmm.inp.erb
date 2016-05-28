@@ -1,0 +1,35 @@
+BOMLEV -1
+ 
+open unit 1 read card name -
+  "<%= top %>"
+read rtf card unit 1
+close unit 1
+ 
+open unit 1 read card name -
+  "<%= par %>"
+read param card unit 1
+close unit 1
+
+<%= charmm_stream_block(:charmm_stream_files) %>
+ 
+open unit 4 read card name "<%= Dir.pwd + '/' + calc_dir %>/sys.psf"
+read psf  card unit 4
+close unit 4
+ 
+open unit 2 read card name "<%= Dir.pwd + '/' + calc_dir %>/sys.crd"
+read coor card unit 2
+close unit 2
+
+<%= charmm_stream_block(:charmm_extra_stream_files) %>
+<%= @settings[:charmm_extras] %>
+
+!energy
+upda
+gete
+scalar dx show sele all end
+
+scalar dy show sele all end
+
+scalar dz show sele all end
+
+  stop

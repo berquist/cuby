@@ -1,0 +1,89 @@
+#!/usr/bin/env ruby
+$:.unshift(File.dirname(__FILE__)+"/..").uniq! # Magic line to add path to the executable to $RUBYLIB
+require "classes/cuby.rb" # Load Cuby classes and libraries
+
+require "documentation/text_html_printer.rb"
+
+module MethodInfo
+	@@interfaces_dir = ''
+
+	def MethodInfo.interface_dir=(val)
+		@@interfaces_dir = val
+	end
+
+
+
+	def MethodInfo.read_methods
+		@@method_list = {}
+		Calculation.available_interfaces.each_pair{|name, dir|
+			next if FileTest.exist?(dir + "/PRIVATE")
+			require dir + "/" + name.to_s + ".rb"
+			# Get the interface module from name
+			mod = eval("Interface" + name.to_s.split("_").map{|s| s.capitalize}.join(''))
+
+			begin
+				mod::METHODS.each_key{|method|
+					if @@method_list[method]
+						@@method_list[method] << name
+					else
+						@@method_list[method] = [name]
+					end
+				}
+			rescue
+			end
+		}
+	end
+
+	def MethodInfo.print_interfaces(method, printer)
+		list = @@method_list[method]
+		if list.size == 0
+			printer.paragraph("Method '#{method}' is not implemented by any interface")
+		else
+			list.map!{|x| x.to_s}
+			list.sort!
+			list.map!{|s| "<a href=\"interface_#{s}.html\">#{s}</a>"} if printer.html
+			printer.list("Method '#{method}' is implemented in following interfaces:", list)
+		end
+	end
+
+	def MethodInfo.all_methods(printer)
+		printer.heading("List of computational methods available in cuby")
+		items =  @@method_list.keys.map{|x| x.to_s}.sort
+		items.map!{|s| "<a href=\"method_#{s}.html\">#{s}</a>"} if printer.html
+		printer.list("Available methods (values of the 'method' keyword):", items)
+		printer.paragraph("List of interfaces implementing each method can be found in documentation for a given method.")
+		printer.footer
+		exit
+	end
+
+	def MethodInfo.method_exists?(method)
+		return @@method_list.has_key?(method)
+	end
+
+end
+
+Cuby.application {
+	# Load Cuby classes and libraries
+	Cuby.load_framework(:skip_global_config => true, :skip_user_config => true)
+	MethodInfo.interface_dir = Cuby::install_dir + "/interfaces"
+	MethodInfo.read_methods
+
+	printer = TextHtmlPrinter.new($stdout, (ARGV.include? "html") ? :html : :text)
+	printer.header
+
+	if ARGV.size == 0 || ARGV[0] == "html"
+		MethodInfo.all_methods(printer)
+	end
+
+	method = ARGV[0].downcase.to_sym
+	printer.heading("Method #{method}")
+
+	if MethodInfo.method_exists?(method)
+		MethodInfo.print_interfaces(method, printer)
+	else
+		printer.paragraph("Method '#{method}' is not known to cuby") 
+	end
+
+	printer.footer
+
+}

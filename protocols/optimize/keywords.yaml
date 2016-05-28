@@ -1,0 +1,301 @@
+################################################################################
+# Keywords for protocol Optimize
+################################################################################
+
+keywords: 
+  :optimize_print: !ruby/object:SettingsKeyword
+    convert_to: :symbol_list
+    when_not_present: :default
+    default_value: 
+      - :steps
+    allowed_values:
+      - :steps
+      - :steps_as_dots
+      - :final_energy
+      - :statistics
+  #: Optional printing:
+  #* steps - print complete information in each step
+  #* steps_as_dots - one character per step, dot or 'o' and 'O' as more criteria are fulfilled
+  #* final_energy - print final energy after optimization
+  #* statistics - print counts of various events encountered by the optimizer
+ 
+  :optimize_region: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "%all()"
+  #: Selection of atoms to be optimized.
+
+  :optimizer: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :auto
+    allowed_values:
+      - :auto
+      - :rfo
+      - :trim
+      - :lbfgs
+      - :plbfgs
+      - :quasi_newton
+      - :nelder_mead
+  #: Optimization algorithm. The default option 'auto' switches between
+  #: quasi-Newton (BFGS) for small (less than 100 atoms) and LBFGS optimizers.
+  #: The Nelder-Mead simplex method is not intended for geometry optimization
+  #: but for other applications.
+  
+  :coordinates: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :cartesian
+    allowed_values:
+      - :cartesian
+      - :"z-matrix"
+      - :redundant
+  #: Coordinate system used for geometry optimization. To use z-matrix,
+  #: the geometry must be loaded from a z-matrix format.
+
+  :history_freq: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 1
+  #: History is written each history_freq steps. If set to 0, no history is written.
+
+  :history_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Name of the history file. If not specified, it is created from the name
+  #: of the input file if possible, or is set to "history.xyz".
+
+  :restart_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Name of file to which the last geometry is written. When not specified,
+  #: the name of the file is "optimized.xyz" if the optimization converged and
+  #: "last.xyz" if it did not. Setting the value to "" means no restart file
+  #: is written.
+ 
+  :restart_file_append: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: By default, the restart file is overwritten, use this option to append the coordinates
+  #: to an existing file
+
+  :history_selection: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: If set, additional history file is written for a atoms selected by this keyword.
+  
+  :linesearch: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :quadratic_ls
+      - :old
+      - :cubic
+  #: Linesearch
+  #* none - only step scaling
+  #* quadratic_ls - quadratic function approximation with weighted least squares for its derivatives
+  #* old - quadratic function approximation with no respoect to values, only derivatives
+  #* cubic - cubic function approximation
+  
+  :lbfgs_n: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 5
+  #: Number of vectors stored for l-BFGS
+
+  :plbfgs_colors: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 1
+  #: How many colors to to calculate in one step. The number of calculations is then
+  #: 1 + 3 * plbfgs_colors. The most efficient setup is to keep the number of colors
+  #: 1 and set cuby_threads to 4 to perform all the four calculations in parallel.
+
+  :plbfgs_init_d: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.00001
+  #: init. value of d for num. differentiation
+
+  :opt_tr_update: !ruby/object:SettingsKeyword # file: cuby_optimize
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Update of trust radius during the optimization
+
+  :opt_refuse_steps: !ruby/object:SettingsKeyword # file: cuby_optimize
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Refuse bad optimization steps and try shorter one
+
+  :opt_qn_update_formula: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :bfgs
+    allowed_values:
+      - :bfgs
+      - :dfp
+      - :broyden
+      - :sr1
+      - :dfp_bfgs
+      - :sr1_bfgs
+  #: Hessian update formula for quasi-Newton optimizers
+
+  :maxcycles: !ruby/object:SettingsKeyword # file: cuby_optimize
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 200
+  #: Maximum number of cycles of optimization or molecular dynamics
+
+  :opt_diagonal_h0: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1000
+  #: Initial value of diagonal elements of the hessian
+
+  :trust_radius: !ruby/object:SettingsKeyword # file: driver_RFO, protocols/optimize_i
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.1
+  #: Trust radius (max. step size) in Angstrom.
+  
+  :opt_tr_update: !ruby/object:SettingsKeyword # file:driver_TRIM.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Update the trust radius dynamically (it is lowered when bad steps are taken, but it
+  #: can't exceed the value trust_radius_max).
+
+  :opt_tr_mode: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :max
+    allowed_values:
+      - :abs
+      - :max
+      - :components
+  #: Step size scaling mode for RFO, QN and LBFGS (TRIM uses another means of step size control):
+  #* abs - Step is scaled so that its absolute value is not larger than the limit
+  #* components - Each component of the step vector is scaled separately
+  #* max - Step is scaled so that the largest component is not larger than the limit
+
+  :trust_radius_max: !ruby/object:SettingsKeyword # file: driver_RFO, protocols/optimize_i
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.3
+  #: Upper limit of trust_radius when dynamic change of it is allowed (by opt_tr_update)
+  
+  :trust_radius_min: !ruby/object:SettingsKeyword # file: driver_RFO, protocols/optimize_i
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.0e-7
+  #: Lower limit of trust_radius when dynamic change of it is allowed (by opt_tr_update)
+
+  :opt_quality: !ruby/object:SettingsKeyword # file: cuby_optimize
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.0
+  #: One-number control of optimization quality - multiplier of convergence limits. The default
+  #: value sets rather loose thresholds suitable for optimization of rigid molecules only.
+  #: When accurate geometries of flexible molecules or noncovalent complexes are needed,
+  #: opt_quality should be set to 0.1 or lower.
+  
+  :opt_convlimit_e: !ruby/object:SettingsKeyword # file: cuby_optimize
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.006
+  #: Convergence limit for energy change between steps (kcal/mol).
+  #: If set to 0, this criterium is not evaluated.
+   
+  :opt_convlimit_max_g: !ruby/object:SettingsKeyword # file: cuby_optimize
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.2
+  #: Convergence limit for maximum gradient component (kcal/mol/A).
+  #: If set to 0, this criterium is not evaluated.
+   
+  :opt_convlimit_rms_g: !ruby/object:SettingsKeyword # file: cuby_optimize
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.6
+  #: Convergence limit for root mean square of gradient (gradient norm) (kcal/mol/A).
+  #: If set to 0, this criterium is not evaluated.
+  
+  :remove_translation: !ruby/object:SettingsKeyword # file: cuby_optimize
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Removes translational component of a gradient in each cycle of
+  #: optimization or a velocity in MD simulation.
+  
+  :remove_rotation: !ruby/object:SettingsKeyword # file: cuby_optimize
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Removes rotational component of a gradient in each cycle of
+  #: optimization or MD a velocity in MD simulation.
+
+  :redcoord_extra_contacts: !ruby/object:SettingsKeyword # file: cuby_optimize
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Add extra contacts to the redundant coordinates
+
+  :redcoord_all_torsions: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Generation of redundant coordinates - use all torsions 
+ 
+  :redcoord_freeze_class: !ruby/object:SettingsKeyword
+    convert_to: :symbol_list
+    when_not_present: :default
+    default_value: []
+    allowed_values:
+      - :bonds
+      - :angles 
+      - :torsions
+  #: Freeze some class of internal coordinates
+
+  :hessian_estimate: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :by_coordinate
+    allowed_values:
+      - :single_number
+      - :by_coordinate
+      - :from_lookup
+      - :fischer_almlof
+      - :lindh
+      - :swart
+      - :from_file
+      - :from_file_shift
+  #: Estimate of the initial hessian. It applies only to
+  #: optimizations in redundant internal coordinates with
+  #: quasi-Newton optimizers. The values are:
+  
+  :init_hessian_lookup_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :die
+  #: File wit a lookup table used for the construction of the estimate
+  #: of the initial Hessian.
+
+  :opt_auto_restart: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: When enabled, restart file 'auto_restart.xyz' is written in each step, and
+  #: if this file is found at the beginning of an optimization, the geometry
+  #: is updated with coordinates from this file.
+
+  :opt_freeze_cartesian: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :default
+    default_value: {}
+  #: Allows freezing some cartesian coordinates. The input should be a hash in
+  #: a form "atom_index: xyz" (only some coordinates can be selected, e.g. by
+  #: "x" or "xz")

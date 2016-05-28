@@ -1,0 +1,40 @@
+################################################################################
+# KEYWORDS for the Gaussian interface
+################################################################################
+
+keywords:
+  :gaussian_keywords: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Extra keywords in Gaussian format to be appended to the method specification line
+
+  :gaussian_extra_block: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Additional block (or blocks, separated by new line) of gaussian input inserted
+  #: into teh constructed input after the geometry.
+
+  :gaussian_checkpoint: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :binary
+      - :text
+  #: Save checkpoint file
+
+  :gaussian_bin_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the gaussian binaries directory
+
+  :gaussian_version: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Gaussian version, e.g. "g09" - the version name should correspond
+  #: to the name of the program binary.

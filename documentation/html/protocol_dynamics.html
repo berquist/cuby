@@ -1,0 +1,154 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol dynamics</h1>
+<p>
+This protocol allows running classical molecular dynamics on any potential provided by cuby interfaces. Verlet propagator is used and several thermostats are available. It is possible to run the MD only on a part of the system, keeping the rest frozen.
+</p>
+
+<h2>Input structure</h2>
+<h4>Optionally, following blocks can be defined in the input:</h4>
+<ul>
+<li>trajectory_2 - Setup for the optional secondary trajectory file</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this protocol:</h4>
+<ul>
+<li><a href="keywords.html#init_temp">init_temp</a></li>
+<li><a href="keywords.html#md_region">md_region</a></li>
+<li><a href="keywords.html#random_seed">random_seed</a></li>
+<li><a href="keywords.html#temperature">temperature</a></li>
+<li><a href="keywords.html#temperature_target">temperature_target</a></li>
+<li><a href="keywords.html#thermostat">thermostat</a></li>
+<li><a href="keywords.html#thermostat_tc">thermostat_tc</a></li>
+<li><a href="keywords.html#timestep">timestep</a></li>
+<li><a href="keywords.html#trajectory_file">trajectory_file</a></li>
+<li><a href="keywords.html#trajectory_format">trajectory_format</a></li>
+<li><a href="keywords.html#trajectory_freq">trajectory_freq</a></li>
+<li><a href="keywords.html#trajectory_selection">trajectory_selection</a></li>
+<li><a href="keywords.html#velocities">velocities</a></li>
+<li><a href="keywords.html#velocities_file">velocities_file</a></li>
+</ul>
+<h4>Other keywords used by this protocol:</h4>
+<ul>
+<li><a href="keywords.html#maxcycles">maxcycles</a></li>
+<li><a href="keywords.html#print">print</a></li>
+<li><a href="keywords.html#remove_rotation">remove_rotation</a></li>
+<li><a href="keywords.html#remove_translation">remove_translation</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/dynamics/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Molecular dynamics example 1 - setting temperatures
+#===============================================================================
+
+# 1 ps of MD simulation (the default step is 1 fs)
+job: dynamics
+maxcycles: 1000
+
+# Amber calculation of ace-ala-nme tripeptide from database
+interface: amber
+geometry: ace-xxx-nme:ala
+
+# Initial temperature - used only to generate the velocities at the start
+# of the simulation
+
+# Because we start from optimized structure, this temperature is set to
+# twice the desired temperature (100K) - the kinetic energy quickly equalizes
+# with potential energy. If we started from a MD snapshot where we already
+# have the potential energy, this will be set to teh actual temperature
+# we want, it is 100 K.
+init_temp: 200
+
+# Thermostat
+thermostat: berendsen
+thermostat_tc: 0.1 # faster coupling needed for such a short simulation
+
+# This is the temperature maintained by the thermostat
+temperature: 100
+
+# Optionally, the thermostated temperature can vary during the simulation.
+# Uncomment the following keyword to perform a simulation where the system is
+# gradually heated to 300 K over the course of the simulation.
+temperature_target: 300
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Molecular dynamics example 2 - restarting the simulation
+#===============================================================================
+
+# This example demonstrates restarting a MD run
+
+job: multistep
+steps: first, second
+
+calculation_first:
+  job: dynamics
+  maxcycles: 100
+  # Amber calculation of ace-ala-nme tripeptide from database
+  interface: amber
+  geometry: ace-xxx-nme:ala
+  # By default, the simulation starts with random velocities generated from
+  # the Boltzmann distribution
+  init_temp: 600 
+  # Every MD run produces file 'last.xyz' containing the final geometry and
+  # velocities. Alternatively (e.g. if the run did not finish), a snapshot from
+  # the trajectory can be used instead
+  trajectory_file: trajectory1.xyz
+
+calculation_second:
+  # The same setup as in previous step
+  job: dynamics
+  maxcycles: 100
+  interface: amber
+  # Geometry for amber must be read from a PDB file, we can't use last.xyz directly
+  # Therefore, we load the original geometry and update coordinates from the
+  # restart file.
+  geometry: ace-xxx-nme:ala
+  geometry_update_coordinates: last.xyz
+  # Velocities are read from the restart as well:
+  velocities: read
+  velocities_file: last.xyz
+  # Write to second trajectory file
+  trajectory_file: trajectory2.xyz
+
+# The two trajectories produced should be equivalent to running a single,
+# longer MD simulation 
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+################################################################################
+## KEYWORDS for interface H-bonds4
+#################################################################################
+
+keywords:
+  :h_bonds4_parameters: !ruby/object:SettingsKeyword # file: interfaces/h_bonds4.rb
+    convert_to: :hash
+    when_not_present: :die
+  #: Parameters for the H-bond correction. By default, parameters for the selected method
+  #: are loaded automatically.
+  
+  :h_bonds4_scale_charged: !ruby/object:SettingsKeyword # file: interfaces/h_bonds4.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Scaling of the correction for charged groups (COO-, NH3+).
+  
+  :h_bonds4_extra_scaling: !ruby/object:SettingsKeyword # file: interfaces/h_bonds4.rb
+    convert_to: :hash
+    when_not_present: :other
+  #: Manual definition of additional chrged sites to be scaled. Key of the hash is selection
+  #: of donor/acceptor atoms to be applied to, value is a sacling factor.
+  
+  :h_bonds4_pt_corr: !ruby/object:SettingsKeyword # file: interfaces/h_bonds4.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.0
+  #: Increase of proton transfer barriers
+  
+  :h_bonds4_skip_acceptor: !ruby/object:SettingsKeyword # file: interfaces/h_bonds4.rb
+    convert_to: :array
+    when_not_present: :default
+    default_value: []
+  #: Skip corerction for specific acceptor arrangement. Following cases are supported:
+  #* OS - oxygen bound to sulfur

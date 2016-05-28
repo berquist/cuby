@@ -1,0 +1,12 @@
+# Functional -> turbomole notation
+blyp: "b-lyp"
+bp: "b-p"
+pbe: "pbe"
+tpss: "tpss"
+bhlyp: "bh-lyp"
+b3lyp: "b3-lyp"
+pbe0: "pbe0"
+b97d: "b97-d"
+m06: "m06"              # Version 6.6
+m062x: "m06-2x"         # Version 6.6
+b2plyp: "b2-plyp"      

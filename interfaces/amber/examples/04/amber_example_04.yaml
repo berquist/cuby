@@ -1,0 +1,39 @@
+#===============================================================================
+# Amber example 4: Solvation
+#===============================================================================
+
+# In this example, solvation energy is calculated as a difference between
+# a calculation using implicit solvent and another gas phase calculation.
+# To get the result from a single cuby job, composite interface mixer is
+# used to run both calculations in parallel and subtract the results.
+
+job: energy
+interface: mixer
+
+geometry: ../02/ace-ala-nme.pdb
+
+print: energy_decomposition
+# print components of the final energy, in this case energies of the two
+# separate calculation (optional)
+
+cuby_threads: 2
+# run the two separate calculation in parallel (optional)
+
+mixer_weight_a:  1.0
+mixer_weight_b: -1.0
+# This defines the weights (wA, wB) of the calculations, the resulting energy
+# is then E = wA * E(A) + wB * E(B)
+
+# The two calculations are defined as separate blocks of the input (the block
+# name comes first, the contents of the block are then indented).
+
+calculation_a: # Calculation in implicit solvent (GBM)
+  interface: amber
+  solvent_model: gbm
+  # here, the solvent model is defined, the possible options are gbm and igb7
+  # dilelectric constant can be specified by keyword solvent_epsilon,
+  # the value of 78.5 (water) is used by default
+
+calculation_b:
+  interface: amber
+  # amber calculation, everything set to default

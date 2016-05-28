@@ -1,0 +1,16 @@
+#===============================================================================
+# Energy example 1 - single-point calculation with energy decomposition
+#===============================================================================
+
+# MP3 calculation of water molecule
+job: energy
+geometry: A24:water # Geometry from the A24 dataset
+charge: 0
+
+# Calculation setup
+interface: orca # call Orca program to do the calculation
+method: mp3
+basisset: 3-21G
+
+# Printing of energy components (optional)
+print: energy_decomposition

@@ -1,0 +1,84 @@
+#===============================================================================
+# Peptide conformers
+# RI-MP2/cc-pVTZ geometries
+# From: Valdes, H.; Pluháčková, K.; Pitonák, M.; Řezáč, J.; Hobza, P. Phys. Chem. Chem. Phys. 2008, 10, 2747.
+# DOI: 10.1039/b719294k
+# Geometries downloaded from http://www.begdb.com
+#===============================================================================
+
+FGG_114: FGG114.xyz
+FGG_215: FGG215.xyz
+FGG_224: FGG224.xyz
+FGG_252: FGG252.xyz
+FGG_300: FGG300.xyz
+FGG_357: FGG357.xyz
+FGG_366: FGG366.xyz
+FGG_380: FGG380.xyz
+FGG_412: FGG412.xyz
+FGG_444: FGG444.xyz
+FGG_470: FGG470.xyz
+FGG_55: FGG55.xyz
+FGG_691: FGG691.xyz
+FGG_80: FGG80.xyz
+FGG_99: FGG99.xyz
+GFA_01: GFA01.xyz
+GFA_02: GFA02.xyz
+GFA_03: GFA03.xyz
+GFA_04: GFA04.xyz
+GFA_05: GFA05.xyz
+GFA_06: GFA06.xyz
+GFA_07: GFA07.xyz
+GFA_08: GFA08.xyz
+GFA_09: GFA09.xyz
+GFA_10: GFA10.xyz
+GFA_11: GFA11.xyz
+GFA_12: GFA12.xyz
+GFA_13: GFA13.xyz
+GFA_14: GFA14.xyz
+GFA_15: GFA15.xyz
+GFA_16: GFA16.xyz
+GGF_01: GGF01.xyz
+GGF_02: GGF02.xyz
+GGF_03: GGF03.xyz
+GGF_04: GGF04.xyz
+GGF_05: GGF05.xyz
+GGF_06: GGF06.xyz
+GGF_07: GGF07.xyz
+GGF_08: GGF08.xyz
+GGF_09: GGF09.xyz
+GGF_10: GGF10.xyz
+GGF_11: GGF11.xyz
+GGF_12: GGF12.xyz
+GGF_13: GGF13.xyz
+GGF_14: GGF14.xyz
+GGF_15: GGF15.xyz
+WG_01: WG01.xyz
+WG_02: WG02.xyz
+WG_03: WG03.xyz
+WG_04: WG04.xyz
+WG_05: WG05.xyz
+WG_06: WG06.xyz
+WG_07: WG07.xyz
+WG_08: WG08.xyz
+WG_09: WG09.xyz
+WG_10: WG10.xyz
+WG_11: WG11.xyz
+WG_12: WG12.xyz
+WG_13: WG13.xyz
+WG_14: WG14.xyz
+WG_15: WG15.xyz
+WGG_01: WGG01.xyz
+WGG_02: WGG02.xyz
+WGG_03: WGG03.xyz
+WGG_04: WGG04.xyz
+WGG_05: WGG05.xyz
+WGG_06: WGG06.xyz
+WGG_07: WGG07.xyz
+WGG_08: WGG08.xyz
+WGG_09: WGG09.xyz
+WGG_10: WGG10.xyz
+WGG_11: WGG11.xyz
+WGG_12: WGG12.xyz
+WGG_13: WGG13.xyz
+WGG_14: WGG14.xyz
+WGG_15: WGG15.xyz

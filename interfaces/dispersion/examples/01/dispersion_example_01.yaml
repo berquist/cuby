@@ -1,0 +1,22 @@
+#===============================================================================
+# Dispersion example 1: DFT-D with automatic setup
+#===============================================================================
+
+# The dispersion interafce identifies the basis set and functional used
+# by the parent calculation and if this combination is found in its parameter
+# database, the appropriate parameters are used automatically.
+
+# Interaction energy calculation
+job: interaction
+
+# Methane dimer from the internal database
+geometry: A24:methane_dimer
+
+# DFT calculation setup
+interface: turbomole
+method: dft
+functional: tpss
+basisset: TZVP
+
+# Adding the dispersion correction as a modifier (no further setup needed)
+modifiers: dispersion

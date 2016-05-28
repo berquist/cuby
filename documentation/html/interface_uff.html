@@ -1,0 +1,96 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface uff</h1>
+<p>
+This interface offers a partial implementation of the Universal Force Field (UFF)[1],
+making it possible to carry out simplie calculations in Cuby without any external software.
+It is useful for testing and demonstration purposes.
+</p>
+
+<p>
+The implementation has following limitations:
+</p>
+<ul>
+	<li>Works only for limited set of elements: H,C,N and O</li>
+	<li>Atomic charges are estimated using different method[2] that in original UFF</li>
+</ul>
+
+<ol>
+	<li>J. Am. Chem. Soc. 114(25), 10024, 1992</li>
+	<li>J. Phys. Chem. A, 2002, 106 (34), pp 7887–7894</li>
+</ol>
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Keywords used</h2>
+<p>This interface does not use any specific keywords</p>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#atomic_charges_read">atomic_charges_read</a></li>
+<li><a href="keywords.html#charge">charge</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/uff/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# UFF example 1 - geoemtry optimization
+#===============================================================================
+
+job: optimize
+
+interface: uff
+
+geometry: |
+  H    1.967603917  -1.140511213  -0.300259482
+  H    3.180209441  -0.153234074  -0.313604159
+  H    2.335499457  -0.311642212   0.991150017
+  H   -0.619663449  -0.149076101  -1.607628437
+  H   -2.638561649  -0.977700792  -0.510855092
+  H   -0.330701092   1.595133723   0.115327602
+  H   -2.114864632  -0.525222032   0.881866437
+  H   -2.539775062   0.542853517  -0.184426700
+  H    0.145591691   0.535059473   1.114346776
+  C    2.233400000  -0.224500000   0.000200000
+  O    1.408500000   0.824800000  -0.435800000
+  C    0.114500000   0.699800000   0.128500000
+  N   -0.663700000  -0.306000000  -0.621000000
+  C   -2.025000000  -0.309300000  -0.090400000
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

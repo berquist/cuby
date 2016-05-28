@@ -1,0 +1,6 @@
+- !ruby/object:ProtocolDataset::DataSetPlot
+  name: "%name%"
+  filename: %fn%
+  first: %first%
+  last: %last%
+  x_values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5, 2.0]

@@ -1,0 +1,40 @@
+#===============================================================================
+# Reaction protocol example 2: multi-step calculation
+#===============================================================================
+
+# This example features the same reaction as example 1 to for each compound,
+# a multi-step calculation is applied
+
+job: reaction
+reaction_formula: 2 H2 + O2 -> 2 H2O
+
+reaction_geometries:
+  H2: h2.xyz
+  O2: o2.xyz
+  H2O: h2o.xyz
+
+calculation:
+  # Multi-step protocol is used
+  job: multistep
+  multistep_print: no
+  steps: opt, energy
+
+  # First step - geometry optimization
+  # Geometry is taken from parent block, it is the 'calculation' level
+  calculation_opt:
+    job: optimize
+    optimize_print: "" # Disable printing of optimization steps
+    interface: dftb
+    method: scc-dftb
+    charge: 0
+    geometry: parent_block
+
+  # Second step: energy calculation
+  # The geometry is taken from the previous step, it is after the optimization
+  calculation_energy:
+    job: energy
+    interface: dftb
+    method: scc-dftb
+    charge: 0
+    geometry: previous_step
+

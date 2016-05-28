@@ -1,0 +1,11 @@
+source %amberhome/dat/leap/cmd/leaprc.ff03.r1
+source %amberhome/dat/leap/cmd/leaprc.gaff
+
+loadamberparams %interface/data/amberff03_pm6/BCC.frcmod
+loadamberparams %interface/data/amberff03_pm6/BNC.frcmod
+loadamberparams %interface/data/amberff03_pm6/BCB.frcmod
+
+loadamberprep %interface/data/amberff03_pm6/BCC.in
+loadamberprep %interface/data/amberff03_pm6/BNC.in
+loadamberprep %interface/data/amberff03_pm6/BCB.in
+loadamberprep %interface/data/amberff03_pm6/BCG.in

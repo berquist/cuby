@@ -1,0 +1,151 @@
+body, td {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 300;
+}
+
+p, ul {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+
+	text-align: justify;
+}
+
+h1, h2, h3, h4, h5, strong, b {
+	font-weight: 500;
+}
+
+h4 { /* Used as a list caption*/
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	color: #AA0000;
+}
+
+h2 {
+	color: #006a9f;
+	margin-top: 1em;
+	margin-bottom: 0.25em;
+}
+
+h3 {
+	color: black;
+	margin-top: 1em;
+	margin-bottom: 0.25em;
+}
+
+a {
+	text-decoration: none;
+	color: #03f;
+}
+
+a:visited {
+	color: #03f;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a.link_type, a.link_type:visited {
+	text-decoration: none;
+	color: #90B0E0;
+}
+
+pre {
+	border: 2px dotted #eee;
+	padding: 0.5em;
+	background-color: #ffe;
+}
+
+table tr td pre {
+   margin: 2px;
+}
+
+div.example {
+	margin-bottom: 2em;
+}
+
+table.fullwidth {
+	width: 100%;
+}
+
+table.fullwidth tr td {
+	padding: 0;
+	margin: 0;
+}
+
+.vertical tr td { vertical-align: middle !important; }
+
+.formula {
+	font-style: italic;
+	padding: 0.5em;
+	padding-left: 2em;
+}
+
+/* Keyword description styles */
+
+.keywordblock h3 {
+	border-top: 2px dotted #eee;
+	margin-top: 2em;
+	font-weight: normal;
+}
+
+.keywordblock .kwname {
+	color: #AA0000;
+}
+
+.keywordblock .kwtype {
+	color: gray;
+	font-style: italic;
+}
+
+.keywordblock p{
+	margin: 0;
+	padding: 0;
+}
+
+.keywordblock .kwdetails {
+	color: gray;
+	margin-top: 0.75em;
+}
+
+.keywordblock .kwallowed .defvalue {
+	text-decoration: underline;
+}
+
+.doctable {
+	margin-top: 1em;
+	margin-bottom: 1.5em;
+	background: #eee;
+	border: none;
+	border-collapse:collapse;
+}
+
+.doctable th {
+	font-weight: 500;
+	text-align: left;
+	background: #ddd;
+}
+
+.doctable th, .doctable td {
+	padding-left: 0.2em;
+	padding-right: 0.5em;
+	vertical-align: top;
+	border-bottom: 2px solid #fff;
+	margin: 0px;
+}
+.doctable tr {
+	margin: 0px;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+}
+
+table.center {
+	margin-left:auto; 
+	margin-right:auto;
+}

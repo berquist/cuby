@@ -1,0 +1,46 @@
+#===============================================================================
+# Example 2: Composite CCSD(T)/CBS calculation
+#===============================================================================
+
+job: energy
+geometry: S66:water_dimer
+
+interface: extrapolate_cbs
+
+# Use higher-order correction
+extrapolate_cbs_correction: yes
+
+# Common setup for all calculations
+calculation_common:
+  charge: 0
+  scf_convergence: 10
+  density_convergence: 10
+  correlation_convergence: 9
+  
+# MP2 calculation in small basis set
+calculation_mp2_small:
+  interface: turbomole
+  method: mp2
+  basisset: cc-pVDZ
+  # Note that basis set zeta has to be defined to make extrapolation possible:
+  basisset_zeta: 2
+
+# MP2 calculation in large basis set
+calculation_mp2_large:
+  interface: turbomole
+  method: mp2
+  basisset: cc-pVTZ
+  # Note that basis set zeta has to be defined to make extrapolation possible:
+  basisset_zeta: 3
+
+# CCSD(T) calculation 
+calculation_corr:
+  interface: cfour
+  method: ccsd(t)
+  basisset: STO-3G
+
+# Run all the calculations in parallel
+cuby_threads: 3
+
+# Print the energy components (SCF energy, MP2/CBS corerlation)
+print: energy_decomposition

@@ -1,0 +1,5 @@
+# Grid name -> Values of Grid and FinalGrid keywords
+:coarse: [ 2, 2 ]
+:medium: [ 2, 4 ] # Orca default
+:fine: [ 3, 5 ] # Cuby default
+:ultrafine: [ 5, 6 ]

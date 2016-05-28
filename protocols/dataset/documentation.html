@@ -1,0 +1,45 @@
+<p>This protocol automates a repeated calculation performed on a predefined data set of systems and calculates the statistics over the set.
+The data set is described by a YAML file containing the definition of the systems, general setup of the calculations to be performed 
+(most importantly the protocol to be applied to each item) and reference values. 
+Some data sets are provided with Cuby, user-defined data sets can be specified by providing a valid
+path to a yaml file instead of the name of the predefined data set.
+</p>
+<p> The entries in the data sets can be divided into groups and individually tagged. Only part of the dataset can be calulated, the selection is
+defined by keywords <em>dataset_select_...</em> and <em>dataset_skip_...</em>.
+</p>
+<p>
+The individual calculations can be executed <a href="parallelization.html">in parallel</a> to reduce the overall time.
+</p>
+
+<h2>Data sets available</h2>
+<p> By default, Cuby contains following data sets:</p>
+<table class="doctable">
+<%= `$CUBY_PATH/data/datasets/list_datasets.rb | grep -v GMTKN` %>
+</table>
+
+<h3>GMTKN30 data sets</h3>
+<p> The <a href="http://www.thch.uni-bonn.de/tc/index.php?section=downloads&subsection=GMTKN30&lang=english">GMTKN30 collection</a> of data sets by S. Grimme is available in Cuby. The original data were converted automatically to the format Cuby uses; as a result the data sets miss some fancy features such as nice names of the systems. 
+</p>
+<p>
+We have validated the GMTKN datasets against the original DFT results by Grimme (with exception of G21EA and WATER27 for which the published data were calculated in a modified basis set). Only in the SIE11 data set, there is one point (the last entry) where our result does not agree with Grimme's DFT data (but is closer to the reference).
+</p>
+<table class="doctable">
+<%= `$CUBY_PATH/data/datasets/list_datasets.rb | grep GMTKN` %>
+</table>
+<p>
+<strong>Calculation setup:</strong> All the entries in the GMTKN data sets are calculated using the <a href="protocol_reaction.html">reaction</a> protocol. Because of this, the calculation setup must be provided in a separate block in the input named 'calculation' rather than at root level. Here is an example:
+</p>
+<pre><code>job: dataset
+dataset: GMTKN_PCONF
+
+calculation:
+  job: energy
+  interface: mopac
+  method: pm6</code></pre>
+
+<h2>Custom data sets</h2>
+<p>
+Use an existing data set file (located in cuby4/data/datasets) as a template. The file can be located anywhere, just provide a valid path to it in the
+<a href="keywords.html#dataset">dataset</a> keyword. The default data sets use geometries from cuby's library but files can be used as well, the record 'geometry'
+in the data set file is treated the same as the <a href="keywords.html#geometry">geometry</a> keyword.
+</p>

@@ -1,0 +1,118 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol neb</h1>
+<p>This module implements the Nudged Elastic Band (NEB) method[1] for identification of minimum energy path (MEP) between two minima. By default, the improved version[2] is used.
+</p>
+
+<p>The initial estimate of the path should be provided by the user as a series of geometries connecting the reactant and product. LBFGS optimzer is used because optimizing all the points at the same time leads to large number of optimized variables.
+</p>
+
+<h2>Warning</h2>
+<p>
+With the NEB method, it is not possible to achieve very tight convergence because the optimizer can not use the total energy of the system which is not defined. Set the convergence thresholds accordingly.
+</p>
+
+<h2>References</h2>
+<ol>
+	<li> H. Jónsson, G. Mills, and K. W. Jacobsen, “Nudged elastic band method for finding minimum energy paths of transitions,” in Classical and Quantum Dynamics in Condensed Phase Simulations, edited by B. J. Berne, G. Ciccotti, and D. F. Coker (World Scientific, Singapore, 1998), p. 385.</li>
+	<li>G. Henkelman and H. Jónsson, Improved tangent estimate in the nudged elastic band method for finding minimum energy paths and saddle points, J. Chem. Phys. 113, 9978-9985 (2000).</li>
+</ol>
+
+<h2>Input structure</h2>
+<h4>The protocol requires following blocks in the input:</h4>
+<ul>
+<li>calculation - Setup for the calculation</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this protocol:</h4>
+<ul>
+<li><a href="keywords.html#neb_fconst">neb_fconst</a></li>
+<li><a href="keywords.html#neb_mep_file">neb_mep_file</a></li>
+<li><a href="keywords.html#neb_optimize_endpoints">neb_optimize_endpoints</a></li>
+<li><a href="keywords.html#neb_version">neb_version</a></li>
+</ul>
+<h4>Other keywords used by this protocol:</h4>
+<ul>
+<li><a href="keywords.html#geometry">geometry</a></li>
+<li><a href="keywords.html#geometry_template">geometry_template</a></li>
+<li><a href="keywords.html#lbfgs_n">lbfgs_n</a></li>
+<li><a href="keywords.html#opt_convlimit_e">opt_convlimit_e</a></li>
+<li><a href="keywords.html#opt_convlimit_max_g">opt_convlimit_max_g</a></li>
+<li><a href="keywords.html#opt_convlimit_rms_g">opt_convlimit_rms_g</a></li>
+<li><a href="keywords.html#opt_diagonal_h0">opt_diagonal_h0</a></li>
+<li><a href="keywords.html#opt_quality">opt_quality</a></li>
+<li><a href="keywords.html#opt_tr_mode">opt_tr_mode</a></li>
+<li><a href="keywords.html#optimize_print">optimize_print</a></li>
+<li><a href="keywords.html#trust_radius">trust_radius</a></li>
+<li><a href="keywords.html#trust_radius_max">trust_radius_max</a></li>
+<li><a href="keywords.html#trust_radius_min">trust_radius_min</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/neb/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Nudged Elatic Band protocol example 1
+#===============================================================================
+
+# Minimum energy path optimization for rotation of bond in propane molecule
+
+job: neb
+
+# The initial series of geometries was built by interpolating z-matrices of
+# an initial and rotated state
+geometry: propane_scan.xyz
+
+# Force constant connecting the images - it controls the spacing of the points
+# along the MEP but the calculation is not very sensitive to it
+neb_fconst: 10.0
+
+# Optimize also the initial and final state - can be disabled if the geometries
+# had been optimized already
+neb_optimize_endpoints: yes
+
+# Calculate four images in parallel
+cuby_threads: 4
+
+calculation:
+  interface: mopac
+  method: pm6
+  charge: 0
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

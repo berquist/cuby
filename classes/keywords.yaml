@@ -1,0 +1,882 @@
+################################################################################
+# KEYWORDS
+################################################################################
+
+keywords:
+  #=============================================================================
+  # Global settings
+  #=============================================================================
+
+  :mem: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 1000
+  #: Memory limit (in MB) passed to the external program if applicable.
+  #: It should not be set to the full amount of memory available, allow some
+  #: memory for the system. For parallel jobs, the amount of memory to be
+  #: specified depends on the parallelization mode: For shared memory
+  #: calculations, specify the total amount of memory, for MPI calculations,
+  #: memory per core should be given.
+
+  :mem_core: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 75
+  #: Value in percent. Specifies how much memory is used for the user set
+  #: "core", e.g. for integral storage, in QM calculations
+  #: (Applies to Turbomole and ORCA).
+
+  :verbosity: !ruby/object:SettingsKeyword # file: ???
+    commandline: "-v"
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :normal
+    allowed_values:
+      - :silent
+      - :minimal
+      - :brief
+      - :normal
+      - :debug
+  #: Verbosity of the output:
+  #* silent - nothing is printed
+  #* minimal - just the most important results are printed in format intended for machine reading
+  #* brief - just the most important results are printed in human readable form
+  #* normal - all necessary iinformation is printed with 'decorations'
+  #* debug - same as normal + debugging messages
+
+  :print: !ruby/object:SettingsKeyword
+    convert_to: :symbol_list
+    when_not_present: :default
+    default_value: []
+    allowed_values:
+      - :timing
+      - :energy_decomposition
+      - :subsystem_results
+      - :dipole
+      - :polarizability
+      - :input_geometry
+      - :step_timing
+      - :gradient
+      - :molecular_orbitals
+  #: List of extra features to be printed:
+  #* timing: print time spent in the program (global)
+  #* energy_decomposition: components of the calculated energy, if they are present (global)
+  #* subsystem_results: print results for subsystems (protocol interaction, threebody)
+  #* dipole: dipole moment, if available
+  #* polarizability: molecular polarizability, if available
+  #* input_geometry: print the geometry used at the beginning of the calculation (global)
+  #* step_timing: print timing for individual steps of the calculation (protocol optimize)
+  #* gradient: print gradient used in the optimization (protocol parametrize)
+
+
+  :job_title: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Custom title for the job. When not set, protocol default is used.
+
+  :ignore_recommendations: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Can be used to prevent the program exitting when a Recommendation is
+  #: encountered. Recommendations are raised when cuby thinks the user attempts
+  #: doing something wrong but technically possible.
+
+  :write_parsed_input: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: If enabled, the parsed input, including all modifications by cuby
+  #: (e.g. child calculation setup and defaults used) is saved to file
+  #: "parsed_input.yaml".
+  
+  :prepare_only: !ruby/object:SettingsKeyword
+    commandline: "-p"
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: When enabled, cuby prepares the calculations and exits before
+  #: running them.
+
+  :write_results_yaml: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Write serialized results in YAML format to this file.
+
+  #=============================================================================
+  # Queue system support
+  #=============================================================================
+
+  :queue_submit: !ruby/object:SettingsKeyword
+    commandline: "-q"
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Submit the job to queue instead of running it immediately. The submission
+  #: system must be configured accordingly.
+ 
+  :queue_system: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :run_in_background
+    allowed_values:
+      - :run_in_background
+      - :pbs
+      - :sge
+  #: Queue system used:
+  #* run_in_background - example only, runs the cuby job in background immediately.
+  #* pbs - use the PBS queue system
+  #* sge - use Sun Grid engine
+
+  :queue_name: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Name of the queue to be used.
+
+  :queue_parallel: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: other
+  #: Number of CPUs allocated in the queue system. If not set, it is calculated from
+  #: other keywords as parallel * cuby_threads
+
+  :queue_walltime_hrs: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: default
+    default_value: 24
+  #: Requested walltime passed to the queue system.
+
+  :queue_jobname: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "cuby4"
+  #: Name of the job passed to the queue system.
+
+  :queue_scratch_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Directory where the calculation is run on the node. Evaluated in a bash script, can
+  #: contain environment variables. A subdirectory with unique name is created for each job
+  #: in the scratch directory.
+
+  :queue_output_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "LOG"
+  #: Name of the file to which output of cuby is redirected.
+
+  :queue_results_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "RESULTS"
+  #: Directory where the results are put to after job finishes. Path is relative to the
+  #: directory in which the job is submitted.
+
+  :queue_qsub_command: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "qsub"
+  #: The command for submitting the jobs to queue.
+
+  :queue_qsub_options: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Additional commandline options for the command submitting the job (usually named
+  #: qsub).
+
+  :queue_extra_commands: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Additional comands to be inserted into the shell script that executes cuby
+  #: on the node - useful for e.g. seting up the environment.
+
+  #=============================================================================
+  # Output control
+  #=============================================================================
+
+  :gaussian_external_output: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: When set, cuby writes the results also in a form readable by gaussian
+  #: when it is used as a driver for external calculations
+  #: (see http://gaussian.com/g_tech/g_ur/k_external.htm). Supported by
+  #: protocols Energy, Gradient and Hessian.
+
+  :pdb_extra_columns: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Controls printing of additional columns in PDB files (beyond coordinates).
+  #: Applicable to all tasks where PDB file is written.
+
+  #=============================================================================
+  # Molecule information
+  #=============================================================================
+
+  :geometry: !ruby/object:SettingsKeyword # file: ???
+    commandline: "-g"
+    convert_to: :string
+    when_not_present: :die
+  #: Starting geometry. Can be specified inline in the input in cuby's format
+  #: or as a name of external file in a format recognized by cuby.
+
+  :geometry_update_coordinates: !ruby/object:SettingsKeyword # file: ???
+    convert_to: :string
+    when_not_present: :other
+  #: If set, the geometry read using the geometry keyword is updated with
+  #: coordinates read from this file. This feature is useful e.g. to read
+  #: coordinates into a PDB template for calculations that require
+  #: the additional information from the PDB format.
+
+  :geometry_rotate: !ruby/object:SettingsKeyword # file: ???
+    convert_to: :string
+    when_not_present: :other
+  #: If set, the geometry is rotated along the cartesian axes. Three angles
+  #: (in degrees) should be provided, separated by commas.
+  #: Use 'rand' for a random rotation.
+ 
+  :geometry_reorder: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :original
+    allowed_values:
+      - :original
+      - :reverse
+      - :random
+  #: Reordering of the input geometry. 
+
+  :selection: !ruby/object:SettingsKeyword # file: ???
+    commandline: "-s"
+    convert_to: :string
+    when_not_present: :default
+    default_value: "auto"
+  #: Atom selection using cuby's selection language. The default value is
+  #: context-dependent:
+  #* At the root level, where the selection defines what part of the geometry is loaded, the default is %all(), loading everything
+  #* In selection of a subsystem (e.g. for interaction energy calculation), first molecule becomes the first subsystem etc...
+
+  :geometry_database_path: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "."
+  #: Additional path searched for geometry databases. The default location, cuby4/data/geometries,
+  #: is searched first and when the files are not found, this location is used.
+
+  :geometry_load_charges: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Atomic charges to be loaded into the geometry (reads the format produced by Cuby).
+    
+  :geometry_setup_from_file: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Charge and multiplicity can be read from a remark in the geometry file. For now,
+  #: only the .xyz format is supported where the second line should look like
+  #: 'charge=X multiplicity=Y'. If this option is set and no data are found in the geometry,
+  #: charge 0 and multiplicity 1 are assumed.
+
+  :charge: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :warning
+    default_value: 0
+  
+  :multiplicity: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 1
+  
+  :ghost_atoms: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Definition of ghost atoms (nucleus without a charge, basis set functions
+  #: without electrons) by an selection expression. This is applied immediately
+  #: after the geometry is loaded, before the 'selection' keyword is used to
+  #: select some of the atoms.
+
+  #=============================================================================
+  # Parallelization introduced by Cuby
+  #=============================================================================
+
+  :cuby_threads: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 1
+  #: Number of calculations executed by cuby in parallel.
+
+  :remote_calculations: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :no
+    allowed_values:
+      - :no
+      - :drb
+  #: Mode of parallel (specified by -->cuby_threads) remote execution of calcualtions.
+  #: The options are:
+  #* no - calculations are run locally in multiple threads
+  #* drb - calculations are run at remote servers using drb (distributed ruby), URIs of the servers must be provided in -->remote_drb_servers
+ 
+  :remote_drb_servers: !ruby/object:SettingsKeyword
+    convert_to: :array
+    when_not_present: :die
+  #: List of URIs of the remote servers (the URI is printed when the server is started)
+ 
+  :remote_file_transfer: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :die
+    allowed_values:
+      - :shared_wd
+      - :scp
+  #: Specifies how the calculation files are transferred to a node:
+  #* shared_wd - no transfer, all calculations use a shared storage
+  #* scp - files are copied using ssh 
+
+  :remote_servers_close: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Shut down remote servers when the calculation is finished
+
+  #=============================================================================
+  # Parallelization of the external programs
+  #=============================================================================
+ 
+  :parallel: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 1
+  #: Number of CPUs used by the external program running in parallel mode.
+
+  :parallel_mode: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :default
+    allowed_values:
+      - :default
+      - :mpi
+      - :shm
+      - :ga
+  #: Mode of parallel execution of the external software. Use the value 'default'
+  #: unless the external program supports multiple options. The options are:
+  #* MPI - message passing interface (note that each CPU uses the memory provided by mem keyword)
+  #* SHM - shared memory, e.g. multi-threaded parallelism
+  #* GA - global arrays - MPI parallelization with shared memory
+ 
+  # TBD:
+  # remote_calculations: no | ssh | queue
+  # parallel_n_mpi
+  # parallel_n_shm
+
+  #=============================================================================
+  # Calculation settings
+  #=============================================================================
+
+  :job: !ruby/object:SettingsKeyword # file: ???
+    commandline: "-j"
+    convert_to: :symbol
+    when_not_present: :die
+  #: Job type (calculation protocol). The available protocols are listed in the
+  #: documenation (page Protocols on the website, accessible from commandline
+  #: by running 'cuby4 protocol').
+
+  :interface: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :auto
+  #: Interface used for the calulation. See the list of interfaces
+  #: for possible values (online or by typing 'cuby4 interface' in shell). 
+  #: When the default value "auto" is used,
+  #: cuby will attempt to choose the interface most suitable for the
+  #: requested calculation method.
+
+  :method: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :die
+  #: Computational method. This keyword must be specified when an external calulation
+  #: is called using an interface that implements more methods. If the interface implements
+  #: only one method, it is used by default.
+  #: The list of available methods can be found in the documentation, either online or
+  #: by command 'cuby4 method'. For example, common methods are HF, MP2, CCSD(T), forcefield, AM1...
+
+  :modifiers: !ruby/object:SettingsKeyword
+    convert_to: :symbol_list
+    when_not_present: :default
+    default_value: []
+  #: A list of interfaces applied as a modifiers to this calculations. Setup for each modifier should be provided in a block
+  #: modifier_modifiername.
+  
+  :replace_energy_with_component: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :other
+  #: Replace the total energy in the result with a selcted component of it. The original energy
+  #: is stored in a component "original_energy".
+
+  :replace_energy_with_expression: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Replace the total energy in the result with an arbitrary expression
+  #: using the energy components. The original energy is stored in a
+  #: component "original_energy".
+
+  :job_cleanup: !ruby/object:SettingsKeyword
+    commandline: "-c"
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Delete directories with external calculations when job
+  #: finishes successfuly
+
+  :existing_calc_dir: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :reuse
+    allowed_values:
+      - :stop
+      - :recreate
+      - :reuse
+      - :read_results
+  #: Handling of calculation directories when existing one is found:
+  #* stop - program reports the existing directory and stops
+  #* recreate - old directory is deleted and new is generated
+  #* reuse - old directory is reused, new input for the external program is not generated
+  #* read_results - no calculation is run, old results are read
+
+  :calculation_print_lookup: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #* Result of this calculation is printed in a form useable by the lookup interface. The result contains
+  #* also the contribution from the addplied modifiers.
+
+  # TBD:
+  # extra_keywords
+
+  #=============================================================================
+  # QM calculations
+  #=============================================================================
+
+  :start_from_previous: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Use results from previous step (of, e.g. geometry optimization) as
+  #: a starting point for the calculation
+
+  :basisset: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :die
+  #: AO basis set name
+
+  :basisset_elements: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :default
+    default_value: {}
+  #: Specification of other basis set for selected elements. The format is
+  #: a hash element: "basis_name"
+
+  #: AO basis set name
+  :basisset_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: User-provided basis set definition in a file. If not defined,
+  #: the default set of basis set of the program is used.
+  #: Following locations are searched:
+  #* Calculation directory
+
+  :basisset_zeta: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :die
+  #: Basis set cardinal number, required i.e. for extrapolations.
+
+  :scf_cycles: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 50
+  #: Maximum number of SCF iterations
+
+  :scf_convergence: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 7
+  #: SCF convergence threshold (energy), set to 10^-X a.u.
+
+  :density_convergence: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 7
+  #: Density convergence threshold for scf, set to 10^-X a.u.
+
+  :correlation_convergence: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 7
+  #: Convergence threshold for iterative calculations of correlation energy, set to 10^-X a.u.
+
+  :correlation_frozen_core: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Frozen core for correlation energy calculations
+ 
+  :scf_levelshift: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :other
+  #: Shift of virtual orbitals (in a.u.). When the keyword is not set, default value of the
+  #: external program is used.
+
+  :use_symmetry: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Allow the use of symmetry in the QM calculation
+
+  :delete_large_files: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Delete large files created by the calculation (e.g. data needed to restart
+  #: a QM calculation) after the job finishes. The output file containing the
+  #: results is always kept.
+
+  :spin_restricted: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Restricted/Unrestricted spin treatment
+
+  :atomic_charges: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :mulliken
+    allowed_values:
+      - :mulliken
+      - :nbo
+      - :spatial
+      - :loewdin
+      - :becke
+      - :hirshfeld
+      - :hirshfeld_fragment
+      - :forcefield
+  #: Method of atomic charges calculation:
+  #* Mulliken - Mulliken charges
+  #* NBO - Natural Bond Orbital analyis
+  #* spatial - spatial population analysis (deMon only)
+  #* loewdin - Loewdin population analysis (deMon only)
+  #* becke - Becke cell population analysis (deMon only)
+  #* hirshfeld - Hirshfeld population analysis using reference density of neutral atoms (deMon only)
+  #* hirshfeld_fragment - Hirshfeld population analysis using reference fragment density (deMon only)
+  #* forcefield - charges read from forcefield, MM methods
+
+  :density_fitting: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :both
+    allowed_values:
+      - :none
+      - :scf
+      - :correlation
+      - :both
+  #: Density fitting (or RI approximation) for SCF (DFT or HF) and correlation.
+  #: Applied only when the code and method support it. Auxiliary basis sets
+  #: must be set as needed (using auxiliary_basis_scf and auxiliary_basis_mp2).
+
+  :auxiliary_basis_scf: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Auxiliary basis for RI or density fitting in DFT/HF. Default basis set is used when
+  #: this keyword is not set and the extrenal program can determine it automatically.
+
+  :auxiliary_basis_scf_elements: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :default
+    default_value: {}
+  #: Specification of other auxiliary basis set for selected elements. The format is
+  #: a hash element: "basis_name"
+
+  :scf_integral_storage: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :default
+    allowed_values:
+      - :default
+      - :disc
+      - :direct
+      - :mixed
+  #: Integral storage in SCF. When not set, the default option of
+  #: the interfaced program is used. The other options are:
+  #* disc - store everything on disc
+  #* direct - recalculate on the fly
+  #* mixed - optin specific to deMon interface
+
+  :scf_multipole_expansion: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Multipole expansion in evaluation of coulomb integrals.
+
+  # TBD:
+  # basisset_atoms selection => basis
+  # auxiliary_basis
+  # auxiliary_basis_atoms
+  # auxiliary_basis_file
+
+
+  :pseudopotentials: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Pseudopotential to be applied to all atoms. None used when not set.
+
+  :pseudopotentials_elements: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :default
+    default_value: {}
+  #: Specification of pseudopotentials for selected elements. The format is
+  #: a hash element: "pseudopotential_name"
+
+  #=============================================================================
+  # DFT calculations
+  #=============================================================================
+ 
+  :dft_grid: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :fine
+    allowed_values:
+      - :coarse
+      - :medium
+      - :fine
+      - :ultrafine
+      - :custom
+  #: Grid for DFT calculations. The value is translated to an appropriate setup
+  #: for a specific DFT program by cuby. When value 'custom' is used, a grid
+  #: specified by keyword 'dft_grid_custom' is passed directly to the program.
+
+  :dft_grid_custom: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :die
+  #: Custom DFT grid specification in the format used by the intrfaced program.
+
+  :functional: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :die
+  #: DFT functional, in the format recognized by cuby. It is automatically
+  #: translated to teh format used by the interfaced program. Value 'custom'
+  #: forces cuby to pass the value of the 'functional_custom' keyword to the
+  #: program without translation.
+
+  :functional_custom: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :die
+  #: Custom DFT functional specification in the format used by the intrfaced program.
+
+  :functional_custom_type: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :die
+    allowed_values:
+      - :lda
+      - :gga
+      - :meta_gga
+      - :hybrid
+      - :meta_hybrid
+      - :double_hybrid
+      - :range_separated
+  #: Type of the custom functional (required in some cases where the calculation
+  #: setup depends on this). For functionals recognized by cuby, the type is
+  #: determined automatically.
+
+  #=============================================================================
+  # MP2 calculations
+  #=============================================================================
+
+  :auxiliary_basis_mp2: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Auxiliary basis for RI or density fitting in MP2. Default basis set is used when
+  #: this keyword is not set and the extrenal program can determine it automatically.
+
+  :auxiliary_basis_mp2_elements: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :default
+    default_value: {}
+  #: Specification of other auxiliary basis set for selected elements. The format is
+  #: a hash element: "basis_name"
+
+  :spin_component_scaling: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: SCS scaling in MP2. Use scs_ss and scs_ss keywords to set
+  #: the scaling coefficients.
+
+  :scs_ss: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.333333
+  #: SCS scaling for "same spin" term. The default value is for SCS-MP2.
+
+  :scs_os: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.2
+  #: SCS scaling for "opposite spin" term. The default value is for SCS-MP2.
+
+  #=============================================================================
+  # Implicit solvent models
+  #=============================================================================
+
+  :solvent_model: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :gbm
+      - :igb7
+      - :cosmo
+  #: Implicit solvent model:
+  #* none
+  #* GBM (in AMBER) - Generalized Born Model
+  #* IGB7 (in AMBER) - another parameterization of GBM
+  #* COSMO (Mopac) - Conductor-like screening model
+  
+  :solvent_epsilon: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 78.5
+  #: Dielectric constant of implicit solvent
+
+  #=============================================================================
+  # External fields
+  #=============================================================================
+
+  :electric_field: !ruby/object:SettingsKeyword
+    convert_to: :array
+    when_not_present: :other
+  #: Homogenous external electric filed. Enetered as a cartesian vector (array), in a.u.
+
+  :point_charges: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: A list of point charges defining an extarnal electrostatic field. One
+  #: charge per line, in format x y z charge. (Coordinates in Angstrom, charge
+  #: in elemental charge units). Note that only some interfaces support
+  #: the use of point charges.
+
+  ##############################################################################
+  # Development
+  ##############################################################################
+
+  :development: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    convert_options: :keys_to_symbol
+    when_not_present: :default
+    default_value: {}
+  #: This keyword is for development purposes only, it makes it possible to
+  #: temporarily add keywords without defining them explicitly.
+  
+  :x0: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: A generic parameter used in development
+
+  :x1: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: A generic parameter used in development
+
+  :x2: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: A generic parameter used in development
+
+  :x3: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: A generic parameter used in development
+
+  :x4: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: A generic parameter used in development
+
+  :x5: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: A generic parameter used in development
+
+  :x6: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: A generic parameter used in development
+
+  :x7: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: A generic parameter used in development
+
+  :x8: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: A generic parameter used in development
+
+  :x9: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: A generic parameter used in development
+
+  ##############################################################################
+  # Config entries
+  ##############################################################################
+
+  :default_interfaces: !ruby/object:SettingsKeyword
+    convert_to: :hash_symbol_symbol
+    when_not_present: :default
+    default_value: {}
+  #: Dictionary for automated selection of interfaces for specified method
+
+  :cuby_local_data_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "~/.cuby4_data"
+  #: Path to directory where cuby stores local data (e.g. cache). The directory
+  #: must be writeable by user.
+
+  :extension_lib_dirs: !ruby/object:SettingsKeyword
+    convert_to: :array
+    when_not_present: :default
+    default_value: []
+  #: Paths to be passed to the compiler for building the extensions. It is
+  #: needed only when libraries from non-standard locations are used (e.g. those
+  #: built by the user in his home directory).
+
+  :balloon_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the Balloon program used for building of geometries from SMILES
+  #: notation.
+
+################################################################################
+# ALLOWED BLOCKS
+################################################################################
+
+blocks:
+  - !ruby/regexp /^modifier_.*/
+  - !ruby/regexp /^calculation$/
+  - !ruby/regexp /^calculation_.*/
+  - !ruby/regexp /^molecule_[a-z]$/ # used by interaction energy calculation
+  - !ruby/regexp /^molecule_ab$/    # used by interaction energy calculation
+  - !ruby/regexp /^optimized_parameters$/
+  - !ruby/regexp /^fragment_[0-9]+$/
+  - !ruby/regexp /^shared_.*/  # Reserved for shared setup
+  - !ruby/regexp /^shared/
+
+################################################################################
+hints:
+  :auxiliary_basis_dft: "The keyword auxiliary_basis_dft was renamed to auxiliary_basis_scf"
+  :auxiliary_basis_dft_elements: "The keyword auxiliary_basis_dft_elements was renamed to auxiliary_basis_scf_elements"

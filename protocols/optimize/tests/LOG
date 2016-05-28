@@ -1,0 +1,515 @@
+#> Serial queue created
+        _______  
+       /\______\ 
+      / /      / 
+     / / Cuby /   Geometry optimization
+     \/______/   
+                 
+#> Redundant coordinate transformation
+#> Generating redundant internal coordinates:
+#>    4 bonds
+#>    1 intermolecular_vdw
+#>    5 angles
+#>    3 torsions
+Internal coordinates used:
+       4   distance (bond)
+       1   distance (intermolecular_vdw)
+       2   angle
+       3   angle (intermolecular)
+       3   torsion (intermolecular)
+
+#> Preparing calculation "job"
+#>    interface: water_ff
+#>    calculate: energy, gradient
+#> Hessian initialization: calling supplied Proc
+#> Geometry changed.
+#> Internal to cartesian transformation: 0 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+--------------------------------------------------------------------------------
+Cycle: 0
+Energy: 7.286761285493363
+#> Writing history to file history_wd.xyz
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 11 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 1
+Energy: -4.8060546955443
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:   -12.0928   limit:   0.0006  NO
+rmsGrad:   19.0782   limit:   0.0600  NO
+maxGrad:   38.9387   limit:   0.1200  NO
+#> Step: step_increased (r = 1.317741228065283)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 6 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 2
+Energy: -6.362664847825698
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -1.5566   limit:   0.0006  NO
+rmsGrad:    3.4209   limit:   0.0600  NO
+maxGrad:    8.2141   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.0502840249525907)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 3
+Energy: -6.476712934295064
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.1140   limit:   0.0006  NO
+rmsGrad:    2.9566   limit:   0.0600  NO
+maxGrad:    7.2083   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.826042211092942)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 6 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 4
+Energy: -6.8256933442604115
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.3490   limit:   0.0006  NO
+rmsGrad:    2.1382   limit:   0.0600  NO
+maxGrad:    4.6951   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.0026486414338769)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 5
+Energy: -6.844441498594344
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0187   limit:   0.0006  NO
+rmsGrad:    0.8354   limit:   0.0600  NO
+maxGrad:    1.7485   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.3677547245734982)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 6
+Energy: -6.849025968406771
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0046   limit:   0.0006  NO
+rmsGrad:    0.2145   limit:   0.0600  NO
+maxGrad:    0.3846   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.1041870604010864)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 7
+Energy: -6.849888197364157
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0009   limit:   0.0006  NO
+rmsGrad:    0.2173   limit:   0.0600  NO
+maxGrad:    0.4481   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.69626408555384)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 8
+Energy: -6.851298798855918
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0014   limit:   0.0006  NO
+rmsGrad:    0.1527   limit:   0.0600  NO
+maxGrad:    0.3109   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.1165625357719116)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 2 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 9
+Energy: -6.851389007459725
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0001   limit:   0.0006  YES
+rmsGrad:    0.1115   limit:   0.0600  NO
+maxGrad:    0.3265   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.2788423299031562)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 2 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 10
+Energy: -6.8514087407901325
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0000   limit:   0.0006  YES
+rmsGrad:    0.1091   limit:   0.0600  NO
+maxGrad:    0.3213   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.411162203009173)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 2 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 11
+Energy: -6.851428194214023
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0000   limit:   0.0006  YES
+rmsGrad:    0.1134   limit:   0.0600  NO
+maxGrad:    0.3145   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.6023027844275952)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 12
+Energy: -6.851466506734544
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0000   limit:   0.0006  YES
+rmsGrad:    0.1199   limit:   0.0600  NO
+maxGrad:    0.3031   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.481101022433911)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 13
+Energy: -6.85151025756462
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0000   limit:   0.0006  YES
+rmsGrad:    0.1149   limit:   0.0600  NO
+maxGrad:    0.2928   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.4976200167882983)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 14
+Energy: -6.851560894744418
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0001   limit:   0.0006  YES
+rmsGrad:    0.0999   limit:   0.0600  NO
+maxGrad:    0.2843   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.4902323883879787)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 15
+Energy: -6.851622188075704
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0001   limit:   0.0006  YES
+rmsGrad:    0.0937   limit:   0.0600  NO
+maxGrad:    0.2765   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.5315650770622171)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 16
+Energy: -6.851711548184505
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0001   limit:   0.0006  YES
+rmsGrad:    0.1079   limit:   0.0600  NO
+maxGrad:    0.2645   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.4999277250665484)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 4 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 17
+Energy: -6.851816693656472
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0001   limit:   0.0006  YES
+rmsGrad:    0.1180   limit:   0.0600  NO
+maxGrad:    0.2463   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.4274520100829344)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 18
+Energy: -6.851891632117855
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0001   limit:   0.0006  YES
+rmsGrad:    0.0960   limit:   0.0600  NO
+maxGrad:    0.2289   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.3277300658878803)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 19
+Energy: -6.851919068501939
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0000   limit:   0.0006  YES
+rmsGrad:    0.0781   limit:   0.0600  NO
+maxGrad:    0.2213   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.284792381241064)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 2 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 20
+Energy: -6.851929817851703
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0000   limit:   0.0006  YES
+rmsGrad:    0.0787   limit:   0.0600  NO
+maxGrad:    0.2192   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.526250050866638)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 2 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 21
+Energy: -6.85194752423552
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0000   limit:   0.0006  YES
+rmsGrad:    0.0885   limit:   0.0600  NO
+maxGrad:    0.2167   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.6127446186306902)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 22
+Energy: -6.851991779731507
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0000   limit:   0.0006  YES
+rmsGrad:    0.1161   limit:   0.0600  NO
+maxGrad:    0.2112   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.6101162107082396)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 23
+Energy: -6.852100981221737
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0001   limit:   0.0006  YES
+rmsGrad:    0.1700   limit:   0.0600  NO
+maxGrad:    0.3614   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.607975230313565)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 4 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 24
+Energy: -6.852358681960711
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0003   limit:   0.0006  YES
+rmsGrad:    0.2506   limit:   0.0600  NO
+maxGrad:    0.5657   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.587538281695562)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 6 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 25
+Energy: -6.852870906933699
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0005   limit:   0.0006  YES
+rmsGrad:    0.3272   limit:   0.0600  NO
+maxGrad:    0.7541   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.5341943957473594)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 7 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 26
+Energy: -6.853553206233321
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0007   limit:   0.0006  NO
+rmsGrad:    0.3114   limit:   0.0600  NO
+maxGrad:    0.7238   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.4257353196772105)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 6 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 27
+Energy: -6.854041029288556
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0005   limit:   0.0006  YES
+rmsGrad:    0.1644   limit:   0.0600  NO
+maxGrad:    0.3834   limit:   0.1200  NO
+#> Step: step_maximum (r = 1.3519220644737473)
+#> Step size OK
+#> Geometry changed.
+#> Internal to cartesian transformation: 3 iterations
+#> Calculation "job" added to queue
+#> Queue running - 1 calculations
+#> Calculating "job" (priority 6.0)
+#> Queue execution finished
+#> Linesearch: energy decrease, accept step.
+--------------------------------------------------------------------------------
+Cycle: 28
+Energy: -6.854216608247996
+#> Writing history to file history_wd.xyz
+Convergence:
+deltaE:    -0.0002   limit:   0.0006  YES
+rmsGrad:    0.0226   limit:   0.0600  YES
+maxGrad:    0.0452   limit:   0.1200  YES
+================================================================================
+Status: converged
+Statistics:
+   energy_gradient_calls: 29
+   LS_cub_nth: 28
+

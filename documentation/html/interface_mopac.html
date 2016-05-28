@@ -1,0 +1,273 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface mopac</h1>
+<p>Interface to the MOPAC package version 2012 (<a href="http://openmopac.net/">http://openmopac.net</a>,
+free for academic use). MOPAC implements wide range of semiempirical methods and features the linear scaling
+algorithm MOZYME[1] (see Example 2).</p>
+
+<h2>Other versions</h2>
+<p>
+MOPAC 2009 will work with the interface but some features might not be available.
+</p>
+
+<p>
+It is possible to use the public domain version,  <a href="http://sourceforge.net/projects/mopac7">MOPAC 7</a>, but the support by the interface is very limited. This mode has to be switched on using the <a href="keywords.html#mopac_version">mopac_version</a> keyword. So far, only single-point AM1 calculations were tested. Moreover, MOPAC 7 can not read cartesian geometry for small molecules, therefore the interface supports only molecules with at least 4 atoms.
+</p>
+
+<ol class="literature">
+	<li>Stewart, J. J. P. Application of the PM6 Method to Modeling Proteins. J. Mol. Model. 2008, 15, 765–805.</li>
+</ol>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>mndo</li>
+<li>mndo-d</li>
+<li>am1</li>
+<li>rm1</li>
+<li>pm3</li>
+<li>pm6</li>
+<li>pm7</li>
+</ul>
+<h4>All the methods support calculation of following properties:</h4>
+<ul>
+<li>energy</li>
+<li>gradient</li>
+<li>atomic_charges</li>
+</ul>
+<h4>The interface implements following solvent models (keyword 'solvent_model'):</h4>
+<ul>
+<li>cosmo</li>
+</ul>
+<h4>The interface implements following atomic charge types (keyword 'atomic_charges'):</h4>
+<ul>
+<li>mulliken - Mulliken charges</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#mopac_corrections">mopac_corrections</a></li>
+<li><a href="keywords.html#mopac_exe">mopac_exe</a></li>
+<li><a href="keywords.html#mopac_keywords">mopac_keywords</a></li>
+<li><a href="keywords.html#mopac_mozyme">mopac_mozyme</a></li>
+<li><a href="keywords.html#mopac_parallel">mopac_parallel</a></li>
+<li><a href="keywords.html#mopac_peptide_bond_fix">mopac_peptide_bond_fix</a></li>
+<li><a href="keywords.html#mopac_precise">mopac_precise</a></li>
+<li><a href="keywords.html#mopac_setcharge">mopac_setcharge</a></li>
+<li><a href="keywords.html#mopac_setpi">mopac_setpi</a></li>
+<li><a href="keywords.html#mopac_version">mopac_version</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#existing_calc_dir">existing_calc_dir</a></li>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#method">method</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+<li><a href="keywords.html#parallel">parallel</a></li>
+<li><a href="keywords.html#solvent_epsilon">solvent_epsilon</a></li>
+<li><a href="keywords.html#solvent_model">solvent_model</a></li>
+<li><a href="keywords.html#spin_restricted">spin_restricted</a></li>
+<li><a href="keywords.html#start_from_previous">start_from_previous</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/mopac/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Mopac example 1: energy calculation, configuration
+#===============================================================================
+
+# AM1 calculation of energy
+job: energy
+interface: mopac
+method: am1
+
+# Water molecule, geometry taken from Cuby's internal database
+geometry: A24:water
+charge: 0
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# Path to the MOPAC executable should be provided. Cuby assumes that the licence
+# key for mopac is located in the same directory.
+# This configuration is usually done not in the input file, but in a config file
+# ~/cuby4_config.yaml
+
+mopac_exe: /home/rezac/bin/MOPAC2012/MOPAC2012.exe
+# Provide the actual path on your system here
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Mopac example 2: geometry optimization using the MOZYME acceleration
+#===============================================================================
+
+# Geometry optimization using the default setup:
+job: optimize
+
+# PM6 method in MOPAC
+interface: mopac
+method: pm6
+
+# To accelerate the calculation, the MOZYME algorithm is used in MOPAC. It is
+# not useful in such a small model system but becomes important in large
+# molecules. (see MOPAC documentation: http://openmopac.net/manual/mozyme.html)
+mopac_mozyme: yes
+# By default, MOPAC, provides only approximate gradients, make them more accurate:
+mopac_precise: yes
+
+# Geometry: ethylene molecule, inline input
+geometry: |
+  H    1.203731531   0.859887516   0.021875673
+  H    1.240940213  -0.805287804   0.003291164
+  H   -1.203735676  -0.860016038  -0.021615723
+  H   -1.240948438   0.805422295  -0.003486081
+  C    0.669000000   0.015000000   0.006800000
+  C   -0.669200000  -0.015000000  -0.006800000
+
+# In some cases (not here, the ethylene is used only as a demonstration),
+# MOPAC fails to guess the Lewis structure of the molecule needed in the MOZYME
+# calculation. This can be remediated by a manual input of either atomic charges
+# or specification of pi bonds.
+
+# In this case, we define the double bond between the carbons (atoms 5 and 6)
+mopac_setpi:
+  - 5;6
+
+# and the charge of the first atom (hydrogen)
+mopac_setcharge:
+  1: 0
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Mopac example 3: COSMO solvation and custom input
+#===============================================================================
+
+# Energy calculation in the COSMO solvent model. Additional option not
+# accessible through cuby input is set using the mopac_keywords keyword.
+
+# PM6 calculation in MOPAC
+job: energy
+interface: mopac
+method: pm6
+
+# Geometry: water molecule from the database
+Geometry: A24:water
+
+# Solvation
+solvent_model: cosmo
+solvent_epsilon: 80.0
+
+# Extra setup: solvent radius (see http://openmopac.net/manual/rsolv.html)
+# This option can not be set using a cuby keyword. However, any MOPAC options
+# can be passed to the calculation. The value of the following keyword is
+# appended to the header of the mopac input file constructed by cuby:
+mopac_keywords: "RSOLV=1.20"
+# (multiple options can be set, separated by spaces, as in the mopac input)
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Mopac example 4: Atomic charges
+#===============================================================================
+
+# Calculation of Mulliken atomic charges
+
+# PM6 calculation in MOPAC
+job: atomic_charges
+interface: mopac
+method: pm6
+
+# Atomic charges method (mopac interface provides only this one)
+atomic_charges: mulliken
+
+# Geometry: water dimer from the database
+Geometry: A24:water_dimer
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Mopac example 5: Corrections for noncovalent interactions
+#===============================================================================
+
+# Calculation of interaction energy in water dimer with PM6 augmented with
+# various versions of corrections for dispersion and hydrogen bonding, and
+# with PM7:
+# * PM6 without modifications
+# * PM6-DH2
+# * PM6-DH+
+# * PM6-D3H4 (the latest version, most recommended)
+# * PM7
+
+# Multiple calculations are executed using the multistep job
+job: multistep
+# These are names of the steps:
+steps: pm6, pm6-dh2, pm6-dh+, pm6-d3h4, pm7
+
+# Setup shared by all the clculations - definition of PM6 interaction
+# energy calculation
+calculation_common:
+  job: interaction
+  geometry: S66:01 # Water dimer
+  interface: mopac
+  method: pm6
+  charge: 0
+  molecule_a:
+    charge: 0
+  molecule_b:
+    charge: 0
+
+# Each step has its own subsection named calculation_stepname
+
+# PM6: Subsection not needed, common setup is used
+
+# PM6-DH2: corrections implemented in MOPAC are used
+calculation_pm6-dh2:
+  mopac_corrections: dh2
+
+# PM6-DH+: corrections implemented in MOPAC are used
+calculation_pm6-dh+:
+  mopac_corrections: dh+
+
+# PM6-D3H4: corrections implemented in cuby are used as modifiers
+calculation_pm6-d3h4:
+  modifiers: dispersion3, h_bonds4
+
+# PM7: Specifying PM7 method overrides the common setup
+calculation_pm6:
+  method: pm7
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

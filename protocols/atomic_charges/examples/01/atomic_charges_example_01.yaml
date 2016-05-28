@@ -1,0 +1,25 @@
+#===============================================================================
+# Atomic charges protocol example
+#===============================================================================
+
+job: atomic_charges
+
+# System specification
+geometry: S66:water_dimer # Water dimer from the built-in S66 data set
+charge: 0
+
+# Method of calculation - the interface and must support the calculation 
+# of atomic charges.
+interface: turbomole
+method: hf
+basisset: SVP
+
+# Type of charges (some interfaces support multiple options)
+atomic_charges: mulliken
+
+# Optional defintion of the fragments - in this case the individual molecules
+# in the dimer
+fragment_1:
+  selection: "1-3"
+fragment_2:
+  selection: "4-6"

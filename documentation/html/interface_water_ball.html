@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface water_ball</h1>
+<p>Spherical boundary potential for MD simulations in water. The interface implements only the mechanical
+component of the potential of Beglov & Roux[1] which uses adaptive sphere radius to maintain
+a constant pressure of 1 atmosphere. The electrostatic interaction of the solvent with the cavity is not
+calculated, nor is the angular correction described in the paper. Even this
+partial implementation yields results sufficient for use. The electrostatics can be
+covered by using a suitable implicit solvent model in the underlying calculation</p>
+<ol class="literature">
+	<li>D. Beglov, B. Roux, Finite representation of an infinite bulk system: solvent boundary potential for computer simulations, Journal of Chemical Physics 100 (12), 9050-9063, 1994</li>
+</ol>
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#waterball_center">waterball_center</a></li>
+<li><a href="keywords.html#waterball_solute">waterball_solute</a></li>
+<li><a href="keywords.html#waterball_solute_k">waterball_solute_k</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/water_ball/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Waterball modifier example
+#===============================================================================
+
+# 1000 steps of molecular dynamics using the default AMBER forcefield
+# This input assumes that AMBER interface is already configured
+
+job: dynamics
+init_temp: 300
+maxcycles: 1000
+interface: amber
+
+# Geometry: ace-ala-nme solvated with 124 water molecules
+geometry: ace_ala_nme_waterball.pdb
+
+# Apply the water_ball modifier
+modifiers: water_ball
+
+# Setup for the modifier
+modifier_water_ball:
+  # The droplet is centered on the solute
+  waterball_center: solute
+  # The solute is defined as the first three residues in the PDB file
+  waterball_solute: :1-3
+
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

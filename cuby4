@@ -1,0 +1,175 @@
+#!/bin/bash
+#===============================================================================
+#
+# Cuby execution script
+#
+#===============================================================================
+
+#-------------------------------------------------------------------------------
+# No argument
+#-------------------------------------------------------------------------------
+if [ $# == 0 ]
+then
+	echo
+	echo "-------------------------------------------------------------------------------"
+	echo "   No argument provided!"
+	echo "-------------------------------------------------------------------------------"
+	echo
+	echo "   To run a calculation, provide the name of the input file."
+	echo
+	echo "   To get information on other options, type 'cuby4 help'."
+	echo
+	exit 1
+fi
+
+#-------------------------------------------------------------------------------
+# Installation directory
+#-------------------------------------------------------------------------------
+cuby_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+#-------------------------------------------------------------------------------
+# Locate best ruby interpreter
+#-------------------------------------------------------------------------------
+
+if which ruby1.9  > /dev/null 2> /dev/null
+then
+	interpreter=`which ruby1.9`
+elif which ruby1.9.1 > /dev/null 2> /dev/null
+then
+	interpreter=`which ruby1.9.1`
+elif which ruby1.9.2 > /dev/null 2> /dev/null
+then
+	interpreter=`which ruby1.9.2`
+elif which ruby1.9.3 > /dev/null 2> /dev/null
+then
+	interpreter=`which ruby1.9.3`
+elif which ruby > /dev/null 2> /dev/null
+then
+	interpreter=`which ruby`
+else
+	echo "No ruby found"
+	exit 1
+fi
+
+#-------------------------------------------------------------------------------
+# Print information
+#-------------------------------------------------------------------------------
+if [ $1 == '--info' ]
+then
+	cd $cuby_dir
+	echo "Installation directory: $cuby_dir"
+	echo "Ruby interpreter used:  $interpreter"
+	echo "Binary extensions used:"
+	for i in classes/algebra classes/coordinate
+	do
+		if ls $i | grep '.bundle$\|.so$' > /dev/null
+		then
+			echo "   $i"
+		fi
+	done
+	echo
+	exit
+fi
+
+#-------------------------------------------------------------------------------
+# Build extensions
+#-------------------------------------------------------------------------------
+
+if [ $1 == '--make' ]
+then
+	cd $cuby_dir
+	for i in classes/algebra classes/coordinate
+	do
+		cd $i
+		$interpreter extconf.rb
+		make clean
+		make
+		cd $cuby_dir
+	done
+	exit
+fi
+
+if [ $1 == '--make-force' ]
+then
+	cd $cuby_dir
+	for i in classes/algebra classes/coordinate
+	do
+		cd $i
+		$interpreter extconf.rb --force-blas --force-lapack
+		make clean
+		make
+		cd $cuby_dir
+	done
+	exit
+fi
+
+#-------------------------------------------------------------------------------
+# Print information
+#-------------------------------------------------------------------------------
+if [ $1 == '--test' ]
+then
+	echo "################################################################################"
+	echo "Test calculation: Singlepoint energy calculation using the built-in forcefield"
+	echo "################################################################################"
+	echo -e "job: energy \ninterface: water_ff\ngeometry: A24:water" | cuby4 /dev/stdin
+	echo "################################################################################"
+	echo "If you see a nice output with a result, the test was successful!"
+	echo "################################################################################"
+	exit
+fi
+
+#-------------------------------------------------------------------------------
+# Shell
+#-------------------------------------------------------------------------------
+if [ $1 == 'shell' ] || [ $1 == '--shell' ]
+then
+	$interpreter $cuby_dir/cuby4_shell.rb
+	exit
+fi
+
+#-------------------------------------------------------------------------------
+# Help, on how to use help
+#-------------------------------------------------------------------------------
+if [ $1 == '-h' ] || [ $1 == '--help' ] ||  [ $1 == 'help' ]
+then
+	cat $cuby_dir/documentation/help_on_documentation.txt
+	exit
+fi
+
+#-------------------------------------------------------------------------------
+# Help - on specific topics
+#-------------------------------------------------------------------------------
+if [ $1 == 'job' ] || [ $1 == 'protocol' ]
+then
+	$interpreter $cuby_dir/documentation/protocol_doc $2 | less
+	exit
+fi
+if [ $1 == 'interface' ]
+then
+	$interpreter $cuby_dir/documentation/interface_doc $2 | less
+	exit
+fi
+if [ $1 == 'method' ]
+then
+	$interpreter $cuby_dir/documentation/method_doc $2 | less
+	exit
+fi
+if [ $1 == 'keyword' ] || [ $1 == 'kw' ]
+then
+	$interpreter $cuby_dir/documentation/keyword_doc $2 | less
+	exit
+fi
+#-------------------------------------------------------------------------------
+# Server
+#-------------------------------------------------------------------------------
+if [ $1 == '--drb-server' ]
+then
+	$interpreter $cuby_dir/cuby4_server_drb.rb
+	exit
+fi
+
+#-------------------------------------------------------------------------------
+# Run cuby
+#-------------------------------------------------------------------------------
+
+$interpreter $cuby_dir/cuby4.rb "$@"

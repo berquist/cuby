@@ -1,0 +1,21 @@
+#===============================================================================
+# Orca example 4: CCSD(T) calculation
+#===============================================================================
+
+job: energy
+interface: orca
+
+method: ccsd(t)
+basisset: cc-pVDZ
+
+geometry: A24:water # Water molecule from the internal database
+charge: 0
+
+# Print components of the CCSD(T) energy
+print: energy_decomposition
+
+# Other options affecting this calculation
+correlation_frozen_core: yes # Frozen-core approximation, on by default
+scf_convergence: 8 # For CCSD(T), we set tighter SCF convergence, default is 7
+
+

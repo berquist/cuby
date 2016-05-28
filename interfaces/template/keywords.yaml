@@ -1,0 +1,22 @@
+################################################################################
+# KEYWORDS for the TEMPLATE interface
+################################################################################
+
+# Here, the keyword specific to this interface are defined. Common keywords
+# shared by multiple interfaces are defined in the main keyword definition file
+# found at cuby4/classes/keywords.yaml. In that file, you will find examples
+# of how keywords of different type are defined.
+
+# The interface-specific keywords should start with the name of the interface
+# unless it is expected that the keyword will become used globally.
+
+# Each keyword is followed by a comment beginning with hash and colon, this is
+# the description of the keyword that is copied to the documentation.
+
+keywords:
+  :template_mopac_exe: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: MOPAC executable to be used
+

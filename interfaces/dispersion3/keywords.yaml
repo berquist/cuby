@@ -1,0 +1,156 @@
+################################################################################
+# KEYWORDS for interface Dispersion3
+################################################################################
+
+keywords:
+  :d3_damping: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :symbol
+    when_not_present: :warning
+    default_value: :bj
+    allowed_values:
+      - :bj
+      - :zero
+      - :sapt
+      - :tt
+      - :none
+  #: Selection of damping function:
+  #* bj (default): the Becke-Johnson damping
+  #* zero: the original damping function that gets to zero at r = 0
+  #* tt: Tang & Toennies damping, uses the same parameters as BJ
+  #* sapt: damping function fitted to dispersion component from DFT-SAPT
+  #* none: no damping
+  
+  :d3_3body: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Add 3-body term
+
+  :d3_cutoff: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.0
+  #: Distance cutoff for pairwise dispersion terms. The dispersion is switched off
+  #: smoothly between this value (r) and r + d3_cutoff_buffer A. When set to 0,
+  #: no cutoff is used (default).
+
+  :d3_cutoff_buffer: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 2.0
+  #: Width of the region where dispersion is smoothly swithed off when cutoff is used.
+  
+  :d3_hybridization: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :grimme
+    allowed_values:
+      - :grimme
+      - :grimme_mod
+      - :fixed
+  #: Hybridization used to determine atomic parameters:
+  #* grimme: Grimme's continuous hybridization
+  #* grimme_mod: EXPERIMENTAL modification of Grimme's continuous hybridization
+  #* fixed: Fixed hybridization based on bond counting
+  
+  :d3_s6: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.0
+  #: Scaling of the C6 term
+  
+  :d3_s8: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :float
+    when_not_present: :die
+  #: Scaling of the C8 term
+  
+  :d3_sr6: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :float
+    when_not_present: :die
+  #: Radii scaling for damping function in C6 term
+  
+  :d3_sr8: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.0
+  #: Radii scaling for damping function in C8 term
+  
+  :d3_alpha6: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 14.0
+  #: Exponent in damping function in C6 term
+  
+  :d3_alpha8: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :float
+    when_not_present: :other
+  #: Exponent in damping function in C8 term. If if not setm value of d3_alpha6
+  #: + 2 is used.
+  
+  :d3_a1: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :float
+    when_not_present: :die
+  #: Parameter a1 for Becke-Johnson damping function
+  
+  :d3_a2: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :float
+    when_not_present: :die
+  #: Parameter a2 for Becke-Johnson damping function
+
+  :d3_3body_sr: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.333333
+  # Radii scaling for the damping function in the 3-body term. The default value
+  # is used for all basis sets and functionals. When set to 0, no damping is used.
+
+  :d3_3body_scaling: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.0
+  # Scaling factor for the three-body term.
+
+  :d3_hh_fix: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Hydrogen-hydrogen repulsion term for semiempirical methods. Provide parameters
+  #: using the d3_hh_para keyword.
+
+  :d3_hh_para: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :hash
+    when_not_present: :die
+  #: Parameters for the H-H repulsuion correction for SQM methods. Should contain
+  #: theree parameters, k, e and r0.
+
+  :d3_hh_fix_version: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 1
+  #: Value 2 switches to new, stronger repulsuion correction
+
+  :d3_print: !ruby/object:SettingsKeyword
+    convert_to: :symbol_list
+    when_not_present: :default
+    default_value: []
+    allowed_values:
+      - :pairwise_energies
+
+  :d3_legacy_version: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: In Jan 2016, we have fixed a minor bug in the interpolation of the C6 coefficients.
+  #: The results change only negligibly (0.01 kcal/mol in S66 set). This keyword enables
+  #: switching to the version prior to the bugfix.
+
+  :d3_data_patch: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Patch for dispersion element data, in format identical to the main data file.
+ 
+  :d3_scaling: !ruby/object:SettingsKeyword # file: interfaces/dispersion3.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.0
+  # Scaling factor for the whole dispersion energy

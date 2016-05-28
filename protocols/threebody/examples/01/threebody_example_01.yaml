@@ -1,0 +1,28 @@
+#===============================================================================
+# Threebody energy calculation example 1
+#===============================================================================
+
+# Calculation of three-body energy in water trimer at SCC-DFTB level.
+
+# The monomers in the trimer are recognized automatically, for manual setup,
+# see Example 2 for protocol interaction.
+
+job: threebody
+
+# Switch off the default BSSE correction, it is not applicable at DFTB level
+bsse_correction_3b: none
+
+interface: dftb
+method: scc-dftb
+
+charge: 0
+geometry: |
+ O     0.000000     0.000000     0.000000
+ H     0.000000     0.000000     0.950000
+ H    -0.895669     0.000000    -0.316667
+ O     0.000000     0.000000     3.000000
+ H     0.822724     0.000000     2.525000
+ H     0.173593     0.000000     3.934005
+ O     2.598076     0.000000     1.500000
+ H     1.775352     0.000000     1.025000
+ H     3.320152     0.000000     0.882662

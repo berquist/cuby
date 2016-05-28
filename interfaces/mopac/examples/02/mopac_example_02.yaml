@@ -1,0 +1,40 @@
+#===============================================================================
+# Mopac example 2: geometry optimization using the MOZYME acceleration
+#===============================================================================
+
+# Geometry optimization using the default setup:
+job: optimize
+
+# PM6 method in MOPAC
+interface: mopac
+method: pm6
+
+# To accelerate the calculation, the MOZYME algorithm is used in MOPAC. It is
+# not useful in such a small model system but becomes important in large
+# molecules. (see MOPAC documentation: http://openmopac.net/manual/mozyme.html)
+mopac_mozyme: yes
+# By default, MOPAC, provides only approximate gradients, make them more accurate:
+mopac_precise: yes
+
+# Geometry: ethylene molecule, inline input
+geometry: |
+  H    1.203731531   0.859887516   0.021875673
+  H    1.240940213  -0.805287804   0.003291164
+  H   -1.203735676  -0.860016038  -0.021615723
+  H   -1.240948438   0.805422295  -0.003486081
+  C    0.669000000   0.015000000   0.006800000
+  C   -0.669200000  -0.015000000  -0.006800000
+
+# In some cases (not here, the ethylene is used only as a demonstration),
+# MOPAC fails to guess the Lewis structure of the molecule needed in the MOZYME
+# calculation. This can be remediated by a manual input of either atomic charges
+# or specification of pi bonds.
+
+# In this case, we define the double bond between the carbons (atoms 5 and 6)
+mopac_setpi:
+  - 5;6
+
+# and the charge of the first atom (hydrogen)
+mopac_setcharge:
+  1: 0
+

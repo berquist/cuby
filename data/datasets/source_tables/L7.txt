@@ -1,0 +1,7 @@
+1	octadecane dimer	octadecane_dimer	c1	-11.06	dispersion	dispersion a-a	CBH	1-56	57-112
+2	guanine trimer	G_GG	c1	-2.40	dispersion	dispersion p-p	GGG	1-16	17-48
+3	GCGC base pair stack	GC_GC	c1	-14.37	dispersion	dispersion p-p	GCGC	1-29	30-58
+4	circumcoronene ... adenine	circumcoronene_A	c1	-18.19	dispersion	dispersion p-p	C3A	1-15	16-87
+5	circumcoronene ... GC	circumcoronene_GC	c1	-31.25	dispersion	dispersion p-p	C3GC	1-29	30-101
+6	coronene dimer	coronene_dimer	c1	-24.36	dispersion	dispersion p-p	C2C2PD	1-36	37-72
+7	phenylalanine trimer	phenylalanine_x3	c1	-25.76	mixed	dispersion p-p H-bond	PHE	1-29	30-87

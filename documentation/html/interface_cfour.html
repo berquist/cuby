@@ -1,0 +1,141 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface cfour</h1>
+<p>
+Interface to the CFOUR program package
+(<a href="http://www.cfour.de">www.cfour.de</a>, free for academic use).
+CFOUR (Coupled-Cluster techniques for Computational Chemistry) package implements high-level QM calculations. An important feature is the availability of analytic first and second energy derivatives for the coupled clusters methods.
+</p>
+
+<p>The interface was developed and tested with version 1 of CFOUR. For CCSD and CCSD(T) calculations, externally provided <a href="http://www.mrcc.hu/">MRCC</a> program can be used.</p>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>hf - supports calculation of energy, gradient, hessian</li>
+<li>mp2 - supports calculation of energy, gradient, hessian</li>
+<li>ccsd - supports calculation of energy, gradient, hessian</li>
+<li>ccsd(t) - supports calculation of energy, gradient, hessian</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#cfour_bin_dir">cfour_bin_dir</a></li>
+<li><a href="keywords.html#cfour_bin_dir_mpi">cfour_bin_dir_mpi</a></li>
+<li><a href="keywords.html#cfour_force_mrcc">cfour_force_mrcc</a></li>
+<li><a href="keywords.html#cfour_genbas_file">cfour_genbas_file</a></li>
+<li><a href="keywords.html#cfour_keywords">cfour_keywords</a></li>
+<li><a href="keywords.html#cfour_ld_path">cfour_ld_path</a></li>
+<li><a href="keywords.html#cfour_mrcc_bin_dir">cfour_mrcc_bin_dir</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#basisset">basisset</a></li>
+<li><a href="keywords.html#basisset_zeta">basisset_zeta</a></li>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#correlation_convergence">correlation_convergence</a></li>
+<li><a href="keywords.html#correlation_frozen_core">correlation_frozen_core</a></li>
+<li><a href="keywords.html#delete_large_files">delete_large_files</a></li>
+<li><a href="keywords.html#density_convergence">density_convergence</a></li>
+<li><a href="keywords.html#existing_calc_dir">existing_calc_dir</a></li>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#mem">mem</a></li>
+<li><a href="keywords.html#method">method</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+<li><a href="keywords.html#parallel">parallel</a></li>
+<li><a href="keywords.html#parallel_mode">parallel_mode</a></li>
+<li><a href="keywords.html#scf_cycles">scf_cycles</a></li>
+<li><a href="keywords.html#use_symmetry">use_symmetry</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/cfour/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# CFOUR example 1: optimization and vibrational analysis at CCSD(T) level
+#===============================================================================
+
+# Optimization and vibrational frequencies calculation of water molecule
+# at CCSD(T) level (small basis set is used to make the example run fast)
+# CFOUR is one of very few codes that calculate the energy derivatives
+# at CCSD(T) level analytically.
+
+# The Multistep protocl is used to run the optimization and frequency
+# calculations in one input file
+job: multistep
+steps: optimization, frequencies
+
+# Optimization step
+calculation_optimization:
+  job: optimize
+  opt_quality: 0.1
+  geometry: |
+    O   -0.702196054  -0.056060256   0.009942262
+    H   -1.022193224   0.846775782  -0.011488714
+    H    0.257521062   0.042121496   0.005218999
+
+# Frequencies calculation
+calculation_frequencies:
+  job: frequencies
+  geometry: optimized.xyz # Read the optimized geometry from the previous step
+
+#-------------------------------------------------------------------------------
+# Common setup
+#-------------------------------------------------------------------------------
+# The method is the same in both steps, CFOUR interface is used
+
+calculation_common: 
+  # The following setup is shared by all the steps
+  interface: cfour
+  method: ccsd(t)
+  basisset: 6-31G
+  charge: 0
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# Minimal setup needed for serial calculations
+
+# Path to CFOUR binaries
+cfour_bin_dir: /home/rezac/bin/cfour/cfour_v1_64bit/bin
+# Path to the GENBAS file containg basis sets
+cfour_genbas_file: /home/rezac/bin/GENBAS
+  
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

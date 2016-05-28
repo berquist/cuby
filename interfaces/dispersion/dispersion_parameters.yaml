@@ -1,0 +1,76 @@
+################################################################################
+# Method dependent parameters
+################################################################################
+
+# A lookup tree - at each level, a keyword is evaluated and appropriate branch
+# is selected until the parameters are reached
+
+keyword_parent: :method
+values:
+  :dft:
+    keyword_parent: :functional
+    values:
+      "tpss":
+        keyword_parent: :basisset
+        values:
+          "SVP": 
+            sr: 1.05
+            alpha: 23.0
+          "def2-SVP": 
+            sr: 1.05
+            alpha: 23.0
+          "TZVP":
+            sr: 0.98
+            alpha: 35.0
+          "6-311++g(3df,3pd)":
+            sr:  0.96
+            alpha: 27.0
+          "def2-QZVP": # Fitted to S22x5 by Jan Rezac, not as good as 6-311++... basis
+            sr:  0.9
+            alpha: 26.0
+      "pbe":
+        keyword_parent: :basisset
+        values:
+          "TZVP":
+            sr: 1.05
+            alpha: 23.0
+          "6-311++g(3df,3pd)":
+            sr:  1.06
+            alpha: 23.o
+      "b-lyp":
+        keyword_parent: :basisset
+        values:
+          "SVP": 
+            sr: 1.05
+            alpha: 23.0
+          "def2-SVP": 
+            sr: 1.05
+            alpha: 23.0
+          "TZVP":
+            sr: 0.87
+            alpha: 23.0
+          "6-311++g(3df,3pd)":
+            sr:  0.79
+            alpha: 23.0
+            s6: 
+          "def2-QZVP": # Fitted to S22x5 by Jan Rezac, not as good as 6-311++... basis
+            sr:  0.76
+            alpha: 28.0
+      "b3-lyp":
+        keyword_parent: :basisset
+        values:
+          "TZVP":
+            sr: 0.95
+            alpha: 27.0
+          "6-311++g(3df,3pd)":
+            sr:  0.93
+            alpha: 35.0
+  :pm6:
+    sr: 1.04
+    alpha: 20.0
+    s6: 0.89
+    dispersion_hyb: yes
+    dispersion_elements_r:
+      H: [1.56, 1.56, 1.56]
+    dispersion_elements_c:
+      C: [1.65, 1.65, 1.65, 1.65, 0.95]

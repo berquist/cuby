@@ -1,0 +1,54 @@
+#===============================================================================
+# Test example 1 - test multiple methods
+#===============================================================================
+
+# This example combines the Test and Multistep protocols, checking whether
+# HF/6-31G results from different interfaces are the same.
+
+job: multistep
+steps: turbomole, psi4, orca, cfour, gaussian
+
+verbosity: brief # Do not print decorations for each step
+
+# This is the test setup - reference value, tolerance threshold and
+# calculation block containing the tested calculation
+calculation_common:
+  job: test
+  test_result: -47680.807444
+  test_result_type: energy
+  test_threshold: 0.00001 # very tight thershold, to see some differences
+  calculation: 
+    job: energy
+    geometry: A24:water
+    method: hf
+    density_fitting: none
+    basisset: 6-31G
+    charge: 0
+
+# For each step, we set up the test name and interface to be used for 
+# the calculation
+calculation_turbomole:
+  test_name: Turbomole HF/6-31G energy
+  calculation:
+    interface: turbomole
+
+calculation_psi4:
+  test_name: Psi4 HF/6-31G energy
+  calculation:
+    interface: psi4
+
+calculation_orca:
+  test_name: Orca HF/6-31G energy
+  calculation:
+    interface: orca
+
+calculation_cfour:
+  test_name: Cfour HF/6-31G energy
+  calculation:
+    interface: cfour
+
+calculation_gaussian:
+  test_name: Gaussian HF/6-31G energy
+  calculation:
+    interface: gaussian
+

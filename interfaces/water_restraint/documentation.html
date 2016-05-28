@@ -1,0 +1,7 @@
+<p>
+Modifier for QM/MM MD simulations, prevents mixing of QM waters around the defined
+solute with MM bulk waters. At the beginning of the simulations, specified number
+of water molecules cosest to the solute is tagged as QM waters. If this QM water
+moves farther than the closest bulk water, a harmonic restraint is applied to pull
+the QM water back towards the solute.
+</p>

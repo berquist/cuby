@@ -1,0 +1,49 @@
+# Parameters for CPE(q)-D3
+:"cpe(q)_from_paper":
+  :H: !ruby/object:CpeParameters
+    z: 2.8005
+    b: 0.4084
+    rl: 0.4029
+    ru: 0.4030
+  :C: !ruby/object:CpeParameters
+    z: 1.9271
+    b: 0.0111
+    rl: 1.5431
+    ru: 1.9163
+  :N: !ruby/object:CpeParameters
+    z: 2.1352
+    b: 0.2542
+    rl: 2.0131
+    ru: 2.0321
+  :O: !ruby/object:CpeParameters
+    z: 9.7552
+    b: 0.0965
+    rl: 3.4807
+    ru: 3.5745
+  :S: !ruby/object:CpeParameters
+    z: 2.9192
+    b: 1.7258
+    rl: 16.577
+    ru: 2752.47
+# From Anders Christensen
+:"cpe(q)":
+  :H: !ruby/object:CpeParameters
+    z: 2.25514337801
+    b: 0.856656353725
+    rl: 0.379639959606
+    ru: 0.37964127194
+  :C: !ruby/object:CpeParameters
+    z: 1.47830882936
+    b: 0.00486169565562
+    rl: 1.08623341882
+    ru: 2.35302538146
+  :N: !ruby/object:CpeParameters
+    z: 2.0292
+    b: 0.3238
+    rl: 1.6511
+    ru: 2.2921
+  :O: !ruby/object:CpeParameters
+    z: 4.32274727143
+    b: 0.0451795053077
+    rl: 3.4832795805
+    ru: 3.60500013486

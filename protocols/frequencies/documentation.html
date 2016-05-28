@@ -1,0 +1,16 @@
+<p>
+Calculation of harmonic vibrational frequencies. Requires the calculation of Hessian - some interafces provides analytical Hessian, in other cases, the interface <a href="interface_numerical_hessian.html">numerical_hessian</a> can be used. The analysis can be also run on a precalculated Hessian saved in either previous frequencies job or from a separate <a href="protocol_hessian.html">Hessian calculation</a>.
+</p>
+
+<h2>Output</h2>
+<p>
+Vibrational frequencies and thermodynamic quantities obtained at the rigid rotor - harmonic oscillator level are printed in the output. 
+If the interface provides the derivatives of the dipole moment, IR intensities are printed as well. printing additional information for each
+vibrational mode is controlled by the keyword <a href="keywords.html#freq_print">freq_print</a>.
+Additionally, the Hessian is written to a file and all the data inculding normal mode vectors are saved in the Molden format for visualization.
+</p>
+
+<h2>Normal mode scans</h2>
+<p>
+The interface can also generate scans along the normal modes. Both one- and multi-dimensionals scans can be prepared easily. The desired grid can be provided by the user or calculated automatically to cover a specified potential energy range in all modes. The generated scans (series of coordinates in .xyz files) can be processed easily by the <a href="protocol_scan.html">Scan</a> protocol.
+</p>

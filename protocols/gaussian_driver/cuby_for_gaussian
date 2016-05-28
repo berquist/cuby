@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Save arguments and input file - for debugging
+# echo $1 $2 $3 $4 $5 $6 $7 $8 > params.txt
+# cat $2 > input.txt
+
+# Make .xyz geometry from the gaussian input
+natom=`head -n 1 $2 | awk '{print $1}'`
+echo $natom > temporary_geo.xyz
+echo >> temporary_geo.xyz
+awk '/0.000000000000 *$/ {printf("%4d%20.15f%20.15f%20.15f\n", $1, $2 * 0.5291772083, $3 * 0.5291772083, $4 * 0.5291772083);}' $2 >> temporary_geo.xyz
+
+# Delete previous outputs
+rm -f output_for_gaussian.txt
+rm -f $3
+
+# Execute cuby, calling a acalulation requested by gaussian
+case `head -n 1 $2 | awk '{print $2}'` in
+0)
+	cuby4 child_cuby_input.yaml -j energy > child_cuby.LOG ;;
+1)
+	cuby4 child_cuby_input.yaml -j gradient > child_cuby.LOG ;;
+2)
+	cuby4 child_cuby_input.yaml -j hessian > child_cuby.LOG ;;
+esac
+
+# Copy output
+cp output_for_gaussian.txt $3

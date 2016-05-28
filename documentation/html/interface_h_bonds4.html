@@ -1,0 +1,99 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface h_bonds4</h1>
+<p>
+The latest empirical correction for hydrogen bonding (H4) in semiempirical methods.[1] To get the complete D3H4 correction, add also the corresponding <a href="interface_dispersion3.html">D3 dispersion</a> correction. Halogen bonds can be corrected using yet another <a hrec=interface_x_bond.html>interface</a>.
+</p>
+
+<p>
+Default parameters are available (and automatically assigned) for following semiempirical methods: PM6, AM1, PM3, RM1, OM3 and SCC-DFTB.
+</p>
+
+<ol>
+	<li>Řezáč, J.; Hobza, P. J. Chem. Theory Comput. 2012, 8, 141–151.</li>
+</ol>
+
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#h_bonds4_extra_scaling">h_bonds4_extra_scaling</a></li>
+<li><a href="keywords.html#h_bonds4_parameters">h_bonds4_parameters</a></li>
+<li><a href="keywords.html#h_bonds4_pt_corr">h_bonds4_pt_corr</a></li>
+<li><a href="keywords.html#h_bonds4_scale_charged">h_bonds4_scale_charged</a></li>
+<li><a href="keywords.html#h_bonds4_skip_acceptor">h_bonds4_skip_acceptor</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/h_bonds4/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# H-bonds4 example 1: Interaction energy calculation with PM6-D3H4
+#===============================================================================
+
+# In this example, the D3 and H4 corrections (designed to be used together)
+# are added to PM6 in calculation of interaction energy
+
+job: interaction
+method: pm6
+interface: mopac
+
+# This interface is called as a modifier, its result is added to the underlying
+# PM6 calculation performed in MOPAC
+modifiers: dispersion3, h_bonds4
+# No setup for the modifiers is needed, the default parameters are identified
+# and applied automagically.
+
+# Geometry: Water dimer from the S66 data set
+geometry: S66:water_dimer
+charge: 0
+
+# Print energy components, in this case the contributions of the corrections
+print: energy_decomposition
+
+#-------------------------------------------------------------------------------
+# Note
+#-------------------------------------------------------------------------------
+# This calculation prints a warning on selection in non-PDB file. This is
+# because the H4 correction contains a special term applied to charged residues
+# which can be identified only when the input is a PDB file.
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

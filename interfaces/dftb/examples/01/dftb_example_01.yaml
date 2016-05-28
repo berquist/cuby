@@ -1,0 +1,25 @@
+#===============================================================================
+# DFTB example 1: energy calculation, configuration
+#===============================================================================
+
+# SCC-DFTB calculation
+job: energy
+interface: dftb
+method: scc-dftb
+
+# Water molecule, geometry taken from Cuby's internal database
+geometry: A24:water
+charge: 0
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# DFTB+ executable
+dftbplus_exe: /home/rezac/bin/DFTB+/dftb+1.2.1/dftb+
+# Path to directory containing directories with sets of Slater-Koster files
+dftb_slko_basepath: /home/rezac/bin/DFTB+/slko
+# Default set of Slater-Koster files (directory name)
+dftb_slko_set: mio
+
+# In the following examples, it is assumed that this interface configuration
+# is performed in the config file

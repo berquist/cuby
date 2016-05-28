@@ -1,0 +1,51 @@
+#===============================================================================
+# QMMM example 2 - QMMM boundary across a covalent bond
+#===============================================================================
+
+# When a covalent bond is cut, it is capped by a hydrogen link atom. In the input,
+# it is necessary to define which bond is cut and what is the position and name
+# of the link atom, it is then built automatically.
+
+# The MM forcefield has to be able to describe the QM region, in this case,
+# it was necessary to crate a new residue for the alanine sidechain.
+
+job: optimize
+optimizer: rfo
+opt_quality: 0.5
+maxcycles: 500
+
+geometry: ace-ala-nme.pdb
+
+interface: qmmm
+
+# Electrostatic embedding:
+qmmm_embedding: electrostatic_2way
+# Remove charges on QM atoms close to the link atom
+qmmm_remove_charges: "16,17"
+# The same can be achieved automatically by removing charges on atoms
+# separated by N bonds (N = 1):
+#qmmm_charges_around_links: 1
+
+# Definition of the QM region
+qmmm_core: 1-14
+# Bonds top cut (selection, distance and PDB name of the link atom created)
+qmmm_cut_bonds:
+  - {bond: 9-15, link_ratio: 0.729, link_type: HL}
+# Rename the QM part of the ALA residue to "ala"
+qmmm_rename_residues:
+  - ":2 ala"
+
+# Setup of the QM calculation
+calculation_qm:
+  interface: turbomole
+  method: dft
+  basisset: SVP
+  functional: b-lyp
+  charge: 0
+
+# Setup for the MM calculation, shared by both the calculation of the whole system
+# and the MM calculation of the QM region
+calculation_mm:
+  interface: amber
+  amber_leaprc: leaprc.ala # Customized forcefield with "ala" residue defined
+

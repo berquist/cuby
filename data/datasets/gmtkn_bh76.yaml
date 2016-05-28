@@ -1,0 +1,999 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_BH76
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "barrier heights of hydrogen transfer, heavy atom transfer, nucleophilic substitution, unimolecular, and association reactions"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_BH76:h"
+  reference_value: 18.14
+  setup:
+    reaction_formula: "1 g_h + 1 g_n2o -> 1 g_n2ohts"
+    reaction_geometries:
+      g_h: gmtkn_BH76:h
+      g_n2o: gmtkn_BH76:n2o
+      g_n2ohts: gmtkn_BH76:n2ohts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_BH76:oh"
+  reference_value: 83.22
+  setup:
+    reaction_formula: "1 g_oh + 1 g_n2 -> 1 g_n2ohts"
+    reaction_geometries:
+      g_oh: gmtkn_BH76:oh
+      g_n2: gmtkn_BH76:n2
+      g_n2ohts: gmtkn_BH76:n2ohts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_BH76:h"
+  reference_value: 42.18
+  setup:
+    reaction_formula: "1 g_h + 1 g_hf -> 1 g_hfhts"
+    reaction_geometries:
+      g_h: gmtkn_BH76:h
+      g_hf: gmtkn_BH76:hf
+      g_hfhts: gmtkn_BH76:hfhts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_BH76:hf"
+  reference_value: 42.18
+  setup:
+    reaction_formula: "1 g_hf + 1 g_h -> 1 g_hfhts"
+    reaction_geometries:
+      g_hf: gmtkn_BH76:hf
+      g_h: gmtkn_BH76:h
+      g_hfhts: gmtkn_BH76:hfhts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_BH76:h"
+  reference_value: 18.0
+  setup:
+    reaction_formula: "1 g_h + 1 g_hcl -> 1 g_hclhts"
+    reaction_geometries:
+      g_h: gmtkn_BH76:h
+      g_hcl: gmtkn_BH76:hcl
+      g_hclhts: gmtkn_BH76:hclhts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_BH76:hcl"
+  reference_value: 18.0
+  setup:
+    reaction_formula: "1 g_hcl + 1 g_h -> 1 g_hclhts"
+    reaction_geometries:
+      g_hcl: gmtkn_BH76:hcl
+      g_h: gmtkn_BH76:h
+      g_hclhts: gmtkn_BH76:hclhts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_BH76:h"
+  reference_value: 30.38
+  setup:
+    reaction_formula: "1 g_h + 1 g_ch3f -> 1 g_hfch3ts"
+    reaction_geometries:
+      g_h: gmtkn_BH76:h
+      g_ch3f: gmtkn_BH76:ch3f
+      g_hfch3ts: gmtkn_BH76:hfch3ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_BH76:hf"
+  reference_value: 57.02
+  setup:
+    reaction_formula: "1 g_hf + 1 g_ch3 -> 1 g_hfch3ts"
+    reaction_geometries:
+      g_hf: gmtkn_BH76:hf
+      g_ch3: gmtkn_BH76:ch3
+      g_hfch3ts: gmtkn_BH76:hfch3ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_BH76:h"
+  reference_value: 2.27
+  setup:
+    reaction_formula: "1 g_h + 1 g_f2 -> 1 g_hf2ts"
+    reaction_geometries:
+      g_h: gmtkn_BH76:h
+      g_f2: gmtkn_BH76:f2
+      g_hf2ts: gmtkn_BH76:hf2ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_BH76:hf"
+  reference_value: 106.18
+  setup:
+    reaction_formula: "1 g_hf + 1 g_f -> 1 g_hf2ts"
+    reaction_geometries:
+      g_hf: gmtkn_BH76:hf
+      g_f: gmtkn_BH76:f
+      g_hf2ts: gmtkn_BH76:hf2ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_BH76:ch3"
+  reference_value: 7.43
+  setup:
+    reaction_formula: "1 g_ch3 + 1 g_clf -> 1 g_ch3fclts"
+    reaction_geometries:
+      g_ch3: gmtkn_BH76:ch3
+      g_clf: gmtkn_BH76:clf
+      g_ch3fclts: gmtkn_BH76:ch3fclts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "12"
+  shortname: "12"
+  geometry: "gmtkn_BH76:ch3f"
+  reference_value: 60.17
+  setup:
+    reaction_formula: "1 g_ch3f + 1 g_cl -> 1 g_ch3fclts"
+    reaction_geometries:
+      g_ch3f: gmtkn_BH76:ch3f
+      g_cl: gmtkn_BH76:cl
+      g_ch3fclts: gmtkn_BH76:ch3fclts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "13"
+  shortname: "13"
+  geometry: "gmtkn_BH76:f-"
+  reference_value: -0.34
+  setup:
+    reaction_formula: "1 g_f- + 1 g_ch3f -> 1 g_fch3fts"
+    reaction_geometries:
+      g_f-: gmtkn_BH76:f-
+      g_ch3f: gmtkn_BH76:ch3f
+      g_fch3fts: gmtkn_BH76:fch3fts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "14"
+  shortname: "14"
+  geometry: "gmtkn_BH76:ch3f"
+  reference_value: -0.34
+  setup:
+    reaction_formula: "1 g_ch3f + 1 g_f- -> 1 g_fch3fts"
+    reaction_geometries:
+      g_ch3f: gmtkn_BH76:ch3f
+      g_f-: gmtkn_BH76:f-
+      g_fch3fts: gmtkn_BH76:fch3fts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "15"
+  shortname: "15"
+  geometry: "gmtkn_BH76:fch3fcomp"
+  reference_value: 13.38
+  setup:
+    reaction_formula: "1 g_fch3fcomp -> 1 g_fch3fts"
+    reaction_geometries:
+      g_fch3fcomp: gmtkn_BH76:fch3fcomp
+      g_fch3fts: gmtkn_BH76:fch3fts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "16"
+  shortname: "16"
+  geometry: "gmtkn_BH76:fch3fcomp"
+  reference_value: 13.38
+  setup:
+    reaction_formula: "1 g_fch3fcomp -> 1 g_fch3fts"
+    reaction_geometries:
+      g_fch3fcomp: gmtkn_BH76:fch3fcomp
+      g_fch3fts: gmtkn_BH76:fch3fts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "17"
+  shortname: "17"
+  geometry: "gmtkn_BH76:cl-"
+  reference_value: 3.1
+  setup:
+    reaction_formula: "1 g_cl- + 1 g_ch3cl -> 1 g_clch3clts"
+    reaction_geometries:
+      g_cl-: gmtkn_BH76:cl-
+      g_ch3cl: gmtkn_BH76:ch3cl
+      g_clch3clts: gmtkn_BH76:clch3clts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "18"
+  shortname: "18"
+  geometry: "gmtkn_BH76:ch3cl"
+  reference_value: 3.1
+  setup:
+    reaction_formula: "1 g_ch3cl + 1 g_cl- -> 1 g_clch3clts"
+    reaction_geometries:
+      g_ch3cl: gmtkn_BH76:ch3cl
+      g_cl-: gmtkn_BH76:cl-
+      g_clch3clts: gmtkn_BH76:clch3clts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "19"
+  shortname: "19"
+  geometry: "gmtkn_BH76:clch3clcomp"
+  reference_value: 13.61
+  setup:
+    reaction_formula: "1 g_clch3clcomp -> 1 g_clch3clts"
+    reaction_geometries:
+      g_clch3clcomp: gmtkn_BH76:clch3clcomp
+      g_clch3clts: gmtkn_BH76:clch3clts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "20"
+  shortname: "20"
+  geometry: "gmtkn_BH76:clch3clcomp"
+  reference_value: 13.61
+  setup:
+    reaction_formula: "1 g_clch3clcomp -> 1 g_clch3clts"
+    reaction_geometries:
+      g_clch3clcomp: gmtkn_BH76:clch3clcomp
+      g_clch3clts: gmtkn_BH76:clch3clts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "21"
+  shortname: "21"
+  geometry: "gmtkn_BH76:f-"
+  reference_value: -12.54
+  setup:
+    reaction_formula: "1 g_f- + 1 g_ch3cl -> 1 g_fch3clts"
+    reaction_geometries:
+      g_f-: gmtkn_BH76:f-
+      g_ch3cl: gmtkn_BH76:ch3cl
+      g_fch3clts: gmtkn_BH76:fch3clts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "22"
+  shortname: "22"
+  geometry: "gmtkn_BH76:cl-"
+  reference_value: 20.11
+  setup:
+    reaction_formula: "1 g_cl- + 1 g_ch3f -> 1 g_fch3clts"
+    reaction_geometries:
+      g_cl-: gmtkn_BH76:cl-
+      g_ch3f: gmtkn_BH76:ch3f
+      g_fch3clts: gmtkn_BH76:fch3clts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "23"
+  shortname: "23"
+  geometry: "gmtkn_BH76:fch3clcomp1"
+  reference_value: 2.89
+  setup:
+    reaction_formula: "1 g_fch3clcomp1 -> 1 g_fch3clts"
+    reaction_geometries:
+      g_fch3clcomp1: gmtkn_BH76:fch3clcomp1
+      g_fch3clts: gmtkn_BH76:fch3clts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "24"
+  shortname: "24"
+  geometry: "gmtkn_BH76:fch3clcomp2"
+  reference_value: 29.62
+  setup:
+    reaction_formula: "1 g_fch3clcomp2 -> 1 g_fch3clts"
+    reaction_geometries:
+      g_fch3clcomp2: gmtkn_BH76:fch3clcomp2
+      g_fch3clts: gmtkn_BH76:fch3clts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "25"
+  shortname: "25"
+  geometry: "gmtkn_BH76:oh-"
+  reference_value: -2.78
+  setup:
+    reaction_formula: "1 g_oh- + 1 g_ch3f -> 1 g_hoch3fts"
+    reaction_geometries:
+      g_oh-: gmtkn_BH76:oh-
+      g_ch3f: gmtkn_BH76:ch3f
+      g_hoch3fts: gmtkn_BH76:hoch3fts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "26"
+  shortname: "26"
+  geometry: "gmtkn_BH76:ch3oh"
+  reference_value: 17.33
+  setup:
+    reaction_formula: "1 g_ch3oh + 1 g_f- -> 1 g_hoch3fts"
+    reaction_geometries:
+      g_ch3oh: gmtkn_BH76:ch3oh
+      g_f-: gmtkn_BH76:f-
+      g_hoch3fts: gmtkn_BH76:hoch3fts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "27"
+  shortname: "27"
+  geometry: "gmtkn_BH76:hoch3fcomp2"
+  reference_value: 10.96
+  setup:
+    reaction_formula: "1 g_hoch3fcomp2 -> 1 g_hoch3fts"
+    reaction_geometries:
+      g_hoch3fcomp2: gmtkn_BH76:hoch3fcomp2
+      g_hoch3fts: gmtkn_BH76:hoch3fts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "28"
+  shortname: "28"
+  geometry: "gmtkn_BH76:hoch3fcomp1"
+  reference_value: 47.2
+  setup:
+    reaction_formula: "1 g_hoch3fcomp1 -> 1 g_hoch3fts"
+    reaction_geometries:
+      g_hoch3fcomp1: gmtkn_BH76:hoch3fcomp1
+      g_hoch3fts: gmtkn_BH76:hoch3fts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "29"
+  shortname: "29"
+  geometry: "gmtkn_BH76:h"
+  reference_value: 14.69
+  setup:
+    reaction_formula: "1 g_h + 1 g_n2 -> 1 g_hn2ts"
+    reaction_geometries:
+      g_h: gmtkn_BH76:h
+      g_n2: gmtkn_BH76:n2
+      g_hn2ts: gmtkn_BH76:hn2ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "30"
+  shortname: "30"
+  geometry: "gmtkn_BH76:hn2"
+  reference_value: 10.72
+  setup:
+    reaction_formula: "1 g_hn2 -> 1 g_hn2ts"
+    reaction_geometries:
+      g_hn2: gmtkn_BH76:hn2
+      g_hn2ts: gmtkn_BH76:hn2ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "31"
+  shortname: "31"
+  geometry: "gmtkn_BH76:h"
+  reference_value: 3.17
+  setup:
+    reaction_formula: "1 g_h + 1 g_co -> 1 g_hcots"
+    reaction_geometries:
+      g_h: gmtkn_BH76:h
+      g_co: gmtkn_BH76:co
+      g_hcots: gmtkn_BH76:hcots
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "32"
+  shortname: "32"
+  geometry: "gmtkn_BH76:hco"
+  reference_value: 22.68
+  setup:
+    reaction_formula: "1 g_hco -> 1 g_hcots"
+    reaction_geometries:
+      g_hco: gmtkn_BH76:hco
+      g_hcots: gmtkn_BH76:hcots
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "33"
+  shortname: "33"
+  geometry: "gmtkn_BH76:h"
+  reference_value: 1.72
+  setup:
+    reaction_formula: "1 g_h + 1 g_c2h4 -> 1 g_c2h5ts"
+    reaction_geometries:
+      g_h: gmtkn_BH76:h
+      g_c2h4: gmtkn_BH76:c2h4
+      g_c2h5ts: gmtkn_BH76:c2h5ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "34"
+  shortname: "34"
+  geometry: "gmtkn_BH76:c2h5"
+  reference_value: 41.75
+  setup:
+    reaction_formula: "1 g_c2h5 -> 1 g_c2h5ts"
+    reaction_geometries:
+      g_c2h5: gmtkn_BH76:c2h5
+      g_c2h5ts: gmtkn_BH76:c2h5ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "35"
+  shortname: "35"
+  geometry: "gmtkn_BH76:ch3"
+  reference_value: 6.85
+  setup:
+    reaction_formula: "1 g_ch3 + 1 g_c2h4 -> 1 g_c3h7ts"
+    reaction_geometries:
+      g_ch3: gmtkn_BH76:ch3
+      g_c2h4: gmtkn_BH76:c2h4
+      g_c3h7ts: gmtkn_BH76:c3h7ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "36"
+  shortname: "36"
+  geometry: "gmtkn_BH76:c3h7"
+  reference_value: 32.97
+  setup:
+    reaction_formula: "1 g_c3h7 -> 1 g_c3h7ts"
+    reaction_geometries:
+      g_c3h7: gmtkn_BH76:c3h7
+      g_c3h7ts: gmtkn_BH76:c3h7ts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "37"
+  shortname: "37"
+  geometry: "gmtkn_BH76:hcn"
+  reference_value: 48.16
+  setup:
+    reaction_formula: "1 g_hcn -> 1 g_hcnts"
+    reaction_geometries:
+      g_hcn: gmtkn_BH76:hcn
+      g_hcnts: gmtkn_BH76:hcnts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "38"
+  shortname: "38"
+  geometry: "gmtkn_BH76:hnc"
+  reference_value: 33.11
+  setup:
+    reaction_formula: "1 g_hnc -> 1 g_hcnts"
+    reaction_geometries:
+      g_hnc: gmtkn_BH76:hnc
+      g_hcnts: gmtkn_BH76:hcnts
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "39"
+  shortname: "39"
+  geometry: "gmtkn_BH76:H"
+  reference_value: 5.7
+  setup:
+    reaction_formula: "1 g_H + 1 g_HCl -> 1 g_RKT01"
+    reaction_geometries:
+      g_H: gmtkn_BH76:H
+      g_HCl: gmtkn_BH76:HCl
+      g_RKT01: gmtkn_BH76:RKT01
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "40"
+  shortname: "40"
+  geometry: "gmtkn_BH76:H2"
+  reference_value: 8.7
+  setup:
+    reaction_formula: "1 g_H2 + 1 g_Cl -> 1 g_RKT01"
+    reaction_geometries:
+      g_H2: gmtkn_BH76:H2
+      g_Cl: gmtkn_BH76:Cl
+      g_RKT01: gmtkn_BH76:RKT01
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "41"
+  shortname: "41"
+  geometry: "gmtkn_BH76:OH"
+  reference_value: 5.1
+  setup:
+    reaction_formula: "1 g_OH + 1 g_H2 -> 1 g_RKT02"
+    reaction_geometries:
+      g_OH: gmtkn_BH76:OH
+      g_H2: gmtkn_BH76:H2
+      g_RKT02: gmtkn_BH76:RKT02
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "42"
+  shortname: "42"
+  geometry: "gmtkn_BH76:H2O"
+  reference_value: 21.2
+  setup:
+    reaction_formula: "1 g_H2O + 1 g_H -> 1 g_RKT02"
+    reaction_geometries:
+      g_H2O: gmtkn_BH76:H2O
+      g_H: gmtkn_BH76:H
+      g_RKT02: gmtkn_BH76:RKT02
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "43"
+  shortname: "43"
+  geometry: "gmtkn_BH76:CH3"
+  reference_value: 12.1
+  setup:
+    reaction_formula: "1 g_CH3 + 1 g_H2 -> 1 g_RKT03"
+    reaction_geometries:
+      g_CH3: gmtkn_BH76:CH3
+      g_H2: gmtkn_BH76:H2
+      g_RKT03: gmtkn_BH76:RKT03
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "44"
+  shortname: "44"
+  geometry: "gmtkn_BH76:CH4"
+  reference_value: 15.3
+  setup:
+    reaction_formula: "1 g_CH4 + 1 g_H -> 1 g_RKT03"
+    reaction_geometries:
+      g_CH4: gmtkn_BH76:CH4
+      g_H: gmtkn_BH76:H
+      g_RKT03: gmtkn_BH76:RKT03
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "45"
+  shortname: "45"
+  geometry: "gmtkn_BH76:OH"
+  reference_value: 6.7
+  setup:
+    reaction_formula: "1 g_OH + 1 g_CH4 -> 1 g_RKT04"
+    reaction_geometries:
+      g_OH: gmtkn_BH76:OH
+      g_CH4: gmtkn_BH76:CH4
+      g_RKT04: gmtkn_BH76:RKT04
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "46"
+  shortname: "46"
+  geometry: "gmtkn_BH76:H2O"
+  reference_value: 19.6
+  setup:
+    reaction_formula: "1 g_H2O + 1 g_CH3 -> 1 g_RKT04"
+    reaction_geometries:
+      g_H2O: gmtkn_BH76:H2O
+      g_CH3: gmtkn_BH76:CH3
+      g_RKT04: gmtkn_BH76:RKT04
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "47"
+  shortname: "47"
+  geometry: "gmtkn_BH76:H"
+  reference_value: 9.6
+  setup:
+    reaction_formula: "1 g_H + 1 g_H2 -> 1 g_RKT06"
+    reaction_geometries:
+      g_H: gmtkn_BH76:H
+      g_H2: gmtkn_BH76:H2
+      g_RKT06: gmtkn_BH76:RKT06
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "48"
+  shortname: "48"
+  geometry: "gmtkn_BH76:H"
+  reference_value: 9.6
+  setup:
+    reaction_formula: "1 g_H + 1 g_H2 -> 1 g_RKT06"
+    reaction_geometries:
+      g_H: gmtkn_BH76:H
+      g_H2: gmtkn_BH76:H2
+      g_RKT06: gmtkn_BH76:RKT06
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "49"
+  shortname: "49"
+  geometry: "gmtkn_BH76:OH"
+  reference_value: 3.2
+  setup:
+    reaction_formula: "1 g_OH + 1 g_NH3 -> 1 g_RKT07"
+    reaction_geometries:
+      g_OH: gmtkn_BH76:OH
+      g_NH3: gmtkn_BH76:NH3
+      g_RKT07: gmtkn_BH76:RKT07
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "50"
+  shortname: "50"
+  geometry: "gmtkn_BH76:H2O"
+  reference_value: 12.7
+  setup:
+    reaction_formula: "1 g_H2O + 1 g_NH2 -> 1 g_RKT07"
+    reaction_geometries:
+      g_H2O: gmtkn_BH76:H2O
+      g_NH2: gmtkn_BH76:NH2
+      g_RKT07: gmtkn_BH76:RKT07
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "51"
+  shortname: "51"
+  geometry: "gmtkn_BH76:HCl"
+  reference_value: 1.7
+  setup:
+    reaction_formula: "1 g_HCl + 1 g_CH3 -> 1 g_RKT08"
+    reaction_geometries:
+      g_HCl: gmtkn_BH76:HCl
+      g_CH3: gmtkn_BH76:CH3
+      g_RKT08: gmtkn_BH76:RKT08
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "52"
+  shortname: "52"
+  geometry: "gmtkn_BH76:Cl"
+  reference_value: 7.9
+  setup:
+    reaction_formula: "1 g_Cl + 1 g_CH4 -> 1 g_RKT08"
+    reaction_geometries:
+      g_Cl: gmtkn_BH76:Cl
+      g_CH4: gmtkn_BH76:CH4
+      g_RKT08: gmtkn_BH76:RKT08
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "53"
+  shortname: "53"
+  geometry: "gmtkn_BH76:OH"
+  reference_value: 3.4
+  setup:
+    reaction_formula: "1 g_OH + 1 g_C2H6 -> 1 g_RKT09"
+    reaction_geometries:
+      g_OH: gmtkn_BH76:OH
+      g_C2H6: gmtkn_BH76:C2H6
+      g_RKT09: gmtkn_BH76:RKT09
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "54"
+  shortname: "54"
+  geometry: "gmtkn_BH76:H2O"
+  reference_value: 19.9
+  setup:
+    reaction_formula: "1 g_H2O + 1 g_C2H5 -> 1 g_RKT09"
+    reaction_geometries:
+      g_H2O: gmtkn_BH76:H2O
+      g_C2H5: gmtkn_BH76:C2H5
+      g_RKT09: gmtkn_BH76:RKT09
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "55"
+  shortname: "55"
+  geometry: "gmtkn_BH76:F"
+  reference_value: 1.8
+  setup:
+    reaction_formula: "1 g_F + 1 g_H2 -> 1 g_RKT10"
+    reaction_geometries:
+      g_F: gmtkn_BH76:F
+      g_H2: gmtkn_BH76:H2
+      g_RKT10: gmtkn_BH76:RKT10
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "56"
+  shortname: "56"
+  geometry: "gmtkn_BH76:HF"
+  reference_value: 33.4
+  setup:
+    reaction_formula: "1 g_HF + 1 g_H -> 1 g_RKT10"
+    reaction_geometries:
+      g_HF: gmtkn_BH76:HF
+      g_H: gmtkn_BH76:H
+      g_RKT10: gmtkn_BH76:RKT10
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "57"
+  shortname: "57"
+  geometry: "gmtkn_BH76:O"
+  reference_value: 13.7
+  setup:
+    reaction_formula: "1 g_O + 1 g_CH4 -> 1 g_RKT11"
+    reaction_geometries:
+      g_O: gmtkn_BH76:O
+      g_CH4: gmtkn_BH76:CH4
+      g_RKT11: gmtkn_BH76:RKT11
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "58"
+  shortname: "58"
+  geometry: "gmtkn_BH76:OH"
+  reference_value: 8.1
+  setup:
+    reaction_formula: "1 g_OH + 1 g_CH3 -> 1 g_RKT11"
+    reaction_geometries:
+      g_OH: gmtkn_BH76:OH
+      g_CH3: gmtkn_BH76:CH3
+      g_RKT11: gmtkn_BH76:RKT11
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "59"
+  shortname: "59"
+  geometry: "gmtkn_BH76:H"
+  reference_value: 3.1
+  setup:
+    reaction_formula: "1 g_H + 1 g_PH3 -> 1 g_RKT12"
+    reaction_geometries:
+      g_H: gmtkn_BH76:H
+      g_PH3: gmtkn_BH76:PH3
+      g_RKT12: gmtkn_BH76:RKT12
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "60"
+  shortname: "60"
+  geometry: "gmtkn_BH76:H2"
+  reference_value: 23.2
+  setup:
+    reaction_formula: "1 g_H2 + 1 g_PH2 -> 1 g_RKT12"
+    reaction_geometries:
+      g_H2: gmtkn_BH76:H2
+      g_PH2: gmtkn_BH76:PH2
+      g_RKT12: gmtkn_BH76:RKT12
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "61"
+  shortname: "61"
+  geometry: "gmtkn_BH76:H"
+  reference_value: 10.7
+  setup:
+    reaction_formula: "1 g_H + 1 g_OH -> 1 g_RKT14"
+    reaction_geometries:
+      g_H: gmtkn_BH76:H
+      g_OH: gmtkn_BH76:OH
+      g_RKT14: gmtkn_BH76:RKT14
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "62"
+  shortname: "62"
+  geometry: "gmtkn_BH76:H2"
+  reference_value: 13.1
+  setup:
+    reaction_formula: "1 g_H2 + 1 g_O -> 1 g_RKT14"
+    reaction_geometries:
+      g_H2: gmtkn_BH76:H2
+      g_O: gmtkn_BH76:O
+      g_RKT14: gmtkn_BH76:RKT14
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "63"
+  shortname: "63"
+  geometry: "gmtkn_BH76:H"
+  reference_value: 3.5
+  setup:
+    reaction_formula: "1 g_H + 1 g_H2S -> 1 g_RKT16"
+    reaction_geometries:
+      g_H: gmtkn_BH76:H
+      g_H2S: gmtkn_BH76:H2S
+      g_RKT16: gmtkn_BH76:RKT16
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "64"
+  shortname: "64"
+  geometry: "gmtkn_BH76:H2"
+  reference_value: 17.3
+  setup:
+    reaction_formula: "1 g_H2 + 1 g_HS -> 1 g_RKT16"
+    reaction_geometries:
+      g_H2: gmtkn_BH76:H2
+      g_HS: gmtkn_BH76:HS
+      g_RKT16: gmtkn_BH76:RKT16
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "65"
+  shortname: "65"
+  geometry: "gmtkn_BH76:O"
+  reference_value: 9.8
+  setup:
+    reaction_formula: "1 g_O + 1 g_HCl -> 1 g_RKT17"
+    reaction_geometries:
+      g_O: gmtkn_BH76:O
+      g_HCl: gmtkn_BH76:HCl
+      g_RKT17: gmtkn_BH76:RKT17
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "66"
+  shortname: "66"
+  geometry: "gmtkn_BH76:OH"
+  reference_value: 10.4
+  setup:
+    reaction_formula: "1 g_OH + 1 g_Cl -> 1 g_RKT17"
+    reaction_geometries:
+      g_OH: gmtkn_BH76:OH
+      g_Cl: gmtkn_BH76:Cl
+      g_RKT17: gmtkn_BH76:RKT17
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "67"
+  shortname: "67"
+  geometry: "gmtkn_BH76:NH2"
+  reference_value: 8.0
+  setup:
+    reaction_formula: "1 g_NH2 + 1 g_CH3 -> 1 g_RKT18"
+    reaction_geometries:
+      g_NH2: gmtkn_BH76:NH2
+      g_CH3: gmtkn_BH76:CH3
+      g_RKT18: gmtkn_BH76:RKT18
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "68"
+  shortname: "68"
+  geometry: "gmtkn_BH76:NH"
+  reference_value: 22.4
+  setup:
+    reaction_formula: "1 g_NH + 1 g_CH4 -> 1 g_RKT18"
+    reaction_geometries:
+      g_NH: gmtkn_BH76:NH
+      g_CH4: gmtkn_BH76:CH4
+      g_RKT18: gmtkn_BH76:RKT18
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "69"
+  shortname: "69"
+  geometry: "gmtkn_BH76:NH2"
+  reference_value: 7.5
+  setup:
+    reaction_formula: "1 g_NH2 + 1 g_C2H5 -> 1 g_RKT19"
+    reaction_geometries:
+      g_NH2: gmtkn_BH76:NH2
+      g_C2H5: gmtkn_BH76:C2H5
+      g_RKT19: gmtkn_BH76:RKT19
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "70"
+  shortname: "70"
+  geometry: "gmtkn_BH76:NH"
+  reference_value: 18.3
+  setup:
+    reaction_formula: "1 g_NH + 1 g_C2H6 -> 1 g_RKT19"
+    reaction_geometries:
+      g_NH: gmtkn_BH76:NH
+      g_C2H6: gmtkn_BH76:C2H6
+      g_RKT19: gmtkn_BH76:RKT19
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "71"
+  shortname: "71"
+  geometry: "gmtkn_BH76:C2H6"
+  reference_value: 10.4
+  setup:
+    reaction_formula: "1 g_C2H6 + 1 g_NH2 -> 1 g_RKT20"
+    reaction_geometries:
+      g_C2H6: gmtkn_BH76:C2H6
+      g_NH2: gmtkn_BH76:NH2
+      g_RKT20: gmtkn_BH76:RKT20
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "72"
+  shortname: "72"
+  geometry: "gmtkn_BH76:C2H5"
+  reference_value: 17.4
+  setup:
+    reaction_formula: "1 g_C2H5 + 1 g_NH3 -> 1 g_RKT20"
+    reaction_geometries:
+      g_C2H5: gmtkn_BH76:C2H5
+      g_NH3: gmtkn_BH76:NH3
+      g_RKT20: gmtkn_BH76:RKT20
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "73"
+  shortname: "73"
+  geometry: "gmtkn_BH76:NH2"
+  reference_value: 14.5
+  setup:
+    reaction_formula: "1 g_NH2 + 1 g_CH4 -> 1 g_RKT21"
+    reaction_geometries:
+      g_NH2: gmtkn_BH76:NH2
+      g_CH4: gmtkn_BH76:CH4
+      g_RKT21: gmtkn_BH76:RKT21
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "74"
+  shortname: "74"
+  geometry: "gmtkn_BH76:NH3"
+  reference_value: 17.8
+  setup:
+    reaction_formula: "1 g_NH3 + 1 g_CH3 -> 1 g_RKT21"
+    reaction_geometries:
+      g_NH3: gmtkn_BH76:NH3
+      g_CH3: gmtkn_BH76:CH3
+      g_RKT21: gmtkn_BH76:RKT21
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "75"
+  shortname: "75"
+  geometry: "gmtkn_BH76:C5H8"
+  reference_value: 38.4
+  setup:
+    reaction_formula: "1 g_C5H8 -> 1 g_RKT22"
+    reaction_geometries:
+      g_C5H8: gmtkn_BH76:C5H8
+      g_RKT22: gmtkn_BH76:RKT22
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "76"
+  shortname: "76"
+  geometry: "gmtkn_BH76:C5H8"
+  reference_value: 38.4
+  setup:
+    reaction_formula: "1 g_C5H8 -> 1 g_RKT22"
+    reaction_geometries:
+      g_C5H8: gmtkn_BH76:C5H8
+      g_RKT22: gmtkn_BH76:RKT22
+  tags: ""
+

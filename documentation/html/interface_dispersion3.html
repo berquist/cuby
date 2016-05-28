@@ -1,0 +1,212 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface dispersion3</h1>
+<p>
+Advanced empirical dispersion correction for DFT developed by S.Grimme - the DFT-D3 method.[1,2]
+Includes parameterization for semiempirical methods[3] designed for use with the 
+<a href="interface_h_bonds4.html">H4 hydrogen bonding correction</a>.
+</p>
+
+<h3>Parameters</h3>
+<p>
+Cuby contains a database of methods for which D3 parameters are available, and assigns these
+parameters automatically by default. The parameters for DFT were taken from the 
+<a href="http://www.thch.uni-bonn.de/tc/index.php?section=downloads&subsection=DFT-D3&lang=english">website of Stefan Grimme</a>
+and from the source of the dftd3 program available therein.
+</p>
+
+<p>
+The parameters can be divided into following sets:
+</p>
+<table class="doctable">
+	<tr>
+		<th>Method</th>
+		<th>Damping</th>
+		<th>Basis sets</th>
+		<th>Functionals</th>
+	</tr>
+	<tr>
+		<td>DFT</td>
+		<td>zero</td>
+		<td>def2-QZVP</td>
+		<td>b1b95, b2gpplyp, b3lyp, b97d, bhlyp, blyp, bp86, bpbe, mpwlyp, pbe, pbe0, pw6b95, pwb6k, revpbe, tpss, tpss0, tpssh, bop, mpw1b95, mpwb1k, olyp, opbe, otpss, pbe38, pbesol, revssb, ssb, b3pw91, bmk, camb3lyp, lcwpbe, m052x, m05, m062x, m06hf, m06l, m06, hcth120, b2plyp, dsdblyp, ptpss, pwpb95, revpbe0, revpbe38, rpw86pbe, bp, rpbe</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>TZVPP</td>
+		<td>blyp, bp, b97d, revpbe, pbe, tpss, b3lyp, pbe0, pw6b95, tpss0, b2plyp</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>B/J</td>
+		<td>def2-QZVP</td>
+		<td>b1b95, b2gpplyp, b3pw91, bhlyp, bmk, bop, bpbe, camb3lyp, lcwpbe, mpw1b95, mpwb1k, mpwlyp, olyp, opbe, otpss, pbe38, pbesol, ptpss, pwb6k, revssb, ssb, tpssh, hcth120, b2plyp, b3lyp, b97d, blyp, bp86, dsdblyp, pbe0, pbe, pw6b95, pwpb95, revpbe0, revpbe38, revpbe, rpw86pbe, tpss0, tpss</td>
+	</tr>
+	<tr>
+		<td>HF</td>
+		<td>zero, B/J</td>
+		<td>def2-QZVP</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>AM1, PM3, PM6, RM1, OM3</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>SCC-DFTB</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<!--<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>-->
+</table>
+
+<ol>
+	<li><a href="http://dx.doi.org/10.1063/1.3382344">Grimme, S.; Antony, J.; Ehrlich, S.; Krieg, H. J. Chem. Phys. 2010, 132 (15), 154104.</a></li>
+	<li><a href="http://dx.doi.org/10.1002/jcc.21759">Grimme, S.; Ehrlich, S.; Goerigk, L. J. Comput. Chem. 2011, 32 (7), 1456–1465.</a></li>
+	<li><a href="http://pubs.acs.org/doi/abs/10.1021/ct200751e">Řezáč, J.; Hobza, P. J. Chem. Theory Comput. 2012, 8 (1), 141–151.</a></li>
+	<!-- <li><a href=""></a></li> -->
+</ol>
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#d3_3body">d3_3body</a></li>
+<li><a href="keywords.html#d3_3body_scaling">d3_3body_scaling</a></li>
+<li><a href="keywords.html#d3_3body_sr">d3_3body_sr</a></li>
+<li><a href="keywords.html#d3_a1">d3_a1</a></li>
+<li><a href="keywords.html#d3_a2">d3_a2</a></li>
+<li><a href="keywords.html#d3_alpha6">d3_alpha6</a></li>
+<li><a href="keywords.html#d3_alpha8">d3_alpha8</a></li>
+<li><a href="keywords.html#d3_cutoff">d3_cutoff</a></li>
+<li><a href="keywords.html#d3_cutoff_buffer">d3_cutoff_buffer</a></li>
+<li><a href="keywords.html#d3_damping">d3_damping</a></li>
+<li><a href="keywords.html#d3_data_patch">d3_data_patch</a></li>
+<li><a href="keywords.html#d3_hh_fix">d3_hh_fix</a></li>
+<li><a href="keywords.html#d3_hh_fix_version">d3_hh_fix_version</a></li>
+<li><a href="keywords.html#d3_hh_para">d3_hh_para</a></li>
+<li><a href="keywords.html#d3_hybridization">d3_hybridization</a></li>
+<li><a href="keywords.html#d3_legacy_version">d3_legacy_version</a></li>
+<li><a href="keywords.html#d3_print">d3_print</a></li>
+<li><a href="keywords.html#d3_s6">d3_s6</a></li>
+<li><a href="keywords.html#d3_s8">d3_s8</a></li>
+<li><a href="keywords.html#d3_scaling">d3_scaling</a></li>
+<li><a href="keywords.html#d3_sr6">d3_sr6</a></li>
+<li><a href="keywords.html#d3_sr8">d3_sr8</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#development">development</a></li>
+<li><a href="keywords.html#x0">x0</a></li>
+<li><a href="keywords.html#x1">x1</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/dispersion3/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Dispersion3 example 1: DFT-D3 with automatic setup
+#===============================================================================
+
+# The dispersion3 interafce identifies the basis set and functional used
+# by the parent calculation and if this combination is found in its parameter
+# database, the appropriate parameters are used automatically.
+
+# Interaction energy calculation
+job: interaction
+
+# Methane dimer from the internal database
+geometry: A24:methane_dimer
+
+# DFT calculation setup
+interface: turbomole
+method: dft
+functional: b-lyp
+basisset: def2-QZVP # This is the recommended basis set for DFT-D3)
+
+# Adding the dispersion correction as a modifier (no further setup needed)
+modifiers: dispersion3
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Dispersion3 example 2: Manual setup of parameters
+#===============================================================================
+
+# This example yields a result identical to the one of example 1 but the
+# parameters for the dispersion correction are eneterd manually
+
+# Interaction energy calculation
+job: interaction
+
+# Methane dimer from the internal database
+geometry: A24:methane_dimer
+
+# DFT calculation setup
+interface: turbomole
+method: dft
+functional: b-lyp
+basisset: def2-QZVP # This is the recommended basis set for DFT-D3)
+
+# Adding the dispersion correction as a modifier
+modifiers: dispersion3
+
+#-------------------------------------------------------------------------------
+# Dispersion3 correction setup - in a separate block
+#-------------------------------------------------------------------------------
+modifier_dispersion3:
+  # Damping function:
+  d3_damping: bj
+  # Damping function parameters
+  d3_a1: 0.4298
+  d3_a2: 4.2359
+  # Third parameter: scaling of the C8 term
+  d3_s8: 2.6996
+  # Other parameters set to default values
+ 
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

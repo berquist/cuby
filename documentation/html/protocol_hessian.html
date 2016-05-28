@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol hessian</h1>
+<p>
+This protocol calculates and prints Hessian, the matrix of second derivatives of the energy. By default, it also writes it to a file that can be used as an input for the calculation of <a href="protocol_frequencies.html">vibrational frequencies</a>. Translational and rotational degrees of freedom are <a href="keywords.html#hessian_projected">projected out</a> from the calculated Hessian.
+</p>
+
+<h2>Keywords used</h2>
+<h4>Keywords specific for this protocol:</h4>
+<ul>
+<li><a href="keywords.html#hessian_projected">hessian_projected</a></li>
+</ul>
+<h4>Other keywords used by this protocol:</h4>
+<ul>
+<li><a href="keywords.html#coordinates">coordinates</a></li>
+<li><a href="keywords.html#gaussian_external_output">gaussian_external_output</a></li>
+<li><a href="keywords.html#hessian_write">hessian_write</a></li>
+<li><a href="keywords.html#print">print</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/hessian/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Hessian example 1
+#===============================================================================
+
+# This calculates Hessian of a water molecule (the geometry was previously
+# optimized at this level). In addition to printing the Hessian in the output,
+# it is also saved to file 'hessian.yaml' for further use.
+
+job: hessian
+
+interface: turbomole
+
+method: hf
+basisset: 6-31G
+density_fitting: none
+scf_convergence: 7
+charge: 0
+
+geometry: |
+  O    0.000000000  -0.000000000  -0.014048498
+  H    0.000000000   0.785163819   0.520087569
+  H    0.000000000  -0.785163819   0.520087569
+
+# Print also complete gradient (by default, only RMS is printed)
+print: gradient
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

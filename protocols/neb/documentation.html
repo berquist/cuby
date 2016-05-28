@@ -1,0 +1,16 @@
+<p>This module implements the Nudged Elastic Band (NEB) method[1] for identification of minimum energy path (MEP) between two minima. By default, the improved version[2] is used.
+</p>
+
+<p>The initial estimate of the path should be provided by the user as a series of geometries connecting the reactant and product. LBFGS optimzer is used because optimizing all the points at the same time leads to large number of optimized variables.
+</p>
+
+<h2>Warning</h2>
+<p>
+With the NEB method, it is not possible to achieve very tight convergence because the optimizer can not use the total energy of the system which is not defined. Set the convergence thresholds accordingly.
+</p>
+
+<h2>References</h2>
+<ol>
+	<li> H. Jónsson, G. Mills, and K. W. Jacobsen, “Nudged elastic band method for finding minimum energy paths of transitions,” in Classical and Quantum Dynamics in Condensed Phase Simulations, edited by B. J. Berne, G. Ciccotti, and D. F. Coker (World Scientific, Singapore, 1998), p. 385.</li>
+	<li>G. Henkelman and H. Jónsson, Improved tangent estimate in the nudged elastic band method for finding minimum energy paths and saddle points, J. Chem. Phys. 113, 9978-9985 (2000).</li>
+</ol>

@@ -1,0 +1,13 @@
+################################################################################
+# Keywords for protocol Charge transfer
+################################################################################
+
+keywords: 
+  :ct_scan_interval: !ruby/object:SettingsKeyword
+    convert_to: :array
+    when_not_present: :default
+    default_value: [0.2, 0.05, 0.8]
+  #: Interval for scanning the axis between the molecules for the best divider
+  #: plane. Format is [start, step, end]
+
+

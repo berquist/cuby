@@ -1,0 +1,19 @@
+#===============================================================================
+# Geometry protocol example 1 - standard geometry manipulations
+#===============================================================================
+
+# This example shows processing the input geometry using the manipulations that
+# can be applied to any geometry loaded into cuby. These are controleld by
+# keywords:
+# * selection
+# * reorder
+# * rotate
+# * update_coordinates
+
+# Here, the input geometry is loaded from the S66 data set and only the first
+# molecule from the dimer is saved in PDB format.
+
+job: geometry
+geometry: S66:01 # water_dimer
+selection: "1-3"
+geometry_write: water1.pdb

@@ -1,0 +1,64 @@
+#===============================================================================
+# PDB files,
+# from PDB database, prepared for calculation in Amber
+#===============================================================================
+
+#===============================================================================
+# Polypeptides/small proteins (54 items)
+# Data set for testing of optimizers
+# Collection from DOI:10.1021/jp307741u (4 items removed fom the original list)
+#===============================================================================
+"1aqg": 1AQG.pdb
+"1cek": 1CEK.pdb
+"1emz": 1EMZ.pdb
+"1j4m": 1J4M.pdb
+"1lb0": 1LB0.pdb
+"1lb7": 1LB7.pdb
+"1lbj": 1LBJ.pdb
+"1lcx": 1LCX.pdb
+"1lvq": 1LVQ.pdb
+"1lvr": 1LVR.pdb
+"1lvz": 1LVZ.pdb
+"1mzi": 1MZI.pdb
+"1o53": 1O53.pdb
+"1odp": 1ODP.pdb
+"1pjd": 1PJD.pdb
+"1qlo": 1QLO.pdb
+"1rij": 1RIJ.pdb
+"1t2y": 1T2Y.pdb
+"1uao": 1UAO.pdb
+"1v46": 1V46.pdb
+"1y03": 1Y03.pdb
+"1yjp": 1YJP.pdb
+"1yt6": 1YT6.pdb
+"2ap7": 2AP7.pdb
+"2ceh": 2CEH.pdb
+"2e4e": 2E4E.pdb
+"2evq": 2EVQ.pdb
+"2fbu": 2FBU.pdb
+"2fxy": 2FXY.pdb
+"2fxz": 2FXZ.pdb
+"2i9m": 2I9M.pdb
+"2jof": 2JOF.pdb
+"2jta": 2JTA.pdb
+"2jxf": 2JXF.pdb
+"2k58": 2K58.pdb
+"2k59": 2K59.pdb
+"2kjm": 2KJM.pdb
+"2knp": 2KNP.pdb
+"2kux": 2KUX.pdb
+"2kvx": 2KVX.pdb
+"2nx6": 2NX6.pdb
+"2nx7": 2NX7.pdb
+"2ol9": 2OL9.pdb
+"2onw": 2ONW.pdb
+"2oq9": 2OQ9.pdb
+"2pjv": 2PJV.pdb
+"2pv6": 2PV6.pdb
+"2rlj": 2RLJ.pdb
+"2rmw": 2RMW.pdb
+"2rps": 2RPS.pdb
+"3ftk": 3FTK.pdb
+"3ftr": 3FTR.pdb
+"3fva": 3FVA.pdb
+"3nvg": 3NVG.pdb

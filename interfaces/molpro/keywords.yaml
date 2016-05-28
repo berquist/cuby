@@ -1,0 +1,17 @@
+################################################################################
+# KEYWORDS for the MOLPRO interface
+################################################################################
+
+keywords:
+  :molpro_exe: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the molpro binary
+
+  :molpro_lib_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the directory containing libraries needed by Molpro (set using
+  #: the -L commandline option).

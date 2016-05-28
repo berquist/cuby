@@ -1,0 +1,14 @@
+<p>
+Calculation of three-body contribution to the stabilization energy (the three-body energy) in a trimer.
+Basis set superposition error correction scheme where all subsystems are calculted in the trimer basis is applied by default but can be switched off.
+The setup for the monomers within the trimer is analogous to <a href="protocol_interaction.html">interaction energy</a> calculations.
+</p>
+
+<p>In a trimer ABC, it is defined as:</p>
+<div class="formula">
+	&Delta;E<sup>3</sup> = E(ABC) - E(A) - E(B) - E(B) - &Delta;E<sup>2</sup>(AB) - &Delta;E<sup>2</sup>(BC) - &Delta;E<sup>2</sup>(CA)
+</div>
+<p>What is, for practical calculations, it can be recasted in terms of energies as:</p>
+<div class="formula">
+	&Delta;E<sup>3</sup> = E(ABC) - E(AB) - E(BC) - E(CA) + E(A) + E(B) + E(C)
+</div>

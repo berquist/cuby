@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Input file data types</h1>
+
+<!-- :integer, float, :string, :symbol, :boolean, :hash, :hash_symbol_symbol, :array, :symbol_list -->
+
+<p>
+Cuby checks and modifies the values of the keywords accordingly to their data type.
+The following page explains the syntax of the keywords of various types and how Cuby
+handles them.
+</p>  
+
+<a name="integer"></a><h3>Integer</h3>
+<p>
+An integer number, such as
+</p>
+<pre><code>charge: 1</code></pre>
+
+
+<a name="float"></a><h3>Float</h3>
+<p>
+A floating-point number, optionally in scientific notation
+</p>
+<pre><code>number: 1.5
+small_number: 1.2e-3</code></pre>
+
+
+<a name="boolean"></a><h3>Boolean</h3>
+<p>
+A logical value. YAML recognizes following values: true, on, yes / false, off, no.
+</p>
+<pre><code>run_faster: yes</code></pre>
+
+
+<a name="string"></a><h3>String</h3>
+<p>
+A string or text. Cuby checks the type but not the contents. YAML uses several possible notations
+for difefernt types of strings. The most simple is to enter the string directly:
+</p>
+<pre><code>string1: This is my string.</code></pre>
+<p>When there are problematic characters, the string should be quoted:</p>
+<pre><code>string2: "!@#"</code></pre>
+<p>Multi-line string can be enetered as well, using the '|' label and indenting the lines (the indent is removed upon parsing):</p>
+<pre><code>string3: |
+  line 1
+  line 2
+  ...</code></pre>
+
+
+<a name="symbol"></a>
+<h3>Symbol</h3>
+<p>
+Symbol is a short (one word) string. In the cuby input, it is used in keywords
+that expect a value from a predefined list. Parsing symbols in the cuby input
+is case insensitive.
+The symbol is writen simply as is, no quotes are needed. For example, the
+<a href="keywords.html#method">method</a> is specified by a symbol:
+</p>
+<pre><code>method: HF</code></pre>
+
+
+<a name="symbol_list"></a><h3>List of symbols</h3>
+<p>
+A comma-separated list of symbols. This is not a YAML type, the parsing is done in Cuby.
+</p>
+<pre><code>list: item, second_item, another_item</code></pre>
+
+
+<a name="array"></a><h3>Array</h3>
+<p>
+An array of entries of some other type. There are two ways how to write array in YAML: inline
+</p>
+<pre><code>array: [ 1, 2, 3 ]</code></pre>
+<p>using one item per line, starting with '-' (optionally indented):</p>
+<pre><code>array:
+  - 1
+  - 2
+  - 3</code></pre>
+
+
+<a name="hash"></a><h3>Hash</h3>
+<p>
+Hash is a set of key-value pairs. The Cuby input is structured as a hash but a single keyword can have the same structure, e.g:
+</p>
+<pre><code>element_parameters:
+  H: 1.0
+  C: 2.0</code></pre>
+<p>Also, it can be written on a single line:</p>
+<pre><code>element_parameters: { H: 1.0,  C: 2.0 } </code></pre>
+
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+#===============================================================================
+# Orca example 1: setup, HF calculation
+#===============================================================================
+
+# Simple input for HF calculation, all other options use default values.
+
+job: energy
+interface: orca
+
+method: hf
+basisset: cc-pVDZ
+
+geometry: A24:water # Water molecule from the internal database
+charge: 0
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# Path to Orca binaries
+orca_bin_dir: /home/rezac/bin/orca/orca-3.0.2/arch/amd64/orca_3_0_2_linux_x86-64
+
+# The following examples assume that the interface is set up in the config file.

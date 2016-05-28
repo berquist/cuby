@@ -1,0 +1,38 @@
+#===============================================================================
+# Psi4 interface example 3 - SAPT
+#===============================================================================
+
+# This input demonstrates how to run a SAPT calculation, it requires some
+# specific input.
+
+interface: psi4
+
+# Although interaction energy is calculated, it is done in a single run of
+# the external program, called by the "energy" protocol
+job: energy
+
+geometry: S66:water_dimer # Water dimer from the S66 data set
+charge: 0
+
+method: sapt
+# Order of the SAPT expansion - SAPT0 is the most approximate level available:
+psi4_sapt_level: sapt0
+
+basisset: aug-cc-pVDZ
+density_fitting: both
+
+# The information on the fragments (monomers) to be passed to Psi4:
+psi4_geometry_fragments: yes
+molecule_a:
+  charge: 0
+  multiplicity: 1
+  selection: "1-3"
+molecule_b:
+  charge: 0
+  multiplicity: 1
+  selection: "4-6"
+
+# To get the components of the interaction energy, enable their printing:
+print: energy_decomposition
+
+

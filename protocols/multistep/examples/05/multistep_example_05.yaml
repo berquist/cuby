@@ -1,0 +1,49 @@
+#===============================================================================
+# Multistep protocol example 5 - parallelization
+#===============================================================================
+
+# This is a copy of Example 1 with added paralellization. Only the commented
+# keywords were added.
+
+# Steps that do not depend on each other can be calculated in parallel.
+# The number of parallel processes is set globally:
+cuby_threads: 4
+
+job: multistep
+steps: pm6, pm6-dh2, pm6-dh+, pm6-d3h4
+
+calculation_common:
+  job: interaction
+  geometry: S66:01
+  interface: mopac
+  method: pm6
+  charge: 0
+  molecule_a:
+    charge: 0
+  molecule_b:
+    charge: 0
+
+calculation_pm6:
+# The following keyword (applied also to the following steps) queues this step
+# until 1) all steps are queued, or 2) a step which does not have this flag is 
+# encountered. Then, the queue is executed and results are printed in the
+# original order.
+  step_queue: yes
+
+calculation_pm6-dh2:
+  mopac_corrections: dh2
+  step_queue: yes # queue this step as well
+
+calculation_pm6-dh+:
+  mopac_corrections: dh+
+  step_queue: yes # queue this step as well
+
+calculation_pm6-d3h4:
+  step_title: "PM6-D3H4 - not in Mopac, using modifiers in Cuby"
+# Do not queue this step. When this step is encountered, all the previously
+# queued steps are executed before this step is executed.
+  step_queue: no # (this is the default value)
+  modifiers: dispersion3, h_bonds4
+  modifier_h_bonds4:
+    h_bonds4_extra_scaling: {}
+

@@ -1,0 +1,14 @@
+        _______  
+       /\______\ 
+      / /      / 
+     / / Cuby /   Scan
+     \/______/   
+                 
+0.000000	Energy:           -54.130770 kcal/mol
+0.447214	Energy:           -53.664500 kcal/mol
+0.894427	Energy:           -52.269720 kcal/mol
+1.341641	Energy:           -49.956900 kcal/mol
+1.788854	Energy:           -46.736690 kcal/mol
+2.236068	Energy:           -42.607440 kcal/mol
+2.683282	Energy:           -37.530230 kcal/mol
+

@@ -1,0 +1,19 @@
+################################################################################
+# Keywords for protocol Gradient
+################################################################################
+
+keywords: 
+  :gradient_projected: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Project out translation and rotation from the gradient. Nothe that this
+  #: procedure is automatically carried out by some of the interfaces and
+  #: external programs used to calculate the gradient.
+ 
+  :gradient_on_point_charges: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Calculate and print also the gradient on point charges. The gradient
+  #: projection should be switched off.

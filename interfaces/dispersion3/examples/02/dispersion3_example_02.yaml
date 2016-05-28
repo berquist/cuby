@@ -1,0 +1,35 @@
+#===============================================================================
+# Dispersion3 example 2: Manual setup of parameters
+#===============================================================================
+
+# This example yields a result identical to the one of example 1 but the
+# parameters for the dispersion correction are eneterd manually
+
+# Interaction energy calculation
+job: interaction
+
+# Methane dimer from the internal database
+geometry: A24:methane_dimer
+
+# DFT calculation setup
+interface: turbomole
+method: dft
+functional: b-lyp
+basisset: def2-QZVP # This is the recommended basis set for DFT-D3)
+
+# Adding the dispersion correction as a modifier
+modifiers: dispersion3
+
+#-------------------------------------------------------------------------------
+# Dispersion3 correction setup - in a separate block
+#-------------------------------------------------------------------------------
+modifier_dispersion3:
+  # Damping function:
+  d3_damping: bj
+  # Damping function parameters
+  d3_a1: 0.4298
+  d3_a2: 4.2359
+  # Third parameter: scaling of the C8 term
+  d3_s8: 2.6996
+  # Other parameters set to default values
+ 

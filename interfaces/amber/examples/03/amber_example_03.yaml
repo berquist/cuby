@@ -1,0 +1,16 @@
+#===============================================================================
+# Amber example 3: Getting atomic charges
+#===============================================================================
+
+# The interface can be used to extract atomic charges from the forcefield
+# for the calculated system. The input is the same as for a real calculation
+# of the charges by other methods.
+
+job: atomic_charges
+interface: amber
+geometry: ../02/ace-ala-nme.pdb
+
+atomic_charges: forcefield
+# The type of the charges must be provided, in this case "forcefield" is
+# the only option.
+

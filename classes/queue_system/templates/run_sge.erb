@@ -1,0 +1,12 @@
+#!<%= @shell %>
+#$ -cwd
+#$ -q <%= queue_name %>
+#$ -pe <%= sge_pe %> <%= no_of_cpus %>
+#$ -o _sge_out.out
+#$ -e _sge_out.err
+#$ -N <%= job_name %>
+
+# Set up directories for common part of the template
+INPUT_WORKDIR=$PWD
+SCRATCH_DIR=<%= scratch_dir %>/${QUEUE}_${JOB_ID}
+

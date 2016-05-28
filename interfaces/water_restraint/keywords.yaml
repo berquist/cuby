@@ -1,0 +1,19 @@
+
+keywords:
+  :qmmm_wat_center: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :die
+  #: Selection of atoms defining the center of the solvent sphere
+
+  :qmmm_wat_num: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: Number of waters in the QMMM regions (waters clostest to
+  #: the center defined by qmmm_wat_center are selected)
+
+  :qmmm_wat_k: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :default
+    default_value: 5.0
+  #: Force constant for attraction of the QM water, in kcal/mol/A^2
+

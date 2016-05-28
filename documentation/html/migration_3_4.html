@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Migration from Cuby 3 to Cuby 4</h1>
+<p>Here we will discuss the most important differences between Cuby versions 3 and 4.</p>
+<h2>Running Cuby</h2>
+<p>Cuby has now only one executable, cuby4. What kind of job is run is defined in the input,
+using the <a href="keywords.html#job">job</a> keyword. Alternatively, the job type
+can be specified on the command line using the -j switch.</p>
+<p>To perform a calculation, Cuby expects just one argument: the name of the input file.
+The geometry is also defined in the input using the <a href="keywords.html#geometry">geometry</a>
+keyword. Again, the value of this keyword can be set from the command line
+using the -g option.</p>
+<h2>Input structure</h2>
+<p>The input for Cuby 4 is very similar to the one for Cuby3 and it is still based on
+the YAML format. However, the input for Cuby 4 is more structured. In some cases, the
+input becomes more complex but the new format allows to define much more complicated
+composite jobs. The most important rule is that each calculation performed reads its
+settings from a separate block of the input.</p>
+<p>For example, a DFT calculation with a modifier adding the
+<a href="interface_dispersion3.html">D3 dispersion</a> in Cuby 3 mixed
+the parameters for both calculations at the root level of the input:</p>
+<pre><code>functional: b-lyp
+basisset: def2-QZVP
+modifiers: dispersion3
+disp3_sr6: 1.5
+disp3_s8: 0.8</code></pre>
+<p>In Cuby 4, the settings for the dispersion are read from a child block (named,
+with entries indented with respect to the parent level). The name of the block is
+derived from the name of the modifier (note that the keywords for the parameters has
+been renamed as well):</p>
+<pre><code>functional: b-lyp
+basisset: def2-QZVP
+modifiers: dispersion3
+
+modifier_dispersion3:
+  d3_sr6: 1.5
+  d3_s8: 0.8</code></pre>
+<p>However, the block does not have to be present if a default setup is
+determined by Cuby. In this case, Cuby will automatically use the default setup
+for the functional and basis set used in the parent DFT calculation.</p>
+<!--
+<a href="keywords.html#"></a>
+<h2></h2>
+<p></p>
+
+-->
+		</div>
+		</div>
+	</body>
+</html>

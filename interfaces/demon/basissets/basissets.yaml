@@ -1,0 +1,41 @@
+def2-QZVP: BASIS.def2-QZVP
+def2-SVP: BASIS.def2-SVP
+def2-SV(P): BASIS.def2-SV(P)
+def2-SVPD: BASIS.def2-SVPD
+def2-TZVP: BASIS.def2-TZVP
+def2-TZVPP: BASIS.def2-TZVPP
+aug-cc-pVDZ: BASIS.aug-cc-pV(DTQ56)Z
+aug-cc-pVTZ: BASIS.aug-cc-pV(DTQ56)Z
+aug-cc-pVQZ: BASIS.aug-cc-pV(DTQ56)Z
+aug-cc-pV5Z: BASIS.aug-cc-pV(DTQ56)Z
+aug-cc-pV6Z: BASIS.aug-cc-pV(DTQ56)Z
+cc-pVDZ: BASIS.cc-pVDZ
+cc-pVTZ: BASIS.cc-pVTZ
+cc-pVQZ: BASIS.cc-pVQZ
+cc-pV5Z: BASIS.cc-pV5Z
+cc-pV6Z: BASIS.cc-pV6Z
+def2-QZVPD: BASIS.def2-QZVPD
+def2-QZVPP: BASIS.def2-QZVPP
+def2-QZVPPD: BASIS.def2-QZVPPD
+def2-TZVPD: BASIS.def2-TZVPD
+def2-TZVPPD: BASIS.def2-TZVPPD
+MINI: BASIS.MINI
+MINIS: BASIS.MINIS
+"6-311++G**": BASIS.6-311ppGss
+"6-311G**": BASIS.6-311Gss
+aug-pc-0: BASIS.aug-pc-0
+aug-pc-1: BASIS.aug-pc-1
+aug-pc-2: BASIS.aug-pc-2
+aug-pc-3: BASIS.aug-pc-3
+aug-pc-4: BASIS.aug-pc-4
+"6-31G": BASIS.6-31G
+# All-electron basis sets
+DZP: BASIS.DZP
+TZP: BASIS.TZP
+QZP: BASIS.QZP
+# All-electron basis sets, augmented
+ADZP: BASIS.ADZP
+ATZP: BASIS.ATZP
+AQZP: BASIS.AQZP
+# Correlation consistent, with pseudopotentials
+aug-cc-pVQZ-PP: BASIS.aug-cc-pVQZ-PP

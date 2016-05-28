@@ -1,0 +1,128 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol interaction</h1>
+<p>
+Claculation of interaction energy. Monomers in the provided geometry are automatically detected, <a href="keywords.html#bsse_correction">couterpoise correction for BSSE</a> can be applied.
+</p>
+<p>
+The interaction energy in a dimer AB is defined as:
+</p>
+<div class="formula">
+&Delta;E<sub>int</sub> = E(AB) - E(A) - E(B)
+</div>
+
+<h2>Input structure</h2>
+<h4>Optionally, following blocks can be defined in the input:</h4>
+<ul>
+<li>molecule_a - Definition of the first monomer (selection, charge, multiplicity)</li>
+<li>molecule_b - Definition of the second monomer (selection, charge, multiplicity)</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this protocol:</h4>
+<ul>
+<li><a href="keywords.html#bsse_correction">bsse_correction</a></li>
+<li><a href="keywords.html#interaction_check_size">interaction_check_size</a></li>
+</ul>
+<h4>Other keywords used by this protocol:</h4>
+<ul>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+<li><a href="keywords.html#print">print</a></li>
+<li><a href="keywords.html#selection">selection</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/interaction/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Interaction energy calculation example 1 - automatic setup
+#===============================================================================
+
+# The minimal setup for an interaction energy calculation.
+# See Example 2 for manual setup of all options
+
+job: interaction
+bsse_correction: yes # Enable counterpoise correction of BSSE
+geometry: S66:water_dimer # Water dimer from the S66 data set
+charge: 0
+
+# Defaults assumed:
+# 1) Automated selection of monomers - separte molecules detected from connectivity
+# 2) Charge of monomers is set 0
+# 3) Multiplicity of monomers is set to 1
+
+# Calculation
+interface: psi4
+method: MP2
+basisset: cc-pVTZ
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Interaction energy calculation example 2 - manual setup, parallelization
+#===============================================================================
+
+# The same calculation as in Example 1, this time with manual specification
+# of all necessary input
+
+job: interaction
+bsse_correction: yes # Enable counterpoise correction of BSSE
+geometry: S66:water_dimer # Water dimer from the S66 data set
+
+# Definition of the monomers
+# In this case it is optional, it is necessary in following cases:
+# 1) Autodetection of monomers fails, e.g. when they are too close
+# 2) Charges of the monomers are not 0
+# 3) Multiplicities of the monomers are not 1
+molecule_a:
+  selection: "1-3"
+  charge: 0
+  multiplicity: 1
+molecule_b:
+  selection: "4-6"
+  charge: 0
+  multiplicity: 1
+
+# Calculation
+interface: psi4
+method: MP2
+basisset: cc-pVTZ
+
+# Parallelization - the three calculations can be ran simultaneously
+cuby_threads: 3
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

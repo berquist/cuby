@@ -1,0 +1,273 @@
+--- !ruby/object:DftOptions
+#===============================================================================
+# DFT options for PSI4
+#===============================================================================
+functionals:
+  b2plyp: !ruby/object:DftFunctional
+    name: B2PLYP
+    description: B2PLYP Double Hybrid Exchange-Correlation Functional
+    type: :double_hybrid
+  b2plypd: !ruby/object:DftFunctional
+    name: B2PLYP-D
+    description: B2PLYP Double Hybrid Exchange-Correlation Functional
+    type: :double_hybrid
+  b2plypd3: !ruby/object:DftFunctional
+    name: B2PLYP-D3
+    description: B2PLYP Double Hybrid Exchange-Correlation Functional
+    type: :double_hybrid
+  b2plypd3bj: !ruby/object:DftFunctional
+    name: B2PLYP-D3BJ
+    description: B2PLYP Double Hybrid Exchange-Correlation Functional
+    type: :double_hybrid
+  b3lyp: !ruby/object:DftFunctional
+    name: B3LYP
+    description: B3LYP Hybrid-GGA Exchange-Correlation Functional
+    type: :hybrid
+  b3lypchg: !ruby/object:DftFunctional
+    name: B3LYP-CHG
+    description: B3LYP Hybrid-GGA Exchange-Correlation Functional
+    type: :hybrid
+  b3lypd: !ruby/object:DftFunctional
+    name: B3LYP-D
+    description: B3LYP Hybrid-GGA Exchange-Correlation Functional
+    type: :hybrid
+  b3lypd1: !ruby/object:DftFunctional
+    name: B3LYP-D1
+    description: B3LYP Hybrid-GGA Exchange-Correlation Functional
+    type: :hybrid
+  b3lypd3: !ruby/object:DftFunctional
+    name: B3LYP-D3
+    description: B3LYP Hybrid-GGA Exchange-Correlation Functional
+    type: :hybrid
+  b3lypd3bj: !ruby/object:DftFunctional
+    name: B3LYP-D3BJ
+    description: B3LYP Hybrid-GGA Exchange-Correlation Functional
+    type: :hybrid
+  b970: !ruby/object:DftFunctional
+    name: B97-0
+    description: B97-0 Hybrid-GGA Exchange-Correlation Functional
+    type: :hybrid
+  b971: !ruby/object:DftFunctional
+    name: B97-1
+    description: B97-1 Hybrid-GGA Exchange-Correlation Functional
+    type: :hybrid
+  b972: !ruby/object:DftFunctional
+    name: B97-2
+    description: B97-2 Hybrid-GGA Exchange-Correlation Functional
+    type: :hybrid
+  b97d: !ruby/object:DftFunctional
+    name: B97-D
+    description: B97-D Pure-GGA Exchange-Correlation Functional
+    type: :gga
+  b97d3: !ruby/object:DftFunctional
+    name: B97-D3
+    description: B97-D Pure-GGA Exchange-Correlation Functional
+    type: :gga
+  b97d3bj: !ruby/object:DftFunctional
+    name: B97-D3BJ
+    description: B97-D Pure-GGA Exchange-Correlation Functional
+    type: :gga
+  blyp: !ruby/object:DftFunctional
+    name: BLYP
+    description: BLYP GGA Exchange-Correlation Functional
+    type: :gga
+  blypd: !ruby/object:DftFunctional
+    name: BLYP-D
+    description: BLYP GGA Exchange-Correlation Functional
+    type: :gga
+  blypd1: !ruby/object:DftFunctional
+    name: BLYP-D1
+    description: B3LYP Hybrid-GGA Exchange-Correlation Functional
+    type: :gga
+  blypd3: !ruby/object:DftFunctional
+    name: BLYP-D3
+    description: BLYP GGA Exchange-Correlation Functional
+    type: :gga
+  blypd3bj: !ruby/object:DftFunctional
+    name: BLYP-D3BJ
+    description: BLYP GGA Exchange-Correlation Functional
+    type: :gga
+  bp86: !ruby/object:DftFunctional
+    name: BP86
+    description: BP86 GGA Exchange-Correlation Functional
+    type: :gga
+  bp86d: !ruby/object:DftFunctional
+    name: BP86-D
+    description: BP86 GGA Exchange-Correlation Functional
+    type: :gga
+  bp86d1: !ruby/object:DftFunctional
+    name: BP86-D1
+    description: B3LYP Hybrid-GGA Exchange-Correlation Functional
+    type: :hybrid
+  bp86d3: !ruby/object:DftFunctional
+    name: BP86-D3
+    description: BP86 GGA Exchange-Correlation Functional
+    type: :gga
+  bp86d3bj: !ruby/object:DftFunctional
+    name: BP86-D3BJ
+    description: BP86 GGA Exchange-Correlation Functional
+    type: :gga
+  dsdblyp: !ruby/object:DftFunctional
+    name: DSD-BLYP
+    description: DSD-BLYP Dispersion-corrected SCS Double Hybrid XC Functional
+    type: :double_hybrid
+  dsdpbep86: !ruby/object:DftFunctional
+    name: DSD-PBEP86
+    description: DSD-PBEP86 Dispersion-corrected SCS Double Hybrid XC Functional (opt. for -D2)
+    type: :double_hybrid
+  dsdpbepbe: !ruby/object:DftFunctional
+    name: DSD-PBEPBE
+    description: DSD-PBEPBE Dispersion-corrected SCS Double Hybrid XC Functional
+    type: :double_hybrid
+  ft97: !ruby/object:DftFunctional
+    name: FT97
+    description: FT97 GGA Exchange-Correlation Functional
+    type: :gga
+  hcth: !ruby/object:DftFunctional
+    name: HCTH
+    description: HCTH Pure-GGA Exchange-Correlation Functional
+    type: :gga
+  hcth120: !ruby/object:DftFunctional
+    name: HCTH120
+    description: HCTH120 Pure-GGA Exchange-Correlation Functional
+    type: :gga
+  hcth120d3: !ruby/object:DftFunctional
+    name: HCTH120-D3
+    description: HCTH120 Pure-GGA Exchange-Correlation Functional
+    type: :gga
+  hcth120d3bj: !ruby/object:DftFunctional
+    name: HCTH120-D3BJ
+    description: HCTH120 Pure-GGA Exchange-Correlation Functional
+    type: :gga
+  hcth147: !ruby/object:DftFunctional
+    name: HCTH147
+    description: HCTH147 Pure-GGA Exchange-Correlation Functional
+    type: :gga
+  hcth407: !ruby/object:DftFunctional
+    name: HCTH407
+    description: HCTH407 Pure-GGA Exchange-Correlation Functional
+    type: :gga
+  m05: !ruby/object:DftFunctional
+    name: M05
+    description: Heavily Parameterized Hybrid Meta-GGA XC Functional
+    type: :meta_hybrid
+  m052x: !ruby/object:DftFunctional
+    name: M05-2X
+    description: Heavily Parameterized Hybrid Meta-GGA XC Functional
+    type: :meta_hybrid
+  m052xd3: !ruby/object:DftFunctional
+    name: M05-2X-D3
+    description: Heavily Parameterized Hybrid Meta-GGA XC Functional
+    type: :meta_hybrid
+  m05d3: !ruby/object:DftFunctional
+    name: M05-D3
+    description: Heavily Parameterized Hybrid Meta-GGA XC Functional
+    type: :meta_hybrid
+  pbe: !ruby/object:DftFunctional
+    name: PBE
+    description: PBE GGA Exchange-Correlation Functional
+    type: :gga
+  pbed: !ruby/object:DftFunctional
+    name: PBE-D
+    description: PBE GGA Exchange-Correlation Functional
+    type: :gga
+  pbed1: !ruby/object:DftFunctional
+    name: PBE-D1
+    description: PBE GGA Exchange-Correlation Functional
+    type: :gga
+  pbed3: !ruby/object:DftFunctional
+    name: PBE-D3
+    description: PBE GGA Exchange-Correlation Functional
+    type: :gga
+  pbed3bj: !ruby/object:DftFunctional
+    name: PBE-D3BJ
+    description: PBE GGA Exchange-Correlation Functional
+    type: :gga
+  pbe0: !ruby/object:DftFunctional
+    name: PBE0
+    description: PBE0 Hybrid GGA Exchange-Correlation Functional
+    type: :hybrid
+  pbe02: !ruby/object:DftFunctional
+    name: PBE0-2
+    description: PBE0-2 Double Hydrid Exchange-Correlation Functional
+    type: :double_hybrid
+  pbe0d: !ruby/object:DftFunctional
+    name: PBE0-D
+    description: PBE0 Hybrid GGA Exchange-Correlation Functional
+    type: :hybrid
+  pbe0d3: !ruby/object:DftFunctional
+    name: PBE0-D3
+    description: PBE0 Hybrid GGA Exchange-Correlation Functional
+    type: :hybrid
+  pbe0d3bj: !ruby/object:DftFunctional
+    name: PBE0-D3BJ
+    description: PBE0 Hybrid GGA Exchange-Correlation Functional
+    type: :hybrid
+  pw91: !ruby/object:DftFunctional
+    name: PW91
+    description: PW91 GGA Exchange-Correlation Functional
+    type: :gga
+  sogga: !ruby/object:DftFunctional
+    name: SOGGA
+    description: Second Order GGA Exchange-Correlation Functional
+    type: :gga
+  svwn: !ruby/object:DftFunctional
+    name: SVWN
+    description: SVWN3 (RPA) LSDA Functional
+    type: :lda
+  dldf: !ruby/object:DftFunctional
+    name: dlDF
+    description: Dispersionless Hybrid Meta-GGA XC Functional
+    type: :meta_hybrid
+  dldfd: !ruby/object:DftFunctional
+    name: dlDF+D
+    description: Dispersionless Hybrid Meta-GGA XC Functional
+    type: :meta_hybrid
+  dldfd09: !ruby/object:DftFunctional
+    name: dlDF+D09
+    description: Dispersionless Hybrid Meta-GGA XC Functional
+    type: :meta_hybrid
+  wb97: !ruby/object:DftFunctional
+    name: wB97
+    description: Parameterized LRC B97 GGA XC Functional
+    type: :range_separated
+  wb97x: !ruby/object:DftFunctional
+    name: wB97X
+    description: Parameterized Hybrid LRC B97 GGA XC Functional
+    type: :range_separated
+  wb97x2lp: !ruby/object:DftFunctional
+    name: wB97X-2(LP)
+    description: Double Hybrid LRC B97 GGA XC Functional (Large Pople parametrization)
+    type: :range_separated
+  wb97x2tqz: !ruby/object:DftFunctional
+    name: wB97X-2(TQZ)
+    description: Double Hybrid LRC B97 GGA XC Functional (TQZ parametrization)
+    type: :range_separated
+  wb97xd: !ruby/object:DftFunctional
+    name: wB97X-D
+    description: Parameterized Hybrid LRC B97 GGA XC Functional with Dispersion
+    type: :range_separated
+  wblyp: !ruby/object:DftFunctional
+    name: wBLYP
+    description: BLYP SR-XC Functional (HJS Model)
+    type: :range_separated
+  wpbe: !ruby/object:DftFunctional
+    name: wPBE
+    description: PBE SR-XC Functional (HJS Model)
+    type: :range_separated
+  wpbe0: !ruby/object:DftFunctional
+    name: wPBE0
+    description: PBE0 SR-XC Functional (HJS Model)
+    type: :range_separated
+  wpbesol: !ruby/object:DftFunctional
+    name: wPBEsol
+    description: PBEsol SR-XC Functional (HJS Model)
+    type: :range_separated
+  wpbesol0: !ruby/object:DftFunctional
+    name: wPBEsol0
+    description: PBEsol0 SR-XC Functional (HJS Model)
+    type: :range_separated
+  wsvwn: !ruby/object:DftFunctional
+    name: wSVWN
+    description: LSDA SR-XC Functional
+    type: :range_separated

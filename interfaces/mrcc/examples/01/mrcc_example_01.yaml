@@ -1,0 +1,22 @@
+#===============================================================================
+# MRCC example 1: Interface configuration and CCSD(T) calculation
+#===============================================================================
+
+# Energy calculation, water molecule from cuby's database
+job: energy
+geometry: A24:water
+charge: 0
+
+# Use MRCC interface
+interface: mrcc
+
+# MRCC interface configuration
+# Single entry needed - path to the binaries
+mrcc_bin_dir: /home/rezac/bin/mrcc_standalone
+
+# Calculation setup
+method: CCSD(T)
+basisset: STO-3G
+
+# Print components of the energy
+print: energy_decomposition

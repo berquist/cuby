@@ -1,0 +1,1107 @@
+################################################################################
+#
+# Electron configurations for elements 
+#
+# Data from NIST: http://physics.nist.gov/PhysRefData/IonEnergy/tblNew.html
+#
+################################################################################
+
+electron_configuration:
+  :H: !ruby/object:PeriodicTable::ElectronConfiguration
+    shells:
+      - 1
+    orbitals:
+      - s
+    occupations:
+      - 1
+
+  :He: !ruby/object:PeriodicTable::ElectronConfiguration
+    shells:
+      - 1
+    orbitals:
+      - s
+    occupations:
+      - 2
+
+  :Li: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :He
+    shells:
+      - 2
+    orbitals:
+      - s
+    occupations:
+      - 1
+
+  :Be: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :He
+    shells:
+      - 2
+    orbitals:
+      - s
+    occupations:
+      - 2
+
+  :B: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :He
+    shells:
+      - 2
+      - 2
+    orbitals:
+      - s
+      - p
+    occupations:
+      - 2
+      - 1
+
+  :C: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :He
+    shells:
+      - 2
+      - 2
+    orbitals:
+      - s
+      - p
+    occupations:
+      - 2
+      - 2
+
+  :N: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :He
+    shells:
+      - 2
+      - 2
+    orbitals:
+      - s
+      - p
+    occupations:
+      - 2
+      - 3
+
+  :O: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :He
+    shells:
+      - 2
+      - 2
+    orbitals:
+      - s
+      - p
+    occupations:
+      - 2
+      - 4
+
+  :F: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :He
+    shells:
+      - 2
+      - 2
+    orbitals:
+      - s
+      - p
+    occupations:
+      - 2
+      - 5
+
+  :Ne: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :He
+    shells:
+      - 2
+      - 2
+    orbitals:
+      - s
+      - p
+    occupations:
+      - 2
+      - 6
+
+  :Na: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ne
+    shells:
+      - 3
+    orbitals:
+      - s
+    occupations:
+      - 1
+
+  :Mg: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ne
+    shells:
+      - 3
+    orbitals:
+      - s
+    occupations:
+      - 2
+
+  :Al: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ne
+    shells:
+      - 3
+      - 3
+    orbitals:
+      - s
+      - p
+    occupations:
+      - 2
+      - 1
+
+  :Si: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ne
+    shells:
+      - 3
+      - 3
+    orbitals:
+      - s
+      - p
+    occupations:
+      - 2
+      - 2
+
+  :P: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ne
+    shells:
+      - 3
+      - 3
+    orbitals:
+      - s
+      - p
+    occupations:
+      - 2
+      - 3
+
+  :S: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ne
+    shells:
+      - 3
+      - 3
+    orbitals:
+      - s
+      - p
+    occupations:
+      - 2
+      - 4
+
+  :Cl: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ne
+    shells:
+      - 3
+      - 3
+    orbitals:
+      - s
+      - p
+    occupations:
+      - 2
+      - 5
+
+  :Ar: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ne
+    shells:
+      - 3
+      - 3
+    orbitals:
+      - s
+      - p
+    occupations:
+      - 2
+      - 6
+
+  :K: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 4
+    orbitals:
+      - s
+    occupations:
+      - 1
+
+  :Ca: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 4
+    orbitals:
+      - s
+    occupations:
+      - 2
+
+  :Sc: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 1
+      - 2
+
+  :Ti: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 2
+      - 2
+
+  :V: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 3
+      - 2
+
+  :Cr: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 5
+      - 1
+
+  :Mn: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 5
+      - 2
+
+  :Fe: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 6
+      - 2
+
+  :Co: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 7
+      - 2
+
+  :Ni: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 8
+      - 2
+
+  :Cu: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 10
+      - 1
+
+  :Zn: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 10
+      - 2
+
+  :Ga: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+      - 4
+    orbitals:
+      - d
+      - s
+      - p
+    occupations:
+      - 10
+      - 2
+      - 1
+
+  :Ge: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+      - 4
+    orbitals:
+      - d
+      - s
+      - p
+    occupations:
+      - 10
+      - 2
+      - 2
+
+  :As: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+      - 4
+    orbitals:
+      - d
+      - s
+      - p
+    occupations:
+      - 10
+      - 2
+      - 3
+
+  :Se: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+      - 4
+    orbitals:
+      - d
+      - s
+      - p
+    occupations:
+      - 10
+      - 2
+      - 4
+
+  :Br: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+      - 4
+    orbitals:
+      - d
+      - s
+      - p
+    occupations:
+      - 10
+      - 2
+      - 5
+
+  :Kr: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Ar
+    shells:
+      - 3
+      - 4
+      - 4
+    orbitals:
+      - d
+      - s
+      - p
+    occupations:
+      - 10
+      - 2
+      - 6
+
+  :Rb: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 5
+    orbitals:
+      - s
+    occupations:
+      - 1
+
+  :Sr: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 5
+    orbitals:
+      - s
+    occupations:
+      - 2
+
+  :Y: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 1
+      - 2
+
+  :Zr: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 2
+      - 2
+
+  :Nb: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 4
+      - 1
+
+  :Mo: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 5
+      - 1
+
+  :Tc: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 5
+      - 2
+
+  :Ru: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 7
+      - 1
+
+  :Rh: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 8
+      - 1
+
+  :Pd: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+    orbitals:
+      - d
+    occupations:
+      - 10
+
+  :Ag: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 10
+      - 1
+
+  :Cd: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 10
+      - 2
+
+  :In: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+      - 5
+    orbitals:
+      - d
+      - s
+      - p
+    occupations:
+      - 10
+      - 2
+      - 1
+
+  :Sn: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+      - 5
+    orbitals:
+      - d
+      - s
+      - p
+    occupations:
+      - 10
+      - 2
+      - 2
+
+  :Sb: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+      - 5
+    orbitals:
+      - d
+      - s
+      - p
+    occupations:
+      - 10
+      - 2
+      - 3
+
+  :Te: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+      - 5
+    orbitals:
+      - d
+      - s
+      - p
+    occupations:
+      - 10
+      - 2
+      - 4
+
+  :I: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+      - 5
+    orbitals:
+      - d
+      - s
+      - p
+    occupations:
+      - 10
+      - 2
+      - 5
+
+  :Xe: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Kr
+    shells:
+      - 4
+      - 5
+      - 5
+    orbitals:
+      - d
+      - s
+      - p
+    occupations:
+      - 10
+      - 2
+      - 6
+
+  :Cs: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 6
+    orbitals:
+      - s
+    occupations:
+      - 1
+
+  :Ba: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 6
+    orbitals:
+      - s
+    occupations:
+      - 2
+
+  :La: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 5
+      - 6
+    orbitals:
+      - d
+      - s
+    occupations:
+      - 1
+      - 2
+
+  :Ce: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+    occupations:
+      - 1
+      - 1
+      - 2
+
+  :Pr: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 6
+    orbitals:
+      - f
+      - s
+    occupations:
+      - 3
+      - 2
+
+  :Nd: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 6
+    orbitals:
+      - f
+      - s
+    occupations:
+      - 4
+      - 2
+
+  :Pm: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 6
+    orbitals:
+      - f
+      - s
+    occupations:
+      - 5
+      - 2
+
+  :Sm: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 6
+    orbitals:
+      - f
+      - s
+    occupations:
+      - 6
+      - 2
+
+  :Eu: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 6
+    orbitals:
+      - f
+      - s
+    occupations:
+      - 7
+      - 2
+
+  :Gd: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+    occupations:
+      - 7
+      - 1
+      - 2
+
+  :Tb: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 6
+    orbitals:
+      - f
+      - s
+    occupations:
+      - 9
+      - 2
+
+  :Dy: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 6
+    orbitals:
+      - f
+      - s
+    occupations:
+      - 10
+      - 2
+
+  :Ho: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 6
+    orbitals:
+      - f
+      - s
+    occupations:
+      - 11
+      - 2
+
+  :Er: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 6
+    orbitals:
+      - f
+      - s
+    occupations:
+      - 12
+      - 2
+
+  :Tm: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 6
+    orbitals:
+      - f
+      - s
+    occupations:
+      - 13
+      - 2
+
+  :Yb: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 6
+    orbitals:
+      - f
+      - s
+    occupations:
+      - 14
+      - 2
+
+  :Lu: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+    occupations:
+      - 14
+      - 1
+      - 2
+
+  :Hf: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+    occupations:
+      - 14
+      - 2
+      - 2
+
+  :Ta: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+    occupations:
+      - 14
+      - 3
+      - 2
+
+  :W: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+    occupations:
+      - 14
+      - 4
+      - 2
+
+  :Re: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+    occupations:
+      - 14
+      - 5
+      - 2
+
+  :Os: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+    occupations:
+      - 14
+      - 6
+      - 2
+
+  :Ir: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+    occupations:
+      - 14
+      - 7
+      - 2
+
+  :Pt: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+    occupations:
+      - 14
+      - 9
+      - 1
+
+  :Au: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+    occupations:
+      - 14
+      - 10
+      - 1
+
+  :Hg: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+    occupations:
+      - 14
+      - 10
+      - 2
+
+  :Tl: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+      - p
+    occupations:
+      - 14
+      - 10
+      - 2
+      - 1
+
+  :Pb: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+      - p
+    occupations:
+      - 14
+      - 10
+      - 2
+      - 2
+
+  :Bi: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+      - p
+    occupations:
+      - 14
+      - 10
+      - 2
+      - 3
+
+  :Po: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+      - p
+    occupations:
+      - 14
+      - 10
+      - 2
+      - 4
+
+  :At: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+      - p
+    occupations:
+      - 14
+      - 10
+      - 2
+      - 5
+
+  :Rn: !ruby/object:PeriodicTable::ElectronConfiguration
+    reference: :Xe
+    shells:
+      - 4
+      - 5
+      - 6
+      - 6
+    orbitals:
+      - f
+      - d
+      - s
+      - p
+    occupations:
+      - 14
+      - 10
+      - 2
+      - 6

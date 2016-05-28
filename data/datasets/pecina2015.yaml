@@ -1,0 +1,474 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+
+# CCSD(T)/CBS:
+#   MP2/aug-cc-pVDZ -> aug-cc-pVTZ
+#   dCCSD/aug-cc-pVDZ
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: "Pecina_2015"
+  text: "Chalcogen and pnicogen bonds of heteroboranes"
+  references: 
+    "10.1021/jp511101n": "Pecina, A.; Lepšík, M.; Hnyk, D.; Hobza, P.; Fanfrlík, J. J. Phys. Chem. A 2015, 119 (8), 1388–1395."
+
+  groups:
+    - Pn-bond
+    - E-bond
+    - X-Bond
+  global_setup:
+    job: interaction
+    molecule_a:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+    molecule_b:
+      selection: "auto"
+      charge: 0
+      multiplicity: 1
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 As2B10 ... Acetone  minimum
+  shortname: 01_As2B10-Acetone_140
+  geometry: pecina2015:As2B10-Acetone_140
+  reference_value: -5.3
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: Pn-bond
+  tags: "As-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 As2B10 ... N_trimet minimum
+  shortname: 02_As2B10-N_trimet_145
+  geometry: pecina2015:As2B10-N_trimet_145
+  reference_value: -7.0
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: Pn-bond
+  tags: "As-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 As2B10 ... O_dimet minimum
+  shortname: 03_As2B10-O_dimet_145
+  geometry: pecina2015:As2B10-O_dimet_145
+  reference_value: -5.1
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: Pn-bond
+  tags: "As-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 As2B10 ... ben minimum
+  shortname: 04_As2B10-ben_160
+  geometry: pecina2015:As2B10-ben_160
+  reference_value: -5.4
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: Pn-bond
+  tags: "As-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 As2B10 ... form minimum
+  shortname: 05_As2B10-form_150
+  geometry: pecina2015:As2B10-form_150
+  reference_value: -5.8
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: Pn-bond
+  tags: "As-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 BrC2B10 ... N_trimet linear
+  shortname: 06_BrC2B10-N_trimet
+  geometry: pecina2015:BrC2B10-N_trimet
+  reference_value: -8.1
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: X-bond
+  tags: "Br-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 BrC2B10 ... O_dimet linear
+  shortname: 07_BrC2B10-O_dimet
+  geometry: pecina2015:BrC2B10-O_dimet
+  reference_value: -4.6
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: X-bond
+  tags: "Br-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 08 BrC2B10 ... acetone linear
+  shortname: 08_BrC2B10-acetone
+  geometry: pecina2015:BrC2B10-acetone
+  reference_value: -4.5
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: X-bond
+  tags: "Br-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 09 BrC2B10 ... form linear
+  shortname: 09_BrC2B10-form
+  geometry: pecina2015:BrC2B10-form
+  reference_value: -5.0
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: X-bond
+  tags: "Br-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 10 P2B10 ... N_trimet linear
+  shortname: 10_P2B10-N_trimet
+  geometry: pecina2015:P2B10-N_trimet
+  reference_value: -6.0
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: Pn-bond
+  tags: "P-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 11 P2B10 ... O_dimet linear
+  shortname: 11_P2B10-O_dimet
+  geometry: pecina2015:P2B10-O_dimet
+  reference_value: -4.3
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: Pn-bond
+  tags: "P-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 12 P2B10 ... acetone linear
+  shortname: 12_P2B10-acetone
+  geometry: pecina2015:P2B10-acetone
+  reference_value: -4.3
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: Pn-bond
+  tags: "P-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 13 P2B10 ... ben linear
+  shortname: 13_P2B10-ben
+  geometry: pecina2015:P2B10-ben
+  reference_value: -4.3
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: Pn-bond
+  tags: "P-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 14 P2B10 ... form linear
+  shortname: 14_P2B10-form
+  geometry: pecina2015:P2B10-form
+  reference_value: -5.3
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: Pn-bond
+  tags: "P-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 SB11 ... N_trimet linear
+  shortname: 15_SB11-N_trimet
+  geometry: pecina2015:SB11-N_trimet
+  reference_value: -3.8
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "S-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 15 SB11 ... N_trimet minimum
+  shortname: 15_SB11-N_trimet_135
+  geometry: pecina2015:SB11-N_trimet_135
+  reference_value: -6.5
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "S-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 SB11 ... O_dimet linear
+  shortname: 16_SB11-O_dimet
+  geometry: pecina2015:SB11-O_dimet
+  reference_value: -3.3
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "S-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 16 SB11 ... O_dimet minimum
+  shortname: 16_SB11-O_dimet_140
+  geometry: pecina2015:SB11-O_dimet_140
+  reference_value: -4.3
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "S-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 SB11 ... acetone linear
+  shortname: 17_SB11-acetone
+  geometry: pecina2015:SB11-acetone
+  reference_value: -3.4
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "S-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 17 SB11 ... acetone minimum
+  shortname: 17_SB11-acetone_135
+  geometry: pecina2015:SB11-acetone_135
+  reference_value: -5.4
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "S-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 SB11 ... ben linear
+  shortname: 18_SB11-benzene
+  geometry: pecina2015:SB11H11-benzene
+  reference_value: -6.1
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "S-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 18 SB11 ... ben minimum
+  shortname: 18_SB11-ben_165
+  geometry: pecina2015:SB11-ben_165
+  reference_value: -6.3
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "S-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 SB11 ... form linear
+  shortname: 19_SB11-form
+  geometry: pecina2015:SB11-form
+  reference_value: -2.5
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "S-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 19 SB11 ... form minimum
+  shortname: 19_SB11-form_130
+  geometry: pecina2015:SB11-form_130
+  reference_value: -5.9
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "S-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 20 SeB11 ... N_trimet linear
+  shortname: 20_SeB11-N_trimet
+  geometry: pecina2015:SeB11-N_trimet
+  reference_value: -4.4
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "Se-N"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 21 SeB11 ... O_dimet linear
+  shortname: 21_SeB11-O_dimet
+  geometry: pecina2015:SeB11-O_dimet
+  reference_value: -3.4
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "Se-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 22 SeB11 ... acetone linear
+  shortname: 22_SeB11-acetone
+  geometry: pecina2015:SeB11-acetone
+  reference_value: -4.0
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "Se-O"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 23 SeB11 ... benzene linear
+  shortname: 23_SeB11-benzene
+  geometry: pecina2015:SeB11-benzene
+  reference_value: -6.5
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "Se-pi"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 24 SeB11 ... form linear
+  shortname: 24_SeB11-form
+  geometry: pecina2015:SeB11-form
+  reference_value: -4.1
+  setup: 
+    molecule_a:
+      selection: "%molecule(1)"
+      charge: 0
+    molecule_b:
+      selection: "%molecule(2)"
+      charge: 0
+  group: E-bond
+  tags: "Se-O"
+

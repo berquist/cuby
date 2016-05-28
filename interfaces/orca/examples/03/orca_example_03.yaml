@@ -1,0 +1,24 @@
+#===============================================================================
+# Orca example 3: MP2 and RI-MP2 calculation
+#===============================================================================
+
+# Multistep protocol is used to run two calculations from one input
+job: multistep 
+steps: mp2, rimp2
+
+# In contrast to the previous example, we gather the setup used in all steps
+# into a common subsection:
+calculation_common:
+  job: energy
+  interface: orca
+  method: mp2
+  basisset: cc-pVTZ
+  geometry: A24:water
+  charge: 0
+
+calculation_mp2:
+  density_fitting: none # disable RI (by default, it is enabled)
+
+calculation_rimp2:
+  density_fitting: correlation # enable RI (not necessary, enabled by default)
+  auxiliary_basis_mp2: cc-pVTZ # Auxiliary basis for RI has to be specified

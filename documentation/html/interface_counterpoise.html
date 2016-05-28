@@ -1,0 +1,158 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface counterpoise</h1>
+<p>
+Implementation of the Boys and Bernardi counterpoise correction[1] for basis set superposition error. This interface implements it for the total energy and its derivatives, five calculations are required to isolate the BSSE and remove it. For counterpoise-corrected calculations of interaction energy, use the option <a href="keywords.html#bsse_correction">bsse_correction</a> in the <a href="protocol_interaction.html">interaction</a> protocol as it is more efficient (only three calculations are needed).
+</p>
+<ol>
+	<li>Boys, S.; Bernardi, F. Mol. Phys. 1970, 19, 553.</li>
+</ol>
+
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Input structure</h2>
+<h4>The interface requires following blocks in the input:</h4>
+<ul>
+<li>calculation - Setup for the calculation</li>
+</ul>
+<h4>Optionally, following blocks can be defined in the input:</h4>
+<ul>
+<li>molecule_a - Block defining monomer A (should contain keywords selection, charge, multiplicity)</li>
+<li>molecule_b - Block defining monomer B (should contain keywords selection, charge, multiplicity)</li>
+</ul>
+<h2>Keywords used</h2>
+<p>This interface does not use any specific keywords</p>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+<li><a href="keywords.html#selection">selection</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/counterpoise/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Counterpoise example 1: energy calculation
+#===============================================================================
+
+# Counterpoise-corrected energy calculation
+job: energy
+interface: counterpoise
+
+# The calculation method has to be specified in a separate block,
+# note that the keyword "job" is not present
+calculation:
+  interface: turbomole
+  method: HF
+  basisset: SVP
+
+# Water dimer from Cuby's database
+geometry: A24:water_dimer
+charge: 0
+
+# The energy components list also the uncorrected energy
+# and corerc ted and uncorrected interaction energies:
+print: energy_decomposition
+
+# The following input is optional in this case as cuby can find the two
+# moelcules automatically and in the case of neutral singlet dimer, it assumes
+# them to be neutral singlets too
+molecule_a:
+  selection: 1-3
+  charge: 0
+  multiplicity: 1
+molecule_b:
+  selection: 4-6
+  charge: 0
+  multiplicity: 1
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Counterpoise example 2: geometry optimization
+#===============================================================================
+
+# Counterpoise-corrected geometry optimization
+job: optimize
+interface: counterpoise
+
+# Run three calculations in parallel
+cuby_threads: 3
+
+# Higher-quality optimization, the result will be used in vibrational calculation
+optimizer: rfo
+opt_quality: 0.1
+
+# The calculation method has to be specified in a separate block,
+# note that the keyword "job" is not present
+calculation:
+  interface: turbomole
+  method: HF
+  basisset: SVP
+  scf_convergence: 8
+
+# Water dimer from Cuby's database
+geometry: A24:water_dimer
+charge: 0
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Counterpoise example 3: vibrational frequencies
+#===============================================================================
+
+# Counterpoise-corrected harmonic vibrational frequencies
+job: frequencies
+interface: counterpoise
+
+# Run three calculations in parallel
+cuby_threads: 3
+
+# The calculation method has to be specified in a separate block,
+# note that the keyword "job" is not present
+calculation:
+  interface: turbomole
+  density_fitting: none # Turbomole's RI has to be disabled for hessian calculations
+  method: HF
+  basisset: SVP
+  scf_convergence: 8
+
+# Geometry from previous example
+geometry: optimized.xyz
+charge: 0
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+#===============================================================================
+# Molecular dynamics example 2 - restarting the simulation
+#===============================================================================
+
+# This example demonstrates restarting a MD run
+
+job: multistep
+steps: first, second
+
+calculation_first:
+  job: dynamics
+  maxcycles: 100
+  # Amber calculation of ace-ala-nme tripeptide from database
+  interface: amber
+  geometry: ace-xxx-nme:ala
+  # By default, the simulation starts with random velocities generated from
+  # the Boltzmann distribution
+  init_temp: 600 
+  # Every MD run produces file 'last.xyz' containing the final geometry and
+  # velocities. Alternatively (e.g. if the run did not finish), a snapshot from
+  # the trajectory can be used instead
+  trajectory_file: trajectory1.xyz
+
+calculation_second:
+  # The same setup as in previous step
+  job: dynamics
+  maxcycles: 100
+  interface: amber
+  # Geometry for amber must be read from a PDB file, we can't use last.xyz directly
+  # Therefore, we load the original geometry and update coordinates from the
+  # restart file.
+  geometry: ace-xxx-nme:ala
+  geometry_update_coordinates: last.xyz
+  # Velocities are read from the restart as well:
+  velocities: read
+  velocities_file: last.xyz
+  # Write to second trajectory file
+  trajectory_file: trajectory2.xyz
+
+# The two trajectories produced should be equivalent to running a single,
+# longer MD simulation 

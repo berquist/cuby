@@ -1,0 +1,195 @@
+# Atomic heats of formation
+# Data collected from http://kinetics.nist.gov/janaf/
+# Few missing values from http://www.codata.info/resources/databases/key1.html
+# in kcal/mol
+
+# reference states used:
+# h0 - free atom (g)
+# h298_corr - standard state (g), per atom
+# s0_298 - free atom (g)
+
+:H: !ruby/object:AtomThermochemistry
+  h0: 51.634
+  h298_corr: 1.012
+  s0_298: 27.418
+
+:He: !ruby/object:AtomThermochemistry
+  h0: 0.000
+  h298_corr: 1.481
+  s0_298: 30.151
+
+:Li: !ruby/object:AtomThermochemistry
+  h0: 37.697
+  h298_corr: 1.105
+  s0_298: 33.169
+
+:Be: !ruby/object:AtomThermochemistry
+  h0: 76.418
+  h298_corr: 0.462
+  s0_298: 32.570
+
+:B: !ruby/object:AtomThermochemistry
+  h0: 132.624
+  h298_corr: 0.290
+  s0_298: 36.672
+
+:C: !ruby/object:AtomThermochemistry
+  h0: 169.977
+  h298_corr: 0.251
+  s0_298: 37.787
+
+:N: !ruby/object:AtomThermochemistry
+  h0: 112.529
+  h298_corr: 1.036
+  s0_298: 36.640
+
+:O: !ruby/object:AtomThermochemistry
+  h0: 58.984
+  h298_corr: 1.038
+  s0_298: 38.494
+
+:F: !ruby/object:AtomThermochemistry
+  h0: 18.471
+  h298_corr: 1.055
+  s0_298: 37.942
+
+:Ne: !ruby/object:AtomThermochemistry
+  h0: 0.000
+  h298_corr: 1.481
+  s0_298: 34.895
+
+:Na: !ruby/object:AtomThermochemistry
+  h0: 25.705
+  h298_corr: 1.541
+  s0_298: 36.727
+
+:Mg: !ruby/object:AtomThermochemistry
+  h0: 34.871
+  h298_corr: 1.195
+  s0_298: 35.528
+
+:Al: !ruby/object:AtomThermochemistry
+  h0: 78.231
+  h298_corr: 1.085
+  s0_298: 39.329
+
+:Si: !ruby/object:AtomThermochemistry
+  h0: 106.517
+  h298_corr: 0.769
+  s0_298: 40.148
+
+:P: !ruby/object:AtomThermochemistry
+  h0: 75.419
+  h298_corr: 1.281
+  s0_298: 39.005
+
+:S: !ruby/object:AtomThermochemistry
+  h0: 65.663
+  h298_corr: 1.054
+  s0_298: 40.112
+
+:Cl: !ruby/object:AtomThermochemistry
+  h0: 28.590
+  h298_corr: 1.097
+  s0_298: 39.481
+
+:Ar: !ruby/object:AtomThermochemistry
+  h0: 0.000
+  h298_corr: 1.481
+  s0_298: 37.009
+
+:K: !ruby/object:AtomThermochemistry
+  h0: 21.483
+  h298_corr: 1.693
+  s0_298: 38.322
+
+:Ca: !ruby/object:AtomThermochemistry
+  h0: 42.385
+  h298_corr: 1.371
+  s0_298: 37.019
+
+:Ti: !ruby/object:AtomThermochemistry
+  h0: 112.553
+  h298_corr: 1.154
+  s0_298: 43.092
+
+:V: !ruby/object:AtomThermochemistry
+  h0: 122.419
+  h298_corr: 1.109
+  s0_298: 43.570
+
+:Cr: !ruby/object:AtomThermochemistry
+  h0: 94.489
+  h298_corr: 0.970
+  s0_298: 41.661
+
+:Mn: !ruby/object:AtomThermochemistry
+  h0: 67.412
+  h298_corr: 1.194
+  s0_298: 41.519
+
+:Fe: !ruby/object:AtomThermochemistry
+  h0: 98.740
+  h298_corr: 1.077
+  s0_298: 43.138
+
+:Co: !ruby/object:AtomThermochemistry
+  h0: 101.598
+  h298_corr: 1.140
+  s0_298: 42.906
+
+:Ni: !ruby/object:AtomThermochemistry
+  h0: 102.313
+  h298_corr: 1.144
+  s0_298: 43.544
+
+:Cu: !ruby/object:AtomThermochemistry
+  h0: 80.404
+  h298_corr: 1.197
+  s0_298: 39.770
+
+:Zn: !ruby/object:AtomThermochemistry
+  h0: 31.045
+  h298_corr: 1.355
+  s0_298: 38.477
+
+:Ga: !ruby/object:AtomThermochemistry
+  h0: 64.763
+  h298_corr: 1.329
+  s0_298: 40.402
+
+:Br: !ruby/object:AtomThermochemistry
+  h0: 28.183
+  h298_corr: 1.162
+  s0_298: 41.830
+
+:Kr: !ruby/object:AtomThermochemistry
+  h0: 0.000
+  h298_corr: 1.481
+  s0_298: 39.217
+
+:I: !ruby/object:AtomThermochemistry
+  h0: 25.613
+  h298_corr: 1.577
+  s0_298: 43.209
+
+# H298 values from
+# http://www.wiredchemist.com/chemistry/data/enthalpies 
+# (original source: W.E. Dasent, "Inorganic Energetics," 2nd ed., Cambridge University Press, NY, 1982, p. 35)
+# The same values values can be found at
+# http://elements.etacude.com/
+
+# h298_corr is estimated to be 1.1, based on the trends in periodic table
+# h0 is estimated as h298 - h298_corr
+
+:As: !ruby/object:AtomThermochemistry
+  #h298: 72.18
+  h0: 71.28
+  h298_corr: 1.1
+  s0_298: 0.0
+
+:Se: !ruby/object:AtomThermochemistry
+  #h298: 54.25
+  h0: 53.15
+  h298_corr: 1.1
+  s0_298: 0.0

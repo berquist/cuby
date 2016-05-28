@@ -1,0 +1,219 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface dftb</h1>
+<p>
+Interface to the <a href="http://www.dftb-plus.info/">DFTB+</a> program implementing self consistenct charges density functional tight binding (SCC-DFTB) methods.[1] The program requires also parameters available separately at <a href="http://www.dftb.org/">www.dftb.org</a>. Free for academic use.
+</p>
+
+<h2>Changelog</h2>
+<p>
+<strong>Feb 2, 2016</strong>: two important changes were made in the input. Firstly, the built-in <a href="keywords.html#dftb_dispersion">DFTB-D dispersion</a> is now switched off by default. Warning is printed when the keyword is not set for a transition period. Secondly, the <a href="keywords.html#dftb_hubbard_derivs">dftb_hubbard_derivs</a> behaves differently and the default setup was changed to the values used in DFTB3.
+</p>
+
+<h2>DFTB-D</h2>
+<p>
+Empirical dispersion coorrection was developed for SCC-DFTB with the MIO parameters set.[2] It is available in DFTB + and it can be activated by the <a href="keywords.html#dftb_dispersion">dftb_dispersion</a> keyword.
+</p>
+
+<h2>DFTB3 and DFTB3-D3</h2>
+<p>
+The acronym DFTB3 is used for a third-order SCC-DFTB with the 3OB parameter set and gamma function damping exponent of 4.0.[3] The folowing input reproduces the DFTB3 setup in cuby:
+</p>
+<pre><code>method: scc-dftb3
+dftb_slko_set: 3ob
+dftb_xh_damping: yes
+dftb_xh_damping_exp: 4.0</code></pre>
+<p>
+The D3 dispersion was parameterized for DFTB3 by Grimme[4], in Cuby it can be applied using the following setup:
+</p>
+<pre><code>modifiers: dispersion3
+modifier_dispersion3:
+  d3_damping: bj
+  d3_a1: 0.746
+  d3_a2: 4.191
+  d3_s8: 3.209</code></pre>
+
+<h2>References</h2>
+<ol>
+	<li><a href="http://dx.doi.org/10.1103/PhysRevB.58.7260">Elstner, M.; Porezag, D.; Jungnickel, G.; Elsner, J.; Haugk, M.; Frauenheim, T.; Suhai, S.; Seifert, G. Phys. Rev. B 1998, 58 (11), 7260–7268.</a></li>
+	<li><a href="http://dx.doi.org/10.1063/1.1329889">Elstner, M.; Hobza, P.; Frauenheim, T.; Suhai, S.; Kaxiras, E. J. Chem. Phys. 2001, 114 (12), 5149.</a></li>
+	<li><a href="http://dx.doi.org/10.1021/ct100684s">Gaus, M.; Cui, Q.; Elstner, M. J. Chem. Theory Comput. 2011, 7 (4), 931–948.</a></li>
+	<li><a href="http://dx.doi.org/10.1002/anie.201300158">Grimme, S. Angew. Chem. Int. Ed. 2013, 52 (24), 6306–6312.</a> (Parameters provided in Supplementary information)</li>
+</ol>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>scc-dftb</li>
+<li>scc-dftb3</li>
+</ul>
+<h4>All the methods support calculation of following properties:</h4>
+<ul>
+<li>energy</li>
+<li>gradient</li>
+<li>point_charges</li>
+<li>point_charges_gradient</li>
+<li>atomic_charges</li>
+</ul>
+<h4>The interface implements following atomic charge types (keyword 'atomic_charges'):</h4>
+<ul>
+<li>mulliken - Mulliken charges</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#dftb_3rd_order_full">dftb_3rd_order_full</a></li>
+<li><a href="keywords.html#dftb_blur_charges">dftb_blur_charges</a></li>
+<li><a href="keywords.html#dftb_cm3_charges">dftb_cm3_charges</a></li>
+<li><a href="keywords.html#dftb_cpe">dftb_cpe</a></li>
+<li><a href="keywords.html#dftb_data_file">dftb_data_file</a></li>
+<li><a href="keywords.html#dftb_dispersion">dftb_dispersion</a></li>
+<li><a href="keywords.html#dftb_do_scc">dftb_do_scc</a></li>
+<li><a href="keywords.html#dftb_e_temp">dftb_e_temp</a></li>
+<li><a href="keywords.html#dftb_exe">dftb_exe</a></li>
+<li><a href="keywords.html#dftb_extra_input_hamiltonian">dftb_extra_input_hamiltonian</a></li>
+<li><a href="keywords.html#dftb_hubbard_derivs">dftb_hubbard_derivs</a></li>
+<li><a href="keywords.html#dftb_hubbard_derivs_custom">dftb_hubbard_derivs_custom</a></li>
+<li><a href="keywords.html#dftb_safe">dftb_safe</a></li>
+<li><a href="keywords.html#dftb_scc_convergence">dftb_scc_convergence</a></li>
+<li><a href="keywords.html#dftb_slko_basepath">dftb_slko_basepath</a></li>
+<li><a href="keywords.html#dftb_slko_format">dftb_slko_format</a></li>
+<li><a href="keywords.html#dftb_slko_set">dftb_slko_set</a></li>
+<li><a href="keywords.html#dftb_use_dftbplus">dftb_use_dftbplus</a></li>
+<li><a href="keywords.html#dftb_xh_damping">dftb_xh_damping</a></li>
+<li><a href="keywords.html#dftb_xh_damping_exp">dftb_xh_damping_exp</a></li>
+<li><a href="keywords.html#dftbplus_exe">dftbplus_exe</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#development">development</a></li>
+<li><a href="keywords.html#existing_calc_dir">existing_calc_dir</a></li>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#method">method</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+<li><a href="keywords.html#parallel">parallel</a></li>
+<li><a href="keywords.html#start_from_previous">start_from_previous</a></li>
+<li><a href="keywords.html#x0">x0</a></li>
+<li><a href="keywords.html#x1">x1</a></li>
+<li><a href="keywords.html#x2">x2</a></li>
+<li><a href="keywords.html#x3">x3</a></li>
+<li><a href="keywords.html#x4">x4</a></li>
+<li><a href="keywords.html#x5">x5</a></li>
+<li><a href="keywords.html#x6">x6</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/dftb/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# DFTB example 1: energy calculation, configuration
+#===============================================================================
+
+# SCC-DFTB calculation
+job: energy
+interface: dftb
+method: scc-dftb
+
+# Water molecule, geometry taken from Cuby's internal database
+geometry: A24:water
+charge: 0
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# DFTB+ executable
+dftbplus_exe: /home/rezac/bin/DFTB+/dftb+1.2.1/dftb+
+# Path to directory containing directories with sets of Slater-Koster files
+dftb_slko_basepath: /home/rezac/bin/DFTB+/slko
+# Default set of Slater-Koster files (directory name)
+dftb_slko_set: mio
+
+# In the following examples, it is assumed that this interface configuration
+# is performed in the config file
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# DFTB example 2: Third-order SCC-DFTB
+#===============================================================================
+
+# Third-order SCC-DFTB (also called DFTB3) calculation
+job: energy
+interface: dftb
+method: scc-dftb3
+
+# Parameter set for DFTB3 - the 3OB set. The following keyword selects the
+# parameter set, the slater-koster files should be located in a directory
+# "3ob" under the path specified by the keyword dftb_slko_basepath (assumed)
+# to be set in the config file.
+dftb_slko_set: 3ob
+
+# Water molecule, geometry taken from Cuby's internal database
+geometry: A24:water
+charge: 0
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# DFTB example 3: Use of external point charges
+#===============================================================================
+
+# Geometry optimization of a water molecule in external electric field created
+# by two point charges along the x axis. In the optimization, the molecule
+# aligns with the field.
+
+job: optimize
+opt_quality: 0.1
+
+interface: dftb
+method: scc-dftb
+
+geometry: |
+  O    0.247000000   0.390000000   0.000000000
+  H   -0.075000000   1.292000000   0.000000000
+  H    1.207000000   0.490000000   0.000000000
+
+remove_translation: no
+remove_rotation: no
+# Allow rotation, by default both translational and rotational components of
+# the gradient are removed.
+
+point_charges: |
+  10.0  0.0 0.0   1.0
+  -10.0 0.0 0.0  -1.0
+# A list of point charges, four numbers (x, y, z, charge) per line.
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+#===============================================================================
+# Optimize protocol example 1 - basic input
+#===============================================================================
+
+# Simple geometry optimization of benzene dimer from the S66 data set
+# The calculation produces these additional files:
+# 1) optimized.xyz - the optimized geometry
+# 2) history_optimize_example_01.xyz - record of all the steps
+
+job: optimize
+
+# This keyword scales all the three convergence thresholds. The default value,
+# 1.0, might not yield accurate enough geometry because the potential of
+# the intermolecular interaction in benzene dimer is rather weak and flat.
+opt_quality: 0.1
+
+# Geometry from the database
+geometry: S66:benzene_dimer_stack
+
+# Calculation
+interface: dftb
+method: scc-dftb
+dftb_dispersion: yes

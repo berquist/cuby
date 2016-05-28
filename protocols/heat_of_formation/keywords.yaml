@@ -1,0 +1,14 @@
+################################################################################
+# Keywords for protocol Heat_of_formation
+################################################################################
+
+keywords: 
+  :hof_energy_from_vibrations: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+    #: When set, the energy of the molecule is not calculated separtely but taken
+    #: from the calculation of vibrations. To get a meaningful result, the setup
+    #: in calculation_vib and calculation_ene must be identical because the
+    #: latter is still used for calculation of atom energies.
+

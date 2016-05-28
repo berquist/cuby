@@ -1,0 +1,26 @@
+#===============================================================================
+# Electrostatics interface example 1
+#===============================================================================
+
+# Here, we calculate mulliken atomic charges for water dimer using PM6
+# in MOPAC, and use the atomic charges to calculate electrostatic interaction
+# between the two molecules.
+
+job: multistep
+steps: charges, interaction
+
+calculation_charges:
+  job: atomic_charges
+  interface: mopac
+  method: pm6
+  charge: 0
+  geometry: S66:water_dimer
+  # Write charges to a file
+  atomic_charges_write: charges.dat
+
+calculation_interaction:
+  job: interaction
+  interface: electrostatics
+  geometry: S66:water_dimer
+  # Read charges from a file
+  atomic_charges_read: charges.dat

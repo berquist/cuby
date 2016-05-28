@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Useful tips</h1>
+<h2>Commandline reference</h2>
+<p>
+A part of the documentation, the automatically generated reference, is accessible from
+the commandline by calling the cuby4 script with <a href="commandline.html#documentation">arguments described here</a>.
+</p>
+
+<h2>Keep and reuse the original outputs</h2>
+<p>
+When cuby calls an external program to do a calculation, it creates a directory for it, builds the input, runs the program, reads the output and then deletes the calculation directory. If you want to check the output of that program or read some additional information from it, you can modify this behavior by keywords <a href="keywords.html#job_cleanup">job_cleanup</a> and <a href="keywords.html#delete_large_files">delete_large_files</a>.
+</p>
+<p>
+These outputs can be reused when cuby is run again. How it handles existing calculation directory is controlled by keyword  <a href="keywords.html#existing_calc_dir">existing_calc_dir</a>.
+</p>
+
+<h2>Comfortable editing of input files in vim</h2>
+<p>
+Editing the YAML input files in the vim editor can be made more comfortable using the following script that fixes automatic indentation. Save the following to ~/.vim/indent/yaml.vim (the script comes from <a href="https://gist.github.com/iangreenleaf/871107">gist.github.com/iangreenleaf/871107</a>, all credits to its original author):
+</p>
+<pre><code>" Vim indent file
+" Language: Yaml
+" Author: Ian Young
+" Get it bundled for pathogen: https://github.com/avakhov/vim-yaml
+
+if exists("b:did_indent")
+  finish
+endif
+"runtime! indent/ruby.vim
+"unlet! b:did_indent
+let b:did_indent = 1
+
+setlocal autoindent sw=2 et
+setlocal indentexpr=GetYamlIndent()
+setlocal indentkeys=o,O,*<Return>,!^F
+
+function! GetYamlIndent()
+  let lnum = v:lnum - 1
+  if lnum == 0
+    return 0
+  endif
+  let line = substitute(getline(lnum),'\s\+$','','')
+  let indent = indent(lnum)
+  let increase = indent + &sw
+  if line =~ ':$'
+    return increase
+  else
+    return indent
+  endif
+endfunction
+</code></pre>
+		</div>
+		</div>
+	</body>
+</html>

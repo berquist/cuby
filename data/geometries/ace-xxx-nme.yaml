@@ -1,0 +1,48 @@
+#===============================================================================
+# Amino acids, acetyl- and N-methyl- terminated
+# Optimized in AMBER ff03.r1 forcefield
+#===============================================================================
+
+# By name
+ala: ACE-ALA-NME.pdb
+arg: ACE-ARG-NME.pdb
+asn: ACE-ASN-NME.pdb
+asp: ACE-ASP-NME.pdb
+cys: ACE-CYS-NME.pdb
+gln: ACE-GLN-NME.pdb
+glu: ACE-GLU-NME.pdb
+gly: ACE-GLY-NME.pdb
+his: ACE-HIS-NME.pdb
+ile: ACE-ILE-NME.pdb
+leu: ACE-LEU-NME.pdb
+lys: ACE-LYS-NME.pdb
+met: ACE-MET-NME.pdb
+phe: ACE-PHE-NME.pdb
+pro: ACE-PRO-NME.pdb
+ser: ACE-SER-NME.pdb
+thr: ACE-THR-NME.pdb
+trp: ACE-TRP-NME.pdb
+tyr: ACE-TYR-NME.pdb
+val: ACE-VAL-NME.pdb
+
+# By number
+1: ACE-ALA-NME.pdb
+2: ACE-ARG-NME.pdb
+3: ACE-ASN-NME.pdb
+4: ACE-ASP-NME.pdb
+5: ACE-CYS-NME.pdb
+6: ACE-GLN-NME.pdb
+7: ACE-GLU-NME.pdb
+8: ACE-GLY-NME.pdb
+9: ACE-HIS-NME.pdb
+10: ACE-ILE-NME.pdb
+11: ACE-LEU-NME.pdb
+12: ACE-LYS-NME.pdb
+13: ACE-MET-NME.pdb
+14: ACE-PHE-NME.pdb
+15: ACE-PRO-NME.pdb
+16: ACE-SER-NME.pdb
+17: ACE-THR-NME.pdb
+18: ACE-TRP-NME.pdb
+19: ACE-TYR-NME.pdb
+20: ACE-VAL-NME.pdb

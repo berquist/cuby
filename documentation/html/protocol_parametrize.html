@@ -1,0 +1,175 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol parametrize</h1>
+<p>
+This protocol allows optimization of parameters entering the calculation via cuby input file. The optimization can use the same algorithms available for geometry optimization, the gradient of the parameters is calculated by finite differences. Alternatively, the Nelder-Mead gradient-free simplex method can be used. Its convergence is slower and for small number of parameters, gradient optimization is usually more efficient even though the evaluation of the gradient requires extra calculations.
+</p>
+
+<h2>Specification of parameters to be optimized</h2>
+<p>
+The keyword <a href="keywords.html#optimized_parameters">optimized_parameters</a> specifies the keywords to be optimized. It has the form of "keyword: starting_value" hash. It is also possible to optimize numerical values in hash-type keywords. The synatx is then e.g. 'hash_keyword-&gt;key1-&gt;key2: starting_value'. If the hash keys are symbols, write them as ":key".
+</p>
+
+<p>
+The parameters are updated only in the places in the input where the keyword is set in the input file.
+</p>
+
+<p>
+Some keywords are read only once upon preparation of the calculation and not re-read when the calculation is actually performed. To optimize such keyword, the calculation has to be rebuilt in each calculation called during the parameterization. This can be activated using the <a href="keywords.html#para_rebuild_calculations">para_rebuild_calculations</a>
+</p>
+
+<h2>Input structure</h2>
+<h4>The protocol requires following blocks in the input:</h4>
+<ul>
+<li>calculation - Setup for the calculation</li>
+</ul>
+<h2>Keywords used</h2>
+<p>This protocol does not use any specific keywords</p>
+<h4>Other keywords used by this protocol:</h4>
+<ul>
+<li><a href="keywords.html#lbfgs_n">lbfgs_n</a></li>
+<li><a href="keywords.html#numerical_gradient_step">numerical_gradient_step</a></li>
+<li><a href="keywords.html#opt_convlimit_e">opt_convlimit_e</a></li>
+<li><a href="keywords.html#opt_convlimit_max_g">opt_convlimit_max_g</a></li>
+<li><a href="keywords.html#opt_convlimit_rms_g">opt_convlimit_rms_g</a></li>
+<li><a href="keywords.html#opt_diagonal_h0">opt_diagonal_h0</a></li>
+<li><a href="keywords.html#opt_quality">opt_quality</a></li>
+<li><a href="keywords.html#opt_tr_mode">opt_tr_mode</a></li>
+<li><a href="keywords.html#optimizer">optimizer</a></li>
+<li><a href="keywords.html#print">print</a></li>
+<li><a href="keywords.html#trust_radius">trust_radius</a></li>
+<li><a href="keywords.html#trust_radius_max">trust_radius_max</a></li>
+<li><a href="keywords.html#trust_radius_min">trust_radius_min</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/parametrize/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Parametrize protocol example 1 - parameterizing D3 correction
+#===============================================================================
+
+# This inputs shows parameterziation of the D3 dispersion correction for PM6
+# method on benzene dimer
+
+job: parametrize
+optimizer: rfo
+opt_quality: 0.1
+
+# For the dispersion interface, it is not necessary to rebuild
+# the calculations when parameters change
+para_rebuild_calculations: no
+
+# The parametres to be optimized
+optimized_parameters:
+  d3_s8: 1.3845
+  d3_a1: 0.4613
+  d3_a2: 4.5062
+
+calculation:
+  job: dataset
+  dataset: S66x8
+  # Select benzene dimer in both parallel-displaced and T-shape geometries
+  dataset_select_name: '^24|^47'
+  
+  interface: mopac
+  method: PM6
+  modifiers: dispersion3
+
+  # Save the PM6 calculation and read the results in the subsequent
+  # cycles - they do not change
+  job_cleanup: no
+  existing_calc_dir: read_results
+  
+  modifier_dispersion3:
+    # These options must be set to override the default
+    # setup of D3 for PM6:
+    d3_damping: :bj
+    d3_hh_fix: no
+    d3_hybridization: grimme
+    # These parameters will be changed:
+    d3_s8: 1.3845
+    d3_a1: 0.4613
+    d3_a2: 4.5062
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Parametrize protocol example 2 - parameters inside hash
+#===============================================================================
+
+# This inputs shows optimization parameter inside a hash-type keyword
+# It is an optimization of the H-bonding correction for PM6 for water dimer
+
+job: parametrize
+optimizer: rfo
+opt_quality: 0.1
+
+# In this case, teh parameters are used in the preparation of the calculation
+# which thus has to be rebuild in each step
+para_rebuild_calculations: yes
+
+# The parametres to be optimized
+optimized_parameters:
+  "h_bonds4_parameters->oh_o": 2.0
+
+calculation:
+  job: dataset
+  dataset: S66x8
+  # Select water dimer form the S66x8 data set
+  dataset_select_name: '^01'
+  
+  interface: mopac
+  method: PM6
+  modifiers: dispersion3, h_bonds4
+
+  modifier_h_bonds4:
+    h_bonds4_parameters:
+      # This value is optimized:
+      oh_o: 2.32
+      # This parameter is set to non-default value:
+      multiplier_wh_o: 1.00
+      # The rest are default values but they must be here,
+      # this is a single keyword and when it is present in the
+      # input, defaults are not read
+      oh_n: 3.10
+      nh_o: 1.07
+      nh_n: 2.01
+      multiplier_coo: 1.41
+      multiplier_nh4: 3.61
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,212 @@
+################################################################################
+# KEYWORDS for the deMon interface
+################################################################################
+
+keywords:
+  :demon_orbitals: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :spherical
+    allowed_values:
+      - :spherical
+      - :cartesian
+  #: Orbitals used: spehrical or cartesian
+
+  :demon_maxl_auxis: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :other
+  #: Maximum L number of auxiliary basis functions during SCF. For deMon version
+  #: 4.2.5 and above.
+
+  :demon_fragment_guess: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Construct initial guess from DFT calculations of fragments. The fragments must be defined in the input.
+
+  :demon_fragment_count: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :die
+  #: Number of fragments, required when calculations uses them
+
+  :demon_no_scf: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: If set, energy is calculated on the initial guess of density, no SCF iterations are performed
+
+  :demon_cdft_phase: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :other
+    allowed_values:
+      - :alpha
+      - :beta
+  #: Enforce specific orbital phase convention in cDFT coupling (HDA) calculations. Applies only to development version with cDFT.
+
+  :demon_constrained_dft: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :mulliken
+      - :becke
+      - :loewdin
+      - :hirshfeld_fragment
+      - :hirshfeld_atomic
+      - :voronoi
+      - :spatial
+   #: Constrained DFT (cDFT). Available population schemes are:
+   #* none - no cDFT
+   #* spatial - uses popukation defined in -->demon_spatial_population
+
+  :demon_cdft_deformation_density: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: To be used with Voronoi or Becke population constraint to get the
+  #: e.g. Voronoi Deformation Density scheme.
+
+  :cdft_constraints: !ruby/object:SettingsKeyword
+    convert_to: :array
+    when_not_present: :die
+  #: Definition of the cDFT constraints, Array (each item defines one constraint)
+  #: of Hashes with following opions:
+  #* type: string, either charge or spin
+  #* target: target value, float
+  #* selection: cuby selection expression
+  #* donor: boolean, used to label donor in coupling calculations (optional)
+  #* donor: acceptor, used to label acceptor in coupling calculations (optional)
+
+  :demon_cdft_tolerance: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :die
+  #: Constrained DFT tolerance
+
+  :demon_cdft_start: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default 
+    default_value: 0 
+  #: SCF error below which cDFT is activated
+
+  :demon_cdft_force_convergence: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+
+  :cdft_hda: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Enables electron transfer coupling in cDFT calculations, two constraints with flags
+  #: 'donor' and 'acceptor set to true must be present
+
+  :demon_spatial_population: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :plane_divider
+    allowed_values:
+      - :plane_divider
+  #: Population scheme dividing the space by a plane. Three parameters should be provided:
+  #: first reference atom, second reference atom and a ratio
+
+  :demon_plane_axis_a: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :die
+  #: Setup for spatial population analysis: first atom/selection defining the axis of the plane separator
+
+  :demon_plane_axis_b: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :die
+  #: Setup for spatial population analysis: second atom/selection defining the axis of the plane separator
+
+  :demon_plane_ratio: !ruby/object:SettingsKeyword
+    convert_to: :float
+    when_not_present: :die
+  #: Setup for spatial population analysis: ratio dividing the distance between atoms A and B
+
+  :demon_charges_pol: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Add polarizability information to external charges (under development)
+
+  :demon_keywords: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Additional keywords passed directly to deMon.
+
+  :demon_cuby_options: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Additional options added to the CUBY keyword when modified demon is used.
+
+  :demon_exe: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the deMon executable
+
+  :demon_exe_mpi: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the parallel (MPI) deMon executable
+
+  :demon_call_mpi: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: When set (default), cuby calls mpirun for parallel execution of demon. Otherwise, 
+  #: the parallel executable (or a script doing the mpi setup) is called directly
+  #: with teh number of processors as an argument.
+
+  :demon_lib_dir: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to a directory containing libraries needed to run the deMon executable
+
+  :demon_with_cuby_interface: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Set when a modified version of demon with special cuby support
+  #: is used.
+
+  :demon_basis_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the deMon basis file (BASIS)
+
+  :demon_auxis_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the deMon auxiliary basis file (AUXIS)
+ 
+  :demon_ecps_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the deMon effective core potential file (ECPS)
+ 
+  :demon_mcps_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the deMon model core potential file (MCPS)
+
+  :demon_ffds_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  #: Path to the deMon force field file (FFDS)
+ 
+  :demon_version: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""

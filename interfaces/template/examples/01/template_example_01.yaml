@@ -1,0 +1,18 @@
+#===============================================================================
+# Template interface example
+#===============================================================================
+
+# The template interface is a simplified version of the Mopac interface
+# Here, a single-point  AM1 calculation of water molecule is shown
+
+# Calculation specification
+job: energy
+interface: template
+method: am1
+
+# Interface setup - path to MOPAC2012
+template_mopac_exe: /home/rezac/bin/MOPAC2012/MOPAC2012.exe
+
+# System calculated
+geometry: A24:water
+charge: 0

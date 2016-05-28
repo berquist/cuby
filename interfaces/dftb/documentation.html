@@ -1,0 +1,39 @@
+<p>
+Interface to the <a href="http://www.dftb-plus.info/">DFTB+</a> program implementing self consistenct charges density functional tight binding (SCC-DFTB) methods.[1] The program requires also parameters available separately at <a href="http://www.dftb.org/">www.dftb.org</a>. Free for academic use.
+</p>
+
+<h2>Changelog</h2>
+<p>
+<strong>Feb 2, 2016</strong>: two important changes were made in the input. Firstly, the built-in <a href="keywords.html#dftb_dispersion">DFTB-D dispersion</a> is now switched off by default. Warning is printed when the keyword is not set for a transition period. Secondly, the <a href="keywords.html#dftb_hubbard_derivs">dftb_hubbard_derivs</a> behaves differently and the default setup was changed to the values used in DFTB3.
+</p>
+
+<h2>DFTB-D</h2>
+<p>
+Empirical dispersion coorrection was developed for SCC-DFTB with the MIO parameters set.[2] It is available in DFTB + and it can be activated by the <a href="keywords.html#dftb_dispersion">dftb_dispersion</a> keyword.
+</p>
+
+<h2>DFTB3 and DFTB3-D3</h2>
+<p>
+The acronym DFTB3 is used for a third-order SCC-DFTB with the 3OB parameter set and gamma function damping exponent of 4.0.[3] The folowing input reproduces the DFTB3 setup in cuby:
+</p>
+<pre><code>method: scc-dftb3
+dftb_slko_set: 3ob
+dftb_xh_damping: yes
+dftb_xh_damping_exp: 4.0</code></pre>
+<p>
+The D3 dispersion was parameterized for DFTB3 by Grimme[4], in Cuby it can be applied using the following setup:
+</p>
+<pre><code>modifiers: dispersion3
+modifier_dispersion3:
+  d3_damping: bj
+  d3_a1: 0.746
+  d3_a2: 4.191
+  d3_s8: 3.209</code></pre>
+
+<h2>References</h2>
+<ol>
+	<li><a href="http://dx.doi.org/10.1103/PhysRevB.58.7260">Elstner, M.; Porezag, D.; Jungnickel, G.; Elsner, J.; Haugk, M.; Frauenheim, T.; Suhai, S.; Seifert, G. Phys. Rev. B 1998, 58 (11), 7260–7268.</a></li>
+	<li><a href="http://dx.doi.org/10.1063/1.1329889">Elstner, M.; Hobza, P.; Frauenheim, T.; Suhai, S.; Kaxiras, E. J. Chem. Phys. 2001, 114 (12), 5149.</a></li>
+	<li><a href="http://dx.doi.org/10.1021/ct100684s">Gaus, M.; Cui, Q.; Elstner, M. J. Chem. Theory Comput. 2011, 7 (4), 931–948.</a></li>
+	<li><a href="http://dx.doi.org/10.1002/anie.201300158">Grimme, S. Angew. Chem. Int. Ed. 2013, 52 (24), 6306–6312.</a> (Parameters provided in Supplementary information)</li>
+</ol>

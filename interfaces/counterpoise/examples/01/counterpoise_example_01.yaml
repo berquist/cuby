@@ -1,0 +1,34 @@
+#===============================================================================
+# Counterpoise example 1: energy calculation
+#===============================================================================
+
+# Counterpoise-corrected energy calculation
+job: energy
+interface: counterpoise
+
+# The calculation method has to be specified in a separate block,
+# note that the keyword "job" is not present
+calculation:
+  interface: turbomole
+  method: HF
+  basisset: SVP
+
+# Water dimer from Cuby's database
+geometry: A24:water_dimer
+charge: 0
+
+# The energy components list also the uncorrected energy
+# and corerc ted and uncorrected interaction energies:
+print: energy_decomposition
+
+# The following input is optional in this case as cuby can find the two
+# moelcules automatically and in the case of neutral singlet dimer, it assumes
+# them to be neutral singlets too
+molecule_a:
+  selection: 1-3
+  charge: 0
+  multiplicity: 1
+molecule_b:
+  selection: 4-6
+  charge: 0
+  multiplicity: 1

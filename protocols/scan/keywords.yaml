@@ -1,0 +1,62 @@
+################################################################################
+# Keywords for protocol Scan
+################################################################################
+
+keywords: 
+  :scan_generator: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :grid_xyz
+  #: By default, the scan is performed on a series of geometries provided
+  #: by the user. The scan generator can be used to generate this series
+  #: on the fly.
+
+  :scan_generator_setup: !ruby/object:SettingsKeyword
+    convert_to: :hash
+    when_not_present: :default
+    default_value: {}
+  #: Setup for the scan generator. Different options are available for different
+  #: generators, see the protocol documentation.
+
+  :scan_generator_batchsize: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 0
+  #: When set to 0 (default), a series of geometries is saved in a single file and
+  #: immediately calculated. If set to nonzero number, the scan is divided into
+  #: batches of this size which are saved in separate directories so that they can
+  #: be run independently.
+
+  :scan_mode: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :parallel
+    allowed_values:
+      - :serial
+      - :parallel
+  #: In the default (parallel) mode, all calculations of teh scan are prepared
+  #: and then run using the internal queue system of cuby, which can run
+  #: multiple calculations in parallel. In the serial mode, only one
+  #: calculation is set up and repeatedly called with the changing geometries.
+
+  :scan_print_mode: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :simple
+    allowed_values:
+      - :numbers
+      - :simple
+      - :full
+  #: Mode of printing scan results:
+  #* numbers - just a column(s) of numbers are printed
+  #* simple - one result per line, with some description
+  #* full - Verbose output from the child protocol. Only this option is available for all protocols.
+
+  :geometry_template: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: other
+  #: Template geometry into which the coordinates specified by the geometry keyword are loaded.
+  #: This is an optional feature, when not set, the actual geometry is used directly.

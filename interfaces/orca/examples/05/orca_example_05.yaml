@@ -1,0 +1,23 @@
+#===============================================================================
+# Orca example 5: DLPNO-CCSD(T) calculation
+#===============================================================================
+
+# Approximate CCSD(T) calculation applicable to large systems - 
+# Domain-Localized Pair Natural Orbitals CSCD(T)
+
+job: energy
+interface: orca
+
+method: ccsd(t)
+basisset: cc-pVDZ
+
+geometry: A24:water # Water molecule from the internal database
+charge: 0
+
+# Print components of the CCSD(T) energy
+print: energy_decomposition
+
+# Setup needed in addition to plain CCSD(T)
+orca_dlpno: yes # enable the approximation
+auxiliary_basis_mp2: cc-pVDZ # Auxiliary basis for RI-MP2 is needed
+

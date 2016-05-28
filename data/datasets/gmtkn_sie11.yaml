@@ -1,0 +1,169 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_SIE11
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "self-interaction error related problems"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_SIE11:he"
+  reference_value: 57.44
+  setup:
+    reaction_formula: "1 g_he2plus -> 1 g_he + 1 g_heplus"
+    reaction_geometries:
+      g_he: gmtkn_SIE11:he
+      g_heplus: gmtkn_SIE11:he+
+      g_he2plus: gmtkn_SIE11:he2+
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_SIE11:nh3"
+  reference_value: 35.34
+  setup:
+    reaction_formula: "1 g_nh32plus -> 1 g_nh3 + 1 g_nh3plus"
+    reaction_geometries:
+      g_nh3: gmtkn_SIE11:nh3
+      g_nh3plus: gmtkn_SIE11:nh3+
+      g_nh32plus: gmtkn_SIE11:nh32+
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_SIE11:h2o"
+  reference_value: 37.25
+  setup:
+    reaction_formula: "1 g_h2o2plus -> 1 g_h2o + 1 g_h2oplus"
+    reaction_geometries:
+      g_h2o: gmtkn_SIE11:h2o
+      g_h2oplus: gmtkn_SIE11:h2o+
+      g_h2o2plus: gmtkn_SIE11:h2o2+
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_SIE11:but+"
+  reference_value: 35.28
+  setup:
+    reaction_formula: "1 g_butplus -> 1 g_ethyl + 1 g_ethylplus"
+    reaction_geometries:
+      g_butplus: gmtkn_SIE11:but+
+      g_ethyl: gmtkn_SIE11:ethyl
+      g_ethylplus: gmtkn_SIE11:ethyl+
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_SIE11:ch3"
+  reference_value: 22.57
+  setup:
+    reaction_formula: "1 g_acetonplus -> 1 g_ch3 + 1 g_acetyl"
+    reaction_geometries:
+      g_ch3: gmtkn_SIE11:ch3
+      g_acetyl: gmtkn_SIE11:acetyl
+      g_acetonplus: gmtkn_SIE11:aceton+
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_SIE11:clclf"
+  reference_value: -1.01
+  setup:
+    reaction_formula: "1 g_clfcl -> 1 g_clclf"
+    reaction_geometries:
+      g_clclf: gmtkn_SIE11:clclf
+      g_clfcl: gmtkn_SIE11:clfcl
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_SIE11:c2h4"
+  reference_value: 1.08
+  setup:
+    reaction_formula: "1 g_c2h4_f2 -> 1 g_c2h4 + 1 g_f2"
+    reaction_geometries:
+      g_c2h4: gmtkn_SIE11:c2h4
+      g_f2: gmtkn_SIE11:f2
+      g_c2h4_f2: gmtkn_SIE11:c2h4_f2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_SIE11:li"
+  reference_value: 9.50
+  setup:
+    reaction_formula: "1 g_bz_li -> 1 g_li + 1 g_bz"
+    reaction_geometries:
+      g_li: gmtkn_SIE11:li
+      g_bz: gmtkn_SIE11:bz
+      g_bz_li: gmtkn_SIE11:bz_li
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_SIE11:nh3"
+  reference_value: 10.50
+  setup:
+    reaction_formula: "1 g_nh3_clf -> 1 g_nh3 + 1 g_clf"
+    reaction_geometries:
+      g_nh3: gmtkn_SIE11:nh3
+      g_clf: gmtkn_SIE11:clf
+      g_nh3_clf: gmtkn_SIE11:nh3_clf
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_SIE11:mgo"
+  reference_value: 69.56
+  setup:
+    reaction_formula: "1 g_naomg -> 1 g_mgo + 1 g_na"
+    reaction_geometries:
+      g_mgo: gmtkn_SIE11:mgo
+      g_na: gmtkn_SIE11:na
+      g_naomg: gmtkn_SIE11:naomg
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_SIE11:li"
+  reference_value: 94.36
+  setup:
+    reaction_formula: "1 g_li_f2 -> 1 g_li + 1 g_f2"
+    reaction_geometries:
+      g_li: gmtkn_SIE11:li
+      g_f2: gmtkn_SIE11:f2
+      g_li_f2: gmtkn_SIE11:li_f2
+  tags: ""
+

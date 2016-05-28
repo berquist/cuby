@@ -1,0 +1,20 @@
+        _______  
+       /\______\ 
+      / /      / 
+     / / Cuby /   Atomic charges calculation
+     \/______/   
+                 
+Energy: -95338.454957 kcal/mol
+
+Atomic charges (Mulliken charges):
+   O   -0.3880
+   H    0.1645
+   H    0.1815
+   O   -0.3392
+   H    0.1906
+   H    0.1906
+
+Charge on fragments:
+   1   -0.0420
+   2    0.0420
+

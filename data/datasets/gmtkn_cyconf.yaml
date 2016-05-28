@@ -1,0 +1,147 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_CYCONF
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "relative energies of cysteine conformers"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_CYCONF:1"
+  reference_value: 1.522
+  setup:
+    reaction_formula: "1 g_1 -> 1 g_2"
+    reaction_geometries:
+      g_1: gmtkn_CYCONF:1
+      g_2: gmtkn_CYCONF:2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_CYCONF:1"
+  reference_value: 1.609
+  setup:
+    reaction_formula: "1 g_1 -> 1 g_3"
+    reaction_geometries:
+      g_1: gmtkn_CYCONF:1
+      g_3: gmtkn_CYCONF:3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_CYCONF:1"
+  reference_value: 1.948
+  setup:
+    reaction_formula: "1 g_1 -> 1 g_4"
+    reaction_geometries:
+      g_1: gmtkn_CYCONF:1
+      g_4: gmtkn_CYCONF:4
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_CYCONF:1"
+  reference_value: 1.795
+  setup:
+    reaction_formula: "1 g_1 -> 1 g_5"
+    reaction_geometries:
+      g_1: gmtkn_CYCONF:1
+      g_5: gmtkn_CYCONF:5
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_CYCONF:1"
+  reference_value: 2.098
+  setup:
+    reaction_formula: "1 g_1 -> 1 g_6"
+    reaction_geometries:
+      g_1: gmtkn_CYCONF:1
+      g_6: gmtkn_CYCONF:6
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_CYCONF:1"
+  reference_value: 1.933
+  setup:
+    reaction_formula: "1 g_1 -> 1 g_7"
+    reaction_geometries:
+      g_1: gmtkn_CYCONF:1
+      g_7: gmtkn_CYCONF:7
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_CYCONF:1"
+  reference_value: 2.177
+  setup:
+    reaction_formula: "1 g_1 -> 1 g_8"
+    reaction_geometries:
+      g_1: gmtkn_CYCONF:1
+      g_8: gmtkn_CYCONF:8
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_CYCONF:1"
+  reference_value: 2.359
+  setup:
+    reaction_formula: "1 g_1 -> 1 g_9"
+    reaction_geometries:
+      g_1: gmtkn_CYCONF:1
+      g_9: gmtkn_CYCONF:9
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_CYCONF:1"
+  reference_value: 2.562
+  setup:
+    reaction_formula: "1 g_1 -> 1 g_10"
+    reaction_geometries:
+      g_1: gmtkn_CYCONF:1
+      g_10: gmtkn_CYCONF:10
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_CYCONF:1"
+  reference_value: 2.674
+  setup:
+    reaction_formula: "1 g_1 -> 1 g_11"
+    reaction_geometries:
+      g_1: gmtkn_CYCONF:1
+      g_11: gmtkn_CYCONF:11
+  tags: ""
+

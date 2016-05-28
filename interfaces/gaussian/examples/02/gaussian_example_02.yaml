@@ -1,0 +1,19 @@
+#===============================================================================
+# Gaussian interafce example 2 - advanced options
+#===============================================================================
+
+# Calculation setup
+job: energy
+interface: gaussian
+method: HF
+geometry: A24:water # Water molecule from the A254 data set
+basisset: 6-31
+
+# Additional keywords in the gaussain format can be inserted directly into the
+# input - in this case, request NBO analysis:
+gaussian_keywords: pop=NBO
+
+# To access the results of the NBO calculations in the gaussian output file,
+# prevent cuby from deleting the calculation:
+job_cleanup: no
+

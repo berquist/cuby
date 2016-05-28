@@ -1,0 +1,181 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_NBPRC
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "oligomerizations and H2 fragmentations of NH3-BH3 systems; H2 activation reactions with PH3-BH3 systems"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_NBPRC:nh3"
+  reference_value: -31.84
+  setup:
+    reaction_formula: "1 g_nh3 + 1 g_bh3 -> 1 g_nh3-bh3"
+    reaction_geometries:
+      g_nh3: gmtkn_NBPRC:nh3
+      g_bh3: gmtkn_NBPRC:bh3
+      g_nh3-bh3: gmtkn_NBPRC:nh3-bh3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_NBPRC:nh3-bh3"
+  reference_value: -0.06
+  setup:
+    reaction_formula: "1 g_nh3-bh3 -> 1 g_nh2-bh2 + 1 g_h2"
+    reaction_geometries:
+      g_nh3-bh3: gmtkn_NBPRC:nh3-bh3
+      g_nh2-bh2: gmtkn_NBPRC:nh2-bh2
+      g_h2: gmtkn_NBPRC:h2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_NBPRC:nh2-bh2"
+  reference_value: 37.27
+  setup:
+    reaction_formula: "1 g_nh2-bh2 -> 1 g_nh-bh + 1 g_h2"
+    reaction_geometries:
+      g_nh2-bh2: gmtkn_NBPRC:nh2-bh2
+      g_nh-bh: gmtkn_NBPRC:nh-bh
+      g_h2: gmtkn_NBPRC:h2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_NBPRC:nh2-bh2"
+  reference_value: -18.94
+  setup:
+    reaction_formula: "2 g_nh2-bh2 -> 1 g_cbut"
+    reaction_geometries:
+      g_nh2-bh2: gmtkn_NBPRC:nh2-bh2
+      g_cbut: gmtkn_NBPRC:cbut
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_NBPRC:nh2-bh2"
+  reference_value: -48.27
+  setup:
+    reaction_formula: "3 g_nh2-bh2 -> 1 g_bz + 3 g_h2"
+    reaction_geometries:
+      g_nh2-bh2: gmtkn_NBPRC:nh2-bh2
+      g_bz: gmtkn_NBPRC:bz
+      g_h2: gmtkn_NBPRC:h2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_NBPRC:nh2-bh2"
+  reference_value: -45.06
+  setup:
+    reaction_formula: "3 g_nh2-bh2 -> 1 g_ch"
+    reaction_geometries:
+      g_nh2-bh2: gmtkn_NBPRC:nh2-bh2
+      g_ch: gmtkn_NBPRC:ch
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_NBPRC:BH3PH3"
+  reference_value: -24.4
+  setup:
+    reaction_formula: "1 g_BH3 + 1 g_PH3 -> 1 g_BH3PH3"
+    reaction_geometries:
+      g_BH3PH3: gmtkn_NBPRC:BH3PH3
+      g_BH3: gmtkn_NBPRC:BH3
+      g_PH3: gmtkn_NBPRC:PH3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_NBPRC:K_H"
+  reference_value: 40.4
+  setup:
+    reaction_formula: "1 g_BH3PH3 + 1 g_H2 -> 1 g_K_H"
+    reaction_geometries:
+      g_K_H: gmtkn_NBPRC:K_H
+      g_BH3PH3: gmtkn_NBPRC:BH3PH3
+      g_H2: gmtkn_NBPRC:H2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_NBPRC:BF3PMe3"
+  reference_value: -14.6
+  setup:
+    reaction_formula: "1 g_BF3 + 1 g_PMe3 -> 1 g_BF3PMe3"
+    reaction_geometries:
+      g_BF3PMe3: gmtkn_NBPRC:BF3PMe3
+      g_BF3: gmtkn_NBPRC:BF3
+      g_PMe3: gmtkn_NBPRC:PMe3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_NBPRC:K_F"
+  reference_value: 18.8
+  setup:
+    reaction_formula: "1 g_BF3PMe3 + 1 g_H2 -> 1 g_K_F"
+    reaction_geometries:
+      g_K_F: gmtkn_NBPRC:K_F
+      g_BF3PMe3: gmtkn_NBPRC:BF3PMe3
+      g_H2: gmtkn_NBPRC:H2
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_NBPRC:BCl3PMe3"
+  reference_value: -30.8
+  setup:
+    reaction_formula: "1 g_BCl3 + 1 g_PMe3 -> 1 g_BCl3PMe3"
+    reaction_geometries:
+      g_BCl3PMe3: gmtkn_NBPRC:BCl3PMe3
+      g_BCl3: gmtkn_NBPRC:BCl3
+      g_PMe3: gmtkn_NBPRC:PMe3
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "12"
+  shortname: "12"
+  geometry: "gmtkn_NBPRC:K_Cl"
+  reference_value: 17.6
+  setup:
+    reaction_formula: "1 g_BCl3PMe3 + 1 g_H2 -> 1 g_K_Cl"
+    reaction_geometries:
+      g_K_Cl: gmtkn_NBPRC:K_Cl
+      g_BCl3PMe3: gmtkn_NBPRC:BCl3PMe3
+      g_H2: gmtkn_NBPRC:H2
+  tags: ""
+

@@ -1,0 +1,17 @@
+################################################################################
+# Keywords for protocol Interaction
+################################################################################
+
+keywords: 
+  :bsse_correction: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Swithes on counterpoise correction for basis set superposition error.
+
+  :interaction_check_size: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: true
+  #: Check for atoms missing in selections of molecule_a and molecule_b.
+

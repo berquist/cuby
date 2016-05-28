@@ -1,0 +1,20 @@
+#===============================================================================
+# Optimize protocol example 3 - parallel optimizer P-LBFGS
+#===============================================================================
+
+# This example demonstrates the use of the parallel optimizer P-LBFGS
+
+job: optimize
+opt_quality: 0.1
+
+geometry: ace-ala-nme.pdb # ACE-ALA-NME peptide
+
+# Parallel optimizer setup
+optimizer: plbfgs
+linesearch: cubic # The optimizer was designed to be used with a linesearch
+plbfgs_colors: 1 # One 'color' per step, results into 4 calculations / step
+cuby_threads: 4 # Run those 4 calculations in parallel
+
+# Calculation - MM in Amber, default setup
+interface: amber
+

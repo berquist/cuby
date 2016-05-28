@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface fragmentation</h1>
+<p>
+This interface implements the Kernel Energy Method[1] (KEM) up to second order. The energy of the system is composed from calculation of fragments and all their dimers. Fragments with dangling bonds are capped with hydrogens.
+</p>
+
+<p>
+Cuby offers automation of the fragmentation process, non-covalent fragments are recognized automatically and fragmentation across covalent bonds is defined just by a list of bonds to be broken.
+</p>
+
+<p>
+This interface can be also used for building fragments for other calculations. Running the interface with the keyword <a href="keywords.html#fragmentation_geometry_only">fragmentation_geometry_only</a> set produces files containing all the fragments and their dimers. PDB format is used and each of the fragment or dimer is saved as a separate residue. If the filename has suffix .lpdb instead of .pdb, the coordinates are written with more decimal places. This PDB in 'long format' can be used as input for other Cuby calculations.
+</p>
+
+<ol>
+	<li><a href="http://onlinelibrary.wiley.com/doi/10.1002/qua.20542/abstract">Huang, L.; Massa, L.; Karle, J. Int. J. Quantum Chem. 2005, 103 (6), 808–817.</a></li>
+</ol>
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Input structure</h2>
+<h4>The interface requires following blocks in the input:</h4>
+<ul>
+<li>calculation - Setup for the calculation</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#fragmentation_cut_bonds">fragmentation_cut_bonds</a></li>
+<li><a href="keywords.html#fragmentation_dimer_file">fragmentation_dimer_file</a></li>
+<li><a href="keywords.html#fragmentation_geometry_only">fragmentation_geometry_only</a></li>
+<li><a href="keywords.html#fragmentation_mode">fragmentation_mode</a></li>
+<li><a href="keywords.html#fragmentation_monomer_file">fragmentation_monomer_file</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#prepare_only">prepare_only</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/fragmentation/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Fragmentation example 1
+#===============================================================================
+
+# Calculation of butane molecule which is built from three fragments -
+# CH4, C2H6 and CH4.
+
+# The PM6 calculation of this system yields energy 14.413 kcal/mol
+# This fragmented calculation yields               14.436 kcal/mol
+
+job: energy
+interface: fragmentation
+
+geometry: butane.xyz
+
+# The bonds to be cut (two atom selections) and a ratio determining the length of
+# the bond to the link atom (C-H) from the length of the original C-C bond.
+fragmentation_cut_bonds: 
+  - "11; 12; 0.7211"
+  - "13; 14; 0.7211"
+
+# If the following lines are uncommented, the fragments and their dimers are built
+# and saved but no calculation is run on them:
+#prepare_only: yes
+#fragmentation_geometry_only: yes
+
+# Method of calculation applied to the fragments is specified in a separate
+# block:
+calculation:
+  method: pm6
+  charge: 0
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

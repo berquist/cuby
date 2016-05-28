@@ -1,0 +1,16 @@
+keywords: 
+  :electrostatics_model: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :point_charges
+    allowed_values:
+      - :point_charges
+      - :gaussian
+      - :slater
+  #: Model for the electrostatic interaction. By default, point charges are used.
+  #: Diffuse electron distribution can be used as well (Gaussian or Slater monopoles),
+  #: the distribution widths (atom sizes) are calculated using Hubbard parameters
+  #: from DFTB parameter set 3OB (experimental, only some elements supported).
+
+borrowed_keywords:
+  - atomic_charges_read

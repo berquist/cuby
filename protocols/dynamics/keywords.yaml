@@ -1,0 +1,120 @@
+################################################################################
+# Keywords for protocol Dynamics
+################################################################################
+
+keywords: 
+  :md_region: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "%all()"
+  #: Selection of atoms moved in the simulation. 
+ 
+  :timestep: !ruby/object:SettingsKeyword # file: driver_dynamics.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.001
+  #: Timestep for MD (ps)
+
+  :velocities: !ruby/object:SettingsKeyword # file: driver_dynamics.rb
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :random
+    allowed_values:
+      - :random
+      - :zero
+      - :read
+  #: Assignment of initial velocities. The options are:
+  #* random - random velocities from a Gaussian distribution coresponding to the temperature set by init_temp keyword
+  #* zero - simulation starts with zero velocities
+  #* read - read velocities from a file specified by the velocities_file keyword
+
+  :random_seed: !ruby/object:SettingsKeyword # file: driver_dynamics.rb
+    convert_to: :integer
+    when_not_present: :other
+  #: Random seed used to initialize the random number generator when setting up
+  #: a MD run. When not set, random initialization is used.
+
+  :velocities_file: !ruby/object:SettingsKeyword # file: driver_dynamics.rb
+    convert_to: :string
+    when_not_present: :die
+
+  :init_temp: !ruby/object:SettingsKeyword # file: driver_dynamics.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 10.0
+  #: Temperature used to generate initial random velocities
+
+  :thermostat: !ruby/object:SettingsKeyword # file: driver_dynamics.rb
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :berendsen
+      - :andersen
+      - :"nose-hoover"
+      - :bussi
+      #- :langevin
+  #: Selection of thermostat algorithm
+
+  :temperature: !ruby/object:SettingsKeyword # file: driver_dynamics.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 300.0
+  #: Temperature to be maintained by the thermostat
+
+  :temperature_target: !ruby/object:SettingsKeyword # file: driver_dynamics.rb
+    convert_to: :float
+    when_not_present: :other
+  #: When set, the thermostated temperature is varied during the simulation,
+  #: starting with the one set by keyword temperature and linearly
+  #: interpolating to this value at the end of simulation.
+
+  :thermostat_tc: !ruby/object:SettingsKeyword # file: driver_dynamics.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.5
+  #: Thermostat time constant (ps) setting strength of the coupling to the thermostat.
+  #: The exact mening of the value is different in different algorithms.
+
+  #=============================================================================
+  # Trajectory writing options
+  #=============================================================================
+
+  :trajectory_freq: !ruby/object:SettingsKeyword
+    convert_to: :integer
+    when_not_present: :default
+    default_value: 1
+  #: Frequency of writing the trajectory (every Nth step). If set to 0, no
+  #: trajectory is written.
+
+  #: History is written each history_freq steps. If set to 0, no history is written.
+  :trajectory_format: !ruby/object:SettingsKeyword # file: driver_common.rb
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :xyz_velo
+    allowed_values:
+      - :xyz_velo
+      - :xyz
+  #: Format of the trajectory:
+  #* xyz_velo - .xyz file with extra columns for velocities in Angstrom/ps units
+  #* xyz - plain .xyz format, velocities are not written
+
+  :trajectory_selection: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "%all()"
+  #: Selection of atoms written to the trajectory. By default, trajectory of
+  #: the whole system is logged. Optionally, only selected atoms (specifed
+  #: using the cuby selection expression) could be saved. A special value
+  #: "md_region" makes this selection equal to the selection of the moving
+  #: region (see md_region keyword).
+
+  :trajectory_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Name of the file the trajectory is written to. By default, it is
+  #: "trajectory" + base name of the input file + a suffix for the selected file format.
+
+blocks:
+  - !ruby/regexp /^trajectory_2$/

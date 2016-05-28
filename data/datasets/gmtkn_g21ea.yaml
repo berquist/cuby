@@ -1,0 +1,327 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_G21EA
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "adiabatic electron affinities"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_G21EA:EA_c"
+  reference_value: 29.2
+  setup:
+    reaction_formula: "1 g_EA_c- -> 1 g_EA_c"
+    reaction_geometries:
+      g_EA_c: gmtkn_G21EA:EA_c
+      g_EA_c-: gmtkn_G21EA:EA_c-
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_G21EA:EA_o"
+  reference_value: 33.7
+  setup:
+    reaction_formula: "1 g_EA_o- -> 1 g_EA_o"
+    reaction_geometries:
+      g_EA_o: gmtkn_G21EA:EA_o
+      g_EA_o-: gmtkn_G21EA:EA_o-
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_G21EA:EA_f"
+  reference_value: 78.4
+  setup:
+    reaction_formula: "1 g_EA_f- -> 1 g_EA_f"
+    reaction_geometries:
+      g_EA_f: gmtkn_G21EA:EA_f
+      g_EA_f-: gmtkn_G21EA:EA_f-
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_G21EA:EA_si"
+  reference_value: 32.1
+  setup:
+    reaction_formula: "1 g_EA_si- -> 1 g_EA_si"
+    reaction_geometries:
+      g_EA_si: gmtkn_G21EA:EA_si
+      g_EA_si-: gmtkn_G21EA:EA_si-
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_G21EA:EA_p"
+  reference_value: 17.3
+  setup:
+    reaction_formula: "1 g_EA_p- -> 1 g_EA_p"
+    reaction_geometries:
+      g_EA_p: gmtkn_G21EA:EA_p
+      g_EA_p-: gmtkn_G21EA:EA_p-
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_G21EA:EA_s"
+  reference_value: 48.0
+  setup:
+    reaction_formula: "1 g_EA_s- -> 1 g_EA_s"
+    reaction_geometries:
+      g_EA_s: gmtkn_G21EA:EA_s
+      g_EA_s-: gmtkn_G21EA:EA_s-
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_G21EA:EA_cl"
+  reference_value: 83.5
+  setup:
+    reaction_formula: "1 g_EA_cl- -> 1 g_EA_cl"
+    reaction_geometries:
+      g_EA_cl: gmtkn_G21EA:EA_cl
+      g_EA_cl-: gmtkn_G21EA:EA_cl-
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_G21EA:EA_8n"
+  reference_value: 27.9
+  setup:
+    reaction_formula: "1 g_EA_8 -> 1 g_EA_8n"
+    reaction_geometries:
+      g_EA_8n: gmtkn_G21EA:EA_8n
+      g_EA_8: gmtkn_G21EA:EA_8
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_G21EA:EA_9n"
+  reference_value: 13.4
+  setup:
+    reaction_formula: "1 g_EA_9 -> 1 g_EA_9n"
+    reaction_geometries:
+      g_EA_9n: gmtkn_G21EA:EA_9n
+      g_EA_9: gmtkn_G21EA:EA_9
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_G21EA:EA_10n"
+  reference_value: 1.2
+  setup:
+    reaction_formula: "1 g_EA_10 -> 1 g_EA_10n"
+    reaction_geometries:
+      g_EA_10n: gmtkn_G21EA:EA_10n
+      g_EA_10: gmtkn_G21EA:EA_10
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_G21EA:EA_11n"
+  reference_value: 8.3
+  setup:
+    reaction_formula: "1 g_EA_11 -> 1 g_EA_11n"
+    reaction_geometries:
+      g_EA_11n: gmtkn_G21EA:EA_11n
+      g_EA_11: gmtkn_G21EA:EA_11
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "12"
+  shortname: "12"
+  geometry: "gmtkn_G21EA:EA_12n"
+  reference_value: 16.8
+  setup:
+    reaction_formula: "1 g_EA_12 -> 1 g_EA_12n"
+    reaction_geometries:
+      g_EA_12n: gmtkn_G21EA:EA_12n
+      g_EA_12: gmtkn_G21EA:EA_12
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "13"
+  shortname: "13"
+  geometry: "gmtkn_G21EA:EA_13n"
+  reference_value: 41.7
+  setup:
+    reaction_formula: "1 g_EA_13 -> 1 g_EA_13n"
+    reaction_geometries:
+      g_EA_13n: gmtkn_G21EA:EA_13n
+      g_EA_13: gmtkn_G21EA:EA_13
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "14"
+  shortname: "14"
+  geometry: "gmtkn_G21EA:EA_14n"
+  reference_value: 29.3
+  setup:
+    reaction_formula: "1 g_EA_14 -> 1 g_EA_14n"
+    reaction_geometries:
+      g_EA_14n: gmtkn_G21EA:EA_14n
+      g_EA_14: gmtkn_G21EA:EA_14
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "15"
+  shortname: "15"
+  geometry: "gmtkn_G21EA:EA_15n"
+  reference_value: 25.1
+  setup:
+    reaction_formula: "1 g_EA_15 -> 1 g_EA_15n"
+    reaction_geometries:
+      g_EA_15n: gmtkn_G21EA:EA_15n
+      g_EA_15: gmtkn_G21EA:EA_15
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "16"
+  shortname: "16"
+  geometry: "gmtkn_G21EA:EA_16n"
+  reference_value: 31.4
+  setup:
+    reaction_formula: "1 g_EA_16 -> 1 g_EA_16n"
+    reaction_geometries:
+      g_EA_16n: gmtkn_G21EA:EA_16n
+      g_EA_16: gmtkn_G21EA:EA_16
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "17"
+  shortname: "17"
+  geometry: "gmtkn_G21EA:EA_17n"
+  reference_value: 23.5
+  setup:
+    reaction_formula: "1 g_EA_17 -> 1 g_EA_17n"
+    reaction_geometries:
+      g_EA_17n: gmtkn_G21EA:EA_17n
+      g_EA_17: gmtkn_G21EA:EA_17
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "18"
+  shortname: "18"
+  geometry: "gmtkn_G21EA:EA_18n"
+  reference_value: 28.8
+  setup:
+    reaction_formula: "1 g_EA_18 -> 1 g_EA_18n"
+    reaction_geometries:
+      g_EA_18n: gmtkn_G21EA:EA_18n
+      g_EA_18: gmtkn_G21EA:EA_18
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "19"
+  shortname: "19"
+  geometry: "gmtkn_G21EA:EA_19n"
+  reference_value: 54.2
+  setup:
+    reaction_formula: "1 g_EA_19 -> 1 g_EA_19n"
+    reaction_geometries:
+      g_EA_19n: gmtkn_G21EA:EA_19n
+      g_EA_19: gmtkn_G21EA:EA_19
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "20"
+  shortname: "20"
+  geometry: "gmtkn_G21EA:EA_20n"
+  reference_value: 9.5
+  setup:
+    reaction_formula: "1 g_EA_20 -> 1 g_EA_20n"
+    reaction_geometries:
+      g_EA_20n: gmtkn_G21EA:EA_20n
+      g_EA_20: gmtkn_G21EA:EA_20
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "21"
+  shortname: "21"
+  geometry: "gmtkn_G21EA:EA_21n"
+  reference_value: -0.2
+  setup:
+    reaction_formula: "1 g_EA_21 -> 1 g_EA_21n"
+    reaction_geometries:
+      g_EA_21n: gmtkn_G21EA:EA_21n
+      g_EA_21: gmtkn_G21EA:EA_21
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "22"
+  shortname: "22"
+  geometry: "gmtkn_G21EA:EA_22n"
+  reference_value: 89.5
+  setup:
+    reaction_formula: "1 g_EA_22 -> 1 g_EA_22n"
+    reaction_geometries:
+      g_EA_22n: gmtkn_G21EA:EA_22n
+      g_EA_22: gmtkn_G21EA:EA_22
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "23"
+  shortname: "23"
+  geometry: "gmtkn_G21EA:EA_23n"
+  reference_value: 24.9
+  setup:
+    reaction_formula: "1 g_EA_23 -> 1 g_EA_23n"
+    reaction_geometries:
+      g_EA_23n: gmtkn_G21EA:EA_23n
+      g_EA_23: gmtkn_G21EA:EA_23
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "24"
+  shortname: "24"
+  geometry: "gmtkn_G21EA:EA_24n"
+  reference_value: 38.0
+  setup:
+    reaction_formula: "1 g_EA_24 -> 1 g_EA_24n"
+    reaction_geometries:
+      g_EA_24n: gmtkn_G21EA:EA_24n
+      g_EA_24: gmtkn_G21EA:EA_24
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "25"
+  shortname: "25"
+  geometry: "gmtkn_G21EA:EA_25n"
+  reference_value: 54.7
+  setup:
+    reaction_formula: "1 g_EA_25 -> 1 g_EA_25n"
+    reaction_geometries:
+      g_EA_25n: gmtkn_G21EA:EA_25n
+      g_EA_25: gmtkn_G21EA:EA_25
+  tags: ""
+

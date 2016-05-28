@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface x_bond</h1>
+<p>
+Halogen bond correction for the semiempirical method PM6. The method is described in ref. [1]
+but newer parameters for PM6-D3H4X combination published in ref. [2] are used.
+</p>
+
+<ol>
+<li>Řezáč, J.; Hobza, P. Chem. Phys. Lett. 2011, 506, 286–289.</li>
+<li>Brahmkshatriya, P. S. et al. Curr. Comput.-Aid. Drug. 2013, 9, 118–129.</li>
+</ol>
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#xbond_only_noncovalent">xbond_only_noncovalent</a></li>
+<li><a href="keywords.html#xbond_parameters">xbond_parameters</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#development">development</a></li>
+<li><a href="keywords.html#x0">x0</a></li>
+<li><a href="keywords.html#x1">x1</a></li>
+<li><a href="keywords.html#x2">x2</a></li>
+<li><a href="keywords.html#x3">x3</a></li>
+<li><a href="keywords.html#x4">x4</a></li>
+<li><a href="keywords.html#x5">x5</a></li>
+<li><a href="keywords.html#x6">x6</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/x_bond/examples</p>
+<div class="example"><pre><code>#=======================================================================
+# X-bond correction example 1
+#=======================================================================
+
+# Geometry optimization of a halogen-bonded complex of bromobenzene with
+# acetone using the PM6-D3H4X method (PM6 with empirical corrections
+# for dispersion, hydrogen bonds and halogen bonds)
+
+
+# Optimization setup
+job: optimize
+opt_quality: 0.1
+optimizer: rfo
+
+# PM6 in mopac
+method: pm6
+interface: mopac
+mopac_precise: yes # For such optimization, accurate gradients are needed
+
+# The corrections: D3, H4 and X
+modifiers: dispersion3, h_bonds4, x_bond
+
+# The geometry is taken from the X40 dataset, entry #20
+geometry: X40:20
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

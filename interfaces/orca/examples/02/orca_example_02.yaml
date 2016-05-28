@@ -1,0 +1,33 @@
+#===============================================================================
+# Orca example 2: DFT and RI-DFT calculation
+#===============================================================================
+
+# Multistep protocol is used to run two calculations from one input
+job: multistep 
+steps: dft, ridft
+
+calculation_dft:
+  job: energy
+  interface: orca
+  
+  method: dft
+  functional: b-lyp
+  basisset: SV
+  density_fitting: none # disable RI (by default, it is enabled)
+
+  geometry: A24:water
+  charge: 0
+
+calculation_ridft:
+  job: energy
+  interface: orca
+  
+  method: dft
+  functional: b-lyp
+  basisset: SV
+  density_fitting: scf # enable RI (not necessary, enabled by default)
+  auxiliary_basis_scf: SV # Auxiliary basis for RI has to be specified
+
+  geometry: A24:water
+  charge: 0
+

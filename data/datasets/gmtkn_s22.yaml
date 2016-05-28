@@ -1,0 +1,303 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_S22
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "binding energies of noncovalently bound dimers"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_S22:01"
+  reference_value: 3.17
+  setup:
+    reaction_formula: "1 g_01 -> 2 g_01a"
+    reaction_geometries:
+      g_01: gmtkn_S22:01
+      g_01a: gmtkn_S22:01a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_S22:02"
+  reference_value: 5.02
+  setup:
+    reaction_formula: "1 g_02 -> 2 g_02a"
+    reaction_geometries:
+      g_02: gmtkn_S22:02
+      g_02a: gmtkn_S22:02a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_S22:03"
+  reference_value: 18.80
+  setup:
+    reaction_formula: "1 g_03 -> 2 g_03a"
+    reaction_geometries:
+      g_03: gmtkn_S22:03
+      g_03a: gmtkn_S22:03a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_S22:04"
+  reference_value: 16.12
+  setup:
+    reaction_formula: "1 g_04 -> 2 g_04a"
+    reaction_geometries:
+      g_04: gmtkn_S22:04
+      g_04a: gmtkn_S22:04a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_S22:05"
+  reference_value: 20.69
+  setup:
+    reaction_formula: "1 g_05 -> 2 g_05a"
+    reaction_geometries:
+      g_05: gmtkn_S22:05
+      g_05a: gmtkn_S22:05a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_S22:06"
+  reference_value: 17.00
+  setup:
+    reaction_formula: "1 g_06 -> 1 g_06a + 1 g_06b"
+    reaction_geometries:
+      g_06: gmtkn_S22:06
+      g_06a: gmtkn_S22:06a
+      g_06b: gmtkn_S22:06b
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_S22:07"
+  reference_value: 16.74
+  setup:
+    reaction_formula: "1 g_07 -> 1 g_07a + 1 g_07b"
+    reaction_geometries:
+      g_07: gmtkn_S22:07
+      g_07a: gmtkn_S22:07a
+      g_07b: gmtkn_S22:07b
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_S22:08"
+  reference_value: 0.53
+  setup:
+    reaction_formula: "1 g_08 -> 2 g_08a"
+    reaction_geometries:
+      g_08: gmtkn_S22:08
+      g_08a: gmtkn_S22:08a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_S22:09"
+  reference_value: 1.50
+  setup:
+    reaction_formula: "1 g_09 -> 2 g_09a"
+    reaction_geometries:
+      g_09: gmtkn_S22:09
+      g_09a: gmtkn_S22:09a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_S22:10"
+  reference_value: 1.45
+  setup:
+    reaction_formula: "1 g_10 -> 1 g_10a + 1 g_10b"
+    reaction_geometries:
+      g_10: gmtkn_S22:10
+      g_10a: gmtkn_S22:10a
+      g_10b: gmtkn_S22:10b
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_S22:11"
+  reference_value: 2.62
+  setup:
+    reaction_formula: "1 g_11 -> 2 g_11a"
+    reaction_geometries:
+      g_11: gmtkn_S22:11
+      g_11a: gmtkn_S22:11a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "12"
+  shortname: "12"
+  geometry: "gmtkn_S22:12"
+  reference_value: 4.20
+  setup:
+    reaction_formula: "1 g_12 -> 2 g_12a"
+    reaction_geometries:
+      g_12: gmtkn_S22:12
+      g_12a: gmtkn_S22:12a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "13"
+  shortname: "13"
+  geometry: "gmtkn_S22:13"
+  reference_value: 9.74
+  setup:
+    reaction_formula: "1 g_13 -> 2 g_13a"
+    reaction_geometries:
+      g_13: gmtkn_S22:13
+      g_13a: gmtkn_S22:13a
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "14"
+  shortname: "14"
+  geometry: "gmtkn_S22:14"
+  reference_value: 4.59
+  setup:
+    reaction_formula: "1 g_14 -> 1 g_14a + 1 g_14b"
+    reaction_geometries:
+      g_14: gmtkn_S22:14
+      g_14a: gmtkn_S22:14a
+      g_14b: gmtkn_S22:14b
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "15"
+  shortname: "15"
+  geometry: "gmtkn_S22:15"
+  reference_value: 11.66
+  setup:
+    reaction_formula: "1 g_15 -> 1 g_15a + 1 g_15b"
+    reaction_geometries:
+      g_15: gmtkn_S22:15
+      g_15a: gmtkn_S22:15a
+      g_15b: gmtkn_S22:15b
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "16"
+  shortname: "16"
+  geometry: "gmtkn_S22:16"
+  reference_value: 1.51
+  setup:
+    reaction_formula: "1 g_16 -> 1 g_16a + 1 g_16b"
+    reaction_geometries:
+      g_16: gmtkn_S22:16
+      g_16a: gmtkn_S22:16a
+      g_16b: gmtkn_S22:16b
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "17"
+  shortname: "17"
+  geometry: "gmtkn_S22:17"
+  reference_value: 3.29
+  setup:
+    reaction_formula: "1 g_17 -> 1 g_17a + 1 g_17b"
+    reaction_geometries:
+      g_17: gmtkn_S22:17
+      g_17a: gmtkn_S22:17a
+      g_17b: gmtkn_S22:17b
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "18"
+  shortname: "18"
+  geometry: "gmtkn_S22:18"
+  reference_value: 2.32
+  setup:
+    reaction_formula: "1 g_18 -> 1 g_18a + 1 g_18b"
+    reaction_geometries:
+      g_18: gmtkn_S22:18
+      g_18a: gmtkn_S22:18a
+      g_18b: gmtkn_S22:18b
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "19"
+  shortname: "19"
+  geometry: "gmtkn_S22:19"
+  reference_value: 4.55
+  setup:
+    reaction_formula: "1 g_19 -> 1 g_19a + 1 g_19b"
+    reaction_geometries:
+      g_19: gmtkn_S22:19
+      g_19a: gmtkn_S22:19a
+      g_19b: gmtkn_S22:19b
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "20"
+  shortname: "20"
+  geometry: "gmtkn_S22:20"
+  reference_value: 2.71
+  setup:
+    reaction_formula: "1 g_20 -> 1 g_20a + 1 g_20b"
+    reaction_geometries:
+      g_20: gmtkn_S22:20
+      g_20a: gmtkn_S22:20a
+      g_20b: gmtkn_S22:20b
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "21"
+  shortname: "21"
+  geometry: "gmtkn_S22:21"
+  reference_value: 5.62
+  setup:
+    reaction_formula: "1 g_21 -> 1 g_21a + 1 g_21b"
+    reaction_geometries:
+      g_21: gmtkn_S22:21
+      g_21a: gmtkn_S22:21a
+      g_21b: gmtkn_S22:21b
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "22"
+  shortname: "22"
+  geometry: "gmtkn_S22:22"
+  reference_value: 7.09
+  setup:
+    reaction_formula: "1 g_22 -> 1 g_22a + 1 g_22b"
+    reaction_geometries:
+      g_22: gmtkn_S22:22
+      g_22a: gmtkn_S22:22a
+      g_22b: gmtkn_S22:22b
+  tags: ""
+

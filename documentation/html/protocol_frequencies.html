@@ -1,0 +1,175 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol frequencies</h1>
+<p>
+Calculation of harmonic vibrational frequencies. Requires the calculation of Hessian - some interafces provides analytical Hessian, in other cases, the interface <a href="interface_numerical_hessian.html">numerical_hessian</a> can be used. The analysis can be also run on a precalculated Hessian saved in either previous frequencies job or from a separate <a href="protocol_hessian.html">Hessian calculation</a>.
+</p>
+
+<h2>Output</h2>
+<p>
+Vibrational frequencies and thermodynamic quantities obtained at the rigid rotor - harmonic oscillator level are printed in the output. 
+If the interface provides the derivatives of the dipole moment, IR intensities are printed as well. printing additional information for each
+vibrational mode is controlled by the keyword <a href="keywords.html#freq_print">freq_print</a>.
+Additionally, the Hessian is written to a file and all the data inculding normal mode vectors are saved in the Molden format for visualization.
+</p>
+
+<h2>Normal mode scans</h2>
+<p>
+The interface can also generate scans along the normal modes. Both one- and multi-dimensionals scans can be prepared easily. The desired grid can be provided by the user or calculated automatically to cover a specified potential energy range in all modes. The generated scans (series of coordinates in .xyz files) can be processed easily by the <a href="protocol_scan.html">Scan</a> protocol.
+</p>
+
+<h2>Keywords used</h2>
+<h4>Keywords specific for this protocol:</h4>
+<ul>
+<li><a href="keywords.html#freq_mode_scan">freq_mode_scan</a></li>
+<li><a href="keywords.html#freq_mode_scan_batchsize">freq_mode_scan_batchsize</a></li>
+<li><a href="keywords.html#freq_mode_scan_e">freq_mode_scan_e</a></li>
+<li><a href="keywords.html#freq_mode_scan_e_unit">freq_mode_scan_e_unit</a></li>
+<li><a href="keywords.html#freq_mode_scan_grids">freq_mode_scan_grids</a></li>
+<li><a href="keywords.html#freq_mode_scan_multidimensional">freq_mode_scan_multidimensional</a></li>
+<li><a href="keywords.html#freq_mode_scan_n">freq_mode_scan_n</a></li>
+<li><a href="keywords.html#freq_molden_file">freq_molden_file</a></li>
+<li><a href="keywords.html#freq_print">freq_print</a></li>
+<li><a href="keywords.html#hessian_read">hessian_read</a></li>
+<li><a href="keywords.html#hessian_write">hessian_write</a></li>
+<li><a href="keywords.html#thermo_low_mode_fix">thermo_low_mode_fix</a></li>
+<li><a href="keywords.html#thermo_pressure">thermo_pressure</a></li>
+<li><a href="keywords.html#thermo_symmetry_number">thermo_symmetry_number</a></li>
+<li><a href="keywords.html#thermo_temperature">thermo_temperature</a></li>
+</ul>
+<h4>Other keywords used by this protocol:</h4>
+<ul>
+<li><a href="keywords.html#print">print</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/frequencies/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Frequencies protocol example 1 - basic calculation of vibrational frequencies
+#===============================================================================
+
+# Calcualtion of vibrational frequencies of a water molecule
+
+job: frequencies
+
+# Calculation setup
+interface: turbomole
+method: dft
+functional: b-lyp
+basisset: SV
+charge: 0
+density_fitting: none
+
+# Water molecule optimized at this level - the optimization and vibtartional
+# analysis can be chained in a single input file - see Example 2 for the
+# Multistep protocol
+geometry: |
+  O   -0.000000000   0.000000000  -0.058641239
+  H   -0.000000000   0.797196184   0.542383939
+  H   -0.000000000  -0.797196184   0.542383939
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Frequencies protocol example 2 - reusing the Hessian
+#===============================================================================
+
+# This input uses the file 'hessian.yaml' generated by Example 1 to repeat
+# the vibratinal analysis without recalculating the Hessian
+
+# This is useful e.g. for recalculating the thermodynamic variables at different
+# conditions.
+
+job: frequencies
+
+# Instead of a calculation, read the Hessain from a file
+hessian_read: hessian.yaml
+
+# Set different temperature for the thermodynamic analysis
+thermo_temperature: 500 # K 
+
+# Geometry: the same is in Example 1
+geometry: |
+  O   -0.000000000   0.000000000  -0.058641239
+  H   -0.000000000   0.797196184   0.542383939
+  H   -0.000000000  -0.797196184   0.542383939
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Frequencies protocol example 3  normal mode scan
+#===============================================================================
+
+# This input performs a scan along one normal mode
+
+# This is sone in two steps - generation of the coordinates and energy scan
+job: multistep
+steps: generate, scan
+
+calculation_generate:
+  # Reuse the hessian from Example 1
+  job: frequencies
+  hessian_read: hessian.yaml
+  geometry: |
+    O   -0.000000000   0.000000000  -0.058641239
+    H   -0.000000000   0.797196184   0.542383939
+    H   -0.000000000  -0.797196184   0.542383939
+
+  # Scan setup
+  freq_mode_scan: yes
+  # List of modes to scan - mode no. 1, the asymetric stretch
+  freq_mode_scan_multidimensional:
+    - 1
+  # Grid for the scan (in dimensionless normal coordinates)
+  freq_mode_scan_grids:
+    - "seq(-5, 0.5, 5)" # Generate grid from -5 to 5 with step of 0.5
+  # This produces file multidimensional_scan.xyz
+
+calculation_scan:
+  # Perform a series of energy calculations on the geometries prepared
+  # in previous step
+  job: scan
+  geometry: multidimensional_scan.xyz
+  calculation:
+    job: energy
+    interface: turbomole
+    method: dft
+    functional: b-lyp
+    basisset: SV
+    charge: 0
+    density_fitting: none
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

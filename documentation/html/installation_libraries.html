@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Manual installation of dependencies</h1>
+<h2>Math libraries</h2>
+<p>BLAS and LAPACK can be easily built using the foillowing commands. This installs the libraries to $HOME/bin/lib.</p>
+<pre><code>
+wget http://www.netlib.org/lapack/lapack-3.4.0.tgz
+tar -xf lapack-3.4.0.tgz
+cd lapack-3.4.0
+wget http://users.wfu.edu/cottrell/lapack/lapack-3.4.0-autoconf.tar.gz
+tar -xf lapack-3.4.0-autoconf.tar.gz
+./configure --prefix=$HOME/bin --enable-single=no --enable-complex=no --enable-complex16=no --enable-shared
+make
+make install
+</code></pre>
+To use the libraries from this location, create file ~/.cuby4 containing the following (replacing <em>path_to_your_home</em> to match your environment):
+<pre><code>
+extension_lib_dirs:
+  - /path_to_your_home/bin
+  - /path_to_your_home/bin/lib
+</code></pre>
+<p>Then, rebuild the extensions by calling</p>
+<pre><code>
+cuby4 --make
+</code></pre>
+<p>If this reports that e.g. LAPACK has not been found, go to cuby4/classes/algebra and try running</p>
+<pre><code>
+ruby extconf.rb --force-lapack
+make
+</code></pre>
+
+<h2>Libyaml for RVM</h2>
+<p>When installing ruby using RVM, the libyaml library is needed. The following setup can be used to install it in user space:</p>
+<pre><code>
+wget http://pyyaml.org/download/libyaml/yaml-0.1.5.tar.gz
+tar -xf yaml-0.1.5.tar.gz
+cd yaml-0.1.5
+./configure --prefix=$HOME/bin
+make
+make install
+</code></pre>
+<p>Then, rebuild ruby using RVM</p>
+<pre><code>
+rvm reinstall 1.9.3 --with-libyaml-dir=$HOME/bin
+</code></pre>
+<p>or</p>
+<pre><code>
+rvm reinstall 1.9.3 --autolibs=rvm_pkg --with-libyaml-dir=$HOME/bin
+</code></pre>
+		</div>
+		</div>
+	</body>
+</html>

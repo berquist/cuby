@@ -1,0 +1,241 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface orca</h1>
+<p>
+Interface to the Orca package
+(<a href="http://cec.mpg.de/forum/">http://cec.mpg.de/forum</a>, free license for academic use).
+The interface was developed for version 2.9 and tested to work with 3.0.2.
+</p>
+
+<p>
+Orca provides access to wide range of DFT and ab initio methods, both DFT and correled calculations can used the Resolution of identity approximation.
+</p>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>hf - supports calculation of energy, gradient, point_charges, point_charges_gradient</li>
+<li>dft - supports calculation of energy, gradient, point_charges, point_charges_gradient</li>
+<li>mp2 - supports calculation of energy, gradient</li>
+<li>mp3 - supports calculation of energy</li>
+<li>ccsd - supports calculation of energy</li>
+<li>ccsd(t) - supports calculation of energy</li>
+<li>qcisd - supports calculation of energy</li>
+<li>qcisd(t) - supports calculation of energy</li>
+</ul>
+<h4>The interface implements following solvent models (keyword 'solvent_model'):</h4>
+<ul>
+<li>cosmo</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#orca_bin_dir">orca_bin_dir</a></li>
+<li><a href="keywords.html#orca_dlpno">orca_dlpno</a></li>
+<li><a href="keywords.html#orca_ecp">orca_ecp</a></li>
+<li><a href="keywords.html#orca_extra_input">orca_extra_input</a></li>
+<li><a href="keywords.html#orca_keywords">orca_keywords</a></li>
+<li><a href="keywords.html#orca_mpi_setup">orca_mpi_setup</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#auxiliary_basis_mp2">auxiliary_basis_mp2</a></li>
+<li><a href="keywords.html#auxiliary_basis_mp2_elements">auxiliary_basis_mp2_elements</a></li>
+<li><a href="keywords.html#auxiliary_basis_scf">auxiliary_basis_scf</a></li>
+<li><a href="keywords.html#auxiliary_basis_scf_elements">auxiliary_basis_scf_elements</a></li>
+<li><a href="keywords.html#basisset">basisset</a></li>
+<li><a href="keywords.html#basisset_elements">basisset_elements</a></li>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#correlation_frozen_core">correlation_frozen_core</a></li>
+<li><a href="keywords.html#delete_large_files">delete_large_files</a></li>
+<li><a href="keywords.html#density_fitting">density_fitting</a></li>
+<li><a href="keywords.html#dft_grid">dft_grid</a></li>
+<li><a href="keywords.html#dft_grid_custom">dft_grid_custom</a></li>
+<li><a href="keywords.html#existing_calc_dir">existing_calc_dir</a></li>
+<li><a href="keywords.html#functional">functional</a></li>
+<li><a href="keywords.html#functional_custom">functional_custom</a></li>
+<li><a href="keywords.html#functional_custom_type">functional_custom_type</a></li>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#mem">mem</a></li>
+<li><a href="keywords.html#mem_core">mem_core</a></li>
+<li><a href="keywords.html#method">method</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+<li><a href="keywords.html#parallel">parallel</a></li>
+<li><a href="keywords.html#scf_convergence">scf_convergence</a></li>
+<li><a href="keywords.html#scs_os">scs_os</a></li>
+<li><a href="keywords.html#scs_ss">scs_ss</a></li>
+<li><a href="keywords.html#solvent_epsilon">solvent_epsilon</a></li>
+<li><a href="keywords.html#solvent_model">solvent_model</a></li>
+<li><a href="keywords.html#spin_component_scaling">spin_component_scaling</a></li>
+<li><a href="keywords.html#spin_restricted">spin_restricted</a></li>
+<li><a href="keywords.html#start_from_previous">start_from_previous</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/orca/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Orca example 1: setup, HF calculation
+#===============================================================================
+
+# Simple input for HF calculation, all other options use default values.
+
+job: energy
+interface: orca
+
+method: hf
+basisset: cc-pVDZ
+
+geometry: A24:water # Water molecule from the internal database
+charge: 0
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+# Path to Orca binaries
+orca_bin_dir: /home/rezac/bin/orca/orca-3.0.2/arch/amd64/orca_3_0_2_linux_x86-64
+
+# The following examples assume that the interface is set up in the config file.
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Orca example 2: DFT and RI-DFT calculation
+#===============================================================================
+
+# Multistep protocol is used to run two calculations from one input
+job: multistep 
+steps: dft, ridft
+
+calculation_dft:
+  job: energy
+  interface: orca
+  
+  method: dft
+  functional: b-lyp
+  basisset: SV
+  density_fitting: none # disable RI (by default, it is enabled)
+
+  geometry: A24:water
+  charge: 0
+
+calculation_ridft:
+  job: energy
+  interface: orca
+  
+  method: dft
+  functional: b-lyp
+  basisset: SV
+  density_fitting: scf # enable RI (not necessary, enabled by default)
+  auxiliary_basis_scf: SV # Auxiliary basis for RI has to be specified
+
+  geometry: A24:water
+  charge: 0
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Orca example 3: MP2 and RI-MP2 calculation
+#===============================================================================
+
+# Multistep protocol is used to run two calculations from one input
+job: multistep 
+steps: mp2, rimp2
+
+# In contrast to the previous example, we gather the setup used in all steps
+# into a common subsection:
+calculation_common:
+  job: energy
+  interface: orca
+  method: mp2
+  basisset: cc-pVTZ
+  geometry: A24:water
+  charge: 0
+
+calculation_mp2:
+  density_fitting: none # disable RI (by default, it is enabled)
+
+calculation_rimp2:
+  density_fitting: correlation # enable RI (not necessary, enabled by default)
+  auxiliary_basis_mp2: cc-pVTZ # Auxiliary basis for RI has to be specified
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Orca example 4: CCSD(T) calculation
+#===============================================================================
+
+job: energy
+interface: orca
+
+method: ccsd(t)
+basisset: cc-pVDZ
+
+geometry: A24:water # Water molecule from the internal database
+charge: 0
+
+# Print components of the CCSD(T) energy
+print: energy_decomposition
+
+# Other options affecting this calculation
+correlation_frozen_core: yes # Frozen-core approximation, on by default
+scf_convergence: 8 # For CCSD(T), we set tighter SCF convergence, default is 7
+
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Orca example 5: DLPNO-CCSD(T) calculation
+#===============================================================================
+
+# Approximate CCSD(T) calculation applicable to large systems - 
+# Domain-Localized Pair Natural Orbitals CSCD(T)
+
+job: energy
+interface: orca
+
+method: ccsd(t)
+basisset: cc-pVDZ
+
+geometry: A24:water # Water molecule from the internal database
+charge: 0
+
+# Print components of the CCSD(T) energy
+print: energy_decomposition
+
+# Setup needed in addition to plain CCSD(T)
+orca_dlpno: yes # enable the approximation
+auxiliary_basis_mp2: cc-pVDZ # Auxiliary basis for RI-MP2 is needed
+
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,149 @@
+################################################################################
+# KEYWORDS for interface DFTB
+################################################################################
+
+keywords:
+  :dftb_dispersion: !ruby/object:SettingsKeyword # file: interfaces/dftb.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: false
+  #: Original dispersion correction as implemented in DFTB+
+
+  :dftb_xh_damping: !ruby/object:SettingsKeyword # file: interfaces/dftb.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: XH electrostatic interaction damping to improve hydrogen bonds. Requires DVTB+ ver 1.1
+  
+  :dftb_xh_damping_exp: !ruby/object:SettingsKeyword # file: interfaces/dftb.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 4.95
+  #: parameter (exponent) for -->dftb_xh_damping . Default value is taken from paper on the method
+  #: optimized for use with MIO set.
+
+  :dftb_3rd_order_full: !ruby/object:SettingsKeyword # file: interfaces/dftb.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Full 3rd order calculation, when disabled, only diagonal (aka. on-site) contribution is calculated. Requires DFTB+ ver 1.2.1
+  
+  :dftb_hubbard_derivs: !ruby/object:SettingsKeyword # file: interfaces/dftb.rb
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :dftb3
+    allowed_values:
+      - :dftb3
+      - :old
+      - :custom
+  #: 3rd order DFTB uses derivatives of Hubbard parameter. The default values are those obtained from
+  #: DFT calculation. The keyword can have following values:
+  #* dftb3 - use the default parameters for DFTB3/3OB (default)
+  #* old - an old set of parameters used previously with the MIO set, previously default in Cuby
+  #* custom - use keyword dftb_hubbard_derivs_custom to provide custom values
+
+  :dftb_hubbard_derivs_custom: !ruby/object:SettingsKeyword # file: interfaces/dftb.rb
+    convert_to: :hash
+    when_not_present: :die
+  #: Values of custom Hubbard derivatives - see keyword dftb_hubbard_derivs.
+  
+  :dftb_scc_convergence: !ruby/object:SettingsKeyword # file: interfaces/dftb.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 1.0e-05
+  #: Self-consistent charges calculation convergence limit
+
+  :dftb_safe: !ruby/object:SettingsKeyword # file: interfaces/dftb.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Use more robust eigensolver
+
+  :dftb_do_scc: !ruby/object:SettingsKeyword # file: interfaces/dftb.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: By default, SCC-DFTB calculation is performed. Non-SCC calculation can be invoked
+  #: by setting this keyword to false.
+
+  :dftb_e_temp: !ruby/object:SettingsKeyword # file: interfaces/dftb.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.0
+  #: Electronic temerature
+
+  :dftb_use_dftbplus: !ruby/object:SettingsKeyword # file: interfaces/dftb.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: true
+  #: Use DFTB+ program (the interface supports also original DFTB)
+
+  :dftb_cm3_charges: !ruby/object:SettingsKeyword # file: interfaces/dftb.rb
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Use CM3 charges in SCC. Available only in modified version of the old
+  #: DFTB program.
+
+  :dftb_blur_charges: !ruby/object:SettingsKeyword # file: interfaces/dftb.rb
+    convert_to: :float
+    when_not_present: :default
+    default_value: 0.0
+  #: Half-width of gaussian blur of external point charges. Zero for normal
+  #: point charges.
+
+  :dftb_data_file: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Path to a file containing data needed by some DFTB calculation (dispersion
+  #: parameters, spin constants etc.) By default, the data file from the
+  #: interfacedirectory is used, but this keyword can be used to specify another
+  #: file.
+
+  :dftbplus_exe: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Configuration: path to dftb+ executable
+ 
+  :dftb_exe: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Configuration: path to dftb executable (original program, not DFTB+)
+ 
+  :dftb_slko_basepath: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Configuration: path to directories containing the sets of Slater-Koster files
+
+  :dftb_slko_set: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "N/A"
+  #: Configuration: Name of the Slater-Koster parameter file set
+  #: (name of directory in dftb_slko_basepath)
+ 
+  :dftb_slko_format: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Configuration: template for Slater-Koster file naming (where X and Y are
+  #: elements, upper or lower case). If not present, name of the first file from
+  #: the slko directory is used as a template.
+
+  :dftb_cpe: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :"cpe(q)"
+  #: CPE polarization for DFTB3, requires development version of the DFTB+ code.
+  #: The method is described in Christensen et al., J. Chem. Phys 143, 084123 (2015).
+ 
+  :dftb_extra_input_hamiltonian: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: ""
+  # Extra input for DFTB+ in its native input format, inserted into the Hamiltonian block

@@ -1,0 +1,67 @@
+################################################################################
+# Keywords for protocol Multistep
+################################################################################
+
+keywords: 
+  :steps: !ruby/object:SettingsKeyword
+    convert_to: :symbol_list
+    when_not_present: :die
+  #: List (comma separated, or YAML array) of the names of the steps. Each step is then defined
+  #: in a subsection named "calculation_stepname". Common setup shared by all
+  #: the steps can be defined in subsection "calculation_common", this setup can
+  #: be overriden by the setup of a particular step.
+
+  :multistep_result_expression: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: The result of a multistep job is evauated using this expression after all
+  #: the steps have been completed. For experts only, this requires calling
+  #: internal data structures of the multistep job.
+
+  :multistep_result_name: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "Result expression value"
+  #: Name of the result calculated using multistep_result_expression keyword
+
+  :multistep_result_eval: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Alternatively to multistep_result_expression, a piece of ruby code can be
+  #: called on the results. For experts only.
+
+  :multistep_print: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: yes
+  #: Controls printing of step headers and output of each step
+
+  :step_title: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Custom step title, step name is used if not set
+
+  :step_title_decoration: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "="
+  #: Character using in the decoration lines in step titles
+
+  :skip_step_if_file_found: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Condition allowing skipping a step if some file already exists
+
+  :skip_step_if_file_not_found: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Condition allowing skipping a step if some file is missing
+
+  #: Condition allowing skipping a step if some file already exists
+  :step_queue: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: When set in a step block, the calculation is queued until 
+  #: a following steps triggers execution of the queue
+

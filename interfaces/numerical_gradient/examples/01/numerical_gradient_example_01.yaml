@@ -1,0 +1,18 @@
+#===============================================================================
+# Numerical gradient example 1 - optimization with numerical gradient
+#===============================================================================
+
+# Optimize water molecule
+job: optimize
+opt_quality: 0.1
+geometry: A24:water
+
+# Use numerical gradient
+interface: numerical_gradient
+
+# This block is used to evaluate energy of each point needed for the
+# construction of the gradient:
+calculation:
+  interface: mopac
+  method: AM1
+  charge: 0

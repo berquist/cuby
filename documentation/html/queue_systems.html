@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Cuby on clusters</h1>
+<p>Cuby supports execution of the calculations on clusters managed with several common job management utilities (queue systems).
+Cuby calculation can be configured (both from input or commandline) to not to be run immediately but submitted to the queue system.
+The calculation is then executed on a node of the cluster allocated by the system and the results are copied back to the directory
+from which it was submitted (this requires strict application of the rule <strong>one calculation &ndash; one directory</strong>). 
+</p>
+
+<h2>Supported software</h2>
+<p>Currently, the 
+<a href="https://en.wikipedia.org/wiki/Portable_Batch_System">Portable Batch System (PBS)</a> and 
+<a href="https://en.wikipedia.org/wiki/Oracle_Grid_Engine">Sun Grid Engine (SGE)</a> 
+queue systems (and possibly also their derivatives) are supported.</p>
+<p>Cuby provides unified interface to these systems, the minor differences are handled internally.</p>
+
+<h2>Job setup</h2>
+<p>To use this feature, it should be configured at the root level of the input file. The required usual is</p>
+<pre><code>queue_submit: yes # Sumbit to queue rather than running immediately. Also controlled from commandline by the -q switch
+queue_system: pbs # Type of the queue system
+queue_scratch_dir: /scratch/$USER # Path to scratch directory - set up according to your environment
+queue_jobname: TestJob # Name of the job passed
+queue_name: q_test # Name of the queue to submit to
+queue_walltime_hrs: 10 # Walltime limit 
+</code></pre>
+<p>Some of these keywords can be configured in the config file so that they do not have to be repeated in every input.</p>
+
+<h2>Job submission and execution</h2>
+<p>When cuby is run with such an input, Cuby submits the job and termuinates immediately.</p>
+<p>The queue system then executes the job on a node of the cluster. The contents of the directory are copied to the scratch direcory (into subdirectory unique for the job) and another instance of cuby is run there.</p>
+
+<h2>Obtaining results</h2>
+<p>After the calculation finishes, all the output is copied to the location from which the job was submitted into the RESULTS subdirectory (can be changed in input). By default, the output of cuby is saved to a file named LOG.</p>
+		</div>
+		</div>
+	</body>
+</html>

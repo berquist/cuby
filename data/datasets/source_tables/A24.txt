@@ -1,0 +1,24 @@
+1	water ... ammonia	water_ammonia	Cs	-6.493378	H-bond
+2	water dimer	water_dimer	Cs	-5.005935	H-bond
+3	HCN dimer	HCN_dimer	Cs	-4.744718	H-bond
+4	HF dimer	HF_dimer	Cs	-4.581237	H-bond
+5	ammonia dimer	ammonia_dimer	C2h	-3.136516	H-bond
+6	HF ... methane	HF_methane	C3v	-1.654476	other
+7	ammonia ... methane	ammonia_methane	C3v	-0.764673	other
+8	water ... methane	water_methane	Cs	-0.663422	other
+9	formaldehyde dimer	formaldehyde_dimer	Cs	-4.554256	other
+10	water ... ethene	water_ethene	Cs	-2.556773	other
+11	formaldehyde ... ethene	formaldehyde_ethene	Cs	-1.621070	other
+12	ethyne dimer	ethyne_dimer	C2v	-1.524047	other
+13	ammonia ... ethene	ammonia_ethene	Cs	-1.373594	other
+14	ethene dimer	ethene_dimer	C2v	-1.090361	other
+15	methane ... ethene	methane_ethene	Cs	-0.502478	dispersion
+16	borane ... methane	borane_methane	Cs	-1.484653	dispersion
+17	methane ... ethane	methane_ethane	Cs	-0.827355	dispersion
+18	methane ... ethane	methane_ethane	Cs	-0.607119	dispersion
+19	methane dimer	methane_dimer	D3d	-0.532617	dispersion
+20	Ar ... methane	Ar_methane	C3v	-0.404545	dispersion
+21	Ar ... ethene	Ar_ethene	C2v	-0.364342	dispersion
+22	ethene ... ethyne	ethene_ethyne	C2v	0.821219	stack
+23	ethene dimer	ethene_dimer	D2h	0.933912	stack
+24	ethyne dimer	ethyne_dimer	D2h	1.115355	stack

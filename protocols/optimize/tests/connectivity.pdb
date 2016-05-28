@@ -1,0 +1,13 @@
+ATOM      1  O   UNK     1      -0.185   0.443   1.167
+ATOM      2  H   UNK     1      -0.633  -0.318   0.651
+ATOM      3  H   UNK     1      -0.141   0.382   2.096
+ATOM      4  O   UNK     1      -0.177   0.199   3.884
+ATOM      5  H   UNK     1       0.553  -0.108   4.295
+ATOM      6  H   UNK     1      -0.760   0.748   4.462
+CONECT    1    2    3
+CONECT    2    1
+CONECT    3    1    4
+CONECT    4    5    6    3
+CONECT    5    4
+CONECT    6    4
+END

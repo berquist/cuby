@@ -1,0 +1,44 @@
+#===============================================================================
+# Scan protocol example 3: cartesian grid generator
+#===============================================================================
+
+# Scan of the potential around methane, using argon atom as a probe
+# PM6-D3 method is used
+
+job: scan
+scan_mode: serial
+
+# Geometry: methane + Ar atom
+geometry: |
+  C    0.000000000   0.000000000   0.000000000
+  H    0.626128590   0.626128590  -0.626128590
+  H    0.626128590  -0.626128590   0.626128590
+  H   -0.626128590   0.626128590   0.626128590
+  H   -0.626128590  -0.626128590  -0.626128590
+  Ar   0.000000000   0.000000000   3.000000000
+
+#-------------------------------------------------------------------------------
+# Grid generator
+#-------------------------------------------------------------------------------
+scan_generator: grid_xyz
+scan_generator_setup:
+  # 2D grid, zero in x axis
+  grid_x: 0
+  grid_y: seq(-7, 0.3, 7) # series from -7 to 7, spacing 0.3 Angstrom
+  grid_z: seq(-7, 0.3, 7)
+  # Move the 6th atom, Ar
+  selection_move: 6
+  # van der Waals distance filter - use only points where the minima is likely
+  # to occur
+  rvdw_min: 0.9
+  rvdw_max: 1.2
+
+#-------------------------------------------------------------------------------
+# Calculation: PM6-D3
+#-------------------------------------------------------------------------------
+calculation:
+  job: energy
+  interface: mopac
+  method: pm6
+  charge: 0
+  modifiers: dispersion3

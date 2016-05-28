@@ -1,0 +1,203 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface restraints</h1>
+<p>
+This interface applies user-defined harmonic potentials between selected atoms or group of atoms.
+Used as a modifier, it adds restraints to the underlying calculations. The restraints
+can be applied to following internal coordinates (for detailed syntax, see the examples below):
+<ul>
+	<li><strong>distance</strong> - distance between two atoms</li>
+	<li><strong>distance_f</strong> - the same as distance, potential with flat bottom</li>
+	<li><strong>angle</strong> - angle between three atoms</li>
+	<li><strong>torsion</strong> - torsional angle between four atoms</li>
+	<li><strong>distance_difference</strong> - difference between two interatomic distances</li>
+</ul>
+</p>
+
+<h2>Methods and capabilities</h2>
+<p>The interface implements a single unnamed method; 'method' keyword not necessary</p>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#restraints">restraints</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/restraints/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Restraints example 1: restraints syntax
+#===============================================================================
+
+# Here, the restraints are used as a standalone iterface, although the most
+# common application of this interface is to use it as a modifier added to
+# some other calculation. The purpose of this example is to demonstrate the
+# syntax used to define all types of the restraints.
+
+# Using the retsraints, we define a simple harmonic forcefield for a hydrogen
+# peroxide, and optimize a very bad starting geometry using this forfecield.
+
+job: optimize
+interface: restraints
+
+# Geometry - practically random guess
+geometry: |
+  H  1.0 0.0 0.0
+  O  0.0 1.0 0.0
+  O  0.0 0.0 5.0
+  H  1.0 0.0 8.0
+
+# The list of the restraints is an array in the YAML syntax (indented lines
+# starting with "-"). Each line contain multiple entries, separated by
+# semicolons:
+# 1)       type of the internal coordinate (distance, angle, torsion)
+# 2)       equilibrium value (in Angstroms/degrees)
+# 3)       force constant (kcal/mol/Angstrom, kcal/mol/rad)
+# 4,5,...) list of atoms (in Cuby selection syntax) defining the center the 
+#          restraint is applied to (2 for distance, 3 for angle, 4 for torsion)
+restraints:
+  - distance; 0.95; 10; 1; 2
+  - distance; 1.47; 10; 2; 3
+  - distance; 0.95; 10; 3; 4
+  - angle; 94.8; 10; 1; 2; 3
+  - angle; 94.8; 10; 2; 3; 4
+  - torsion; 111.5; 10; 1; 2; 3; 4
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Restraints example 2: Restraint as a modifier, acting on more atoms
+#===============================================================================
+
+# Optimization of water dimer, with restraint on the distance between the
+# molecules. When more atoms are used as the restraint centers, the additional
+# potential acts on their center of mass.
+
+job: optimize
+
+interface: water_ff # Simple forcefield for water, built in in Cuby
+
+geometry: S66:01 # Optimized water dimer from the S66 database
+
+modifiers: restraints # This adds a modifier to the calculation specified above
+
+# Each modifier has its own block (subsection) in the input, named
+# modifier_[modifier_name]. The contents of a block are indented to distinguish
+# it from the remainder of the input.
+
+modifier_restraints:
+  # The setup of the modifier comes here - a restraint is defined
+  # The two molecules are defined by atom selections (using difefrent way for
+  # each of them - "1-3" and "4,5,6")
+  restraints:
+    - distance; 5.0; 20.0; 1-3; 4,5,6
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Restraints example 3: Flat-bottom distance restraint
+#===============================================================================
+
+# Molecular dynamics of water dimer, the dimer is prevented from dissociating
+# by applying a restraint that has a flat bottom but adds a harmotic potential
+# above a thershold distance.
+
+job: dynamics
+# NVT at 1000K, at this temperature the dimer will dissociate quickly
+# when the restraint is not applied
+thermostat: berendsen
+temperature: 1000 # target temperature for the thermostat, K
+init_temp: 1000 # initialization temperature, K
+maxcycles: 10000
+trajectory_freq: 50
+
+interface: water_ff # Simple forcefield for water, built in in Cuby
+
+geometry: S66:01 # Optimized water dimer from the S66 database
+
+modifiers: restraints # This adds a modifier to the calculation specified above
+
+# Each modifier has its own block (subsection) in the input, named
+# modifier_[modifier_name]. The contents of a block are indented to distinguish
+# it from the remainder of the input.
+
+modifier_restraints:
+  # The setup of the modifier comes here - a restraint is defined
+  # The third number (8.0) is the additional parameter, below this distance
+  # no restraint is applied.
+  restraints:
+    - distance_f; 5.0; 20.0; 8.0; 1-3; 4-6
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Restraints example 4: Distance diference restraint
+#===============================================================================
+
+# Optimization of water dimer cation with a distance difefrence restraint that
+# keeps it non-symmetric
+
+# Optimization setup
+job: optimize
+opt_quality: 0.1
+
+# QM calculation: HF/6-31G
+interface: turbomole
+method: hf
+basisset: 6-31G
+charge: 1
+
+
+# Restraint modifier
+modifiers: restraints
+modifier_restraints:
+  restraints:
+    - distance_difference; 1.0; 500.0; 1; 3; 3; 5
+# The restraint definition requires four atoms A; B; C; D
+# The restraint is applied is applied on the distance difference |AB| - |CD|
+# Difference of 1.0 A is enforced using force constant of 500 kcal/mol/A
+
+# Geometry - rough estimate built from neutral water dimer
+geometry: |
+ O     2.220871     0.026717     0.000620
+ H    -1.022193     0.846776    -0.011489
+ H     0.257521     0.042122     0.005219
+ H    -1.440667    -0.653463     0.026409
+ O    -0.702196    -0.056060     0.009942
+ H     2.597493    -0.411663     0.766745
+ H     2.593136    -0.449496    -0.744782
+
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

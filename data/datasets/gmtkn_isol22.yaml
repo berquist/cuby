@@ -1,0 +1,291 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+# See the paper
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: GMTKN_ISOL22
+  references: 
+    "10.1021/ct100466k": "Goerigk, L.; Grimme, S. J. Chem. Theory Comput. 2011, 7 (2), 291–309."
+  text: "isomerization energies of large organic molecules"
+
+  global_setup:
+    job: reaction
+    reaction_print: []
+    calculation:
+      geometry_setup_from_file: yes
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "1"
+  shortname: "1"
+  geometry: "gmtkn_ISOL22:i2e"
+  reference_value: 40.59
+  setup:
+    reaction_formula: "1 g_i2e -> 1 g_i2p"
+    reaction_geometries:
+      g_i2e: gmtkn_ISOL22:i2e
+      g_i2p: gmtkn_ISOL22:i2p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "2"
+  shortname: "2"
+  geometry: "gmtkn_ISOL22:i3e"
+  reference_value: 11.68
+  setup:
+    reaction_formula: "1 g_i3e -> 1 g_i3p"
+    reaction_geometries:
+      g_i3e: gmtkn_ISOL22:i3e
+      g_i3p: gmtkn_ISOL22:i3p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "3"
+  shortname: "3"
+  geometry: "gmtkn_ISOL22:i5e"
+  reference_value: 34.94
+  setup:
+    reaction_formula: "1 g_i5e -> 1 g_i5p"
+    reaction_geometries:
+      g_i5e: gmtkn_ISOL22:i5e
+      g_i5p: gmtkn_ISOL22:i5p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "4"
+  shortname: "4"
+  geometry: "gmtkn_ISOL22:i6e"
+  reference_value: 25.89
+  setup:
+    reaction_formula: "1 g_i6e -> 1 g_i6p"
+    reaction_geometries:
+      g_i6e: gmtkn_ISOL22:i6e
+      g_i6p: gmtkn_ISOL22:i6p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "5"
+  shortname: "5"
+  geometry: "gmtkn_ISOL22:i7e"
+  reference_value: 18.79
+  setup:
+    reaction_formula: "1 g_i7e -> 1 g_i7p"
+    reaction_geometries:
+      g_i7e: gmtkn_ISOL22:i7e
+      g_i7p: gmtkn_ISOL22:i7p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "6"
+  shortname: "6"
+  geometry: "gmtkn_ISOL22:i8e"
+  reference_value: 18.30
+  setup:
+    reaction_formula: "1 g_i8e -> 1 g_i8p"
+    reaction_geometries:
+      g_i8e: gmtkn_ISOL22:i8e
+      g_i8p: gmtkn_ISOL22:i8p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "7"
+  shortname: "7"
+  geometry: "gmtkn_ISOL22:i9e"
+  reference_value: 22.31
+  setup:
+    reaction_formula: "1 g_i9e -> 1 g_i9p"
+    reaction_geometries:
+      g_i9e: gmtkn_ISOL22:i9e
+      g_i9p: gmtkn_ISOL22:i9p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "8"
+  shortname: "8"
+  geometry: "gmtkn_ISOL22:i10e"
+  reference_value: 7.91
+  setup:
+    reaction_formula: "1 g_i10e -> 1 g_i10p"
+    reaction_geometries:
+      g_i10e: gmtkn_ISOL22:i10e
+      g_i10p: gmtkn_ISOL22:i10p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "9"
+  shortname: "9"
+  geometry: "gmtkn_ISOL22:i11e"
+  reference_value: 38.13
+  setup:
+    reaction_formula: "1 g_i11e -> 1 g_i11p"
+    reaction_geometries:
+      g_i11e: gmtkn_ISOL22:i11e
+      g_i11p: gmtkn_ISOL22:i11p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "10"
+  shortname: "10"
+  geometry: "gmtkn_ISOL22:i12e"
+  reference_value: 0.96
+  setup:
+    reaction_formula: "1 g_i12e -> 1 g_i12p"
+    reaction_geometries:
+      g_i12e: gmtkn_ISOL22:i12e
+      g_i12p: gmtkn_ISOL22:i12p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "11"
+  shortname: "11"
+  geometry: "gmtkn_ISOL22:i13e"
+  reference_value: 35.08
+  setup:
+    reaction_formula: "1 g_i13e -> 1 g_i13p"
+    reaction_geometries:
+      g_i13e: gmtkn_ISOL22:i13e
+      g_i13p: gmtkn_ISOL22:i13p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "12"
+  shortname: "12"
+  geometry: "gmtkn_ISOL22:i14e"
+  reference_value: 5.20
+  setup:
+    reaction_formula: "1 g_i14e -> 1 g_i14p"
+    reaction_geometries:
+      g_i14e: gmtkn_ISOL22:i14e
+      g_i14p: gmtkn_ISOL22:i14p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "13"
+  shortname: "13"
+  geometry: "gmtkn_ISOL22:i15e"
+  reference_value: 3.87
+  setup:
+    reaction_formula: "1 g_i15e -> 1 g_i15p"
+    reaction_geometries:
+      g_i15e: gmtkn_ISOL22:i15e
+      g_i15p: gmtkn_ISOL22:i15p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "14"
+  shortname: "14"
+  geometry: "gmtkn_ISOL22:i16e"
+  reference_value: 22.59
+  setup:
+    reaction_formula: "1 g_i16e -> 1 g_i16p"
+    reaction_geometries:
+      g_i16e: gmtkn_ISOL22:i16e
+      g_i16p: gmtkn_ISOL22:i16p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "15"
+  shortname: "15"
+  geometry: "gmtkn_ISOL22:i17e"
+  reference_value: 11.07
+  setup:
+    reaction_formula: "1 g_i17e -> 1 g_i17p"
+    reaction_geometries:
+      g_i17e: gmtkn_ISOL22:i17e
+      g_i17p: gmtkn_ISOL22:i17p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "16"
+  shortname: "16"
+  geometry: "gmtkn_ISOL22:i18e"
+  reference_value: 26.08
+  setup:
+    reaction_formula: "1 g_i18e -> 1 g_i18p"
+    reaction_geometries:
+      g_i18e: gmtkn_ISOL22:i18e
+      g_i18p: gmtkn_ISOL22:i18p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "17"
+  shortname: "17"
+  geometry: "gmtkn_ISOL22:i19e"
+  reference_value: 17.02
+  setup:
+    reaction_formula: "1 g_i19e -> 1 g_i19p"
+    reaction_geometries:
+      g_i19e: gmtkn_ISOL22:i19e
+      g_i19p: gmtkn_ISOL22:i19p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "18"
+  shortname: "18"
+  geometry: "gmtkn_ISOL22:i20e"
+  reference_value: 4.52
+  setup:
+    reaction_formula: "1 g_i20e -> 1 g_i20p"
+    reaction_geometries:
+      g_i20e: gmtkn_ISOL22:i20e
+      g_i20p: gmtkn_ISOL22:i20p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "19"
+  shortname: "19"
+  geometry: "gmtkn_ISOL22:i21e"
+  reference_value: 13.38
+  setup:
+    reaction_formula: "1 g_i21e -> 1 g_i21p"
+    reaction_geometries:
+      g_i21e: gmtkn_ISOL22:i21e
+      g_i21p: gmtkn_ISOL22:i21p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "20"
+  shortname: "20"
+  geometry: "gmtkn_ISOL22:i22e"
+  reference_value: 0.48
+  setup:
+    reaction_formula: "1 g_i22e -> 1 g_i22p"
+    reaction_geometries:
+      g_i22e: gmtkn_ISOL22:i22e
+      g_i22p: gmtkn_ISOL22:i22p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "21"
+  shortname: "21"
+  geometry: "gmtkn_ISOL22:i23e"
+  reference_value: 27.61
+  setup:
+    reaction_formula: "1 g_i23e -> 1 g_i23p"
+    reaction_geometries:
+      g_i23e: gmtkn_ISOL22:i23e
+      g_i23p: gmtkn_ISOL22:i23p
+  tags: ""
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: "22"
+  shortname: "22"
+  geometry: "gmtkn_ISOL22:i24e"
+  reference_value: 16.05
+  setup:
+    reaction_formula: "1 g_i24e -> 1 g_i24p"
+    reaction_geometries:
+      g_i24e: gmtkn_ISOL22:i24e
+      g_i24p: gmtkn_ISOL22:i24p
+  tags: ""
+

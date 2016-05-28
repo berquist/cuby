@@ -1,0 +1,47 @@
+<%# Template for CHARMM input for generation of PSF file from a PDB%>
+BOMLEV -1
+ 
+open unit 1 read card name -
+  "<%= top %>"
+read rtf card unit 1
+close unit 1
+ 
+open unit 1 read card name -
+  "<%= par %>"
+read param card unit 1
+close unit 1
+
+<%= charmm_stream_block(:charmm_stream_files) %>
+
+<%# Iterate over all segments %>
+<%
+	segment_geo.each_index{|i|
+		# Segment start / end patches
+		seg_start, seg_end = segment_terminal_patches(segment_geo[i], segment_names[i])
+		# Specific setup for water
+		additional_cmds = segment_water_setup(segment_geo[i], segment_names[i])
+%>
+
+open unit 1 read card name - 
+  "<%= Dir.pwd + '/' + calc_dir + '/' + "tmp_#{i}.pdb" %>"
+read sequ pdb unit 1
+gener <%= segment_names[i] %> warn first <%= seg_start %> last <%= seg_end %> <%= additional_cmds %>
+rewind unit 1
+read coor pdb unit 1 offset 0
+close unit 1
+<%	} %>
+<%# End of iteration %>
+
+<%= @settings[:charmm_extras_gen] %>
+
+open unit 2 write card name -
+  "<%= Dir.pwd + '/' + calc_dir %>/generated.pdb"
+write coor pdb unit 2
+close unit 2
+ 
+open unit 4 write card name -
+  "<%= Dir.pwd + '/' + calc_dir %>/sys.psf"
+write psf  card unit 4
+close unit 4
+
+stop

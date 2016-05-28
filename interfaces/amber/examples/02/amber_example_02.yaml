@@ -1,0 +1,20 @@
+#===============================================================================
+# Amber example 2: Geometry optimization
+#===============================================================================
+
+# Geometry optimization of a peptide using an user-specified forcefield
+
+# This example assumes that the interface is already configured, and uses some
+# default values - see example 1 for reference. 
+
+job: optimize
+interface: amber
+geometry: ace-ala-nme.pdb
+
+amber_leaprc: $AMBERHOME/dat/leap/cmd/leaprc.ff99SB
+# We use another forcefiled available in amber, defined in this file
+# (This one is older than the ff03 forcefield used by default)
+
+# The calculation creates two files:
+# history_amber_example_02.xyz - contains all the geometries along the optimization
+# optimized.xyz - the optimized structure

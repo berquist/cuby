@@ -1,0 +1,51 @@
+#===============================================================================
+# Example 5 - CSCD(T)/CBS geometry optimization with gradient components
+#===============================================================================
+
+# The geometry otimization in Example 4 required additional calculations because
+# the HF and MP2 gradients usually have to be comuted separately. However,
+# some programs (e.g. turbomole used here) allow obtaining these two gradients
+# from a single run. This will save us two calculations.
+
+job: optimize
+geometry: A24:water # Water molecule from A24 data set
+interface: extrapolate_cbs
+
+# Enable the use of gradient components
+extrapolate_cbs_grad_mode: use_mp2_gradient_components
+
+# Common setup
+calculation_common:
+  charge: 0
+  interface: turbomole
+  scf_convergence: 10
+  density_convergence: 10
+  correlation_convergence: 9
+  mem: 2000
+
+# MP2 calculations, separate HF ones are no longer needed
+calculation_mp2_small:
+  method: mp2
+  basisset: cc-pVDZ
+  basisset_zeta: 2
+  turbomole_scf_grad: yes # Use of gradient components has to be enabled
+
+calculation_mp2_large:
+  method: mp2
+  basisset: cc-pVTZ
+  basisset_zeta: 3
+  turbomole_scf_grad: yes # Use of gradient components has to be enabled
+
+# To calculate the CCSD(T) correction, we still need the
+# additional MP2 calculation
+calculation_corr:
+  interface: cfour
+  method: ccsd(t)
+  basisset: 3-21G
+
+calculation_corr_mp2:
+  interface: cfour
+  method: mp2
+  basisset: 3-21G
+
+opt_quality: 0.5

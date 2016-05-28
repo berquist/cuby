@@ -1,0 +1,216 @@
+################################################################################
+# Keywords for protocol geometry
+################################################################################
+
+keywords: 
+  :geometry_action: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :none
+    allowed_values:
+      - :none
+      - :cat
+      - :partial_pdb_update
+      - :move_closest_contact_vdw_dist
+      - :selection_to_atomlist
+      - :pdb_renumber
+      - :pdb_selection_as_chain
+      - :connect
+      - :order_random
+      - :order_molecules
+#      - :order_chain
+#      - :order_tmplate
+      - :rmsd_fit
+      - :atomtype_bonds
+      - :build_zmat
+      - :moments_of_inertia
+      - :element_list
+      - :element_match
+      - :add_connector
+      #- :randomize
+      #- :center
+      #- :print_center_of_mass
+      #- :append
+      #- :standard_orientation
+      #- :bonds_as_restraints
+      - :orient
+      #- :symmetrize
+      #- :checksum
+      #- :topological_ranks
+      #- :pdb_chain_from_seg
+      #- :pdb_sequence
+      #- :pdb_charge
+      #- :pdb_residue_summary
+  #: Action to be performed on the geometry in addition to the standard geometry
+  #: processing:
+  #* none - do nothing special
+  #* cat - concatenate geometry and geometry2
+  #* partial_pdb_update - update coordinates of matching atoms from geometry2 (atom number, atom name, residue number and residue name must be the same)
+  #* move_closest_contact_vdw_dist - find closest contact between two molecules and move them to vdW distance along this vector
+  #* selection_to_atomlist - expands a complex selection to list of atoms
+  #* pdb_renumber - fix numbering of atoms and residues in PDB file
+  #* pdb_selection_as_chain - sets chain to 'pdb_set_chain' to atoms in 'geometry_action_selection'
+  #* connect - connect two molecules with dummy atom connectors
+  #* order_random - reorders atoms randomly
+  #* order_molecules - reorders atoms so that individual molecules are listed one after another
+  #* rmsd_fit - translate/rotate geometry so that the RMSD to geometry2 is minimized
+  #* atomtype_bonds - prints list of all bonds, atom types involved and bond distance
+  #* build_zmat - build Z-matrix from cartesian coordinates
+  #* moments_of_inertia - print principal moments of inertia
+  #* element_list - print a list of elements in the molecule
+  #* element_match - check for presence/absence of elements, see keywords element_match_list and element_match_condition
+  #* add_connector - adds a connector dummy atom, see connector_type
+  #* orient - align selected three atoms to origin, x axis and x-y plane
+
+  :geometry_write: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "processed_geometry.xyz"
+  #: Name of a file to write the processed geometry to
+
+  :geometry_write_format: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :auto
+    allowed_values:
+      - :auto
+      - :xyz
+      - :pdb
+      - :mol2
+  #: Geometry file format of the output. By default, it is guessed from the
+  #: file name.
+
+  :geometry2: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: die
+  #: Secondary geometry used by some actions
+
+  :geometry_write_append: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: When set, geometry is added to the existing file
+ 
+  :geometry_action_selection: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "%all()"
+  #: Some actions might work on specified selections, by default, all atoms are selected
+  
+  :pdb_set_chain: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "X"
+  #: PDB chain value for action pdb_selection_as_chain     
+ 
+  :geometry_connector: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "auto"
+  #: Connector selection for action connect. Applied to geometry.
+  #: Value "auto" can be used to read the connector info from .xyz file comment line.
+ 
+  :geometry_connector2: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :default
+    default_value: "auto"
+  #: Connector selection for action connect. Applied to geometry2.
+  #: Value "auto" can be used to read the connector info from .xyz file comment line.
+
+  :geometry_zmat_format: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :gaussian_vars
+    allowed_values:
+      - :gaussian_vars
+      - :gaussian
+      - :mopac
+  #: Following z-matrix formats are availbale:
+  #* gaussian_vars - Gaussian format with named variables
+  #* gaussian - Gaussian format with inline values
+  #* mopac - format for MOPAC input
+
+  :geometry_zmat_bondlist: !ruby/object:SettingsKeyword
+    convert_to: :array
+    when_not_present: :default
+    default_value: []
+  #: This keyword allows forcing the z-matrix builder to use selected bonds.
+  #: The bond list is an array of atom selections defining the bonds - e.g. "1,2" or "3,5"
+
+  :geometry_write_connectivity: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :from_radii
+    allowed_values:
+      - :from_radii
+      - :from_zmat
+  #: Some geometry formats (e.g. mol2) require writing the connectivity (list of bonds).
+  #: By default, the connectivity is determined automatically from covalent radii,
+  #: optionally, bonds from z-matrix can be used if the input file was z-matrix.
+
+  :element_match_list: !ruby/object:SettingsKeyword
+    convert_to: :symbol_list
+    when_not_present: die
+  #: List of elements to be matched.
+
+  :element_match_condition: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :at_least
+    allowed_values:
+      - :at_least
+      - :exactly
+      - :no_more_than
+      - :some_from
+  #: Condition applied to matching element list. Possible values:
+  #* at_least - matches molecules containing all listed elements and possibly others
+  #* exactly - matches molecules consisting of all listed elements but not more
+  #* no_more_than - matches molecules that contain some of the listed elements but not these outside the list
+  #* some_from - matches molecules containg at lest one element from the list
+
+  :connector_type: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :linear
+    allowed_values:
+      - :linear
+      - :perpendicular
+      - :apex
+  #: Connector orientation with respect to the molecular coordinate frame.
+  #: The linear/perpendicular connecors are defined as connected to center A,
+  #: in frame of axis AB and plane ABC provided in the connector_orientation
+  #: keyword.
+  #: The value 'apex' places the connector in the axis of all bonds the atom
+  #: is involved in, pointing outwards.
+
+  :connector_orientation: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: die
+  #: Selections (semicolon-separated) defining the coordinate frame
+  #: for the connector. Three centers (A, B, C) have to be defined for connector_type
+  #: values linear/perpendicular, one center for connector_type apex.
+  
+  :geometry_connect_orientation: !ruby/object:SettingsKeyword
+    convert_to: :symbol
+    when_not_present: :default
+    default_value: :max_center_dist
+    allowed_values:
+      - :max_center_dist
+      - :min_center_dist
+  #: Handling of the intramolecular torsion coordinate (defined by molecule 1 center,
+  #: connection axis and molecule 2 center). Value max_center_dist maximizes the distance
+  #: of the center (trans- orientation), the other aligns the centers (cis).
+    
+  :geometry_connect_scan_vdw: !ruby/object:SettingsKeyword
+    convert_to: :array
+    when_not_present: :default
+    default_value: []
+  #: Perform a distance scan in the connecting coordinate. Provide array of scaling factors to be applied
+  #: to sum of vdW radii of the connected atoms.
+
+  :geometry_orientation: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: die
+  #: Three selections (semicolon-separated) defining orientation of the molecule.
+  #: The molecule is moved so that the selected centers are aligned
+  #: to the origin, x axis and x-y plane.

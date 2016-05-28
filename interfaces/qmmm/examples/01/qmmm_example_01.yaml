@@ -1,0 +1,30 @@
+#===============================================================================
+# QMMM example 1 - simple QM/MM calculation
+#===============================================================================
+
+# Very little setup is needed when the QM region is a separate molecule. Here,
+# a water dimer is calculated, the first water is QM and the second is MM.
+
+job: optimize
+
+geometry: water_dimer.pdb
+
+interface: qmmm
+
+# Electrostatic embedding:
+qmmm_embedding: electrostatic_2way
+
+# Definition of the QM region - the first residue is QM
+qmmm_core: ":1"
+
+# Setup of the QM calculation
+calculation_qm:
+  interface: dftb
+  method: scc-dftb
+  charge: 0
+
+# Setup for the MM calculation, shared by both the calculation of the whole system
+# and the MM calculation of the QM region
+calculation_mm:
+  interface: amber
+  amber_leaprc: "%amberhome/dat/leap/cmd/leaprc.ff03.r1"

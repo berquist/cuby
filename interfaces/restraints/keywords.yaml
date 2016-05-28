@@ -1,0 +1,11 @@
+################################################################################
+# KEYWORDS for interface Restraints
+################################################################################
+
+keywords:
+  :restraints: !ruby/object:SettingsKeyword
+    convert_to: :array
+    when_not_present: :die
+  #: List of restraints. Each line has format:
+  #: distance|angle|torsion|distance_difference; value; force_constant; atom_selection1; atom_selection2; ...
+  #: Angles are specified in degrees

@@ -1,0 +1,5 @@
+# Grid name -> gaussian notation
+:coarse: "Coarse"
+:medium: "Fine"
+:fine: "UltraFine" # cuby default
+:ultrafine: "SuperFineGrid"

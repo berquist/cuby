@@ -1,0 +1,550 @@
+################################################################################
+# Method dependent parameters
+################################################################################
+
+# A lookup tree - at each level, a keyword is evaluated and appropriate branch
+# is selected until the parameters are reached
+
+keyword_parent: :method
+values:
+  :dft:
+    keyword: :d3_damping
+    values:
+      :zero:
+        keyword_parent: :basisset
+        values:
+          def2-QZVP:
+            keyword_parent: :functional
+            modify_string: downcase
+            remove_substring: "-"
+            values:
+              # From Stefan Grimme's website
+              # Updated on Jan 6, 2015
+              b1b95:
+                d3_sr6: 1.613
+                d3_s8: 1.868
+              b2gpplyp:
+                d3_s6: 0.56
+                d3_sr6: 1.586
+                d3_s8: 0.760
+              b3lyp:
+                d3_sr6: 1.261
+                d3_s8: 1.703
+              b97d:
+                d3_sr6: 0.892
+                d3_s8: 0.909
+              bhlyp:
+                d3_sr6: 1.370
+                d3_s8: 1.442
+              blyp:
+                d3_sr6: 1.094
+                d3_s8: 1.682
+              bp86:
+                d3_sr6: 1.139
+                d3_s8: 1.683
+              bpbe:
+                d3_sr6: 1.087
+                d3_s8: 2.033
+              mpwlyp:
+                d3_sr6: 1.239
+                d3_s8: 1.098
+              pbe:
+                d3_sr6: 1.217
+                d3_s8: 0.722
+              pbe0:
+                d3_sr6: 1.287
+                d3_s8: 0.928
+              pw6b95:
+                d3_sr6: 1.532
+                d3_s8: 0.862
+              pwb6k:
+                d3_sr6: 1.660
+                d3_s8: 0.550
+              revpbe:
+                d3_sr6: 0.923
+                d3_s8: 1.010
+              tpss:
+                d3_sr6: 1.166
+                d3_s8: 1.105
+              tpss0:
+                d3_sr6: 1.252
+                d3_s8: 1.242
+              tpssh:
+                d3_sr6: 1.223
+                d3_s8: 1.219
+              bop:
+                d3_sr6: 0.929
+                d3_s8: 1.975
+              mpw1b95:
+                d3_sr6: 1.605
+                d3_s8: 1.118
+              mpwb1k:
+                d3_sr6: 1.671
+                d3_s8: 1.061
+              olyp:
+                d3_sr6: 0.806
+                d3_s8: 1.764
+              opbe:
+                d3_sr6: 0.837
+                d3_s8: 2.055
+              otpss:
+                d3_sr6: 1.128
+                d3_s8: 1.494
+              pbe38:
+                d3_sr6: 1.333
+                d3_s8: 0.998
+              pbesol:
+                d3_sr6: 1.345
+                d3_s8: 0.612
+              revssb:
+                d3_sr6: 1.221
+                d3_s8: 0.560
+              ssb:
+                d3_sr6: 1.215
+                d3_s8: 0.663
+              b3pw91:
+                d3_sr6: 1.176
+                d3_s8: 1.775
+              bmk:
+                d3_sr6: 1.931
+                d3_s8: 2.168
+              camb3lyp:
+                d3_sr6: 1.378
+                d3_s8: 1.217
+              lcwpbe:
+                d3_sr6: 1.355
+                d3_s8: 1.279
+              m052x:
+                d3_sr6: 1.417
+                d3_s8: 0.00
+              m05:
+                d3_sr6: 1.373
+                d3_s8: 0.595
+              m062x:
+                d3_sr6: 1.619
+                d3_s8: 0.00
+              m06hf:
+                d3_sr6: 1.446
+                d3_s8: 0.00
+              m06l:
+                d3_sr6: 1.581
+                d3_s8: 0.00
+              m06:
+                d3_sr6: 1.325
+                d3_s8: 0.00
+              hcth120:
+                d3_sr6: 1.221
+                d3_s8: 1.206
+              b2plyp:
+                d3_s6: 0.64
+                d3_sr6: 1.427
+                d3_s8: 1.022
+              dsdblyp:
+                d3_s6: 0.50
+                d3_sr6: 1.569
+                d3_s8: 0.705
+              ptpss:
+                d3_s6: 0.75
+                d3_sr6: 1.541
+                d3_s8: 0.879
+              pwpb95:
+                d3_s6: 0.82
+                d3_sr6: 1.557
+                d3_s8: 0.705
+              revpbe0:
+                d3_sr6: 0.949
+                d3_s8: 0.792
+              revpbe38:
+                d3_sr6: 1.021
+                d3_s8: 0.862
+              rpw86pbe:
+                d3_sr6: 1.224
+                d3_s8: 0.901
+              # From the code (an older version)
+              bp:
+                d3_sr6: 1.139
+                d3_s8: 1.683
+              rpbe:
+                d3_sr6: 0.872
+                d3_s8: 0.514
+              # These values from the code (an older version) were replaced by the new data above:
+              # pbesol:
+              #   d3_sr6: 1.320
+              #   d3_s8: 0.581
+              # b2plyp:
+              #   d3_sr6: 1.332
+              #   d3_s8: 1.000
+              #   d3_s6: 0.5
+              # pwpb95:
+              #   d3_sr6: 1.598
+              #   d3_s8: 0.833
+              #   d3_s6: 0.5
+              # b2gpplyp:
+              #   d3_sr6: 1.438
+              #   d3_s8: 0.761
+              #   d3_s6: 0.4
+              # ptpss:
+              #   d3_sr6: 1.45
+              #   d3_s8: 0.85
+              #   d3_s6: 0.5
+          TZVPP:
+            keyword_parent: :functional
+            modify_string: downcase
+            remove_substring: "-"
+            values:
+              blyp:
+                d3_sr6: 1.243
+                d3_s8: 2.022
+              bp:
+                d3_sr6: 1.221
+                d3_s8: 1.838
+              b97d:
+                d3_sr6: 0.921
+                d3_s8: 0.894
+              revpbe:
+                d3_sr6: 0.953
+                d3_s8: 0.989
+              pbe:
+                d3_sr6: 1.277
+                d3_s8: 0.777
+              tpss:
+                d3_sr6: 1.213
+                d3_s8: 1.176
+              b3lyp:
+                d3_sr6: 1.314
+                d3_s8: 1.706
+              pbe0:
+                d3_sr6: 1.328
+                d3_s8: 0.926
+              pw6b95:
+                d3_sr6: 1.562
+                d3_s8: 0.821
+              tpss0:
+                d3_sr6: 1.282
+                d3_s8: 1.250
+              b2plyp:
+                d3_sr6: 1.551
+                d3_s8: 1.109
+                d3_s6: 0.5
+          def2-SVP: # Jan Rezac fitted to S66x8, dispersion group only
+            keyword_parent: :functional
+            modify_string: downcase
+            remove_substring: "-"
+            values:
+              blyp:
+                d3_sr6: 1.453
+                d3_s8: 1.903
+          DZVP-DFT: # Jan Rezac fitted to S66x8, dispersion group only
+            keyword_parent: :functional
+            modify_string: downcase
+            remove_substring: "-"
+            values:
+              blyp:
+                d3_sr6: 1.375
+                d3_s8: 2.302
+          DZVP-GGA: # Jan Rezac fitted to S66x8, dispersion group only
+            keyword_parent: :functional
+            modify_string: downcase
+            remove_substring: "-"
+            values:
+              blyp:
+                d3_sr6: 1.379
+                d3_s8: 2.321
+      :bj:
+        keyword_parent: :basisset
+        values:
+          def2-QZVP:
+            keyword_parent: :functional
+            modify_string: downcase
+            remove_substring: "-"
+            values:
+              # From Stefan Grimme's website
+              # Updated on Jan 6, 2015
+              b1b95:
+                d3_s8: 1.4507
+                d3_a1: 0.2092
+                d3_a2: 5.5545
+              b2gpplyp:
+                d3_s6: 0.560
+                d3_s8: 0.2597
+                d3_a1: 0.0000
+                d3_a2: 6.3332
+              b3pw91:
+                d3_s8: 2.8524
+                d3_a1: 0.4312
+                d3_a2: 4.4693
+              bhlyp:
+                d3_s8: 1.0354
+                d3_a1: 0.2793
+                d3_a2: 4.9615
+              bmk:
+                d3_s8: 2.0860
+                d3_a1: 0.1940
+                d3_a2: 5.9197
+              bop:
+                d3_s8: 3.295
+                d3_a1: 0.4870
+                d3_a2: 3.5043
+              bpbe:
+                d3_s8: 4.0728
+                d3_a1: 0.4567
+                d3_a2: 4.3908
+              camb3lyp:
+                d3_s8: 2.0674
+                d3_a1: 0.3708
+                d3_a2: 5.4743
+              lcwpbe:
+                d3_s8: 1.8541
+                d3_a1: 0.3919
+                d3_a2: 5.0897
+              mpw1b95:
+                d3_s8: 1.0508
+                d3_a1: 0.1955
+                d3_a2: 6.4177
+              mpwb1k:
+                d3_s8: 0.9499
+                d3_a1: 0.1474
+                d3_a2: 6.6223
+              mpwlyp:
+                d3_s8: 2.0077
+                d3_a1: 0.4831
+                d3_a2: 4.5323
+              olyp:
+                d3_s8: 2.6205
+                d3_a1: 0.5299
+                d3_a2: 2.8065
+              opbe:
+                d3_s8: 3.3816
+                d3_a1: 0.5512
+                d3_a2: 2.9444
+              otpss:
+                d3_s8: 2.7495
+                d3_a1: 0.4634
+                d3_a2: 4.3153
+              pbe38:
+                d3_s8: 1.4623
+                d3_a1: 0.3995
+                d3_a2: 5.1405
+              pbesol:
+                d3_s8: 2.9491
+                d3_a1: 0.4466
+                d3_a2: 6.1742
+              ptpss:
+                d3_s6: 0.750
+                d3_s8: 0.2804
+                d3_a1: 0.000
+                d3_a2: 6.5745
+              pwb6k:
+                d3_s8: 0.9383
+                d3_a1: 0.1805
+                d3_a2: 7.7627
+              revssb:
+                d3_s8: 0.4389
+                d3_a1: 0.4720
+                d3_a2: 4.0986
+              ssb:
+                d3_s8: -0.1744
+                d3_a1: -0.0952
+                d3_a2: 5.2170
+              tpssh:
+                d3_s8: 2.2382
+                d3_a1: 0.4529
+                d3_a2: 4.6550
+              hcth120:
+                d3_s8: 1.0821
+                d3_a1: 0.3563
+                d3_a2: 4.3359
+              b2plyp:
+                d3_s6: 0.640
+                d3_s8: 0.9147
+                d3_a1: 0.3065
+                d3_a2: 5.0570
+              b3lyp:
+                d3_s8: 1.9889
+                d3_a1: 0.3981
+                d3_a2: 4.4211
+              b97d:
+                d3_s8: 2.2609
+                d3_a1: 0.5545
+                d3_a2: 3.2297
+              blyp:
+                d3_s8: 2.6996
+                d3_a1: 0.4298
+                d3_a2: 4.2359
+              bp86:
+                d3_s8: 3.2822
+                d3_a1: 0.3946
+                d3_a2: 4.8516
+              dsdblyp:
+                d3_s6: 0.500
+                d3_s8: 0.2130
+                d3_a1: 0.000
+                d3_a2: 6.0519
+              pbe0:
+                d3_s8: 1.2177
+                d3_a1: 0.4145
+                d3_a2: 4.8593
+              pbe:
+                d3_s8: 0.7875
+                d3_a1: 0.4289
+                d3_a2: 4.4407
+              pw6b95:
+                d3_s8: 0.7257
+                d3_a1: 0.2076
+                d3_a2: 6.3750
+              pwpb95:
+                d3_s6: 0.820
+                d3_s8: 0.2904
+                d3_a1: 0.0000
+                d3_a2: 7.3141
+              revpbe0:
+                d3_s8: 1.7588
+                d3_a1: 0.4679
+                d3_a2: 3.7619
+              revpbe38:
+                d3_s8: 1.4760
+                d3_a1: 0.4309
+                d3_a2: 3.9446
+              revpbe:
+                d3_s8: 2.3550
+                d3_a1: 0.5238
+                d3_a2: 3.5016
+              rpw86pbe:
+                d3_s8: 1.3845
+                d3_a1: 0.4613
+                d3_a2: 4.5062
+              tpss0:
+                d3_s8: 1.2576
+                d3_a1: 0.3768
+                d3_a2: 4.5865
+              tpss:
+                d3_s8: 1.9435
+                d3_a1: 0.4535
+                d3_a2: 4.4752
+          def2-SVP: # Jan Rezac fitted to S66x8, dispersion group only
+            keyword_parent: :functional
+            modify_string: downcase
+            remove_substring: "-"
+            values:
+              blyp:
+                d3_s8: 0.914
+                d3_a1: 0.421
+                d3_a2: 3.833
+          DZVP-DFT: # Jan Rezac fitted to S66x8, dispersion group only
+            keyword_parent: :functional
+            modify_string: downcase
+            remove_substring: "-"
+            values:
+              blyp:
+                d3_s8: 1.773
+                d3_a1: 0.385
+                d3_a2: 4.133
+          DZVP-GGA: # Jan Rezac fitted to S66x8, dispersion group only
+            keyword_parent: :functional
+            modify_string: downcase
+            remove_substring: "-"
+            values:
+              blyp:
+                d3_s8: 1.737
+                d3_a1: 0.459
+                d3_a2: 3.756
+  :hf:
+    keyword: :d3_damping
+    values:
+      :bj:
+        keyword_parent: :basisset
+        values:
+          def2-QZVP:
+            # Grimme et al., DOI: 10.1002/jcc.21759
+            d3_s8: 0.9171
+            d3_a1: 0.3385
+            d3_a2: 2.8830
+      :zero:
+        keyword_parent: :basisset
+        values:
+          def2-QZVP:
+            # From the dftd3 code
+            d3_sr6: 1.158
+            d3_s8: 1.746
+  :pm6:
+    keyword: :d3_hh_fix_version
+    values:
+      1:
+        d3_damping: :zero
+        d3_hh_fix: yes
+        d3_hh_para:  
+          :k: 0.4
+          :e: 12.70
+          :r0: 2.30
+        d3_hybridization: :fixed
+        d3_sr6: 1.18
+        d3_alpha6: 22
+        d3_s6: 0.88
+        d3_s8: 0.0
+      2:
+        d3_damping: :zero
+        d3_hh_fix: yes
+        d3_hh_para:  
+          :k: 118.7326
+          :e: -1.53965
+          :e2: 1.72905
+        d3_hybridization: :fixed
+        d3_sr6: 1.18
+        d3_alpha6: 22
+        d3_s6: 0.88
+        d3_s8: 0.0
+  :"scc-dftb":
+    d3_damping: :zero
+    d3_hh_fix: yes
+    d3_hh_para: 
+       :k: 0.30
+       :e: 14.31
+       :r0: 2.35
+    d3_hybridization: :fixed
+    d3_sr6: 1.215
+    d3_alpha6: 30.0
+    d3_s8: 0.0
+  :pm3:
+    d3_damping: :zero
+    d3_hh_fix: yes
+    d3_hh_para: 
+       :k: 1.55
+       :e: 6.86
+       :r0: 2.23
+    d3_hybridization: :fixed
+    d3_sr6: 0.9
+    d3_alpha6: 22
+    d3_s8: 0.0
+  :am1:
+    d3_damping: :zero
+    d3_hh_fix: yes
+    d3_hh_para: 
+       :k: 0.9
+       :e: 11.10
+       :r0: 2.36
+    d3_hybridization: :fixed
+    d3_sr6: 0.9
+    d3_alpha6: 15
+    d3_s8: 0.0
+  :rm1:
+    d3_damping: :zero
+    d3_hh_fix: yes
+    d3_hh_para: 
+       :k: 0.3
+       :e: 4.46
+       :r0: 2.11
+    d3_hybridization: :fixed
+    d3_sr6: 1.0
+    d3_alpha6: 16
+    d3_s8: 0.0
+  :om3:
+    d3_damping: :zero
+    d3_hh_fix: yes
+    d3_hh_para: 
+       :k: 0.3
+       :e: 9.6
+       :r0: 2.1
+    d3_hybridization: :fixed
+    d3_sr6: 1.14
+    d3_alpha6: 23
+    d3_s8: 0.0

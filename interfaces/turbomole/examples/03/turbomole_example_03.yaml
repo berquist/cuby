@@ -1,0 +1,31 @@
+#===============================================================================
+# Turbomole example 3 - mixing basis sets
+#===============================================================================
+
+# Calculation with custom basis set and auxiliary basis sets. This particular
+# setup makes no sense but demonstrates all the options.
+
+# Calculation setup
+job: energy
+interface: turbomole
+geometry: A24:water
+charge: 0
+method: mp2
+density_fitting: both # RI for both HF and MP2 steps
+
+# Default AO basis:
+basisset: def2-SVP
+
+# Auxiliary basis for RI-HF
+auxiliary_basis_scf: def2-TZVP
+
+# Auxiliary basis for RI-MP2
+auxiliary_basis_mp2: aug-cc-pVDZ
+
+# Change basis sets for some elements
+basisset_elements:
+  H: def2-TZVP
+auxiliary_basis_scf_elements: 
+  O: aug-cc-pVDZ
+auxiliary_basis_mp2_elements:
+  H: aug-cc-pVTZ

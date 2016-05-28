@@ -1,0 +1,12 @@
+<%# MP2 calculation %>
+<%
+	extras = ""
+	extras << ";CORE,0" if !@settings[:correlation_frozen_core]
+%>
+
+{<%= [:correlation, :both].include?(@settings[:density_fitting]) ? "df-" : "" %><%= openshell %>mp2<%= extras %>}
+ENERGYMP2=EMP2-ENERGYSCF
+
+<% if @what.include?(:gradient) %>
+force
+<% end %>

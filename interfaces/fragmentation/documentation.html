@@ -1,0 +1,15 @@
+<p>
+This interface implements the Kernel Energy Method[1] (KEM) up to second order. The energy of the system is composed from calculation of fragments and all their dimers. Fragments with dangling bonds are capped with hydrogens.
+</p>
+
+<p>
+Cuby offers automation of the fragmentation process, non-covalent fragments are recognized automatically and fragmentation across covalent bonds is defined just by a list of bonds to be broken.
+</p>
+
+<p>
+This interface can be also used for building fragments for other calculations. Running the interface with the keyword <a href="keywords.html#fragmentation_geometry_only">fragmentation_geometry_only</a> set produces files containing all the fragments and their dimers. PDB format is used and each of the fragment or dimer is saved as a separate residue. If the filename has suffix .lpdb instead of .pdb, the coordinates are written with more decimal places. This PDB in 'long format' can be used as input for other Cuby calculations.
+</p>
+
+<ol>
+	<li><a href="http://onlinelibrary.wiley.com/doi/10.1002/qua.20542/abstract">Huang, L.; Massa, L.; Karle, J. Int. J. Quantum Chem. 2005, 103 (6), 808–817.</a></li>
+</ol>

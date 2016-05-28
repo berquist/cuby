@@ -1,0 +1,17 @@
+################################################################################
+# Keywords for protocol Atomic charges
+################################################################################
+
+keywords:
+  :atomic_charges_write: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Name of the file to write the atomic charges to. If not set, the charges
+  #: are only printed but not saved to a file.
+
+  :atomic_charges_write_pch: !ruby/object:SettingsKeyword
+    convert_to: :string
+    when_not_present: :other
+  #: Write the charges in the format of point charges with coordinates (x,y,z,charge).
+  #: The value of the keyword should be a name of the file, nothing is written
+  #: if the keyword is not set.

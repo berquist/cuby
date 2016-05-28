@@ -1,0 +1,23 @@
+#===============================================================================
+# Frequencies protocol example 1 - basic calculation of vibrational frequencies
+#===============================================================================
+
+# Calcualtion of vibrational frequencies of a water molecule
+
+job: frequencies
+
+# Calculation setup
+interface: turbomole
+method: dft
+functional: b-lyp
+basisset: SV
+charge: 0
+density_fitting: none
+
+# Water molecule optimized at this level - the optimization and vibtartional
+# analysis can be chained in a single input file - see Example 2 for the
+# Multistep protocol
+geometry: |
+  O   -0.000000000   0.000000000  -0.058641239
+  H   -0.000000000   0.797196184   0.542383939
+  H   -0.000000000  -0.797196184   0.542383939

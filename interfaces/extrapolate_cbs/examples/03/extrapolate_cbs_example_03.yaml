@@ -1,0 +1,45 @@
+#===============================================================================
+# Example 3: Composite MP2.5/CBS calculation
+#===============================================================================
+
+# Scaled MP3 correction is added to a MP2/CBS result
+
+job: interaction
+bsse_correction: yes
+geometry: S66:water_dimer
+
+interface: extrapolate_cbs
+
+# Extrapolation scheme setup:
+extrapolate_cbs_correction: yes # Use higher-order correction
+extrapolate_cbs_corr_weight: 0.5 # Scaling factor for the correction
+
+# Common setup for all calculations
+calculation_common:
+  interface: turbomole
+  charge: 0
+  scf_convergence: 10
+  density_convergence: 10
+  correlation_convergence: 9
+  
+# MP2 calculation in small basis set
+calculation_mp2_small:
+  method: mp2
+  basisset: cc-pVDZ
+  # Note that basis set zeta has to be defined to make extrapolation possible:
+  basisset_zeta: 2
+
+# MP2 calculation in large basis set
+calculation_mp2_large:
+  method: mp2
+  basisset: cc-pVTZ
+  # Note that basis set zeta has to be defined to make extrapolation possible:
+  basisset_zeta: 3
+
+# CCSD(T) calculation 
+calculation_corr:
+  method: mp3
+  basisset: SVP
+
+# Print the energy components (SCF energy, MP2/CBS corerlation)
+print: energy_decomposition

@@ -1,0 +1,130 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface gaussian</h1>
+<p>
+Interface to the  <a href="http://gaussian.com">Gaussian</a> package (Commercial license).
+</p>
+
+<p>
+For now, the interface is very simple, allowing only singlepoint HF and DFT calculations.
+</p>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>hf</li>
+<li>dft</li>
+</ul>
+<h4>All the methods support calculation of following properties:</h4>
+<ul>
+<li>energy</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#gaussian_bin_dir">gaussian_bin_dir</a></li>
+<li><a href="keywords.html#gaussian_checkpoint">gaussian_checkpoint</a></li>
+<li><a href="keywords.html#gaussian_extra_block">gaussian_extra_block</a></li>
+<li><a href="keywords.html#gaussian_keywords">gaussian_keywords</a></li>
+<li><a href="keywords.html#gaussian_version">gaussian_version</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#basisset">basisset</a></li>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#dft_grid">dft_grid</a></li>
+<li><a href="keywords.html#dft_grid_custom">dft_grid_custom</a></li>
+<li><a href="keywords.html#existing_calc_dir">existing_calc_dir</a></li>
+<li><a href="keywords.html#functional">functional</a></li>
+<li><a href="keywords.html#functional_custom">functional_custom</a></li>
+<li><a href="keywords.html#functional_custom_type">functional_custom_type</a></li>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#mem">mem</a></li>
+<li><a href="keywords.html#method">method</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/gaussian/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Gaussian interafce example 1 - configuration, DFT calculation
+#===============================================================================
+
+#-------------------------------------------------------------------------------
+# Interface configuration
+#-------------------------------------------------------------------------------
+gaussian_bin_dir: /home/rezac/bin/gaussian/gaussian09/a02/arch/amd64-pgi70-acml/g09
+# The version name should correspond to the name of the program binary
+gaussian_version: g09 
+
+#-------------------------------------------------------------------------------
+# Calculation
+#-------------------------------------------------------------------------------
+job: energy
+interface: gaussian
+geometry: A24:water # Water molecule from the A254 data set
+
+# DFT setup
+method: dft
+# Cuby translates the functional name to the format used by gaussian:
+functional: PBE
+basisset: 6-31G
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Gaussian interafce example 2 - advanced options
+#===============================================================================
+
+# Calculation setup
+job: energy
+interface: gaussian
+method: HF
+geometry: A24:water # Water molecule from the A254 data set
+basisset: 6-31
+
+# Additional keywords in the gaussain format can be inserted directly into the
+# input - in this case, request NBO analysis:
+gaussian_keywords: pop=NBO
+
+# To access the results of the NBO calculations in the gaussian output file,
+# prevent cuby from deleting the calculation:
+job_cleanup: no
+
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

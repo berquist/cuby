@@ -1,0 +1,9 @@
+<%# CCSD calculation %>
+<%
+	extras = ";THRESH,THRDEN=1.0d-#{@settings[:correlation_convergence]}"
+	extras << ";CORE,0" if !@settings[:correlation_frozen_core]
+%>
+
+{<%= openshell %>ccsd<%= extras %>}
+ENERGYMP2=EMP2-ENERGYSCF
+ENERGYCCSD=energy

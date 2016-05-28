@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol threebody</h1>
+<p>
+Calculation of three-body contribution to the stabilization energy (the three-body energy) in a trimer.
+Basis set superposition error correction scheme where all subsystems are calculted in the trimer basis is applied by default but can be switched off.
+The setup for the monomers within the trimer is analogous to <a href="protocol_interaction.html">interaction energy</a> calculations.
+</p>
+
+<p>In a trimer ABC, it is defined as:</p>
+<div class="formula">
+	&Delta;E<sup>3</sup> = E(ABC) - E(A) - E(B) - E(B) - &Delta;E<sup>2</sup>(AB) - &Delta;E<sup>2</sup>(BC) - &Delta;E<sup>2</sup>(CA)
+</div>
+<p>What is, for practical calculations, it can be recasted in terms of energies as:</p>
+<div class="formula">
+	&Delta;E<sup>3</sup> = E(ABC) - E(AB) - E(BC) - E(CA) + E(A) + E(B) + E(C)
+</div>
+
+<h2>Input structure</h2>
+<h4>Optionally, following blocks can be defined in the input:</h4>
+<ul>
+<li>molecule_a - Definition of the first monomer (selection, charge, multiplicity)</li>
+<li>molecule_b - Definition of the second monomer (selection, charge, multiplicity)</li>
+<li>molecule_c - Definition of the third monomer (selection, charge, multiplicity)</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this protocol:</h4>
+<ul>
+<li><a href="keywords.html#bsse_correction_3b">bsse_correction_3b</a></li>
+</ul>
+<h4>Other keywords used by this protocol:</h4>
+<ul>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+<li><a href="keywords.html#print">print</a></li>
+<li><a href="keywords.html#selection">selection</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/threebody/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Threebody energy calculation example 1
+#===============================================================================
+
+# Calculation of three-body energy in water trimer at SCC-DFTB level.
+
+# The monomers in the trimer are recognized automatically, for manual setup,
+# see Example 2 for protocol interaction.
+
+job: threebody
+
+# Switch off the default BSSE correction, it is not applicable at DFTB level
+bsse_correction_3b: none
+
+interface: dftb
+method: scc-dftb
+
+charge: 0
+geometry: |
+ O     0.000000     0.000000     0.000000
+ H     0.000000     0.000000     0.950000
+ H    -0.895669     0.000000    -0.316667
+ O     0.000000     0.000000     3.000000
+ H     0.822724     0.000000     2.525000
+ H     0.173593     0.000000     3.934005
+ O     2.598076     0.000000     1.500000
+ H     1.775352     0.000000     1.025000
+ H     3.320152     0.000000     0.882662
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

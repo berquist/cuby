@@ -1,0 +1,27 @@
+#===============================================================================
+# Water restraint example 1: Amber MD with water restraint
+#===============================================================================
+
+# Simple demonstration of the water restraint modifier. It is intended for
+# QM/MM calculations but here it is used for simple MM dynamics to make the
+# example run faster.
+
+job: dynamics
+init_temp: 300
+
+# Ace-ala-nme dipeptide solvated with 18 water molecules
+geometry: ace_ala_nme_waterball_18.pdb
+
+# Use Amber interface with default forcefield
+# (The interface must be configured properly)
+interface: amber
+
+# Add the water restraint modifier
+modifiers: water_restraint
+
+# Setup for the modifier
+modifier_water_restraint:
+  qmmm_wat_center: ":2" # Selection defining the center of the QM region, here it is residue 2
+  qmmm_wat_num: 8 # Number of QM waters
+  qmmm_wat_k: 10.0 # Force constant of the restraining potential (kcal/mol/A)
+

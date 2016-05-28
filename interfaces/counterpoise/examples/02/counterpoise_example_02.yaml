@@ -1,0 +1,26 @@
+#===============================================================================
+# Counterpoise example 2: geometry optimization
+#===============================================================================
+
+# Counterpoise-corrected geometry optimization
+job: optimize
+interface: counterpoise
+
+# Run three calculations in parallel
+cuby_threads: 3
+
+# Higher-quality optimization, the result will be used in vibrational calculation
+optimizer: rfo
+opt_quality: 0.1
+
+# The calculation method has to be specified in a separate block,
+# note that the keyword "job" is not present
+calculation:
+  interface: turbomole
+  method: HF
+  basisset: SVP
+  scf_convergence: 8
+
+# Water dimer from Cuby's database
+geometry: A24:water_dimer
+charge: 0

@@ -1,0 +1,168 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Protocol reaction</h1>
+<p>
+Protocol automating calculation of reaction energies. It can parse a reaction formula in the SMILES notation and generate geometries of the molecules.
+</p>
+
+<h2>Input structure</h2>
+<h4>The protocol requires following blocks in the input:</h4>
+<ul>
+<li>calculation - Setup for the calculation</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this protocol:</h4>
+<ul>
+<li><a href="keywords.html#reaction_formula">reaction_formula</a></li>
+<li><a href="keywords.html#reaction_geometries">reaction_geometries</a></li>
+<li><a href="keywords.html#reaction_print">reaction_print</a></li>
+<li><a href="keywords.html#reaction_smiles">reaction_smiles</a></li>
+</ul>
+<h4>Other keywords used by this protocol:</h4>
+<ul>
+<li><a href="keywords.html#geometry">geometry</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/protocols/reaction/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Reaction protocol example 1: simple reaction
+#===============================================================================
+
+# Automated calculation of reaction energetics
+
+job: reaction
+
+# The reaction is specified by a formula with defined stoichiometry and
+# arbitrary names of the compounds
+reaction_formula: 2 H2 + O2 -> 2 H2O
+
+# For each compound, a geometry is provided
+reaction_geometries:
+  H2: h2.xyz
+  O2: o2.xyz
+  H2O: h2o.xyz
+
+# Calculation is defined only once
+calculation:
+  job: energy
+  interface: dftb
+  method: scc-dftb
+  charge: 0
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Reaction protocol example 2: multi-step calculation
+#===============================================================================
+
+# This example features the same reaction as example 1 to for each compound,
+# a multi-step calculation is applied
+
+job: reaction
+reaction_formula: 2 H2 + O2 -> 2 H2O
+
+reaction_geometries:
+  H2: h2.xyz
+  O2: o2.xyz
+  H2O: h2o.xyz
+
+calculation:
+  # Multi-step protocol is used
+  job: multistep
+  multistep_print: no
+  steps: opt, energy
+
+  # First step - geometry optimization
+  # Geometry is taken from parent block, it is the 'calculation' level
+  calculation_opt:
+    job: optimize
+    optimize_print: "" # Disable printing of optimization steps
+    interface: dftb
+    method: scc-dftb
+    charge: 0
+    geometry: parent_block
+
+  # Second step: energy calculation
+  # The geometry is taken from the previous step, it is after the optimization
+  calculation_energy:
+    job: energy
+    interface: dftb
+    method: scc-dftb
+    charge: 0
+    geometry: previous_step
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Reaction protocol example 3: SMILES notation
+#===============================================================================
+
+# This example demonstrates the use SMILES notation in the reaction formula
+
+job: reaction
+
+# The SMILES mode has to be switched on
+reaction_smiles: yes
+# Instead of just labels, the items are SMILES formulas directly
+reaction_formula: 2 C=C -> C1CCC1
+# Then, coordinates are generated from SMILES, no specification of geometries
+# is needed
+
+calculation:
+  job: multistep
+  multistep_print: no
+  steps: opt, energy
+
+  calculation_opt:
+    job: optimize
+    optimize_print: ""
+    interface: dftb
+    method: scc-dftb
+    charge: 0
+    geometry: parent_block
+
+  calculation_energy:
+    job: energy
+    interface: dftb
+    method: scc-dftb
+    charge: 0
+    geometry: previous_step
+
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

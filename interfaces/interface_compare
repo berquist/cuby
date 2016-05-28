@@ -1,0 +1,67 @@
+#!/usr/bin/ruby1.9
+$:.unshift(File.dirname(__FILE__)+"/..").uniq! # Magic line to add path to the executable to $RUBYLIB
+
+interface = {}
+unsupported = {}
+
+# Get interface info
+ARGV.each{|name|
+	# Save interface documentation
+	interface[name] = `cuby4 interface #{name}`
+
+	# get unsupported keywords
+	require "interfaces/#{name}/#{name}.rb"
+	begin
+		unsupported[name] = eval("Interface#{name.capitalize}")::UNSUPPORTED_KEYWORDS.map{|x| x.to_s }
+	rescue
+		unsupported[name] = []
+	end
+}
+
+# Pick list of common keywords from it
+interface.each_pair{|name, value|
+	read = false
+	keywords = []
+	value.each_line{|line|
+		if read && line =~ /\*/
+			keywords << line.strip.split[1]
+		end
+		read = true if line =~ /Other keywords used by this interface/
+	}
+	interface[name] = keywords
+}
+
+# Get list of all keywords
+# Get column length
+column = 0
+all = []
+interface.each_pair{|name, value|
+	all |= value
+	column = [column, name.size + 2].max
+}
+all.sort!
+
+
+
+# Print header
+puts "-" * (30 + column * interface.size)
+printf("%-30s", "keyword")
+interface.each_key{|name| printf("%-#{column}s", name) }
+puts
+puts "-" * (30 + column * interface.size)
+
+# Print table
+all.each{|keyword|
+	printf("%-30s", keyword)
+	interface.each_pair{|name, list|
+		if list.include?(keyword)
+			s = "(X)"
+		elsif unsupported[name].include?(keyword)
+			s = " ! "
+		else
+			s = " - "
+		end
+		printf("%-#{column}s", s)
+	}
+	puts
+}

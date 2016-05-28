@@ -1,0 +1,141 @@
+--- !ruby/object:ProtocolDataset::DataSet 
+#===============================================================================
+# Reference method
+#===============================================================================
+
+# CCSD(T) or QCISD(T), composite extrapolation (from basis set of limited size)
+# For details, se the paper:
+# J. Chem. Theory Comput., 2013, 9 (8), pp 3364–3374
+# DOI: 10.1021/ct400036b
+
+#===============================================================================
+# Data set description
+#===============================================================================
+
+description: !ruby/object:ProtocolDataset::DataSetDescription 
+  name: L7
+  references: 
+    "10.1021/ct400036b": "Sedlak, R.; Janowski, T.; Pitoňák, M.; Řezáč, J.; Pulay, P.; Hobza, P. J. Chem. Theory Comput. 2013, 9, 3364–3374."
+  text: "CCSD(T) or QCISD(T) interaction energies in large noncovalent complexes"
+
+  groups:
+    - dispersion
+    - mixed
+  global_setup:
+    job: interaction
+    molecule_a:
+      charge: 0
+      multiplicity: 1
+    molecule_b:
+      charge: 0
+      multiplicity: 1
+
+#===============================================================================
+# Items
+#===============================================================================
+
+items: 
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 01 octadecane dimer
+  shortname: 01_octadecane_dimer
+  geometry: L7:CBH
+  reference_value: -11.06
+  setup: 
+    molecule_a:
+      selection: 1-56
+    molecule_b:
+      selection: 57-112
+  group: dispersion
+  tags: "dispersion a-a"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 02 guanine trimer
+  shortname: 02_G_GG
+  geometry: L7:GGG
+  reference_value: -2.40
+  setup: 
+    molecule_a:
+      selection: 1-16
+    molecule_b:
+      selection: 17-48
+  group: dispersion
+  tags: "dispersion p-p"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 03 GCGC base pair stack
+  shortname: 03_GC_GC
+  geometry: L7:GCGC
+  reference_value: -14.37
+  setup: 
+    molecule_a:
+      selection: 1-29
+    molecule_b:
+      selection: 30-58
+  group: dispersion
+  tags: "dispersion p-p"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 04 circumcoronene ... adenine
+  shortname: 04_circumcoronene_A
+  geometry: L7:C3A
+  reference_value: -18.19
+  setup: 
+    molecule_a:
+      selection: 1-15
+    molecule_b:
+      selection: 16-87
+  group: dispersion
+  tags: "dispersion p-p"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 05 circumcoronene ... GC
+  shortname: 05_circumcoronene_GC
+  geometry: L7:C3GC
+  reference_value: -31.25
+  setup: 
+    molecule_a:
+      selection: 1-29
+    molecule_b:
+      selection: 30-101
+  group: dispersion
+  tags: "dispersion p-p"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 06 coronene dimer
+  shortname: 06_coronene_dimer
+  geometry: L7:C2C2PD
+  reference_value: -24.36
+  setup: 
+    molecule_a:
+      selection: 1-36
+    molecule_b:
+      selection: 37-72
+  group: dispersion
+  tags: "dispersion p-p"
+
+- !ruby/object:ProtocolDataset::DataSetItem
+  name: 07 phenylalanine trimer
+  shortname: 07_phenylalanine_x3
+  geometry: L7:PHE
+  reference_value: -25.76
+  setup: 
+    molecule_a:
+      selection: 1-29
+    molecule_b:
+      selection: 30-87
+  group: mixed
+  tags: "dispersion p-p H-bond"
+
+#===============================================================================
+# Alternative data
+#===============================================================================
+
+alternative_reference:
+  # DLPNO-CCSD(T) from supplementary of http://dx.doi.org/10.1063/1.4929335
+  # BEWARE! these data are here just for testing, probably less accurate than the
+  #         original reference
+  "DLPNO-CCSD(T)": [-9.8, -1.6, -11.20, -15.8, -26.70, -19.6, -23.60]
+  # MP2/CBS from the originl paper
+  "MP2/CBS": [ -11.92, -4.36, -18.21, -27.54, -46.02, -38.98, -26.36 ]
+  # MP2C/CBS from begdb.com
+  "MP2C/CBS": [ -11.29, -2.22, -12.89, -16.89, -28.71, -20.88, -24.82 ]

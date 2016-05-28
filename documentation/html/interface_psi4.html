@@ -1,0 +1,190 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Cuby 4</title>
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,500,300italic,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" title="Default" href="layout.css">
+		<link rel="stylesheet" title="Default" href="style.css">
+		<link rel="stylesheet" title="Default" href="form.css">
+
+		<link rel="stylesheet" title="Default" href="highlight.css">
+		<script src="highlight.js"></script>
+		<script src="yaml.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</head>
+	<body>
+		<div id="menu">
+			<a href="index.html">Introduction</a>
+			<a href="authors.html">Authors</a>
+			<a href="download.php">Download</a>
+			<a href="installation.html">Installation</a>
+			<a href="getting_started.html">Getting started</a>
+			<a href="useful_tips.html">Useful tips</a>
+			<span class="menusection">Reference:
+			<a href="keywords.html">Keywords</a>
+			<a href="protocols.html">Protocols</a>
+			<a href="interfaces.html">Interfaces</a>
+			<a href="methods.html">Methods</a>
+			<a href="input.html">Input file</a>
+			<a href="geometry.html">Geometry</a>
+			<a href="atom_selection.html">Atom selection</a>
+			<a href="commandline.html">Commandline</a>
+			<a href="queue_systems.html">Cuby on clusters</a>
+			</span>
+			<hr />
+		</div>
+		<div id="contents">
+		<div id="contents-inner">
+<h1>Interface psi4</h1>
+<p>
+Interface to the Psi4 quantum chemistry package (<a href="http://www.psicode.org/">www.psicode.org</a>, open source).
+Psi4 offers modern implementation of wide range of QM methods.
+</p>
+
+<p>
+For now, the interface provides access to the basic wavefunction QM methods (including the FNO approximation) and to SAPT.
+</p>
+
+<h2>Methods and capabilities</h2>
+<h4>The interface implements following methods (specified by keyword 'method'):</h4>
+<ul>
+<li>hf - supports calculation of energy, gradient</li>
+<li>dft - supports calculation of energy, gradient</li>
+<li>mp2 - supports calculation of energy, gradient</li>
+<li>mp3 - supports calculation of energy, gradient</li>
+<li>ccsd - supports calculation of energy</li>
+<li>ccsd(t) - supports calculation of energy</li>
+<li>sapt - supports calculation of energy</li>
+</ul>
+<h2>Input structure</h2>
+<h4>Optionally, following blocks can be defined in the input:</h4>
+<ul>
+<li>molecule_a - Definition of the first monomer for SAPT calculation (selection, charge, multiplicity)</li>
+<li>molecule_b - Definition of the second monomer for SAPT calculation (selection, charge, multiplicity)</li>
+</ul>
+<h2>Keywords used</h2>
+<h4>Keywords specific for this interface:</h4>
+<ul>
+<li><a href="keywords.html#fno_occ_tolerance">fno_occ_tolerance</a></li>
+<li><a href="keywords.html#psi4_bin_dir">psi4_bin_dir</a></li>
+<li><a href="keywords.html#psi4_data_dir">psi4_data_dir</a></li>
+<li><a href="keywords.html#psi4_df_guess">psi4_df_guess</a></li>
+<li><a href="keywords.html#psi4_fno">psi4_fno</a></li>
+<li><a href="keywords.html#psi4_geometry_fragments">psi4_geometry_fragments</a></li>
+<li><a href="keywords.html#psi4_sapt_ct">psi4_sapt_ct</a></li>
+<li><a href="keywords.html#psi4_sapt_level">psi4_sapt_level</a></li>
+</ul>
+<h4>Other keywords used by this interface:</h4>
+<ul>
+<li><a href="keywords.html#auxiliary_basis_mp2">auxiliary_basis_mp2</a></li>
+<li><a href="keywords.html#auxiliary_basis_mp2_elements">auxiliary_basis_mp2_elements</a></li>
+<li><a href="keywords.html#auxiliary_basis_scf">auxiliary_basis_scf</a></li>
+<li><a href="keywords.html#auxiliary_basis_scf_elements">auxiliary_basis_scf_elements</a></li>
+<li><a href="keywords.html#basisset">basisset</a></li>
+<li><a href="keywords.html#basisset_elements">basisset_elements</a></li>
+<li><a href="keywords.html#charge">charge</a></li>
+<li><a href="keywords.html#correlation_frozen_core">correlation_frozen_core</a></li>
+<li><a href="keywords.html#density_convergence">density_convergence</a></li>
+<li><a href="keywords.html#density_fitting">density_fitting</a></li>
+<li><a href="keywords.html#existing_calc_dir">existing_calc_dir</a></li>
+<li><a href="keywords.html#functional">functional</a></li>
+<li><a href="keywords.html#functional_custom">functional_custom</a></li>
+<li><a href="keywords.html#functional_custom_type">functional_custom_type</a></li>
+<li><a href="keywords.html#interface">interface</a></li>
+<li><a href="keywords.html#job_cleanup">job_cleanup</a></li>
+<li><a href="keywords.html#mem">mem</a></li>
+<li><a href="keywords.html#method">method</a></li>
+<li><a href="keywords.html#multiplicity">multiplicity</a></li>
+<li><a href="keywords.html#parallel">parallel</a></li>
+<li><a href="keywords.html#scf_convergence">scf_convergence</a></li>
+<li><a href="keywords.html#spin_restricted">spin_restricted</a></li>
+<li><a href="keywords.html#use_symmetry">use_symmetry</a></li>
+</ul>
+<h2>Examples</h2>
+<p>The following examples, along with all other files needed to run them, can be found in the directory cuby4/interfaces/psi4/examples</p>
+<div class="example"><pre><code>#===============================================================================
+# Psi4 interface example 1 - interface configuration
+#===============================================================================
+
+# The following keyword is needed to configure the interface -
+# path to the directory containing Psi4 binaries:
+psi4_bin_dir: /home/rezac/bin/psi4/install/bin
+
+# The following examples assume that this keyword is set in the global
+# configuation file.
+
+# Let's try some calculation - MP2 with desity fitting
+job: energy
+interface: psi4
+
+geometry: A24:water
+charge: 0
+
+method: mp2
+density_fitting: both # DF-HF + DF-MP2
+basisset: "6-31G"
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Psi4 interface example 2 - FNO-CCSD(T)
+#===============================================================================
+
+# The Frozen Natural Orbitals approximation can be used to accelerate
+# CCSD and CCSD(T) calculations.
+
+job: energy
+interface: psi4
+
+geometry: A24:water
+charge: 0
+
+method: ccsd(t)
+basisset: cc-pVDZ
+
+# Use density fitting where possible, switch on the FNO approximation:
+density_fitting: both
+psi4_fno: yes
+
+</code></pre></div>
+<div class="example"><pre><code>#===============================================================================
+# Psi4 interface example 3 - SAPT
+#===============================================================================
+
+# This input demonstrates how to run a SAPT calculation, it requires some
+# specific input.
+
+interface: psi4
+
+# Although interaction energy is calculated, it is done in a single run of
+# the external program, called by the "energy" protocol
+job: energy
+
+geometry: S66:water_dimer # Water dimer from the S66 data set
+charge: 0
+
+method: sapt
+# Order of the SAPT expansion - SAPT0 is the most approximate level available:
+psi4_sapt_level: sapt0
+
+basisset: aug-cc-pVDZ
+density_fitting: both
+
+# The information on the fragments (monomers) to be passed to Psi4:
+psi4_geometry_fragments: yes
+molecule_a:
+  charge: 0
+  multiplicity: 1
+  selection: "1-3"
+molecule_b:
+  charge: 0
+  multiplicity: 1
+  selection: "4-6"
+
+# To get the components of the interaction energy, enable their printing:
+print: energy_decomposition
+
+
+</code></pre></div>
+		</div>
+		</div>
+	</body>
+</html>

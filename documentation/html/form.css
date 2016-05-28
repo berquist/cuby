@@ -1,0 +1,20 @@
+label {
+	display: block
+}
+
+label span {
+	display: inline-block;
+	width: 15em;
+}
+
+label input {
+	width: 20em;
+	margin: 2px;
+}
+
+label select {
+	width: 20em;
+	margin: 2px;
+	margin-left: 6px;
+}
+
