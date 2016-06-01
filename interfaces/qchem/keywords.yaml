@@ -1,0 +1,12 @@
+################################################################################
+# KEYWORDS for the Q-Chem interface
+################################################################################
+
+keywords:
+  :qchem_geometry_fragments: !ruby/object:SettingsKeyword
+    convert_to: :boolean
+    when_not_present: :default
+    default_value: no
+  #: Separate fragments in geometry. Two fragments should be defined
+  #: in blocks molecule_a and molecule_b. Keywords charge, multiplicity and
+  #: selection are needed.
