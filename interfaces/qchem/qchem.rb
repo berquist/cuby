@@ -30,7 +30,8 @@ module InterfaceQchem
     DIRECTORY = "QChem"
     # Methods provided by the interface:
     METHODS = {
-        :"hf"       => [:energy]
+        :"hf"       => [:energy],
+        :"dft"      => [:energy]
     }
     # Input structure
     INPUT_BLOCKS = [
@@ -75,13 +76,16 @@ module InterfaceQchem
 
         f.puts "$rem"
 
-        f.puts " method #{@settings[:method]}"
-        # when :dft
-        #     require "classes/calculation/dft_options.rb"
-        #     dft_file = File.open(interface_dir + "/dft_options.yaml", "r")
-        #     dft_options = YAML.load(dft_file)
-        #     dft_file.close
-        #     f.puts "#{what}('#{dft_options.functional(@settings)}')"
+        case @settings[:method]
+        when :dft
+            require "classes/calculation/dft_options.rb"
+            dft_file = File.open(interface_dir + "/dft_options.yaml", "r")
+            dft_options = YAML.load(dft_file)
+            dft_file.close
+            f.puts " method #{dft_options.functional(@settings)}"
+        else
+            f.puts " method #{@settings[:method]}"
+        end
 
         f.puts " basis #{@settings[:basisset]}"
         if @settings.set?(:auxiliary_basis_mp2)
@@ -184,7 +188,7 @@ module InterfaceQchem
         parser.execute
 
         case @settings[:method]
-        when :hf
+        when :hf, :dft
             results.energy = parser[:e_scf] * HARTREE2KCAL
         end
 

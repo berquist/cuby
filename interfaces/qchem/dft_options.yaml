@@ -1,0 +1,64 @@
+--- !ruby/object:DftOptions
+#===============================================================================
+# DFT options for Q-Chem
+#===============================================================================
+# Ordering is accouding to v4.4 manual.
+functionals:
+  lda: !ruby/object:DftFunctional
+    name: LDA
+    description: Slater LSDA exchange + VWN5 LSDA correlation
+    type: :lda
+  b97d3: !ruby/object:DftFunctional
+    name: B97-D3(0)
+    description: B97-D with a fitted DFT-D3(0) tail instead of the original DFT-D2 tail
+    type: :gga
+  b97d: !ruby/object:DftFunctional
+    name: B97-D
+    description: 9-parameter dispersion-corrected (DFT-D2) functional by Grimme
+    type: :gga
+  vv10: !ruby/object:DftFunctional
+    name: VV10
+    description: rPW86 GGA exchange + PBE GGA correlation + VV10 non-local correlation
+    type: :gga
+  pbe: !ruby/object:DftFunctional
+    name: PBE
+    description: PBE GGA exchange + PBE GGA correlation
+    type: :gga
+  blyp: !ruby/object:DftFunctional
+    name: BLYP
+    description: B88 GGA exchange + LYP GGA correlation
+    type: :gga
+  revpbe: !ruby/object:DftFunctional
+    name: revPBE
+    description: revPBE GGA exchange + PBE GGA correlation
+    type: :gga
+  bop: !ruby/object:DftFunctional
+    name: BOP
+    description: B88 GGA exchange + BOP "one-parameter progressive" GGA correlation
+    type: :gga
+  bp86: !ruby/object:DftFunctional
+    name: BP86
+    description: B88 GGA exchange + P86 GGA correlation
+    type: :gga
+  bp86vwn: !ruby/object:DftFunctional
+    name: BP86VWN
+    description: B88 GGA exchange + P86VWN5 GGA correlation
+    type: :gga
+  edf1: !ruby/object:DftFunctional
+    name: EDF1
+    description: Modification of BLYP to give good performance in the 6-31+G basis set
+    type: :gga
+  edf2: !ruby/object:DftFunctional
+    name: EDF2
+    description: Modification of BLYP to give good performance in the cc-pVTZ basis set for frequencies
+    type: :gga
+  # snip...
+  b3lyp: !ruby/object:DftFunctional
+    name: B3LYP
+    description: 20% HF exchange + 8% Slater LSDA exchange + 72% B88 GGA exchang + 19% VWN1RPA LSDA correlation + 81% LYP GGA correlation
+    type: :hybrid
+  pbe0: !ruby/object:DftFunctional
+    name: PBE0
+    description: 25% HF exchange + 75% PBE GGA exchange + PBE GGA correlation
+    type: :hybrid
+  # snip...
