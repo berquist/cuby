@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 
 data = IO.readlines(ARGV[0])
 data.map!{|l| l.strip.split}

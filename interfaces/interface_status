@@ -1,4 +1,4 @@
-#!/usr/bin/ruby1.9
+#!/usr/bin/env ruby
 $:.unshift(File.dirname(__FILE__)+"/..").uniq! # Magic line to add path to the executable to $RUBYLIB
 require "classes/cuby.rb" # Load Cuby classes and libraries
 
